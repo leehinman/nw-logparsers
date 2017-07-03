@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="6"
+	checksum="b84b001543040938bc3a0b962f5a2e01"
+	revision="0"
+	enVision="33040065" 
+	device="2.0" />
+
+<VALUEMAP 
+
+		name="reasoncode1" 
+
+		default="$NONE" 
+
+		keyvaluepairs="03=&apos;Message_Queue&apos;|16=&apos;Logon_Record&apos;|56=&apos;Support_IMS_program_synch_points&apos;|72=&apos;ETO_Structure_Deleted_Signoff&apos;" />
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		content="%IBMIMS-&lt;level&gt;-&lt;messageid&gt;: &lt;id&gt;|&lt;date&gt;|&lt;time&gt;|&lt;!payload:id&gt;" />
+
+
+ <TAGVALMAP
+		delimiter="| &quot;"/>
+		
+ <HEADER
+ 
+		id1="0002"
+ 
+		id2="0002" 
+		messageid="*STRCAT('IBMIMS','_','TVM')"
+		content="%IBMIMSTVM-4: &lt;!payload&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="03" 
+		id2="03"
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@event_type:*reasoncode1(id)&gt;&lt;id&gt;|&lt;fld1&gt;|&lt;fld2&gt;|COMMAND|&lt;username&gt;|&lt;action&gt;|" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="16" 
+		id2="16"
+		eventcategory="1401060000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@event_type:*reasoncode1(id)&gt;&lt;id&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;action&gt;|&lt;username&gt;|&lt;terminal&gt;|&lt;fld3&gt;|" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="56" 
+		id2="56" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@event_type:*reasoncode1(id)&gt;&lt;id&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;username&gt;|&lt;fld4&gt;|" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="72" 
+		id2="72" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@event_type:*reasoncode1(id)&gt;&lt;id&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;username&gt;|" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="IBMIMS_TVM" 
+		id2="IBMIMS_TVM" 
+		eventcategory="1605000000" 
+		tagval="true"	
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G-%F-%W %H:%T:%S&apos;,fld1,fld2)&gt;RecordType=&lt;event_id&gt;|RecordTypeDesc=&lt;event_type&gt;|Date=&lt;fld1&gt;|Time=&lt;fld2&gt;|CNTName=&lt;username&gt;|Command=&lt;resource&gt;|Sysid=&lt;hostid&gt;|Reason=&lt;fld13&gt;|PSB=&lt;fld18&gt;|JobName=&lt;fld19&gt;|StepName=&lt;fld20&gt;|UserId=&lt;user_id&gt;|DB_GU_Calls=&lt;fld22&gt;|DB_GN_Calls=&lt;fld23&gt;|DB_GNP_Calls=&lt;fld24&gt;|DB_GHU_Calls=&lt;fld25&gt;|DB_GHN_Calls=&lt;fld26&gt;|DB_GHNP_Calls=&lt;fld27&gt;|DB_ISRT_Calls=&lt;fld28&gt;|DB_DLET_Calls=&lt;fld29&gt;|DB_REPL_Calls=&lt;fld30&gt;|DB_DL/I_Calls=&lt;fld31&gt;|Msg_Queue_GU_Calls=&lt;fld32&gt;|Msg_Queue_GN_Calls=&lt;fld33&gt;|Msg_Queue_ISRT_Calls=&lt;fld34&gt;|Msg_Queue_Purge_Calls=&lt;fld35&gt;|Test_Enqueues=&lt;fld36&gt;|Test_Enqueue_Waits=&lt;fld37&gt;|Test_Dequeues=&lt;fld38&gt;|Queue_Cmd_Enqueues=&lt;fld39&gt;|Waits_on_Queue_Cmds=&lt;fld40&gt;|Queue_Cmd_Dequeues=&lt;fld41&gt;|Upd_Enqueues=&lt;fld42&gt;|Upd_Enqueue_Waits=&lt;fld43&gt;|Upd_Dequeues=&lt;fld44&gt;|Excl_Encueues=&lt;fld45&gt;|Excl_Enqueue_Waits=&lt;fld46&gt;|Excl_Dequeues=&lt;fld47&gt;|Cmd_Calls=&lt;fld48&gt;|GCmd_Calls=&lt;fld49&gt;|DL/I_Msg_Chg_Calls=&lt;fld50&gt;|DL/I_Msg_Auth_Calls=&lt;fld51&gt;|DL/I_Msg_SETO_Calls=&lt;fld52&gt;|DL/I_APSB_Calls=&lt;fld53&gt;|DL/I_DPSB_Calls=&lt;fld54&gt;|DL/I_GMSG_Calls=&lt;fld55&gt;|DL/I_ICMD_Calls=&lt;fld56&gt;|DL/I_RCMD_Calls=&lt;fld57&gt;|DL/I_CHKP_Calls=&lt;fld58&gt;|DL/I_XRST_Calls=&lt;fld59&gt;|DL/I_ROLB_Calls=&lt;fld60&gt;|DL/I_ROLS_Calls=&lt;fld61&gt;|DL/I_SETS_Calls=&lt;fld62&gt;|DL/I_SETU_Calls=&lt;fld63&gt;|DL/I_INIT_Calls=&lt;fld64&gt;|DL/I_INQY_Calls=&lt;fld65&gt;|DL/I_LOG_Calls=&lt;fld66&gt;|DL/I_DB_Dequeue_Calls=&lt;fld67&gt;|SignFunction=&lt;action&gt;|SignQualifier=&lt;fld73&gt;|UnchangedUserID=&lt;username&gt;|Terminal=&lt;terminal&gt;|SAFGroupName=&lt;facilityname&gt;|SubsysName=&lt;program&gt;|SubsysID=&lt;misc&gt;|Subtype=&lt;id&gt;|SPQBName=&lt;username&gt;|" />
+</DEVICEMESSAGES>

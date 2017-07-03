@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="73"
+	enVision="37000025"
+	checksum="dc236c1b4cb9f161bdea6fb5ea2c1d75"
+	revision="103"
+	device="2.0" />
+
+<HEADER 
+	id1="0001" 
+	id2="0001"  
+	content="%sophoses: &lt;hfld1&gt;^^&lt;hfld2&gt;^^&lt;hfld3&gt;^^&lt;messageid&gt;^^&lt;!payload:hfld1&gt;" /> 
+  
+ <HEADER 
+	id1="0002" 
+	id2="0002"  
+	content="%SOPHOS &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+	
+<VALUEMAP 
+		name ="threat_type"
+		default="undefined"
+		keyvaluepairs="1=&apos;Virus&apos;|2=&apos;PUA&apos;|3=&apos;Firewall&apos;|4=&apos;Suspicious Behavior&apos;|5=&apos;Suspicious_Files&apos;|6=&apos;Controlled_App&apos;" />
+	
+<MESSAGE 
+		level="4" 
+		tableid="84" 
+		parse="1" 
+		parsedefvalue="1"
+		id1="Infected"
+		id2="Infected" 
+		eventcategory="1003010000" 
+		content="&lt;@ec_subject:File&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;Infected file \&quot;&lt;filename&gt;&quot; has been &lt;action&gt;..." /> 
+
+		
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="On-access"
+		id2="On-access" 
+		eventcategory="1003000000" 
+		content="&lt;@ec_subject:User&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;On-access &lt;event_description&gt; \&quot;&lt;filename&gt;&quot; for user &lt;username&gt;.." /> 
+
+		
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Process"
+		id2="Process" 
+		eventcategory="1003000000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@obj_type:Process&gt;Process &apos;&lt;obj_name&gt;&apos; &lt;event_description&gt; pattern &apos;&lt;rule&gt;&apos;. ...&lt;action&gt;. ...&lt;info&gt;..." /> 
+
+	
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Virus/spyware"
+		id2="Virus/spyware" 
+		eventcategory="1003050000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Virus Detected&gt;Virus/spyware &apos;&lt;threat_name&gt;&apos; has been detected in \&quot;&lt;filename&gt;&quot;&lt;info&gt;" />		
+
+		
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Virus"
+		id2="1" 
+		eventcategory="1003010000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@threat_name:*PARMVAL(obj_name)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />
+		
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Virus:01"
+		id2="1" 
+		eventcategory="1003010000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@threat_name:*PARMVAL(obj_name)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;" />
+
+
+		
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="PUA"
+		id2="2" 
+		eventcategory="1502000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="PUA_01"
+		id2="2" 
+		eventcategory="1502000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;" />				
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Firewall"
+		id2="3" 
+		eventcategory="1502000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Firewall_01"
+		id2="3" 
+		eventcategory="1502000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;" />		
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Suspicious_Behaviour"
+		id2="4" 
+		eventcategory="1502000000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />		
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Suspicious_Behaviour_01"
+		id2="4" 
+		eventcategory="1502000000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;" />		
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Suspicious_Files"
+		id2="5" 
+		eventcategory="1502000000" 
+		content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />		
+
+<MESSAGE 
+		level="4" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="84"
+		id1="Controlled_App"
+		id2="6" 
+		eventcategory="1502000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />		
+
+</DEVICEMESSAGES>

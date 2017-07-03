@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="6"
+	checksum="8e0d4f0e7111b2d7396d61477f29f458"
+	revision="93"
+	enVision="35010000"
+	device="2.0" />
+
+ 
+<HEADER 
+	id1="0001" 
+	id2="0001"  
+	content="%VARONISDA: &lt;hhost&gt;^^&lt;hdatetime&gt;^^&lt;hfld1&gt;^^&lt;hfld2&gt;^^&lt;messageid&gt;^^&lt;!payload:hhost&gt;" /> 
+
+<HEADER 
+	id1="0002" 
+	id2="0002"
+	messageid="STRCAT('Varonis', &apos;-&apos;, 'Alert')"	
+	content="&lt;hfld1&gt;: Varonis alert: &lt;hfld2&gt;&lt;!payload:hfld2&gt;" /> 
+	
+<HEADER 
+	id1="0003" 
+	id2="0003"
+	messageid="STRCAT('Varonis', &apos;-&apos;, 'Test')"	
+	content="&lt;hfld1&gt;: This is a test &lt;!payload:hfld1&gt;" /> 
+
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="Varonis-Alert" 
+	id2="Varonis-Alert" 
+	eventcategory="1001030000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld3)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5)&gt;&lt;fld1&gt; was triggered at &lt;fld2&gt;   Alert details:&lt;fld30&gt; Rule ID: &lt;rule&gt;  Rule Name: &lt;rulename&gt;  Severity: &lt;severity&gt;  Alert Time: &lt;fld3&gt;    Event details (last event for threshold alert):&lt;fld31&gt; Event Time:&lt;fld5&gt;  Acting Object:&lt;username&gt;  File Server/Domain:&lt;dhost&gt;  Path:&lt;directory&gt;  Affected Object:&lt;filename&gt;  Event Type:&lt;event_type&gt;  IP Address/Host:&lt;saddr&gt;  Additional Data:&lt;info&gt;  Attachment Name:&lt;fld18&gt;  Client Access Type:&lt;fld10&gt;  Mail Date:&lt;fld11&gt;  Mail Item Type:&lt;fld12&gt;  Mail Recipients:&lt;fld13&gt;  Mail Source:&lt;fld14&gt;  Mailbox Access Type:&lt;fld15&gt;    Threshold details:&lt;fld16&gt;   Threshold:&lt;trigger_val&gt;  First Event Time:&lt;fld19&gt;" />
+
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="Varonis-Alert:01" 
+	id2="Varonis-Alert" 
+	eventcategory="1001030000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld3)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5)&gt;&lt;fld1&gt; was triggered at &lt;fld2&gt;   Alert details:&lt;fld30&gt; Rule ID: &lt;rule&gt;  Rule Name: &lt;rulename&gt;  Severity: &lt;severity&gt;  Alert Time: &lt;fld3&gt;    Event details (last event for threshold alert):&lt;fld31&gt; Event Time:&lt;fld5&gt;  Acting Object:&lt;username&gt;  File Server/Domain:&lt;dhost&gt;  Path:&lt;directory&gt;  Affected Object:&lt;filename&gt;  Event Type:&lt;event_type&gt;  IP Address/Host:&lt;saddr&gt;  Additional Data:&lt;info&gt;  Attachment Name:&lt;fld18&gt;  Client Access Type:&lt;fld10&gt;  Mail Date:&lt;fld11&gt;  Mail Item Type:&lt;fld12&gt;  Mail Recipients:&lt;fld13&gt;  Mail Source:&lt;fld14&gt;  Mailbox Access Type:&lt;fld15&gt;    Threshold details:&lt;fld16&gt;   Threshold:&lt;trigger_val&gt;  Changed Permissions: &lt;fld22&gt;  Permissions Before Change: &lt;fld23&gt;  Permissions After Change: &lt;fld19&gt;" />
+
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="Varonis-Test" 
+	id2="Varonis-Test" 
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Test syslog message&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld50&gt; syslog message sent from &lt;fld51&gt;" />
+
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="OPEN" 
+	id2="OPEN" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="CREATE" 
+	id2="CREATE" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="RENAME" 
+	id2="RENAME" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="DELETE" 
+	id2="DELETE" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="DELETE_DIR" 
+	id2="DELETE_DIR" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="RENAME_DIR" 
+	id2="RENAME_DIR" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="CREATE_DIR" 
+	id2="CREATE_DIR" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="SETSEC" 
+	id2="SETSEC" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="SETSEC_DIR" 
+	id2="SETSEC_DIR" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="SET_ROLE" 
+	id2="SET_ROLE" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="MODIFY" 
+	id2="MODIFY" 
+	eventcategory="1401010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;hostname&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;directory&gt;^^&lt;filename&gt;" />
+</DEVICEMESSAGES>

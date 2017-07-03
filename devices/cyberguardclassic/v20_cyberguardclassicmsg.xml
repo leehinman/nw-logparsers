@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="7"
+	checksum="ecf87054ee8c230aa9fee9f29e694efb"
+	revision="0"
+    enVision="33070018"
+    device="2.0" />
+
+<TAGVALMAP
+		delimiter="  &quot;" />
+<HEADER
+		id1="0001"
+		id2="0001"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; unix: CA: fw=&lt;hname&gt; time=&quot;&lt;date&gt; &lt;htime&gt;&quot; pri=&lt;level&gt; seq=&lt;hcount&gt; event=&lt;messageid&gt; &lt;!payload&gt;" />
+<HEADER
+		id1="0002"
+		id2="0002"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; auditlogd: id=&lt;messageid&gt; time=&quot;&lt;timestamp&gt;&quot; fw=&lt;hname&gt; pri=&lt;level&gt; &lt;!payload&gt;" />
+<HEADER
+		id1="0003"
+		id2="0003"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; auditlogd: Alert: &lt;messageid&gt; Time: &lt;date&gt; &lt;htime&gt; &lt;!payload&gt;" />
+
+<HEADER
+		id1="0004"
+		id2="0004"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; auditlogd: Activity: &lt;messageid&gt; &lt;!payload&gt;" />
+<VALUEMAP
+		name="successfaillookup"
+		default="$NONE"
+		keyvaluepairs="0=&apos;failure&apos;|1=&apos;success&apos;" />
+<VALUEMAP
+		name="granteddeniedlookup"
+		default="$NONE"
+		keyvaluepairs="0=&apos;denied&apos;|1=&apos;granted&apos;" />
+<SUMDATA
+		bucket="NIC_B_FW_ADDR_ACCOUNTING"
+		key="saddr"
+		fields="sbytes,duration" />
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="DirectLogin"
+		id2="1"
+		eventcategory="1401060000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@result:*successfaillookup(result)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*successfaillookup(info)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt; user=&lt;username&gt; status=&lt;result&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="ProxyAuthentication"
+		id2="1"
+		eventcategory="1302000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@result:*successfaillookup(result)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*successfaillookup(info)&gt; user=&lt;username&gt; src=&lt;fld2&gt; status=&lt;result&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Session"
+		id2="2"
+		eventcategory="1801000000"
+		summary="NIC_B_FW_ADDR_ACCOUNTING;sumtype=connection"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@saddr:*CNVTIP(fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@sinterface:*RMQ(sinterface)&gt; &lt;@dinterface:*RMQ(dinterface)&gt;&lt;@ec_theme:Communication&gt; protocol=&lt;protocol&gt; src=&lt;fld2&gt; dst=&lt;fld1&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; duration=&lt;duration&gt; srcintfc=&lt;sinterface&gt; dstintfc=&lt;dinterface&gt; oper=&lt;fld10&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="PasswordChange"
+		id2="3"
+		eventcategory="1402040100"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@result:*successfaillookup(result)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt;&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Success&gt; user=&lt;username&gt; status=&lt;result&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Start"
+		id2="4"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; subevt=1 user=&lt;username&gt; status=&lt;result&gt; " />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Stop"
+		id2="4"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; subevt=2 user=&lt;username&gt; status=&lt;result&gt; " />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Configure"
+		id2="4"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=3 user=&lt;username&gt; status=&lt;result&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Signal"
+		id2="4"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=4 user=&lt;username&gt; status=&lt;result&gt; msg=&lt;info&gt; pid=&lt;process_id&gt; process=&lt;process&gt; " />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Execute"
+		id2="4"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=5 user=&lt;username&gt; status=&lt;result&gt; msg=&lt;info&gt; pid=&lt;process_id&gt; " />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="Duty"
+		id2="4"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=6 user=&lt;username&gt; status=&lt;result&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="AuditingDisabled"
+		id2="5"
+		eventcategory="1701000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; subevt=27 " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="FileAccess"
+		id2="5"
+		eventcategory="1401010000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@result:*granteddeniedlookup(result)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=1 user=&lt;username&gt; pid=&lt;process_id&gt; sid=&lt;fld12&gt; msg=&lt;info&gt; status=&lt;result&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="FileTransmissionBlocked"
+		id2="5"
+		eventcategory="1603000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=2 msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="DiskPartitionFull"
+		id2="5"
+		eventcategory="1603010100"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=3 msg=&lt;info&gt; util=&lt;fld11&gt; " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="FailedLoginAttempt"
+		id2="5"
+		eventcategory="1301000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*successfaillookup(info)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt; subevt=4 user=&lt;username&gt; src=&lt;fld2&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="NumberOfLicensedHostsExceeded"
+		id2="5"
+		eventcategory="1608010000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;subevt=5 " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="PacketForwardingAttack"
+		id2="5"
+		eventcategory="1001020000"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@saddr:*CNVTIP(fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@sinterface:*RMQ(sinterface)&gt; &lt;@dinterface:*RMQ(dinterface)&gt; subevt=6 src=&lt;fld2&gt; dst=&lt;fld1&gt; srcintfc=&lt;sinterface&gt; dstintfc=&lt;dinterface&gt; protocol=&lt;protocol&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="LANDAttack"
+		id2="5"
+		eventcategory="1001020000"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@saddr:*CNVTIP(fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@sinterface:*RMQ(sinterface)&gt; &lt;@dinterface:*RMQ(dinterface)&gt; subevt=7 src=&lt;fld2&gt; dst=&lt;fld1&gt; srcintfc=&lt;sinterface&gt; dstintfc=&lt;dinterface&gt; protocol=&lt;protocol&gt; " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="PingOfDeathAttack"
+		id2="5"
+		eventcategory="1002040000"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@saddr:*CNVTIP(fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@sinterface:*RMQ(sinterface)&gt; &lt;@dinterface:*RMQ(dinterface)&gt; subevt=8 src=&lt;fld2&gt; dst=&lt;fld1&gt; srcintfc=&lt;sinterface&gt; dstintfc=&lt;dinterface&gt; protocol=&lt;protocol&gt; " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="AuditArchive"
+		id2="5"
+		eventcategory="1605000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=15 msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="PlatformSensorFailure"
+		id2="5"
+		eventcategory="1601000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=16 msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="VirusUpdate"
+		id2="5"
+		eventcategory="1702010000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=18 msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="HAStandbyDown"
+		id2="5"
+		eventcategory="1601000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=25 msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="CM/H_DiskFull"
+		id2="5"
+		eventcategory="1603010100"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@info:*RMQ(info)&gt; subevt=26 msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="IPInterfaceSpoofingAttempt"
+		id2="5"
+		eventcategory="1001000000"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@saddr:*CNVTIP(fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@sinterface:*RMQ(sinterface)&gt; &lt;@dinterface:*RMQ(dinterface)&gt; &lt;@info:*RMQ(info)&gt; subevt=9 protocol=&lt;protocol&gt; src=&lt;fld2&gt; dst=&lt;fld1&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; srcintfc=&lt;sinterface&gt; dstintfc=&lt;dinterface&gt; msg=&lt;info&gt; " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="PortScanAttempt"
+		id2="5"
+		eventcategory="1103000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; subevt=10 src=&lt;fld2&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="MACViolation"
+		id2="5"
+		eventcategory="1001000000"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@saddr:*CNVTIP(fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dinterface:*RMQ(dinterface)&gt; &lt;@info:*RMQ(info)&gt; subevt=11 src=&lt;fld2&gt; dst=&lt;fld1&gt; sdstintfc=&lt;dinterface&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="TCPSYNFloodAttack"
+		id2="5"
+		eventcategory="1002040000"
+		content="&lt;@daddr:*CNVTIP(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; subevt=12 dst=&lt;fld1&gt; dstport=&lt;dport&gt; " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="HAServerChanged"
+		id2="5"
+		eventcategory="1601000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=13 user=&lt;username&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="HANoHeartbeat"
+		id2="5"
+		eventcategory="1604010000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=14 user=&lt;username&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="SoftwareUpdate"
+		id2="5"
+		eventcategory="1702010000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;@result:*successfaillookup(result)&gt; &lt;@username:*RMQ(username)&gt; &lt;@info:*RMQ(info)&gt; subevt=17 status=&lt;result&gt; user=&lt;username&gt; msg=&lt;info&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="all_packets"
+		id2="all_packets"
+		eventcategory="1801000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld4&gt; &lt;fld5&gt;:&lt;fld6&gt;:&lt;fld7&gt;: &lt;fld1&gt; &lt;fld2&gt;        &lt;fld3&gt;       &lt;saddr&gt;            &lt;daddr&gt;            &lt;protocol&gt;    &lt;sport&gt;       &lt;dport&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="permit"
+		id2="permit"
+		eventcategory="1801000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:connection permit&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;fld4&gt; &lt;fld5&gt;:&lt;fld6&gt;:&lt;fld7&gt;: &lt;fld1&gt; &lt;fld2&gt;       &lt;fld3&gt;       &lt;saddr&gt;             &lt;daddr&gt;              &lt;protocol&gt;   &lt;network_service&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="deny"
+		id2="deny"
+		eventcategory="1801000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:connection deny&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:Communication&gt;&lt;fld6&gt; &lt;fld7&gt;:&lt;fld8&gt;:&lt;fld9&gt;: &lt;fld1&gt; &lt;fld2&gt;       &lt;fld3&gt;       &lt;saddr&gt;             &lt;daddr&gt;              &lt;protocol&gt;    &lt;sport&gt;        &lt;dport&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="clasd"
+		id2="clasd"
+		eventcategory="1801030000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:connection close&gt;&lt;@ec_subject:OS&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;fld1&gt;: clasd: &lt;saddr&gt;: server closing connection" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="logins"
+		id2="logins"
+		eventcategory="1401060000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:Login successful&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;fld1&gt; &lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;: Login successful       &lt;username&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="logins:01"
+		id2="logins"
+		eventcategory="1401030000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:Login failed&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;fld1&gt; &lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;: Login failed &lt;username&gt; &lt;saddr&gt; &lt;service&gt; &lt;protocol&gt;" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="firewall"
+		id2="firewall"
+		eventcategory="1001000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; msg=&lt;info&gt; rule=&lt;fld1&gt; src=&lt;fld2&gt; dst=&lt;fld1&gt; proto=&lt;protocol&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; duration=&lt;duration&gt; " />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="interface_spoof"
+		id2="interface_spoof"
+		eventcategory="1001000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Src Interface: &lt;sinterface&gt; Dst Interface: &lt;dinterface&gt; Src Address: &lt;saddr&gt; Dst Address: &lt;daddr&gt; Protocol: &lt;protocol&gt; { Src Port: &lt;sport&gt; Dst Port: &lt;dport&gt; | Type and Code: &lt;fld15&gt; }" />
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="port_scan"
+		id2="port_scan"
+		eventcategory="1103000000"
+		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@protocol:TCP&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;From host: &lt;shost&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="ssh"
+		id2="ssh"
+		eventcategory="1302010200"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; ssh: { end of | client &lt;shost&gt;: user &lt;username&gt;: end login } session." />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="ssh:01"
+		id2="ssh"
+		eventcategory="1302010200"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;fld1&gt;: ssh: client &lt;shost&gt;: user &lt;username&gt;: &lt;info&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="ssh:02"
+		id2="ssh"
+		eventcategory="1302010200"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;: ssh: client:&lt;shost&gt; user:&lt;username&gt; command:&lt;action&gt; pid:&lt;process_id&gt;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="ssh:03"
+		id2="ssh"
+		eventcategory="1801030000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;: ssh: session disconnect: connection lost: &apos;&lt;info&gt;&apos;" />
+
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="ssh:04"
+		id2="ssh"
+		eventcategory="1801030000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:Incoming connection received&gt;&lt;fld1&gt;: ssh: client &lt;shost&gt;: incoming connection received." />
+
+</DEVICEMESSAGES>

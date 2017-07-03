@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="40"
+	checksum="b5ae2b5bbe148987792b566dc80f5d46"
+	revision="105"
+	enVision="31020001" 
+	device="2.0" />
+<TAGVALMAP 
+		delimiter=", &quot;" />
+
+<HEADER 
+		id1="0002" 
+		id2="0002" 
+		devts="'TS('%B %F %N:%U:%O %W', hdatetime)"
+		content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; auditd: date=&quot;&lt;hdatetime&gt;&quot;,fac=&lt;hfacility&gt;,area=&lt;harea&gt;,type=&lt;messageid&gt;,pri=&lt;hpriority&gt;,&lt;!payload&gt;" />
+		
+		
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		devts="'TS('%B %F %N:%U:%O %W', hdatetime)"
+		content="&lt;datetime&gt; auditd: date=&quot;&lt;hdatetime&gt;&quot;,fac=&lt;hfacility&gt;,area=&lt;harea&gt;,type=&lt;messageid&gt;,pri=&lt;hpriority&gt;,&lt;!payload&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_acl_change" 
+		id2="t_acl_change" 
+		eventcategory="1501010000"
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,acl_admin=&lt;username&gt;,acl_op=&lt;acl_op&gt;,acl_table=&lt;acl_table&gt;,acl_data=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_aclallow" 
+		id2="t_aclallow" 
+		eventcategory="1501010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;srcburb&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstburb=&lt;dstburb&gt;,protocol=&lt;protocol&gt;,service_name=&lt;network_service&gt;,agent_type=&lt;agent&gt;,user_name=&lt;username&gt;,auth_method=&lt;authmethod&gt;,rule_name=&lt;rule&gt;,acl_id=&lt;policyname&gt;,cache_hit=&lt;cache_hit&gt;,acl_position=&lt;acl_pos&gt;,reason=&lt;result&gt;,application=&lt;application&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,ssl_name=&lt;policyname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_acldeny" 
+		id2="t_acldeny" 
+		eventcategory="1501040000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@hostip:*PARMVAL(stransaddr)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,srcip=&lt;saddr&gt;,srcburb=&lt;srcburb&gt;,dstip=&lt;daddr&gt;,dstburb=&lt;dstburb&gt;,protocol=&lt;protocol&gt;,service_name=&lt;network_service&gt;,agent_type=&lt;agent&gt;,user_name=&lt;username&gt;,auth_method=&lt;authmethod&gt;,rule_name=&lt;rule&gt;,acl_id=&lt;policyname&gt;,cache_hit=&lt;cache_hit&gt;,acl_position=&lt;acl_pos&gt;,hostname=&lt;hostname&gt;,attackip=&lt;stransaddr&gt;,attackburb=&lt;sburb&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_alert:01" 
+		id2="t_alert" 
+		eventcategory="1609000000" 
+		content="&lt;@result:*RMQ(result)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%D %N:%U:%O %E','%K %B %D %N:%U:%O %W',fld28)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%M-%D %N:%U:%O %E','%K %B %D %N:%U:%O %W',fld29)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,alert_name=&lt;misc_name&gt;,alert_type=&lt;detail&gt;,num_events=&lt;fld1&gt;,start_time=&quot;&lt;fld28&gt;&quot;,end_time=&quot;&lt;fld29&gt;&quot;,sacap_filter=&lt;fld4&gt;,alert_actions=&lt;action&gt;,syslog_alert=&lt;level&gt;,reason=&quot;The following event has &lt;result&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_alert" 
+		id2="t_alert" 
+		eventcategory="1609000000" 
+		tagval="true"
+		content="&lt;@result:*RMQ(result)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%D %N:%U:%O %E','%K %B %F %N:%U:%O %W',fld28)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%M-%D %N:%U:%O %E','%K %B %F %N:%U:%O %W',fld29)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,alert_name=&lt;misc_name&gt;,alert_type=&lt;detail&gt;,num_events=&lt;fld1&gt;,start_time=&lt;fld28&gt;,end_time=&lt;fld29&gt;,sacap_filter=&lt;fld4&gt;,alert_actions=&lt;action&gt;,dropped_count=&lt;fld5&gt;,syslog_alert=&lt;level&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_app_def_change"
+		id2="t_app_def_change" 
+		eventcategory="1001000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,srcip=&lt;saddr&gt;,dstip=&lt;daddr&gt;,netsessid=&lt;netsessid&gt;,reason=&lt;result&gt;,acl_id=&lt;policyname&gt;,service_name=&lt;network_service&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_app_def_deny"
+		id2="t_app_def_deny" 
+		eventcategory="1001000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,srcip=&lt;saddr&gt;,dstip=&lt;daddr&gt;,netsessid=&lt;netsessid&gt;,reason=&lt;result&gt;,acl_id=&lt;policyname&gt;,service_name=&lt;network_service&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_attack" 
+		id2="t_attack" 
+		eventcategory="1001000000" 
+		tagval="true"
+		content="&lt;@detail:*RMQ(detail)&gt;pid=&lt;pid&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logid&gt;,hostname=&lt;hostname&gt;,cmd=&lt;cmd&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,srcip=&lt;saddr&gt;,srchost=&lt;shost&gt;,dstip=&lt;daddr&gt;,dsthost=&lt;dhost&gt;,protocol=&lt;protocol&gt;,srcburb=&lt;sburb&gt;,srcport=&lt;sport&gt;,dstport=&lt;dport&gt;,information=&lt;detail&gt;,hostname=&lt;host&gt;,category=&lt;sigcat&gt;,event=&lt;event_type&gt;,interface=&lt;interface&gt;,src_etheraddr=&lt;smacaddr&gt;,dst_etheraddr=&lt;dmacaddr&gt;,reason=&lt;reason&gt;,total_events=&lt;count&gt;,attackip=&lt;stransaddr&gt;,attackburb=&lt;sburb&gt;,dstburb=&lt;dstburb&gt;,service_name=&lt;service&gt;,user_name=&lt;username&gt;,auth_method=&lt;status&gt;,acl_id=&lt;acl_id&gt;,cache_hit=&lt;cache&gt;,src_local_port=&lt;fld1&gt;,dst_local_port=&lt;fld2&gt;,srcdmn=&lt;fld3&gt;,tgtdmn=&lt;fld4&gt;,ICMP_type=&lt;fld5&gt;,ICMP_subtype=&lt;fld6&gt;,filedom=&lt;filename&gt;,filetyp=&lt;fld7&gt;,netsessid=&lt;fld8&gt;,rule_name=&lt;rule&gt;,reputation=&lt;fld9&gt;,reputation_threshold=&lt;fld10&gt;,vpn_name=&lt;fld11&gt;,spi=&lt;fld12&gt;,seq_num=&lt;fld13&gt;,ips_sid=&lt;fld14&gt;,ips_classtype=&lt;fld15&gt;,ips_sig_category=&lt;fld16&gt;,ips_signame=&lt;fld17&gt;,attackport=&lt;fld18&gt;,attackzone=&lt;fld19&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;,src_rep=&lt;fld22&gt;,ssl_name=&lt;policyname&gt;,application=&lt;application&gt;,app_risk=&lt;risk&gt;,app_categories=&lt;fld27&gt;,local_net=&lt;fld23&gt;,remote_net=&lt;fld24&gt;,remote_id=&lt;fld25&gt;,GTI_threshold=&lt;fld26&gt;,GTI_rep=&lt;fld27&gt;,dst_rep=&lt;fld28&gt;,message_id=&lt;msgid&gt;,mail_sender=&lt;from&gt;,virus_name=&lt;virusname&gt;,message_type=&lt;msg_type&gt;,file=&lt;filename&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_auth_attempt" 
+		id2="t_auth_attempt" 
+		eventcategory="1301000000" 
+		tagval="true"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:Authentication Failed&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,user_name=&lt;username&gt;,auth_method=&lt;authmethod&gt;,result=0,information=&lt;info&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_auth_attempt:01" 
+		id2="t_auth_attempt" 
+		eventcategory="1302000000" 
+		tagval="true"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@action:Authentication Succeeful&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,user_name=&lt;username&gt;,auth_method=&lt;authmethod&gt;,result=1,information=&lt;info&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_blackhole" 
+		id2="t_blackhole" 
+		eventcategory="1002000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,status=&lt;result&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,srcburb=&lt;sburb&gt;,seconds=&lt;duration&gt;,hit_count=&lt;count&gt;,flags=&lt;flags&gt;,reason=&lt;reason&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_cfg_change" 
+		id2="t_cfg_change" 
+		eventcategory="1701000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,user_name=&lt;username&gt;,information=&lt;info&gt;,hostname=&lt;hostname&gt;,admin=&lt;admin&gt;,event=&lt;event_type&gt;,config_area=&lt;fld1&gt;,config_item=&lt;fld2&gt;,udb_user=&lt;fld3&gt;,udb_class=&lt;fld4&gt;,udb_action=&lt;action&gt;,ticket_id=&lt;fld5&gt;,srcdmn=&lt;fld6&gt;,reason=&lt;reason&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_chtype" 
+		id2="t_chtype" 
+		eventcategory="1501040000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,permwanted=&lt;permwanted&gt;,permgranted=&lt;permgranted&gt;,srcdom=&lt;srcdom&gt;,tgtdom=&lt;tgtdom&gt;,filedom=&lt;fld1&gt;,filetype=&lt;filetype&gt;,file=&lt;filename&gt;,information=&lt;info&gt;" />
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_debug" 
+		id2="t_debug" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,vpn_name=&lt;fld1&gt;,cky_i=&lt;fld2&gt;,cky_r=&lt;fld3&gt;,msg_id=&lt;fld4&gt;,spi=&lt;fld5&gt;,local_gw=&lt;fld6&gt;,remote_gw=&lt;fld7&gt;,remote_id=&lt;fld8&gt;,local_net=&lt;fld9&gt;,remote_net=&lt;fld10&gt;,information=&lt;info&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6"  
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_ddtviolation" 
+		id2="t_ddtviolation" 
+		eventcategory="1501040000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,hostname=&lt;hostname&gt;,permwanted=&lt;permwanted&gt;,permgranted=&lt;permgranted&gt;,srcdom=&lt;srcdom&gt;,srcdmn=&lt;fld3&gt;,tgtdom=&lt;tgtdom&gt;,filedom=&lt;fld1&gt;,filetype=&lt;filetype&gt;,filetyp=&lt;filetype&gt;,file=&lt;filename&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_ditviolation" 
+		id2="t_ditviolation" 
+		eventcategory="1501040000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,permwanted=&lt;permwanted&gt;,permgranted=&lt;permgranted&gt;,srcdom=&lt;srcdom&gt;,tgtdom=&lt;tgtdom&gt;,filedom=&lt;fld1&gt;,filetype=&lt;filetype&gt;,file=&lt;filename&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_dmnprivdenied" 
+		id2="t_dmnprivdenied" 
+		eventcategory="1501040000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,permwanted=&lt;permwanted&gt;,permgranted=&lt;permgranted&gt;,srcdom=&lt;srcdom&gt;,tgtdom=&lt;tgtdom&gt;,filedom=&lt;fld1&gt;,filetype=&lt;filetype&gt;,file=&lt;filename&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_dns_req" 
+		id2="t_dns_req" 
+		eventcategory="1605020000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;srcburb&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstburb=&lt;dstburb&gt;,protocol=&lt;protocol&gt;,netsessid=&lt;netsessid&gt;,dns_id=&lt;dns_id&gt;,dns_type=&lt;dns_type&gt;,dns_resp=&lt;dns_resp&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_error" 
+		id2="t_error" 
+		eventcategory="1603000000" 
+		tagval="true"
+		content="pid=&lt;pid&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logid&gt;,cmd=&lt;cmd&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,seq_num=&lt;fld1&gt;,spi=&lt;fld2&gt;,local_gw=&lt;fld3&gt;,remote_gw=&lt;fld4&gt;,information=&lt;info&gt;,total_events=&lt;count&gt;,hostname=&lt;lhost&gt;,event=&lt;event_type&gt;,netsessid=&lt;netsessid&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;srcburb&gt;,protocol=&lt;protocol&gt;,dstip=&lt;faddr&gt;,dstburb=&lt;dstburb&gt;,dstport=&lt;dport&gt;,attackip=&lt;stransaddr&gt;,attackburb=&lt;sburb&gt;,acl_id=&lt;acl_id&gt;,rule_name=&lt;rule&gt;,ICMP_type=&lt;icmptype&gt;,ICMP_subtype=&lt;fld5&gt;,interface=&lt;interface&gt;,cky_i=&lt;fld6&gt;,cky_r=&lt;fld7&gt;,msg_id=&lt;fld8&gt;,reason=&lt;reason&gt;,attackzone=&lt;fld19&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,app_conflict=&lt;fld26&gt;,application=&lt;application&gt;,dst_local_port=&lt;fld27&gt;,src_local_port=&lt;fld28&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1"
+		tableid="77"
+		id1="t_filter_failure" 
+		id2="t_filter_failure" 
+		eventcategory="1203000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,srcburb=&lt;srcburb&gt;,dstburb=&lt;dstburb&gt;,message_type=&lt;msg_type&gt;,message_id=&lt;msgid&gt;,object=&lt;object&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_geninfo" 
+		id2="t_geninfo" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,interface=&lt;interface&gt;,ipkt=&lt;ipkt&gt;,opkt=&lt;opkt&gt;,mbuf_data=&lt;mbug_data&gt;,cpu_data=&lt;cpu_data&gt;,real_data=&lt;real_data&gt;,load_data=&lt;load_data&gt;,virt_data=&lt;virt_data&gt;,information=&lt;info&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_hardware_failure" 
+		id2="t_hardware_failure" 
+		eventcategory="1601010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,user_name=&lt;username&gt;,comp_class=&lt;comp_class&gt;,comp_name=&lt;comp_name&gt;,information=&lt;info&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_http_req" 
+		id2="t_http_req" 
+		eventcategory="1204000000" 
+		tagval="true"
+		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Request&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;, dst_geo=&lt;fld1&gt;, sf_action=&lt;action&gt;, sf_cat=&lt;filter&gt;, ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;, auth_method=&lt;authmethod&gt;, domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,srcip=&lt;saddr&gt;,dstip=&lt;daddr&gt;,user_name=&lt;username&gt;,request_command=&lt;command&gt;,url=&lt;url&gt;,result_str=&lt;result&gt;,result_code=&lt;error&gt;,bytes_written_to_client=&lt;rbytes&gt;,netsessid=&lt;netsessid&gt;,information=&lt;info&gt;,src_geo=&lt;fld20&gt;" />
+		
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_important" 
+		id2="t_important" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content=" &lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,result=&lt;result&gt;,tgtdmn=&lt;tgtdomain&gt;,information=&lt;info&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_info" 
+		id2="t_info" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,dstip=&lt;daddr&gt;,protocol=&lt;protocol&gt;,dstburb=&lt;dstburb&gt;,interface=&lt;interface&gt;,src_etheraddr=&lt;smacaddr&gt;,dst_etheraddr=&lt;dmacaddr&gt;,reason=&lt;result&gt;,srcburb=&lt;srcburb&gt;,srcport=&lt;sport&gt;,dstport=&lt;dport&gt;,protocolname=&lt;protocol_detail&gt;,rule_name=&lt;rule&gt;,vpn_name=&lt;fld3&gt;,cky_i=&lt;fld4&gt;,cky_r=&lt;fld5&gt;,msg_id=&lt;fld6&gt;,spi=&lt;fld7&gt;,local_gw=&lt;fld8&gt;,remote_gw=&lt;fld9&gt;,remote_id=&lt;fld10&gt;,local_net=&lt;fld11&gt;,remote_net=&lt;fld12&gt;,total_events=&lt;count&gt;,information=&lt;info&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,attackip=&lt;stransaddr&gt;,attackburb=&lt;sburb&gt;,netsessid=&lt;netsessid&gt;,src_local_port=&lt;fld1&gt;,dst_local_port=&lt;fld2&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;,serverip=&lt;hostip&gt;,result=&lt;disposition&gt;,ssl_name=&lt;fld22&gt;"/>
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_interface" 
+		id2="t_interface" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,interface=&lt;interface&gt;,ipkt=&lt;ipkt&gt;,opkt=&lt;opkt&gt;,mbuf_data=&lt;mbug_data&gt;,cpu_data=&lt;cpu_data&gt;,real_data=&lt;real_data&gt;,load_data=&lt;load_data&gt;,virt_data=&lt;virt_data&gt;,information=&lt;info&gt;hostname=&lt;hostname&gt;,ibytes=&lt;fld1&gt;,obytes=&lt;fld2&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_ipftraffic" 
+		id2="t_ipftraffic" 
+		eventcategory="1801020000" 
+		tagval="true"
+		content="&lt;@fld61:*PARMVAL(protocol)&gt; pid=&lt;pid&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logid&gt;,cmd=&lt;cmd&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;lhost&gt;,event=&lt;event_description&gt;,status=&lt;status&gt;,rule_name=&lt;rule&gt;,srcip=&lt;saddr&gt;,srcburb=&lt;srcburb&gt;,srcport=&lt;sport&gt;,dstip=&lt;daddr&gt;,dstburb=&lt;dstburb&gt;,dstport=&lt;dport&gt;,protocol=&lt;protocol&gt;,protocolname=&lt;protocol&gt;,bytes_written_to_client=&lt;rbytes&gt;,bytes_written_to_server=&lt;sbytes&gt;,netsessid=&lt;netsessid&gt;,information=&lt;info&gt;,reason=&lt;reason&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_keyword_recipients" 
+		id2="t_keyword_recipients" 
+		eventcategory="1502010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,username=&lt;username&gt;,message_id=&lt;msgid&gt;,srcip=&lt;saddr&gt;,mail_sender=&lt;from&gt;,virus_name=&lt;virusname&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_keyword_reject" 
+		id2="t_keyword_reject" 
+		eventcategory="1502010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,username=&lt;username&gt;,message_id=&lt;msgid&gt;,srcip=&lt;saddr&gt;,mail_sender=&lt;from&gt;,virus_name=&lt;virusname&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_kmvfilter_info" 
+		id2="t_kmvfilter_info" 
+		eventcategory="1502000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,username=&lt;username&gt;,message_id=&lt;msgid&gt;,srcip=&lt;saddr&gt;,mail_sender=&lt;from&gt;,virus_name=&lt;virusname&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_known_host_chng" 
+		id2="t_known_host_chng" 
+		eventcategory="1701000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt; pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_lcm" 
+		id2="t_lcm" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,interface=&lt;interface&gt;,ipkt=&lt;ipkt&gt;,opkt=&lt;opkt&gt;,ibytes=&lt;rbytes&gt;,obytes=&lt;sbytes&gt;,mbuf_data=&lt;mbug_data&gt;,cpu_data=&lt;cpu_data&gt;,real_data=&lt;real_data&gt;,load_data=&lt;load_data&gt;,virt_data=&lt;virt_data&gt;,information=&lt;info&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_lic_exceeded" 
+		id2="t_lic_exceeded" 
+		eventcategory="1608010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_license_expire" 
+		id2="t_license_expire" 
+		eventcategory="1608010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,reason=&lt;result&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_log_overflow" 
+		id2="t_log_overflow" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_mimevirus_msg_change" 
+		id2="t_mimevirus_msg_change" 
+		eventcategory="1003010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,username=&lt;username&gt;,message_id=&lt;msgid&gt;,srcip=&lt;saddr&gt;,mail_sender=&lt;from&gt;,virus_name=&lt;virusname&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_mimevirus_reject" 
+		id2="t_mimevirus_reject" 
+		eventcategory="1003010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,hostname=&lt;hostname&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,username=&lt;username&gt;,message_id=&lt;msgid&gt;,srcip=&lt;saddr&gt;,mail_sender=&lt;from&gt;,virus_name=&lt;virusname&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_netprobe" 
+		id2="t_netprobe" 
+		eventcategory="1001000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;hostname=&lt;hostname&gt;,pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,protocol=&lt;protocol&gt;,ICMP_type=&lt;icmptype&gt;,ICMP_subtype=&lt;fld6&gt;,srcburb=&lt;srcburb&gt;,protocolname=&lt;protocol_detail&gt;,dsthostname=&lt;dhost&gt;,srchostname=&lt;shost&gt;,dstservice=&lt;fld4&gt;,srcservice=&lt;srcservice&gt;,total_events=&lt;count&gt;,interface=&lt;interface&gt;,reason=&lt;result&gt;,information=&lt;info&gt;,vpn_name=&lt;fld1&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;,user_name=&lt;username&gt;,auth_method=&lt;authmethod&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_nettraffic" 
+		id2="t_nettraffic" 
+		eventcategory="1801020000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%D %N:%U:%O %E','%K %B %F %N:%U:%O %W',fld28)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;srcburb&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstburb=&lt;dstburb&gt;,protocol=&lt;protocol&gt;,bytes_written_to_client=&lt;rbytes&gt;,bytes_written_to_server=&lt;sbytes&gt;,rule_name=&lt;rule&gt;,service_name=&lt;network_service&gt;,reason=&lt;result&gt;,status=&lt;status&gt;,acl_id=&lt;policyname&gt;,auth_method=&lt;authmethod&gt;,remote_logname=&lt;logname&gt;,recipient=&lt;to&gt;,request_command=&lt;command&gt;,srchost=&lt;shost&gt;,dsthost=&lt;dhost&gt;,cache_hit=&lt;cache_hit&gt;,user_name=&lt;username&gt;,request_status=&lt;status1&gt;,start_time=&lt;fld28&gt;,netsessid=&lt;netsessid&gt;,hostname=&lt;hostname&gt;,queueid=&lt;fld1&gt;,mail_sender=&lt;from&gt;,subject=&lt;subject&gt;,event=&lt;event_type&gt;,application=&lt;application&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;,app_risk=&lt;risk&gt;,app_categories=&lt;fld27&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_protocol_error" 
+		id2="t_protocol_error" 
+		eventcategory="1803020000" 
+		tagval="true"
+		content="&lt;@action:Protocol Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,hostname=&lt;hostname&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;sburb&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstburb=&lt;dstburb&gt;,protocol=&lt;protocol&gt;,netsessid=&lt;netsessid&gt;,proto_err_id=&lt;error&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_proxy_flooded" 
+		id2="t_proxy_flooded" 
+		eventcategory="1002000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;srcburb&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstburb=&lt;dstburb&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_proxyauth" 
+		id2="t_proxyauth" 
+		eventcategory="1001000000" 
+		tagval="true"
+		content="&lt;@action:Proxy Authentication Failed&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,srchost=&lt;shost&gt;,dstip=&lt;daddr&gt;,dsthost=&lt;dhost&gt;,protocol=&lt;protocol&gt;,protocol_name=&lt;protocol_detail&gt;,srcburb=&lt;sburb&gt;,srcport=&lt;sport&gt;,dstport=&lt;dport&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_servtraffic" 
+		id2="t_servtraffic" 
+		eventcategory="1801020000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%D %N:%U:%O %E','%K %B %D %N:%U:%O %W',fld28)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcburb=&lt;srcburb&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstburb=&lt;dstburb&gt;,protocol=&lt;protocol&gt;,bytes_written_to_client=&lt;rbytes&gt;,bytes_written_to_server=&lt;sbytes&gt;,service_name=&lt;network_service&gt;,reason=&lt;result&gt;,status=&lt;status&gt;,acl_id=&lt;policyname&gt;,auth_method=&lt;authmethod&gt;,remote_logname=&lt;logname&gt;,recipient=&lt;to&gt;,request_command=&lt;command&gt;,srchost=&lt;shost&gt;,dsthost=&lt;dhost&gt;,cache_hit=&lt;cache_hit&gt;,user_name=&lt;username&gt;,request_status=&lt;status1&gt;,start_time=&lt;fld28&gt;,netsessid=&lt;netsessid&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,rule_name=&lt;rule&gt;,srczone=&lt;src_zone&gt;,dstzone=&lt;dst_zone&gt;,application=&lt;application&gt;,ssl_name=&lt;policyname&gt;,queueid=&lt;fld1&gt;,mail_sender=&lt;from&gt;,subject=&lt;subject&gt;,src_geo=&lt;fld20&gt;,dst_geo=&lt;fld21&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_snmp_coldtrap" 
+		id2="t_snmp_coldtrap" 
+		eventcategory="1502010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_software_failure" 
+		id2="t_software_failure" 
+		eventcategory="1601020000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;pid=&lt;pid&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logid&gt;,cmd=&lt;cmd&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,user_name=&lt;username&gt;,hostname=&lt;lhost&gt;,comp_class=&lt;comp_class&gt;,comp_name=&lt;comp_name&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_spam_found" 
+		id2="t_spam_found" 
+		eventcategory="1203000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,queueid=&lt;fld1&gt;,mail_sender=&lt;from&gt;,recipient=&lt;to&gt;,subject=&lt;subject&gt;,bytes=&lt;bytes&gt;,reason=&lt;result&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_sso_chng" 
+		id2="t_sso_chng" 
+		eventcategory="1502050000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,status=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_syn_attack" 
+		id2="t_syn_attack" 
+		eventcategory="1002000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomaub&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,dstport=&lt;dport&gt;,srcburb=&lt;sburb&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_tacrad_acct" 
+		id2="t_tacrad_acct" 
+		eventcategory="1605000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_udb_sysact" 
+		id2="t_udb_sysact" 
+		eventcategory="1402000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,udb_admin=&lt;admin&gt;udb_user=&lt;username&gt;,udb_class=&lt;udb_class&gt;,udb_action=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_udb_useract" 
+		id2="t_udb_useract" 
+		eventcategory="1402000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,udb_admin=&lt;admin&gt;udb_user=&lt;username&gt;,udb_class=&lt;udb_class&gt;,udb_action=&lt;result&gt;,hostname=&lt;hostname&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_udp_drop" 
+		id2="t_udp_drop" 
+		eventcategory="1801010000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,user_name=&lt;username&gt;,srcip=&lt;saddr&gt;,dstip=&lt;daddr&gt;,srcport=&lt;sport&gt;,dstport=&lt;dport&gt;,srcburb=&lt;srcburb&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_ups_powerfail" 
+		id2="t_ups_powerfail" 
+		eventcategory="1601000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_ups_shutdown" 
+		id2="t_ups_shutdown" 
+		eventcategory="1601000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,information=&lt;info&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77" 
+		id1="t_vpntraffic" 
+		id2="t_vpntraffic" 
+		eventcategory="1801020100" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt; pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,vpn_id=&lt;vpnid&gt;,spi=&lt;spi&gt;,remote_gw=&lt;saddr&gt;,local_gw=&lt;daddr&gt;,p1rid=&lt;fld1&gt;,p2rid=&lt;fld2&gt;,p2lid=&lt;fld3&gt;,bytes_written_to_client=&lt;rbytes&gt;,bytes_written_to_server=&lt;sbytes&gt;,reason=&lt;result&gt;,status=&lt;status&gt;,hostname=&lt;hostname&gt;,local_net=&lt;dhost&gt;,remote_net=&lt;shost&gt;,event=&lt;event_type&gt;,vpn_name=&lt;fld4&gt;,remote_id=&lt;fld5&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_IPF_deny" 
+		id2="t_IPF_deny" 
+		eventcategory="1601000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,protocol=&lt;protocol&gt;,dstburb=&lt;dstburb&gt;,rule_name=&lt;rule&gt;,reason=&lt;result&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_timechange" 
+		id2="t_timechange" 
+		eventcategory="1601000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,old_time=&lt;fld1&gt;,new_time=&lt;fld2&gt;,srcip=&lt;saddr&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_passport_chng" 
+		id2="t_passport_chng" 
+		eventcategory="1204000000" 
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,ruid=&lt;ruid&gt;,euid=&lt;euid&gt;,pgid=&lt;pgid&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,domain=&lt;domain&gt;,edomain=&lt;edomain&gt;,hostname=&lt;hostname&gt;,event=&lt;event_type&gt;,srcip=&lt;saddr&gt;,user_name=&lt;username&gt;,external_group=&lt;group&gt;,auth_method=&lt;authmethod&gt;,cache_time=&lt;fld3&gt;,access_time=&lt;fld4&gt;" />
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="77"
+		id1="t_top"
+		id2="t_top"
+		eventcategory="1605000000"
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;pid=&lt;process_id&gt;,logid=&lt;logon_id&gt;,cmd=&lt;process&gt;,hostname=&lt;hostname&gt;,information=&lt;info&gt;"/>
+
+</DEVICEMESSAGES>

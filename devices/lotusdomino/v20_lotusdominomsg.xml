@@ -1,0 +1,3069 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="18"
+	checksum="f2c203b91bb662ee11fc33cea2ef8934"
+	revision="0"
+	enVision="35010074"
+	device="2.0"/>
+
+<HEADER
+		id1="0001"
+		id2="0001" 
+		content="%LOTUSDOMINO &lt;hseverity&gt;,&lt;hfld1&gt;,&lt;hdata&gt;,&lt;hevent_source&gt;,&lt;messageid&gt;,&lt;!payload:hseverity&gt;" />
+
+<HEADER
+		id1="0002"
+		id2="0002" 
+		content="%LOTUSDOMINO &lt;hserver&gt;,&lt;messageid&gt;,&lt;!payload:hserver&gt;" />
+
+<VALUEMAP 
+		name="getSeverity" 
+		default="$NONE" 
+		keyvaluepairs="0='Unknown'|1='Fatal'|2='Failure'|3='Warning (high)'|4='Warning (low)'|5='Normal'" />
+
+<VALUEMAP 
+		name="getevent_type" 
+		default="$NONE" 
+		keyvaluepairs="0='Unknown'|1='Comm'|2='Security'|3='Mail'|4='Replica'|5='Resource'|6='Misc'|7='Server'|8='Statistic'|9='Update'" />
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerShutDown"
+		id2="ServerShutDown"
+		eventcategory="1611000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerStartUp"
+		id2="ServerStartUp"
+		eventcategory="1610000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerPulseFailed"
+		id2="ServerPulseFailed"
+		eventcategory="1604010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerPulseRestored"
+		id2="ServerPulseRestored"
+		eventcategory="1604000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerRebooting"
+		id2="ServerRebooting"
+		eventcategory="1606000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerNotResponding"
+		id2="ServerNotResponding"
+		eventcategory="1604010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="ServerResponding"
+		id2="ServerResponding"
+		eventcategory="1604000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_computer&gt;,&lt;event_type&gt;,&lt;event_description&gt;" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:21"
+		id2="0"
+		eventcategory="1610000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt; started" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:01"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Lotus Domino { Event Interceptor | QuerySet Handler } (&lt;version&gt;)" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:02"
+		id2="0"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Lotus Domino &lt;network_service&gt; Agent is not available." />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:03"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Event Interceptor | QuerySet Handler | HTTP Server: } &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:04"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Begin | End } CD to MIME Conversion&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:05"
+		id2="0"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Domino &lt;process&gt; unloaded." />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:06"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The Console file is &lt;filename&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:07"
+		id2="0"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:RM Evaluation&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,RM Evaluation: &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:11"
+		id2="0"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:POP3 Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{IMAP Server:|ISpy:|POP3 Server:} &lt;saddr&gt; disconnected" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:08"
+		id2="0"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{IMAP Server:|ISpy:|POP3 Server:} &lt;saddr&gt; connected" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:09"
+		id2="0"
+		eventcategory="1603110000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:HTTP Web Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,HTTP Web Server: Lotus Notes Exception - &lt;result&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:10"
+		id2="0"
+		eventcategory="1401030000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:POP3 Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,POP3 Server: Authentication failure for &lt;username&gt;, connecting host &lt;saddr&gt;: &lt;result&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:12"
+		id2="0"
+		eventcategory="1803000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SMTP Server [&lt;fld10&gt;] Attempt to relay mail to &lt;daddr&gt; rejected for policy reasons. &lt;result&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:13"
+		id2="0"
+		eventcategory="1401050100"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Webadmin&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Webadmin: Started by &lt;dst_dn&gt; [&lt;saddr&gt;]" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:14"
+		id2="0"
+		eventcategory="1401030000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Login failed for user &lt;username&gt;: &lt;result&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:15"
+		id2="0"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error delivering to &lt;dst_dn&gt;; &lt;result&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0"
+		id2="0"
+		eventcategory="1610000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SMTP Server:&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:16"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:ISpy&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ISpy:&lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:17"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Console Logging is ENABLED." />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:18"
+		id2="0"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: { Beginning in-place compaction of mailbox file &lt;mail_id&gt; | Completed compaction of mailbox file &lt;mail_id&gt; }" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:19"
+		id2="0"
+		eventcategory="1610000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Initialization complete" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:20"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Change Manager Executive&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Change Manager Executive: &lt;event_description&gt;" />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:22"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:No error&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,No error" />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:23"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Components are up-to-date.&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Components are up-to-date. &lt;info&gt;" />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:24"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Downloading components.&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Downloading components..." />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:25"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Connecting to a server&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Connecting to &lt;fld2&gt; server or other intranet server..." />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:26"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Updating Component(s)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Updating component(s)" />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:27"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Starting&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Starting" />		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:28"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Shutdown&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Shutdown" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:29"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:ScanMail maintenance expiration details&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,There are &lt;fld2&gt; days remaining before the ScanMail maintenance will expire. &lt;info&gt;" />		
+		
+		<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:30"
+		id2="0"
+		eventcategory="1603110000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_outcome:Error&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Process terminated abnormally&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Process &lt;process&gt; (&lt;fld2&gt;) has terminated abnormally" />		
+		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:31"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Deploying downloaded components&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Deploying downloaded components..." />		
+		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:32"
+		id2="0"
+		eventcategory="1701020000"
+		content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Start to update license&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Start to update license online" />		
+		
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:33"
+		id2="0"
+		eventcategory="1701020000"
+		content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Complete update license&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Complete update license online" />		
+
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:34"
+		id2="0"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SecurTrac Warning : &lt;event_description&gt;. To obtain additional licenses, &lt;info&gt;" />		
+
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:35"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Scan engine version: &lt;fld2&gt;; Virus pattern file version: &lt;fld3&gt;" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:36"
+		id2="0"
+		eventcategory="1803000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SMTP Server [&lt;fld10&gt;] Connection from &lt;fld2&gt; rejected for policy reasons. &lt;result&gt;" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:37"
+		id2="0"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Monitor found deleted folder &lt;fld2&gt; in Database: &lt;db_name&gt; Enabled Filter: &lt;fld3&gt; MonitorID: &lt;fld4&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:38"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SecurTrac : uptime=&lt;duration&gt; min, log=&lt;fld2&gt;, import_time=&lt;fld3&gt;, action_time=&lt;fld4&gt;, import_rate=&lt;fld5&gt;, free_space_data=&lt;fld6&gt; MB, free_space_work=&lt;fld7&gt; MB" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:39"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:POP3 Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,POP3 Server: Connection attempted on the united bank, but not configured in POP3 Internet Site Document" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:40"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SMTP Server [&lt;fld10&gt;] Mail from &lt;src_dn&gt; rejected for policy reasons. &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:41"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Recipient in local Internet Domain not found, forwarding to Smart Host" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:42"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Recipient in local Internet Domain uses Other Internet Mail system, forwarding to Smart Host" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:43"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Could not load &lt;fld2&gt; strings from resource module: &lt;fld3&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:44"
+		id2="0"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Adminp: Unable to retrieve names for batched request error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:45"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,DAOS Catalog is not synchronized, but is safe to prune." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:46"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Pruning has been suspended until the DAOS Catalog is resynchronized." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="0:47"
+		id2="0"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,XSP Command Manager Refreshed" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2"
+		id2="2"
+		eventcategory="1401050100"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Webadmin&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Webadmin: Started by &lt;dst_dn&gt; [&lt;saddr&gt;]" />
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:01"
+		id2="2"
+		eventcategory="1301010000"
+		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ID failed to authenticate in vault &apos;&lt;fld13&gt;&apos;.  &apos;&lt;username&gt;&apos; (IP address &lt;saddr&gt;:&lt;sport&gt;) made request.  Error: &lt;result&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:02"
+		id2="2"
+		eventcategory="1301010000"
+		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@event_description:Account locked out&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;username&gt;/&lt;fld2&gt; from host [&lt;saddr&gt;:&lt;sport&gt;] &lt;result&gt; to authenticate: Your account is locked out; &lt;info&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:03"
+		id2="2"
+		eventcategory="1301010000"
+		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{&lt;username&gt;/&lt;fld2&gt;|&lt;username&gt;} from host [&lt;saddr&gt;:&lt;sport&gt;] &lt;result&gt; to authenticate: The server's &lt;info&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:04"
+		id2="2"
+		eventcategory="1304000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The ACL in database &lt;db_name&gt; has been changed by &lt;username&gt;/&lt;fld2&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:05"
+		id2="2"
+		eventcategory="1501040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,AMgr: Error executing agent &apos;&lt;agent&gt;&apos; in &apos;&lt;db_name&gt;&apos;. Agent signer &apos;&lt;fld2&gt;&apos;: &lt;action&gt;" />		
+		
+	<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:06"
+		id2="2"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:LDAP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,LDAP Server: Bind request for &lt;username&gt; failed: &lt;result&gt;: failed to authenticate" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:07"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: &lt;fld2&gt; (Path: &lt;db_name&gt;): &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:08"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Adminp: Unable to retrieve names for batched request error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Listen for connect requests on &lt;protocol&gt; Port:&lt;sport&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:01"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: { Beginning | Completed } mailbox file compaction of &lt;mail_id&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:02"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Internet &lt;network_service&gt; host &lt;shost&gt; in domain &lt;domain&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:03"
+		id2="3"
+		eventcategory="1603040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ SMTP Server: Initialization failure: &lt;result&gt; | SMTP Server: Listener failure, &lt;result&gt; }" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:04"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:IMAP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,IMAP Server: &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:05"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Message &lt;id1&gt;, &lt;id2&gt; delivered to &lt;to&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:24"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Message &lt;id1&gt; delivered to &lt;to&gt; on &lt;hostname&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:25"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Message &lt;id1&gt; contains no recipients" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:26"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Unable to deliver message &lt;id1&gt;, &lt;id2&gt; to &lt;to&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:27"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Unable to deliver message &lt;id1&gt; to &lt;to&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:28"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@event_description:Updating values from Configuration document&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Updating values from Configuration document" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:29"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Message &lt;id1&gt; NOT transferred via &lt;network_service&gt; to &lt;hostname&gt; for &lt;fld2&gt; Requested mail action not taken: &lt;info&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:30"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Message &lt;id1&gt; transferred to &lt;hostname&gt; for &lt;fld2&gt; via &lt;network_service&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:31"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Transferred &lt;fld2&gt; messages to &lt;domain&gt; (host &lt;hostname&gt;) via &lt;network_service&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:32"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Transferring mail to domain &lt;domain&gt; (host &lt;hostname&gt; [&lt;hostip&gt;]) via &lt;network_service&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:33"
+		id2="3"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: No messages transferred to &lt;domain&gt; (host &lt;hostname&gt;) via &lt;network_service&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:06"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:RnRMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Rooms and Resources Manager: &lt;event_description&gt; | RnRMgr: &lt;event_description&gt; }" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:07"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Object Store Manager&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Object Store Manager: &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:08"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SMTP Server: &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:09"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:10"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SchedMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SchedMgr: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:11"
+		id2="3"
+		eventcategory="1603040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The probe has {timed out|failed} for the following statistic: &lt;result&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:12"
+		id2="3"
+		eventcategory="1301000000"
+		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,User &lt;username&gt; not listed in Domino Directory" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:13"
+		id2="3"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Recipient&apos;s Domino Directory entry does not specify a valid Notes mail file" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:14"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail probe to {ISpy on &lt;event_computer&gt;|&lt;username&gt;} was successful" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:15"
+		id2="3"
+		eventcategory="1604000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The number of pending mail messages on &lt;dst_dn&gt; is at a healthy level." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:16"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail from &lt;src_dn&gt; to destination &lt;dst_dn&gt; is under its message limit." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:17"
+		id2="3"
+		eventcategory="1607000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail probe to &lt;username&gt; has timed out." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:18"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Suspending listen task for &lt;id1&gt; seconds due to network errors" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:19"
+		id2="3"
+		eventcategory="1401030000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:POP3 Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,POP3 Server: Authentication failure for &lt;username&gt;, connecting host &lt;saddr&gt;: &lt;result&gt;" />
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:20"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt; {are enabled|started|Started|Starting|started for domain &lt;domain&gt;}" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:21"
+		id2="3"
+		eventcategory="1401030000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Login failed for user &lt;username&gt;: &lt;result&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:22"
+		id2="3"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Schedule Manager&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Schedule Manager: Informational: Detailed schedule information collection is not enabled via the domain-wide Server Configuration document." />
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:23"
+		id2="3"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error registering mail rule &lt;fld2&gt; for database &lt;db_name&gt;: &lt;info&gt;" />	
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:34"
+		id2="3"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@service:AMgr&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,AMgr: Agent &apos;&lt;agent&gt;&apos; in &apos;&lt;db_name&gt;&apos; did not process all documents successfully. &lt;info&gt;" />	
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:35"
+		id2="3"
+		eventcategory="1801020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@result:Connection successful&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Connection successful" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:36"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: ReceiveResponse: { &lt;resultcode&gt;- | &lt;resultcode&gt; } &lt;info&gt;" />
+		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:37"
+		id2="3"
+		eventcategory="1801030000"
+		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@result:Connection terminated successfully&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Connection terminated successfully" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:38"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: DATA" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:39"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: CommandQUIT:" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:40"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Pipelined commands:" />
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:41"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: End of pipelined commands" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:42"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: RCPT TO:&lt;&lt;&lt;to&gt;&gt;" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:43"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: MAIL FROM:&lt;&lt;&lt;from&gt;&gt;" />
+		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:44"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: SMTP Authentication is not required by local server.  Username: &lt;username&gt;" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:45"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Attempting to Disconnect&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Attempting to Disconnect:" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:46"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Attempting to SubmitMessage&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Attempting to SubmitMessage:" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:47"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@ec_activity:Send&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Attempting to SubmitMessage&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Data Send Succeeded &lt;bytes&gt; bytes" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:48"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Attempting to SubmitMessage&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: Attempting to Connect: Host &lt;saddr&gt;, Port &lt;sport&gt;, SSL Port &lt;fld11&gt;, Connecting Domain &lt;domain&gt;" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:49"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Attempting to SubmitMessage&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: CommandEHLO: &lt;domain&gt;" />
+	
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:50"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SMTPClient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,[&lt;fld10&gt;] SMTPClient: CSMTPInternetClient::InitSMTPClient> NotesPort: &lt;fld11&gt;" />
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:51"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,MT Collector: Compacting message tracking store." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:52"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,MT Collector: Finished compacting message tracking store." />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:53"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,MT Collector: Failed updating entry in message tracking store: &lt;info&gt;: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="3:54"
+		id2="3"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,No route found to domain &lt;fld2&gt;.  &lt;info&gt;" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;db_name&gt; has NEVER replicated with ANY server" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:01"
+		id2="4"
+		eventcategory="1610000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt; started" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:02"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replicator is set to Ignore Database Quotas" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:03"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Finished | Starting } replication with server &lt;dst_dn&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:04"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Access control is set in &lt;db_name&gt; to not replicate forms or views from &lt;fld2&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:05"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;db_name&gt; has not replicated (&lt;action&gt;) with ANY server since &lt;fld2&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:06"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Access control is set to restrict Replication for &lt;fld2&gt; databases on &lt;fld3&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:07"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Access control is set in &lt;fld2&gt; &lt;db_name&gt; to not allow replication from &lt;fld3&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:08"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No need to replicate&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,REPLICA: No need to replicate, &lt;info&gt;" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:09"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Replicator updated documents&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replicator updated &lt;fld2&gt; document(s) in &lt;db_name&gt; from &lt;fld3&gt;" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:10"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Replicator added documents&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replicator added &lt;fld2&gt; document(s) to &lt;db_name&gt; from &lt;fld3&gt;" />		
+		
+		<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:11"
+		id2="4"
+		eventcategory="1701070000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_activity:Disable&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replication is disabled for CLUSTER &lt;group_object&gt; &lt;db_name&gt;" />		
+		
+		<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:12"
+		id2="4"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Pushing &lt;db_name&gt; to CLUSTER &lt;group_object&gt; &lt;fld2&gt;" />		
+		
+		<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:13"
+		id2="4"
+		eventcategory="1701070000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_activity:Disable&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replication is disabled for &lt;db_name&gt;" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:14"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No documents need to be replicated&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,REPLICA: No documents need to be replicated" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:15"
+		id2="4"
+		eventcategory="1605000000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Pushing | Pulling } &lt;db_name&gt; { from | to } &lt;fld2&gt;" />		
+	
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:16"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to replicate &lt;db_name&gt;: &lt;result&gt; - file may have been damaged" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:17"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Replicator deleted documents&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replicator deleted &lt;fld2&gt; document(s) in &lt;db_name&gt; from &lt;fld3&gt;" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:18"
+		id2="4"
+		eventcategory="1609000000"
+		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:Process&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Replicator completed&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Replication of &lt;db_name&gt; to &lt;fld3&gt; completed successfully" />		
+
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="5"
+		id2="5"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Error processing Mail Policy for user: &apos;&lt;username&gt;&apos; on mailfile: &apos;&lt;mail_id&gt;&apos;.: &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="5:01"
+		id2="5"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ MailExternalSMTP | MailInternalSmtp | MailUseDns } changed to &lt;id1&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="5:02"
+		id2="5"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to run program &lt;process&gt;: Unable to locate program" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="5:03"
+		id2="5"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database open error: &lt;db_name&gt;: &lt;result&gt; - file may have been damaged" />		
+		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="5:04"
+		id2="5"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to replicate &lt;db_name&gt;: &lt;result&gt; - file may have been damaged" />		
+
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6"
+		id2="6"
+		eventcategory="1401050200"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ATTEMPT TO ACCESS DATABASE &lt;db_name&gt; by &lt;username&gt; was &lt;disposition&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:01"
+		id2="6"
+		eventcategory="1401070000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Closed session for &lt;c_user_name&gt;|&lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:02"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SchedMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Schedule Manager: &lt;event_description&gt; | SchedMgr: &lt;event_description&gt; }" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:03"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: &lt;username&gt; does not appear in &lt;fld12&gt; of any databases designating &lt;dst_dn&gt; as their Administration Server " />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:04"
+		id2="6"
+		eventcategory="1401070000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Closed live remote console session for &lt;username&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:05"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Starting update of database { usage statistics | catalog }" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:06"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database { ACL probe | review } for &apos;&lt;username&gt;&apos; has { completed with no errors. | completed. }" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:07"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:RunJava&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,RunJava: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:08"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Security Probe&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Security Review Probe: &lt;event_description&gt; | Security Probe: &lt;event_description&gt; }" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:09"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Chronos&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Chronos: &lt;event_description&gt; " />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:10"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Searching Administration Requests database " />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:11"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Completed refresh of mail policies for &lt;id1&gt; databases, &lt;id2&gt; databases reported errors." />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:12"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Error processing Mail Policy for user: &apos;&lt;username&gt;&apos; on mailfile: &apos;&lt;mail_id&gt;&apos;.: &lt;result&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:13"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: &lt;dst_dn&gt; is the Administration Server of the Domino Directory." />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:14"
+		id2="6"
+		eventcategory="1304000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Opened session for &lt;username&gt; (&lt;version&gt;)" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:15"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database &lt;db_name&gt; created by &lt;username&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:16"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Finished updating {usage statistics|database catalog}" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:17"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Created database catalog: &lt;db_name&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:18"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{Added database &lt;db_name&gt; to catalog|Updated database &lt;db_name&gt; in catalog}" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:19"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{Starting|Finished} purge of {old documents in log file|log file}" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:20"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Enabling the recording of user activity for &lt;db_name&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:21"
+		id2="6"
+		eventcategory="1301010000"
+		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ID failed to authenticate in vault &apos;&lt;fld13&gt;&apos;.  &apos;&lt;username&gt;&apos; (IP address &lt;saddr&gt;:&lt;sport&gt;) made request.  Error: &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:22"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Remote console command issued by &lt;username&gt;: &lt;param&gt; " />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:23"
+		id2="6"
+		eventcategory="1401000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Opened live remote console session for &lt;username&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:25"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt; {are enabled|started}" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:26"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Disk Spindle Information was not provided in the Directory" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:27"
+		id2="6"
+		eventcategory="1607000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;username&gt; does not appear in the unread lists of the databases on &lt;dst_dn&gt;." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:28"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Memory Utilization exceeds the configured thresholds." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:29"
+		id2="6"
+		eventcategory="1607000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Memory Utilization no longer exceeds the configured thresholds." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:30"
+		id2="6"
+		eventcategory="1607000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{07:AE|07:C1}" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:31"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,No databases have &lt;dst_dn&gt; designated to maintain their Readers and Authors fields." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:32"
+		id2="6"
+		eventcategory="1603110000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@reason:*PARMVAL(result)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Received the following error performing a &lt;action&gt;{:|.} &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:33"
+		id2="6"
+		eventcategory="1603030000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Network error on port &lt;sport&gt; (session &lt;fld13&gt;): Network error: &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:34"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,A replica of &lt;username&gt;&apos;s mail file does not exist on this server." />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:35"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Deletion&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database &lt;db_name&gt; deleted by &lt;username&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:36"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Cleaning&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Cleaning &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:37"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld61:*PARMVAL(operation_id)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;action&gt; in &lt;filter&gt; of &lt;db_name&gt; &lt;event_state&gt;"/>
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:38"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:One-time fix up&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,One-time fix-up of &lt;event_description&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:39"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to run program &lt;process&gt;: Unable to locate program" />	
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:40"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Listener task for port &lt;sport&gt; is suspending for &lt;id1&gt; seconds due to listen errors" />	
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:41"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,A DDM report document &lt;fld2&gt; could not be opened." />	
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:42"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Event: &lt;result&gt; opening domain monitoring event document &lt;fld2&gt; in database &lt;db_name&gt;: &lt;info&gt;" />	
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:43"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ATTEMPT TO ACCESS SERVER by &lt;username&gt;/&lt;fld2&gt; was &lt;disposition&gt;" />		
+		
+		<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:44"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Running Program document for &apos;&lt;fld2&gt;&apos;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:45"
+		id2="6"
+		eventcategory="1501040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,AMgr: Error executing agent &apos;&lt;agent&gt;&apos; in &apos;&lt;db_name&gt;&apos;. Agent signer &apos;&lt;fld2&gt;&apos;: &lt;action&gt;" />		
+		
+		<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:46"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Logical disk activity (&lt;fld2&gt;) { no longer exceeds | exceeds } configured thresholds." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:47"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to replace obsolete catalog: &lt;info&gt;" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:48"
+		id2="6"
+		eventcategory="1605020000"
+		content="&lt;@ec_theme:Configuration&gt;&lt;@ec_subject:License&gt;&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Message &lt;id1&gt; auto forwarded by &lt;username&gt;/&lt;fld2&gt; to &lt;to&gt;" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:49"
+		id2="6"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@event_description:Successfully delivered quota report for recipient&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Successfully delivered quota report for recipient &lt;fld2&gt;." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:50"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error creating ACL, returning error no access.: &lt;info&gt;" />	
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:51"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to redirect failover from &lt;fld2&gt;!!&lt;db_name&gt;" />	
+		
+		<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:52"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@service:Router&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: Successfully delivered over quota warning threshold report for recipient &lt;fld2&gt;." />	
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:53"
+		id2="6"
+		eventcategory="1501040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error updating view &apos;&lt;fld2&gt;&apos; in &lt;db_name&gt;: &lt;event_description&gt;" />		
+
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Error processing Mail Policy for user: &apos;&lt;username&gt;&apos; on mailfile: &apos;&lt;mail_id&gt;&apos;.: &lt;result&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:01"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:RnRMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{ Rooms and Resources Manager &lt;event_description&gt; | RnRMgr: &lt;event_description&gt; }" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:02"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:SchedMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,SchedMgr: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:03"
+		id2="7"
+		eventcategory="1611000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database Designer shutdown" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:04"
+		id2="7"
+		eventcategory="1603040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The &lt;filename&gt; variable &lt;param&gt; is not set" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:05"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt; started" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:06"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Router&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Router: &lt;event_description&gt;" />		
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:07"
+		id2="7"
+		eventcategory="1701020000"
+		content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;change_attribute&gt; changed to &lt;change_new&gt;.." />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:08"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:JVM&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,JVM: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:09"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Event&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Event: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:10"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Diagnostics&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Diagnostics &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:11"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;id1&gt; duplicate PUIDs {found while initializing Domino Domain Monitoring|found}" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:12"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:comparing note sequence numbers&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,While comparing note sequence numbers &lt;event_description&gt;,&lt;event_state&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:13"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Updating&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Updating &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:14"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Adding&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Adding &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:15"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Deleting&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Deleting &lt;event_description&gt;" />		
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:16"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Warning: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:17"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Releasing&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Releasing &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:18"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:RDEBUG Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,RDEBUG Server: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:19"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:DIIOP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,DIIOP Server: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:20"
+		id2="7"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Listen for connect requests on &lt;protocol&gt; Port:&lt;sport&gt;" />
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:21"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:consistency check&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;disposition&gt; consistency check on &lt;db_name&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:22"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Database check&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:23"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Purging&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Purging old documents from database &lt;db_name&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:24"
+		id2="7"
+		eventcategory="1603110000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@reason:*PARMVAL(result)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Received the following error performing a &lt;action&gt;: &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:25"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:consistency check&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Begin scan of databases to be consistency checked" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:26"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:consistency check&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,End scan of databases: &lt;id1&gt; found" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:27"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Cleaning&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Cleaning &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:28"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Cleaning&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,View &apos;&lt;fld20&gt;&apos; of the target file &apos;&lt;db_name&gt;&apos; is now clean" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:29"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Successfully removed all policy control&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Successfully removed all policy control items from the calendar profile for &apos;&lt;username&gt;&apos; in mailfile &lt;mail_id&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:30"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Access to server &lt;db_name&gt; can not be established by opening database (&lt;id1&gt;). [&lt;id2&gt;]" />		
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:31"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:DAOSMGR&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,DAOSMGR: DAOS is not enabled, nothing to do." />		
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:32"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:DAOSMGR&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The number of pending mail messages on &lt;fld2&gt; is at a healthy level." />		
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:33"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:DAOSMGR&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The number of pending mail messages on &lt;fld2&gt; has exceeded the allowed limit." />		
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:34"
+		id2="7"
+		eventcategory="1304000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:DAOSMGR&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;username&gt;/&lt;fld2&gt; from host [&lt;saddr&gt;:&lt;sport&gt;] &lt;result&gt; to authenticate: &lt;info&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:35"
+		id2="7"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error creating ACL, returning error no access.: &lt;info&gt;" />	
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:36"
+		id2="7"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ACL Corrupt in database &lt;db_name&gt;, &lt;info&gt;" />	
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:37"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:LDAP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,LDAP Server: Bind request for &lt;username&gt; failed: &lt;result&gt;: failed to authenticate" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:38"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;username&gt; was granted full administrator access." />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:44"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Free space on database &lt;db_name&gt; is greater than &lt;fld2&gt; (&lt;fld3&gt;).&lt;info&gt;" />		
+
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9"
+		id2="9"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Index update&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Index update &lt;event_description&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:01"
+		id2="9"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Finished updating views in &lt;db_name&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:02"
+		id2="9"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:View update&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Updating views in &lt;db_name&gt;" />		
+		
+		<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:03"
+		id2="9"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:View update&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Updating &lt;db_name&gt; view &apos;(&lt;fld2&gt;)&apos;" />		
+		
+		<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:04"
+		id2="9"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Full text indexing documents in &lt;db_name&gt;" />	
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:05"
+		id2="9"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;fld2&gt; documents (&lt;bytes&gt; bytes) indexed in &lt;db_name&gt;" />				
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:06"
+		id2="9"
+		eventcategory="1501040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,AMgr: Error executing agent &apos;&lt;agent&gt;&apos; in &apos;&lt;db_name&gt;&apos;. Agent signer &apos;&lt;fld2&gt;&apos;: &lt;action&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:07"
+		id2="9"
+		eventcategory="1501040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error updating view &apos;&lt;fld2&gt;&apos; in &lt;db_name&gt;: &lt;event_description&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:08"
+		id2="9"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error full text indexing document &lt;fld11&gt;  (&lt;fld12&gt;) Database is currently being indexed by another process" />	
+
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10"
+		id2="10"
+		eventcategory="1607000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{07:AE|07:C1}" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:01"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Recovery Manager&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Recovery Manager: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:02"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Updating&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Updating &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:03"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:Index update&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Index update &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:04"
+		id2="10"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:LDAP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,LDAP {Server|Schema}: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:05"
+		id2="10"
+		eventcategory="1603110000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@reason:*PARMVAL(result)&gt;&lt;@service:Admin Process&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Admin Process: Received the following error performing a &lt;action&gt;{:|.} &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:06"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@action:Rebuild view&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Informational, {rebuild view|rebuilding view} &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:07"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Daily activity for database - &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:08"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Event: &lt;result&gt; opening domain monitoring event document &lt;fld2&gt; in database &lt;db_name&gt;: &lt;info&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:09"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@event_description:Directory assistance is notifying of a MAB reload&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Directory assistance is notifying of a MAB reload" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:10"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database open &lt;result&gt;: &lt;db_name&gt;: &lt;info&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:11"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Integrity check &lt;result&gt; for ID Vault &lt;fld2&gt;: &lt;info&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:12"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Unable to load system level detail harvesting settings.: &lt;info&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:13"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;result&gt; compacting &lt;db_name&gt;: &lt;info&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:14"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@result:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to update calendar entry &lt;fld2&gt; from list &lt;fld3&gt; for &lt;fld4&gt; Error returned: &lt;info&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:15"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The { Domino Directory | secondary LDAP | LDAP } search response on &lt;dst_dn&gt; is below configured severity thresholds" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:16"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to add note &lt;fld2&gt; to folder in Database &lt;db_name&gt;: &lt;info&gt;" />	
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:17"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error registering mail rule &lt;fld2&gt; for database &lt;db_name&gt;: &lt;info&gt;" />	
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:18"
+		id2="10"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Warning: Multiple matches found for &lt;fld2&gt; in Domino Directory, using first one found" />	
+
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11"
+		id2="11"
+		eventcategory="1603030000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Network error on port &lt;sport&gt; (session &lt;fld13&gt;): Network error: &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11:01"
+		id2="11"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Probe of &lt;network_service&gt; port on &lt;sport&gt; has &lt;disposition&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11:02"
+		id2="11"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail probe configuration does not specify a recipient" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11:03"
+		id2="11"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@reason:*PARMVAL(result)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error on Listen function: &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11:04"
+		id2="11"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail probe to ISpy on &lt;hostname&gt; {was|has} &lt;result&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11:05"
+		id2="11"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Integrity check &lt;result&gt; for ID Vault &lt;fld2&gt;: &lt;info&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="11:06"
+		id2="11"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to access &lt;fld2&gt;: The remote server is not a known TCP/IP host." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="12"
+		id2="12"
+		eventcategory="1602000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;space&gt;Total &lt;event_description&gt; " />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="12:01"
+		id2="12"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{AMgr|Agent Manager}: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="12:02"
+		id2="12"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt; {are enabled|started}" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="14"
+		id2="14"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,{AMgr|Agent Manager}: &lt;event_description&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="14:01"
+		id2="14"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:HTTP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,HTTP Server: Daily Clearing Event Issued" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22"
+		id2="22"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;username&gt; is configured to use the default view update algorithm." />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22:01"
+		id2="22"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The &lt;network_service&gt; server on &lt;dst_dn&gt; is up and serving &lt;fld14&gt; clients" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22:02"
+		id2="22"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Periodic directory view updates are enabled on &lt;dst_dn&gt;" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22:03"
+		id2="22"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The { Domino Directory | secondary LDAP | LDAP } search response on &lt;dst_dn&gt; is below configured severity thresholds" />		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22:04"
+		id2="22"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:LDAP Server&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,LDAP {Server|Schema}: &lt;event_description&gt;" />		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22:05"
+		id2="22"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Listen for connect requests on &lt;protocol&gt; Port:&lt;sport&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="22:06"
+		id2="22"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Suspending listen task for &lt;fld2&gt; due to network errors" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="23"
+		id2="23"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Server task &lt;network_service&gt; Server on &lt;dst_dn&gt; is no longer running" />
+		
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="23:01"
+		id2="23"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Server task &lt;network_service&gt; on &lt;dst_dn&gt; is no longer responding" />
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="23:02"
+		id2="23"
+		eventcategory="1605020000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@protocol:*PARMVAL(network_service)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Server task &lt;network_service&gt; on &lt;dst_dn&gt; is running" />
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:19"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error full text indexing &lt;db_name&gt;: Database is currently being indexed by another process" />	
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:20"
+		id2="10"
+		eventcategory="1501040000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,AMgr: Error executing agent &apos;&lt;agent&gt;&apos; in &apos;&lt;db_name&gt;&apos;. Agent signer &apos;&lt;fld2&gt;&apos;: &lt;action&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:39"
+		id2="7"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail from &lt;src_dn&gt; to destination &lt;dst_dn&gt; has exceeded its message limit." />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:40"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Mail from &lt;src_dn&gt; to destination &lt;dst_dn&gt; is under its message limit." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:41"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,DAOSMGR: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:42"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,The DAOS catalog cannot be resynchronized because &lt;info&gt;: (&lt;resultcode&gt;) &lt;fld2&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="7:43"
+		id2="7"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,AT Collector: &lt;info&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="8"
+		id2="8"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,(SMTP/SMTP) Mail.Dead = &lt;fld2&gt;, max allowable: (&lt;fld3&gt;) [&lt;fld4&gt;]" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:54"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Web Configuration probe: Server documents have been analyzed, &lt;info&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:55"
+		id2="6"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Web Best Practices Probe: { Server | Internet Site } Documents have been analyzed, &lt;info&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:56"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@service:AMgr&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Compacting &lt;db_name&gt; &lt;fld3&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:57"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Compacted &lt;db_name&gt;, &lt;bytes&gt; bytes recovered (&lt;fld2&gt;)" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:58"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database compactor process shutdown" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:59"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Server task Router on &lt;fld2&gt; is no longer responding" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:60"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to access &lt;fld2&gt;: The remote server is not a known TCP/IP host." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:09"
+		id2="9"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error full text indexing &lt;db_name&gt;: Database is currently being indexed by another process" />	
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="9:10"
+		id2="9"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,MT Collector: Failed updating entry in message tracking store: &lt;info&gt;: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="5:05"
+		id2="5"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database open error: &lt;db_name&gt;: The caller&apos;s SemWait timeout expired." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:21"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Task initialization failure; loading agent in &apos;&lt;db_name&gt;&apos; (Note ID &lt;fld12&gt;): &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:22"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;service&gt;: Error processing calendar profile document (NoteID &lt;fld12&gt;) in database &lt;db_name&gt;: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:23"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to replicate &lt;db_name&gt;: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:19"
+		id2="4"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Access control is set in &lt;db_name&gt; to not replicate forms, views or edits from &lt;fld2&gt;" />		
+		
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="4:21"
+		id2="4"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to replicate &lt;db_name&gt;: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:61"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to find ID for &apos;&lt;fld3&gt;&apos; in vault &apos;&lt;fld2&gt;&apos;. &lt;space&gt; Error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:09"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ID for &apos;&lt;fld3&gt;&apos; (IP Address &lt;saddr&gt;:&lt;sport&gt;) in vault &apos;&lt;fld2&gt;&apos; was not downloaded because the wrong password was supplied. &lt;space&gt; Error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:24"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to write to database - database &lt;db_name&gt; would exceed its disk quota of &lt;fld2&gt; by &lt;fld3&gt;." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:62"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Failed to set download count for &apos;&lt;fld11&gt;&apos; to &lt;fld3&gt;. &lt;space&gt; &apos;&lt;fld2&gt;&apos; made request (IP Address &lt;saddr&gt;:&lt;sport&gt;) from process &lt;process&gt;. &lt;space&gt; Error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:10"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Unable to find ID for &apos;&lt;fld3&gt;&apos; in vault &apos;&lt;fld2&gt;&apos;. &lt;space&gt; Error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:63"
+		id2="6"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Server &lt;fld2&gt; reported the following problem causing authentication to fail: &lt;result&gt;" />		
+
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="6:64"
+		id2="6"
+		eventcategory="1609000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@event_type:*getevent_type(id)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;db_name&gt; has NEVER replicated with ANY server" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:11"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Failed to set download count for &apos;&lt;fld11&gt;&apos; to &lt;fld3&gt;. &lt;space&gt; &apos;&lt;fld2&gt;&apos; made request (IP Address &lt;saddr&gt;:&lt;sport&gt;) from process &lt;process&gt;. &lt;space&gt; Error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:25"
+		id2="10"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error updating view in &lt;db_name&gt;: Full Text queue internal error" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:12"
+		id2="2"
+		eventcategory="1603000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,ID for &apos;&lt;fld3&gt;&apos; could not be authenticated in vault &apos;&lt;fld4&gt;&apos; on server &apos;&lt;fld13&gt;&apos;. &lt;space&gt; &apos;&lt;fld23&gt;&apos; made request. &lt;space&gt; Error: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="10:26"
+		id2="10"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Database note open error: &lt;fld2&gt; document in database &lt;db_name&gt; opened by &lt;fld3&gt;: Attempt to perform folder operation on non-folder note." />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:13"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,&lt;username&gt; from host [&lt;saddr&gt;:&lt;sport&gt;] failed to authenticate: &lt;result&gt;" />		
+
+<MESSAGE
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="80"
+		id1="2:14"
+		id2="2"
+		eventcategory="1605000000"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*getSeverity(fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt;,&lt;event_time_string&gt;,&lt;operation_id&gt;,&lt;dn&gt;,&lt;id&gt;,Error occurred checking key rollover on vault. &lt;space&gt; Vault &apos;&lt;fld11&gt;&apos;.  User &apos;&lt;username&gt;&apos;.  Error: &lt;result&gt;" />		
+
+</DEVICEMESSAGES>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="40" 
+	checksum="d15a7c3e96e515d99f2bd19f05c7aca2" 
+	revision="0" 
+	enVision="35010000" 
+	device="2.0" />
+
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; IngrianAudit: &lt;hdatetime&gt; [&lt;husername&gt;] [&lt;messageid&gt;] &lt;!payload:hdatetime&gt;" />
+
+<HEADER 
+		id1="0002" 
+		id2="0002" 
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; IngrianActivity: &lt;hfld1&gt; &lt;hfld2&gt; &lt;hseverity&gt; &lt;hsaddr&gt; [&lt;hsrc_dn&gt;] &lt;husername&gt; &lt;hid&gt; &lt;messageid&gt; &lt;!payload:hfld1&gt;" />
+
+<HEADER 
+		id1="0003" 
+		id2="0003" 
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; IngrianAudit: &lt;hdatetime&gt; [&lt;messageid&gt;] &lt;!payload:hdatetime&gt;" />
+
+<HEADER 
+		id1="0004" 
+		id2="0004"
+        messageid="*STRCAT('Ingrian','_','System')"
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; IngrianSystem: &lt;!payload&gt;" />
+
+		
+
+<HEADER 
+		id1="0005" 
+		id2="0005"
+        messageid="*STRCAT('Ingrian','_','Activity')"
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; IngrianActivity: &lt;!payload&gt;" />
+
+		
+
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigChange:01" 
+		id2="ConfigChange" 
+		eventcategory="1701010000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Saved Cryptographic Key Server settings [IP: [&lt;saddr&gt;]; port: &lt;dport&gt;; use SSL: &lt;fld4&gt;; server certificate: [&lt;fld5&gt;]; connection timeout: &lt;fld6&gt;; allow config operations: &lt;fld7&gt;; allow key export: &lt;fld8&gt;]" />
+
+	
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigChange:02" 
+		id2="ConfigChange" 
+		eventcategory="1701010000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: &lt;action&gt; user [username: &lt;fld4&gt;; permissions: User Administration: &lt;result&gt;, Change Password: &lt;fld5&gt;] "/>
+
+	
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigChange:03" 
+		id2="ConfigChange" 
+		eventcategory="1701010000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Created Token Vault: Name=[&lt;fld4&gt;], Database SID/Name=[&lt;fld5&gt;], Database type=[&lt;fld6&gt;], Host=[&lt;hostip&gt;], Port=[&lt;sport&gt;], Vault Table Tablespace=[[&lt;fld7&gt;]], Vault Index Tablespace=[[&lt;fld8&gt;]], Keys Table Tablespace=[[&lt;fld9&gt;]], Keys Index Tablespace=[[&lt;fld10&gt;]], Database User=[&lt;fld11&gt;], Is Token Sequential=[&lt;fld12&gt;], Input Data Length=[&lt;fld13&gt;], Encryption Key=[&lt;fld14&gt;], Hashing Key=[&lt;fld15&gt;] " />
+
+	
+
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigChange:04" 
+		id2="ConfigChange" 
+		eventcategory="1701010000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Saved syslog settings for Audit Log [syslog: &lt;disposition&gt;; IP #1: [&lt;daddr&gt;]; port #1: &lt;dport&gt;; IP #2: &lt;fld2&gt;; port #2: &lt;fld3&gt;; facility: &lt;fld4&gt;; proto #1: &lt;protocol&gt;; proto #2: &lt;fld5&gt;]" />
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigChange:05" 
+		id2="ConfigChange" 
+		eventcategory="1701010000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: &lt;event_description&gt;" />
+
+	
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigError" 
+		id2="ConfigError" 
+		eventcategory="1703000000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: &lt;event_description&gt;" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="ConfigWarning" 
+		id2="ConfigWarning" 
+		eventcategory="1703000000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: &lt;event_description&gt;" />
+
+	
+	
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Login:01" 
+		id2="Login" 
+		eventcategory="1401060000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Logged in from &lt;saddr&gt; via &lt;fld4&gt;" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Login:02" 
+		id2="Login" 
+		eventcategory="1401030000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Web login failure: &lt;info&gt; for administrator &lt;fld4&gt; from &lt;saddr&gt;" />
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Login:03" 
+		id2="Login" 
+		eventcategory="1401070000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: &lt;event_description&gt;" />
+
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="admin" 
+		id2="admin" 
+		eventcategory="1401060000" 
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;fld1&gt; [&lt;username&gt;]: &lt;event_description&gt;" />
+
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Ingrian_System" 
+		id2="Ingrian_System" 
+		eventcategory="1605000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;hostname&gt; &lt;event_type&gt;: &lt;event_description&gt;" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Version" 
+		id2="Version" 
+		eventcategory="1702000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+		
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Auth" 
+		id2="Auth" 
+		eventcategory="1304000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="KeyGen" 
+		id2="KeyGen" 
+		eventcategory="1613040100" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="KeyInfo" 
+		id2="KeyInfo" 
+		eventcategory="1605000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="KeyDel" 
+		id2="KeyDel" 
+		eventcategory="1613030000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Crypto" 
+		id2="Crypto" 
+		eventcategory="1613030000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="KeyLocate" 
+		id2="KeyLocate" 
+		eventcategory="1605000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="KeyNames" 
+		id2="KeyNames" 
+		eventcategory="1605000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; [&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; &lt;event_type&gt; &lt;obj_name&gt; [&lt;obj_type&gt;] - [&lt;result&gt;] [-]" />
+
+	
+
+<MESSAGE 
+		level="7" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="81" 
+		id1="Ingrian_Activity" 
+		id2="Ingrian_Activity" 
+		eventcategory="1605000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;[&lt;fld1&gt; &lt;fld2&gt;] &lt;severity&gt; &lt;saddr&gt; [&lt;src_dn&gt;] &lt;username&gt; &lt;id&gt; [&lt;event_description&gt;]" />
+
+		
+
+</DEVICEMESSAGES>		

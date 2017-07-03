@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="8"
+	checksum="84436299e5966c067e81d2cc9a8deeb3"
+	revision="81"
+	enVision="33050000"
+	device="2.0" />
+
+ 
+
+<TAGVALMAP
+	delimiter="| &quot;"/>
+	
+<HEADER 
+id1="0001" 
+id2="0001"  
+content="%IBMMAINFRAMEIPSEC-4: SMF_Type=&lt;hevent_type&gt;|SubType=&lt;messageid&gt;|&lt;!payload:hevent_type&gt;" /> 
+
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	messageid="STRCAT('IBMMFIPSEC','_','TVM')"
+	content="%IBMMAINFRAMEIPSECTVM-4: &lt;!payload&gt;" />
+
+
+		
+
+		
+
+ <VALUEMAP
+    name="getEventCategorySubject"
+	default="$NONE"
+	keyvaluepairs="1=&apos;NetworkComm&apos;|2=&apos;NetworkComm&apos;|3=&apos;NetworkComm&apos;|20=&apos;NetworkComm&apos;|21=&apos;NetworkComm&apos;|22=&apos;NetworkComm&apos;|23=&apos;NetworkComm&apos;|70=&apos;NetworkComm&apos;|72=&apos;NetworkComm&apos;" />
+		
+<VALUEMAP
+    name="getEventCategoryActivity"
+	default="$NONE"
+	keyvaluepairs="1=&apos;Start&apos;|2=&apos;Stop&apos;|3=&apos;Receive&apos;|20=&apos;Start&apos;|21=&apos;Stop&apos;|22=&apos;Start&apos;|23=&apos;Stop&apos;|70=&apos;Receive&apos;|72=&apos;Logon&apos;" />
+
+<VALUEMAP
+    name="getEventCategoryTheme"
+	default="$NONE"
+	keyvaluepairs="1=&apos;Configuration&apos;|2=&apos;Configuration&apos;|3=&apos;Configuration&apos;|20=&apos;Configuration&apos;|21=&apos;Configuration&apos;|22=&apos;Configuration&apos;|23=&apos;Configuration&apos;|70=&apos;Configuration&apos;|72=&apos;Authentication&apos;" />
+
+<VALUEMAP
+    name="getEventCategoryOutcome"
+	default="$NONE"
+	keyvaluepairs="1=&apos;Success&apos;|2=&apos;Success&apos;|3=&apos;Success&apos;|20=&apos;Success&apos;|21=&apos;Success&apos;|22=&apos;Success&apos;|23=&apos;Success&apos;|70=&apos;Success&apos;|72=&apos;Failure&apos;" />
+
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="1" 
+	id2="1" 
+	eventcategory="1801020000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|TCPSocketName=&lt;fld23&gt;|TCPSocketID=&lt;fld24&gt;|Subtask=&lt;fld25&gt;|TIRmtIP=&lt;saddr&gt;|TILocIP=&lt;daddr&gt;|TIRmtPort=&lt;sport&gt;|TILocPort=&lt;dport&gt;|TIConnDateTime=&lt;fld26&gt;|TISTCK=&lt;fld27&gt;| " />
+
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="2" 
+	id2="2" 
+	eventcategory="1801030000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;  |TCPSocketName=&lt;fld23&gt;|TCPSocketID=&lt;fld24&gt;|&lt;info&gt;|&lt;fld2&gt;|Term Code=&lt;fld29&gt;|Subtask=&lt;fld25&gt;|TTConnStart=&lt;fld21&gt;|TTConnEnd=&lt;fld22&gt;|TTRmtIP=&lt;saddr&gt;|TTLocIP=&lt;daddr&gt;|TTRmtPort=&lt;sport&gt;|TTLocPort=&lt;dport&gt;|TTBytesIn=&lt;fld30&gt;|TTBytesOut=&lt;fld31&gt;|TTSndWindow@Close=&lt;fld40&gt;|TTMaxSndWindow=&lt;fld41&gt;|TTCongestWindow=&lt;fld42&gt;|TTSndSeg@Close=&lt;fld43&gt;|TTRndTripTime@Close=&lt;fld44&gt;|TTRndTripVar@Close=&lt;fld45&gt;|SocketStat=&lt;fld46&gt;|TTServiceType=&lt;fld48&gt;|TTRetransTimes=&lt;fld49&gt;|TTSvcProf=&lt;fld50&gt;|TTSvcPol=&lt;fld51&gt;|TTInbndSeg=&lt;fld52&gt;|TTOutbndSeg=&lt;fld53&gt;|TTSSTCK=&lt;fld54&gt;|TTESTCK=&lt;fld55&gt;|TTotDupACK=&lt;fld1&gt;|TTTelLUName=&lt;fld32&gt;|TTTelAppl=&lt;fld33&gt;|TTTelLogmode=&lt;fld35&gt;|TTTelStat=&lt;fld34&gt;|Term Code=&lt;fld36&gt;|AT-TLS SSL Proto=&lt;fld37&gt;|AT-TLS Cipher=&lt;fld38&gt;|AT-TLS SecType=&lt;fld26&gt;|AT-TLS Partner UserID=&lt;fld27&gt;|TTApplData=&lt;fld28&gt;|" />
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="3" 
+	id2="3" 
+	eventcategory="1605000000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|FTPCmnd=&lt;fld29&gt;|FTPType=&lt;fld25&gt;|FCDRmtIP=&lt;saddr&gt;|FCDLocIP=&lt;daddr&gt;|FCDRmtPort=&lt;sport&gt;|FCDLocPort=&lt;dport&gt;|FCCRmtIP=&lt;fld27&gt;|FCCLocIP=&lt;fld35&gt;|FCDRmtPort=&lt;fld36&gt;|FCDLocPort=&lt;fld38&gt;|FTPRmtUser=&lt;fld37&gt;FTPLocUser=&lt;fld39&gt;|FTPType=&lt;fld30&gt;|FTPMode=&lt;fld31&gt;|FTPStruc=&lt;fld40&gt;|FTPDStype=&lt;fld41&gt;|FTStrtDateTime=&lt;fld21&gt;|FTEndDateTime=&lt;fld22&gt;|FTDur=&lt;fld42&gt;|FTBytes=&lt;fld43&gt;|FTReply=&lt;fld44&gt;|FTPDSMem=&lt;fld45&gt;|FTHost=&lt;fld46&gt;|FTAbend=&lt;fld48&gt;|FTBytesFlt=&lt;fld49&gt;|FTCtrlConn=&lt;fld50&gt;|FTDataConn=&lt;fld51&gt;|FTFileName=&lt;fld52&gt;|SOCKSIP=&lt;fld53&gt;|SOCKSPort=&lt;fld54&gt;|SOCKSProto=&lt;fld55&gt;|FTProtMech=&lt;fld56&gt;|FTCntrlProtLevel=&lt;fld57&gt;|FTDataProtLevel=&lt;fld58&gt;|FTLoginMethod=&lt;fld59&gt;|FTProtocolLvl=&lt;fld60&gt;|FTCipherSpec=&lt;fld1&gt;|FTProtBuffSize=&lt;fld2&gt;|FTCipher=&lt;fld3&gt;|FTFileUserID=&lt;fld4&gt;|" />
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="20" 
+	id2="20" 
+	eventcategory="1801020000"
+    content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|TNLUName=&lt;fld32&gt;|TNHost=&lt;fld33&gt;|TNDev=&lt;fld34&gt;|TNRmtIP=&lt;saddr&gt;|TNLocIP=&lt;daddr&gt;|TNRmtPort=&lt;sport&gt;|TNLocPort=&lt;dport&gt;|TNInitDateTime=&lt;fld21&gt;|" />
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="21" 
+	id2="21" 
+	eventcategory="1801030000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|TNLUName=&lt;fld32&gt;|TNHost=&lt;fld33&gt;|TNDev=&lt;fld34&gt;|TNRmtIP=&lt;saddr&gt;|TNLocIP=&lt;daddr&gt;|TNRmtPort=&lt;sport&gt;|TNLocPort=&lt;dport&gt;|TNHost=&lt;fld29&gt;|TNBytesIn=&lt;fld30&gt;|TNBytesOut=&lt;fld31&gt;|TNInitDateTime=&lt;fld21&gt;|TNTermDateTime=&lt;fld22&gt;|TNDur=&lt;fld41&gt;|TNSessType=&lt;fld47&gt;|TNLUSelType=&lt;fld49&gt;|TNSSLStatus=&lt;fld28&gt;|TNConnOpt=&lt;fld42&gt;|TN3270ConnOpt=&lt;fld43&gt;|TNRetCode=&lt;fld44&gt;|TNLogMode=&lt;fld45&gt;|TNDevType=&lt;fld46&gt;|TNHostName=&lt;fld48&gt;|TNRndTripMillisec=&lt;fld50&gt;|TNIPRndTripMillisec=&lt;fld51&gt;|TNCntTrans=&lt;fld52&gt;|TNCntIPTrans=&lt;fld53&gt;|TNElapsRTrpSq=&lt;fld54&gt;|TNElapsIpRTrpSq=&lt;fld55&gt;|TNElapsSnaRTrpSq=&lt;fld56&gt;|TNGrpIndx=&lt;fld57&gt;|TNIpTrpMeasure=&lt;fld58&gt;|TNRndUprBndBkt1Millisec=&lt;fld23&gt;|TNRndUprBndBkt2Millisec=&lt;fld24&gt;|TNRndUprBndBkt3Millisec=&lt;fld25&gt;|TNRndUprBndBkt4Millisec=&lt;fld26&gt;|TNNbrTransBkt1Criteria=&lt;fld27&gt;|TNNbrTransBkt2Criteria=&lt;fld59&gt;|TNNbrTransBkt3Criteria=&lt;fld60&gt;|TNNbrTransBkt4Criteria=&lt;fld1&gt;|TNNbrTransExceedBkt4=&lt;fld2&gt;|" />
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="22" 
+	id2="22" 
+	eventcategory="1801020000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|TNCIRmtIP=&lt;saddr&gt;|TNCILocIP=&lt;daddr&gt;|TNCIRmtPort=&lt;sport&gt;|TNCILocPort=&lt;dport&gt;|TNCIInitDateTime=&lt;fld21&gt;|" />
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="23" 
+	id2="23" 
+	eventcategory="1801030000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|TNCTRmtIP=&lt;saddr&gt;|TNCTLocIP=&lt;daddr&gt;|TNCTRmtPort=&lt;sport&gt;|TNCTLocPort=&lt;dport&gt;|TNCTNJENode=&lt;fld27&gt;|TNCTTBytesIn=&lt;fld30&gt;|TNCTTBytesOut=&lt;fld31&gt;|TNCTInitDateTime= &lt;fld21&gt;|TNCTInitDateTime= &lt;fld22&gt;|TNCTDur=&lt;fld40&gt;|TNCTConnOpt=&lt;fld36&gt;|TNCTDevType=&lt;fld38&gt;|" />
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="70" 
+	id2="70" 
+	eventcategory="1802000000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|FSOper=&lt;fld174&gt;|FSCmnd=&lt;fld34&gt;|FSType=&lt;fld37&gt;FSDRmtIP=&lt;saddr&gt;|FSDLocIP=&lt;daddr&gt;|FSDRmtPort=&lt;sport&gt;|FSDLocPort=&lt;dport&gt;|FSCRmtIP=&lt;fld27&gt;|FSCLocIP=&lt;fld35&gt;|FSDRmtPort=&lt;fld36&gt;|FSDLocPort=&lt;fld38&gt;|FSClntUser=&lt;fld30&gt;|FSType=&lt;fld31&gt;|FSMode=&lt;fld40&gt;|FSStruc=&lt;fld41&gt;|FSDStype=&lt;fld42&gt;|FSStrtDateTime=&lt;fld21&gt;|FSEndDateTime=&lt;fld22&gt;|FSDur=&lt;fld43&gt;|FSBytes=&lt;fld44&gt;|FSReply=&lt;fld45&gt;|FSPDSMem=&lt;fld46&gt;|FSAbend=&lt;fld48&gt;|FSPDS2Mem=&lt;fld49&gt;|FSBytesFlt=&lt;fld50&gt;|FSCtrlConn=&lt;fld51&gt;|FSDataConn=&lt;fld52&gt;|FSSessID=&lt;fld53&gt;|FSHostName=&lt;fld54&gt;|FSFileName1=&lt;fld55&gt;|FSFileName2=&lt;fld56&gt;|FSProtMech=&lt;fld57&gt;|FSCntrlProtLevel=&lt;fld23&gt;|FSDataProtLevel=&lt;fld24&gt;|FSLoginMethod=&lt;fld25&gt;|FSProtocolLvl=&lt;fld26&gt;|FSCipherSpec=&lt;fld58&gt;|FSProtBuffSize=&lt;fld28&gt;|FSCipher=&lt;fld29&gt;|" />
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="93" 
+	id1="72" 
+	id2="72" 
+	eventcategory="1401030000"
+	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld20)&gt;&lt;event_type&gt;|SubType=&lt;fld9&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld20&gt;|Triplets=&lt;fld11&gt;|Sysname=&lt;fld12&gt;|Sysplex=&lt;fld13&gt;|Stack=&lt;fld14&gt;|RelID=&lt;fld15&gt;|Comp=&lt;fld16&gt;|ASName=&lt;fld17&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld18&gt;|Reason=&lt;fld19&gt;|FFRmtIP=&lt;saddr&gt;|FFLocIP=&lt;daddr&gt;|FFRmtPort=&lt;sport&gt;|FFLocPort=&lt;dport&gt;|FFClntUser=&lt;fld27&gt;|FFRsn=&lt;fld35&gt;|FFCtrlConnID=&lt;fld36&gt;|FFSessID=&lt;fld38&gt;|FFProtMech=&lt;fld37&gt;|FFCntrlProtLevel=&lt;fld39&gt;|FFDataProtLevel=&lt;fld30&gt;|FFLoginMethod=&lt;fld31&gt;|FFProtocolLvl=&lt;fld40&gt;|FFCipherSpec=&lt;fld41&gt;|FFProtBuffSize=&lt;fld42&gt;|FFCipher=&lt;fld43&gt;|" />
+
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="93"
+	id1="IBMMFIPSEC_TVM"
+	id2="IBMMFIPSEC_TVM"
+	eventcategory="1605000000"
+	tagval="true"		
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%G-%W %N:%U:%O',fld5)&gt;&lt;@ec_subject:*getEventCategorySubject(fld2)&gt;&lt;@ec_activity:*getEventCategoryActivity(fld2)&gt;&lt;@ec_theme:*getEventCategoryTheme(fld2)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(fld2)&gt;SMFType=&lt;event_type&gt;|SubType=&lt;fld2&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld5&gt;|Triplets=&lt;fld6&gt;|Sysname=&lt;fld7&gt;|Sysplex=&lt;fld8&gt;|Stack=&lt;fld9&gt;|RelID=&lt;fld10&gt;|Comp=&lt;fld11&gt;|ASName=&lt;fld12&gt;|UserID=&lt;uid&gt;|ASID=&lt;fld14&gt;|Reason=&lt;fld15&gt;|TCPSocketName=&lt;fld16&gt;|TCPSocketID=&lt;fld17&gt;|Subtask=&lt;fld18&gt;|TIRmtIP=&lt;saddr&gt;|TILocIP=&lt;daddr&gt;|TIRmtPort=&lt;sport&gt;|TILocPort=&lt;dport&gt;|TIConnDateTime=&lt;fld23&gt;|TISTCK=&lt;fld24&gt;|AT_TLS_Conn=&lt;fld25&gt;|AT_TLS_Policy=&lt;fld26&gt;|TermCode=&lt;fld27&gt;|TTConnStart=&lt;fld28&gt;|TTConnEnd=&lt;fld29&gt;|TTRmtIP=&lt;saddr&gt;|TTLocIP=&lt;daddr&gt;|TTRmtPort=&lt;sport&gt;|TTLocPort=&lt;dport&gt;|TTBytesIn=&lt;fld34&gt;|TTBytesOut=&lt;fld35&gt;|TTSndWindow@Close=&lt;fld36&gt;|TTMaxSndWindow=&lt;fld37&gt;|TTCongestWindow=&lt;fld38&gt;|TTSndSeg@Close=&lt;fld39&gt;|TTRndTripTime@Close=&lt;fld40&gt;|TTRndTripVar@Close=&lt;fld41&gt;|SocketStat=&lt;fld42&gt;|TTServiceType=&lt;fld43&gt;|TTRetransTimes=&lt;fld44&gt;|TTSvcProf=&lt;fld45&gt;|TTSvcPol=&lt;fld46&gt;|TTInbndSeg=&lt;fld47&gt;|TTOutbndSeg=&lt;fld48&gt;|TTSSTCK=&lt;fld49&gt;|TTESTCK=&lt;fld50&gt;|TTotDupACK=&lt;fld51&gt;|TTTelLUName=&lt;fld52&gt;|TTTelAppl=&lt;fld53&gt;|TTTelLogmode=&lt;fld54&gt;|TTTelStat=&lt;fld55&gt;|TelTermCode=&lt;fld56&gt;|AT_TLS_SSL_Proto=&lt;fld57&gt;|AT_TLS_Cipher=&lt;fld58&gt;|AT_TLS_SecType=&lt;fld59&gt;|AT_TLS_Partner_UserID=&lt;fld60&gt;|TTApplData=&lt;fld76&gt;|FTPCmnd=&lt;fld77&gt;|FCDRmtIP=&lt;saddr&gt;|FCDLocIP=&lt;daddr&gt;|FCDRmtPort=&lt;sport&gt;|FCDLocPort=&lt;dport&gt;|FCCRmtIP=&lt;fld82&gt;|FCCLocIP=&lt;fld83&gt;|FCCRmtPort=&lt;fld84&gt;|FCCLocPort=&lt;fld85&gt;|FTPRmtUser=&lt;fld86&gt;|FTPLocUser=&lt;fld87&gt;|FCType=&lt;fld88&gt;|FTPMode=&lt;fld89&gt;|FTPStruc=&lt;fld90&gt;|FTPDStype=&lt;fld91&gt;|FTStrtDateTime=&lt;fld92&gt;|FTEndDateTime=&lt;fld93&gt;|FTDur=&lt;fld94&gt;|FTBytes=&lt;fld95&gt;|FTReply=&lt;fld96&gt;|FTPDSMem=&lt;fld97&gt;|FTHost=&lt;fld98&gt;|FTAbend=&lt;fld99&gt;|FTBytesFlt=&lt;fld100&gt;|FTCtrlConn=&lt;fld101&gt;|FTDataConn=&lt;fld102&gt;|FTFileName=&lt;fld103&gt;|SOCKSIP=&lt;fld104&gt;|SOCKSPort=&lt;fld105&gt;|SOCKSProto=&lt;fld106&gt;|FTProtMech=&lt;fld107&gt;|FTCntrlProtLevel=&lt;fld108&gt;|FTDataProtLevel=&lt;fld109&gt;|FTLoginMethod=&lt;fld110&gt;|FTProtocolLvl=&lt;fld111&gt;|FTCipherSpec=&lt;fld112&gt;|FTProtBuffSize=&lt;fld113&gt;|FTCipher=&lt;fld114&gt;|FTFileUserID=&lt;fld115&gt;|TNLUName=&lt;fld116&gt;|TNAppl=&lt;fld117&gt;|TNDev=&lt;fld118&gt;|TNRmtIP=&lt;saddr&gt;|TNLocIP=&lt;daddr&gt;|TNRmtPort=&lt;sport&gt;|TNLocPort=&lt;dport&gt;|TNInitDateTime=&lt;fld123&gt;|TNHost=&lt;fld124&gt;|TNBytesIn=&lt;fld125&gt;|TNBytesOut=&lt;fld126&gt;|TNTermDateTime=&lt;fld127&gt;|TNDur=&lt;fld128&gt;|TNSessType=&lt;fld129&gt;|TNLUSelType=&lt;fld130&gt;|TNSSLStatus=&lt;fld131&gt;|TNConnOpt=&lt;fld132&gt;|TN3270ConnOpt=&lt;fld133&gt;|TNRetCode=&lt;fld134&gt;|TNLogMode=&lt;fld135&gt;|TNDevType=&lt;fld136&gt;|TNHostName=&lt;fld137&gt;|TNRndTripMillisec=&lt;fld138&gt;|TNIPRndTripMillisec=&lt;fld139&gt;|TNCntTrans=&lt;fld140&gt;|TNCntIPTrans=&lt;fld141&gt;|TNElapsRTrpSq=&lt;fld142&gt;|TNElapsIpRTrpSq=&lt;fld143&gt;|TNElapsSnaRTrpSq=&lt;fld144&gt;|TNGrpIndx=&lt;fld145&gt;|TNIpTrpMeasure=&lt;fld146&gt;|TNRndUprBndBkt1Millisec=&lt;fld147&gt;|TNRndUprBndBkt2Millisec=&lt;fld148&gt;|TNRndUprBndBkt3Millisec=&lt;fld149&gt;|TNRndUprBndBkt4Millisec=&lt;fld150&gt;|TNNbrTransBkt1Criteria=&lt;fld151&gt;|TNNbrTransBkt2Criteria=&lt;fld152&gt;|TNNbrTransBkt3Criteria=&lt;fld153&gt;|TNNbrTransBkt4Criteria=&lt;fld154&gt;|TNNbrTransExceedBkt4=&lt;fld155&gt;|TNCIRmtIP=&lt;saddr&gt;|TNCILocIP=&lt;daddr&gt;|TNCIRmtPort=&lt;sport&gt;|TNCILocPort=&lt;dport&gt;|TNCIInitDateTime=&lt;fld160&gt;|TNCTRmtIP=&lt;saddr&gt;|TNCTLocIP=&lt;daddr&gt;|TNCTRmtPort=&lt;sport&gt;|TNCTLocPort=&lt;dport&gt;|TNCTNJENode=&lt;fld165&gt;|TNCTTBytesIn=&lt;fld166&gt;|TNCTTBytesOut=&lt;fld167&gt;|TNCTInitDateTime=&lt;fld168&gt;|TNCTTnitDateTime=&lt;fld169&gt;|TNCTDur=&lt;fld170&gt;|TNCTConnOpt=&lt;fld171&gt;|TNCTDevType=&lt;fld172&gt;|FSOper=&lt;fld173&gt;|FSCmnd=&lt;fld174&gt;|FSDRmtIP=&lt;saddr&gt;|FSDLocIP=&lt;daddr&gt;|FSDRmtPort=&lt;sport&gt;|FSDLocPort=&lt;dport&gt;|FSCRmtIP=&lt;fld179&gt;|FSCLocIP=&lt;fld180&gt;|FSCRmtPort=&lt;fld181&gt;|FSCLocPort=&lt;fld182&gt;|FSClntUser=&lt;fld183&gt;|FSDType=&lt;fld184&gt;|FSMode=&lt;fld185&gt;|FSStruc=&lt;fld186&gt;|FSDStype=&lt;fld187&gt;|FSStrtDateTime=&lt;fld188&gt;|FSEndDateTime=&lt;fld189&gt;|FSDur=&lt;fld190&gt;|FSBytes=&lt;fld191&gt;|FSReply=&lt;fld192&gt;|FSPDSMem=&lt;fld193&gt;|FSAbend=&lt;fld194&gt;|FSPDS2Mem=&lt;fld195&gt;|FSBytesFlt=&lt;fld196&gt;|FSCtrlConn=&lt;fld197&gt;|FSDataConn=&lt;fld198&gt;|FSSessID=&lt;fld199&gt;|FSHostName=&lt;fld200&gt;|FSFileName1=&lt;fld201&gt;|FSFileName2=&lt;fld202&gt;|FSProtMech=&lt;fld203&gt;|FSCntrlProtLevel=&lt;fld204&gt;|FSDataProtLevel=&lt;fld205&gt;|FSLoginMethod=&lt;fld206&gt;|FSProtocolLvl=&lt;fld207&gt;|FSCipherSpec=&lt;fld208&gt;|FSProtBuffSize=&lt;fld209&gt;|FSCipher=&lt;fld210&gt;|FFRmtIP=&lt;saddr&gt;|FFLocIP=&lt;daddr&gt;|FFRmtPort=&lt;sport&gt;|FFLocPort=&lt;dport&gt;|FFClntUser=&lt;fld215&gt;|FFRsn=&lt;fld216&gt;|FFCtrlConnID=&lt;fld217&gt;|FFSessID=&lt;fld218&gt;|FFProtMech=&lt;fld219&gt;|FFCntrlProtLevel=&lt;fld220&gt;|FFDataProtLevel=&lt;fld221&gt;|FFLoginMethod=&lt;fld222&gt;|FFProtocolLvl=&lt;fld223&gt;|FFCipherSpec=&lt;fld224&gt;|FFProtBuffSize=&lt;fld225&gt;|FFCipher=&lt;fld226&gt;|FCFType=&lt;fld227&gt;|FSFType=&lt;fld228&gt;|FTPType=&lt;fld1&gt;|FSType=&lt;fld3&gt;"/>
+
+</DEVICEMESSAGES>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="11"
+	checksum="c9c46f94242f39699a12e047ce608bdd"
+	revision="106"
+	enVision="35010000"
+	device="2.0" />
+
+ 
+<HEADER 
+	id1="0002" 
+	id2="0002"
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3, &apos;_&apos;, msgIdPart4)" 
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; Vontu System Event: [&lt;hostname&gt;] &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt; &lt;msgIdPart4&gt; - &lt;!payload:$START&gt;" /> 
+
+	
+<HEADER 
+	id1="0003" 
+	id2="0003"
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3)" 
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; Vontu System Event: [&lt;hostname&gt;] &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt; - &lt;!payload:$START&gt;" /> 
+
+<HEADER 
+	id1="0004" 
+	id2="0004"
+	messageid="STRCAT(&apos;No&apos;, &apos;_&apos;, &apos;Traffic&apos;, &apos;_&apos;, &apos;Captured&apos;)" 
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; Vontu System { Event: [ | Event [ } &lt;hostname&gt;] No &lt;hfld1&gt; Traffic Captured - &lt;!payload:$START&gt;" /> 
+
+<HEADER 
+	id1="0005" 
+	id2="0005"
+	messageid="STRCAT(&apos;System&apos;, &apos;_&apos;, &apos;Event&apos;)" 
+	content="&lt;hdatetime&gt; Vontu System Event: [&lt;hostname&gt;] &lt;!payload&gt;" />
+
+<HEADER 
+	id1="0006" 
+	id2="0006"  
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; Vontu &lt;messageid&gt;: &lt;!payload&gt;" /> 
+
+<HEADER 
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; Vontu &lt;messageid&gt;: &lt;!payload&gt;" /> 
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Incident:04" 
+	id2="Incident" 
+	eventcategory="1502000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Incidents&gt;&lt;action&gt;^^&lt;id&gt;^^&lt;url&gt;^^&lt;policyname&gt;^^&lt;to&gt;^^&lt;from&gt;^^&lt;severity&gt;:&lt;fld21&gt;^^&lt;context&gt;^^&lt;filename&gt;^^&lt;fld22&gt;^^&lt;dclass_counter1&gt;^^&lt;directory&gt;^^&lt;fld23&gt;^^&lt;fld24&gt;^^&lt;fld25&gt;^^&lt;fld26&gt;^^&lt;fld27&gt;^^&lt;fld28&gt;^^&lt;protocol&gt;" /> 
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Incident:01" 
+	id2="Incident" 
+	eventcategory="1502020000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@action:Passed&gt;&lt;@dclass_counter1_string:Incidents&gt;&lt;@fld2:*HDR(hmonth)&gt;&lt;@fld3:*HDR(hday)&gt;&lt;@fld4:*HDR(htime)&gt;&lt;@event_time_string:*STRCAT(fld2,fld3,fld4)&gt;&lt;policyname&gt;^^&lt;id&gt;^^&lt;context&gt;^^&lt;fld21&gt;:&lt;severity&gt;^^&lt;dclass_counter1&gt;^^&lt;rulename&gt;^^&lt;from&gt;^^&lt;to&gt;^^Passed^^&lt;filename&gt;^^&lt;directory&gt;^^&lt;fld1&gt;^^&lt;hostname&gt;^^&lt;network_service&gt;^^&lt;url&gt;" /> 
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Incident:02" 
+	id2="Incident" 
+	eventcategory="1502010000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@action:Blocked&gt;&lt;@dclass_counter1_string:Incidents&gt;&lt;@fld2:*HDR(hmonth)&gt;&lt;@fld3:*HDR(hday)&gt;&lt;@fld4:*HDR(htime)&gt;&lt;@event_time_string:*STRCAT(fld2,fld3,fld4)&gt;&lt;policyname&gt;^^&lt;id&gt;^^&lt;context&gt;^^&lt;fld21&gt;:&lt;severity&gt;^^&lt;dclass_counter1&gt;^^&lt;rulename&gt;^^&lt;from&gt;^^&lt;to&gt;^^Blocked^^&lt;filename&gt;^^&lt;directory&gt;^^&lt;fld1&gt;^^&lt;hostname&gt;^^&lt;network_service&gt;^^&lt;url&gt;" /> 
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Incident:03" 
+	id2="Incident" 
+	eventcategory="1502000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@action:Modified&gt;&lt;@dclass_counter1_string:Incidents&gt;&lt;@fld2:*HDR(hmonth)&gt;&lt;@fld3:*HDR(hday)&gt;&lt;@fld4:*HDR(htime)&gt;&lt;@event_time_string:*STRCAT(fld2,fld3,fld4)&gt;&lt;policyname&gt;^^&lt;id&gt;^^&lt;context&gt;^^&lt;fld21&gt;:&lt;severity&gt;^^&lt;dclass_counter1&gt;^^&lt;rulename&gt;^^&lt;from&gt;^^&lt;to&gt;^^Modified^^&lt;filename&gt;^^&lt;directory&gt;^^&lt;fld1&gt;^^&lt;hostname&gt;^^&lt;network_service&gt;^^&lt;url&gt;" /> 
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Incident" 
+	id2="Incident" 
+	eventcategory="1502000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dclass_counter1_string:Incidents&gt;&lt;@fld2:*HDR(hmonth)&gt;&lt;@fld3:*HDR(hday)&gt;&lt;@fld4:*HDR(htime)&gt;&lt;@event_time_string:*STRCAT(fld2,fld3,fld4)&gt;&lt;policyname&gt;^^&lt;id&gt;^^&lt;context&gt;^^&lt;fld21&gt;:&lt;severity&gt;^^&lt;dclass_counter1&gt;^^&lt;rulename&gt;^^&lt;from&gt;^^&lt;to&gt;^^&lt;action&gt;^^&lt;filename&gt;^^&lt;directory&gt;^^&lt;fld1&gt;^^&lt;hostname&gt;^^&lt;network_service&gt;^^&lt;url&gt;" /> 
+
+
+
+<MESSAGE 
+	level="6" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="System_Event" 
+	id2="System_Event" 
+	eventcategory="1603020000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostname)&gt;&lt;@event_time_string:*HDR(hdatetime)&gt; &lt;action&gt; - &lt;event_description&gt;" /> 
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Tablespace_is_almost_full" 
+	id2="Tablespace_is_almost_full" 
+	eventcategory="1603020000" 
+	content="&lt;@dclass_ratio1_string:Tablespace utilization&gt;&lt;@obj_type:Database Table&gt;&lt;@action:Tablespace is almost full&gt; &lt;event_time_string&gt; Vontu System Event: [&lt;hostname&gt;] Tablespace is almost full - Oracle tablespace &lt;obj_name&gt; is over &lt;dclass_ratio1&gt; full." /> 
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="Incident_queue_backlogged" 
+	id2="Incident_queue_backlogged" 
+	eventcategory="1603020000" 
+	content="&lt;@dclass_counter1_string:Incidents&gt;&lt;@action:Incident queue backlogged&gt; &lt;event_time_string&gt; Vontu System Event: [&lt;hostname&gt;] Incident queue backlogged - There are &lt;dclass_counter1&gt; incidents in this server's queue." /> 
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="73" 
+	id1="No_Traffic_Captured" 
+	id2="No_Traffic_Captured" 
+	eventcategory="1801010000" 
+	content="&lt;@action:No Traffic Captured&gt; &lt;event_time_string&gt; Vontu System { Event: [ | Event [ } &lt;hostname&gt;] No &lt;network_service&gt; Traffic Captured - &lt;event_description&gt;" /> 
+
+</DEVICEMESSAGES>

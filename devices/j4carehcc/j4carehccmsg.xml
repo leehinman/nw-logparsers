@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<DEVICEMESSAGES>
+
+	<VERSION
+		xml="20"
+		checksum="f9f07e97923460c94dde081fe077664e"
+		revision="0"
+		enVision="21050025"
+		device="2.0"/>
+
+	<HEADER
+		id1="0001"
+		id2="0001"
+		content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt;  &lt;hfld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&lt;hfld5&gt; EventDateTime=&lt;hfld6&gt; EventOutcomeIndicator=&lt;hfld7&gt;&gt;&lt;&lt;EventID code=&quot;&lt;messageid&gt;&quot; &lt;!payload:hfld1&gt;"/>
+	
+	<VALUEMAP 
+		name="getAuditSourceTypeCode" 
+		default="$NONE" 
+		keyvaluepairs="1=&apos;End-User Interface&apos;|2=&apos;Data Acquisition Device&apos;|3=&apos;Web Server Process&apos;|4=&apos;Application Server Process&apos;|5=&apos;Database Server Process&apos;|6=&apos;Security Server&apos;|7=&apos;ISO Level 1-3 Network Component&apos;|8=&apos;ISO Level 4-6 Operating Software&apos;|9=&apos;External Source/Other/Unknown&apos;" />
+
+	<VALUEMAP 
+		name="getEventOutcomeIndicator" 
+		default="$NONE" 
+		keyvaluepairs="0=&apos;Success&apos;|4=&apos;Minor Failure&apos;|8=&apos;Serious Failure&apos;|12=&apos;Major Failure&apos;" />
+	
+	<VALUEMAP 
+		name="getEventActionCode" 
+		default="$NONE" 
+		keyvaluepairs="C=&apos;Create&apos;|R=&apos;Read/View/Print/Query&apos;|U=&apos;Update&apos;|D=&apos;Delete&apos;|E=&apos;Execute&apos;" />
+
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="User_Authentication"
+		id2="110114"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;&lt;info&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; NetworkAccessPointID=&quot;&lt;hostip&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="User_Authentication:01"
+		id2="110114"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;&lt;info&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; NetworkAccessPointID=&quot;&lt;hostname&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Security_Alert"
+		id2="110113"
+		eventcategory="1704000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;&lt;info&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; AlternativeUserID=&quot;&lt;process_id&gt;&quot; NetworkAccessPointID=&quot;&lt;dhost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;/&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;&lt;fld12&gt;&quot; NetworkAccessPointID=&quot;&lt;shost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;url&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;12&quot;/&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld15&gt;&quot; value=&quot;&lt;fld16&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Security_Alert:01"
+		id2="110113"
+		eventcategory="1704000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;&lt;info&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; AlternativeUserID=&quot;&lt;process_id&gt;&quot; NetworkAccessPointID=&quot;&lt;dhost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;/&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;&lt;fld12&gt;&quot; NetworkAccessPointID=&quot;&lt;saddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;url&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;12&quot;/&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld15&gt;&quot; value=&quot;&lt;fld16&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Security_Alert:02"
+		id2="110113"
+		eventcategory="1704000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;&lt;info&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; AlternativeUserID=&quot;&lt;process_id&gt;&quot; NetworkAccessPointID=&quot;&lt;daddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;&lt;fld12&gt;&quot; NetworkAccessPointID=&quot;&lt;shost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;url&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;12&quot;/&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld15&gt;&quot; value=&quot;&lt;fld16&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Security_Alert:03"
+		id2="110113"
+		eventcategory="1704000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;&lt;info&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; AlternativeUserID=&quot;&lt;process_id&gt;&quot; NetworkAccessPointID=&quot;&lt;daddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;&lt;fld12&gt;&quot; NetworkAccessPointID=&quot;&lt;saddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;url&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;12&quot;/&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld15&gt;&quot; value=&quot;&lt;fld16&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Security_Alert:04"
+		id2="110113"
+		eventcategory="1802000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld65:*PARMVAL(id1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info: Network Configuration&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;id1&gt;&quot; codeSystemName=&quot;&lt;fld11&gt;&quot; displayName=&quot;Network Configuration&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; AlternativeUserID=&quot;&lt;process_id&gt;&quot; NetworkAccessPointID=&quot;&lt;dhost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;/&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld25&gt;&quot; UserIsRequestor=&quot;&lt;fld12&gt;&quot; NetworkAccessPointID=&quot;&lt;shost&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld18&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld30&gt;&quot; codeSystemName=&quot;&lt;fld17&gt;&quot; displayName=&quot;&lt;fld19&gt;&quot;/&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld15&gt;&quot; value=&quot;&lt;fld16&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Audit_Log_Used"
+		id2="110101"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; NetworkAccessPointID=&quot;&lt;hostip&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;url&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld20&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;12&quot;/&gt;&lt;&lt;ParticipantObjectName&gt;Security Audit Log&lt;&lt;/ParticipantObjectName&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Query"
+		id2="110112"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;false&quot; AlternativeUserID=&quot;&lt;fld21&gt;&quot; NetworkAccessPointID=&quot;&lt;dhost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110152&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Destination&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld23&gt;&quot; AlternativeUserID=&quot;&lt;fld24&gt;&quot; NetworkAccessPointID=&quot;&lt;saddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110153&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Source&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld26&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld27&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld20&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld25&gt;&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;&lt;fld28&gt;&quot;/&gt;&lt;&lt;ParticipantObjectQuery&gt;&lt;fld29&gt;&lt;&lt;/ParticipantObjectQuery&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld30&gt;&quot; value=&quot;&lt;fld31&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Application_Activity"
+		id2="110100"
+		eventcategory="1609000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;fld11&gt;&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Application Start&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;false&quot; AlternativeUserID=&quot;&lt;fld21&gt;&quot; UserName=&quot;&lt;username&gt;&quot; NetworkAccessPointID=&quot;&lt;daddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110150&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;&lt;fld51&gt;&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld23&gt;&quot; NetworkAccessPointID=&quot;&lt;saddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110151&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Application Launcher&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Export"
+		id2="110106"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;fld11&gt;&quot; codeSystemName=&quot;IHE Transactions&quot; displayName=&quot;&lt;fld28&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;false&quot; AlternativeUserID=&quot;&lt;fld21&gt;&quot; NetworkAccessPointID=&quot;&lt;shost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110153&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Source&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld23&gt;&quot; UserIsRequestor=&quot;true&quot;&gt;&lt;&lt;RoleIDCode code=&quot;&lt;fld29&gt;&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld30&gt;&quot; UserIsRequestor=&quot;false&quot; NetworkAccessPointID=&quot;&lt;dhost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110152&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Destination&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld31&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld32&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld33&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld34&gt;&quot; codeSystemName=&quot;&lt;fld35&gt;&quot; displayName=&quot;&lt;fld36&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld37&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld38&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld39&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld40&gt;&quot; codeSystemName=&quot;&lt;fld41&gt;&quot; displayName=&quot;&lt;fld42&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification>&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Import"
+		id2="110107"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;EventTypeCode code=&quot;&lt;fld11&gt;&quot; codeSystemName=&quot;IHE Transactions&quot; displayName=&quot;&lt;fld28&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;false&quot; NetworkAccessPointID=&quot;&lt;shost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110153&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Source&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld23&gt;&quot; AlternativeUserID=&quot;&lt;fld21&gt;&quot; UserName=&quot;&lt;fld41&gt;&quot; NetworkAccessPointID=&quot;&lt;saddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110152&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Destination&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld42&gt;&quot; UserIsRequestor=&quot;false&quot; UserName=&quot;&lt;fld43&gt;&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld31&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld32&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld33&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld34&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld37&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld38&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld39&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld40&gt;&quot;/&gt;&lt;&lt;ParticipantObjectDetail type=&quot;&lt;fld46&gt;&quot; value=&quot;&lt;fld44&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="Patient_Record"
+		id2="110110"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld65:*PARMVAL(obj_type)&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;username&gt;&quot; NetworkAccessPointID=&quot;&lt;hostip&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;id1&gt;&quot; ParticipantObjectTypeCode=&quot;1&quot; ParticipantObjectTypeCodeRole=&quot;1&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;2&quot;/&gt;&lt;&lt;ParticipantObjectName&gt;&lt;fld45&gt;&lt;&lt;/ParticipantObjectName&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="DICOM_Instances_Accessed"
+		id2="110103"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string: Number of instances&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; NetworkAccessPointID=&quot;&lt;hostname&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld31&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld32&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld33&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld34&gt;&quot;/&gt;&lt;&lt;ParticipantObjectName&gt;&lt;fld45&gt;&lt;&lt;/ParticipantObjectName&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld37&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld42&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld43&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld44&gt;&quot; codeSystemName=&quot;&lt;fld35&gt;&quot; displayName=&quot;&lt;fld36&gt;&quot;/&gt;&lt;&lt;ParticipantObjectDescription&gt;&lt;&lt;SOPClass UID=&quot;&lt;fld48&gt;&quot; NumberOfInstances=&quot;&lt;dclass_counter1&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectDescription&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="DICOM_Instances_Transferred"
+		id2="110104"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string: Number of instances&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; UserIsRequestor=&quot;false&quot; AlternativeUserID=&quot;&lt;fld21&gt;&quot; NetworkAccessPointID=&quot;&lt;shost&gt;&quot; NetworkAccessPointTypeCode=&quot;1&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110153&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Source&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld23&gt;&quot; NetworkAccessPointID=&quot;&lt;daddr&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;&gt;&lt;&lt;RoleIDCode code=&quot;110152&quot; codeSystemName=&quot;DCM&quot; displayName=&quot;Destination&quot;/&gt;&lt;&lt;/ActiveParticipant&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld31&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld32&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld33&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld34&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld37&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld38&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld39&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld40&gt;&quot;/&gt;&lt;&lt;ParticipantObjectName&gt;&lt;fld45&gt;&lt;&lt;/ParticipantObjectName&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld49&gt;&quot; ParticipantObjectTypeCode=&quot;2&quot; ParticipantObjectTypeCodeRole=&quot;3&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld44&gt;&quot; codeSystemName=&quot;&lt;fld35&gt;&quot; displayName=&quot;&lt;fld36&gt;&quot;/&gt;&lt;&lt;ParticipantObjectDescription&gt;&lt;&lt;SOPClass UID=&quot;&lt;fld48&gt;&quot; NumberOfInstances=&quot;&lt;dclass_counter1&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectDescription&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+			
+	
+	
+	<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="90"
+		id1="DICOM_Study_Deleted"
+		id2="110105"
+		eventcategory="1401000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string: Number of instances&gt;&lt;@obj_type:*getAuditSourceTypeCode(obj_type)&gt;&lt;@disposition:*getEventOutcomeIndicator(disposition)&gt;&lt;@action:*getEventActionCode(action)&gt;&lt;@fld65:*PARMVAL(obj_type)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fqdn&gt;  &lt;fld4&gt; - - ?&lt;&lt;AuditMessage&gt;&lt;&lt;EventIdentification EventActionCode=&quot;&lt;action&gt;&quot; EventDateTime=&quot;&lt;fld6&gt;T&lt;fld7&gt;.&lt;fld8&gt;&quot; EventOutcomeIndicator=&quot;&lt;disposition&gt;&quot;&gt;&lt;&lt;EventID code=&quot;&lt;id&gt;&quot; codeSystemName=&quot;&lt;fld10&gt;&quot; displayName=&quot;&lt;event_type&gt;&quot;/&gt;&lt;&lt;/EventIdentification&gt;&lt;&lt;ActiveParticipant UserID=&quot;&lt;fld22&gt;&quot; NetworkAccessPointID=&quot;&lt;hostip&gt;&quot; NetworkAccessPointTypeCode=&quot;2&quot;/&gt;&lt;&lt;AuditSourceIdentification AuditSourceID=&quot;&lt;obj_name&gt;&quot;&gt;&lt;&lt;AuditSourceTypeCode code=&quot;&lt;obj_type&gt;&quot;/&gt;&lt;&lt;/AuditSourceIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld31&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld32&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld33&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld34&gt;&quot;/&gt;&lt;&lt;ParticipantObjectName&gt;&lt;fld45&gt;&lt;&lt;/ParticipantObjectName&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;ParticipantObjectIdentification ParticipantObjectID=&quot;&lt;fld37&gt;&quot; ParticipantObjectTypeCode=&quot;&lt;fld38&gt;&quot; ParticipantObjectTypeCodeRole=&quot;&lt;fld39&gt;&quot;&gt;&lt;&lt;ParticipantObjectIDTypeCode code=&quot;&lt;fld40&gt;&quot; codeSystemName=&quot;&lt;fld35&gt;&quot; displayName=&quot;&lt;fld36&gt;&quot;/&gt;&lt;&lt;ParticipantObjectDescription&gt;&lt;&lt;Accession Number=&quot;&lt;id1&gt;&quot;/&gt;&lt;&lt;SOPClass UID=&quot;&lt;fld48&gt;&quot; NumberOfInstances=&quot;&lt;dclass_counter1&gt;&quot;/&gt;&lt;&lt;/ParticipantObjectDescription&gt;&lt;&lt;/ParticipantObjectIdentification&gt;&lt;&lt;/AuditMessage&gt;"/>
+
+	
+	
+</DEVICEMESSAGES>

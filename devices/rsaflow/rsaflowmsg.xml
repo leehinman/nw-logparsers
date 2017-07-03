@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="13"
+	checksum="99d1f74e9770d0afab90d7b1a509bd88"
+	revision="0"
+	enVision="40010000" 
+	device="2.0" />
+
+<TAGVALMAP delimiter=" " />
+
+<VALUEMAP
+   name="deviceDirection"
+   default="$NONE"
+   keyvaluepairs="1='outbound'|0='inbound'"/>
+
+<VALUEMAP
+   name="getProtocol"
+   default="$NONE"
+   keyvaluepairs="0='HOPOPT'|1='ICMP'|2='IGMP'|3='GGP'|4='IP'|5='ST'|6='TCP'|7='CBT'|8='EGP'|9='IGP'|10='BBN-RCC-M'|11='NVP-II'|12='PUP'|13='ARGUS'|14='EMCON'|15='XNET'|16='CHAOS'|17='UDP'|18='MUX'|19='DCN-MEAS'|20='HMP'|21='PRM'|22='XNS-IDP'|23='TRUNK-1'|24='TRUNK-2'|25='LEAF-1'|26='LEAF-2'|27='RDP'|28='IRTP'|29='ISO-TP4'|30='NETBLT'|31='MFE-NSP'|32='MERIT-INP'|33='SEP'|34='3PC'|35='IDPR'|36='XTP'|37='DDP'|38='IDPR-CMTP'|39='TP++'|40='IL'|41='IPv6'|42='SDRP'|43='IPv6-Rout'|44='IPv6-Frag'|45='IDRP'|46='RSVP'|47='GRE'|48='MHRP'|49='BNA'|50='ESP'|51='AH'|52='I-NLSP'|53='SWIPE'|54='NARP'|55='MOBILE'|56='TLSP'|57='SKIP'|58='IPv6-ICMP'|59='IPv6-NoNx'|60='IPv6-Opts'|61='AnyHost'|62='CFTP'|63='AnyNetwork'|64='SAT-EXPAK'|65='KRYPTOLAN'|66='RVD'|67='IPPC'|68='AnyFile'|69='SAT-MON'|70='VISA'|71='IPCV'|72='CPNX'|73='CPHB'|74='WSN'|75='PVP'|76='BR-SAT-MO'|77='SUN-ND'|78='WB-MON'|79='WB-EXPAK'|80='ISO-IP'|81='VMTP'|82='SECURE-VM'|83='VINES'|84='TTP'|85='NSFNET-IG'|86='DGP'|87='TCF'|88='EIGRP'|89='OSPFIGP'|90='Sprite-RP'|91='LARP'|92='MTP'|93='AX.25'|94='IPIP'|95='MICP'|96='SCC-SP'|97='ETHERIP'|98='ENCAP'|99='AnyPrivate'|100='GMTP'|101='IFMP'|102='PNNI'|103='PIM'|104='ARIS'|105='SCPS'|106='QNX'|107='A/N'|108='IPComp'|109='SNP'|110='Compaq-Pe'|111='IPX-in-IP'|112='VRRP'|113='PGM'|114='AnyHop'|115='L2TP'|116='DDX'|117='IATP'|118='STP'|119='SRP'|120='UTI'|121='SMP'|122='SM'|123='PTP'|124='ISIS'|125='FIRE'|126='CRTP'|127='CRUDP'|128='SSCOPMCE'|129='IPLT'|130='SPS'|131='PIPE Pr'|132='SCTP St'|133='FC Fi'|134='RSVP-E2E-'|255='Reserved'"/>
+
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		content="&lt;month&gt; &lt;day&gt; &lt;year&gt; &lt;time&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|RSA|Security Analytics NetFlow Collector|&lt;version&gt;|&lt;messageid&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;" />
+<MESSAGE
+		level="2"
+		parse="1"
+		parsedefvalue="1"
+		tableid="74"
+		id1="flowdata"
+		id2="flowdata"
+		tagval="true"
+		eventcategory="1802000000"
+		content="&lt;@event_type:flowdata&gt;&lt;@product:Security Analytics NetFlow Collector&gt;&lt;@direction:*deviceDirection(fld1)&gt;&lt;@protocol:*getProtocol(ip_proto)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@packets:*CALC(cn_spackets,+,cn_rpackets)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld2)&gt;Invalid=&lt;cn_invalid&gt; in=&lt;rbytes&gt; InPackets=&lt;cn_rpackets&gt; cnt=&lt;event_counter&gt; proto=&lt;ip_proto&gt; SrcTos=&lt;cn_src_tos&gt; TcpFlags=&lt;tcp_flags&gt; spt=&lt;sport&gt; src=&lt;saddr&gt; SrcMask=&lt;smask&gt; InputSnmp=&lt;dinterface&gt; dpt=&lt;dport&gt; dst=&lt;daddr&gt; DstMask=&lt;dmask&gt; OutputSnmp=&lt;sinterface&gt; Ipv4NextHop=&lt;cs_ip_next_hop&gt; SrcAs=&lt;cn_asn_src&gt; DstAs=&lt;cn_asn_dst&gt; BgpIpv4NextHop=&lt;cn_bgpv4nxthop&gt; MulDstPkts=&lt;cn_mul_dst_pks&gt; MulDstBytes=&lt;cn_mul_dst_byt&gt; FirstSwitched=&lt;cn_f_switch&gt; LastSwitched=&lt;cn_l_switch&gt; out=&lt;sbytes&gt; OutPackets=&lt;cn_spackets&gt; MinPacketLen=&lt;cn_minpcktlen&gt; MaxPacketLen=&lt;cn_maxpcktlen&gt; Ipv6SrcMask=&lt;smask&gt; Ipv6DstMask=&lt;dmask&gt; Ipv6FlowLabel=&lt;cn_v6flowlabel&gt; IcmpType=&lt;icmptype&gt; MulIgmpType=&lt;cn_muligmptype&gt; SamplingInterval=&lt;cn_sampint&gt; SamplingAlgorithm=&lt;cn_sampalgo&gt; FlowActiveTimeout=&lt;cn_acttimeout&gt; FlowInactiveTimeout=&lt;cn_inacttimeout&gt; EngineType=&lt;cn_engine_type&gt; EngineId=&lt;cn_engine_id&gt; TotalBytesExp=&lt;cn_totbytsexp&gt; TotalPacketsExp=&lt;cn_totpcktsexp&gt; TotalFlowsExp=&lt;cn_totflowexp&gt; cs1=&lt;fld&gt; Ipv4SrcPrefix=&lt;cs_ipv4srcpre&gt; Ipv4DstPrefix=&lt;cs_ipv4dstpre&gt; MplsTopLabelType=&lt;cn_mplstoplabel&gt; MplsTopLabelIpAddr=&lt;cn_mplstoplabip&gt; FlowSamplerId=&lt;cn_flowsampid&gt; FlowSamplerMode=&lt;cn_flowsampmode&gt; FlowSamplerRandIntv=&lt;cn_flowsampintv&gt; cs2=&lt;fld&gt; MinTtl=&lt;cn_min_ttl&gt; MaxTtl=&lt;cn_max_ttl&gt; Ipv4Ident=&lt;cn_ipv4_ident&gt; DstTos=&lt;cn_dst_tos&gt; smac=&lt;smacaddr&gt; dmac=&lt;dmacaddr&gt; SrcVlan=&lt;cn_src_vlan&gt; DstVlan=&lt;cn_dst_vlan&gt; IpProtoVersion=&lt;cn_ip_proto_ver&gt; deviceDirection=&lt;fld1&gt; Ipv6NextHop=&lt;cs_v6nxthop&gt; BgpIpv6NextHop=&lt;cs_bgpv6nxthop&gt; Ipv6OptionHeaders=&lt;cn_v6optheaders&gt; cs3=&lt;fld&gt; cs4=&lt;fld&gt; cs5=&lt;fld&gt; cs6=&lt;fld&gt; cs7=&lt;fld&gt; MplsLabel1=&lt;cn_mpls_lbl_1&gt; MplsLabel2=&lt;cn_mpls_lbl_2&gt; MplsLabel3=&lt;cn_mpls_lbl_3&gt; MplsLabel4=&lt;cn_mpls_lbl_4&gt; MplsLabel5=&lt;cn_mpls_lbl_5&gt; MplsLabel6=&lt;cn_mpls_lbl_6&gt; MplsLabel7=&lt;cn_mpls_lbl_7&gt; MplsLabel8=&lt;cn_mpls_lbl_8&gt; MplsLabel9=&lt;cn_mpls_lbl_9&gt; MplsLabel10=&lt;cn_mpls_lbl_10&gt; IfName=&lt;cs_if_name&gt; IfDesc=&lt;cs_if_desc&gt; SamplerName=&lt;cs_sampler_name&gt; InPermBytes=&lt;cn_inpermbyts&gt; InPermPackets=&lt;cn_inpermpckts&gt; cs8=&lt;fld&gt; UnixNSeconds=&lt;cn_unixnanosecs&gt; OctetsInFlow=&lt;bytes&gt; PacketsInFlow=&lt;packets&gt; SequenceCounter=&lt;cn_seqctr&gt; externalId=&lt;hardware_id&gt; SystemUpTime=&lt;cn_sysuptime&gt; TemplateId=&lt;cn_template_id&gt; rt=&lt;fld2&gt; Version=&lt;version&gt;"/>
+</DEVICEMESSAGES>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="5"
+	checksum="b88b7dd5f32a04d6915ba511a940da9a"
+	revision="79"
+	enVision="21050025" 
+	device="2.0" />
+
+<TAGVALMAP 
+		delimiter=", &quot;" />
+		
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		messageid="*STRCAT('URLSCAN','_','LOG','_','TVM')"
+		content="%URLSCAN-4-: Date=&quot;&lt;hfld1&gt;&quot;,Time=&quot;&lt;hfld2&gt;&quot;,c-ip=&quot;&lt;hfld3&gt;&quot;,&lt;!payload&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="URLSCAN_LOG_TVM" 
+		id2="URLSCAN_LOG_TVM" 
+		eventcategory="1204000000"
+		tagval="true"		
+		content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%S',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@saddr:*HDR(hfld3)&gt;s-siteid=&lt;fld3&gt;,cs-method=&lt;web_method&gt;,cs-uri=&lt;url&gt;,x-action=&lt;result&gt;,x-reason=&lt;policyname&gt;,x-context=&lt;cs_context&gt;,cs-data=&lt;cs_data&gt;,x-control=&lt;cs_control&gt;" />
+
+</DEVICEMESSAGES>

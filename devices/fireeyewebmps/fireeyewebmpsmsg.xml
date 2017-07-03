@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="14"
+	checksum="c8c6146fe8d8d44546f0dfd7c58cda71"
+	revision="96"
+	enVision="35010000"
+	device="2.0" />
+
+ <TAGVALMAP
+	delimiter="^"/>
+	
+<HEADER 
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hfld1&gt;-&lt;hfld2&gt;.&lt;hfld3&gt;: LEEF:&lt;hfld4&gt;|FireEye|&lt;hproduct&gt;|&lt;hversion&gt;|&lt;messageid&gt;|&lt;!payload&gt;" />
+
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	messageid="STRCAT(&apos;Web&apos;,&apos;_&apos;,&apos;MPS&apos;)"  
+	content="&lt;hfld1&gt;-&lt;hfld2&gt;.&lt;hfld3&gt;: LEEF:&lt;hfld4&gt;|FireEye|Web MPS|&lt;hversion&gt;|&lt;hid&gt;|&lt;!payload&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="domain-match" 
+	id2="domain-match" 
+	eventcategory="1003000000"
+	tagval="true"
+	missField="true"
+	content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%S','%B %F %W %H:%U:%O',fld8)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hfld3)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;src=&lt;saddr&gt;^sname=&lt;signame&gt;^dstMAC=&lt;dmacaddr&gt;^proto=&lt;protocol&gt;^dvchost=&lt;hostname&gt;^vlan=&lt;vlan&gt;^srcPort=&lt;sport&gt;^dvc=&lt;hostip&gt;^cncHost=&lt;dhost&gt;^externalId=&lt;id&gt;^devTime=&lt;fld8&gt;^sid=&lt;sigid&gt;^cncPort=&lt;dtransport&gt;^link=&lt;url&gt;^srcMAC=&lt;smacaddr&gt;^dst=&lt;daddr&gt;^dstPort=&lt;dport&gt;^cncChannel=&lt;info&gt;^fileHash=&lt;fld4&gt;^filePath=&lt;filename&gt;^osinfo=&lt;os&gt;^targetApp=&lt;application&gt;^request=&lt;webpage&gt;^anomaly=&lt;event_description&gt;^suser=&lt;c_username&gt;^duser=&lt;username&gt;^msg=&lt;fld7&gt;^shost=&lt;shost&gt;^sev=&lt;fld1&gt;^action=&lt;action&gt; " />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="infection-match" 
+	id2="infection-match" 
+	eventcategory="1003000000" 
+	tagval="true"
+	missField="true"
+	content="&lt;@domain:*URL($FQDN,webpage)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%S','%B %F %W %H:%U:%O',fld8)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hfld3)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;src=&lt;saddr&gt;^sname=&lt;signame&gt;^dstMAC=&lt;dmacaddr&gt;^proto=&lt;protocol&gt;^dvchost=&lt;hostname&gt;^vlan=&lt;vlan&gt;^srcPort=&lt;sport&gt;^dvc=&lt;hostip&gt;^cncHost=&lt;dhost&gt;^externalId=&lt;id&gt;^devTime=&lt;fld8&gt;^sid=&lt;sigid&gt;^cncPort=&lt;dtransport&gt;^link=&lt;url&gt;^srcMAC=&lt;smacaddr&gt;^dst=&lt;daddr&gt;^dstPort=&lt;dport&gt;^cncChannel=&lt;info&gt;^fileHash=&lt;fld4&gt;^filePath=&lt;filename&gt;^osinfo=&lt;os&gt;^targetApp=&lt;application&gt;^request=&lt;webpage&gt;^anomaly=&lt;event_description&gt;^suser=&lt;c_username&gt;^duser=&lt;username&gt;^msg=&lt;fld7&gt;^shost=&lt;shost&gt;^sev=&lt;fld1&gt;^action=&lt;action&gt; " /> 
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="malware-callback" 
+	id2="malware-callback" 
+	eventcategory="1003000000" 
+	tagval="true"
+	missField="true"
+	content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%S','%B %F %W %H:%U:%O',fld8)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hfld3)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;src=&lt;saddr&gt;^sname=&lt;signame&gt;^dstMAC=&lt;dmacaddr&gt;^proto=&lt;protocol&gt;^dvchost=&lt;hostname&gt;^vlan=&lt;vlan&gt;^srcPort=&lt;sport&gt;^dvc=&lt;hostip&gt;^cncHost=&lt;dhost&gt;^externalId=&lt;id&gt;^devTime=&lt;fld8&gt;^sid=&lt;sigid&gt;^cncPort=&lt;dtransport&gt;^link=&lt;url&gt;^srcMAC=&lt;smacaddr&gt;^dst=&lt;daddr&gt;^dstPort=&lt;dport&gt;^cncChannel=&lt;info&gt;^fileHash=&lt;fld4&gt;^filePath=&lt;filename&gt;^osinfo=&lt;os&gt;^targetApp=&lt;application&gt;^request=&lt;webpage&gt;^anomaly=&lt;event_description&gt;^suser=&lt;c_username&gt;^duser=&lt;username&gt;^msg=&lt;fld7&gt;^shost=&lt;shost&gt;^sev=&lt;fld1&gt;^action=&lt;action&gt; " /> 
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="malware-object" 
+	id2="malware-object" 
+	eventcategory="1003000000" 
+	tagval="true"
+	missField="true"
+	content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%S','%B %F %W %H:%U:%O',fld8)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hfld3)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;src=&lt;saddr&gt;^sname=&lt;signame&gt;^dstMAC=&lt;dmacaddr&gt;^proto=&lt;protocol&gt;^dvchost=&lt;hostname&gt;^vlan=&lt;vlan&gt;^srcPort=&lt;sport&gt;^dvc=&lt;hostip&gt;^cncHost=&lt;dhost&gt;^externalId=&lt;id&gt;^devTime=&lt;fld8&gt;^sid=&lt;sigid&gt;^cncPort=&lt;dtransport&gt;^link=&lt;url&gt;^srcMAC=&lt;smacaddr&gt;^dst=&lt;daddr&gt;^dstPort=&lt;dport&gt;^cncChannel=&lt;info&gt;^fileHash=&lt;fld4&gt;^filePath=&lt;filename&gt;^osinfo=&lt;os&gt;^targetApp=&lt;application&gt;^request=&lt;webpage&gt;^anomaly=&lt;event_description&gt;^suser=&lt;c_username&gt;^duser=&lt;username&gt;^msg=&lt;fld7&gt;^shost=&lt;shost&gt;^sev=&lt;fld1&gt;^action=&lt;action&gt; " />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="web-infection" 
+	id2="web-infection" 
+	eventcategory="1003000000" 
+	tagval="true"
+	missField="true"
+	content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%S','%B %F %W %H:%U:%O',fld8)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hfld3)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;src=&lt;saddr&gt;^sname=&lt;signame&gt;^dstMAC=&lt;dmacaddr&gt;^proto=&lt;protocol&gt;^dvchost=&lt;hostname&gt;^vlan=&lt;vlan&gt;^srcPort=&lt;sport&gt;^dvc=&lt;hostip&gt;^cncHost=&lt;dhost&gt;^externalId=&lt;id&gt;^devTime=&lt;fld8&gt;^sid=&lt;sigid&gt;^cncPort=&lt;dtransport&gt;^link=&lt;url&gt;^srcMAC=&lt;smacaddr&gt;^dst=&lt;daddr&gt;^dstPort=&lt;dport&gt;^cncChannel=&lt;info&gt;^fileHash=&lt;fld4&gt;^filePath=&lt;webpage&gt;^osinfo=&lt;os&gt;^targetApp=&lt;application&gt;^request=&lt;webpage&gt;^anomaly=&lt;event_description&gt;^suser=&lt;c_username&gt;^duser=&lt;username&gt;^msg=&lt;fld7&gt;^shost=&lt;shost&gt;^sev=&lt;fld1&gt;^action=&lt;action&gt; " />
+	
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="Web_MPS" 
+	id2="Web_MPS" 
+	eventcategory="1003000000" 
+	tagval="true"
+	missField="true"
+	content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%S','%B %F %W %H:%U:%O',fld8)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hfld3)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;id=&lt;id&gt;^devTime=&lt;fld8&gt;^src=&lt;saddr&gt;^srcPort=&lt;sport&gt;^srcMAC=&lt;smacaddr&gt;^dst=&lt;daddr&gt;^dstPort=&lt;dport&gt;^dstMAC=&lt;dmacaddr&gt;^sev=&lt;fld1&gt;^sigId=&lt;sigid&gt;^sigrevision=&lt;fld2&gt;^matchcount=&lt;fld3&gt;^signame=&lt;signame&gt;^cve_id=&lt;fld4&gt;^act=&lt;action&gt;^attack_mode=&lt;fld5&gt;^url=&lt;url&gt;^devTimeFormat=&lt;fld6&gt;^cat=&lt;event_type&gt; " />
+	
+	
+</DEVICEMESSAGES>

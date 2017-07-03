@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="9"
+	checksum="896c56db19cee766112ea0e0d97a2e22"
+	revision="80"
+	enVision="33040065" 
+	device="2.0" />
+
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)" 
+		content="%IBMIDMS-4-&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;: &lt;username&gt;|&lt;action&gt;|&lt;terminal&gt;|&lt;date&gt;|&lt;time&gt;|&lt;!payload:username&gt;" />
+<HEADER 
+		id1="0002" 
+		id2="0002" 
+		messageid="STRCAT('IBMIDMS','_','TVM')"
+		content="%IBMIDMSTVM-4: &lt;!payload&gt;" />
+
+
+<TAGVALMAP
+		delimiter="| &quot;"/>
+
+
+		
+
+<VALUEMAP
+	    name="getEventCategorySubject"
+		default="$NONE"
+		keyvaluepairs="SIGNED OFF=&apos;User&apos;|SIGNED ON=&apos;User&apos;" />
+
+<VALUEMAP
+	    name="getEventCategoryActivity"
+		default="$NONE"
+		keyvaluepairs="SIGNED OFF=&apos;Logoff&apos;|SIGNED ON=&apos;Logon&apos;" />
+
+<VALUEMAP
+	    name="getEventCategoryTheme"
+		default="$NONE"
+		keyvaluepairs="SIGNED ON=&apos;Authentication&apos;" />
+
+<VALUEMAP
+	    name="getEventCategoryOutcome"
+		default="$NONE"
+		keyvaluepairs="SIGNED OFF=&apos;Success&apos;|SIGNED ON=&apos;Success&apos;" />
+
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="SIGNED_OFF" 
+		id2="SIGNED_OFF"
+		eventcategory="1401070000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%Y.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;username&gt;|&lt;action&gt;|&lt;terminal&gt;|&lt;fld1&gt;|&lt;fld2&gt;|" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="93" 
+		id1="SIGNED_ON" 
+		id2="SIGNED_ON" 
+		eventcategory="1401060000"
+		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%Y.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;username&gt;|&lt;action&gt;|&lt;terminal&gt;|&lt;fld1&gt;|&lt;fld2&gt;|" />
+
+<MESSAGE 
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="93"
+		id1="IBMIDMS_TVM"
+		id2="IBMIDMS_TVM"
+		eventcategory="1605000000"
+		tagval="true"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%Y.%J %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;RecordType=&lt;event_id&gt;|Userid=&lt;username&gt;|Action=&lt;action&gt;|Terminal=&lt;terminal&gt;|Date=&lt;fld1&gt;|Time=&lt;fld2&gt;|" />
+
+</DEVICEMESSAGES>

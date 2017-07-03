@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="2"
+	checksum="053cbc9d0f1aaf943c10980d2e25e7b5"
+	revision="80"
+        enVision="21050025"
+        device="2.0" />
+
+
+<TAGVALMAP
+    delimiter="  &quot;"/>
+
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		messageid="STRCAT('BIGIP','_','AFM')"
+		content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hhostname&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; [F5@&lt;hfld6&gt;&lt;!payload&gt;" />
+
+<VALUEMAP
+	    name="getEventCategoryActivity"
+		default="$NONE"
+		keyvaluepairs="Accept=&apos;Permit&apos;|Drop=&apos;Deny&apos;|Reject=&apos;Deny&apos;|Established=&apos;Enable&apos;|Closed=&apos;Disable&apos;" />
+ 
+		
+<MESSAGE 
+		level="6"
+		parse="1"
+		parsedefvalue="1"
+		tableid="77"
+		id1="BIGIP_AFM"
+		id2="BIGIP_AFM"
+		eventcategory="1801000000"
+		tagval="true"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %W %Z&apos;,event_time_string)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_activity:*getEventCategoryActivity(action)&gt;&lt;@obj_name:*HDR(hfld6)&gt; acl_policy_name=&lt;policyname&gt; acl_policy_type=&lt;fld1&gt; acl_rule_name=&lt;rulename&gt; action=&lt;action&gt; hostname=&lt;hostname&gt; bigip_mgmt_ip=&lt;hostip&gt; context_name=&lt;context&gt; context_type=&lt;fld2&gt; date_time=&lt;event_time_string&gt; dest_ip=&lt;daddr&gt; dst_geo=&lt;location_dst&gt; dest_port=&lt;dport&gt; device_product=&lt;product&gt; device_vendor=&lt;fld3&gt; device_version=&lt;version&gt; drop_reason=&lt;fld4&gt; errdefs_msgno=&lt;id&gt; errdefs_msg_name=&lt;event_type&gt; flow_id=&lt;fld5&gt; ip_protocol=&lt;protocol&gt; severity=&lt;severity&gt; partition_name=&lt;fld6&gt; route_domain=&lt;fld7&gt; sa_translation_pool=&lt;fld8&gt; sa_translation_type=&lt;fld9&gt; source_ip=&lt;saddr&gt; src_geo=&lt;location_src&gt; source_port=&lt;sport&gt; source_user=&lt;username&gt; translated_dest_ip=&lt;dtransaddr&gt; translated_dest_port=&lt;dtransport&gt; translated_ip_protocol=&lt;fld10&gt; translated_route_domain=&lt;fld11&gt; translated_source_ip=&lt;stransaddr&gt; translated_source_port=&lt;stransport&gt; translated_vlan=&lt;fld12&gt; vlan=&lt;vlan&gt;" />
+
+</DEVICEMESSAGES>

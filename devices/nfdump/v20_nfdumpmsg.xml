@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+ <VERSION 
+	xml="5"
+	checksum="b15cb449f4db0267f984031521005b45"
+	revision="0"
+		enVision="35010000"
+		device="2.0" />
+
+  
+
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		devts="TS('%W-%G-%F %H:%U:%O',date,time)" 
+		content="%NFDump-&lt;messageid&gt;: &lt;date&gt; &lt;time&gt;^&lt;!payload:date&gt;" />
+
+<HEADER 
+		id1="0002" 
+		id2="0002" 
+		content="%NFDump-&lt;level&gt;: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+
+<HEADER 
+		id1="0003" 
+		id2="0003" 
+		content="%NFDump-&lt;level&gt;: &lt;messageid&gt; &lt;fld1&gt;: &lt;!payload:messageid&gt;" />
+<SUMDATA 
+		bucket="NIC_B_RTR_ADDRESSS_ACCOUNTING" 
+		key="saddr"
+		fields="bytes,duration" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="74" 
+		id1="NFDump_Data_Event" 
+		id2="4" 
+		eventcategory="1802000000" 
+		summary="NIC_B_RTR_ADDRESSS_ACCOUNTING;sumtype=connection;"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld8)&gt; &lt;fld8&gt;^&lt;duration&gt;^&lt;protocol&gt;^&lt;saddr&gt;:&lt;sport&gt;^&lt;daddr&gt;:&lt;dport&gt;^&lt;bytes&gt;^&lt;fld1&gt;^&lt;fld7&gt;^&lt;fld2&gt;^&lt;fld3&gt;^&lt;fld4&gt;^&lt;fld5&gt;^&lt;fld6&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="74" 
+		id1="NFDump_Summary_Event" 
+		id2="Summary" 
+		eventcategory="1802000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string: Avg bps&gt;&lt;@dclass_counter2_string: Avg pps&gt;&lt;@dclass_counter3_string: Avg bpp&gt;Summary: total flows: &lt;fld1&gt;, total bytes: &lt;bytes&gt;, total packets: &lt;packets&gt;, avg bps: &lt;dclass_counter1&gt;, avg pps: &lt;dclass_counter2&gt;, avg bpp: &lt;dclass_counter3&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="74" 
+		id1="NFDump_Time_Window_Event" 
+		id2="Time" 
+		eventcategory="1802000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld3,fld4)&gt;Time window: &lt;fld1&gt; &lt;fld2&gt; - &lt;fld3&gt; &lt;fld4&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="74" 
+		id1="NFDump_Statistics_Event" 
+		id2="Total" 
+		eventcategory="1802000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Total flows processed: &lt;fld1&gt;, Records skipped: &lt;fld2&gt;, Bytes read: &lt;rbytes&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="74" 
+		id1="NFDump_Sys_Wall_Event" 
+		id2="Sys" 
+		eventcategory="1802000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Sys: &lt;fld1&gt; flows/second: &lt;fld2&gt; Wall: &lt;fld3&gt; flows/second: &lt;fld4&gt;" />
+</DEVICEMESSAGES>

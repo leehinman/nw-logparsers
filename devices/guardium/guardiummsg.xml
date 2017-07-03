@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="19"
+	checksum="42624ca46e475ad0126dfd8634290443"
+	revision="105"
+	enVision="35000000"
+	device="2.0" />
+
+<TAGVALMAP 
+	delimiter="^^"
+        pairdelimiter="^^" />
+
+<HEADER 
+		id1="0002"
+		id2="0002"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hserver&gt; &lt;hfld2&gt;[&lt;hfld1&gt;]: &lt;messageid&gt;: &lt;!payload&gt;" />		
+
+		
+
+<HEADER 
+		id1="0001"
+		id2="0001"
+		devts="TS('%B %F %H:%U:%O:',month,day,time)"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hserver&gt; &lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload&gt;" />
+		
+<HEADER 
+		id1="0003"
+		id2="0003"
+		devts="TS('%B %F %H:%U:%O:',month,day,time)"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hserver&gt; &lt;messageid&gt;: &lt;!payload&gt;" />
+
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARDIUM_ALERT"
+	id2="GUARDIUM_ALERT"
+    tagval="true"
+	eventcategory="1605000000"
+	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',event_time_string)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;rule-id=&lt;rule&gt;^^category=&lt;category&gt;^^classification=&lt;fld3&gt;^^severity=&lt;severity&gt;^^session-start-time=&lt;event_time_string&gt;^^client-hostname=&lt;shost&gt;^^client-ip=&lt;saddr&gt;^^server-type=&lt;obj_type&gt;^^server-ip=&lt;daddr&gt;^^src-program=&lt;application&gt;^^os-user=&lt;fld5&gt;^^db-user=&lt;username&gt;^^app-user=&lt;fld4&gt;^^service-name=&lt;service&gt;^^req-type=&lt;application&gt;^^rule-desc=&lt;rulename&gt;^^sql=&lt;action&gt;" />
+
+<MESSAGE
+	level="2"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_POLICY_VIOLATION:01"
+	id2="guard_sender"
+	eventcategory="1502010000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12,fld13)&gt;Alert based on rule ID &lt;rulename&gt;|Category: &lt;category&gt;|Classification: &lt;fld3&gt;|Severity: &lt;severity&gt;|Rule #: &lt;rule&gt; [&lt;fld77&gt;]|Request Info: [Session start:&lt;fld12&gt; &lt;fld13&gt;]|Server Type: &lt;fld2&gt;|Client IP: &lt;saddr&gt;|ServerIP: &lt;daddr&gt;|Client PORT: &lt;sport&gt;|Server Port: &lt;dport&gt;|Net Protocol: &lt;protocol&gt;|DB Name: &lt;db_name&gt;|DB Protocol: &lt;protocol_detail&gt;|DB Protocol Version: &lt;version&gt;|DB User: &lt;username&gt;|Application User Name: &lt;fld4&gt;|Source Program: &lt;application&gt;|Request Type: &lt;content_type&gt;|Last Error: &lt;result&gt;|SQL: &lt;action&gt;" />
+
+<MESSAGE
+	level="2"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_POLICY_VIOLATION"
+	id2="guard_sender"
+	eventcategory="1502010000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;Alert based on rule ID &lt;rulename&gt;|Category: &lt;category&gt;|Classification: &lt;fld3&gt;|Severity: &lt;severity&gt;|Rule #: &lt;rule&gt; [&lt;fld77&gt;]|Request Info: [Session start:&lt;info&gt;]|Server Type: &lt;fld2&gt;|Client IP: &lt;saddr&gt;|ServerIP: &lt;daddr&gt;|Client PORT: &lt;sport&gt;|Server Port: &lt;dport&gt;|Net Protocol: &lt;protocol&gt;|DB Protocol: &lt;protocol_detail&gt;|DB Protocol Version: &lt;version&gt;|DB User: &lt;username&gt;|Application User Name: &lt;fld4&gt;|Source Program: &lt;application&gt;|Request Type: &lt;content_type&gt;|Last Error: &lt;result&gt;|SQL: &lt;action&gt;" />
+
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_POLICY_VIOLATION_REPEAT"
+	id2="guard_sender"
+	eventcategory="1901000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:last message repeated&gt;last message repeated &lt;fld1&gt; times" />
+<MESSAGE
+	level="3"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_ERROR_ALERT"
+	id2="guard_sender"
+	eventcategory="1401030000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%Y %I:%T %P',fld77)&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%Y %I:%T %P',fld78)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert Failed Logins to Guardium&gt;Alert Failed Logins to Guardium - &lt;rulename&gt; :  current value &lt;trigger_val&gt; , &lt;trigger_desc&gt; , query period &lt;fld77&gt; - &lt;fld78&gt;#012Alert Classification:&lt;fld3&gt;#012Category: &lt;category&gt;#012Severity: &lt;severity&gt;#012#012&lt;info&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_THRESHOLD_ALERT"
+	id2="guard_sender"
+	eventcategory="1604000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%Y %I:%T %P',fld77)&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%Y %I:%T %P',fld78)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert Inactive STAPs Since&gt;Alert Inactive STAPs Since - &lt;rulename&gt; :  current value &lt;trigger_val&gt; , &lt;trigger_desc&gt; , query period &lt;fld77&gt; - &lt;fld78&gt;#012Alert Classification:&lt;fld3&gt;#012Category: &lt;category&gt;#012Severity: &lt;severity&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_NO_TRAFFIC_ALERT"
+	id2="guard_sender"
+	eventcategory="1604000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%Y %I:%T %P',fld77)&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%Y %I:%T %P',fld78)&gt;&lt;@event_description:Alert No Traffic&gt;Alert No Traffic - &lt;rulename&gt; :  current value &lt;trigger_val&gt; , &lt;trigger_desc&gt; , query period &lt;fld77&gt; - &lt;fld78&gt;#012Alert Classification:&lt;fld3&gt;#012Category: &lt;category&gt;#012Severity: &lt;severity&gt;#012#012&lt;info&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_ERROR:04"
+	id2="guard_sender"
+	eventcategory="1603000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;Alert based on rule ID &lt;rulename&gt;#015#012Category: &lt;category&gt; Classification: &lt;fld3&gt; Severity &lt;severity&gt;#015#012Rule # &lt;rule&gt; [&lt;fld77&gt;]#015#012Request Info: [ Session start:&lt;info&gt; Server Type: &lt;fld2&gt; Client IP &lt;saddr&gt; ServerIP: &lt;daddr&gt; Client PORT: &lt;sport&gt; Server Port: &lt;dport&gt; Net Protocol: &lt;protocol&gt; DB Protocol: &lt;protocol_detail&gt; DB Protocol Version: &lt;version&gt; DB User: &lt;username&gt;#015#012Application User Name &lt;fld4&gt;#015#012Source Program: &lt;application&gt; Authorization Code: &lt;fld5&gt; Request Type: &lt;content_type&gt; Last Error: &lt;result&gt;#015#012SQL: &lt;action&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_ERROR:03"
+	id2="guard_sender"
+	eventcategory="1603000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;Alert based on rule ID &lt;rulename&gt;#015#012Category: &lt;category&gt; Classification: &lt;fld3&gt; Severity &lt;severity&gt;#015#012Rule # &lt;rule&gt; [&lt;fld77&gt;]#015#012Request Info: [ Session start:&lt;info&gt; Server Type: &lt;fld2&gt; Client IP &lt;saddr&gt; ServerIP: &lt;daddr&gt; Client PORT: &lt;sport&gt; Server Port: &lt;dport&gt; Net Protocol: &lt;protocol&gt; DB Protocol: &lt;protocol_detail&gt; DB Protocol Version: &lt;version&gt; DB User: &lt;username&gt;#015#012Application User Name &lt;fld4&gt;#015#012Source Program: &lt;application&gt; Authorization Code: &lt;fld5&gt; Request Type: &lt;content_type&gt; Last Error: &lt;result&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_ERROR:02"
+	id2="guard_sender"
+	eventcategory="1603000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;Alert based on rule ID &lt;rulename&gt;#015#012Category: &lt;category&gt; Classification: &lt;fld3&gt; Severity &lt;severity&gt;#015#012Rule # &lt;rule&gt; [&lt;fld77&gt;]#015#012Request Info: [ Session start:&lt;info&gt; Server Type: &lt;fld2&gt; Client IP &lt;saddr&gt; ServerIP: &lt;daddr&gt; Client PORT: &lt;sport&gt; Server Port: &lt;dport&gt; Net Protocol: &lt;protocol&gt; DB Protocol: &lt;protocol_detail&gt; DB Protocol Version: &lt;version&gt; DB User: &lt;username&gt;#015#012Application User Name &lt;fld4&gt;#015#012Source Program: &lt;application&gt; Authorization Code: &lt;fld5&gt; Request Type: &lt;content_type&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_ERROR:01"
+	id2="guard_sender"
+	eventcategory="1603000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;Alert based on rule ID &lt;rulename&gt;#015#012Category: &lt;category&gt; Classification: &lt;fld3&gt; Severity &lt;severity&gt;#015#012Rule # &lt;rule&gt; [&lt;fld77&gt;]#015#012Request Info: [ Session start:&lt;info&gt; Server Type: &lt;fld2&gt; Client IP &lt;saddr&gt; ServerIP: &lt;daddr&gt; Client PORT: &lt;sport&gt; Server Port: &lt;dport&gt; Net Protocol: &lt;protocol&gt; DB Protocol: &lt;protocol_detail&gt; DB Protocol Version: &lt;version&gt; DB User: &lt;username&gt;#015#012Application User Name &lt;fld4&gt;#015#012Source Program: &lt;application&gt; Authorization Code: &lt;fld5&gt;" />
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GUARD_SENDER_ERROR"
+	id2="guard_sender"
+	eventcategory="1603000000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;." />
+	
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GuardiumSniffer"
+	id2="GuardiumSniffer"
+	eventcategory="1605020000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Guardium Sniffer license verified&gt; Guardium Sniffer license verified." />
+
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="snif"
+	id2="snif"
+	eventcategory="1605020000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Guardium Sniffer Started&gt; Guardium Sniffer Started" />
+
+	
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GuardiumSniffer:01"
+	id2="GuardiumSniffer"
+	eventcategory="1605020000"
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;hostname&gt;: Started at &lt;fld1&gt;_&lt;fld2&gt;_&lt;hostip&gt;" />
+
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="75"
+	id1="GuardiumSniffer:02"
+	id2="GuardiumSniffer"
+	eventcategory="1605000000"
+    content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Alert based on rule ID&gt;subject &quot;&lt;event_type&gt;&quot;, &quot;Alert based on rule ID &lt;rulename&gt;|Category: &lt;category&gt;|Classification: &lt;fld3&gt;|Severity: &lt;severity&gt;|Rule #: &lt;rule&gt; [&lt;fld77&gt;]|Request Info: [Session start:&lt;info&gt;]|Server Type: &lt;fld2&gt;|Client IP: &lt;saddr&gt;|ServerIP: &lt;daddr&gt;|Client PORT: &lt;sport&gt;|Server Port: &lt;dport&gt;|Net Protocol: &lt;protocol&gt;|DB Protocol: &lt;protocol_detail&gt;|DB Protocol Version: &lt;version&gt;|DB User: &lt;username&gt;|Application User Name: &lt;fld4&gt;|Source Program: &lt;application&gt;|Request Type: &lt;content_type&gt;|Last Error: &lt;result&gt;|SQL: {&lt;action&gt; &quot;| &lt;action&gt;}" />
+
+		
+</DEVICEMESSAGES>

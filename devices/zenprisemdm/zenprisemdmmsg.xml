@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="22"
+	checksum="e149932a69da465350ae9eb42f8d8198"
+	revision="101"
+	enVision="33050000"
+	device="2.0"/>
+	
+	
+	<TAGVALMAP
+            delimiter=","/>
+    
+	
+	
+	<HEADER
+		id1="0002"
+		id2="0002"
+		content="'ZENPRISEMDM' &lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; [&lt;hprocess&gt;] &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
+
+	<HEADER
+		id1="0001"
+		id2="0001"
+		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hhostip&gt; ZENPRISEMDM &lt;hhostname&gt;\SMG: action=&lt;messageid&gt;, &lt;!payload&gt;"/>
+
+     
+     
+	 <HEADER
+		id1="0003"
+		id2="0003"
+		content="%ZENPRISEMDM-4: &lt;hdate&gt; &lt;htime&gt;, &lt;hfld1&gt; &lt;hfld2&gt; [&lt;hprocess&gt;]  &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
+	   
+		
+		<HEADER
+		id1="0004"
+		id2="0004"
+		content="%ZENPRISEMDM-4: &lt;hdate&gt; &lt;htime&gt;, &lt;hfld1&gt; [&lt;hprocess&gt;] &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
+	   
+		
+<HEADER
+		id1="0005"
+		id2="0005"
+		messageid="STRCAT('xenmobile')"
+		content="&lt;hdate&gt;T&lt;hfld1&gt; &quot;&lt;username&gt;&quot; &quot;&lt;sessionid&gt;&quot; &lt;!payload&gt;"/>
+
+ <VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="CertificateMgmt_DeleteCert_fail=&apos;1703000000&apos;|CredentialProvider_AddProvider_Success=&apos;1701010000&apos;|CredentialProvider_UpdateProvider_Success=&apos;1701020000&apos;|DeliveryGroup_DeleteGroups_Success=&apos;1701030000&apos;|DeliveryGroup_UpdateGroup_Success=&apos;1701020000&apos;|Device_RemoveDevice_Success=&apos;1701030000&apos;|DevicePolicy_AddPolicy_Success=&apos;1701010000&apos;|DevicePolicy_DeletePolicyList_Success=&apos;1701030000&apos;|DevicePolicy_UpdatePolicy_Success=&apos;1701020000&apos;|LocalUser_AddUser_Success=&apos;1701010000&apos;|MobileApp_CreateApp_Success=&apos;1701010000&apos;|ZdmService_Login_Success=&apos;1401060000&apos;|ZdmService_Login_Fail=&apos;1401030000&apos;|Login_succeeded=&apos;1401060000&apos;|Login_failed=&apos;1401030000&apos;|Logout_succeeded=&apos;1401070000&apos;" />
+
+	
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1301000000=&apos;Auth.Failures&apos;|1302000000=&apos;Auth.Successful&apos;|1401030000=&apos;User.Activity.Failed Logins&apos;|1401040000=&apos;User.Activity.Normal Activity&apos;|1401060000=&apos;User.Activity.Successful Logins&apos;|1401070000=&apos;User.Activity.Logoff&apos;|1603000000=&apos;System.Errors&apos;|1605000000=&apos;System.Normal Conditions&apos;|1610000000=&apos;System.Startup&apos;|1611000000=&apos;System.Shutdown&apos;|1701010000=&apos;Config.Changes.Add&apos;|1701020000=&apos;Config.Changes.Modify&apos;|1701030000=&apos;Config.Changes.Delete&apos;|1703000000=&apos;Config.Errors&apos;" />	
+		
+
+	<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="86"
+	id1="allow"
+	id2="allow"
+	eventcategory="1801020000"
+	tagval="true"
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',hmonth,hday,htime)&gt;group=&lt;group&gt;, user=&lt;username&gt;, did=&lt;serial_number&gt;, dt=&lt;product&gt;, cmd=&lt;action&gt;, ua=&lt;user_agent&gt;, ip=&lt;saddr&gt;,"/>
+
+	<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="86"
+	id1="deny"
+	id2="deny"
+	eventcategory="1803000000"
+	tagval="true"
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',hmonth,hday,htime)&gt;group=&lt;group&gt;, user=&lt;username&gt;, did=&lt;serial_number&gt;, dt=&lt;product&gt;, cmd=&lt;action&gt;, ua=&lt;user_agent&gt;, ip=&lt;saddr&gt;,"/>
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:01" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Initialising &lt;fld5&gt; services for: &lt;info&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:02" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Successfully loaded &lt;service&gt; for iOS &lt;info&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:11" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld5&gt; - &lt;info&gt;: &lt;username&gt; device ID:&lt;id&gt;" />		
+
+
+<MESSAGE
+		level="3"
+		parse="1"
+		parsedefvalue="1"
+		tableid="86"
+		id1="INFO:12"
+		id2="INFO"
+		eventcategory="1605000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;action&gt;: &lt;fld8&gt;, id=&lt;fld9&gt;, status=&lt;disposition&gt;, username=&apos;&lt;username&gt;&apos;, &lt;info&gt;"/>
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:03" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;action&gt;: {ID: &lt;id&gt;. Returned: &lt;info&gt;. DeleteStatus: &lt;result&gt; | &lt;disposition&gt;.}" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:04" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - user=&lt;username&gt; deviceid=&lt;info&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:05" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Client disconnect" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:06" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;application&gt; finished loading." />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:07" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Confirmation for next device connection time received for &lt;fld5&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:09" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;application&gt; version &lt;version&gt; Revision &lt;fld5&gt; initialized on Apache Tomcat" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="DEBUG:01" 
+	id2="DEBUG"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - User role resolved for &apos;&lt;username&gt;&apos; &lt;fld5&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="WARN:01" 
+	id2="WARN"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Authentication of MDM connection from &lt;hostip&gt; failed (&lt;info&gt;). Denying access with &lt;sport&gt;." />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="ERROR:01" 
+	id2="ERROR"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Referral failed: &lt;info&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO:10" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; { &lt;fld4&gt; [UID=&lt;id&gt;,usr=&lt;fld5&gt;,dev=&lt;fld6&gt;] | &lt;fld4&gt; } - &lt;info&gt; for user &lt;username&gt;([])" />		
+
+	
+	<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="INFO" 
+	id2="INFO"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />		
+
+	
+	<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="ERROR" 
+	id2="ERROR"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
+
+	
+	
+	<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="WARN" 
+	id2="WARN"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
+
+	
+	<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="DEBUG" 
+	id2="DEBUG"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="TRACE" 
+	id2="TRACE"
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="xenmobile:01" 
+	id2="xenmobile"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_id:*STRCAT(event_type,_,disposition)&gt;&lt;@event_cat:*getEventLegacyCategory(event_id)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:*RMQ(event_description)&gt;"
+	content="&quot;&lt;fld1&gt;&quot; &quot;&lt;saddr&gt;&quot; &quot;&lt;event_type&gt;&quot; &quot;&lt;disposition&gt;&quot; &quot;&lt;obj_name&gt;&quot; &quot;&lt;fld2&gt;&quot; &quot;&lt;user_agent&gt;&quot; &lt;event_description&gt;" />
+
+<MESSAGE 
+	level="3" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="xenmobile" 
+	id2="xenmobile"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_id:*STRCAT(event_type,_,disposition)&gt;&lt;@event_cat:*getEventLegacyCategory(event_id)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:*RMQ(event_description)&gt;"
+	content="&quot;&lt;saddr&gt;&quot; &quot;&lt;event_type&gt;&quot; &quot;&lt;disposition&gt;&quot; &quot;&lt;obj_name&gt;&quot; &quot;&lt;user_agent&gt;&quot; &lt;event_description&gt;" />
+
+	
+	</DEVICEMESSAGES>

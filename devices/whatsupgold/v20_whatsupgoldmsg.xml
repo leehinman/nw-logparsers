@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="12"
+	checksum="708dc08ed27b27dcca58d702d2a850f2"
+	revision="0"
+	enVision="35010000"
+	device="2.0" />
+
+
+ 
+  
+<HEADER 
+id1="0004" 
+id2="0004" 
+content="%WHATSUPGOLD: &lt;hnode&gt;^^&lt;hdevice&gt;^^&lt;messageid&gt;^^&lt;hservice&gt;^^&lt;hstarttime&gt;^^&lt;hendtime&gt;^^&lt;!payload:hnode&gt;" />
+
+<HEADER 
+id1="0003" 
+id2="0003" 
+content="%WHATSUPGOLD: &lt;hnode&gt;^^&lt;hdevice&gt;^^&lt;messageid&gt; &lt;hmsg&gt;^^&lt;hservice&gt;^^&lt;hstarttime&gt;^^&lt;hendtime&gt;^^&lt;!payload:hnode&gt;" />
+<HEADER 
+id1="0001" 
+id2="0001" 
+messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)" 
+content="%WHATSUPGOLD: &lt;hdate&gt; &lt;htime&gt;^^&lt;huid&gt;^^&lt;husername&gt;^^&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;^^&lt;hobj_type&gt;^^&lt;!payload:hdate&gt;" />
+<HEADER 
+id1="0002" 
+id2="0002"  
+content="%WHATSUPGOLD: &lt;hdate&gt; &lt;htime&gt;^^&lt;huid&gt;^^&lt;husername&gt;^^&lt;messageid&gt;^^&lt;hobj_type&gt;^^&lt;!payload:hdate&gt;" />
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="login:Logged_In" 
+	id2="Login" 
+	eventcategory="1401060000" 
+	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Logged in&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;event_type&gt;^^nWebUserID=&lt;fld27&gt;^^Logged in" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Login:Logged_Out" 
+	id2="Login" 
+	eventcategory="1401070000" 
+	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Logged out&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;event_type&gt;^^nWebUserID=&lt;fld27&gt;^^Logged out" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Credentials:Created" 
+	id2="Credentials" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created credential type&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created credential type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Credentials:Modified" 
+	id2="Credentials" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified credential type&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified credential type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Credentials:Deleted" 
+	id2="Credentials" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted credential type&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted credential type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Action:Created" 
+	id2="Action" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created Action type&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created action type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Action:Modified" 
+	id2="Action" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified Action type&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified action type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Action:Deleted" 
+	id2="Action" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Action type&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted action type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Workspace:Created" 
+	id2="Workspace" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created Workspace&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created workspace '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Workspace:Modified" 
+	id2="Workspace" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified Workspace&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified workspace '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Workspace:Deleted" 
+	id2="Workspace" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Workspace&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted workspace '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Performance_Monitor:Created" 
+	id2="Performance_Monitor" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created performance monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created performance monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Performance_Monitor:Modified" 
+	id2="Performance_Monitor" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified performance monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified performance monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Performance_Monitor:Deleted" 
+	id2="Performance_Monitor" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted performance monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted performance monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Active_Monitor:Created" 
+	id2="Active_Monitor" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created Active monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created active monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Active_Monitor:Modified" 
+	id2="Active_Monitor" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified Active monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified active monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Active_Monitor:Deleted" 
+	id2="Active_Monitor" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Active monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted active monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Passive_Monitor:Created" 
+	id2="Passive_Monitor" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created Passive monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created passive monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Passive_Monitor:Modified" 
+	id2="Passive_Monitor" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified Passive monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified passive monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Passive_Monitor:Deleted" 
+	id2="Passive_Monitor" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Passive monitor&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted passive monitor type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Recurring_Action:Created" 
+	id2="Recurring_Action" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created Recurring Action&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created recurring action '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Recurring_Action:Modified" 
+	id2="Recurring_Action" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified Recurring Action&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified recurring action '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Recurring_Action:Deleted" 
+	id2="Recurring_Action" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Recurring Action&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted recurring action '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Action_Policy:Created" 
+	id2="Action_Policy" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created Action Policy&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created action policy type '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Action_Policy:Modified" 
+	id2="Action_Policy" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Modified Action Policy&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Modified action policy '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Action_Policy:Deleted" 
+	id2="Action_Policy" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Action Policy&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted action policy '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="User:Created" 
+	id2="User" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created User&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created user '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="User:Deleted" 
+	id2="User" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted User&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted user '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Devices:Created" 
+	id2="Devices" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Created group&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Created group '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Devices:Added" 
+	id2="Devices" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Added Device&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Added device '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Devices:Deleted" 
+	id2="Devices" 
+	eventcategory="1701030000" 
+	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*PARMVAL(obj_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;@event_description:Deleted Device&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;obj_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^Deleted device '&lt;obj_name&gt;'" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Device_Properties" 
+	id2="Device_Properties" 
+	eventcategory="1701010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;event_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^&lt;action&gt;" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="System" 
+	id2="System" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld22)&gt;&lt;fld22&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;event_type&gt;^^&lt;fld25&gt;=&lt;fld27&gt;^^&lt;action&gt;" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Up" 
+	id2="Up" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld61:*PARMVAL(context)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld24,fld26)&gt;&lt;node&gt;^^&lt;context&gt;^^&lt;event_description&gt;^^&lt;info&gt;^^&lt;fld24&gt; &lt;fld26&gt;^^&lt;fld6&gt;^^&lt;result&gt;" /> 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="86" 
+	id1="Down" 
+	id2="Down" 
+	eventcategory="1701020000" 
+	content="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld61:*PARMVAL(context)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld24,fld26)&gt;&lt;node&gt;^^&lt;context&gt;^^&lt;event_description&gt;^^&lt;info&gt;^^&lt;fld24&gt; &lt;fld26&gt;^^&lt;fld6&gt;^^&lt;result&gt;" /> 
+</DEVICEMESSAGES>

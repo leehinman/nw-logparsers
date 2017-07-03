@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="30"
+	checksum="4a39f1b83933dbb7529f2183edc26854"
+	revision="106"
+	enVision="21050025"
+	device="2.0" />
+
+ 
+
+<TAGVALMAP 
+		delimiter="," />
+<HEADER 
+		id1="0001" 
+		id2="0001"  
+		content="%MSIAS-4-: IP=&lt;hfld1&gt;,USERNAME=&lt;username&gt;,DATE=&lt;hfld3&gt;,TIME=&lt;hfld4&gt;,SERVICE=&lt;hfld5&gt;,COMPNAME=&lt;hostname&gt;,&lt;messageid&gt;=&lt;!payload:messageid&gt;" /> 
+<HEADER
+		id1="0002"
+		id2="0002"
+		messageid="STRCAT(msgIdPart1, '_', msgIdPart2, '_', msgIdPart3)"
+		devts="MDTS(month,day,time)"  
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;fld1&gt; ,&lt;msgIdPart1&gt;, &lt;hnumber&gt;, &lt;date&gt; &lt;datetime&gt;, &lt;msgIdPart2&gt;, &lt;msgIdPart3&gt;, &lt;!payload:msgIdPart1&gt;" />
+<HEADER 
+		id1="0003" 
+		id2="0003" 
+		messageid="STRCAT(msgIdPart1, '_', msgIdPart2, '_', msgIdPart3)" 
+		content="&lt;hfld1&gt;: [&lt;event_type&gt;] &lt;day&gt; &lt;month&gt; &lt;date&gt; &lt;time&gt; &lt;year&gt; &lt;event_user&gt;/&lt;msgIdPart1&gt;/&lt;hfld3&gt;/&lt;msgIdPart3&gt; (&lt;msgIdPart2&gt;) - &lt;!payload:hfld1&gt;" />
+<HEADER 
+		id1="0004" 
+		id2="0004" 
+		messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3)" 
+		devts="MDTS(month,day,time)" 
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;fld20&gt; &lt;htype&gt;,&lt;hseverity&gt;,&lt;msgIdPart1&gt;,&lt;hnumber&gt;,&lt;date&gt; &lt;datetime&gt;,&lt;msgIdPart2&gt;,&lt;msgIdPart3&gt;, &lt;!payload:htype&gt;" />
+<HEADER 
+		id1="0005" 
+		id2="0005"  
+		content="%NICWIN-&lt;hlevel&gt;-&lt;messageid&gt;: &lt;!payload&gt;" />  		
+<VALUEMAP 
+		name="eventType" 
+		default="$NONE" 
+		keyvaluepairs="AUS=&apos;Success Audit&apos;|AUF=&apos;Failure Audit&apos;|ERR=&apos;Error&apos;|WRN=&apos;Warning&apos;|INF=&apos;Information&apos;" />
+<VALUEMAP 
+		name="getReason" 
+		default="unknown" 
+		keyvaluepairs="00='Success'|01='Internal error'|02='Access denied'|03='Malformed request'|04='Global catalog unavailable'|05='Domain unavailable'|06='server unavailable'|07='No such domain'|08='No such user'|16='Authentication failure'|17='Password change failure'|18='Unsupported authentication type'|19='No reversibly encrypted password is stored for the user account'|32='Local users only'|33='Password must be changed'|34='Account disabled'|35='Account expired'|36='Account locked out'|37='Invalid logon hours'|38='Account restriction'|48='Did not match remote access policy'|49='Did not match connection request policy'|64='Dial-in locked out'|65='Dial-in disabled'|66='Invalid authentication type'|67='Invalid calling station'|68='Invalid dial-in hours'|69='Invalid called station'|70='Invalid port type'|71='Invalid restriction'|80='No record'|96='Session timed out'|97='Unexpected request'" />
+<VALUEMAP 
+		name="getPacketType" 
+		default="unknown" 
+		keyvaluepairs="1='Accept-Request'|2='Access-Accept'|3='Access-Reject'|4='Accounting-Request'" />
+<SUMDATA 
+		bucket="NIC_B_CATEGORIES" 
+		key="$DEVICE" 
+		subkey="category" 
+		fields="1,0,0" />
+<SUMDATA 
+		bucket="NIC_B_WINDOWS" 
+		key="event_user" 
+		fields="0,0" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="4" 
+		id2="4" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;4=&lt;fld1&gt;,6=&lt;fld17&gt;,1=&lt;fld3&gt;,7=&lt;fld18&gt;,8=&lt;fld19&gt;,11=&lt;filter&gt;,14=&lt;fld35&gt;,9=&lt;fld54&gt;,61=&lt;fld15&gt;,5=&lt;fld2&gt;,25=&lt;param&gt;,26=&lt;fld8&gt;,12=&lt;bytes&gt;,30=&lt;calling_to&gt;,32=&lt;fld9&gt;,31=&lt;calling_from&gt;,40=&lt;fld10&gt;,87=&lt;fld31&gt;,41=&lt;fld11&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,49=&lt;fld13&gt;,44=&lt;sessionid&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,55=&lt;fld14&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4127=&lt;fld5&gt;,4128=&lt;fld8&gt;,4129=&lt;fld4&gt;,4132=&lt;fld25&gt;,4154=&lt;fld22&gt;,4155=&lt;fld21&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,4149=&lt;policyname&gt;,4130=&lt;username&gt;,4157=&lt;fld57&gt;,5000=&lt;fld19&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;" />
+		
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="6" 
+		id2="6" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;4=&lt;fld1&gt;,6=&lt;fld17&gt;,1=&lt;fld3&gt;,7=&lt;fld18&gt;,8=&lt;fld19&gt;,11=&lt;filter&gt;,14=&lt;fld35&gt;,9=&lt;fld54&gt;,61=&lt;fld15&gt;,5=&lt;fld2&gt;,25=&lt;param&gt;,26=&lt;fld8&gt;,12=&lt;bytes&gt;,30=&lt;calling_to&gt;,32=&lt;fld9&gt;,31=&lt;calling_from&gt;,40=&lt;fld10&gt;,87=&lt;interface&gt;,41=&lt;fld11&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,49=&lt;fld13&gt;,44=&lt;sessionid&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,55=&lt;fld14&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4127=&lt;fld5&gt;,4128=&lt;fld8&gt;,4129=&lt;fld4&gt;,4132=&lt;fld25&gt;,4154=&lt;fld22&gt;,4155=&lt;fld21&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,4149=&lt;policyname&gt;,4130=&lt;username&gt;,4157=&lt;fld57&gt;,5000=&lt;fld19&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="18" 
+		id2="18" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;18=&lt;fld30&gt;,87=&lt;fld31&gt;,1=&lt;fld3&gt;,4=&lt;fld1&gt;,6=&lt;fld17&gt;,7=&lt;fld18&gt;,8=&lt;fld19&gt;,11=&lt;filter&gt;,9=&lt;fld54&gt;,61=&lt;fld15&gt;,5=&lt;fld2&gt;,6=&lt;fld17&gt;,25=&lt;param&gt;,26=&lt;fld8&gt;,12=&lt;bytes&gt;,30=&lt;calling_to&gt;,32=&lt;fld9&gt;,31=&lt;calling_from&gt;,40=&lt;fld10&gt;,41=&lt;fld11&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,49=&lt;fld13&gt;,44=&lt;sessionid&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,55=&lt;fld14&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4127=&lt;fld5&gt;,4128=&lt;fld8&gt;,4129=&lt;fld4&gt;,4132=&lt;fld25&gt;,4154=&lt;fld22&gt;,4155=&lt;fld21&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,4149=&lt;policyname&gt;,4130=&lt;username&gt;,4157=&lt;fld57&gt;,5000=&lt;fld19&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="5" 
+		id2="5" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;5=&lt;fld2&gt;,1=&lt;fld3&gt;,87=&lt;fld31&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,46=&lt;duration_string&gt;,6=&lt;fld17&gt;,7=&lt;fld18&gt;,11=&lt;filter&gt;,30=&lt;calling_to&gt;,31=&lt;calling_from&gt;,45=&lt;fld12&gt;,61=&lt;fld15&gt;,66=&lt;fld16&gt;,4=&lt;fld1&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4128=&lt;fld11&gt;,5000=&lt;fld12&gt;,4155=&lt;fld21&gt;,4154=&lt;fld22&gt;,4129=&lt;fld4&gt;,4130=&lt;username&gt;,4127=&lt;fld5&gt;,4149=&lt;policyname&gt;,25=&lt;param&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;" />
+
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="12" 
+		id2="12" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;12=&lt;bytes&gt;,1=&lt;fld3&gt;,5=&lt;fld2&gt;,87=&lt;fld31&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,46=&lt;duration_string&gt;,6=&lt;fld17&gt;,7=&lt;fld18&gt;,11=&lt;filter&gt;,30=&lt;calling_to&gt;,31=&lt;calling_from&gt;,32=&lt;fld9&gt;,45=&lt;fld12&gt;,61=&lt;fld15&gt;,66=&lt;fld16&gt;,4=&lt;fld1&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4128=&lt;fld11&gt;,5000=&lt;fld12&gt;,4155=&lt;fld21&gt;,4154=&lt;fld22&gt;,4129=&lt;fld4&gt;,4130=&lt;username&gt;,4127=&lt;fld5&gt;,4149=&lt;policyname&gt;,25=&lt;param&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;,44=&lt;sessionid&gt;,64=&lt;fld27&gt;,65=&lt;fld28&gt;,67=&lt;fld98&gt;,8132=&lt;fld96&gt;,4147=&lt;fld33&gt;,4148=&lt;fld34&gt;,8158=&lt;fld97&gt;,4160=&lt;fld36&gt;,4159=&lt;fld35&gt;,4156=&lt;fld95&gt;,4157=&lt;fld57&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82"
+		id1="25" 
+		id2="25" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;25=&lt;param&gt;,42=&lt;rbytes&gt;,1=&lt;fld3&gt;,15=&lt;fld34&gt;,43=&lt;sbytes&gt;,46=&lt;duration_string&gt;,4130=&lt;username&gt;,6=&lt;fld17&gt;,7=&lt;fld18&gt;,11=&lt;filter&gt;,26=&lt;fld8&gt;,44=&lt;sessionid&gt;,27=&lt;duration_string&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,45=&lt;fld12&gt;,4120=&lt;fld23&gt;,4128=&lt;fld6&gt;,4155=&lt;fld21&gt;,4154=&lt;fld22&gt;,4129=&lt;fld4&gt;,4127=&lt;fld5&gt;,4149=&lt;policyname&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,5000=&lt;fld19&gt;,8100=&lt;fld20&gt;,18=&lt;fld30&gt;,4294967206=&lt;fld32&gt;,4294967207=&lt;fld33&gt;,4294967209=&lt;fld34&gt;,4294967210=&lt;fld35&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;,8136=&lt;fld9&gt;,4132=&lt;fld25&gt;,64=&lt;fld27&gt;,81=&lt;groupid&gt;,65=&lt;fld28&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="32" 
+		id2="32" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;32=&lt;fld9&gt;,4=&lt;saddr&gt;,5=&lt;fld2&gt;,1=&lt;fld3&gt;,6=&lt;fld17&gt;,40=&lt;fld10&gt;,42=&lt;rbytes&gt;,46=&lt;duration_string&gt;,43=&lt;sbytes&gt;,44=&lt;sessionid&gt;,4108=&lt;fld7&gt;,11=&lt;filter&gt;,45=&lt;fld12&gt;,4116=&lt;fld6&gt;,4128=&lt;fld3&gt;,4155=&lt;fld21&gt;,4154=&lt;fld22&gt;,4129=&lt;fld4&gt;,4127=&lt;fld5&gt;,4149=&lt;policyname&gt;,25=&lt;param&gt;,4130=&lt;username&gt;,4120=&lt;fld23&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;,7=&lt;fld18&gt;,61=&lt;fld15&gt;,64=&lt;fld27&gt;,65=&lt;fld28&gt;,30=&lt;calling_to&gt;,31=&lt;calling_from&gt;,66=&lt;fld16&gt;,8=&lt;fld19&gt;,12=&lt;bytes&gt;,50=&lt;fld3&gt;,51=&lt;fld31&gt;,55=&lt;fld14&gt;,48=&lt;fld42&gt;,47=&lt;fld41&gt;,49=&lt;fld81&gt;,4147=&lt;fld33&gt;,4148=&lt;fld34&gt;,4160=&lt;fld36&gt;,4159=&lt;fld35&gt;,4294967206=&lt;fld52&gt;,4157=&lt;fld57&gt;,67=&lt;fld98&gt;,8158=&lt;fld97&gt;,8132=&lt;fld96&gt;,4156=&lt;fld95&gt;,27=&lt;fld94&gt;,28=&lt;fld30&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="4128" 
+		id2="4128" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;4128=&lt;fld1&gt;,1=&lt;fld3&gt;,61=&lt;fld15&gt;,4=&lt;fld1&gt;,5=&lt;fld2&gt;,46=&lt;duration_string&gt;,25=&lt;param&gt;,43=&lt;sbytes&gt;,12=&lt;bytes&gt;,11=&lt;filter&gt;,45=&lt;fld12&gt;,30=&lt;calling_to&gt;,42=&lt;rbytes&gt;,32=&lt;fld9&gt;,31=&lt;calling_from&gt;,4132=&lt;fld3&gt;,4127=&lt;fld5&gt;,8100=&lt;fld20&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4155=&lt;fld21&gt;,4154=&lt;fld22&gt;,4129=&lt;fld4&gt;,4149=&lt;policyname&gt;,6=&lt;fld17&gt;,4130=&lt;username&gt;,4120=&lt;fld23&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;,4294967207=&lt;fld80&gt;,4294967206=&lt;fld81&gt;,87=&lt;fld82&gt;,26=&lt;fld83&gt;" />
+			
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="44" 
+		id2="44" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;44=&lt;sessionid&gt;,1=&lt;fld3&gt;,30=&lt;calling_to&gt;,11=&lt;filter&gt;,31=&lt;calling_from&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,40=&lt;fld10&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,61=&lt;fld15&gt;,26=&lt;fld8&gt;,5=&lt;fld2&gt;,25=&lt;param&gt;,6=&lt;fld17&gt;,4=&lt;fld1&gt;,41=&lt;fld11&gt;,4155=&lt;fld21&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4128=&lt;fld16&gt;,5000=&lt;fld19&gt;,4154=&lt;fld22&gt;,4136=&lt;fld24&gt;,4127=&lt;fld5&gt;,4120=&lt;fld23&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;,47=&lt;fld79&gt;,48=&lt;fld80&gt;,49=&lt;fld81&gt;,87=&lt;fld82&gt;,32=&lt;fld9&gt;,7=&lt;fld18&gt;,64=&lt;fld27&gt;,65=&lt;fld28&gt;,67=&lt;fld98&gt;,66=&lt;fld16&gt;,8132=&lt;fld96&gt;,4147=&lt;fld33&gt;,4148=&lt;fld34&gt;,8158=&lt;fld97&gt;,4160=&lt;fld36&gt;,4159=&lt;fld35&gt;,4156=&lt;fld95&gt;,4157=&lt;fld57&gt;,4294967206=&lt;fld52&gt;,4294967207=&lt;fld80&gt;,8=&lt;fld19&gt;,27=&lt;fld94&gt;,28=&lt;fld30&gt;,4121=&lt;fld93&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="66" 
+		id2="66" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;66=&lt;fld60&gt;,44=&lt;sessionid&gt;,1=&lt;fld3&gt;,30=&lt;calling_to&gt;,11=&lt;filter&gt;,31=&lt;calling_from&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,40=&lt;fld10&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,61=&lt;fld15&gt;,26=&lt;fld8&gt;,5=&lt;fld2&gt;,25=&lt;param&gt;,6=&lt;fld17&gt;,4=&lt;fld1&gt;,41=&lt;fld11&gt;,4155=&lt;fld21&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4128=&lt;fld16&gt;,5000=&lt;fld19&gt;,4154=&lt;fld22&gt;,4136=&lt;fld24&gt;,4127=&lt;fld5&gt;,4120=&lt;fld23&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;,47=&lt;fld79&gt;,48=&lt;fld80&gt;,49=&lt;fld81&gt;,87=&lt;fld82&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="40" 
+		id2="40" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;40=&lt;fld10&gt;,1=&lt;fld38&gt;,30=&lt;calling_to&gt;,11=&lt;filter&gt;,42=&lt;rbytes&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,50=&lt;fld3&gt;,44=&lt;sessionid&gt;,43=&lt;sbytes&gt;,55=&lt;fld14&gt;,31=&lt;calling_from&gt;,87=&lt;fld7&gt;,5=&lt;fld2&gt;,25=&lt;param&gt;,61=&lt;fld15&gt;,41=&lt;fld11&gt;,4155=&lt;fld21&gt;,4=&lt;fld1&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4128=&lt;fld15&gt;,4154=&lt;fld22&gt;,4136=&lt;fld24&gt;,4127=&lt;fld5&gt;,4142=&lt;resultcode&gt;,4120=&lt;fld51&gt;,4294967206=&lt;fld52&gt;,6=&lt;fld25&gt;,7=&lt;fld26&gt;,64=&lt;fld27&gt;,65=&lt;fld28&gt;,66=&lt;fld29&gt;,8=&lt;fld32&gt;,12=&lt;bytes&gt;,51=&lt;fld31&gt;,8111=&lt;fld58&gt;,28=&lt;fld30&gt;,4147=&lt;fld33&gt;,4148=&lt;fld34&gt;,4159=&lt;fld35&gt;,4160=&lt;fld36&gt;,8153=&lt;fld59&gt;,47=&lt;fld41&gt;,48=&lt;fld42&gt;,49=&lt;fld43&gt;" />
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="87" 
+		id2="87" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;87=&lt;fld1&gt;,1=&lt;fld3&gt;,31=&lt;calling_from&gt;,11=&lt;filter&gt;,30=&lt;calling_to&gt;,5=&lt;fld2&gt;,45=&lt;fld12&gt;,46=&lt;duration_string&gt;,61=&lt;fld15&gt;,32=&lt;fld9&gt;,43=&lt;sbytes&gt;,44=&lt;sessionid&gt;,4=&lt;fld1&gt;,4108=&lt;fld7&gt;,4116=&lt;fld6&gt;,4128=&lt;fld1&gt;,4155=&lt;fld21&gt;,4154=&lt;fld22&gt;,4129=&lt;fld4&gt;,4130=&lt;username&gt;,4127=&lt;fld5&gt;,42=&lt;rbytes&gt;,25=&lt;param&gt;,4149=&lt;policyname&gt;,4120=&lt;fld23&gt;,4136=&lt;fld24&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;" />
+
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="82" 
+		id1="30" 
+		id2="30" 
+		eventcategory="1204000000" 
+		tagval="true" 
+		content="&lt;@product:fld24&gt;&lt;@result:*getReason(resultcode)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %H:%U:%O',hfld3,hfld4)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;30=&lt;fld1&gt;,1=&lt;fld3&gt;,11=&lt;filter&gt;,31=&lt;calling_from&gt;,44=&lt;sessionid&gt;,8=&lt;fld19&gt;,45=&lt;fld12&gt;,40=&lt;fld10&gt;,46=&lt;duration_string&gt;,42=&lt;rbytes&gt;,43=&lt;sbytes&gt;,5=&lt;fld2&gt;,61=&lt;fld15&gt;,25=&lt;param&gt;,6=&lt;fld17&gt;,4=&lt;fld1&gt;,41=&lt;fld11&gt;,4108=&lt;fld7&gt;,4155=&lt;fld21&gt;,4116=&lt;fld6&gt;,4128=&lt;fld15&gt;,4154=&lt;fld22&gt;,4136=&lt;fld24&gt;,4127=&lt;fld5&gt;,4120=&lt;fld23&gt;,4142=&lt;resultcode&gt;,8111=&lt;fld58&gt;,8153=&lt;fld59&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1_IAS"
+		id2="System_1_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1_IAS:01"
+		id2="System_1_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1_IAS:02"
+		id2="System_1_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1_IAS:03"
+		id2="System_1_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_2_IAS"
+		id2="System_2_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_2_IAS:01"
+		id2="System_2_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_2_IAS:02"
+		id2="System_2_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_2_IAS:03"
+		id2="System_2_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_3_IAS"
+		id2="System_3_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_3_IAS:01"
+		id2="System_3_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_3_IAS:02"
+		id2="System_3_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_3_IAS:03"
+		id2="System_3_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_10_IAS"
+		id2="System_10_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_10_IAS:01"
+		id2="System_10_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_10_IAS:02"
+		id2="System_10_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_10_IAS:03"
+		id2="System_10_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_11_IAS"
+		id2="System_11_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_11_IAS:01"
+		id2="System_11_IAS"
+		eventcategory="1603000000"
+	    summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_11_IAS:02"
+		id2="System_11_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_11_IAS:03"
+		id2="System_11_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_12_IAS"
+		id2="System_12_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_12_IAS:01"
+		id2="System_12_IAS"
+		eventcategory="1603000000"
+	   	summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_12_IAS:02"
+		id2="System_12_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_12_IAS:03"
+		id2="System_12_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_13_IAS"
+		id2="System_13_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_13_IAS:01"
+		id2="System_13_IAS"
+		eventcategory="1603000000"
+	    	summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_13_IAS:02"
+		id2="System_13_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_13_IAS:03"
+		id2="System_13_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_14_IAS"
+		id2="System_14_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_14_IAS:01"
+		id2="System_14_IAS"
+		eventcategory="1603000000"
+	    	summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_14_IAS:02"
+		id2="System_14_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_14_IAS:03"
+		id2="System_14_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_15_IAS"
+		id2="System_15_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_15_IAS:01"
+		id2="System_15_IAS"
+		eventcategory="1603000000"
+	    	summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_15_IAS:02"
+		id2="System_15_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_15_IAS:03"
+		id2="System_15_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_16_IAS"
+		id2="System_16_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_16_IAS:01"
+		id2="System_16_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_16_IAS:02"
+		id2="System_16_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_16_IAS:03"
+		id2="System_16_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_17_IAS"
+		id2="System_17_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_17_IAS:01"
+		id2="System_17_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_17_IAS:02"
+		id2="System_17_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_17_IAS:03"
+		id2="System_17_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_18_IAS"
+		id2="System_18_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_18_IAS:01"
+		id2="System_18_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_18_IAS:02"
+		id2="System_18_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_18_IAS:03"
+		id2="System_18_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_19_IAS"
+		id2="System_19_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_19_IAS:01"
+		id2="System_19_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_19_IAS:02"
+		id2="System_19_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_19_IAS:03"
+		id2="System_19_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_20_IAS"
+		id2="System_20_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_20_IAS:01"
+		id2="System_20_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_20_IAS:02"
+		id2="System_20_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_20_IAS:03"
+		id2="System_20_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_21_IAS"
+		id2="System_21_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_21_IAS:01"
+		id2="System_21_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_21_IAS:02"
+		id2="System_21_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_21_IAS:03"
+		id2="System_21_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_22_IAS"
+		id2="System_22_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_22_IAS:01"
+		id2="System_22_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_22_IAS:02"
+		id2="System_22_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_22_IAS:03"
+		id2="System_22_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1000_IAS"
+		id2="System_1000_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1000_IAS:01"
+		id2="System_1000_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1000_IAS:02"
+		id2="System_1000_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1000_IAS:03"
+		id2="System_1000_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1001_IAS"
+		id2="System_1001_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1001_IAS:01"
+		id2="System_1001_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1001_IAS:02"
+		id2="System_1001_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1001_IAS:03"
+		id2="System_1001_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1002_IAS"
+		id2="System_1002_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1002_IAS:01"
+		id2="System_1002_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1002_IAS:02"
+		id2="System_1002_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1002_IAS:03"
+		id2="System_1002_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1003_IAS"
+		id2="System_1003_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1003_IAS:01"
+		id2="System_1003_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1003_IAS:02"
+		id2="System_1003_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1003_IAS:03"
+		id2="System_1003_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1004_IAS"
+		id2="System_1004_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1004_IAS:01"
+		id2="System_1004_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1004_IAS:02"
+		id2="System_1004_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1004_IAS:03"
+		id2="System_1004_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1005_IAS"
+		id2="System_1005_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1005_IAS:01"
+		id2="System_1005_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1005_IAS:02"
+		id2="System_1005_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1005_IAS:03"
+		id2="System_1005_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1006_IAS"
+		id2="System_1006_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1006_IAS:01"
+		id2="System_1006_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1006_IAS:02"
+		id2="System_1006_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1006_IAS:03"
+		id2="System_1006_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1007_IAS"
+		id2="System_1007_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1007_IAS:01"
+		id2="System_1007_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1007_IAS:02"
+		id2="System_1007_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1007_IAS:03"
+		id2="System_1007_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1008_IAS"
+		id2="System_1008_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1008_IAS:01"
+		id2="System_1008_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1008_IAS:02"
+		id2="System_1008_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1008_IAS:03"
+		id2="System_1008_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1010_IAS"
+		id2="System_1010_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1010_IAS:01"
+		id2="System_1010_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1010_IAS:02"
+		id2="System_1010_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1010_IAS:03"
+		id2="System_1010_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1011_IAS"
+		id2="System_1011_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1011_IAS:01"
+		id2="System_1011_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1011_IAS:02"
+		id2="System_1011_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1011_IAS:03"
+		id2="System_1011_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1012_IAS"
+		id2="System_1012_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1012_IAS:01"
+		id2="System_1012_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1012_IAS:02"
+		id2="System_1012_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1012_IAS:03"
+		id2="System_1012_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1020_IAS"
+		id2="System_1020_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1020_IAS:01"
+		id2="System_1020_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1020_IAS:02"
+		id2="System_1020_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1020_IAS:03"
+		id2="System_1020_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1021_IAS"
+		id2="System_1021_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1021_IAS:01"
+		id2="System_1021_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1021_IAS:02"
+		id2="System_1021_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1021_IAS:03"
+		id2="System_1021_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1022_IAS"
+		id2="System_1022_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1022_IAS:01"
+		id2="System_1022_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1022_IAS:02"
+		id2="System_1022_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1022_IAS:03"
+		id2="System_1022_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1023_IAS"
+		id2="System_1023_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1023_IAS:01"
+		id2="System_1023_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1023_IAS:02"
+		id2="System_1023_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1023_IAS:03"
+		id2="System_1023_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1024_IAS"
+		id2="System_1024_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1024_IAS:01"
+		id2="System_1024_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1024_IAS:02"
+		id2="System_1024_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1024_IAS:03"
+		id2="System_1024_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1025_IAS"
+		id2="System_1025_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1025_IAS:01"
+		id2="System_1025_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1025_IAS:02"
+		id2="System_1025_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1025_IAS:03"
+		id2="System_1025_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1026_IAS"
+		id2="System_1026_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1026_IAS:01"
+		id2="System_1026_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1026_IAS:02"
+		id2="System_1026_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1026_IAS:03"
+		id2="System_1026_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1030_IAS"
+		id2="System_1030_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1030_IAS:01"
+		id2="System_1030_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1030_IAS:02"
+		id2="System_1030_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1030_IAS:03"
+		id2="System_1030_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1040_IAS"
+		id2="System_1040_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1040_IAS:01"
+		id2="System_1040_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1040_IAS:02"
+		id2="System_1040_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1040_IAS:03"
+		id2="System_1040_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1041_IAS"
+		id2="System_1041_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1041_IAS:01"
+		id2="System_1041_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1041_IAS:02"
+		id2="System_1041_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1041_IAS:03"
+		id2="System_1041_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1042_IAS"
+		id2="System_1042_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1042_IAS:01"
+		id2="System_1042_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1042_IAS:02"
+		id2="System_1042_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1042_IAS:03"
+		id2="System_1042_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1043_IAS"
+		id2="System_1043_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1043_IAS:01"
+		id2="System_1043_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1043_IAS:02"
+		id2="System_1043_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1043_IAS:03"
+		id2="System_1043_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1044_IAS"
+		id2="System_1044_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1044_IAS:01"
+		id2="System_1044_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1044_IAS:02"
+		id2="System_1044_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1044_IAS:03"
+		id2="System_1044_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1045_IAS"
+		id2="System_1045_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1045_IAS:01"
+		id2="System_1045_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1045_IAS:02"
+		id2="System_1045_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1045_IAS:03"
+		id2="System_1045_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1046_IAS"
+		id2="System_1046_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1046_IAS:01"
+		id2="System_1046_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1046_IAS:02"
+		id2="System_1046_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1046_IAS:03"
+		id2="System_1046_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1047_IAS"
+		id2="System_1047_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1047_IAS:01"
+		id2="System_1047_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1047_IAS:02"
+		id2="System_1047_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1047_IAS:03"
+		id2="System_1047_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1050_IAS"
+		id2="System_1050_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1050_IAS:01"
+		id2="System_1050_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1050_IAS:02"
+		id2="System_1050_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1050_IAS:03"
+		id2="System_1050_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1060_IAS"
+		id2="System_1060_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1060_IAS:01"
+		id2="System_1060_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1060_IAS:02"
+		id2="System_1060_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1060_IAS:03"
+		id2="System_1060_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1061_IAS"
+		id2="System_1061_IAS"
+		eventcategory="1603040000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt; &lt;fld20&gt;,,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1061_IAS:01"
+		id2="System_1061_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld4)&gt;&lt;fld10&gt;,&lt;fld1&gt;,&lt;event_log&gt;,&lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld3&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1061_IAS:02"
+		id2="System_1061_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,fld9,fld10,fld11,fld12)&gt;&lt;@event_type:*eventType(event_type)&gt; &lt;@category:None&gt; EvntSLog: [&lt;event_type&gt;] &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt; &lt;event_user&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&quot;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_1061_IAS:03"
+		id2="System_1061_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;fld2&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_4_IAS"
+		id2="System_4_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,None,&lt;fld20&gt;,&lt;event_description&gt;. Fully-Qualified-User-Name = &lt;&lt;&lt;fld2&gt;&gt;   NAS-IP-Address = &lt;fld3&gt;  NAS-Identifier = &lt;fld4&gt;  Called-Station-Identifier = &lt;fld5&gt;  Calling-Station-Identifier =  &lt;fld6&gt;  Client-Friendly-Name = &lt;fld7&gt;  Client-IP-Address = &lt;fld8&gt;  NAS-Port-Type = &lt;&lt;&lt;fld14&gt;&gt;   NAS-Port = &lt;&lt;&lt;fld9&gt;&gt;   Proxy-Policy-Name = &lt;fld10&gt;  Accounting-Provider = &lt;&lt;&lt;fld11&gt;&gt;   Accounting-Server = &lt;fld12&gt;  Reason-Code = &lt;fld13&gt;  Reason = &lt;info&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_5050_IAS"
+		id2="System_5050_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,None,&lt;fld20&gt;,&lt;event_description&gt;" />
+<MESSAGE
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="85"
+		id1="System_5052_IAS"
+		id2="System_5052_IAS"
+		eventcategory="1603000000"
+		summary="NIC_B_WINDOWS;sumtype=21;|NIC_B_WINDOWS;key=event_computer;sumtype=22;|NIC_B_WINDOWS;key=event_type;sumtype=23;|NIC_B_WINDOWS;key=category;sumtype=24;|NIC_B_CATEGORIES;sumtype=denied_out;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld4)&gt;&lt;@category:None&gt; &lt;event_log&gt;,&lt;fld1&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,None,&lt;fld20&gt;,&lt;event_description&gt;" />
+</DEVICEMESSAGES>

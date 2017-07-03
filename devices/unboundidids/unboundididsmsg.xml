@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="27"
+	checksum="97311582e41732882fec44de90f00c61"
+	revision="102"
+	enVision="35010000"
+	device="2.0" />
+
+ 
+ 
+<TAGVALMAP
+    delimiter="  &quot;"/>
+	
+
+	
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; .&lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:hfld1&gt;"/>
+
+
+	
+<HEADER 
+    id1="9999" 
+    id2="9999"         
+    messageid="STRCAT('UNBOUNDIDIDS','_','TVM')"
+    content="&lt;hmonth&gt; &lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hostname&gt; &lt;p_msgid1&gt; &lt;p_msgid2&gt; &lt;hfld1&gt; requesterIP=&lt;hfld2&gt; &lt;!payload:hfld1&gt;" />
+	
+ 
+
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1605000000"
+	keyvaluepairs="MODIFY=&apos;1701020000&apos;" />
+
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="System.Normal Conditions"
+	keyvaluepairs="1701020000=&apos;Config.Changes.Modify&apos;" />	
+
+<VALUEMAP
+    name="getEventCategoryActivity"
+	default="$NONE"
+	keyvaluepairs="SEARCH_REQUEST=&apos;Request&apos;|DELETE_RESULT=&apos;Delete&apos;|DELETE_REQUEST=&apos;Request&apos;|UNBIND_REQUEST=&apos;Request&apos;|BIND_REQUEST=&apos;Request&apos;|MODIFY_REQUEST=&apos;Request&apos;|MODIFY_RESULT=&apos;Modify&apos;|EXTENDED_REQUEST=&apos;Request&apos;|ADD_REQUEST=&apos;Request&apos;"/>		
+
+<VALUEMAP
+	    name="getEventCategoryOutcome"
+		default="$NONE"
+		keyvaluepairs="Success=&apos;Success&apos;|Failed=&apos;Failure&apos;" />
+
+		
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="vasac_helper"
+	id2="vasac_helper"
+	eventcategory="1605000000"
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%B %F %H:%U:%O&apos;,hmonth,hday,htime)&gt;&lt;process_id&gt;]: &lt;event_description&gt;"/>
+
+
+
+			
+<MESSAGE 
+	level="4" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="81" 
+	id1="UNBOUNDIDIDS_TVM" 
+	id2="UNBOUNDIDIDS_TVM" 
+	tagval="true"
+	missField="true"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@p_msgid1:*HDR(p_msgid1)&gt;&lt;@p_msgid2:*HDR(p_msgid2)&gt;&lt;@msg_id:*STRCAT(p_msgid1,_,p_msgid2)&gt;&lt;@vid:*STRCAT(p_msgid1,_,p_msgid2)&gt;&lt;@ec_activity:*getEventCategoryActivity(msg_id)&gt;&lt;@ec_theme:Communication&gt;&lt;@event_cat:*getEventLegacyCategory(p_msgid1)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@p_action:*STRCAT(p_msgid1,&quot; &quot;,p_msgid2)&gt;&lt;@action:*RMQ(p_action)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(result)&gt;&lt;@result:*PARMVAL(p_result1)&gt;"
+	content="additionalInfo=&lt;context&gt; administrativeOperation=&lt;info&gt; attrs=&lt;change_attribute&gt; authDN=&lt;fld&gt; authFailureID=&lt;fld&gt; authFailureReason=&lt;p_result1&gt; authType=&lt;authmethod&gt; authzDN=&lt;dn&gt; base=&lt;dn&gt; clientConnectionPolicy=&lt;policyname&gt; conn=&lt;connectionid&gt; dn=&lt;dn&gt; entriesReturned=&lt;fld&gt; etime=&lt;duration&gt; filter=&lt;fld&gt; from=&lt;context&gt; instanceName=&lt;instance&gt; matchedDN=&lt;fld&gt; message=&lt;event_description&gt; msgID=&lt;id&gt; op=&lt;operation_id&gt; opPurpose=&lt;info&gt; preAuthZUsedPrivileges=&lt;privilege&gt; product=&lt;product&gt; qtime=&lt;fld&gt; replicationChangeID=&lt;fld&gt; requesterDN=&lt;src_dn&gt; requesterIP=&lt;saddr&gt; requestOID=&lt;fld&gt; requestType=&lt;event_type&gt; responseOID=&lt;fld&gt; responseType=&lt;fld&gt; resultCode=&lt;resultcode&gt; resultCodeName=&lt;result&gt; scope=&lt;fld&gt; serversAccessed=&lt;fld&gt; targetHost=&lt;dhost&gt; targetPort=&lt;dport&gt; targetProtocol=&lt;protocol&gt; threadID=&lt;severity&gt; unindexed=&lt;index&gt; usedPrivileges=&lt;fld&gt; usingAdminSessionWorkerThread=&lt;fld&gt; version=&lt;version&gt; via=&lt;context&gt; requestControls=&lt;fld&gt; responseControls=&lt;fld&gt;" />
+	
+</DEVICEMESSAGES>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="4"
+	checksum="ae908b7a5e9b293934f09a41e6f93b0e"
+	revision="81"
+	enVision="35010000"
+	device="2.0"/>
+	
+  <TAGVALMAP
+    delimiter="  &quot;"/>
+	
+<VALUEMAP
+   name="getECTOutcome"
+   default="$NONE"
+   keyvaluepairs="AUTHENTICATED='Success'|NOT_AUTHENTICATED='Failure'"/>	
+   
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="&lt;hfld1&gt; &lt;hfld2&gt;T&lt;hfld3&gt;Z &lt;hhostip&gt; &lt;hproduct&gt; &lt;hfld4&gt; &lt;messageid&gt; [&lt;hfld5&gt;@&lt;hobj_name&gt; &lt;!payload&gt;" />
+
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="&lt;hfld1&gt; &lt;hfld2&gt;T&lt;hfld3&gt;Z &lt;hhostip&gt; &lt;hproduct&gt; &lt;hfld4&gt; &lt;messageid&gt; [&lt;hfld5&gt;@&lt;hobj_name&gt;] &lt;!payload&gt;" />
+
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_BACKUP"
+	id2="SYSTEM_BACKUP"
+	eventcategory="1605000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:Performing backup&gt;TARGET=&lt;fld1&gt; DURATION=&lt;duration&gt; TYPE=&lt;context&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_BOOTSTRAP"
+	id2="SYSTEM_BOOTSTRAP"
+	eventcategory="1605000000"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;event_description&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_CONFIG_FIREWALL"
+	id2="SYSTEM_CONFIG_FIREWALL"
+	eventcategory="1801000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;CONNECTION_METHOD=&lt;network_service&gt; NETWORK=&lt;mask&gt; PORT_RANGE=&lt;fld1&gt; TYPE=&lt;protocol&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_CONFIG_HOST"
+	id2="SYSTEM_CONFIG_HOST"
+	eventcategory="1701020000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;ALIASES=&lt;hostname&gt; HOST_IP=&lt;hostip&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_CONFIG_ROUTE"
+	id2="SYSTEM_CONFIG_ROUTE"
+	eventcategory="1701000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;RULE=&lt;rulename&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_CONFIG_UPDATE"
+	id2="SYSTEM_CONFIG_UPDATE"
+	eventcategory="1701020000"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;event_description&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_ERROR"
+	id2="SYSTEM_ERROR"
+	eventcategory="1603000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;CODE=&lt;resultcode&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_REBOOT"
+	id2="SYSTEM_REBOOT"
+	eventcategory="1606000000"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;event_description&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="SYSTEM_STARTUP"
+	id2="SYSTEM_STARTUP"
+	eventcategory="1610000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;HOSTNAME=&lt;hostname&gt; PUBLIC_IP=&lt;saddr&gt; PUBLIC_GATEWAY=&lt;gateway&gt; MANAGEMENT_GATEWAY=&lt;fld1&gt; MANAGEMENT_IP=&lt;fld2&gt; PRODUCTS=&lt;application&gt; NAMESERVERS=&lt;fld3&gt; SERVER_TYPE=&lt;fld4&gt;" />
+
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_LOGIN"
+	id2="USER_LOGIN"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:*getECTOutcome(result)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;RESULT=&lt;result&gt; USER_AGENT=&lt;user_agent&gt; REMOTE_IP=&lt;saddr&gt; SESSION_ID=&lt;sessionid&gt; AUTHN_SOURCE=&lt;fld2&gt; USERNAME=&lt;username&gt; USERID=&lt;uid&gt; AUTHN_TYPE=&lt;authmethod&gt; FORWARDED_FOR_IP=&lt;fld4&gt; NOT_AUTHNED_REASON=&lt;info&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_LOGOUT"
+	id2="USER_LOGOUT"
+	eventcategory="1401070000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;REASON=&lt;result&gt; USER_AGENT=&lt;user_agent&gt; REMOTE_IP=&lt;saddr&gt; SESSION_ID=&lt;sessionid&gt; AUTHN_SOURCE=&lt;fld2&gt; USERNAME=&lt;username&gt; USERID=&lt;uid&gt; AUTHN_TYPE=&lt;authmethod&gt; FORWARDED_FOR_IP=&lt;fld4&gt; SESSION_INACTIVITY_TIMEOUT=&lt;fld5&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_AUTHZ"
+	id2="USER_AUTHZ"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;RESULT=&lt;result&gt; USERNAME=&lt;username&gt; POLICY=&lt;policyname&gt; PROPERTIES=&lt;info&gt; RESOURCE=&lt;application&gt; POLICY_RULE_SETS=&lt;fld1&gt; DECIDING_RULE_SET=&lt;authmethod&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_PROTECTED_APP_AUTHN"
+	id2="USER_PROTECTED_APP_AUTHN"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;RESULT=&lt;result&gt; SESSION_ID=&lt;sessionid&gt; PROTECTED_APP_USERNAME=&lt;fld1&gt; USERNAME=&lt;username&gt; APPLICATION=&lt;application&gt; TYPE=&lt;protocol&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_EDIT_KEYCHAIN"
+	id2="USER_EDIT_KEYCHAIN"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;APPLICATION=&lt;application&gt; PORTAL_USERNAME=&lt;username&gt; PASSWORD_MESSAGE=&lt;info&gt; NEW_USERNAME=&lt;change_new&gt; USERNAME_MESSAGE=&lt;event_description&gt; OLD_USERNAME=&lt;change_old&gt; PASSWORD_CHANGED=&lt;result&gt; " />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_REQUEST_AUTHZ"
+	id2="USER_REQUEST_AUTHZ"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;USERNAME=&lt;username&gt; REMOTE_IP=&lt;saddr&gt; REQUESTED_URL=&lt;url&gt; RESULT=&lt;result&gt; DENY_REASON=&lt;event_description&gt; USER_AGENT=&lt;user_agent&gt; SESSION_ID=&lt;sessionid&gt; RESOURCE=&lt;application&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="USER_STEPUP_AUTHN"
+	id2="USER_STEPUP_AUTHN"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;APP_NAME=&lt;application&gt; REQUEST_CONTEXT_ID=&lt;id&gt; AUTH_SCHEME=&lt;authmethod&gt; USERNAME=&lt;username&gt; PROTECTED_RESOURCE=&lt;url&gt; TYPE=&lt;fld2&gt; SENSITIVITY_LEVEL=&lt;severity&gt; TENANT=&lt;fld3&gt; RESULT=&lt;result&gt;" />
+
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="WEB_SERVICES_CREATE"
+	id2="WEB_SERVICES_CREATE"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;ACCOUNT_ID=&lt;uid&gt; REMOTE_IP=&lt;saddr&gt; RESOURCE_ID=&lt;fld1&gt; RESOURCE_TYPE=&lt;application&gt; FORWARDED_FOR_IP=&lt;fld2&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="WEB_SERVICES_DELETE"
+	id2="WEB_SERVICES_DELETE"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;ACCOUNT_ID=&lt;uid&gt; REMOTE_IP=&lt;saddr&gt; RESOURCE_ID=&lt;fld1&gt; RESOURCE_TYPE=&lt;application&gt; FORWARDED_FOR_IP=&lt;fld2&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="WEB_SERVICES_EDIT"
+	id2="WEB_SERVICES_EDIT"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;ACCOUNT_ID=&lt;uid&gt; REMOTE_IP=&lt;saddr&gt; RESOURCE_ID=&lt;fld1&gt; RESOURCE_TYPE=&lt;application&gt; FORWARDED_FOR_IP=&lt;fld2&gt;" />
+
+<MESSAGE
+	level="4"
+	parse="1"
+	parsedefvalue="1"
+	tableid="81"
+	id1="WEB_SERVICES_PARTIALEDIT"
+	id2="WEB_SERVICES_PARTIALEDIT"
+	eventcategory="1401000000"
+	tagval="true"
+	content="&lt;@hostip:*HDR(hhostip)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %N:%U:%S&apos;,hfld2,hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;ACCOUNT_ID=&lt;uid&gt; REMOTE_IP=&lt;saddr&gt; RESOURCE_ID=&lt;fld1&gt; RESOURCE_TYPE=&lt;application&gt; FORWARDED_FOR_IP=&lt;fld2&gt;" />
+
+</DEVICEMESSAGES>

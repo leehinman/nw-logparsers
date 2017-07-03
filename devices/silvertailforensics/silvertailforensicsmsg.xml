@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="6"
+	checksum="81b5f52a658029171f9e822aab4ca5b6"
+	revision="0"
+	enVision="35010000"
+	device="2.0"/>
+	
+<TAGVALMAP
+	delimiter=" "/>
+	
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hhostname&gt; &lt;hprocess&gt;: CEF:0|Silver Tail Systems|Forensics|&lt;hfld4&gt;|&lt;messageid&gt;|&lt;!payload:hfld1&gt;"/>
+
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hhostname&gt; &lt;hprocess&gt;: RSA|Web Threat Detection|&lt;hseverity&gt;|&lt;messageid&gt;|&lt;!payload&gt;"/>
+
+	
+	
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="79"
+	id1="100"
+	id2="100"
+	eventcategory="1502000000"
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;process&gt;: CEF:0|Silver Tail Systems|&lt;product&gt;|&lt;version&gt;|&lt;sigid&gt;|Rule &lt;rulename&gt; &lt;action&gt;|&lt;severity&gt;|src=&lt;saddr&gt; suser=&lt;username&gt; request=&lt;web_ref_page&gt;"/>
+
+<MESSAGE
+	level="6"
+	parse="1"
+	parsedefvalue="1"
+	tableid="79"
+	id1="ForensicsMitigator"
+	id2="ForensicsMitigator"
+	eventcategory="1502000000"
+	tagval="true"
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%K %B %F %N:%U:%O %W',fld4)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;RuleAction=&lt;action&gt; RuleName=&lt;rulename&gt; RuleDate=&lt;fld4&gt; user=&lt;username&gt; request=&lt;web_ref_page&gt; ip=&lt;saddr&gt; ip_page=&lt;fld5&gt; agent=&lt;user_agent&gt; user_ip=&lt;fld6&gt; user_page=&lt;fld7&gt; refer=&lt;web_referer&gt; page=&lt;webpage&gt; email=&lt;user_address&gt;"/>
+
+</DEVICEMESSAGES>

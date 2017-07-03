@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="16"
+	checksum="5a85299dbc70adb301bed0fe404b56cd"
+	revision="0"
+	enVision="35010000"
+	device="2.0" />
+
+ 
+<HEADER 
+id1="0001" 
+id2="0001"  
+content="%PROXYAV &lt;messageid&gt;: &lt;!payload&gt;" />
+
+<HEADER 
+id1="0002" 
+id2="0002"  
+content="%PROXYAV &lt;messageid&gt; ^&lt;!payload&gt;" />
+
+
+
+
+
+ 
+ 
+ 
+<HEADER 
+id1="0008" 
+id2="0008"  
+content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;messageid&gt;, &lt;!payload:messageid&gt;" />
+
+<HEADER 
+id1="0006" 
+id2="0006"
+messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"  
+content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;msgIdPart1&gt; &lt;msgIdPart2&gt;, &lt;!payload:msgIdPart1&gt;" />
+
+<HEADER 
+id1="0009" 
+id2="0009"  
+content="&lt;hfld1&gt; &lt;hfld2&gt;T&lt;hfld3&gt;-&lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt; &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+
+  
+<HEADER 
+id1="0004" 
+id2="0004"  
+content="&lt;messageid&gt;, &lt;!payload:messageid&gt;" />
+
+<HEADER 
+id1="0005" 
+id2="0005"
+messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"  
+content="&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;, &lt;!payload:msgIdPart1&gt;" />
+
+<HEADER 
+id1="0007" 
+id2="0007"  
+content="%ProxyAV &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="Virus" 
+	id2="Virus" 
+	eventcategory="1003010000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; &lt;virusname&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;^&lt;fld6&gt;^&lt;url&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="antivirus_load_failure" 
+	id2="antivirus_load_failure" 
+	eventcategory="1603040000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt; &lt;event_description&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: unknown^&lt;url&gt;" /> 
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="antivirus_load_failure:01" 
+	id2="antivirus_load_failure" 
+	eventcategory="1603040000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; &lt;event_description&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;^&lt;url&gt;" /> 
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="max_file_size_exceeded" 
+	id2="max_file_size_exceeded" 
+	eventcategory="1609000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; &lt;event_description&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;^&lt;url&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="decode_error" 
+	id2="decode_error" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; &lt;event_description&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;^&lt;url&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="password_protected" 
+	id2="password_protected" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; &lt;event_description&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;^&lt;url&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="antivirus_license_expired" 
+	id2="antivirus_license_expired" 
+	eventcategory="1605000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; &lt;event_description&gt;; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;^&lt;url&gt;" />
+
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="AV_Scanner" 
+	id2="AV_Scanner" 
+	eventcategory="1605000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt; &lt;agent&gt;^&lt;component_version&gt;^&lt;fld13&gt;" />
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="AV_Rebooted" 
+	id2="AV_Rebooted" 
+	eventcategory="1606000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_source&gt; &lt;event_description&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="AV_LicenseUpdated" 
+	id2="AV_LicenseUpdated" 
+	eventcategory="1608000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt; &lt;agent&gt;^&lt;fld13&gt;" />
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="82" 
+	id1="ICAP" 
+	id2="ICAP" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2,fld3)&gt; &lt;protocol&gt;, &lt;sbytes&gt;, &lt;fld1&gt;, &lt;fld2&gt;, &lt;fld3&gt;, &lt;processing_time&gt;, &lt;shost&gt;, &lt;saddr&gt;, &lt;username&gt;, &lt;dhost&gt;, &lt;daddr&gt;, &lt;dport&gt;, &lt;service&gt;, &lt;rbytes&gt;, &lt;web_method&gt;, &lt;content_type&gt;, &lt;resultcode&gt;, &lt;user_agent&gt;, &lt;url&gt;, { &lt;web_root&gt;, &lt;web_query&gt; | &lt;web_query&gt; }" />
+
+ <MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="User:01" 
+	id2="User" 
+	eventcategory="1701000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld2,hfld3)&gt; User &quot;&lt;username&gt;&quot; changed &lt;change_attribute&gt; from &lt;change_old&gt; to &lt;change_new&gt; using &lt;network_service&gt;" />
+
+ 
+  <MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="User:02" 
+	id2="User" 
+	eventcategory="1701000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld2,hfld3)&gt; User &quot;&lt;username&gt;&quot; changed &lt;change_attribute&gt; to &lt;change_new&gt; using &lt;network_service&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="82" 
+	id1="HTTPS" 
+	id2="HTTPS" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2,fld3)&gt; &lt;protocol&gt;, &lt;sbytes&gt;, &lt;fld1&gt;, &lt;fld2&gt;, &lt;fld3&gt;, &lt;processing_time&gt;, &lt;shost&gt;, &lt;saddr&gt;, &lt;username&gt;, &lt;dhost&gt;, &lt;daddr&gt;, &lt;dport&gt;, &lt;service&gt;, &lt;rbytes&gt;, &lt;web_method&gt;, &lt;content_type&gt;, &lt;resultcode&gt;, &lt;user_agent&gt;, &lt;url&gt;, &lt;web_root&gt;, &lt;web_query&gt;" />
+
+ 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="82" 
+	id1="File_Retrieval" 
+	id2="File_Retrieval" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2,fld3)&gt; &lt;protocol&gt;, &lt;sbytes&gt;, &lt;fld1&gt;, &lt;fld2&gt;, &lt;fld3&gt;, &lt;processing_time&gt;, &lt;shost&gt;, &lt;saddr&gt;, &lt;username&gt;, &lt;dhost&gt;, &lt;daddr&gt;, &lt;dport&gt;, &lt;service&gt;, &lt;rbytes&gt;, &lt;web_method&gt;, &lt;content_type&gt;, &lt;resultcode&gt;, &lt;user_agent&gt;, &lt;url&gt;, { &lt;web_root&gt;, &lt;web_query&gt; | &lt;web_query&gt; }" />  
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="82" 
+	id1="SNTPClient" 
+	id2="SNTPClient" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2,fld3)&gt; &lt;protocol&gt;, &lt;sbytes&gt;, &lt;fld1&gt;, &lt;fld2&gt;, &lt;fld3&gt;, &lt;processing_time&gt;, &lt;shost&gt;, &lt;saddr&gt;, &lt;username&gt;, &lt;dhost&gt;, &lt;daddr&gt;, &lt;dport&gt;, &lt;service&gt;, &lt;rbytes&gt;, &lt;web_method&gt;, &lt;content_type&gt;, &lt;resultcode&gt;, &lt;user_agent&gt;, &lt;url&gt;, &lt;web_root&gt;, &lt;web_query&gt;" />  
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="File:01" 
+	id2="File" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; File decompression/decode error; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;;&lt;fld6&gt;;&lt;url&gt;" />
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="File" 
+	id2="File" 
+	eventcategory="1204000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; File is password protected; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt;; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;;&lt;fld6&gt;;&lt;url&gt;" />
+	
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="84" 
+	id1="Antivirus" 
+	id2="Antivirus" 
+	eventcategory="1605000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %H:%U:%O',fld5)&gt; Antivirus license expired; File:&lt;filename&gt;; Sub File: &lt;fld1&gt;; Vendor: &lt;agent&gt; Engine error code: &lt;fld3&gt;; Engine version: &lt;component_version&gt;; Pattern version: &lt;fld4&gt;; Pattern date: &lt;fld5&gt;;&lt;fld6&gt;" />
+
+
+	
+
+</DEVICEMESSAGES>

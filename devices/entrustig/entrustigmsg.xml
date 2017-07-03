@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="15"
+	checksum="469bbe634792f9d6142f528174676d45"
+	revision="107"
+	enVision="35010000"
+	device="2.0" />
+
+ 
+ 	
+<HEADER 
+	id1="0001" 
+	id2="0001"	
+	content="[&lt;date&gt; &lt;time&gt;,&lt;hfld1&gt;] [&lt;hfld2&gt;] [&lt;hseverity&gt;] [&lt;hfld3&gt;] [&lt;messageid&gt;] &lt;!payload:hfld2&gt;" /> 
+<HEADER 
+	id1="0002" 
+	id2="0002"	
+	messageid="STRCAT(&apos;EntrustIG&apos;, &apos;_&apos;, &apos;SystemLog&apos;)"
+	content="[&lt;date&gt; &lt;time&gt;,&lt;hfld1&gt;] [&lt;hfld2&gt;] [&lt;hseverity&gt;] [&lt;hfld3&gt;] &lt;!payload:hfld2&gt;" /> 
+	
+<MESSAGE 
+	id1="AUD2302" 
+	id2="AUD2302" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:user has been updated&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token entrust &lt;fld3&gt; for user &lt;c_username&gt; has been updated. Reset: &lt;fld4&gt;" />
+	
+<MESSAGE 
+	id1="AUD2400" 
+	id2="AUD2400" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Machine secret &lt;fld3&gt; to user &lt;c_username&gt;" />
+<MESSAGE 
+	id1="AUD3000" 
+	id2="AUD3000" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Temporary PIN created for user &lt;c_username&gt; Expiry Date: &lt;fld3&gt;, Number Of Uses Left: &lt;fld4&gt;, Comment:&lt;fld5&gt;" />
+<MESSAGE 
+	id1="AUD3001" 
+	id2="AUD3001" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Temporary PIN deleted for user &lt;c_username&gt;" />
+	
+<MESSAGE 
+	id1="AUD4003" 
+	id2="AUD4003" 
+	eventcategory="1401060000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Administrator logged in&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Administrator {logged in. Remote Address: &lt;saddr&gt;|logged in.}" />
+<MESSAGE 
+	id1="AUD4004" 
+	id2="AUD4004" 
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Administrator logged out&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Administrator logged out." />
+<MESSAGE 
+	id1="AUD4016" 
+	id2="AUD4016" 
+	eventcategory="1301000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Administrator failed external authentication&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] {[&lt;group&gt;/&lt;username&gt;]|[&lt;username&gt;]} Administrator &lt;fld3&gt; failed external authentication." />
+<MESSAGE 
+	id1="AUD5075" 
+	id2="AUD5075" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Smart Credential license is near expiry date &lt;fld3&gt;" />
+	
+<MESSAGE 
+	id1="AUD6000" 
+	id2="AUD6000" 
+	eventcategory="1302000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User successfully authenticated a challenge&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; successfully authenticated a challenge. Authentication Type: &lt;authmethod&gt;, Remote Address: &lt;saddr&gt;" />
+<MESSAGE 
+	id1="AUD6000:01" 
+	id2="AUD6000" 
+	eventcategory="1302000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User successfully authenticated a challenge&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; successfully authenticated a challenge. Authentication Type: &lt;authmethod&gt;" />
+	
+<MESSAGE 
+	id1="AUD6001" 
+	id2="AUD6001" 
+	eventcategory="1301000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:failed authentication&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; failed authentication. Authentication Type: &lt;authmethod&gt;, Remote Address: &lt;saddr&gt;" />
+<MESSAGE 
+	id1="AUD6001:01" 
+	id2="AUD6001" 
+	eventcategory="1301000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:failed authentication&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; failed authentication. Authentication Type: &lt;authmethod&gt;" />
+		
+<MESSAGE 
+	id1="AUD6002" 
+	id2="AUD6002" 
+	eventcategory="1301000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:failed authentication&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;&lt;@ec_activity:Lockout&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; failed authentication and is now locked." />
+<MESSAGE 
+	id1="AUD6007" 
+	id2="AUD6007" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:New machine registered for user&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] New machine registered for user &lt;fld3&gt;/&lt;fld4&gt;" />
+<MESSAGE 
+	id1="AUD6012" 
+	id2="AUD6012" 
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User challenge request was challenged&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; challenge request was challenged. Authentication Type: &lt;authmethod&gt;, Security Level: &lt;fld6&gt;, Machine Authentication: &lt;fld7&gt;, IP Authentication: &lt;fld8&gt;, Certificate Authentication: &lt;fld9&gt;, External Risk: &lt;fld10&gt;" />
+	
+<MESSAGE 
+	id1="AUD1000" 
+	id2="AUD1000" 
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User created&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; created. Internal ID: cn=&lt;c_username&gt;, Searchbase: &lt;user_org&gt;" />
+<MESSAGE 
+	id1="AUD1002" 
+	id2="AUD1002" 
+	eventcategory="1402020300"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User updated&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld3&gt;/&lt;fld4&gt; {updated. QA Values: &lt;fld5&gt;,|updated.} {Authentication Secrets: &lt;fld6&gt;| Reset Lockout: &lt;fld7&gt;| Lockout: &lt;fld8&gt;| QA Values: &lt;fld9&gt;}" />
+	
+<MESSAGE 
+	id1="AUD150" 
+	id2="AUD150" 
+	eventcategory="1803000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Failed to connect to repository&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Failed to connect to repository default with URL: &lt;url&gt;" />
+<MESSAGE 
+	id1="AUD150:01" 
+	id2="AUD150" 
+	eventcategory="1803000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Failed to connect to repository database with URL&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Failed to connect to repository database with URL: &lt;url&gt;" />
+<MESSAGE 
+	id1="AUD106" 
+	id2="AUD106" 
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:service started&gt;&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] &lt;service&gt; service started. &lt;fld10&gt;" />
+	
+<MESSAGE 
+	id1="AUD107" 
+	id2="AUD107" 
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:service stopped&gt;&lt;@ec_subject:Service&gt;&lt;@ec_activity:Stop&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] &lt;service&gt; service stopped." />
+<MESSAGE 
+	id1="AUD115" 
+	id2="AUD115" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:The key protection file binding has changed&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;fld3&gt;] The key protection file binding has changed;  run 'system bind' again." />
+<MESSAGE 
+	id1="AUD1000:01" 
+	id2="AUD1000" 
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User created&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; created. {Full Name: &lt;user_fullname&gt;|Roles: &lt;fld51&gt;}, {Comment: &quot;&lt;fld3&gt;&quot;|Comment: &lt;fld3&gt;}, Internal ID: {cn|CN}=&lt;fld4&gt;, {OU=&lt;fld52&gt;,OU=&lt;fld52&gt;,OU=&lt;fld53&gt;, Searchbase: &lt;user_dept&gt;|Searchbase: &lt;user_dept&gt;}" />
+	
+
+	
+<MESSAGE 
+	id1="AUD1000:02" 
+	id2="AUD1000" 
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User created&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; created. Comment: &quot;&lt;fld4&gt;&quot;, Internal ID: cn=&lt;fld5&gt;, Searchbase: &lt;user_dept&gt;" />
+	
+
+	
+<MESSAGE 
+	id1="AUD1000:03" 
+	id2="AUD1000" 
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User created&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; created. Internal ID: CN=&lt;fld5&gt;, Searchbase: &lt;user_dept&gt;" />
+	
+
+	
+<MESSAGE 
+	id1="AUD1000:04" 
+	id2="AUD1000" 
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User created&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; created. Full Name: &lt;user_fullname&gt;, Comment: &lt;fld4&gt;, Internal ID: CN=&lt;fld5&gt;, Searchbase: &lt;user_dept&gt;" />
+	
+
+	
+<MESSAGE 
+	id1="AUD1000:05" 
+	id2="AUD1000" 
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User created&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; created. Comment: &lt;fld3&gt;, Internal ID: &lt;fld4&gt;, Searchbase: &lt;user_dept&gt;" />
+	
+
+<MESSAGE 
+	id1="AUD1002:01" 
+	id2="AUD1002" 
+	eventcategory="1402020300"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User updated&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; updated. Full Name: &lt;user_fullname&gt;" />
+	
+	
+<MESSAGE 
+	id1="AUD1002:02" 
+	id2="AUD1002" 
+	eventcategory="1402020300"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User updated&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; updated.&lt;fld5&gt;" />
+	
+	
+<MESSAGE 
+	id1="AUD2302:01" 
+	id2="AUD2302" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:user has been updated&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] {Token Entrust Soft Token|Token entrust} &lt;fld3&gt; for user &lt;c_username&gt; has been updated. {null|No changes}" />
+	
+<MESSAGE 
+	id1="AUD2302:02" 
+	id2="AUD2302" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:user has been updated&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token {Entrust Soft Token| softtoken } &lt;fld3&gt; for user &lt;c_username&gt; has been updated. Token Supports Delivery and Signature: &lt;fld4&gt;" />
+	
+<MESSAGE 
+	id1="AUD2302:03" 
+	id2="AUD2302" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:user has been updated&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token entrust &lt;fld3&gt; for user &lt;c_username&gt; has been updated. State: &lt;disposition&gt;" />
+	
+<MESSAGE 
+	id1="AUD2302:04" 
+	id2="AUD2302" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:user has been updated&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_subject:User&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token { Entrust Soft Token | softtoken } &lt;fld3&gt; for user &lt;c_username&gt; has been updated. State: &lt;disposition&gt;, { Comment:&lt;fld5&gt;, Token | Token } Supports Delivery and Signature: &lt;fld4&gt;" />
+	
+<MESSAGE 
+	id1="EntrustIG_SystemLog:01" 
+	id2="EntrustIG_SystemLog" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Retrieved user from entry&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [IG.SYSTEM.&lt;fld2&gt;.API] Retrieved user from entry cn=&lt;fld3&gt;,ou=&lt;fld4&gt;,o=&lt;fld5&gt; in repository appids" />
+	
+<MESSAGE 
+	id1="EntrustIG_SystemLog:02" 
+	id2="EntrustIG_SystemLog" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:Updating user info&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [IG.SYSTEM.&lt;fld2&gt;.API] Updating user info for user &lt;c_username&gt;" />
+<MESSAGE 
+	id1="EntrustIG_SystemLog:03" 
+	id2="EntrustIG_SystemLog" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [IG.&lt;fld2&gt;.&lt;fld3&gt;.ws] &lt;event_description&gt;" />
+	
+<MESSAGE 
+	id1="EntrustIG_SystemLog" 
+	id2="EntrustIG_SystemLog" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;.&lt;fld3&gt;.&lt;fld4&gt;.&lt;fld5&gt;] &lt;event_description&gt;" />
+<MESSAGE 
+	id1="EntrustIG_SystemLog:04" 
+	id2="EntrustIG_SystemLog" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;fld3&gt;] &lt;event_description&gt;" />
+<MESSAGE 
+	id1="AUD3003" 
+	id2="AUD3003" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] One time password with index &lt;fld5&gt; created for user &lt;fld3&gt;. Expiry Date: &lt;fld4&gt;" />
+	
+<MESSAGE 
+	id1="AUD2306" 
+	id2="AUD2306" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token Entrust Soft Token &lt;fld3&gt; has been created for user &lt;c_username&gt;. State: &lt;disposition&gt;, Serial Number: &lt;fld5&gt;, Token Set: &quot;&lt;fld6&gt;&quot;, Token Supports Delivery and Signature: &lt;fld7&gt;" />
+	
+			
+<MESSAGE 
+	id1="AUD2352" 
+	id2="AUD2352" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Smart Credential &lt;fld3&gt; for user &lt;c_username&gt; has been updated. Issue State: &lt;action&gt;, Issue Date: &lt;fld4&gt;, Issue Info: &lt;fld5&gt;" />
+	
+	
+<MESSAGE 
+	id1="AUD2352:01" 
+	id2="AUD2352" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Smart Credential &lt;fld3&gt; for user &lt;c_username&gt; has been updated. &lt;info&gt;" />
+	
+<MESSAGE 
+	id1="AUD151" 
+	id2="AUD151" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Repository Commercial connection failed to URL &lt;url&gt; switching to URL &lt;fld5&gt;" />
+	
+
+	
+<MESSAGE 
+	id1="AUD151:01" 
+	id2="AUD151" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Repository WMSS connection failed to URL &lt;url&gt; switching to URL &lt;fld5&gt;" />
+	
+
+<MESSAGE 
+	id1="AUD151:02" 
+	id2="AUD151" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Repository default connection failed to URL &lt;url&gt; switching to URL &lt;fld5&gt;" />
+	
+
+<MESSAGE 
+	id1="AUD151:03" 
+	id2="AUD151" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Repository appids connection failed to URL &lt;url&gt; switching to URL &lt;fld5&gt;" />
+	
+
+<MESSAGE 
+	id1="AUD7500" 
+	id2="AUD7500" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] The Entrust IdentityGuard Radius Proxy received an invalid Radius message from /&lt;saddr&gt;:&lt;sport&gt;." />
+	
+
+	
+	
+<MESSAGE 
+	id1="AUD3004" 
+	id2="AUD3004" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] One time password with index &lt;fld5&gt; deleted for user &lt;c_username&gt;." />
+	
+
+	
+<MESSAGE 
+	id1="AUD2300" 
+	id2="AUD2300" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] {Token entrust|Token OATH Token} &lt;fld3&gt; has been assigned to user &lt;c_username&gt;. Token Set: &lt;fld4&gt;, State: &lt;disposition&gt;, Current Activation Type: &lt;fld5&gt;, Available Activation Types: &lt;fld6&gt;, Token Supports Delivery and Signature: &lt;fld7&gt;, Comment: &lt;fld8&gt;" />
+	
+<MESSAGE 
+	id1="AUD6009" 
+	id2="AUD6009" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; authenticated with pending token. Token &lt;fld4&gt; updated. State: &lt;disposition&gt;" />
+	
+<MESSAGE 
+	id1="AUD2305" 
+	id2="AUD2305" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Activation codes for token Entrust Soft Token &lt;fld3&gt; for user &lt;c_username&gt; have been generated." />
+	
+<MESSAGE 
+	id1="AUD2301" 
+	id2="AUD2301" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token {E | e}ntrust {Soft Token &lt;fld3&gt; | &lt;fld3&gt; } for user &lt;c_username&gt; has been deleted." />
+	
+<MESSAGE 
+	id1="AUD3007" 
+	id2="AUD3007" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Personal Verification Number updated for user &lt;fld3&gt;." />
+	
+<MESSAGE 
+	id1="AUD2307" 
+	id2="AUD2307" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token Entrust Soft Token &lt;fld3&gt; for user &lt;c_username&gt; has been successfully activated." />
+	
+<MESSAGE 
+	id1="AUD2303" 
+	id2="AUD2303" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token {entrust|OATH Token} &lt;fld3&gt; for user &lt;c_username&gt; has been unassigned." />
+<MESSAGE 
+	id1="AUD2510" 
+	id2="AUD2510" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User registration password created for user &lt;c_username&gt;." />
+<MESSAGE 
+	id1="AUD2350" 
+	id2="AUD2350" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] {[&lt;group&gt;/&lt;username&gt;] Smart Credential|Smart Credential} &lt;fld3&gt; has been created for user &lt;c_username&gt;. Smart Credential Id: &lt;fld4&gt;, State: &lt;disposition&gt;, Smart Credential Definition: &lt;fld5&gt;, Valid: &lt;fld6&gt;, Approved: &lt;fld7&gt;,{Enrollment Values Set:&lt;fld18&gt; | Enrollment Values: &lt;fld8&gt;}, Supports Unblock: &lt;fld9&gt;, Friendly Name: &lt;fld10&gt;" />
+<MESSAGE 
+	id1="AUD2511" 
+	id2="AUD2511" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User registration password authenticated for user &lt;c_username&gt;." />
+<MESSAGE 
+	id1="AUD2450" 
+	id2="AUD2450" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Digital Id &lt;c_username&gt; has been created for user &lt;info&gt;" />
+<MESSAGE 
+	id1="AUD1001" 
+	id2="AUD1001" 
+	eventcategory="1402020100"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;c_username&gt; deleted." />
+<MESSAGE 
+	id1="AUD4010" 
+	id2="AUD4010" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;username&gt;] Administrator &lt;fld3&gt; attempted to access the administration service, but their account is locked." />
+<MESSAGE 
+	id1="AUD4005" 
+	id2="AUD4005" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Administrator has been locked out until unlocked by administrator." />
+<MESSAGE 
+	id1="AUD2361" 
+	id2="AUD2361" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Challenge for smart credential &lt;fld3&gt; for user &lt;c_username&gt; have been successfully delivered." />
+<MESSAGE 
+	id1="AUD2362" 
+	id2="AUD2362" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Failed delivery of challenge for smartcredential &lt;fld3&gt; for user &lt;c_username&gt;." />
+<MESSAGE 
+	id1="AUD4007" 
+	id2="AUD4007" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Administrator attempted to perform an operation but their role(s) did not permit it&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Administrator attempted to perform an operation but their role(s) did not permit it." />
+<MESSAGE 
+	id1="AUD4012" 
+	id2="AUD4012" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;username&gt;] User &lt;fld3&gt; attempted to access the administration service, but does not have any roles that grant administrative privileges." />
+<MESSAGE 
+	id1="AUD153" 
+	id2="AUD153" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] Failed to establish a connection to any supplied URLs for repository &lt;user_dept&gt;." />
+<MESSAGE 
+	id1="AUD2304" 
+	id2="AUD2304" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token Entrust Soft Token &lt;fld41&gt; for user &lt;c_username&gt; has been unlocked." />
+<MESSAGE 
+	id1="AUD2351" 
+	id2="AUD2351" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] { [&lt;group&gt;/&lt;username&gt;] Smart | Smart } Credential &lt;fld3&gt; for user &lt;c_username&gt; has been deleted." />
+<MESSAGE 
+	id1="AUD2355" 
+	id2="AUD2355" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Smart Credential &lt;fld3&gt; for user &lt;c_username&gt; has been approved." />
+<MESSAGE 
+	id1="AUD2358" 
+	id2="AUD2358" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] { [&lt;group&gt;/&lt;username&gt;] Smart | Smart } Credential &lt;fld3&gt; with Serial Number &lt;fld42&gt; for user &lt;c_username&gt; has been unassigned. &lt;fld41&gt;" />
+<MESSAGE 
+	id1="AUD2368" 
+	id2="AUD2368" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] { [&lt;group&gt;/&lt;username&gt;] Smart | Smart } Credential &lt;fld3&gt; for user &lt;c_username&gt; has been canceled.&lt;fld41&gt;" />
+<MESSAGE 
+	id1="AUD2452" 
+	id2="AUD2452" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] { [&lt;group&gt;/&lt;username&gt;] Digital | Digital } Id &lt;info&gt; for user &lt;c_username&gt; has been deleted.&lt;context&gt;" />
+<MESSAGE 
+	id1="AUD2454" 
+	id2="AUD2454" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] { [&lt;group&gt;/&lt;username&gt;] Digital | Digital } Id &lt;info&gt; for user &lt;c_username&gt; has been canceled.&lt;context&gt;" />
+<MESSAGE 
+	id1="AUD3005" 
+	id2="AUD3005" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Personal Verification Number created for user &lt;c_username&gt;.&lt;info&gt;" />
+<MESSAGE 
+	id1="AUD3006" 
+	id2="AUD3006" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Personal Verification Number deleted for user &lt;c_username&gt;." />
+<MESSAGE 
+	id1="AUD6021" 
+	id2="AUD6021" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] User &lt;fld4&gt; was challenged but has no second factor authenticators available." />
+</DEVICEMESSAGES>

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="17"
+	checksum="517d7831db570b954668c8d838b0ba6c"
+	revision="107"
+	enVision="35010000"
+	device="2.0" />
+
+ 
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		content="%GIT-4: &lt;hdate&gt;.&lt;htime&gt;||&lt;husername&gt;||&lt;hsaddr&gt;||&lt;messageid&gt; &lt;!payload:hdate&gt;" />
+<HEADER 
+		id1="0002" 
+		id2="0002" 
+		content="%GIT-4: &lt;hdate&gt;.&lt;htime&gt; &lt;hfld1&gt; &lt;messageid&gt;||&lt;!payload:hdate&gt;" />
+<HEADER 
+		id1="0003" 
+		id2="0003" 
+		content="%GIT_LITE-4: &lt;hdate&gt;.&lt;htime&gt; &lt;hfld1&gt; &lt;messageid&gt; &lt;!payload:hdate&gt;" />
+<HEADER 
+		id1="0004" 
+		id2="0004" 
+		content="%GIT_LITE-4: &lt;hdate&gt;.&lt;htime&gt; &lt;hfld1&gt; &lt;messageid&gt;,&lt;!payload:hdate&gt;" />
+		
+<HEADER 
+		id1="0005" 
+		id2="0005" 
+		content="%GIT_LITE-4: &lt;hdate&gt;.&lt;htime&gt; &lt;hfld1&gt; &lt;messageid&gt;(&lt;!payload:hdate&gt;" />
+
+<HEADER 
+id1="9991" 
+id2="9991"
+messageid="*STRCAT('GITHUB','_','GENERIC')"  
+content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;p_msgid&gt;: &lt;fld4&gt; enterprise=&lt;fld5&gt; &lt;!payload:fld4&gt;"/>
+
+
+<HEADER 
+id1="9992" 
+id2="9992"  
+messageid="*STRCAT('GITHUB','_','GENERIC')"
+content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hostname&gt; &lt;p_msgid&gt;: &lt;p_month&gt; &lt;p_date&gt; &lt;p_time&gt; &lt;p_year&gt; &lt;hfld10&gt; tid=&lt;hfld11&gt; &lt;!payload:hfld10&gt;"/>
+
+<HEADER 
+id1="9993" 
+id2="9993"  
+messageid="*STRCAT('GITHUB','_','GENERIC')"
+content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hostname&gt; &lt;p_msgid&gt;[&lt;process_id&gt;]: &lt;hfld4&gt; method=&lt;web_method&gt; &lt;!payload:hfld4&gt;"/>
+
+<HEADER 
+id1="9994" 
+id2="9994"  
+messageid="*STRCAT('GITHUB','_','GENERIC')"
+content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hostname&gt; &lt;p_msgid&gt;: &lt;hfld4&gt;&quot; &lt;hfld5&gt; method=&quot;&lt;hfld6&gt;&quot; &lt;!payload:hfld5&gt;"/>
+
+<HEADER 
+		id1="0006" 
+		id2="0006" 
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" />
+
+<HEADER 
+		id1="0007" 
+		id2="0007" 
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+
+	
+	
+
+<TAGVALMAP
+		delimiter="  &quot;"/>	
+
+
+			
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="git-receive-pack:01" 
+	id2="git-receive-pack" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld7)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld6&gt;.&lt;fld7&gt;||&lt;username&gt;||&lt;saddr&gt;||&lt;action&gt; &lt;directory&gt;||&lt;fld12&gt;"/>
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="git-receive-pack" 
+	id2="git-receive-pack" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld7)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld6&gt;.&lt;fld7&gt;||&lt;username&gt;||&lt;saddr&gt;||&lt;action&gt; &lt;directory&gt;"/>
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="git-upload-pack" 
+	id2="git-upload-pack" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld7)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld6&gt;.&lt;fld7&gt;||&lt;username&gt;||&lt;saddr&gt;||&lt;action&gt; &lt;directory&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="ssh" 
+	id2="ssh" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; ssh ARGV=&lt;username&gt;||SOC=&lt;action&gt; '&lt;fld4&gt;'||FROM=&lt;saddr&gt;||access(&lt;directory&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;),&lt;fld8&gt;||trigger,&lt;fld9&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="ssh:01" 
+	id2="ssh" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; ssh ARGV=&lt;username&gt;||SOC=&lt;action&gt; '&lt;fld4&gt;'||FROM=&lt;saddr&gt;||access(&lt;directory&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;),&lt;fld8&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="ssh:02" 
+	id2="ssh" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; ssh ARGV=&lt;username&gt;||SOC=&lt;action&gt; '&lt;fld4&gt;'||FROM=&lt;saddr&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="pre_git" 
+	id2="pre_git" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;||&lt;fld7&gt;||system,&lt;fld8&gt;||update,&lt;fld9&gt;,&lt;username&gt;,&lt;info&gt;||&lt;fld12&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="pre_git:01" 
+	id2="pre_git" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;||&lt;fld7&gt;||system,&lt;fld8&gt;||update,&lt;fld9&gt;,&lt;username&gt;,&lt;info&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="pre_git:02" 
+	id2="pre_git" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;||&lt;fld7&gt;||system,&lt;fld8&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="create" 
+	id2="create" 
+	eventcategory="1401010000" 
+	content="&lt;@ec_activity:Create&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||access(&lt;directory&gt;,&lt;username&gt;,&lt;info&gt;),&lt;fld8&gt;||trigger,&lt;fld9&gt;"/>
+
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="die" 
+	id2="die" 
+	eventcategory="1401010000" 
+	content="&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:DENIED by fallthru&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld16&gt; &lt;info&gt; &lt;directory&gt; &lt;username&gt; DENIED by fallthru||update,&lt;fld13&gt;"/>
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="die:01" 
+	id2="die" 
+	eventcategory="1401010000" 
+	content="&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:DENIED by fallthru&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld16&gt; &lt;info&gt; &lt;directory&gt; &lt;username&gt; DENIED by fallthru"/>
+
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="die:02" 
+	id2="die" 
+	eventcategory="1401010000" 
+	content="&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; die &lt;fld3&gt;"/>
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="update" 
+	id2="update" 
+	eventcategory="1401010000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt;||&lt;username&gt;||&lt;fld16&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||update,&lt;info&gt;"/>
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="update:01" 
+	id2="update" 
+	eventcategory="1401010000" 
+	content="&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt;||&lt;username&gt;||&lt;fld16&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;"/>
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="access" 
+	id2="access" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; access(&lt;directory&gt;,&lt;username&gt;,&lt;fld16&gt;,&lt;fld7&gt;),&lt;fld8&gt;||trigger,&lt;fld4&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="trigger" 
+	id2="trigger" 
+	eventcategory="1401010000" 
+	content="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; trigger,&lt;fld3&gt;"/>
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:01" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; [&lt;fld4&gt;]: {{:queue=&gt;&quot;&lt;action&gt;&quot;, :class=&gt;&quot;&lt;fld2&gt;&quot;} &lt;duration&gt;ms"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:02" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;web_method&gt; &quot;&lt;url&gt;&quot; for &lt;daddr&gt; at &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:03" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: {{&quot;user_id&quot;=&gt;&quot;&lt;username&gt;&quot;, &quot;repository&quot;=&gt;&quot;&lt;directory&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;id&gt;&quot;, &quot;tab&quot;=&gt;&quot;&lt;fld1&gt;&quot;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:04" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: {{&quot;user_id&quot;=&gt;&quot;&lt;username&gt;&quot;, &quot;repository&quot;=&gt;&quot;&lt;fld29&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;id&gt;&quot;} "/>
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:05" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: {{&quot;user_id&quot;=&gt;&quot;&lt;username&gt;&quot;, &quot;repository&quot;=&gt;&quot;&lt;fld29&gt;&quot;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:06" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: {{&quot;&lt;fld2&gt;&quot;, &quot;user_id&quot;=&gt;&quot;&lt;username&gt;&quot;, &quot;repository&quot;=&gt;&quot;&lt;fld29&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;id&gt;&quot;, &quot;tab&quot;=&gt;&quot;&lt;fld1&gt;&quot;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:07" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: {{&quot;&lt;fld2&gt;&quot;, &quot;user_id&quot;=&gt;&quot;&lt;fld3&gt;&quot;, &quot;repository&quot;=&gt;&quot;&lt;fld29&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;id&gt;&quot;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:08" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: {{&quot;&lt;fld2&gt;&quot;, &quot;user_id&quot;=&gt;&quot;&lt;fld3&gt;&quot;, &quot;repository&quot;=&gt;&quot;&lt;fld29&gt;&quot;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_production:9" 
+	id2="github_production" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="slumlord_unicorn:01" 
+	id2="slumlord_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: - - [&lt;fld1&gt; +&lt;fld2&gt;] - &quot;&lt;web_method&gt; &lt;url&gt;&quot; &lt;resultcode&gt; &lt;fld3&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="slumlord_unicorn:02" 
+	id2="slumlord_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: [&lt;fld1&gt;]  &lt;severity&gt; &lt;fld2&gt; : &lt;fld3&gt; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_gitauth" 
+	id2="github_gitauth" 
+	eventcategory="1605000000"               
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="enterprise_manage_access" 
+	id2="enterprise_manage_access" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld7)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: - - [&lt;fld7&gt; +&lt;fld1&gt;] &quot;&lt;web_method&gt; &lt;url&gt;&quot; &lt;resultcode&gt; &lt;fld2&gt; &quot;&lt;fld3&gt;&quot; &quot;&lt;fld4&gt;&quot; &quot;&lt;fld5&gt;&quot; &lt;duration&gt; &lt;fld6&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_resque:01" 
+	id2="github_resque" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;fld1&gt;]: &lt;fld2&gt;] &lt;severity&gt; Resqued::&lt;fld2&gt; -- { (&lt;info&gt;) I exited: pid &lt;process_id&gt; exit &lt;fld4&gt;| &lt;info&gt;}"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_resque:02" 
+	id2="github_resque" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="hookshot_exceptions" 
+	id2="hookshot_exceptions" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &quot;&lt;obj_type&gt;&quot;,&quot;sha&quot;:&quot;&lt;fld2&gt;&quot;,&quot;host&quot;:&quot;&lt;hostname&gt;&quot;,&quot;class&quot;:&quot;&lt;fld3&gt;&quot;,&quot;message&quot;:&quot;&lt;event_description&gt;&quot;,&quot;backtrace&quot;:&quot;&lt;info&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="haproxy:01" 
+	id2="haproxy" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;process_id&gt;]: &lt;shost&gt;:&lt;sport&gt; [&lt;fld22&gt;.&lt;fld1&gt;] https_protocol~ &lt;fld2&gt;/&lt;fld3&gt; &lt;fld4&gt; &lt;resultcode&gt; &lt;fld5&gt; - - ---- &lt;fld6&gt; &lt;fld7&gt; {{&lt;hostname&gt;:&lt;network_port&gt;||&lt;user_agent&gt;} &quot;&lt;web_method&gt; &lt;url&gt;&quot; "/>
+
+ 
+ 
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="haproxy:02" 
+	id2="haproxy" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;process_id&gt;]: &lt;shost&gt;:&lt;sport&gt; [&lt;fld22&gt;.&lt;fld1&gt;] https_protocol~ &lt;fld2&gt;/&lt;fld3&gt; &lt;fld4&gt; &lt;resultcode&gt; &lt;fld5&gt; - - ---- &lt;fld6&gt; &lt;fld7&gt; {{&lt;hostname&gt;||&lt;user_agent&gt;} &quot;&lt;web_method&gt; &lt;url&gt;&quot; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_access" 
+	id2="github_access" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;&lt;process&gt;: &lt;fld1&gt; &lt;fld2&gt; [&lt;fld5&gt; +&lt;fld3&gt;] &quot;&lt;web_method&gt; &lt;url&gt;&quot; &lt;resultcode&gt; &lt;bytes&gt; &quot;&lt;web_referer&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;saddr&gt;&quot; &lt;duration&gt; &lt;fld4&gt; 	"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="enterprise_manage_unicorn:01" 
+	id2="enterprise_manage_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W %N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: [&lt;fld4&gt;.&lt;fld1&gt; #&lt;fld2&gt;]  &lt;severity&gt; -- : &lt;fld3&gt; - - [&lt;fld22&gt;] &quot;&lt;web_method&gt; &lt;url&gt;&quot; &lt;resultcode&gt; &lt;fld5&gt; &lt;fld6&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="enterprise_manage_unicorn:02" 
+	id2="enterprise_manage_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; "/>
+
+	
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="hookshot_resque:01" 
+	id2="hookshot_resque" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: :&lt;fld1&gt; {{&quot;url&quot;=&gt;&quot;&lt;url&gt;&quot;, &quot;content_type&quot;=&gt;&quot;&lt;content_type&gt;&quot;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="hookshot_resque:02" 
+	id2="hookshot_resque" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; processed in &lt;duration&gt;ms, &lt;event_state&gt; for &lt;fld2&gt;ms: &lt;url&gt; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="hookshot_resque:03" 
+	id2="hookshot_resque" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="ghe-systemd-wrapper:01" 
+	id2="ghe-systemd-wrapper" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;process_id&gt;]: {&lt;fld1&gt;: &lt;event_state&gt; &lt;filename&gt;| &lt;event_state&gt; &lt;fld1&gt; &lt;fld2&gt; /&lt;filename&gt;} "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="ghe-systemd-wrapper:02" 
+	id2="ghe-systemd-wrapper" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;{&lt;event_state&gt; &lt;fld2&gt; from &lt;filename&gt; | &lt;info&gt;}"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="hookshot_unicorn:01" 
+	id2="hookshot_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: - - [&lt;fld22&gt; +&lt;fld1&gt;] &quot;&lt;web_method&gt; &lt;url&gt;&quot; &lt;resultcode&gt; &lt;fld2&gt; &lt;duration&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="hookshot_unicorn:02" 
+	id2="hookshot_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_unicorn" 
+	id2="github_unicorn" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt; &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="elasticsearch" 
+	id2="elasticsearch" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;fld2&gt;] [&lt;severity&gt;] &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="gitmon:01" 
+	id2="gitmon" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld2&gt;-{{&lt;severity&gt;}-&lt;fld3&gt;: repo=&lt;directory&gt; program=&lt;fld5&gt; weights={{&quot;pack-objects&quot;=&gt;&lt;fld6&gt;, &quot;upload-pack&quot;=&gt;&lt;fld7&gt;}"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="gitmon:02" 
+	id2="gitmon" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld2&gt;-{{&lt;severity&gt;}-&lt;event_state&gt; &lt;filename&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_mysql:01" 
+	id2="github_mysql" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; &lt;fld2&gt; [&lt;severity&gt;] &lt;info&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_mysql:02" 
+	id2="github_mysql" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_redis" 
+	id2="github_redis" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;{&lt;process&gt;[&lt;process_id&gt;]|&lt;process&gt;}: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="systemd" 
+	id2="systemd" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="syslog-ng" 
+	id2="syslog-ng" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;[&lt;process_id&gt;]: &lt;event_description&gt;; version=&lt;version&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="sudo" 
+	id2="sudo" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld2&gt; : TTY=&lt;interface&gt; ; PWD=&lt;directory&gt; ; USER=&lt;username&gt; ; COMMAND=&lt;cmd&gt; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="kernel" 
+	id2="kernel" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;: &lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="render_unicorn_error:01" 
+	id2="render_unicorn_error" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: [&lt;fld1&gt;]  &lt;severity&gt; &lt;fld2&gt; : &lt;event_state&gt; socket=&lt;fld3&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="render_unicorn_error:02" 
+	id2="render_unicorn_error" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: [&lt;fld1&gt;]  &lt;severity&gt; &lt;fld2&gt; : &lt;event_state&gt; addr=&lt;fld4&gt; fd=&lt;fld3&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="render_unicorn_error:03" 
+	id2="render_unicorn_error" 
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;: &lt;severity&gt; &lt;info&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="render_resque:01" 
+	id2="render_resque"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt; [&lt;fld1&gt;]  &lt;severity&gt; Resqued::{Listener|Worker} -- {&lt;info&gt; pid &lt;process_id&gt; exit &lt;fld2&gt;| (&lt;fld3&gt;) &lt;info&gt;}"/>
+
+	
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="render_resque:02" 
+	id2="render_resque"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld2&gt;: &lt;fld1&gt;"/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="github_exceptions" 
+	id2="github_exceptions"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="gist_exceptions" 
+	id2="gist_exceptions"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="gist_unicorn" 
+	id2="gist_unicorn"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="pages_access:01" 
+	id2="pages_access"
+	eventcategory="1605000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: - - [&lt;fld1&gt; +&lt;fld2&gt;] &quot;&lt;web_method&gt; &lt;web_referer&gt;&quot; &lt;resultcode&gt; &lt;fld3&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;saddr&gt;&quot; &lt;fld4&gt;"/>
+ 
+
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="pages_access:02" 
+	id2="pages_access"
+	eventcategory="1605000000" 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+ 
+
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="enterprise_manage_error:01" 
+	id2="enterprise_manage_error"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt; [&lt;severity&gt;] &lt;fld2&gt;: &lt;fld3&gt; to &lt;fld4&gt; &lt;result&gt; while connecting to upstream, client: &lt;saddr&gt;, server: &lt;daddr&gt;, request: &quot;&lt;web_method&gt; &lt;web_referer&gt;&quot;, upstream: &quot;&lt;url&gt;&quot; "/>
+ 
+
+	
+	
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="enterprise_manage_error:02" 
+	id2="enterprise_manage_error"
+	eventcategory="1605000000"  
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;process&gt;: &lt;fld1&gt;"/>
+ 
+
+
+<MESSAGE 
+		level="6"
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="90" 
+		id1="GITHUB_GENERIC" 
+		id2="GITHUB_GENERIC" 
+		tagval="true"
+		missField="true"
+		eventcategory="1901000000"
+	    functions="&lt;@msg_id:*HDR(p_msgid)&gt;&lt;@vid:*HDR(p_msgid)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',p_month,p_date,p_time,p_year)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%OZ','%W-%G-%FT%N:%U:%O+00:00',fld60)&gt;"
+		content="accept=&lt;fld1&gt; act_id=&lt;fld2&gt; action=&lt;action&gt; app=&lt;application&gt; archives_freed=&lt;fld3&gt; archives_total=&lt;fld4&gt; at=&lt;event_state&gt; auth_fingerprint=&lt;fld5&gt; auth_tries=&lt;fld6&gt; auth=&lt;fld7&gt; banner=&lt;fld8&gt; base_name=&lt;fld9&gt; bytes_freed=&lt;fld10&gt; bytes_total=&lt;bytes&gt; cache_hits=&lt;fld11&gt; cache_miss_time=&lt;fld12&gt; cache_misses=&lt;fld13&gt; cache_set_time=&lt;fld14&gt; cactive=&lt;fld15&gt; cb=&lt;fld16&gt; charset=&lt;fld17&gt; cid=&lt;fld18&gt; cipher=&lt;fld19&gt; client_recv=&lt;fld20&gt; client_sent=&lt;fld21&gt; cmd=&lt;cmd&gt; code=&lt;resultcode&gt; conn_progress=&lt;fld22&gt; content_length=&lt;fld23&gt; content_type=&lt;content_type&gt; controller=&lt;fld24&gt; ct=&lt;fld25&gt; current_on_behalf_of=&lt;fld26&gt; current_tenant_id=&lt;fld27&gt; current_user=&lt;fld28&gt; dn=&lt;dn&gt; dstp=&lt;dport&gt; duration_ms=&lt;duration&gt; elapsed=&lt;fld29&gt; entries_freed=&lt;fld30&gt; entries_total=&lt;fld31&gt; enterprise=&lt;fld32&gt; env=&lt;fld33&gt; event=&lt;fld34&gt; expired_via_get=&lt;fld35&gt; expired_via_get=&lt;fld36&gt; expired_via_stream_failover=&lt;fld37&gt; failure_reason=&lt;result&gt; failure_type=&lt;fld38&gt; fn=&lt;fld39&gt; fp=&lt;fld40&gt; from=&lt;application&gt; fs_host=&lt;shost&gt; fs_recv=&lt;rbytes&gt; fs_sent=&lt;sbytes&gt; git_ref=&lt;fld41&gt; guid=&lt;fld42&gt; hashed_token=&lt;fld43&gt; hits_200=&lt;fld44&gt; hits_400=&lt;fld45&gt; hits_404=&lt;fld46&gt; hits_ok=&lt;fld47&gt; hits_unknown=&lt;fld48&gt; hmac=&lt;fld49&gt; host=&lt;hostname&gt; hooks_count=&lt;dclass_counter1&gt; http_url=&lt;url&gt; imode=&lt;fld50&gt; installation_id=&lt;fld51&gt; integration_id=&lt;fld52&gt; ip=&lt;hostip&gt; ipher=&lt;fld53&gt; kex=&lt;fld54&gt; key=&lt;fld55&gt; keytype=&lt;fld56&gt; language=&lt;fld57&gt; login=&lt;username&gt; log_level=&lt;severity&gt; member=&lt;fld58&gt; method=&lt;fld59&gt; msg=&lt;event_description&gt; message=&lt;event_type&gt; network=&lt;network_service&gt; now=&lt;fld60&gt; nru=&lt;fld61&gt; ns=&lt;fld62&gt; oauth_access_id=&lt;fld63&gt; oauth_application_id=&lt;fld64&gt; oauth_scopes=&lt;fld65&gt; offset=&lt;fld66&gt; org=&lt;user_org&gt; oauth_party=&lt;fld68&gt; owner=&lt;fld69&gt; parent=&lt;fld70&gt; path_info=&lt;directory&gt; path=&lt;directory&gt; pid=&lt;process_id&gt; probe_fail=&lt;fld71&gt; probe_ok=&lt;fld73&gt; proto=&lt;protocol&gt; protocol=&lt;protocol&gt; push_tries_remaining=&lt;fld74&gt; query_string=&lt;fld75&gt; raw_login=&lt;fld76&gt; refs=&lt;fld78&gt; referer=&lt;web_referer&gt; relative_path=&lt;fld77&gt; remote_address=&lt;saddr&gt; remote_addr=&lt;saddr&gt; repo_public=&lt;fld80&gt; repo=&lt;directory&gt; repo_route=&lt;fld81&gt; repository=&lt;directory&gt; repo_visibility=&lt;fld82&gt; request_category=&lt;fld83&gt; request_id=&lt;fld84&gt; request_method=&lt;web_method&gt; request_host=&lt;dhost&gt; route=&lt;fld86&gt; sb_rs=&lt;fld87&gt; server_id=&lt;fld88&gt; short_user_agent=&lt;fld89&gt; slices=&lt;fld90&gt; Slices=&lt;fld91&gt; srcp=&lt;sport&gt; ssh_cmd=&lt;fld92&gt; ssh_user=&lt;fld93&gt; status=&lt;resultcode&gt; svn_prefix=&lt;fld94&gt; svn_resource=&lt;fld95&gt; time_zone=&lt;fld96&gt; tid=&lt;fld97&gt; two_factor_type=&lt;fld98&gt; transaction_id=&lt;fld99&gt; uri=&lt;fld100&gt; url=&lt;url&gt; user_agent=&lt;user_agent&gt; user_id=&lt;id&gt; user=&lt;username&gt; user_session_id=&lt;sessionid&gt; version=&lt;version&gt; via=&lt;fld101&gt; worker_request_count=&lt;fld102&gt; x_requested_with=&lt;fld103&gt; "/>
+
+<MESSAGE 
+	level="7" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="90" 
+	id1="GITHUB_GENERIC:01" 
+	id2="GITHUB_GENERIC" 
+	eventcategory="1901000000"  
+	functions="&lt;@msg_id:*HDR(p_msgid)&gt;&lt;@vid:*HDR(p_msgid)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; "/>
+
+</DEVICEMESSAGES>

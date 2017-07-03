@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION 
+	xml="25"
+	checksum="d1016697d079467a6158b743fd023ea0"
+	revision="0"
+	enVision="33040020" 
+	device="2.0" />
+
+ 
+
+<HEADER 
+		id1="0001"
+		id2="0001"
+		messageid="STRCAT(msgIdPart1,'_',msgIdPart2)"
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; { Cleared or Expired Alarm: ClearOrExpiredTime= | Time= } &lt;hdatetime&gt;,Category=&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;,CriticalityLevel=&lt;hlevel&gt;, &lt;!payload:msgIdPart1&gt;"/>
+<HEADER 
+		id1="0002"
+		id2="0002"
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; { Cleared or Expired Alarm: ClearOrExpiredTime= | Time= } &lt;hdatetime&gt;,Category=&lt;messageid&gt;,CriticalityLevel=&lt;hlevel&gt;, &lt;!payload:messageid&gt;"/>
+<HEADER 
+		id1="0003"
+		id2="0003"
+		messageid="STRCAT(msgIdPart1,'_',msgIdPart2)"
+		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostid&gt; { Cleared or Expired Alarm: ClearOrExpiredTime= | Time= } &lt;hdatetime&gt;,Category=&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;,CriticalityLevel=&lt;hlevel&gt;, &lt;!payload:msgIdPart1&gt;"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_AP_on_Sensor_Segment" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue AP on Sensor Segment&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue AP on Sensor Segment,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wireless_Client_Accidental_Association" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wireless Client Accidental Association&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wireless Client Accidental Association,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_Client_on_Switch" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue Client on Switch&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue Client on Switch,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sanctioned_Client_Association_to_Unsanctioned_Virtual_WIFI" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sanctioned Client Association to Unsanctioned Virtual WIFI&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sanctioned Client Association to Unsanctioned Virtual WIFI,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Ad-Hoc_Advertising_Sanctioned_SSID" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Ad-Hoc Advertising Sanctioned SSID&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Ad-Hoc Advertising Sanctioned SSID,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) },AlarmLocation:&lt;location_desc&gt;"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unsanctioned_BSS_Using_Sanctioned_SSID" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unsanctioned BSS Using Sanctioned SSID&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unsanctioned BSS Using Sanctioned SSID,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sanctioned_BSS_Using_Unsanctioned_SSID" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sanctioned BSS Using Unsanctioned SSID&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sanctioned BSS Using Unsanctioned SSID,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="EAP_Authentication_Flood" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:EAP Authentication Flood&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=EAP Authentication Flood,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="802.11_Authentication_Flood" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:802.11 Authentication Flood&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=802.11 Authentication Flood,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Invalid_Management_Frame" 
+		id2="Vulnerabilities" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Invalid Management Frame&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Invalid Management Frame,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS_Rate_Change" 
+		id2="Vulnerabilities" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS Rate Change&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS Rate Change,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS_ESSID_Change" 
+		id2="Vulnerabilities" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS ESSID Change&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS ESSID Change,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wireless_Client_Vulnerable_to_HotSpotter_Attack" 
+		id2="Vulnerabilities" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wireless Client Vulnerable to HotSpotter Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wireless Client Vulnerable to HotSpotter Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unsanctioned_Bridge" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unsanctioned Bridge&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unsanctioned Bridge,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Offline" 
+		id2="System_Health" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Offline&gt;&lt;@category:System Health&gt; System Health,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Offline,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Offline:01" 
+		id2="Platform_Health" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Offline&gt;&lt;@category:Platform Health&gt; Platform Health,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Offline,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Offline:02" 
+		id2="Platform_Health" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Offline&gt;&lt;@category:Platform Health&gt; Platform Health,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Offline,State=&lt;event_state&gt;,device=&lt;macaddr&gt;[&lt;fld1&gt;],Location=&lt;location_desc&gt;,Alarm Details=&lt;event_description&gt;"/>		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Platform_Health" 
+		id2="Platform_Health" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:License Pool Fully Utilized&gt;&lt;@category:Platform Health&gt; Platform Health,CriticalityLevel=&lt;severity&gt;,Desc=License Pool Fully Utilized,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Platform_Health:01" 
+		id2="Platform_Health" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:New Device Added&gt;&lt;@category:Platform Health&gt; Platform Health,CriticalityLevel=&lt;severity&gt;,Desc=New Device Added,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>	
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Device_Observed_in_Geographically_Different_Locations" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Device Observed in Geographically Different Locations&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Device Observed in Geographically Different Locations,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_Client" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue Client&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue Client,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="SSID_SQL_Injection_Attack" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:SSID SQL Injection Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=SSID SQL Injection Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="MAC_Observed_On_Different_Device_Types" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:MAC Observed On Different Device Types&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=MAC Observed On Different Device Types,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_Bridge" 
+		id2="Rogue_Activity" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue Bridge&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue Bridge,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Ad-Hoc_Network_Violation_Sanctioned_Client" 
+		id2="Policy_Compliance" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Ad-Hoc Network Violation Sanctioned Client&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Ad-Hoc Network Violation Sanctioned Client,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_CTS_Flood" 
+		id2="Exploits" 
+		eventcategory="1002000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS CTS Flood&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS CTS Flood,&lt;space&gt;device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Honeypot_AP_Detected" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Honeypot AP Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Honeypot AP Detected,device= &lt;macaddr&gt;(&lt;fld1&gt;),&lt;space&gt;sensor=&lt;sensor&gt;"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Fake-AP_Flood_Attack" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Fake-AP Flood Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Fake-AP Flood Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_Deauthentication" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS Deauthentication&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS Deauthentication,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_Disassociation" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS Disassociation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS Disassociation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Replay_Injection_Attack" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Replay Injection Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Replay Injection Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Fake-DHCP_Server_Detected" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Desc=Fake-DHCP Server Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Fake-DHCP Server Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Hunter-Killer_Tool_Detected" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Hunter-Killer Tool Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Hunter-Killer Tool Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Monkey-Jack_Tool_Detected" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Monkey-Jack Tool Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Monkey-Jack Tool Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Multipot_Attack_Detected" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Multipot Attack Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Multipot Attack Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unauthorized_AP_Using_Authorized_SSID" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unauthorized AP Using Authorized SSID&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unauthorized AP Using Authorized SSID,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_Excessive_Station_MACs" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS Excessive Station MACs&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS Excessive Station MACs,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_EAP_Authentication_Flood" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS EAP Authentication Flood&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS EAP Authentication Flood,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_EAPOL-Start_Storm" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS EAPOL-Start Storm&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS EAPOL-Start Storm,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="EAP_Dictionary_Attack" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:EAP Dictionary Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=EAP Dictionary Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="ID_Theft:_Out_of_Sequence" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:ID Theft: Out of Sequence&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=ID Theft: Out of Sequence,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="DoS_RF_Jamming" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:DoS RF Jamming&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=DoS RF Jamming,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Hotspotter_Tool_Detected" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Hotspotter Tool Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Hotspotter Tool Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="ASLeap_Attack" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:ASLeap Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=ASLeap Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="EAP_Handshake_Flood" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:EAP Handshake Flood&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=EAP Handshake Flood,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS_and_Wireless_Client_Using_the_Same_Address" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS and Wireless Client Using the Same Address,Possible Virtual WIFI&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS and Wireless Client Using the Same Address,&lt;result&gt;,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="RF_Jamming" 
+		id2="Exploits" 
+		eventcategory="1001010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:RF Jamming&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=RF Jamming,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="CTS_Flood" 
+		id2="Exploits" 
+		eventcategory="1002020000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:CTS Flood&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=CTS Flood,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="EAPOL-Start_Storm" 
+		id2="Exploits" 
+		eventcategory="1002020000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:EAPOL-Start Storm&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=EAPOL-Start Storm,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Association_Table_Overflow" 
+		id2="Exploits" 
+		eventcategory="1001020206"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Association Table Overflow&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Association Table Overflow,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wired_Device_Shows_Wireless_Activity" 
+		id2="Exploits" 
+		eventcategory="1607000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wired Device Shows Wireless Activity&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wired Device Shows Wireless Activity,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="NAV_Attack_CTS" 
+		id2="Exploits" 
+		eventcategory="1001030000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:NAV Attack - CTS&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=NAV Attack - CTS,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Device_Offline" 
+		id2="Infrastructure" 
+		eventcategory="1603010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Device Offline&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Device Offline,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Device_Compliance_Check_Failed" 
+		id2="Infrastructure" 
+		eventcategory="1603010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Device Compliance Check Failed&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Device Compliance Check Failed,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Association_Frames_Sent_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Association Frames Sent Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Association Frames Sent Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Base_802.11_Connection_Failure" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Base 802.11 Connection Failure&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Base 802.11 Connection Failure,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wireless_Application_Coverage_Issue" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wireless Application Coverage Issue&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wireless Application Coverage Issue,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Insufficient_Coverage_Overlap_Detected" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Insufficient Coverage Overlap Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Insufficient Coverage Overlap Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS:_Total_Associations_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS: Total Associations Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS: Total Associations Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Selection_Failure" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Selection Failure&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Selection Failure,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Co-Channel_Interference_Detected" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Co-Channel Interference Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Co-Channel Interference Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Hidden_Station_Detected" 
+		id2="Performance" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Hidden Station Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Hidden Station Detected,&lt;space&gt;device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Rejected_Station_Association" 
+		id2="Performance" 
+		eventcategory="1803000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Rejected Station Association&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Rejected Station Association,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Short_Slot_Time_Violation" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Short Slot Time Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Short Slot Time Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Station_Authentication_Failure" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Station Authentication Failure&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Station Authentication Failure,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Traffic_Sent_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Traffic Sent Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Traffic Sent Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS:_Wireless_Station_to_Station_Traffic_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS: Wireless Station to Station Traffic Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS: Wireless Station to Station Traffic Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS:_Wired_to_Wireless_Traffic_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS: Wired to Wireless Traffic Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS: Wired to Wireless Traffic Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Traffic_Received_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Traffic Received Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Traffic Received Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Station_Excessive_Roaming_or_Reassociations" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Station Excessive Roaming or Reassociations&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Station Excessive Roaming or Reassociations,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS:_Wireless_to_Wired_Traffic_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS: Wireless to Wired Traffic Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS: Wireless to Wired Traffic Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Device_Streaming_Traffic" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Device Streaming Traffic&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Device Streaming Traffic,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Fragment_Frames_Sent_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Fragment Frames Sent Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Fragment Frames Sent Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS:_New_Associations_Threshold_Exceeded" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS: New Associations Threshold Exceeded&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS: New Associations Threshold Exceeded,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wireless_Client_Authentication_Failure" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wireless Client Authentication Failure&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wireless Client Authentication Failure,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="BSS_Rejected_Station_Association" 
+		id2="Performance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:BSS Rejected Station Association&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=BSS Rejected Station Association,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Data_Rates_Advertised" 
+		id2="Policy_Compliance" 
+		eventcategory="1602010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Data Rates Advertised&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Data Rates Advertised,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AirFortress_Encryption_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AirFortress Encryption Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AirFortress Encryption Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Cranite_Encryption_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Cranite Encryption Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Cranite Encryption Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Ad-Hoc_Network_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Ad-Hoc Network Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Ad-Hoc Network Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Station_Vendor_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Station Vendor Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Station Vendor Violation,&lt;space&gt;device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Authentication_Mode_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Authentication Mode Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Authentication Mode Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Device_Unprotected_by_TKIP" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Device Unprotected by TKIP&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Device Unprotected by TKIP,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Stations_Communicating_Through_AP" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Stations Communicating Through AP&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Stations Communicating Through AP,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Encryption_Mode_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Encryption Mode Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Encryption Mode Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sears_Service_Van_Nearby" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sears Service Van Nearby&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sears Service Van Nearby,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Ad-Hoc_Network_Violation_Authorized_Device" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Ad-Hoc Network Violation Authorized Device&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Ad-Hoc Network Violation Authorized Device,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Symbol_Keyguard_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Symbol Keyguard Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Symbol Keyguard Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Ad-Hoc_Network_Violation_Unauthorized_Device" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Ad-Hoc Network Violation Unauthorized Device&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Ad-Hoc Network Violation Unauthorized Device,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="80211_Encryption_Modes_Violated" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:80211 Encryption Modes Violated&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=80211 Encryption Modes Violated,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_SSID_Broadcast_in_Beacon" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP SSID Broadcast in Beacon&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP SSID Broadcast in Beacon,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Advertised_Data_Rate_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Advertised Data Rate Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Advertised Data Rate Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Advanced_Key_Generation_Modes_Violated" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Advanced Key Generation Modes Violated&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Advanced Key Generation Modes Violated,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Extended_Authentication_Modes_Violated" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Extended Authentication Modes Violated&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Extended Authentication Modes Violated,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Missing_AP" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Missing AP&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Missing AP,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Personal_Policy_Alarm" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Personal Policy Alarm&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Personal Policy Alarm,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Device_Unprotected_by_802.1x" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Device Unprotected by 802.1x&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Device Unprotected by 802.1x,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wireless_Client_Isolation_Communication_Violation" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wireless Client Isolation Communication Violation&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wireless Client Isolation Communication Violation,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wi-Fi_Direct_Network_Violation_Sanctioned_Client" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wi-Fi Direct Network Violation Sanctioned Client&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wi-Fi Direct Network Violation Sanctioned Client,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Wireless_Bridging_Detected" 
+		id2="Policy_Compliance" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Wireless Bridging Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Wireless Bridging Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Null_Probe_Response" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Null Probe Response&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Null Probe Response,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="NetStumbler_Victim_Found" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:NetStumbler Victim Found&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=NetStumbler Victim Found,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="NetStumbler_Scanning" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:NetStumbler Scanning&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=NetStumbler Scanning,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AirMagnet_Handheld_ScanningNet" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AirMagnet Handheld ScanningNet&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AirMagnet Handheld Scanning,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Aggressive_Scanning" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Aggressive Scanning&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Aggressive Scanning,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="WEP_Chop_Chop_Attack_Detected" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:WEP Chop Chop Attack Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=WEP Chop Chop Attack Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="MDK3_Dissociation_Deauth_Attack" 
+		id2="Reconnaissance" 
+		eventcategory="1801010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:MDK3 Dissociation/Deauth Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=MDK3 Dissociation/Deauth Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_Station" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue Station&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue Station,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sanctioned_Client_with_Rogue_Virtual_WiFi_on_Network" 
+		id2="Rogue_Activity" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sanctioned Client with Rogue Virtual WiFi on Network&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sanctioned Client with Rogue Virtual WiFi on Network,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_AP_on_Wired_Network" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue AP on Wired Network&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue AP on Wired Network,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Station_Accidental_Association" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Station Accidental Association&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Station Accidental Association,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unauthorized_AP" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unauthorized AP&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unauthorized AP,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unauthorized_Station" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unauthorized Station&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unauthorized Station,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Suspected_Wireless_Device_on_Wired_Network" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Suspected Wireless Device on Wired Network&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Suspected Wireless Device on Wired Network,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_Station_on_Switch" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue Station on Switch&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue Station on Switch,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unsanctioned_BSS" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unsanctioned BSS&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unsanctioned BSS,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Virtual_Wifi_Detected" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Virtual Wifi Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Virtual Wifi Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unauthorized_Roaming" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unauthorized Roaming&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unauthorized Roaming,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_Client_on_Sensor_Segment" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue Client on Sensor Segment&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue Client on Sensor Segment,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unsanctioned_Wireless_Client_Probing_for_Sanctioned_SSID" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unsanctioned Wireless Client Probing for Sanctioned SSID&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unsanctioned Wireless Client Probing for Sanctioned SSID,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Rogue_AP_on_Switch" 
+		id2="Rogue_Activity" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Rogue AP on Switch&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Rogue AP on Switch,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Active_Termination_Initiated" 
+		id2="System_Health" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Active Termination Initiated&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Active Termination Initiated,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Disabled_for_WIPS" 
+		id2="System_Health" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Disabled for WIPS&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Disabled for WIPS,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Sensor_Active_Termination_Cancelled" 
+		id2="System_Health" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Sensor Active Termination Cancelled&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Sensor Active Termination Cancelled,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Appliance_Synchronization_Failed" 
+		id2="System_Health" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Appliance Synchronization Failed&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Appliance Synchronization Failed,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AD-HOC_Advertising_Authorized_SSID" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AD-HOC Advertising Authorized SSID&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AD-HOC Advertising Authorized SSID,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Random_MAC_Address_Detected" 
+		id2="Vulnerabilities" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Random MAC Address Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Random MAC Address Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unencrypted_Broadcast_or_Multicast_Traffic_Detected" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unencrypted Broadcast or Multicast Traffic Detected in Encrypted Environment&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unencrypted Broadcast or Multicast Traffic Detected in Encrypted Environment,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Station_Vulnerable_to_HotSpotter_Attack" 
+		id2="Vulnerabilities" 
+		eventcategory="1603060000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Station Vulnerable to HotSpotter Attack&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Station Vulnerable to HotSpotter Attack,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Unassociated_Station_Detected" 
+		id2="Vulnerabilities" 
+		eventcategory="1804010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Unassociated Station Detected&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Unassociated Station Detected,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="NetBIOS_Traffic" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:NetBIOS Traffic&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=NetBIOS Traffic,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Soft_AP" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Soft AP&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Soft AP,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Rate_Change" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Rate Change&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Rate Change,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Crackable_WEP_IV_Key_Used" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Crackable WEP IV Key Used&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Crackable WEP IV Key Used,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_Channel_Change" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP Channel Change&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP Channel Change,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="AP_ESSID_Change" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:AP ESSID Change&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=AP ESSID Change,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Conversation_Loop" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Conversation Loop&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Conversation Loop,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Fuzzing:_Invalid_Management_Frame" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Fuzzing: Invalid Management Frame&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Fuzzing: Invalid Management Frame,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="IGMP_Multicast_Traffic" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:IGMP Multicast Traffic&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=IGMP Multicast Traffic,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="STP_Traffic" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:STP Traffic&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=STP Traffic,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Transmitting_Device_Using_Invalid_MAC" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Transmitting Device Using Invalid MAC&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Transmitting Device Using Invalid MAC,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Watched_Station_Active" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Watched Station Active&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Watched Station Active,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Fuzzing:_Invalid_Channel_Advertisement" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Fuzzing: Invalid Channel Advertisement&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Fuzzing: Invalid Channel Advertisement,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="IGRP_Multicast_Traffic" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:IGRP Multicast Traffic&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=IGRP Multicast Traffic,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Multicast_All_Systems_On_This_Subnet" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Multicast All Systems On This Subnet&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Multicast All Systems On This Subnet,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="IPX_Traffic" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:IPX Traffic&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=IPX Traffic,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Duplicate_Information_Elements" 
+		id2="Vulnerabilities" 
+		eventcategory="1805010000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Duplicate Information Elements&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Duplicate Information Elements,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="78"
+		id1="Invalid_Channel_Advertisement" 
+		id2="Vulnerabilities" 
+		eventcategory="1605000000"
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%H:%U:%O',hdatetime)&gt;&lt;@signame:Invalid Channel Advertisement&gt; &lt;category&gt;,CriticalityLevel=&lt;severity&gt;,Desc=Invalid Channel Advertisement,device={ (), | &lt;macaddr&gt;(&lt;node&gt; &lt;fld2&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;node&gt;[&lt;protocol&gt;]&lt;ssid&gt;), | &lt;macaddr&gt;(&lt;fld1&gt;), } sensor={ &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;],OffenderSSID=&lt;ssid&gt;) | &lt;sensor&gt;(&lt;access_point&gt;[&lt;protocol&gt;]) | &lt;sensor&gt;(&lt;fld4&gt;) }"/>
+
+</DEVICEMESSAGES>

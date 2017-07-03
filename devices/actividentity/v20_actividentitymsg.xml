@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES >
+  <VERSION 
+	xml="3"
+	checksum="83dde9180e8b4d95c0b1290964656b42"
+	revision="0"
+	enVision="33040030"
+	device="2.0" />
+ 
+  <HEADER 
+		id1="0001"
+		id2="0001"
+		content="%ActivIdentity: &lt;messageid&gt;||&lt;!payload&gt;" />
+
+		
+  <VALUEMAP 
+		name="detailscode"
+		default="$NONE"
+		keyvaluepairs="26000='Unlock Device PIN Code'|26001='Unlock And Reset Number Of Tries'|26002='Resynchronize'|26003='Lock'|26004='Activate Temporary Password'|26005='Deactivate Temporary Password'|26006='LDAP options'|26007='General Option'|26008='Helpdesk Options'|26009='Succeeded'|26010='Failed'|26011='Begin'|26012='Stopped By User'|26013='Common Repository Settings'|26014='Authentication Devices'|26015='Audit Settings'|26016='Windows Strong Login Settings'|26017='User Management Settings'|26018='Replace'|26019='Deactivate SMS Backup Authentication'|26020='Activate SMS Backup Authentication'|26021='SMS Gateway Options'|26022='Synchronous Authentication And Resynchronization'" />
+  <VALUEMAP 
+		name="operationcode"
+		default="$NONE"
+		keyvaluepairs="15277='LoginFailure'|24000='Create'|24001='Update'|24002='Delete'|24003='ChangePassword'|24004='Assign'|24005='Consolidate'|24006='Helpdesk'|24007='Export'|24008='Unassign'|24009='fldPool'|24010='Clear'|24011='ChangeRepository'|24012='Import'|24013='Initialization'|24014='Retrieve'|24015='Enroll'|24016='fldPoolConfigurationUpdate'|24017='Test'|24018='RetrieveDevicesCredentials'|24019='Repair'|24020='SecurityQuestions'|24021='Challenge/Response'|24022='LDAPResponse'|24023='Synchronous'|24024='Asynchronous'|24025='RetrieveSingleCredential'|24026='GetPINCode'" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Accepted"
+		id2="1"
+		eventcategory="1302000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;group&gt;||&lt;daddr&gt;||&lt;result&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Rejected"
+		id2="2"
+		eventcategory="1301000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;group&gt;||&lt;daddr&gt;||&lt;result&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Logon"
+		id2="25000"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Logoff"
+		id2="25001"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Company"
+		id2="25002"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+  
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Security"
+		id2="25003"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Device"
+		id2="25004"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="AllDevices"
+		id2="25005"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Group"
+		id2="25006"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+  
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="fld"
+		id2="25007"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Gate"
+		id2="25008"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="AuthorizationProfile"
+		id2="25009"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="AccountingProfile"
+		id2="25010"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="LDAPQuery"
+		id2="25011"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Log"
+		id2="25012"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="AuthenticationSuccess"
+		id2="25013"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="AuthenticationFailure"
+		id2="25014"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Repository"
+		id2="25015"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+  
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Options"
+		id2="25016"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+  
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Audit"
+		id2="25017"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+  
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="StaticPassword"
+		id2="25018"
+		eventcategory="1612000000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@info:*detailscode(info)&gt; &lt;@action:*operationcode(action)&gt; &lt;username&gt;||&lt;event_time&gt;||&lt;fld1&gt;||&lt;action&gt;||&lt;info&gt;||&lt;fld2&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;" />
+
+ 
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Authentic"
+		id2="Acct-Authentic"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Delay-Time"
+		id2="Acct-Delay-Time"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Input-Bytes"
+		id2="Acct-Input-Bytes"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Input-Packets"
+		id2="Acct-Input-Packets"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Output-Bytes"
+		id2="Acct-Output-Bytes"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Output-Packets"
+		id2="Acct-Output-Packets"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Session-Id"
+		id2="Acct-Session-Id"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Session-Time"
+		id2="Acct-Session-Time"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Status-Type"
+		id2="Acct-Status-Type"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Acct-Terminate-Cause"
+		id2="Acct-Terminate-Cause"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Caller-Id"
+		id2="Caller-Id"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Challenge-State"
+		id2="Challenge-State"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="CHAP-Challenge"
+		id2="CHAP-Challenge"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="CHAP-Password"
+		id2="CHAP-Password"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Class"
+		id2="Class"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Client-Id"
+		id2="Client-Id"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Client-Port-DNIS"
+		id2="Client-Port-DNIS"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Client-Port-Id"
+		id2="Client-Port-Id"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Dialback-Name"
+		id2="Dialback-Name"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Dialback-No"
+		id2="Dialback-No"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="EAP-Message"
+		id2="EAP-Message"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Expiration"
+		id2="Expiration"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Address"
+		id2="Framed-Address"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-AppleTalk-Link"
+		id2="Framed-AppleTalk-Link"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-AppleTalk-Network"
+		id2="Framed-AppleTalk-Network"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-AppleTalk-Zone"
+		id2="Framed-AppleTalk-Zone"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Compression"
+		id2="Framed-Compression"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Filter-Id"
+		id2="Framed-Filter-Id"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-IPX-Network"
+		id2="Framed-IPX-Network"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-MTU"
+		id2="Framed-MTU"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Netmask"
+		id2="Framed-Netmask"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Protocol"
+		id2="Framed-Protocol"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Route"
+		id2="Framed-Route"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Framed-Routing"
+		id2="Framed-Routing"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Idle-Timeout"
+		id2="Idle-Timeout"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Login-Host"
+		id2="Login-Host"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Login-LAT-Group"
+		id2="Login-LAT-Group"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Login-LAT-Node"
+		id2="Login-LAT-Node"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Login-LAT-Service"
+		id2="Login-LAT-Service"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Login-Service"
+		id2="Login-Service"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Login-TCP-Port"
+		id2="Login-TCP-Port"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Message-Authenticator"
+		id2="Message-Authenticator"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="NAS-Identifier"
+		id2="NAS-Identifier"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="NAS-Port-Type"
+		id2="NAS-Port-Type"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Old-Password"
+		id2="Old-Password"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Password"
+		id2="Password"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Port-Limit"
+		id2="Port-Limit"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Port-Message"
+		id2="Port-Message"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Proxy-State"
+		id2="Proxy-State"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Session-Timeout"
+		id2="Session-Timeout"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Termination-Action"
+		id2="Termination-Action"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Tunnel-Medium-Type"
+		id2="Tunnel-Medium-Type"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Tunnel-Private-Group-ID"
+		id2="Tunnel-Private-Group-ID"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+ 
+ <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Tunnel-Type"
+		id2="Tunnel-Type"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="User-Name"
+		id2="User-Name"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="User-Service-Type"
+		id2="User-Service-Type"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+  <MESSAGE 
+		level="4"
+		parse="1"
+		parsedefvalue="1"
+		tableid="81"
+		id1="Vendor-Specific"
+		id2="Vendor-Specific"
+		eventcategory="1602000000"
+		content="&lt;fld1&gt;||&lt;saddr&gt;||&lt;event_time&gt;||&lt;fld2&gt;||&lt;username&gt;||&lt;daddr&gt;||&lt;fld3&gt;||&lt;fld4&gt;||&lt;fld5&gt;||&lt;fld6&gt;" />
+
+</DEVICEMESSAGES>

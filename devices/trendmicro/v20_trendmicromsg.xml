@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="27"
+	checksum="dab0c9486a6830e0fc0a362124dca46e"
+	revision="101"
+    enVision="33070004"
+    device="2.0" />
+
+<HEADER 
+		id1="0001" 
+		id2="0001" 
+		content="%TRENDMICRO-&lt;hserver&gt; &lt;messageid&gt; Alert!! &lt;!payload&gt;" />
+
+		
+<HEADER 
+		id1="0012" 
+		id2="0012" 
+		content="%TRENDMICRO &lt;messageid&gt; Alert!! &lt;!payload&gt;" />
+<HEADER 
+		id1="0002" 
+		id2="0002" 
+		content="%TRENDMICRO &lt;messageid&gt; { alert. | Alert } &lt;!payload&gt;" />
+
+<HEADER 
+		id1="0011" 
+		id2="0011" 
+		content="%TRENDMICRO !!&lt;messageid&gt; { Alert!! | Detection!! } &lt;!payload&gt;" />
+<HEADER 
+		id1="0010" 
+		id2="0010" 
+		content="%TRENDMICRO !!&lt;messageid&gt; { alert. | Alert | Detection } &lt;!payload&gt;" />
+
+<HEADER 
+		id1="0003" 
+		id2="0003" 
+		content="%TRENDMICRO &lt;messageid&gt; Manager (&lt;hserver&gt;) notification: &lt;!payload:messageid&gt;" />
+
+<HEADER 
+		id1="0004" 
+		id2="0004" 
+ 		content="%TRENDMICRO  &lt;messageid&gt; of { viruses/malware: | spyware/grayware: } &lt;!payload:messageid&gt;" />
+
+		
+		
+
+		
+<HEADER
+		id1="0005"
+		id2="0005"
+		content="%TRENDMICRO TMCM=&lt;messageid&gt;,&lt;!payload&gt;"/>
+
+		
+
+		
+<HEADER 
+		id1="0006" 
+		id2="0006" 
+ 		content="%TRENDMICRO  &lt;messageid&gt;: &lt;!payload&gt;" />
+
+		
+		
+
+<HEADER
+		id1="0007"
+		id2="0007"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; TMCM:SLF_INCIDENT_EVT_&lt;messageid&gt; &lt;!payload&gt;"/>
+
+		
+<HEADER
+		id1="0008"
+		id2="0008"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; TMCM:&lt;hfld&gt;_&lt;messageid&gt; &lt;!payload&gt;"/>
+
+				
+
+
+		
+<HEADER
+		id1="0009"
+		id2="0009"
+		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; TMCM:&lt;messageid&gt; &lt;!payload&gt;"/>
+
+		
+
+<HEADER
+		id1="0014"
+		id2="0014"
+		content="%TRENDMICRO &lt;messageid&gt; &lt;!payload&gt;"/>
+
+
+		
+
+<HEADER 
+id1="9999" 
+id2="9999"
+messageid="*STRCAT('TRENDMICRO','_','GENERIC')"  
+content="&lt;fld1&gt; TMCM:&lt;p_msgid&gt; &lt;!payload&gt;"/>
+
+
+
+<HEADER 
+id1="9998" 
+id2="9998"  
+messageid="*STRCAT('TRENDMICRO','_','GENERIC')"
+content="%TRENDMICRO TMCM=&lt;p_msgid&gt;,&lt;!payload&gt;"/>
+
+
+<TAGVALMAP
+		delimiter=", &quot;" />
+
+<TAGVALMAP
+		delimiter="  &quot;"/>
+      
+<SUMDATA 
+		bucket="NIC_B_CATEGORIES" 
+		key="threat_name" 
+		fields="1,0,0" />
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control" 
+		id2="Control" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt;. Virus: &lt;virusname&gt; Infected file: &lt;filename&gt; File path: &lt;directory&gt; Source: &lt;shost&gt; Destination: &lt;dhost&gt; Managed Product: &lt;product&gt; Computer: &lt;hostname&gt; Scan engine: &lt;component_version&gt; Virus pattern: &lt;content_version&gt;  Event date/time: &lt;fld9&gt; " />
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:01" 
+		id2="Control" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt; Virus: &lt;virusname&gt; { Infected file: &lt;filename&gt; File path: &lt;directory&gt; | Alert trigger number: &lt;fld14&gt; } Scan engine: &lt;component_version&gt; Virus pattern: &lt;content_version&gt; Event date/time: &lt;fld9&gt; " />
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:02" 
+		id2="Control" 
+		eventcategory="1003050000"
+        summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt;. Spyware/Grayware: &lt;threat_name&gt; Infected file: &lt;filename&gt; { File path: &lt;directory&gt; Source: &lt;shost&gt; Destination: &lt;dhost&gt; Managed Product: &lt;product&gt; Computer: &lt;hostname&gt; | File path: &lt;directory&gt; } Scan engine: &lt;component_version&gt; Spyware/Grayware pattern: &lt;content_version&gt; Event date/time: &lt;fld9&gt;" />
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:03" 
+		id2="Control" 
+		eventcategory="1603000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. The anti-spam &lt;info&gt; Server/Entity: &lt;fld2&gt; Computer: &lt;hostname&gt; Product: &lt;product&gt; Event date/time: &lt;fld9&gt;" />
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:04" 
+		id2="Control" 
+		eventcategory="1603000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt; { Managed Product: | Server/Entity: } &lt;fld1&gt; Computer: &lt;hostname&gt; Product: &lt;product&gt; Event date/time: &lt;fld9&gt;" />
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:05" 
+		id2="Control" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt; Threat Information: &lt;fld1&gt; Required {Scan | scan} engine: &lt;component_version&gt; Required {Virus | virus} pattern: &lt;content_version&gt; " />
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:06" 
+		id2="Control" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Test Message&gt;&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Success&gt; Control Manager (&lt;fld15&gt;) notification: Test Message. &lt;info&gt;. { Please click | &lt;fld1&gt;. Click } Services &gt; { Damage Cleanup &gt; | Vulnerability Assessment &gt; } Current Task for details." />
+
+	
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:07" 
+		id2="Control" 
+		eventcategory="1605030000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt; Product: &lt;product&gt; Event date/time: &lt;fld9&gt;" />
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:08" 
+		id2="Control" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. A network virus from source &lt;shost&gt; has been detected on &lt;dhost&gt;. &lt;info&gt; " />
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:09" 
+		id2="Control" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt; Check the Event log and start Outbreak Prevention Mode immediately." />
+
+
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:10" 
+		id2="Control" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt;." />
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Control:11" 
+		id2="Control" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Control Manager (&lt;fld15&gt;) notification: &lt;event_description&gt;. &lt;info&gt; " />
+
+		
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Number" 
+		id2="Number" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:virus(s) detected on client(s)&gt;&lt;@dclass_counter1_string:Number of viruses/malware/spyware/grayware&gt;&lt;@dclass_counter2_string:Number of computers/endpoints&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; Number of { viruses/malware: | spyware/grayware: } &lt;dclass_counter1&gt; Number of {computers | endpoints}: &lt;dclass_counter2&gt;" />
+
+		
+
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Outbreak" 
+		id2="Outbreak" 
+		eventcategory="1003010000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:virus detected on client(s)&gt;&lt;@dclass_counter1_string:Number of viruses&gt;&lt;@dclass_counter2_string:Number of clients&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;dclass_counter1&gt; virus detected on &lt;dclass_counter2&gt; clients." />
+
+		
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Spyware/Grayware:01" 
+		id2="Spyware/Grayware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@event_description:Spyware/Grayware detected&gt; &lt;threat_name&gt; Computer: &lt;hostname&gt; Domain: &lt;domain&gt; IP address: &lt;hostip&gt; User ID: &lt;event_user&gt; Date/Time: &lt;fld9&gt; Result: &lt;result&gt;" /> 
+
+		
+
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Spyware/Grayware" 
+		id2="Spyware/Grayware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@event_description:Spyware/Grayware detected&gt; &lt;threat_name&gt; Computer: &lt;hostname&gt; Domain: &lt;domain&gt; Date/Time: &lt;fld9&gt; Result: &lt;result&gt;" /> 
+
+		
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Threat" 
+		id2="Threat" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt; &lt;product&gt; detected &lt;threat_name&gt; on &lt;hostname&gt;(&lt;username&gt;) in &lt;domain&gt; domains.  File:&lt;filename&gt; { Scanned by &lt;service&gt; Detection date: | Detection date: } &lt;fld9&gt; Action: &lt;action&gt;" />
+
+		
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus" 
+		id2="Virus" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W.%G.%F %N:%U:%O',fld9)&gt; &lt;threat_name&gt; is detected on &lt;hostname&gt;(&lt;username&gt;) in &lt;domain&gt; domain. Infected file: &lt;filename&gt; Detection date: &lt;fld9&gt; Action: &lt;action&gt;" />
+
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus:01" 
+		id2="Virus" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;  &lt;threat_name&gt; on &lt;hostname&gt;(&lt;username&gt;) Action: &lt;action&gt; file: &lt;filename&gt; { Scanned by DCS Detection | Detection } date: &lt;fld9&gt;" />
+
+		
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus:02" 
+		id2="Virus" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;product&gt; detected &lt;threat_name&gt; on &lt;hostname&gt;(&lt;username&gt;) in &lt;domain&gt; domains.  File: &lt;filename&gt; Detection date: &lt;fld9&gt; Action: &lt;action&gt;" />
+
+	
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus:03" 
+		id2="Virus" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; Date: &lt;fld9&gt; UserID: &lt;username&gt; Computer: &lt;hostname&gt; Path:&lt;filename&gt;  Virus: &lt;threat_name&gt; Action Taken: &lt;action&gt;" />
+
+  <MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus/Malware:03" 
+		id2="Virus/Malware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@event_description:virus detected&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;threat_name&gt; Computer: &lt;hostname&gt; Domain: &lt;domain&gt; IP address: &lt;hostip&gt; User ID: &lt;event_user&gt; MAC address : &lt;macaddr&gt; File: &lt;filename&gt; Date/Time: &lt;fld9&gt; Result: &lt;result&gt;" /> 
+
+		
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus/Malware:04" 
+		id2="Virus/Malware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@event_description:virus detected&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;threat_name&gt; Computer: &lt;hostname&gt; Domain: &lt;domain&gt; File: &lt;filename&gt; Date/Time: &lt;fld9&gt; Source Address: &lt;saddr&gt; Destination Address: &lt;daddr&gt; Result: &lt;result&gt;" /> 
+
+ 
+
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus/Malware" 
+		id2="Virus/Malware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O','%G-%F-%W %N:%U:%O',fld9)&gt;&lt;@event_description:virus detected&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;threat_name&gt; {Computer: | Endpoint: } &lt;hostname&gt; Domain: &lt;domain&gt; File: &lt;filename&gt; Date/Time: &lt;fld9&gt; Result: &lt;result&gt;" /> 
+
+		
+
+
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus/Malware:01" 
+		id2="Virus/Malware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@event_description:virus detected&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;threat_name&gt; Computer: &lt;hostname&gt; IP address: &lt;hostip&gt; User ID: &lt;username&gt; SMCTRENDAV2:&lt;fld10&gt; File: &lt;filename&gt; Date/Time: &lt;fld9&gt; Result: &lt;result&gt;" /> 
+
+<MESSAGE 
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="Virus/Malware:02" 
+		id2="Virus/Malware" 
+		eventcategory="1003010000" 
+		summary="NIC_B_CATEGORIES;subkey=virus;" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld9)&gt;&lt;@event_description:virus detected&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt; &lt;threat_name&gt; Computer: &lt;hostname&gt; IP address: &lt;hostip&gt; User ID: &lt;username&gt; SMCTRENDAV1:&lt;fld10&gt; File: &lt;filename&gt; Date/Time: &lt;fld9&gt; Result: &lt;result&gt;" /> 
+
+		
+
+
+
+
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_UPDATE_SUCCESS:01" 
+		id2="EVT_UPDATE_SUCCESS" 
+		eventcategory="1605000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;T&lt;fld2&gt;&quot; Component=&quot;&lt;fld12&gt;&quot; Component version=&quot;&lt;fld13&gt;&quot;"/>
+
+	
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_UPDATE_SUCCESS:02" 
+		id2="EVT_UPDATE_SUCCESS" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>
+
+		
+<MESSAGE
+		level="3" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_UPDATE_FAIL:01" 
+		id2="EVT_UPDATE_FAIL" 
+		eventcategory="1603000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;T&lt;fld2&gt;&quot; Component=&quot;&lt;fld12&gt;&quot; Component version=&quot;&lt;fld13&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_UPDATE_FAIL:02" 
+		id2="EVT_UPDATE_FAIL" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>		
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_REALTIME_SCAN_ENABLED:01" 
+		id2="EVT_REALTIME_SCAN_ENABLED" 
+		eventcategory="1605000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;T&lt;fld2&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_REALTIME_SCAN_ENABLED:02" 
+		id2="EVT_REALTIME_SCAN_ENABLED" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>		
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_REALTIME_SCAN_DISABLED:01" 
+		id2="EVT_REALTIME_SCAN_DISABLED" 
+		eventcategory="1603000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;T&lt;fld2&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_REALTIME_SCAN_DISABLED:02" 
+		id2="EVT_REALTIME_SCAN_DISABLED" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>	
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="PRODUCT_SERVICE_STARTED:01" 
+		id2="PRODUCT_SERVICE_STARTED" 
+		eventcategory="1605000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;T&lt;fld2&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="PRODUCT_SERVICE_STARTED:02" 
+		id2="PRODUCT_SERVICE_STARTED" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>		
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="PRODUCT_SERVICE_STOPPED:01" 
+		id2="PRODUCT_SERVICE_STOPPED" 
+		eventcategory="1609000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;T&lt;fld2&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="PRODUCT_SERVICE_STOPPED:02" 
+		id2="PRODUCT_SERVICE_STOPPED" 
+		eventcategory="1609000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>
+
+		
+
+<MESSAGE
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_SMTP_POP3_CONTENT_FILTERING" 
+		id2="EVT_SMTP_POP3_CONTENT_FILTERING" 
+		eventcategory="1207000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Message&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Email subject=&quot;&lt;subject&gt;&quot; Email sender=&quot;&lt;from&gt;&quot; Email recipient=&quot;&lt;to&gt;&quot; Policy rule=&quot;&lt;policyname&gt;&quot; Action on content=&quot;&lt;disposition&gt;&quot; Action on email=&quot;&lt;action&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_PASS_THRU:01" 
+		id2="VIRUS_FOUND_PASS_THRU" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld43&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; } ScanMethod=&quot;&lt;fld19&gt;&quot; User=&quot;&lt;username&gt;&quot; Event time (local)=&quot;&lt;fld1&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_PASS_THRU" 
+		id2="VIRUS_FOUND_PASS_THRU" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;Security product=&quot;&lt;product&gt;&quot; Security product node&lt;space&gt;=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; }"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_DELETE_SUCCESS:01" 
+		id2="VIRUS_FOUND_DELETE_SUCCESS" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld43&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; } ScanMethod=&quot;&lt;fld19&gt;&quot; User=&quot;&lt;username&gt;&quot; Event time (local)=&quot;&lt;fld1&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_DELETE_SUCCESS" 
+		id2="VIRUS_FOUND_DELETE_SUCCESS" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node&lt;space&gt;=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; }"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_CLEAN_SUCCESS:01" 
+		id2="VIRUS_FOUND_CLEAN_SUCCESS" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld43&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; } ScanMethod=&quot;&lt;fld19&gt;&quot; User=&quot;&lt;username&gt;&quot; Event time (local)=&quot;&lt;fld1&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_CLEAN_SUCCESS" 
+		id2="VIRUS_FOUND_CLEAN_SUCCESS" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%OZ','%G/%F/%W %N:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node&lt;space&gt;=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; }"/>
+
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_QUARANTINE_SUCCESS:01" 
+		id2="VIRUS_FOUND_QUARANTINE_SUCCESS" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld43&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; } ScanMethod=&quot;&lt;fld19&gt;&quot; User=&quot;&lt;username&gt;&quot; Event time (local)=&quot;&lt;fld1&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="VIRUS_FOUND_QUARANTINE_SUCCESS" 
+		id2="VIRUS_FOUND_QUARANTINE_SUCCESS" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node&lt;space&gt;=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; {Virus=&quot;&lt;threat_name&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot;|Virus=&quot;&lt;threat_name&gt;&quot;} Action taken=&quot;&lt;action&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Infection source=&quot;&lt;fld5&gt;&quot; Infection source IP=&quot;&lt;fld6&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; { Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld8&gt;&quot; }"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="GRAYWARE_FOUND_PASS_THRU" 
+		id2="GRAYWARE_FOUND_PASS_THRU" 
+		eventcategory="1003050000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld5&gt;&quot; { Source IP=&quot;&lt;fld6&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld6&gt;&quot; }"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="GRAYWARE_FOUND_CLEAN_SUCCESS" 
+		id2="GRAYWARE_FOUND_CLEAN_SUCCESS" 
+		eventcategory="1003050000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld5&gt;&quot; { Source IP=&quot;&lt;fld6&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld6&gt;&quot; }"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="GRAYWARE_FOUND_QUARANTINE_SUCCESS" 
+		id2="GRAYWARE_FOUND_QUARANTINE_SUCCESS" 
+		eventcategory="1003050000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld5&gt;&quot; { Source IP=&quot;&lt;fld6&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; | Source IP=&quot;&lt;fld6&gt;&quot; }"/>
+
+
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVENTID" 
+		id2="EVENTID" 
+		eventcategory="1605000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;"/>			
+
+		
+
+
+		
+<MESSAGE 
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_OUTBREAK_PREVENTION_MODE_STARTED" 
+		id2="EVT_OUTBREAK_PREVENTION_MODE_STARTED" 
+		eventcategory="1605000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ServiceInfo=&quot;&lt;info&gt;&quot;,EventTime=&quot;&lt;fld1&gt;&quot;,SecurityProductNode=&quot;&lt;hostname&gt;&quot;,SecurityProductIP=&quot;&lt;hostip&gt;&quot;,SecurityProduct=&quot;&lt;product&gt;&quot;,ProductVersion=&quot;&lt;version&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_OUTBREAK_PREVENTION_MODE_ST0PPED" 
+		id2="EVT_OUTBREAK_PREVENTION_MODE_STOPPED" 
+		eventcategory="1609000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ServiceInfo=&quot;&lt;info&gt;&quot;,EventTime=&quot;&lt;fld1&gt;&quot;,SecurityProductNode=&quot;&lt;hostname&gt;&quot;,SecurityProductIP=&quot;&lt;hostip&gt;&quot;,SecurityProduct=&quot;&lt;product&gt;&quot;,ProductVersion=&quot;&lt;version&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="2" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_VIRUS_OUTBREAK_ALERT" 
+		id2="EVT_VIRUS_OUTBREAK_ALERT" 
+		eventcategory="1003010000"
+                summary="NIC_B_CATEGORIES;subkey=virus;"
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;EventTime=&quot;&lt;fld1&gt;&quot;,SecurityProductNode=&quot;&lt;hostname&gt;&quot;,SecurityProductIP=&quot;&lt;hostip&gt;&quot;,SecurityProduct=&quot;&lt;product&gt;&quot;,ProductVersion=&quot;&lt;version&gt;&quot;,VirusName=&quot;&lt;threat_name&gt;&quot;,VirusCount=&quot;&lt;dclass_counter1&gt;&quot;,ScanEngine=&quot;&lt;component_version&gt;&quot;,VirusPattern=&quot;&lt;content_version&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="6" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_URL_CONTENT_FILTERING" 
+		id2="EVT_URL_CONTENT_FILTERING" 
+		eventcategory="1207000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node{=| =}&quot;&lt;hostname&gt;&quot; Security product {IP|ip}=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; URL=&quot;&lt;url&gt;&quot; Source IP=&quot;&lt;saddr&gt;&quot; Destination IP=&quot;&lt;daddr&gt;&quot; Policy rule=&quot;&lt;rule&gt;&quot; Blocking type=&quot;&lt;fld14&gt;&quot;"/>
+
+<MESSAGE
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="SLF_ACTIVITY_EVT_OUTBREAK_ALERT:01" 
+		id2="SLF_ACTIVITY_EVT_OUTBREAK_ALERT" 
+		eventcategory="1003050000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%F/%G/%W %N:%U:%O %P','%F/%G/%W %H:%U:%O','%G/%F/%W %N:%U:%O %P','%G/%F/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld43&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; Source IP=&quot;&lt;fld8&gt;&quot; Event time (local)=&quot;&lt;fld1&gt;&quot;"/>
+
+<MESSAGE
+		level="5" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="SLF_ACTIVITY_EVT_OUTBREAK_ALERT" 
+		id2="SLF_ACTIVITY_EVT_OUTBREAK_ALERT" 
+		eventcategory="1003050000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%F/%G/%W %N:%U:%O %P','%F/%G/%W %H:%U:%O','%G/%F/%W %N:%U:%O %P','%G/%F/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; Source IP=&quot;&lt;fld8&gt;&quot; Managing server entity=&quot;&lt;info&gt;&quot;"/>
+
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_UNKNOWN:01" 
+		id2="EVT_UNKNOWN" 
+		eventcategory="1003000000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%F/%G/%W %N:%U:%O %P','%F/%G/%W %H:%U:%O','%G/%F/%W %N:%U:%O %P','%G/%F/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; ScanMethod=&quot;&lt;fld19&gt;&quot; Infected file=&quot;&lt;filename&gt;&quot; File path=&quot;&lt;directory&gt;&quot; User=&quot;&lt;username&gt;&quot; Managing server entity=&quot;&lt;info&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="EVT_UNKNOWN" 
+		id2="EVT_UNKNOWN" 
+		eventcategory="1207000000" 
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Security product=&quot;&lt;product&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product IP=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld1&gt;&quot; Grayware/Spyware=&quot;&lt;threat_name&gt;&quot; Result=&quot;&lt;result&gt;&quot; Infection destination=&quot;&lt;dhost&gt;&quot; Infection destination IP=&quot;&lt;daddr&gt;&quot; Destination IP=&quot;&lt;fld7&gt;&quot; Source IP=&quot;&lt;fld8&gt;&quot; Domain=&quot;&lt;domain&gt;&quot; Domain=&quot;&lt;fld9&gt;&quot; Domain=&quot;&lt;fld10&gt;&quot;"/>
+
+		
+<MESSAGE
+		level="4" 
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="CCCA" 
+		id2="CCCA" 
+		eventcategory="1207040000" 
+		content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O %P','%F/%G/%W %H:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;TMCM server=&quot;&lt;hostid&gt;&quot; Industry=&quot;&lt;fld5&gt;&quot; Security product=&quot;&lt;product&gt;&quot; Security product version=&quot;&lt;version&gt;&quot; Security product node=&quot;&lt;hostname&gt;&quot; Security product ip=&quot;&lt;hostip&gt;&quot; Event time=&quot;&lt;fld43&gt;&quot; Security agent name=&quot;&lt;agent&gt;&quot; Security agent ip=&quot;&lt;saddr&gt;&quot; Security agent domain=&quot;&lt;sdomain&gt;&quot; Policy rule=&quot;&lt;policyname&gt;&quot; Action taken=&quot;&lt;action&gt;&quot; Email sender=&quot;&lt;from&gt;&quot; Email subject=&quot;&lt;subject&gt;&quot; C&amp;C risk level=&quot;&lt;reputation_num&gt;&quot; C&amp;C list source=&quot;&lt;fld7&gt;&quot; C&amp;C channel=&quot;&lt;fld8&gt;&quot; C&amp;C url=&quot;&lt;url&gt;&quot; C&amp;C url category=&quot;&lt;filter&gt;&quot; C&amp;C ip port=&quot;&lt;fld22&gt;&quot; C&amp;C email recipient=&quot;&lt;to&gt;&quot; C&amp;C address first monitored=&quot;&lt;fld9&gt;&quot; C&amp;C address last activity=&quot;&lt;fld10&gt;&quot; C&amp;C server location=&quot;&lt;location_desc&gt;&quot; Malware families=&quot;&lt;fld21&gt;&quot; Targeted attack group=&quot;&lt;group&gt;&quot; Event time (local)=&quot;&lt;fld1&gt;&quot;"/>
+
+<MESSAGE
+		level="5"
+		parse="1"
+		parsedefvalue="1"
+		tableid="84"
+		id1="C&amp;C"
+		id2="C&amp;C"
+		eventcategory="1001010000"
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_type&gt; Compromised Host: &lt;shost&gt; IP Address: &lt;saddr&gt; Domain: &lt;domain&gt;\\ Date/Time: &lt;event_time_string&gt; Callback address: &lt;url&gt; C&amp;C risk level: &lt;risk&gt; C&amp;C list source: &lt;fld7&gt; Action: &lt;action&gt;"/>
+
+
+<MESSAGE 
+		level="6"
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="TRENDMICRO_GENERIC" 
+		id2="TRENDMICRO_GENERIC" 
+		eventcategory="1901000000"
+		tagval="true"
+		missField="true"
+		functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',p_time1)&gt;&lt;@msg_id:*HDR(p_msgid)&gt;&lt;@vid:*HDR(p_msgid)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+		content="Security product=&lt;product&gt; Security product node=&lt;hostname&gt; Security product IP=&lt;hostip&gt; Event time=&lt;fld1&gt; Grayware/Spyware=&lt;threat_name&gt; Result=&lt;result&gt; Infection destination=&lt;dhost&gt; Infection destination IP=&lt;daddr&gt; Destination IP=&lt;fld2&gt; Source IP=&lt;fld3&gt; Event time (local)=&lt;p_time1&gt; Component=&lt;fld5&gt; Component version=&lt;fld6&gt; Email subject=&lt;subject&gt; Email sender=&lt;from&gt; Email recipient=&lt;to&gt; Policy rule=&lt;policyname&gt; Action on content=&lt;disposition&gt; Action on email=&lt;action&gt; Virus=&lt;fld7&gt; Infected file=&lt;filename&gt; File path=&lt;directory&gt; Action taken=&lt;fld8&gt; Domain=&lt;domain&gt; URL=&lt;url&gt; Blocking type=&lt;fld9&gt; TMCM server=&lt;hostid&gt; Industry=&lt;fld10&gt; Security product version=&lt;version&gt; Security agent name=&lt;agent&gt; Security agent ip=&lt;fld11&gt; Security agent domain=&lt;sdomain&gt; C&amp;C risk level=&lt;reputation_num&gt; C&amp;C list source=&lt;fld12&gt; C&amp;C channel=&lt;fld13&gt; C&amp;C url=&lt;fld14&gt; C&amp;C url category=&lt;filter&gt; C&amp;C ip port=&lt;fld15&gt; C&amp;C email recipient=&lt;fld16&gt; C&amp;C address first monitored=&lt;fld17&gt; C&amp;C address last activity=&lt;fld18&gt; C&amp;C server location=&lt;location_desc&gt; Malware families=&lt;fld19&gt; Targeted attack group=&lt;group&gt; Managing server entity=&lt;info&gt;"/>
+
+<MESSAGE
+		level="6"
+		parse="1" 
+		parsedefvalue="1" 
+		tableid="84" 
+		id1="TRENDMICRO_GENERIC1" 
+		id2="TRENDMICRO_GENERIC" 
+		eventcategory="1901000000"
+		tagval="true"
+		missField="true"
+		functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O%E','%G/%F/%W %N:%U:%O','%F/%G/%W %H:%U:%O',p_time1)&gt;&lt;@dclass_counter1_string:Virus Count&gt;&lt;@msg_id:*HDR(p_msgid)&gt;&lt;@vid:*HDR(p_msgid)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+		content="ServiceInfo=&lt;info&gt;,EventTime=&lt;p_time1&gt;,SecurityProductNode=&lt;hostname&gt;,SecurityProductIP=&lt;hostip&gt;,SecurityProduct=&lt;product&gt;,ProductVersion=&lt;version&gt;,VirusName=&lt;threat_name&gt;,VirusCount=&lt;dclass_counter1&gt;,ScanEngine=&lt;component_version&gt;,VirusPattern=&lt;content_version&gt;"/>
+
+</DEVICEMESSAGES>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DEVICEMESSAGES>
+<VERSION
+	xml="10"
+	checksum="6822ed3a1dee1a843c64d6fb51a56f60"
+	revision="79"
+    enVision="35010000"
+	device="2.0" />
+
+ 
+<HEADER 
+	id1="0001"
+	id2="0001" 
+	messageid="STRCAT('VMWARE','_','VCOPS')"
+	content="%VMWARE_VCOPS &lt;!payload&gt;" />
+
+<HEADER 
+	id1="0002"
+	id2="0002" 
+	messageid="STRCAT('VMWARE','_','VCOPS_TAGVAL')"
+	content="&lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; - UserId : &lt;hfld2&gt;, UserName :&lt;fld3&gt;,&lt;!payload:hdate&gt;" />
+
+<MESSAGE 
+	level="5" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="76" 
+	id1="VMWARE_VCOPS" 
+	id2="VMWARE_VCOPS" 
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;event_source&gt;^&lt;vsys&gt;^&lt;obj_name&gt;^&lt;fld2&gt;^&lt;severity&gt;^&lt;id&gt;^&lt;info&gt;^&lt;fld3&gt;^&lt;fld6&gt;^&lt;event_type&gt;^&lt;obj_type&gt;^&lt;url&gt;^&lt;event_description&gt;" /> 	
+
+<MESSAGE 
+	level="5" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="76" 
+	id1="VMWARE_VCOPS:Login" 
+	id2="VMWARE_VCOPS_TAGVAL" 
+	eventcategory="1401060000" 
+	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%M-%D %H:%T:%S',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; - UserId : &lt;uid&gt;, UserName : &lt;username&gt;, AuthSource : &lt;fld4&gt;, Session : &lt;sessionid&gt;, UserAction : LOGIN,  - &lt;event_description&gt;" /> 	
+
+<MESSAGE 
+	level="5" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="76" 
+	id1="VMWARE_VCOPS:Logout" 
+	id2="VMWARE_VCOPS_TAGVAL" 
+	eventcategory="1401070000" 
+	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%M-%D %H:%T:%S',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; - UserId : &lt;uid&gt;, UserName : &lt;username&gt;, AuthSource : &lt;fld4&gt;, Session : &lt;sessionid&gt;, UserAction : LOGOUT,  - &lt;event_description&gt;" /> 
+
+<MESSAGE 
+	level="5" 
+	parse="1" 
+	parsedefvalue="1" 
+	tableid="76" 
+	id1="VMWARE_VCOPS:Syslog" 
+	id2="VMWARE_VCOPS_TAGVAL" 
+	eventcategory="1605000000" 
+	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%M-%D %H:%T:%S',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; - UserId : &lt;uid&gt;, UserName : &lt;username&gt;, AuthSource : &lt;fld4&gt;, Session : &lt;sessionid&gt;, UserAction : &lt;service&gt;,  - &lt;event_description&gt;" /> 
+
+</DEVICEMESSAGES>
