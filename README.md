@@ -1,5 +1,4 @@
-# nw-logparsers
-Netwitness Log Parsers
+# NetWitness Suite Log Parsers Repository
 
 A repository to share and contribute event source log parsers for the NetWitness Log Decoder.
 
