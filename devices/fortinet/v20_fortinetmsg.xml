@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-		xml="107"
-		checksum="aec8118fa4927a5a2e21319b60b04f7b"
+		xml="110"
+		checksum="aa3afb3dec8da9235441939d78a1cda8"
 		revision="108"
 		enVision="21050025"
 		device="2.0"/>
@@ -3216,6 +3216,15 @@
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} {srcip|src}=&lt;saddr&gt; {dstip|dst}=&lt;daddr&gt; {sport=&lt;sport&gt; src_port=&lt;fld2&gt;|srcport=&lt;sport&gt;} {dport=&lt;dport&gt; dst_port=&lt;fld3&gt;|dstport=&lt;dport&gt;} {src_int|srcintf}={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} {dst_int|dstintf}={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;id&gt; {sessionid|serial}=&lt;fld1&gt; {direction|dir}=&lt;direction&gt; file={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} {checksum=&quot;&lt;checksum&gt;&quot; quarskip=&quot;&lt;result&gt;&quot;|quarskip=&quot;&lt;result&gt;&quot;|checksum=&quot;&lt;checksum&gt;&quot;} virus={&quot;&lt;virusname&gt;&quot;|&lt;virusname&gt;} dtype=&lt;fld4&gt; ref={&quot;&lt;info&gt;&quot;|&lt;info&gt;} {url=&quot;&lt;url&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; user=&quot;&lt;username&gt;&quot;|user=&quot;&lt;username&gt;&quot;} {agent=&lt;fld15&gt; analyticscksum=&lt;fld16&gt;|group=&quot;&lt;group&gt;&quot;} analyticssubmit=&lt;fld17&gt;" />
 		
+<MESSAGE
+	id1="0211008192:02"
+	id2="0211008192"
+	eventcategory="1003010000"
+	missField="true"
+	tagval="true"
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
+	content="vd=&lt;vsys&gt; msg=&lt;event_description&gt; service=&lt;network_service&gt; srcip=&lt;saddr&gt; dstip=&lt;daddr&gt; direction=&lt;direction&gt; filename=&lt;filename&gt; analyticscksum=&lt;fld16&gt; analyticssubmit=&lt;fld17&gt; crscore=&lt;reputation_num&gt; crlevel=&lt;fld38&gt; virus=&lt;virusname&gt; ref=&lt;info&gt; url=&lt;url&gt; profile=&lt;rulename&gt; action=&lt;action&gt; agent=&lt;fld7&gt; virusid=&lt;fld10&gt; quarskip=&lt;result&gt; dtype=&lt;fld6&gt; sessionid=&lt;sessionid&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; proto=&lt;fld70&gt;" />
+
 <MESSAGE
 	id1="0211008194"
 	id2="0211008194"
@@ -11304,8 +11313,8 @@
 	eventcategory="1803000000"
 	missField="true"
 	tagval="true"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="vd=&lt;vsys&gt; srcip=&lt;saddr&gt; srcname=&lt;shost&gt; srcport=&lt;sport&gt; dstip=&lt;daddr&gt; dstname=&lt;dhost&gt; dstport=&lt;dport&gt; duration=&lt;duration&gt; policyid=&lt;policy_id&gt; custom=&lt;fld41&gt; srcintf=&lt;sinterface&gt; dstintf=&lt;dinterface&gt; sessionid=&lt;sessionid&gt; user=&lt;username&gt; group=&lt;group&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld37&gt; action=&lt;action&gt; poluuid=&lt;fld1&gt; crlevel=&lt;fld2&gt; appid=&lt;fld7&gt; app=&lt;obj_name&gt; appcat=&lt;category&gt; apprisk=&lt;risk&gt; applist=&lt;group_object&gt; appact=&lt;action&gt; utmaction=&lt;action&gt; countapp=&lt;fld4&gt; proto=&lt;protocol&gt; policytype=&lt;fld26&gt; status=&lt;event_state&gt; trandisp=&lt;fld4&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
+	content="vd=&lt;vsys&gt; srcip=&lt;saddr&gt; srcname=&lt;shost&gt; srcport=&lt;sport&gt; dstip=&lt;daddr&gt; dstname=&lt;dhost&gt; dstport=&lt;dport&gt; duration=&lt;duration&gt; policyid=&lt;policy_id&gt; custom=&lt;fld41&gt; srcintf=&lt;sinterface&gt; dstintf=&lt;dinterface&gt; sessionid=&lt;sessionid&gt; user=&lt;username&gt; group=&lt;group&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld37&gt; action=&lt;action&gt; poluuid=&lt;fld1&gt; crlevel=&lt;fld2&gt; appid=&lt;fld7&gt; app=&lt;obj_name&gt; appcat=&lt;category&gt; apprisk=&lt;risk&gt; applist=&lt;group_object&gt; appact=&lt;action&gt; utmaction=&lt;action&gt; countapp=&lt;fld4&gt; proto=&lt;fld70&gt; policytype=&lt;fld26&gt; status=&lt;event_state&gt; trandisp=&lt;fld4&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt;" />
 <MESSAGE
 	id1="0100022101:01"
 	id2="0100022101"
