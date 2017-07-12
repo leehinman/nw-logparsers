@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="222"
-	checksum="0d5ae6bd3e59959a49fa3479688fdaaa"
-	revision="107"
+	xml="225"
+	checksum="4bb40a19684209d52c2732bb5a4b971b"
+	revision="108"
 	enVision="21050025"
 	device="2.0" />
 
@@ -5888,7 +5888,7 @@
 	id2="713904"
 	eventcategory="1605000000"
 	functions="&lt;@event_type:VPN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
-	content="Group = &lt;group&gt;, IP = &lt;saddr&gt;, &lt;event_description&gt;" />
+	content="{Group = &lt;group&gt;, IP = &lt;saddr&gt;|IP = &lt;saddr&gt;},&lt;event_description&gt;"/>
 
 <MESSAGE
 	id1="713905:04"
@@ -7198,7 +7198,7 @@
 	id2="722055"
 	eventcategory="1605000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
-	content="Group &lt;&lt;&lt;group&gt;&gt; User &lt;&lt;&lt;username&gt;&gt; IP &lt;&lt;&lt;saddr&gt;&gt; Client Type: &lt;application&gt; for &lt;product&gt; &lt;version&gt;" />
+	content="Group &lt;&lt;&lt;group&gt;&gt; User &lt;&lt;&lt;username&gt;&gt; IP &lt;&lt;&lt;saddr&gt;&gt; Client Type: &lt;application&gt; {for &lt;product&gt; &lt;version&gt;|v&lt;version&gt;}" />
 
 		
 		
@@ -7228,6 +7228,14 @@
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Starting SSL handshake&gt;"
 	content="Starting SSL handshake with { client | server } &lt;interface&gt;:&lt;hostip&gt;/&lt;network_port&gt; for &lt;version&gt; session." />
 <MESSAGE
+	 id1="725001:01"
+	 id2="725001"
+	 eventcategory="1801000000"
+	 functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Starting SSL handshake&gt;"
+	 content="Starting SSL handshake with client management:&lt;saddr&gt;/&lt;sport&gt;to&lt;daddr&gt;/&lt;dport&gt;for TLS session"/>
+
+	
+<MESSAGE
 	id1="725002"
 	id2="725002"
 	eventcategory="1613050100"
@@ -7256,7 +7264,9 @@
 	id2="725007"
 	eventcategory="1801030100"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
-	content="SSL session with { server | client } &lt;interface&gt;:&lt;hostip&gt;/&lt;network_port&gt; terminated." />
+	content="SSL session with { server | client } &lt;interface&gt;:{&lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt; |&lt;hostip&gt;/&lt;network_port&gt;} {terminated.|terminated}" />
+
+		
 <MESSAGE
 	id1="725008"
 	id2="725008"
@@ -7486,7 +7496,7 @@
 	id2="737007"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@event_description:Local pool request failed for tunnel-group&gt;"
-	content="&lt;process&gt;: Local pool request failed for tunnel-group &apos;&lt;group_object&gt;&apos;" />
+	content="{&lt;process&gt;: Session=&lt;sessionid&gt;|&lt;process&gt;} Local pool request failed for tunnel-group &apos;&lt;group_object&gt;&apos;"/>
 
 <MESSAGE
 	id1="737010"
@@ -7494,7 +7504,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Client requested address succeeded&gt;"
 	content="&lt;process&gt;: Client requested address &lt;hostip&gt;, request succeeded" />
-"/>
+
 
 <MESSAGE
 	id1="737010:01"
