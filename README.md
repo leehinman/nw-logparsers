@@ -22,3 +22,6 @@ https://guides.github.com/introduction/flow/
 
 More information related to GitHub can be found here:
 https://services.github.com/on-demand/intro-to-github/
+
+Forking Projects:
+https://guides.github.com/activities/forking/
