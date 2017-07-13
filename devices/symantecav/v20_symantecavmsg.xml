@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="115"
-	checksum="d58a3ce77ffb0bca4e6289ace6a431ff"
-	revision="107"
+	xml="117"
+	checksum="99155e2bb0133dde1f275ae07afe2ef7"
+	revision="108"
     enVision="35010000"
     device="2.0" />
 
@@ -2328,7 +2328,7 @@ content="%NICWIN-4-&lt;messageid&gt;_&lt;hfld2&gt;_Symantec AntiVirus: &lt;!payl
 	eventcategory="1605020000" 
 	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New policy has been imported.&gt; New policy has been imported." />
 	
-<MESSAGE 
+<MESSAGE
 	level="6" 
 	parse="1" 
 	parsedefvalue="1" 
@@ -2336,8 +2336,14 @@ content="%NICWIN-4-&lt;messageid&gt;_&lt;hfld2&gt;_Symantec AntiVirus: &lt;!payl
 	id1="New:04" 
 	id2="New" 
 	eventcategory="1605020000" 
-	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New content update failed to download from the management server&gt;New content update failed to download from the management server.     Remote file path: &lt;url&gt;,Event time: &lt;event_time_string&gt;" />
-	
+	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New content update failed to download from the management server&gt;New content update failed to download from the management server.     Remote file path: { &lt;url&gt;,Event time: &lt;event_time_string&gt; | &lt;url&gt; }" />
+
+<MESSAGE 
+	id1="New:05" 
+	id2="New" 
+	eventcategory="1605020000" 
+	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New content update failed to download from Group Update Provider&gt;New content update failed to download from Group Update Provider.     Remote file path: &lt;url&gt;" />
+
 <MESSAGE 
 	level="4" 
 	tableid="84"
@@ -3066,7 +3072,7 @@ content="%NICWIN-4-&lt;messageid&gt;_&lt;hfld2&gt;_Symantec AntiVirus: &lt;!payl
 	id2="Security" 
 	eventcategory="1003010000"
         summary="NIC_B_CATEGORIES;subkey=virus;"
-	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@fld61:*PARMVAL(event_source)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;Security risk found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,Cookie:&lt;filename&gt;,&lt;fld22&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,Inserted:&lt;fld12&gt;,End:&lt;fld51&gt;,Last update time: &lt;fld57&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;fld31&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld44&gt;,Web domain: &lt;fld45&gt;,Downloaded by: &lt;fld46&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld49&gt;,,First Seen: &lt;fld50&gt;,Sensitivity: &lt;fld52&gt;,&lt;fld56&gt;,Application hash: &lt;checksum&gt;,Hash type: &lt;encryption_type&gt;,Company name: &lt;fld54&gt;,Application name: &lt;application&gt;,Application version: &lt;version&gt;,Application type: &lt;obj_type&gt;,{ File size (bytes): &lt;filename_size&gt;,Category set: &lt;category&gt;,Category type: &lt;vendor_event_cat&gt; | File size (bytes): &lt;filename_size&gt; }" />
+	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@fld61:*PARMVAL(event_source)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;Security risk found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,Cookie:&lt;filename&gt;,&lt;fld22&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,Inserted:&lt;fld12&gt;,End:&lt;fld51&gt;,Last update time: &lt;fld57&gt;,Domain: &lt;domain&gt;{ ,&quot; | , }Group: &lt;group&gt;{ &quot;, | , }Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;fld31&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld44&gt;,Web domain: &lt;fld45&gt;,Downloaded by: &lt;fld46&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld49&gt;,,First Seen: &lt;fld50&gt;,Sensitivity: &lt;fld52&gt;,&lt;fld56&gt;,Application hash: &lt;checksum&gt;,Hash type: &lt;encryption_type&gt;,Company name: &lt;fld54&gt;,Application name: &lt;application&gt;,Application version: &lt;version&gt;,Application type: &lt;obj_type&gt;,{ File size (bytes): &lt;filename_size&gt;,Category set: &lt;category&gt;,Category type: &lt;vendor_event_cat&gt; | File size (bytes): &lt;filename_size&gt; }" />
 
 	
 <MESSAGE 
@@ -3099,8 +3105,7 @@ content="%NICWIN-4-&lt;messageid&gt;_&lt;hfld2&gt;_Symantec AntiVirus: &lt;!payl
 	id2="Security" 
 	eventcategory="1003010000"
     summary="NIC_B_CATEGORIES;subkey=virus;"
-	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld19,fld20)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld21)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;Security risk found,Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Detection type: &lt;severity&gt;,First Seen: &lt;fld1&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version:&lt;version&gt; ,Hash type: &lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld3&gt; ,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld4&gt;,Detection score: &lt;fld5&gt;,COH Engine Version: &lt;fld6&gt;,&lt;fld7&gt;,Permitted application reason: &lt;fld8&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld10&gt;,Web domain:&lt;fld11&gt; ,Downloaded by: &lt;fld12&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld15&gt;,Risk Level: &lt;fld16&gt;,Risk type: &lt;fld17&gt;,Source: &lt;event_source&gt;,Risk name:&lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&lt;fld18&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld19&gt; &lt;fld20&gt;,Inserted: &lt;fld21&gt;,End: &lt;fld22&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld23&gt;,Source IP: &lt;fld24&gt; "/>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld19,fld20)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld21)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;Security risk found,Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Detection type: &lt;severity&gt;,First Seen: &lt;fld1&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version:&lt;version&gt; ,Hash type: &lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld3&gt; ,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld4&gt;,Detection score: &lt;fld5&gt;,COH Engine Version: &lt;fld6&gt;,&lt;fld7&gt;,Permitted application reason: &lt;fld8&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld10&gt;,Web domain:&lt;fld11&gt; ,Downloaded by: &lt;fld12&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld15&gt;,Risk Level: &lt;fld16&gt;,Risk type: &lt;fld17&gt;,Source: &lt;event_source&gt;,Risk name:&lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&lt;fld18&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld19&gt; &lt;fld20&gt;,Inserted: &lt;fld21&gt;,End: &lt;fld22&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld23&gt;,Source IP: &lt;fld24&gt; "/>  
 
 	
 <MESSAGE 
@@ -3134,6 +3139,7 @@ content="%NICWIN-4-&lt;messageid&gt;_&lt;hfld2&gt;_Symantec AntiVirus: &lt;!payl
 	eventcategory="1003010000"
         summary="NIC_B_CATEGORIES;subkey=virus;"
 	content="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Security risk found&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;Security risk found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&lt;info&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,Inserted:&lt;fld12&gt;,End:&lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;fld31&gt;" />
+
 <MESSAGE 
 	level="2" 
 	tableid="84"
@@ -4517,6 +4523,20 @@ content="%NICWIN-4-&lt;messageid&gt;_&lt;hfld2&gt;_Symantec AntiVirus: &lt;!payl
 	eventcategory="1401010000"
     functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;" 
 	content="&lt;event_description&gt; - Caller MD5=&lt;checksum&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;sdomain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID:" />
+
+<MESSAGE
+	id1="Blocked:06" 
+	id2="Blocked" 
+	eventcategory="1401010000"
+    functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;" 
+	content="[&lt;id&gt;] &lt;event_description&gt; - &lt;fld11&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
+<MESSAGE
+	id1="Blocked:07" 
+	id2="Blocked" 
+	eventcategory="1401010000"
+    functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;" 
+	content="[&lt;id&gt;] &lt;event_description&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 
 <MESSAGE
 		level="5"
