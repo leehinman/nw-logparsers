@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="4"
-	checksum="2ab84a12c22614c67998796fe1741db1"
-	revision="91"
+	xml="6"
+	checksum="331bba3f3d471f239707ffce7e5b34a0"
+	revision="108"
 	enVision="35010000"
 	device="2.0" />
 
  
-
 <HEADER
 		id1="0001"
 		id2="0001"
@@ -81,6 +80,80 @@
 	eventcategory="1602000000" 
 	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;user=&lt;username&gt; ui={&lt;network_service&gt;(&lt;saddr&gt;) action=&lt;action&gt;|&lt;network_service&gt; action=&lt;action&gt;} status=&lt;event_state&gt; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;}" /> 
 
+<MESSAGE
+	 id1="event_smtp:01"
+	 id2="event_smtp"
+	 eventcategory="1602000000" 
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	 content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;hostip&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;}msg=&quot;STARTTLS=&lt;fld1&gt;, relay={&lt;shost&gt;[&lt;saddr&gt;]|&lt;shost&gt;}, version=&lt;version&gt;, verify=&lt;fld2&gt;, cipher=&lt;s_cipher&gt;, bits=&lt;fld2&gt;&quot;"/>
+
+<MESSAGE
+	 id1="event_smtp:02"
+	 id2="event_smtp"
+	 eventcategory="1602000000" 
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;hostip&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;}msg=&quot;STARTTLS=&lt;fld1&gt;, cert-subject=&lt;cert_subject&gt;, cert-issuer=&lt;fld2&gt;, verifymsg=&lt;fld3&gt;&quot;"/>
+
+	
+<MESSAGE
+	 id1="event_smtp:03"
+	 id2="event_smtp"
+	 eventcategory="1602000000" 
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;hostip&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;to=&lt;&lt;&lt;to&gt;&gt;, delay=&lt;fld1&gt;, xdelay=&lt;fld2&gt;, mailer=&lt;protocol&gt;, pri=&lt;fld3&gt;, relay=&lt;shost&gt;[&lt;saddr&gt;], dsn=&lt;fld4&gt;, stat=&lt;fld5&gt;&quot;"/>
+
+<MESSAGE
+	 id1="event_smtp:04"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	 content="user=&lt;username&gt;ui=&lt;network_service&gt;action=&lt;action&gt;status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;from=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld1&gt;, class=&lt;fld2&gt;, {nrcpts=&lt;fld2&gt;, msgid=&lt;&lt;&lt;fld2&gt;&gt;|nrcpts=&lt;fld2&gt;}, proto=&lt;protocol&gt;, daemon=&lt;process&gt;, relay={&lt;shost&gt;[&lt;saddr&gt;] (may be forged)|&lt;shost&gt;[&lt;saddr&gt;]|&lt;shost&gt;}&quot;"/>
+
+<MESSAGE
+	 id1="event_smtp:05"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;saddr&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;Milter: to=&lt;&lt;&lt;to&gt;&gt;, reject=&lt;fld1&gt;&quot;"/>
+
+<MESSAGE
+	 id1="event_smtp:06"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;hostip&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;timeout waiting for input from{[&lt;saddr&gt;]|&lt;saddr&gt;}during server cmd&lt;fld5&gt;&quot;"/>
+
+<MESSAGE
+	 id1="event_smtp:07"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;saddr&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;collect:&lt;fld1&gt;timeout on connection from&lt;shost&gt;, from=&lt;&lt;&lt;from&gt;&gt;&quot;"/>
+
+<MESSAGE
+	 id1="event_smtp:08"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;saddr&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;DSN: to &lt;&lt;&lt;to&gt;&gt;; reason:&lt;result&gt;; sessionid:&lt;fld5&gt;&quot;"/>
+
+	 
+<MESSAGE
+	 id1="event_smtp:09"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;hostip&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;lost input channel from&lt;shost&gt;[&lt;saddr&gt;] (may be forged) to SMTP_MTA after rcpt&quot;"/>
+
+	 
+<MESSAGE
+	 id1="event_smtp:10"
+	 id2="event_smtp"
+	 eventcategory="1602000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@dclass_counter1_string:count&gt;"
+     content="user=&lt;username&gt;ui={&lt;network_service&gt;(&lt;hostip&gt;) action=&lt;action&gt;|&lt;network_service&gt;action=&lt;action&gt;}status=&lt;event_state&gt;session_id=&quot;&lt;sessionid&gt;&quot; msg=&quot;&lt;shost&gt;[&lt;saddr&gt;]: possible SMTP attack: command=&lt;fld1&gt;, count=&lt;dclass_counter1&gt;&quot;"/>
+
+	 
 <MESSAGE 
 	level="6" 
 	parse="1" 
@@ -159,7 +232,7 @@
 	id1="statistics:03" 
 	id2="statistics" 
 	eventcategory="1207000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;session_id=&quot;&lt;sessionid&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; direction=&quot;&lt;direction&gt;&quot; virus=&quot;&lt;virusname&gt;&quot; disposition=&quot;&lt;disposition&gt;&quot; classifier=&quot;&lt;filter&gt;&quot; message_length=&lt;fld4&gt;  " /> 
+	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;session_id=&quot;&lt;sessionid&gt;&quot; client_name={&quot;&lt;fqdn&gt;[&lt;saddr&gt;] (may be forged)&quot;|&quot;&lt;fqdn&gt;[&lt;saddr&gt;]&quot;|&quot;[&lt;saddr&gt;]&quot;}dst_ip=&quot;&lt;daddr&gt;&quot; from=&quot;&lt;from&gt;&quot; {to=&quot;&lt;to&gt;&quot; polid=&quot;&lt;fld5&gt;&quot; domain=&quot;&lt;domain&gt;&quot; subject=&quot;&lt;subject&gt;&quot; mailer=&quot;&lt;agent&gt;&quot; resolved=&quot;&lt;context&gt;&quot;|to=&quot;&lt;to&gt;&quot;} direction=&quot;&lt;direction&gt;&quot; virus=&quot;&lt;virusname&gt;&quot; disposition=&quot;&lt;disposition&gt;&quot; classifier=&quot;&lt;filter&gt;&quot; message_length=&lt;fld4&gt;  " /> 
 
 <MESSAGE 
 	level="5" 
