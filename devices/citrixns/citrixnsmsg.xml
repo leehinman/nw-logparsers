@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="54"
-	checksum="c62a4f93ad42282add444f2bf2258d12"
+	xml="56"
+	checksum="9238edc55c5a5c1fbb86274a99e34f3b"
 	revision="108"
 	enVision="35010000"
 	device="2.0" />
@@ -701,7 +701,7 @@ content="CEF:0|Citrix|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;messageid&gt;| 
 	id1="SNMP_TRAP_SENT5" 
 	id2="SNMP_TRAP_SENT" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;  &lt;obj_type&gt; ( &lt;space&gt; nsUserName = &quot;&lt;username&gt;&quot;, configurationCmd = &quot;&lt;action&gt;&quot;, authorizationStatus = &lt;event_state&gt;, commandExecutionStatus = &lt;disposition&gt;, sysIpAddress = &lt;hostip&gt;)" /> 
+	content="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;  &lt;obj_type&gt; ( &lt;space&gt; nsUserName = &quot;&lt;username&gt;&quot;, configurationCmd = &quot;&lt;action&gt;&quot;, authorizationStatus = &lt;event_state&gt;, commandExecutionStatus = &lt;disposition&gt;, {sysIpAddress =&lt;hostip&gt;|nsClientIPAddr = &lt;saddr&gt;, nsPartitionName = &lt;fld1&gt;|commandFailureReason = &quot;&lt;result&gt;&quot;, nsClientIPAddr = &lt;saddr&gt;, nsPartitionName = &lt;fld1&gt;})" /> 
 
 <MESSAGE 
 	level="6" 
@@ -1621,5 +1621,15 @@ content="CEF:0|Citrix|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;messageid&gt;| 
 
 
 	
+
+<MESSAGE
+	 level="6" 
+	 parse="1" 
+	 parsedefvalue="1" 
+	 tableid="75" 
+	 id1="SNMP_TRAP_SENT:03"
+	 id2="SNMP_TRAP_SENT"
+	 eventcategory="1605000000"
+	 content="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;obj_type&gt;(sysHealthCounterName.PowerSupply1Status = &quot;&lt;dclass_counter1_string&gt;&quot;, sysHealthCounterValue.PowerSupply1Status = &lt;dclass_counter1&gt;, sysHealthPowerSupplyStatus = &quot;&lt;result&gt;&quot;, sysIpAddress =&lt;hostip&gt;)"/>
 
 </DEVICEMESSAGES>
