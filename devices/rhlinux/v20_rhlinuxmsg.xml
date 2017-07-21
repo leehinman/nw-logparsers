@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="284"
-	checksum="11fdfa2894cbf376b6ec95d43e9595c9"
-	revision="107"
+	xml="288"
+	checksum="4fd6e724e7d332f92eafb627a528e49f"
+	revision="108"
 	enVision="35010000"
 	device="2.0" />
 
@@ -3707,6 +3707,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: { &lt;event_description&gt;: &lt;result&gt; | &lt;event_description&gt; }" />
 
 <MESSAGE
+	id1="clishd:01"
+	id2="clishd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
 	id1="01125"
 	id2="cluadmin"
 	eventcategory="1603000000"
@@ -5125,6 +5132,13 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: &lt;event_description&gt;" />
 <MESSAGE
+	id1="dbus-send:01"
+	id2="dbus-send"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
 	id1="002366"
 	id2="dbwatcher_worker"
 	eventcategory="1605000000"
@@ -5654,6 +5668,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: &lt;event_description&gt;: &lt;filename&gt; errno = &lt;resultcode&gt;, &lt;result&gt;" />
+<MESSAGE
+	id1="dsmcad:02"
+	id2="dsmcad"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
 <MESSAGE
 	id1="00951"
 	id2="DSUCSU"
@@ -13981,6 +14002,13 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;:  succeeded" />
 <MESSAGE
+	id1="00835:02"
+	id2="postfix"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;  " />
+
+<MESSAGE
 	id1="001174"
 	id2="postfix/anvil"
 	eventcategory="1207010200"
@@ -14095,7 +14123,19 @@
 	eventcategory="1805020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;event_description&gt;" />
+<MESSAGE
+	id1="postfix/postmap:01"
+	id2="postfix/postmap"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } &lt;fld1&gt;" />
 
+  
+
+
+    THESE NEXT 2 MESSAGES ARE SUPPORTED BY THE ACTUAL POSTGRES
+    DEVICE WE SUPPORT OOTB                 SMC-1387 12/2011
+-->
 
 <MESSAGE
 	id1="01020"
@@ -14477,6 +14517,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Can't connect to database&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: Can&apos;t connect to database &apos;&lt;filename&gt;&apos;: &lt;result&gt;" />
+
+<MESSAGE
+	id1="purge-kernels:01"
+	id2="purge-kernels"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="001670"
@@ -15327,7 +15374,7 @@
 	 id2="rpc.mountd"
 	 eventcategory="1401050100"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	 content="&lt;agent&gt;[&lt;process_id&gt;]: authenticated mount request from&lt;shost&gt;:&lt;sport&gt;for&lt;directory&gt; (&lt;fld1&gt;)"/>		
+	 content="&lt;agent&gt;[&lt;process_id&gt;]: authenticated {mount|unmount} request from &lt;shost&gt;:&lt;sport&gt; for &lt;directory&gt; (&lt;fld1&gt;)"/>		
 
 <MESSAGE
 	id1="00256"
@@ -15568,6 +15615,27 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:application dropping or dropped packets&gt;"
 	content="&lt;agent&gt;: &lt;application&gt; { begins to drop messages | lost &lt;dclass_counter1&gt; messages } from pid &lt;child_pid&gt; &lt;result&gt;" />
+
+<MESSAGE
+	id1="rsyslogd-2007:01"
+	id2="rsyslogd-2007"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt; [try &lt;url&gt; ]" />
+
+<MESSAGE
+	id1="rsyslogd0:01"
+	id2="rsyslogd0"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt; [try &lt;url&gt; ]" />
+
+<MESSAGE
+	id1="rsyslog-2359:01"
+	id2="rsyslogd-2359"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt; [try &lt;url&gt; ]" />
 
 <MESSAGE
 	id1="002531"
@@ -17184,6 +17252,13 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:account is unknown&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: account is unknown - account=&lt;c_username&gt;, by=&lt;username&gt;" />
 <MESSAGE
+	id1="100000:19"
+	id2="shadow"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:account name changed&gt;&lt;@change_attribute:account name&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: account name {renamed in group|changed} - new=&lt;change_new&gt;, old=&lt;change_old&gt;, {uid=&lt;uid&gt;, group=&lt;group&gt;, gid=&lt;groupid&gt;|uid=&lt;uid&gt;}, by=&lt;username&gt;" />
+
+<MESSAGE
 	id1="002047"
 	id2="shadow"
 	eventcategory="1402000000"
@@ -18487,6 +18562,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="sshd-gen-keys-start"
+	id2="sshd-gen-keys-start"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="001335"
@@ -20643,6 +20725,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LAuS error&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: LAuS error - &lt;application&gt; - laus_log: &lt;info&gt;" />
+
+<MESSAGE
+	id1="usermod:07"
+	id2="usermod"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@change_attribute:Username&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: change &apos;&lt;change_old&gt;&apos; to &apos;&lt;change_new&gt;&apos; in {group|shadow group} &apos;&lt;group&gt;&apos;" />
 
 <MESSAGE
 	id1="00535"
@@ -22872,6 +22961,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: tid &lt;fld1&gt;: [&lt;event_source&gt;.&lt;severity&gt;]:&lt;event_description&gt;" />
 
 <MESSAGE
+	id1="avc:03"
+	id2="avc"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
 	id1="silverfish"
 	id2="silverfish"
 	eventcategory="1605010000"
@@ -23736,7 +23832,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@event_description:CSV import error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: CSV import error [&lt;action&gt;]: Import ended with the following status: &quot;&lt;result&gt;&quot;, processed &lt;fld1&gt;, skipped &lt;fld2&gt;, ignored &lt;fld3&gt;. &lt;info&gt;" />
-						
+	
 <MESSAGE
 	id1="002544"
 	id2="sensord"
@@ -23959,9 +24055,7 @@
 	eventcategory="1401030000"
 	functions="&lt;@event_description:Not an EFI boot&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;info&gt;" />
-		
-		
-				
+					
 <MESSAGE
 	id1="002539"
 	id2="socketAPI"
@@ -24202,6 +24296,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: tid &lt;fld1&gt;: [&lt;severity&gt;]: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="vmmd:02"
+	id2="vmmd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="notifyd:01"
@@ -24585,5 +24686,69 @@
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	 content="&lt;agent&gt;[&lt;fld21&gt;]: run command: [&lt;action&gt;]"/>
 
-	 	
+<MESSAGE
+	id1="echo"
+	id2="echo"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="cond_slp"
+	id2="cond_slp"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="update_postmaps:01"
+	id2="update_postmaps"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="taniumclient:01"
+	id2="taniumclient"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="start-ntpd:01"
+	id2="start-ntpd"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="dns-resolver:01"
+	id2="dns-resolver"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: { &lt;severity&gt;: You have modified &lt;filename&gt; &lt;fld1&gt; | You can find my version in &lt;filename&gt; }" />
+
+<MESSAGE
+	id1="wicked:01"
+	id2="wicked"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;interface&gt;&lt;disposition&gt;" />
+
+<MESSAGE
+	id1="wickedd:01"
+	id2="wickedd"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: route &lt;hostip&gt; via &lt;saddr&gt; dev &lt;interface&gt; &lt;fld1&gt; " />
+
+<MESSAGE
+	id1="wickedd:02"
+	id2="wickedd"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
 </DEVICEMESSAGES>
+
+
