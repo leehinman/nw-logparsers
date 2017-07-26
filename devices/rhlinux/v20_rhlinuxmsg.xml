@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="288"
-	checksum="4fd6e724e7d332f92eafb627a528e49f"
+	xml="290"
+	checksum="1ab77d9a9f2e37283cb0b0364437c7ef"
 	revision="108"
 	enVision="35010000"
 	device="2.0" />
 
 
 
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1303000000=&apos;Auth.Errors&apos;|1304000000=&apos;Auth.General&apos;" />
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="Failed=&apos;1303000000&apos;|Postponed=&apos;1304000000&apos;" />	
 <HEADER
 	id1="9999"
 	id2="9999"
@@ -256,6 +264,11 @@
 	id1="0019"
 	id2="0019"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+
+<HEADER
+	id1="0080"
+	id2="0080"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;fld1&gt;[&lt;fld2&gt;]: [&lt;messageid&gt;]: &lt;!payload&gt;" />
 
 <HEADER
 	id1="0011"
@@ -3223,6 +3236,27 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: .&lt;application&gt; errno=&lt;&lt;&lt;resultcode&gt;&gt;, Unable to connect to remote host &lt;&lt;&lt;dhost&gt;&gt;" />
 
 <MESSAGE
+	id1="CCIRMTD:03"
+	id2="CCIRMTD"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: .&lt;application&gt; {Startup from &lt;hostname&gt;|Connected to &lt;&lt;&lt;hostname&gt;&gt; on} port &lt;sport&gt; at &lt;event_time_string&gt;#&lt;fld1&gt;" />
+
+<MESSAGE
+	id1="CCIRMTD:04"
+	id2="CCIRMTD"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: .&lt;application&gt; &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="CCIRMTD:05"
+	id2="CCIRMTD"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
 	id1="00501:01"
 	id2="cciss_hotplug"
 	eventcategory="1605010000"
@@ -4681,7 +4715,7 @@
 	 id2="crontab"
 	 eventcategory="1402040200"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:NumberOfDays&gt;"
-	 content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): password for user &lt;username&gt; will expire in &lt;dclass_counter1&gt; days"/>
+	 content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): {account &lt;username&gt; has expired (&lt;event_description&gt;)|password for user &lt;username&gt; will expire in &lt;dclass_counter1&gt; days}"/>
 
 <MESSAGE
 	id1="00105:02"
@@ -15189,6 +15223,13 @@
 	content="&lt;process&gt;:&lt;agent&gt;&lt;severity&gt;:&lt;event_description&gt;:&lt;fld1&gt;&lt;filename&gt;&lt;dhost&gt;:&lt;fld2&gt;" />
 
 <MESSAGE
+	id1="rids:02"
+	id2="rids"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;process&gt;:&lt;agent&gt;: &lt;event_description&gt;(see &lt;fld1&gt;:&lt;filename&gt;" />
+
+<MESSAGE
 	id1="00038"
 	id2="rlogin"
 	eventcategory="1401030000"
@@ -15348,6 +15389,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:name does not map into domain&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;application&gt;: name &apos;&lt;username&gt;&apos; does not map into domain &apos;&lt;domain&gt;&apos;" />
+
+<MESSAGE
+	id1="rpc.idmapd:01"
+	id2="rpc.idmapd"
+	eventcategory="1801000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:name does not map into domain&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="00052"
@@ -18503,8 +18551,8 @@
 <MESSAGE
 	id1="00020:30"
 	id2="sshd"
-	eventcategory="1401030000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+	eventcategory="1901000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(fld1)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt; publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;network_service&gt;" />
 
 <MESSAGE
@@ -20667,6 +20715,12 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_type&gt;(&lt;fld1&gt;): &lt;event_description&gt;" />
 		
+<MESSAGE
+	id1="userhelper:03"
+	id2="userhelper"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:running with root privileges&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: running &apos;&lt;fld1&gt;&apos; with root privileges on behalf of &apos;&lt;username&gt;&apos;" />
 		
 <MESSAGE
 	id1="00081"
@@ -22795,6 +22849,28 @@
 	eventcategory="1401060000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(sudo:auth): auth could not identify password for [&lt;username&gt;]" />
+
+<MESSAGE
+	id1="sr:03"
+	id2="sr"
+	eventcategory="1401050200"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@administrator:*PARMVAL(c_username)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:authentication failure&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): authentication failure; logname=&lt;info&gt; uid=&lt;uid&gt; euid=&lt;fld3&gt; tty=&lt;terminal&gt; ruser=&lt;c_username&gt; rhost=&lt;shost&gt; user=&lt;username&gt;" />
+
+<MESSAGE
+	id1="sr:04"
+	id2="sr"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_tally2(&lt;service&gt;): user &lt;username&gt; (&lt;fld1&gt;) tally &lt;fld2&gt;, deny &lt;fld3&gt;" />
+
+<MESSAGE
+	id1="sr:05"
+	id2="sr"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: pam_tally2(&lt;service&gt;): user &lt;username&gt; (&lt;fld1&gt;) tally &lt;fld2&gt;, deny &lt;fld3&gt;" />
+
 <MESSAGE
 	id1="cp_chpass_helper_1"
 	id2="cp_chpass_helper_1"
@@ -23907,6 +23983,14 @@
 	eventcategory="1605000000"
 	functions="&lt;@event_description:Maybe RNG device modules are not loaded&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: Maybe RNG device modules are not loaded" />
+
+<MESSAGE
+	id1="rngd:04"
+	id2="rngd"
+	eventcategory="1603000000"
+	functions="&lt;@event_description:read error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
 										
 <MESSAGE
 	id1="002554"
@@ -24273,6 +24357,21 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: imfile warning: directory &apos;&lt;directory&gt;&apos;: No such file or directory [&lt;fld1&gt;]" />
+
+<MESSAGE
+	id1="rsyslogd-3000:01"
+	id2="rsyslogd-3000"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;" />
+	
+<MESSAGE
+	id1="rsyslogd-2124:01"
+	id2="rsyslogd-2124"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;" />
+	
 	
 	
 <MESSAGE
@@ -24748,6 +24847,118 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="dscs:01"
+	id2="dscs"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: pam_tally2(&lt;service&gt;): user &lt;username&gt; (&lt;fld1&gt;) tally &lt;fld2&gt;, deny &lt;fld3&gt;" />
+
+<MESSAGE
+	id1="certmonger:01"
+	id2="certmonger"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="pmtan-dr-rulepoint-error:01"
+	id2="pmtan-dr-rulepoint-error"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt; {[&lt;fld1&gt;] [&lt;severity&gt;] [&lt;process&gt;] &lt;event_description&gt; for &lt;protocol&gt;/&lt;hostname&gt;|&lt;fld2&gt;} " />
+
+<MESSAGE
+	id1="Category:01"
+	id2="Category"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="Community:01"
+	id2="Community"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="Connector:01"
+	id2="Connector"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;" />
+
+<MESSAGE
+	id1="TEAMSITE:01"
+	id2="TEAMSITE"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="GTX:01"
+	id2="GTX"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="cwwehki:01"
+	id2="cwwehki"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="igb:01"
+	id2="igb"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="localsigd:01"
+	id2="localsigd"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="gtxas1p2:01"
+	id2="gtxas1p2"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="RESTORE_MSG:01"
+	id2="RESTORE_MSG"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="{FAIL_GATE|MasterObjectServer} running as &lt;fld1&gt; has been restored on &lt;hostname&gt;" />
+
+<MESSAGE
+	id1="RESTORE_MSG:02"
+	id2="RESTORE_MSG"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="{ping_probe running as &lt;fld1&gt; has been restored on &lt;hostip&gt;|&lt;fld1&gt;}" />
+
+<MESSAGE
+	id1="mptsas1:01"
+	id2="mptsas1"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;{: &lt;fld1&gt;|&lt;fld2&gt;}" />
+
+<MESSAGE
+	id1="mptsas0:01"
+	id2="mptsas0"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;{: &lt;fld1&gt;|&lt;fld2&gt;}" />
 
 </DEVICEMESSAGES>
 
