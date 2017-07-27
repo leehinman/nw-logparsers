@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="25"
-	checksum="2a1659ad0c128b64c83eb65393ab29c0"
+	xml="26"
+	checksum="cf2f3f6d3f4326a8b77798d693dd4546"
 	revision="108"
 	enVision="33050000"
 	device="2.0"/>
@@ -319,7 +319,7 @@
 	 id2="Audit"
 	 eventcategory="1401000000"
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 device.id=&quot;&lt;node&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld2&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,{&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld5&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;}}"/>
+	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 device.id=&quot;&lt;node&gt;&quot; event.action=&quot;&lt;action&gt;&quot; {event.status=&quot;&lt;event_state&gt;&quot; session.id=&quot;&lt;sessionid&gt;&quot;| event.status=&quot;&lt;event_state&gt;&quot;} user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld2&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,{&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld5&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;}}"/>
 
 <MESSAGE
 	 id1="Audit:04"
@@ -333,6 +333,6 @@
 	 id2="Audit"
 	 eventcategory="1401000000"
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;]&lt;event_description&gt;"/>
+	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;]{&lt;event_description&gt;. Device Details - Device Serial : &lt;serial_number&gt;, Device OS: &lt;os&gt;|&lt;event_description&gt;}"/>
 
 </DEVICEMESSAGES>
