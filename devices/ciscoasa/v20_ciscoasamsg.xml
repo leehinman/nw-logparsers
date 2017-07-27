@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="225"
-	checksum="4bb40a19684209d52c2732bb5a4b971b"
+	xml="228"
+	checksum="9de5ce56d0f300d8f6074c4567adba5d"
 	revision="108"
 	enVision="21050025"
 	device="2.0" />
@@ -1955,8 +1955,9 @@
 	id1="302015:03"
 	id2="302015"
 	eventcategory="1801020000"
-	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;&lt;@event_description:build connection&gt;"
-	content="Built outbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;) to {&lt;sinterface&gt;:&lt;fld2&gt;:&lt;saddr&gt;|&lt;sinterface&gt;:&lt;saddr&gt;}/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)" />
+	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:*PARMVAL(fld1)&gt;&lt;@event_description:build connection&gt;"
+	content="Built &lt;fld1&gt; &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;) to {&lt;sinterface&gt;:&lt;fld2&gt;:&lt;saddr&gt;|&lt;sinterface&gt;:&lt;saddr&gt;}/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)" />
+
 <MESSAGE
 	id1="302015:04"
 	id2="302015"
@@ -2027,8 +2028,9 @@
 	id1="302020:03"
 	id2="302020"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;"
-	content="Built inbound ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;}" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:*PARMVAL(fld1)&gt;"
+	content="Built &lt;fld1&gt; ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;}" />
+
 	
 <MESSAGE
 	id1="302020:01"
@@ -2061,11 +2063,25 @@
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:build connection&gt;"
 	content="Built IP protocol &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt; (&lt;stransaddr&gt;) to &lt;dinterface&gt;:&lt;daddr&gt; (&lt;dtransaddr&gt;)" />
 <MESSAGE
+	id1="302022:01"
+	id2="302022"
+	eventcategory="1801020000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:build connection&gt;"
+	content="Built {backup|director|forwarder} stub &lt;protocol&gt; connection for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)" />
+
+<MESSAGE
 	id1="302023"
 	id2="302023"
 	eventcategory="1801000000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Teardown connection&gt;"
 	content="Teardown IP protocol &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt; to &lt;dinterface&gt;:&lt;daddr&gt; duration &lt;duration&gt; bytes &lt;bytes&gt;" />
+<MESSAGE
+	id1="302023:01"
+	id2="302023"
+	eventcategory="1801000000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+	content="Teardown stub &lt;protocol&gt; connection for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; duration &lt;duration&gt; forwarded bytes &lt;bytes&gt; &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="302024"
 	id2="302024"
@@ -7232,7 +7248,7 @@
 	 id2="725001"
 	 eventcategory="1801000000"
 	 functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Starting SSL handshake&gt;"
-	 content="Starting SSL handshake with client management:&lt;saddr&gt;/&lt;sport&gt;to&lt;daddr&gt;/&lt;dport&gt;for TLS session"/>
+	 content="Starting SSL handshake with client &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt;to&lt;daddr&gt;/&lt;dport&gt;for &lt;version&gt; session"/>
 
 	
 <MESSAGE
@@ -7274,6 +7290,13 @@
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="SSL client &lt;interface&gt;:&lt;hostip&gt;/&lt;network_port&gt; proposes the following &lt;fld1&gt; cipher(s)." />
 <MESSAGE
+	id1="725008:01"
+	id2="725008"
+	eventcategory="1801000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+	content="SSL client &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt; proposes the following &lt;fld1&gt; cipher(s)" />
+
+<MESSAGE
 	id1="725009"
 	id2="725009"
 	eventcategory="1801000000"
@@ -7284,7 +7307,7 @@
 	id2="725010"
 	eventcategory="1605000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
-	content="Device supports the following &lt;fld1&gt; cipher(s)." />
+	content="Device supports the following &lt;fld1&gt; {cipher(s).|cipher(s)}" />
 <MESSAGE
 	id1="725011"
 	id2="725011"
@@ -7297,6 +7320,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Device chooses cipher for the SSL session&gt;"
 	content="Device chooses cipher : &lt;fld1&gt; for the SSL session with client &lt;interface&gt;:&lt;hostip&gt;/&lt;network_port&gt;" />
+<MESSAGE
+	id1="725012:01"
+	id2="725012"
+	eventcategory="1605000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Device chooses cipher for the SSL session&gt;"
+	content="Device chooses cipher &lt;fld1&gt; for the SSL session with client &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt;" />
+
 <MESSAGE
 	id1="725013"
 	id2="725013"
@@ -7546,7 +7576,7 @@
 	id2="737015"
 	eventcategory="1605000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Freeing DHCP address&gt;"
-	content="&lt;process&gt;: Freeing DHCP address &lt;hostip&gt;" />
+	content="&lt;process&gt;: {Session=&lt;sessionid&gt;, Freeing| Freeing} DHCP address &lt;hostip&gt;" />
 
 <MESSAGE
 	id1="737016"
@@ -7565,7 +7595,7 @@
 	id2="737017"
 	eventcategory="1605000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:DHCP request attempt succeeded&gt;"
-	content="&lt;process&gt;: DHCP request attempt &lt;dclass_counter1&gt; succeeded" />
+	content="&lt;process&gt;: {Session=&lt;sessionid&gt;, DHCP| DHCP} request attempt &lt;dclass_counter1&gt; succeeded" />
 
 <MESSAGE
 	id1="737019"
@@ -7640,11 +7670,18 @@
 	content="&lt;application&gt;: Add IP-User mapping &lt;saddr&gt; - &lt;shost&gt; Succeeded - VPN user" />
 
 <MESSAGE
+	id1="746012:01"
+	id2="746012"
+	eventcategory="1401060000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@result:Succeeded&gt;"
+	content="&lt;application&gt;: Add IP-User mapping &lt;saddr&gt; - &lt;shost&gt; &lt;event_description&gt;" />
+
+<MESSAGE
 	id1="746013"
 	id2="746013"
 	eventcategory="1802000000"
-	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@event_description:VPN user logout&gt;&lt;@result:Succeeded&gt;"
-	content="&lt;application&gt;: Delete IP-User mapping &lt;saddr&gt; - &lt;shost&gt; Succeeded - VPN user logout" />
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@result:Succeeded&gt;"
+	content="&lt;application&gt;: Delete IP-User mapping &lt;saddr&gt; - &lt;shost&gt; Succeeded - &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="746013:01"
