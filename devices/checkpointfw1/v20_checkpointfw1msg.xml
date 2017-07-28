@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="86"
-	checksum="196d0610839b7e0867fe7cdaca52f49f"
-	revision="106"
+	xml="88"
+	checksum="6b45cb8441f9d33e63e0ef60d1456665"
+	revision="108"
     enVision="21050025"
     device="2.0" />
 
@@ -882,6 +882,21 @@
 	eventcategory="1803000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@inout:1&gt;&lt;@ntype:*dir2Type(inout)&gt;&lt;@action:Deny&gt;&lt;@direction:outbound&gt;"
 	content="Deny outbound &lt;protocol&gt; from &lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt; rule &lt;rule&gt;" />
+<MESSAGE
+	id1="050100:28"
+	id2="050100"
+	eventcategory="1803000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@hostname:*PARMVAL(origin)&gt;"	 
+	content="Origin=&lt;origin&gt;,i/f_name=&lt;interface&gt;,Application=&quot;&lt;application&gt;&quot;,rule=&lt;rule&gt;,rule_uid={{&lt;fld1&gt;},rule_name={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;},{service_id=&lt;fld20&gt;,src=&lt;saddr&gt;|src=&lt;saddr&gt;},s_port=&lt;sport&gt;,dst=&lt;daddr&gt;,service=&lt;network_service&gt;,d_port=&lt;dport&gt;,{proto=&lt;protocol&gt;,xlatesrc=&lt;stransaddr&gt;,xlatedst=&lt;dtransaddr&gt;,xlatesport=&lt;stransport&gt;,xlatedport=&lt;dtransport&gt;,NAT_rulenum=&lt;fld15&gt;,NAT_addtnl_rulenum=&lt;fld14&gt;|proto=&lt;protocol&gt;},__policy_id_tag=&quot;&quot;product=&lt;product&gt;[db_tag={{&lt;fld1&gt;};mgmt=&lt;fld2&gt;;date=&lt;fld3&gt;;policy_name=&lt;policyname&gt;]&quot;&quot;,origin_sic_name=&lt;fld10&gt;"/>
+
+<MESSAGE
+	id1="050100:29"
+	id2="050100"
+	eventcategory="1803000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@hostname:*PARMVAL(origin)&gt;"	 
+	content="Origin=&lt;origin&gt;,i/f_name=&lt;interface&gt;,Application=&quot;&lt;application&gt;&quot;,rule=&lt;rule&gt;,rule_uid={{&lt;fld1&gt;},{service_id=&lt;fld20&gt;,src=&lt;saddr&gt;|src=&lt;saddr&gt;},s_port=&lt;sport&gt;,dst=&lt;daddr&gt;,service=&lt;network_service&gt;,d_port=&lt;dport&gt;,{proto=&lt;protocol&gt;,xlatesrc=&lt;stransaddr&gt;,xlatesport=&lt;stransport&gt;,xlatedport=&lt;dtransport&gt;,NAT_rulenum=&lt;fld15&gt;,NAT_addtnl_rulenum=&lt;fld14&gt;|proto=&lt;protocol&gt;},__policy_id_tag=&quot;&quot;product=&lt;product&gt;[db_tag={{&lt;fld1&gt;};mgmt=&lt;fld2&gt;;date=&lt;fld3&gt;;policy_name=&lt;policyname&gt;]&quot;&quot;,origin_sic_name=&lt;fld10&gt;"/>	
+
+	
 <MESSAGE
 	id1="050100:26"
 	id2="050100"
