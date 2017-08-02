@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="117"
-	checksum="44391d341c54c0f43bb5063c473c181e"
-	revision="107"
+	xml="119"
+	checksum="6065780fffc0cf8527052f2017813f4c"
+	revision="108"
 	enVision="21050025"
 	device="2.0" />
+
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1803000000"
+	keyvaluepairs="11=&apos;1401070000&apos;|7=&apos;1603110000&apos;|5=&apos;1801010000&apos;|6=&apos;1801010000&apos;|10=&apos;1801030000&apos;|2=&apos;1803020000&apos;|8=&apos;1803020000&apos;" />
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Network.Denied Connections"
+	keyvaluepairs="1401070000=&apos;User.Activity.Logoff&apos;|1603110000=&apos;System.Errors.Services&apos;|1801010000=&apos;Network.Connections.Errors&apos;|1801030000=&apos;Network.Connections.Terminations&apos;|1803020000=&apos;Network.Denied Connections.Protocol&apos;" />	
 
 <HEADER
 		id1="1110"
@@ -7609,7 +7618,7 @@
 		id1="01143:06"
 		id2="Oracle"
 		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Opening/Closig File&gt; &lt;agent&gt;[&lt;process_id&gt;]: { Opening | Closing } &lt;filename&gt; { (&lt;info&gt;) | &lt;space&gt; } " />
+		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Opening/Closing File&gt; &lt;agent&gt;[&lt;process_id&gt;]: { Opening | Closing } { &lt;filename&gt; (&lt;info&gt;) | &lt;filename&gt; } " />
 
 <MESSAGE
 		level="6"
@@ -11382,8 +11391,7 @@
 		tableid="89"
 		id1="00003:32"
 		id2="sshd"
-		eventcategory="1803000000"
-		content="&lt;@event_description:received disconnect&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;agent&gt;[&lt;process_id&gt;]: Received disconnect from &lt;saddr&gt;: &lt;sport&gt;: &lt;info&gt;" />
+		content="&lt;@event_cat:*getEventLegacyCategory(resultcode)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:received disconnect&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;agent&gt;[&lt;process_id&gt;]: Received disconnect from &lt;saddr&gt;: &lt;resultcode&gt;: &lt;info&gt;" />
 
 <MESSAGE
 		level="6"
