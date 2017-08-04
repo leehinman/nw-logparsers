@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="24"
-	checksum="60bd6f6a7eb12b6a75fdef82421a2e13"
-	revision="104"
+	xml="28"
+	checksum="5799dd5b16b820ad434e86dc9193e106"
+	revision="109"
 	enVision="33030068"
 	device="2.0" />
 
@@ -42,6 +42,17 @@
 		messageid="STRCAT('IRONMAIL_GENERIC')"
 		content="%IRONMAIL &lt;!payload&gt;" />
 
+
+<VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="Other.Default"
+		keyvaluepairs="1207010100=&apos;Content.Email.Delivery.Success&apos;|1207010200=&apos;Content.Email.Delivery.Error&apos;|1207000000=&apos;Content.Email&apos;" />
+   		
+<VALUEMAP
+		name="getEventLegacyCategory"
+		default="1901000000"
+		keyvaluepairs="Email Delivered=&apos;1207010100&apos;|Email Rejected=&apos;1207010200&apos;|Email Deferred=&apos;1207000000&apos;" />	
+		
 <MESSAGE 
 	level="6" 
 	parse="1" 
@@ -594,8 +605,8 @@
 		tableid="75" 
 		id1=":02" 
 		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {from | From}=&lt;from&gt;, size=&lt;fld4&gt;, source=(&lt;fld5&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, VHost=&lt;fld41&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, {relay=(&lt;fld9&gt;)|relay=&lt;fld18&gt;(&lt;fld9&gt;)}, {status=&apos;&lt;result&gt;&apos;, subject=&apos;fld12&gt;&apos;,|status=&apos;&lt;result&gt;&apos;}, attachment(s)=&apos;&lt;fld10&gt;&apos;, number-attachment(s)=&apos;&lt;fld11&gt;&apos;" />
+		eventcategory="1901000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {from | From}=&lt;from&gt;, size=&lt;fld4&gt;, source=(&lt;fld5&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, VHost=&lt;fld41&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, {relay=(&lt;shost&gt;)|relay=&lt;fld18&gt;(&lt;shost&gt;)}, {status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;}, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
   
 
 <MESSAGE 
@@ -605,8 +616,8 @@
 		tableid="75" 
 		id1=":03" 
 		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;fld10&gt;)|(&lt;fld11&gt;)}, {status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;fld14&gt;&apos;, subject=&apos;&lt;fld12&gt;&apos;|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;fld14&gt;&apos;|status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;fld15&gt;&apos;}, {original-sender=&apos;&lt;fld16&gt;&apos;, original-subject=&apos;&lt;fld17&gt;&apos;, attachment(s)=&apos;&lt;fld18&gt;&apos;, number-attachment(s)=&apos;&lt;fld19&gt;&apos;|attachment(s)=&apos;&lt;fld20&gt;&apos;, number-attachment(s)=&apos;&lt;fld21&gt;&apos;}" />
+		eventcategory="1901000000" 
+		content="&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} {status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,} {original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;| attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|original-sender=&apos;&lt;fld16&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}" />
 
 <MESSAGE 
 		level="6" 
@@ -615,8 +626,8 @@
 		tableid="26" 
 		id1=":26" 
 		id2=":" 
-		eventcategory="1207010100" 
-		content="&lt;@ec_subject:Mailbox&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;bytes&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;fld9&gt;), status=&apos;&lt;result&gt;&apos;, {received-email-over-tls=&apos;&lt;fld51&gt;&apos;, sent-email-over-tls=&apos;&lt;fld53&gt;&apos; | received-email-over-tls=&apos;&lt;fld51&gt;&apos;}, encryption-type=&apos;&lt;fld52&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
+		eventcategory="1901000000" 
+		content="&lt;@ec_subject:Mailbox&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;bytes&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, {received-email-over-tls=&apos;&lt;fld51&gt;&apos;, sent-email-over-tls=&apos;&lt;fld53&gt;&apos; | received-email-over-tls=&apos;&lt;fld51&gt;&apos;}, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
 
 	
 
@@ -627,8 +638,8 @@
 		tableid="75" 
 		id1=":04" 
 		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;fld9&gt;), status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;fld10&gt;&apos;, number-attachment(s)=&apos;&lt;fld11&gt;&apos;" />
+		eventcategory="1901000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), {status=&apos;&lt;result&gt;&apos;, received-email-over-tls='&lt;fld54&gt;', |status=&apos;&lt;result&gt;&apos;,} subject='&lt;subject&gt;', attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
 
 	
 
@@ -746,8 +757,8 @@
 		tableid="75" 
 		id1=":15" 
 		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;fld9&gt;), status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld10&gt;&apos;" />
+		eventcategory="1901000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld10&gt;&apos;" />
 
 
 <MESSAGE 
@@ -779,8 +790,8 @@
 		tableid="75" 
 		id1=":18" 
 		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;fld9&gt;), status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, encryption-type=&apos;&lt;fld11&gt;&apos;, subject=&apos;&lt;fld14&gt;&apos;, attachment(s)=&lt;fld13&gt;" />
+		eventcategory="1901000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&lt;attachment&gt;" />
 
 
 <MESSAGE 
@@ -790,8 +801,8 @@
 		tableid="75" 
 		id1=":19" 
 		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;fld9&gt;), status=&apos;&lt;result&gt;&apos;" />
+		eventcategory="1901000000" 
+		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;" />
 
 
 
@@ -947,6 +958,14 @@
 		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, URLS=&apos;&lt;url&gt;&apos;, scan-identity-name=&lt;policyname&gt;" />
 
  
+<MESSAGE 
+		level="6" 
+		parse="1" 
+		parsedefvalue="1"  
+		id1=":27" 
+		id2=":" 
+		eventcategory="1901000000" 
+        content="&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;: Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from|From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, {encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}"/>
 
 
 
