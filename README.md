@@ -12,16 +12,11 @@ event messages.
 - You want to update the definition for an existing event in an event source parser.
 - You want to correct errors in an event source parser.
 
-GitHub members can contribute to the repository by adding/editing an event source parser by raising a Pull Request and it'll be reviewed by our engineers. Once approved it'll be merged to master branch and available for all users.
+GitHub members can contribute to the repository by adding/editing an event source parser by raising a Pull Request and it'll be reviewed by our engineers for final check.
 
+Please read LogParser101 document to understand the guidelines on log parser development and best practices.
 
+Please go through below guide to understand the GitHub workflow to be followed: https://guides.github.com/introduction/flow/
 
+More information related to GitHub can be found here: https://services.github.com/on-demand/intro-to-github/
 
-Please go through below guide to understand the GitHub workflow:
-https://guides.github.com/introduction/flow/
-
-More information related to GitHub can be found here:
-https://services.github.com/on-demand/intro-to-github/
-
-Forking Projects:
-https://guides.github.com/activities/forking/
