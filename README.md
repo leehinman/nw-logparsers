@@ -20,3 +20,4 @@ Please go through below guide to understand the GitHub workflow to be followed: 
 
 More information related to GitHub can be found here: https://services.github.com/on-demand/intro-to-github/
 
+Note: Any new event source parser which is not yet supported by RSA should be added under community directory, list of all supported event sources are available here: https://community.rsa.com/community/products/netwitness/parser-network/event-sources and all supported latest log parsers are available under devices directory.
