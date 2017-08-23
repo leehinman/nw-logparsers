@@ -1,546 +1,409 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="arborpeakflowsp"
+	displayname="Arbor Peakflow SP"
+	group="IPS">
 <VERSION
-	xml="12"
-	checksum="564c4057110a63d2b351d66a40ab93c2"
-	revision="99"
-	enVision="33050000"
+	xml="14"
+	checksum="9cbe22708122c23c935c1cee9424bed4"
+	revision="109"
 	device="2.0" />
 
  
   
     
-	<HEADER
-		id1="0001"
-		id2="0001"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { TMS | Third party | Blackhole | Flowspec } &lt;messageid&gt; &lt;!payload:hdata&gt;"/>
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { TMS | Third party | Blackhole | Flowspec } &lt;messageid&gt; &lt;!payload:hdata&gt;"/>
 	
-	<HEADER
-		id1="0002"
-		id2="0002"
-		messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low } interface &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:hdata&gt;"/>
+<HEADER
+	id1="0002"
+	id2="0002"
+	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low } interface &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:hdata&gt;"/>
 	
-	<HEADER
-		id1="0008"
-		id2="0008"
-		messageid="STRCAT(&apos;usage&apos;,&apos;_&apos;,msgIdPart1)"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low } { jitter | loss | bps | pps } &lt;msgIdPart1&gt; &lt;hfld1&gt; for service &lt;!payload:hdata&gt;"/>
+<HEADER
+	id1="0008"
+	id2="0008"
+	messageid="STRCAT(&apos;usage&apos;,&apos;_&apos;,msgIdPart1)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low } { jitter | loss | bps | pps } &lt;msgIdPart1&gt; &lt;hfld1&gt; for service &lt;!payload:hdata&gt;"/>
 	
-	<HEADER
-		id1="0003"
-		id2="0003"
-		messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low } { jitter | loss | bps | pps } &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:hdata&gt;"/>
+<HEADER
+	id1="0003"
+	id2="0003"
+	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low } { jitter | loss | bps | pps } &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:hdata&gt;"/>
 	
-	<HEADER
-		id1="0004"
-		id2="0004"
-		messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low | High } &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:hdata&gt;"/>
+<HEADER
+	id1="0004"
+	id2="0004"
+	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hdata&gt;: { high | low | High } &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:hdata&gt;"/>
 	
-	<HEADER
-		id1="0005"
-		id2="0005"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; pfsp: The &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
+<HEADER
+	id1="0005"
+	id2="0005"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; pfsp: The &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
 	
-	<HEADER
-		id1="0006"
-		id2="0006"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; pfsp: Alert &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
+<HEADER
+	id1="0006"
+	id2="0006"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; pfsp: Alert &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
 	
-	<HEADER
-		id1="0007"
-		id2="0007"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; pfsp: &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
+<HEADER
+	id1="0007"
+	id2="0007"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; pfsp: &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
+<HEADER
+	id1="0010"
+	id2="0010"
+	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt;: &lt;msgIdPart1&gt; &lt;msgIdPart2&gt;: &lt;!payload&gt;"/>		
+<HEADER
+	id1="0009"
+	id2="0009"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt;: &lt;messageid&gt;: &lt;!payload&gt;"/>
 		
-	<HEADER
-		id1="0009"
-		id2="0009"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt;: &lt;messageid&gt;: &lt;!payload&gt;"/>
 		
-		
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Flow:Down"
-		id2="Flow"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;Flow down for router &lt;node&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Flow:Restored"
-		id2="Flow"
-		eventcategory="1801020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;@fld61:*PARMVAL(node)&gt;Flow restored for router &lt;node&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Down"
-		id2="BGP"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;protocol&gt; down for router &lt;node&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Restored"
-		id2="BGP"
-		eventcategory="1801020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;@fld61:*PARMVAL(node)&gt;&lt;protocol&gt; restored for router &lt;node&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Instability"
-		id2="BGP"
-		eventcategory="1607000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;protocol&gt; instability router &lt;node&gt; threshold &lt;fld25&gt; (&lt;fld1&gt;) observed &lt;trigger_val&gt; (&lt;fld2&gt;)"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Instability_Ended"
-		id2="BGP"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;protocol&gt; Instability for router &lt;node&gt; ended"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Hijack"
-		id2="BGP"
-		eventcategory="1002050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;protocol&gt; Hijack local_prefix &lt;fld26&gt; router &lt;node&gt; bgp_prefix &lt;fld27&gt; bgp_attributes &lt;event_description&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Hijack_Done"
-		id2="BGP"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;protocol&gt; Hijack for prefix &lt;fld26&gt; router &lt;node&gt; done"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="BGP:Trap"
-		id2="BGP"
-		eventcategory="1701000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;protocol&gt; Trap &lt;node&gt;: Prefix &lt;fld5&gt; &lt;fld6&gt; &lt;event_description&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Device:Unreachable"
-		id2="Device"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;Device &lt;node&gt; unreachable by controller &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Device:Reachable"
-		id2="Device"
-		eventcategory="1801020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;@fld61:*PARMVAL(node)&gt;Device &lt;node&gt; reachable again by controller &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Hardware:Failure"
-		id2="Hardware"
-		eventcategory="1603010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;Hardware failure on &lt;node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; GMT: &lt;event_description&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Hardware:Failure_Done"
-		id2="Hardware"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;@fld61:*PARMVAL(node)&gt;Hardware failure on &lt;node&gt; done at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt; GMT: &lt;event_description&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="SNMP:Down"
-		id2="SNMP"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;protocol&gt; down for router &lt;node&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="SNMP:Restored"
-		id2="SNMP"
-		eventcategory="1801020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;@fld61:*PARMVAL(node)&gt;&lt;protocol&gt; restored for router &lt;node&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="configuration"
-		id2="configuration"
-		eventcategory="1701000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Configuration changed&gt;configuration was changed on leader &lt;parent_node&gt; to version &lt;version&gt; by &lt;administrator&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Autoclassification"
-		id2="Autoclassification"
-		eventcategory="1701000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Autoclassification restarted&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;Autoclassification was restarted on &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt; by &lt;administrator&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="GRE:Down"
-		id2="GRE"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;GRE tunnel down for destination &lt;daddr&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="GRE:Restored"
-		id2="GRE"
-		eventcategory="1801020100"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;GRE tunnel restored for destination &lt;daddr&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:TMS_Start"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:TMS mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;pfsp: TMS mitigation &lt;policyname&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:TMS_Stop"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:TMS mitigation&gt;&lt;@disposition:done&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;pfsp: TMS mitigation &lt;policyname&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:Thirdparty_Start"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Third party mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;pfsp: Third party mitigation &lt;node&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:Thirdparty_Stop"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Third party mitigation&gt;&lt;@disposition:done&gt;pfsp: Third party mitigation &lt;node&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:Blackhole_Start"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Blackhole mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;pfsp: Blackhole mitigation &lt;node&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:Blackhole_Stop"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Blackhole mitigation&gt;&lt;@disposition:done&gt;pfsp: Blackhole mitigation &lt;node&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:Flowspec_Start"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Flowspec mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;pfsp: Flowspec mitigation &lt;node&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="mitigation:Flowspec_Stop"
-		id2="mitigation"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Flowspec mitigation&gt;&lt;@disposition:done&gt;pfsp: Flowspec mitigation &lt;node&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>	
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="TMS:Fault_Cleared"
-		id2="TMS"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Fault Cleared&gt;TMS &apos;&lt;event_description&gt;&apos; fault for resource &apos;&lt;resource&gt;&apos; on TMS &lt;node&gt; cleared"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="TMS:Fault"
-		id2="TMS"
-		eventcategory="1603010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Fault Occured&gt;TMS &apos;&lt;event_description&gt;&apos; fault for resource &apos;&lt;resource&gt;&apos; on TMS &lt;node&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:Interface"
-		id2="usage_alert"
-		eventcategory="1607000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; interface usage alert &lt;fld1&gt; for router &lt;node&gt; interface &quot;&lt;interface&gt;&quot; speed &lt;fld2&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt; pct &lt;fld3&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:Interface_Done"
-		id2="usage_alert"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; interface usage alert &lt;fld1&gt; done for router &lt;node&gt; interface &quot;&lt;interface&gt;&quot;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:Fingerprint_Threshold"
-		id2="usage_alert"
-		eventcategory="1607000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for fingerprint &lt;policyname&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:Fingerprint_Threshold_Done"
-		id2="usage_alert"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for fingerprint &lt;policyname&gt; done"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:Service_Threshold"
-		id2="usage_alert"
-		eventcategory="1607000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld61:*PARMVAL(service)&gt;pfsp: &lt;trigger_desc&gt; &lt;fld1&gt; usage alert &lt;fld2&gt; for service &lt;service&gt;, &lt;application&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:Service_Threshold_Done"
-		id2="usage_alert"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; &lt;fld1&gt; alert &lt;fld2&gt; for service &lt;service&gt; done"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:ManagedObject_Threshold"
-		id2="usage_alert"
-		eventcategory="1607000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for &lt;category&gt; &lt;fld2&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt;"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="usage_alert:ManagedObject_Threshold_Done"
-		id2="usage_alert"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for &lt;fld3&gt; &lt;fld4&gt; done"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Test"
-		id2="Test"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;Test syslog message"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="script"
-		id2="script"
-		eventcategory="1502020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Script mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;script &lt;node&gt; ran at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;"/>
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="anomaly:Resource_Info:01"
-		id2="anomaly"
-		eventcategory="1002000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@signame:Bandwidth&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;anomaly Bandwidth id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; impact &lt;fld10&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt; url &lt;url&gt;, &lt;info&gt;"/>
-
+	id1="Flow:Down"
+	id2="Flow"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Flow down for router &lt;node&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="anomaly:Resource_Info:02"
-		id2="anomaly"
-		eventcategory="1002000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@signame:Bandwidth&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;anomaly Bandwidth id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt; url &lt;url&gt;"/>
-
-
+	id1="Flow:Restored"
+	id2="Flow"
+	eventcategory="1801020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Flow restored for router &lt;node&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="anomaly:Resource_Info:03"
-		id2="anomaly"
-		eventcategory="1002000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;anomaly &lt;signame&gt; id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; impact &lt;fld10&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt;  url &lt;url&gt;, &lt;info&gt; "/>
-
+	id1="BGP:Down"
+	id2="BGP"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="&lt;protocol&gt; down for router &lt;node&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="anomaly:Resource_Info:04"
-		id2="anomaly"
-		eventcategory="1002000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;anomaly &lt;signame&gt; id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt; url &lt;url&gt;"/>
-
+	id1="BGP:Restored"
+	id2="BGP"
+	eventcategory="1801020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="&lt;protocol&gt; restored for router &lt;node&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="anomaly:Router_Info:01"
-		id2="anomaly"
-		eventcategory="1002000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@signame:Bandwidth&gt;anomaly Bandwidth id &lt;sigid&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; router &lt;fld6&gt; router_name &lt;node&gt; interface &lt;fld4&gt; interface_name &quot;&lt;interface&gt;&quot; &lt;fld5&gt;"/>
-
-
+	id1="BGP:Instability"
+	id2="BGP"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;protocol&gt; instability router &lt;node&gt; threshold &lt;fld25&gt; (&lt;fld1&gt;) observed &lt;trigger_val&gt; (&lt;fld2&gt;)" />
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="anomaly:Router_Info:02"
-		id2="anomaly"
-		eventcategory="1002000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;anomaly &lt;signame&gt; id &lt;sigid&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; router &lt;fld6&gt; router_name &lt;node&gt; interface &lt;fld4&gt; interface_name &quot;&lt;interface&gt;&quot; &lt;fld5&gt;"/>
+	id1="BGP:Instability_Ended"
+	id2="BGP"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;protocol&gt; Instability for router &lt;node&gt; ended" />
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Peakflow:Unreachable"
-		id2="Peakflow"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;Peakflow device &lt;node&gt; unreachable by &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt;"/>
-
+	id1="BGP:Hijack"
+	id2="BGP"
+	eventcategory="1002050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;protocol&gt; Hijack local_prefix &lt;fld26&gt; router &lt;node&gt; bgp_prefix &lt;fld27&gt; bgp_attributes &lt;event_description&gt;" />
+<MESSAGE
+	id1="BGP:Hijack_Done"
+	id2="BGP"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;protocol&gt; Hijack for prefix &lt;fld26&gt; router &lt;node&gt; done" />
+<MESSAGE
+	id1="BGP:Trap"
+	id2="BGP"
+	eventcategory="1701000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;protocol&gt; Trap &lt;node&gt;: Prefix &lt;fld5&gt; &lt;fld6&gt; &lt;event_description&gt;" />
+<MESSAGE
+	id1="Device:Unreachable"
+	id2="Device"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Device &lt;node&gt; unreachable by controller &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt;" />
+<MESSAGE
+	id1="Device:Reachable"
+	id2="Device"
+	eventcategory="1801020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Device &lt;node&gt; reachable again by controller &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
+<MESSAGE
+	id1="Hardware:Failure"
+	id2="Hardware"
+	eventcategory="1603010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Hardware failure on &lt;node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; GMT: &lt;event_description&gt;" />
+<MESSAGE
+	id1="Hardware:Failure_Done"
+	id2="Hardware"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Hardware failure on &lt;node&gt; done at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt; GMT: &lt;event_description&gt;" />
+<MESSAGE
+	id1="SNMP:Down"
+	id2="SNMP"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="&lt;protocol&gt; down for router &lt;node&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
+<MESSAGE
+	id1="SNMP:Restored"
+	id2="SNMP"
+	eventcategory="1801020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="&lt;protocol&gt; restored for router &lt;node&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
+<MESSAGE
+	id1="configuration"
+	id2="configuration"
+	eventcategory="1701000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Configuration changed&gt;"
+	content="configuration was changed on leader &lt;parent_node&gt; to version &lt;version&gt; by &lt;administrator&gt;" />
+<MESSAGE
+	id1="Autoclassification"
+	id2="Autoclassification"
+	eventcategory="1701000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Autoclassification restarted&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Autoclassification was restarted on &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt; by &lt;administrator&gt;" />
+<MESSAGE
+	id1="GRE:Down"
+	id2="GRE"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="GRE tunnel down for destination &lt;daddr&gt;, leader &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
+<MESSAGE
+	id1="GRE:Restored"
+	id2="GRE"
+	eventcategory="1801020100"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="GRE tunnel restored for destination &lt;daddr&gt;, leader &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
+<MESSAGE
+	id1="mitigation:TMS_Start"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:TMS mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="pfsp: TMS mitigation &lt;policyname&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:TMS_Stop"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:TMS mitigation&gt;&lt;@disposition:done&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="pfsp: TMS mitigation &lt;policyname&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:Thirdparty_Start"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Third party mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="pfsp: Third party mitigation &lt;node&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:Thirdparty_Stop"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Third party mitigation&gt;&lt;@disposition:done&gt;"
+	content="pfsp: Third party mitigation &lt;node&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:Blackhole_Start"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Blackhole mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="pfsp: Blackhole mitigation &lt;node&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:Blackhole_Stop"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Blackhole mitigation&gt;&lt;@disposition:done&gt;"
+	content="pfsp: Blackhole mitigation &lt;node&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:Flowspec_Start"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Flowspec mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="pfsp: Flowspec mitigation &lt;node&gt; started at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="mitigation:Flowspec_Stop"
+	id2="mitigation"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Flowspec mitigation&gt;&lt;@disposition:done&gt;"
+	content="pfsp: Flowspec mitigation &lt;node&gt; stopped at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="TMS:Fault_Cleared"
+	id2="TMS"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Fault Cleared&gt;"
+	content="TMS &apos;&lt;event_description&gt;&apos; fault for resource &apos;&lt;resource&gt;&apos; on TMS &lt;node&gt; cleared" />
+<MESSAGE
+	id1="TMS:Fault"
+	id2="TMS"
+	eventcategory="1603010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Fault Occured&gt;"
+	content="TMS &apos;&lt;event_description&gt;&apos; fault for resource &apos;&lt;resource&gt;&apos; on TMS &lt;node&gt;" />
+<MESSAGE
+	id1="usage_alert:Interface"
+	id2="usage_alert"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; interface usage alert &lt;fld1&gt; for router &lt;node&gt; interface &quot;&lt;interface&gt;&quot; speed &lt;fld2&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt; pct &lt;fld3&gt;" />
+<MESSAGE
+	id1="usage_alert:Interface_Done"
+	id2="usage_alert"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; interface usage alert &lt;fld1&gt; done for router &lt;node&gt; interface &quot;&lt;interface&gt;&quot;" />
+<MESSAGE
+	id1="usage_alert:Fingerprint_Threshold"
+	id2="usage_alert"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for fingerprint &lt;policyname&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt;" />
+<MESSAGE
+	id1="usage_alert:Fingerprint_Threshold_Done"
+	id2="usage_alert"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for fingerprint &lt;policyname&gt; done" />
+<MESSAGE
+	id1="usage_alert:Service_Threshold"
+	id2="usage_alert"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; &lt;fld1&gt; usage alert &lt;fld2&gt; for service &lt;service&gt;, &lt;application&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt;" />
+<MESSAGE
+	id1="usage_alert:Service_Threshold_Done"
+	id2="usage_alert"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; &lt;fld1&gt; alert &lt;fld2&gt; for service &lt;service&gt; done" />
+<MESSAGE
+	id1="usage_alert:ManagedObject_Threshold"
+	id2="usage_alert"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for &lt;category&gt; &lt;fld2&gt; threshold &lt;fld25&gt; observed &lt;trigger_val&gt;" />
+<MESSAGE
+	id1="usage_alert:ManagedObject_Threshold_Done"
+	id2="usage_alert"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="pfsp: &lt;trigger_desc&gt; usage alert &lt;fld1&gt; for &lt;fld3&gt; &lt;fld4&gt; done" />
+<MESSAGE
+	id1="Test"
+	id2="Test"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Test syslog message" />
+<MESSAGE
+	id1="script"
+	id2="script"
+	eventcategory="1502020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:Script mitigation&gt;&lt;@disposition:ongoing&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="script &lt;node&gt; ran at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt;, | , } leader &lt;parent_node&gt;" />
+<MESSAGE
+	id1="anomaly:Resource_Info:01"
+	id2="anomaly"
+	eventcategory="1002000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@signame:Bandwidth&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="anomaly Bandwidth id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; impact &lt;fld10&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt; url &lt;url&gt;, &lt;info&gt;" />
+<MESSAGE
+	id1="anomaly:Resource_Info:02"
+	id2="anomaly"
+	eventcategory="1002000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@signame:Bandwidth&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="anomaly Bandwidth id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt; url &lt;url&gt;" />
+<MESSAGE
+	id1="anomaly:Resource_Info:03"
+	id2="anomaly"
+	eventcategory="1002000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="anomaly &lt;signame&gt; id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; impact &lt;fld10&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt;  url &lt;url&gt;, &lt;info&gt; " />
+<MESSAGE
+	id1="anomaly:Resource_Info:04"
+	id2="anomaly"
+	eventcategory="1002000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%N%U%O',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="anomaly &lt;signame&gt; id &lt;event_id&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; src &lt;daddr&gt;/&lt;dport&gt; &lt;fld1&gt; dst &lt;saddr&gt;/&lt;sport&gt; &lt;fld2&gt; start &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; { &lt;fld21&gt; duration | duration } &lt;duration&gt; percent &lt;fld3&gt; rate &lt;fld4&gt; rateUnit &lt;fld5&gt; protocol &lt;protocol&gt; flags &lt;fld6&gt; url &lt;url&gt;" />
+<MESSAGE
+	id1="anomaly:Router_Info:01"
+	id2="anomaly"
+	eventcategory="1002000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@signame:Bandwidth&gt;"
+	content="anomaly Bandwidth id &lt;sigid&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; router &lt;fld6&gt; router_name &lt;node&gt; interface &lt;fld4&gt; interface_name &quot;&lt;interface&gt;&quot; &lt;fld5&gt;" />
+<MESSAGE
+	id1="anomaly:Router_Info:02"
+	id2="anomaly"
+	eventcategory="1002000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="anomaly &lt;signame&gt; id &lt;sigid&gt; status &lt;disposition&gt; severity &lt;severity&gt; classification &lt;category&gt; router &lt;fld6&gt; router_name &lt;node&gt; interface &lt;fld4&gt; interface_name &quot;&lt;interface&gt;&quot; &lt;fld5&gt;" />
+<MESSAGE
+	id1="Peakflow:Unreachable"
+	id2="Peakflow"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Peakflow device &lt;node&gt; unreachable by &lt;parent_node&gt; since &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt;" />
 	
 		
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Peakflow:Reachable"
-		id2="Peakflow"
-		eventcategory="1801020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;&lt;@fld61:*PARMVAL(node)&gt;Peakflow device &lt;node&gt; reachable again by &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;"/>
-
+	id1="Peakflow:Reachable"
+	id2="Peakflow"
+	eventcategory="1801020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld15,fld16,fld17,fld18,fld19,fld20)&gt;"
+	content="Peakflow device &lt;node&gt; reachable again by &lt;parent_node&gt; at &lt;fld15&gt;-&lt;fld16&gt;-&lt;fld17&gt; &lt;fld18&gt;:&lt;fld19&gt;:&lt;fld20&gt; &lt;fld21&gt;" />
 	
+<MESSAGE
+	id1="Host:Detection"
+	id2="Host"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%F %Z',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%M-%F %Z',fld5,fld6)&gt;"
+	content=" Host Detection alert &lt;fld1&gt;, start &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;, duration &lt;duration&gt;, stop &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt;, , importance &lt;severity&gt;, managed_objects (&lt;fld8&gt;), is now &lt;result&gt;, (parent managed object &lt;fld9&gt;)" />
+	
+<MESSAGE
+	id1="Host:Detection:01"
+	id2="Host"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%F %Z',fld2,fld3)&gt;"
+	content=" Host Detection alert &lt;fld1&gt;, start &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;, duration &lt;duration&gt;, direction &lt;direction&gt;, host &lt;saddr&gt;, signatures (&lt;signame&gt;), impact &lt;fld5&gt;, importance &lt;severity&gt;, managed_objects (&lt;fld6&gt;), (parent managed object &lt;fld7&gt;)" />
+	
+<MESSAGE
+	id1="Infrastructure"
+	id2="Infrastructure"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:AIF license expiring cleared&gt;"
+	content=" AIF license expiring cleared,URL: &lt;url&gt;" />
+	
+<MESSAGE
+	 id1="Infrastructure:02"
+	 id2="Infrastructure"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hardware sensor detected a critical state&gt;"
+	 content="Hardware sensor detected a critical state.  System Fan&lt;fld1&gt;:&lt;fld2&gt;Triggering value:&lt;fld3&gt;,URL:&lt;url&gt;"/>
 
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Host:Detection"
-		id2="Host"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%F %Z',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%M-%F %Z',fld5,fld6)&gt; Host Detection alert &lt;fld1&gt;, start &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;, duration &lt;duration&gt;, stop &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt;, , importance &lt;severity&gt;, managed_objects (&lt;fld8&gt;), is now &lt;result&gt;, (parent managed object &lt;fld9&gt;)"/>
-
-	
+	id1="Infrastructure:01"
+	id2="Infrastructure"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:AIF license expired cleared&gt;"
+	content=" AIF license expired cleared,URL: &lt;url&gt;" />
+<MESSAGE
+	 id1="Blocked_Host"
+	 id2="Blocked_Host"
+	 eventcategory="1803000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	 content="Blocked host&lt;saddr&gt;at&lt;fld1&gt;by Blocked Countries using&lt;protocol&gt;destination&lt;daddr&gt;,URL:&lt;url&gt;"/>
 
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Host:Detection:01"
-		id2="Host"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%M-%F %Z',fld2,fld3)&gt; Host Detection alert &lt;fld1&gt;, start &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;, duration &lt;duration&gt;, direction &lt;direction&gt;, host &lt;saddr&gt;, signatures (&lt;signame&gt;), impact &lt;fld5&gt;, importance &lt;severity&gt;, managed_objects (&lt;fld6&gt;), (parent managed object &lt;fld7&gt;)"/>
-
-	
+	 id1="Change_Log"
+	 id2="Change_Log"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	 content="Username:&lt;username&gt;, Subsystem:&lt;fld1&gt;, Setting Type:&lt;fld2&gt;, Message:&lt;fld3&gt;"/>
 
 <MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Infrastructure"
-		id2="Infrastructure"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:AIF license expiring cleared&gt; AIF license expiring cleared,URL: &lt;url&gt;"/>
+	 id1="Protection_Mode"
+	 id2="Protection_Mode"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Changed protection mode to active for protection group&gt;"
+	 content="Changed protection mode to active for protection group&lt;group&gt;,URL:&lt;url&gt;"/>
 
-	
-
-<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Infrastructure:01"
-		id2="Infrastructure"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:AIF license expired cleared&gt; AIF license expired cleared,URL: &lt;url&gt;"/>
-
-		
 </DEVICEMESSAGES>
