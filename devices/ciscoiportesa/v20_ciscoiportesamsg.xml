@@ -1,1062 +1,885 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="ciscoiportesa"
+	displayname="Cisco Ironport ESA"
+	group="Application Firewall">
 <VERSION
-	xml="38"
-	checksum="9341ddfccc9b836b3bb9d67664078f34"
-	revision="108"
-	enVision="35010000"
+	xml="41"
+	checksum="f52d7355424287e6e11860aaa88cd6ab"
+	revision="109"
 	device="2.0" />
  
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="%CISCOIPORTESA-4: &lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
+	id1="0001" 
+	id2="0001"  
+	content="%CISCOIPORTESA-4: &lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
 
 <HEADER
-id1="0002"
-id2="0002"
-content="&lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt;:&lt;hfld9&gt;:&lt;hfld10&gt; &lt;hfld11&gt;: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+	id1="0002"
+	id2="0002"
+	content="&lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt;:&lt;hfld9&gt;:&lt;hfld10&gt; &lt;hfld11&gt;: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
 
 
  
 <HEADER 
-id1="9999" 
-id2="9999"  
-messageid="*STRCAT('CISCOIPORTESA','_','GENERIC')"
-content="%CISCOIPORTESA-&lt;hfld1&gt;: &lt;!payload&gt;" /> 
+	id1="9999" 
+	id2="9999"  
+	messageid="*STRCAT('CISCOIPORTESA','_','GENERIC')"
+	content="%CISCOIPORTESA-&lt;hfld1&gt;: &lt;!payload&gt;" /> 
+<MESSAGE 
+	id1="Info_VOF" 
+	id2="Info" 
+	eventcategory="1003010000" 
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: VOF Rule: &lt;rulename&gt; has threat level &lt;severity&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_VOF" 
-		id2="Info" 
-		eventcategory="1003010000" 
-		content="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: VOF Rule: &lt;rulename&gt; has threat level &lt;severity&gt;" />
+	id1="Info_Reverse_dns" 
+	id2="Info" 
+	eventcategory="1805000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: New SMTP ICID &lt;id1&gt; interface &lt;interface&gt; (&lt;hostip&gt;) address &lt;daddr&gt; reverse dns host &lt;dhost&gt; verified { yes | no }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Reverse_dns" 
-		id2="Info" 
-		eventcategory="1805000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: New SMTP ICID &lt;id1&gt; interface &lt;interface&gt; (&lt;hostip&gt;) address &lt;daddr&gt; reverse dns host &lt;dhost&gt; verified { yes | no }" />
+	id1="Info_SBRS" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;action&gt; SG &lt;rulename&gt; match sbrs[&lt;fld2&gt;] SBRS {rfc1918| unable to retrieve | &lt;reputation_num&gt;}" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_SBRS" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ICID &lt;id1&gt; &lt;action&gt; SG &lt;rulename&gt; match sbrs[&lt;fld2&gt;] SBRS {rfc1918|&lt;reputation_num&gt;}" />
+	id1="Info_Start" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Start MID &lt;id&gt; ICID &lt;id1&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Start" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Start MID &lt;id&gt; ICID &lt;id1&gt;" />
+	id1="Info_From" 
+	id2="Info" 
+	eventcategory="1207020000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; ICID &lt;id1&gt; From: &lt;&lt;&lt;from&gt;&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_From" 
-		id2="Info" 
-		eventcategory="1207020000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; ICID &lt;id1&gt; From: &lt;&lt;&lt;from&gt;&gt;" />
+	id1="Info_To" 
+	id2="Info" 
+	eventcategory="1207030000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; ICID &lt;id1&gt; RID &lt;id2&gt; To: &lt;&lt;&lt;to&gt;&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_To" 
-		id2="Info" 
-		eventcategory="1207030000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; ICID &lt;id1&gt; RID &lt;id2&gt; To: &lt;&lt;&lt;to&gt;&gt;" />
+	id1="Info_Message-ID" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; Message-ID &apos;&lt;&lt;&lt;fld23&gt;&gt;&apos;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Message-ID" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; Message-ID &apos;&lt;&lt;&lt;fld23&gt;&gt;&apos;" />
+	id1="Info_Subject" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; Subject &apos;&lt;subject&gt;&apos;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Subject" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; Subject &apos;&lt;subject&gt;&apos;" />
+	id1="Info_bytes" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; ready &lt;bytes&gt; bytes from &lt;&lt;&lt;from&gt;&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_bytes" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; ready &lt;bytes&gt; bytes from &lt;&lt;&lt;from&gt;&gt;" />
+	id1="Info_matched" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Policy&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; matched all recipients for per-recipient policy &lt;policyname&gt; in the &lt;direction&gt; table" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_matched" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Policy&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; matched all recipients for per-recipient policy &lt;policyname&gt; in the &lt;direction&gt; table" />
+	id1="Info_close" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; close" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_close" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ICID &lt;id1&gt; close" />
+	id1="Info_interim_spam_verdict" 
+	id2="Info" 
+	eventcategory="1207040000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; interim verdict using engine: &lt;agent&gt; spam &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_interim_spam_verdict" 
-		id2="Info" 
-		eventcategory="1207040000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; interim verdict using engine: &lt;agent&gt; spam &lt;result&gt;" />
+	id1="Info_spam_result" 
+	id2="Info" 
+	eventcategory="1207040000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; using engine: &lt;agent&gt; spam &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_spam_result" 
-		id2="Info" 
-		eventcategory="1207040000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; using engine: &lt;agent&gt; spam &lt;result&gt;" />
+	id1="Info_interim_av_verdict" 
+	id2="Info" 
+	eventcategory="1003010000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; interim AV verdict using &lt;product&gt; &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_interim_av_verdict" 
-		id2="Info" 
-		eventcategory="1003010000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; interim AV verdict using &lt;product&gt; &lt;result&gt;" />
+	id1="Info_av_result" 
+	id2="Info" 
+	eventcategory="1003010000" 
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; antivirus { &lt;result&gt; &apos;&lt;virusname&gt;&apos; | &lt;result&gt; }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_av_result" 
-		id2="Info" 
-		eventcategory="1003010000" 
-		content="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; antivirus { &lt;result&gt; &apos;&lt;virusname&gt;&apos; | &lt;result&gt; }" />
+	id1="Info_queued" 
+	id2="Info" 
+	eventcategory="1207010000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; queued for delivery" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_queued" 
-		id2="Info" 
-		eventcategory="1207010000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; queued for delivery" />
+	id1="Info_New_SMTP" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: New SMTP DCID &lt;id1&gt; interface &lt;interface&gt; address &lt;hostip&gt; port &lt;network_port&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_New_SMTP" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: New SMTP DCID &lt;id1&gt; interface &lt;interface&gt; address &lt;hostip&gt; port &lt;network_port&gt;" />
+	id1="Info_Delivery_start" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_activity:Start&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Delivery start DCID &lt;id1&gt; MID &lt;id&gt; to RID [&lt;id2&gt;]" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Delivery_start" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_activity:Start&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Delivery start DCID &lt;id1&gt; MID &lt;id&gt; to RID [&lt;id2&gt;]" />
+	id1="Info_Bounced" 
+	id2="Info" 
+	eventcategory="1207010200" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Bounced: DCID &lt;id1&gt; MID &lt;id&gt; to RID &lt;id2&gt; - Bounced by destination server with response: &lt;result&gt; - &lt;info&gt; (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;]" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Bounced" 
-		id2="Info" 
-		eventcategory="1207010200" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Bounced: DCID &lt;id1&gt; MID &lt;id&gt; to RID &lt;id2&gt; - Bounced by destination server with response: &lt;result&gt; - &lt;info&gt; (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;]" />
+	id1="Info_bounce" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; was generated for bounce of MID &lt;id1&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_bounce" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; was generated for bounce of MID &lt;id1&gt;" />
+	id1="Info_message_finished" 
+	id2="Info" 
+	eventcategory="1207010100" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Message finished MID &lt;id&gt; done" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_message_finished" 
-		id2="Info" 
-		eventcategory="1207010100" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Message finished MID &lt;id&gt; done" />
+	id1="Info_Connection_Error" 
+	id2="Info" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Connection Error: DCID: &lt;id1&gt; domain: &lt;domain&gt; IP: &lt;hostip&gt; port: &lt;network_port&gt; details: &lt;info&gt; interface: &lt;interface&gt; reason: &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Connection_Error" 
-		id2="Info" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Connection Error: DCID: &lt;fld31&gt; domain: &lt;domain&gt; IP: &lt;hostip&gt; port: &lt;network_port&gt; details: &lt;info&gt; interface: &lt;interface&gt; reason: &lt;result&gt;" />
+	id1="Info_Connection_Error:01" 
+	id2="Info" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Connection Error: DCID &lt;id1&gt; domain: &lt;domain&gt; IP: &lt;hostip&gt; port: &lt;network_port&gt; details: &lt;info&gt; interface: &lt;interface&gt; reason: &lt;result&gt;" />
+<MESSAGE 
+	id1="Info_message_done" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Message done DCID &lt;id1&gt; MID &lt;id&gt; to RID [&lt;id2&gt;]" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Connection_Error:01" 
-		id2="Info" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Connection Error: DCID &lt;fld31&gt; domain: &lt;domain&gt; IP: &lt;hostip&gt; port: &lt;network_port&gt; details: &lt;info&gt; interface: &lt;interface&gt; reason: &lt;result&gt;" />
+	id1="Info_Response" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; RID [&lt;id2&gt;] Response &apos;&lt;event_description&gt;&apos;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_message_done" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Message done DCID &lt;id1&gt; MID &lt;id&gt; to RID [&lt;id2&gt;]" />
+	id1="Info_DCID_close" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_activity:Stop&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: DCID &lt;id1&gt; close" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Response" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; RID [&lt;id2&gt;] Response &apos;&lt;event_description&gt;&apos;" />
+	id1="Info_Queue_Checkpoint" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_activity:Start&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Queue: Checkpoint { Started | Finished }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_DCID_close" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_activity:Stop&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: DCID &lt;id1&gt; close" />
+	id1="Info_SMTP_authentication_Failure" 
+	id2="Info" 
+	eventcategory="1301010000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@result:Failed&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: DCID: &lt;fld31&gt; IP: &lt;hostip&gt; SMTP authentication using the profile &lt;rulename&gt; failed: (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;])" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Queue_Checkpoint" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_activity:Start&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Queue: Checkpoint { Started | Finished }" />
+	id1="Info_SMTP_authentication" 
+	id2="Info" 
+	eventcategory="1301010000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: DCID: &lt;fld31&gt; IP: &lt;hostip&gt; SMTP authentication using the profile &lt;rulename&gt; &lt;result&gt;: (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;])" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_SMTP_authentication_Failure" 
-		id2="Info" 
-		eventcategory="1301010000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@result:Failed&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: DCID: &lt;fld31&gt; IP: &lt;hostip&gt; SMTP authentication using the profile &lt;rulename&gt; failed: (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;])" />
+	id1="Info_Unknown_command" 
+	id2="Info" 
+	eventcategory="1603050000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; Unknown command: &lt;action&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_SMTP_authentication" 
-		id2="Info" 
-		eventcategory="1301010000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: DCID: &lt;fld31&gt; IP: &lt;hostip&gt; SMTP authentication using the profile &lt;rulename&gt; &lt;result&gt;: (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;])" />
+	id1="Info_disconnected" 
+	id2="Info" 
+	eventcategory="1801030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; disconnected address &lt;hostip&gt;, exceeded maximum number of bad SMTP commands" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Unknown_command" 
-		id2="Info" 
-		eventcategory="1603050000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ICID &lt;id1&gt; Unknown command: &lt;action&gt;" />
+	id1="Info_ICID_lost" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; lost" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_disconnected" 
-		id2="Info" 
-		eventcategory="1801030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ICID &lt;id1&gt; disconnected address &lt;hostip&gt;, exceeded maximum number of bad SMTP commands" />
+	id1="Info_LDAPACCEPT_bypass" 
+	id2="Info" 
+	eventcategory="1304000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; ICID &lt;id1&gt; LDAPACCEPT bypass applied to &lt;&lt;&lt;user_address&gt;&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_ICID_lost" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ICID &lt;id1&gt; lost" />
+	id1="Info_Receiving_Failed" 
+	id2="Info" 
+	eventcategory="1207010200" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failed&gt;"
+	content=" Info: ICID &lt;id1&gt; Receiving Failed: &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_LDAPACCEPT_bypass" 
-		id2="Info" 
-		eventcategory="1304000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; ICID &lt;id1&gt; LDAPACCEPT bypass applied to &lt;&lt;&lt;user_address&gt;&gt;" />
+	id1="Info_Delayed" 
+	id2="Info" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Delayed: DCID &lt;id1&gt; MID &lt;id&gt; to RID &lt;id2&gt; - &lt;result&gt; - &lt;info&gt; (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;]) []" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Receiving_Failed" 
-		id2="Info" 
-		eventcategory="1207010200" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failed&gt; Info: ICID &lt;id1&gt; Receiving Failed: &lt;event_description&gt;" />
+	id1="Info_pending" 
+	id2="Info" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld24,fld25,fld26)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; to RID [&lt;id2&gt;] pending till &lt;fld23&gt; &lt;fld24&gt; &lt;fld25&gt; &lt;fld26&gt; [&lt;fld32&gt;]" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Delayed" 
-		id2="Info" 
-		eventcategory="1207010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Delayed: DCID &lt;id1&gt; MID &lt;id&gt; to RID &lt;id2&gt; - &lt;result&gt; - &lt;info&gt; (&apos;&lt;resultcode&gt;&apos;, [&apos;&lt;event_description&gt;&apos;]) []" />
+	id1="Info_LDAPACCEPT_Rejected" 
+	id2="Info" 
+	eventcategory="1207010200" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Rejected&gt;"
+	content=" Info: MID &lt;id&gt; ICID &lt;id1&gt; To: &lt;&lt;&lt;to&gt;&gt; Rejected by LDAPACCEPT" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_pending" 
-		id2="Info" 
-		eventcategory="1207010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld24,fld25,fld26)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; to RID [&lt;id2&gt;] pending till &lt;fld23&gt; &lt;fld24&gt; &lt;fld25&gt; &lt;fld26&gt; [&lt;fld32&gt;]" />
+	id1="Info_quarantined_to" 
+	id2="Info" 
+	eventcategory="1207010000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; quarantined to &quot;&lt;category&gt;&quot; (content filter:&lt;filter&gt;)" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_LDAPACCEPT_Rejected" 
-		id2="Info" 
-		eventcategory="1207010200" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Rejected&gt; Info: MID &lt;id&gt; ICID &lt;id1&gt; To: &lt;&lt;&lt;to&gt;&gt; Rejected by LDAPACCEPT" />
+	id1="Info_DLP" 
+	id2="Info" 
+	eventcategory="1207010000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; DLP &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_quarantined_to" 
-		id2="Info" 
-		eventcategory="1207010000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; Info: MID &lt;id&gt; quarantined to &quot;&lt;category&gt;&quot; (content filter:&lt;filter&gt;)" />
+	id1="Info_rewritten" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; rewritten to MID &lt;id1&gt; by &lt;rulename&gt; filter &apos;&lt;filter&gt;&apos;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_DLP" 
-		id2="Info" 
-		eventcategory="1207010000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; Info: MID &lt;id&gt; DLP &lt;result&gt;" />
+	id1="Info_too_big" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; was too big (&lt;bytes&gt;/&lt;fld24&gt;) for scanning by &lt;agent&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_rewritten" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; Info: MID &lt;id&gt; rewritten to MID &lt;id1&gt; by &lt;rulename&gt; filter &apos;&lt;filter&gt;&apos;" />
+	id1="Info_Tagging_quarantine" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ISQ: Tagging MID &lt;id&gt; for quarantine" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_too_big" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; was too big (&lt;bytes&gt;/&lt;fld24&gt;) for scanning by &lt;agent&gt;" />
+	id1="Info_RPC_Delivery" 
+	id2="Info" 
+	eventcategory="1207040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: RPC Delivery start RCID &lt;id1&gt; MID &lt;id&gt; to local IronPort Spam Quarantine" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Tagging_quarantine" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ISQ: Tagging MID &lt;id&gt; for quarantine" />
+	id1="Info_Quarantined" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ISQ: Quarantined MID &lt;id&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_RPC_Delivery" 
-		id2="Info" 
-		eventcategory="1207040000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: RPC Delivery start RCID &lt;id1&gt; MID &lt;id&gt; to local IronPort Spam Quarantine" />
+	id1="Info_RPC_Message" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: RPC Message done RCID &lt;id1&gt; MID &lt;id&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Quarantined" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:TEV&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ISQ: Quarantined MID &lt;id&gt;" />
+	id1="Info_Message_aborted" 
+	id2="Info" 
+	eventcategory="1003010000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Aborted&gt;"
+	content=" Info: Message aborted MID &lt;id&gt; &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_RPC_Message" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: RPC Message done RCID &lt;id1&gt; MID &lt;id&gt;" />
+	id1="Info_alert_sent" 
+	id2="Info" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: A System/Critical alert was sent to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;." />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Message_aborted" 
-		id2="Info" 
-		eventcategory="1003010000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Aborted&gt; Info: Message aborted MID &lt;id&gt; &lt;event_description&gt;" />
+	id1="Info_SMTP_Attempt" 
+	id2="Info" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: &lt;from&gt; system &lt;event_state&gt; to &lt;action&gt; a message to &lt;to&gt; with subject '&lt;subject&gt;'&lt;fld12&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_alert_sent" 
-		id2="Info" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: A System/Critical alert was sent to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;." />
+	id1="Info_SMTP_Success" 
+	id2="Info" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: &lt;from&gt; system &lt;disposition&gt; &lt;action&gt; a message to &lt;to&gt; with subject '&lt;subject&gt;'&lt;fld12&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_SMTP_Attempt" 
-		id2="Info" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: &lt;from&gt; system &lt;event_state&gt; to &lt;action&gt; a message to &lt;to&gt; with subject '&lt;subject&gt;'&lt;fld12&gt;" />
+	id1="Info_authentication_failed" 
+	id2="Info" 
+	eventcategory="1401030000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failed&gt;"
+	content=" Info: User &lt;username&gt; failed authentication." />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_SMTP_Success" 
-		id2="Info" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: &lt;from&gt; system &lt;disposition&gt; &lt;action&gt; a message to &lt;to&gt; with subject '&lt;subject&gt;'&lt;fld12&gt;" />
+	id1="Info_authentication_successful:01" 
+	id2="Info" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Successful&gt;"
+	content=" Info: User &lt;username&gt; from &lt;saddr&gt; was authenticated successfully." />
+<MESSAGE 
+	id1="Info_authentication_successful" 
+	id2="Info" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Successful&gt;"
+	content=" Info: User &lt;username&gt; was authenticated successfully." />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_authentication_failed" 
-		id2="Info" 
-		eventcategory="1401030000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failed&gt; Info: User &lt;username&gt; failed authentication." />
-
-<MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_authentication_successful:01" 
-		id2="Info" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Successful&gt; Info: User &lt;username&gt; from &lt;saddr&gt; was authenticated successfully." />
-
-<MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_authentication_successful" 
-		id2="Info" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Successful&gt; Info: User &lt;username&gt; was authenticated successfully." />
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_login" 
-		id2="Info" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user login&gt; Info: PID &lt;process_id&gt;: User &lt;username&gt; login from &lt;saddr&gt; on &lt;hostip&gt;" /> 
+	id1="Info_login" 
+	id2="Info" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user login&gt;"
+	content=" Info: PID &lt;process_id&gt;: User &lt;username&gt; login from &lt;saddr&gt; on &lt;hostip&gt;" />
 
 		
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_logged_out" 
-		id2="Info" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user logout&gt; Info: PID &lt;process_id&gt;: User &lt;username&gt; logged out of &lt;logon_type&gt;" /> 
+	id1="Info_logged_out" 
+	id2="Info" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user logout&gt;"
+	content=" Info: PID &lt;process_id&gt;: User &lt;username&gt; logged out of &lt;logon_type&gt;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_logout" 
-		id2="Info" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user logout&gt; Info: logout:&lt;saddr&gt; user:&lt;username&gt; session:&lt;sessionid&gt;" /> 
+	id1="Info_logout" 
+	id2="Info" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user logout&gt;"
+	content=" Info: logout:&lt;saddr&gt; user:&lt;username&gt; session:&lt;sessionid&gt;" />
+<MESSAGE 
+	id1="Info_executed" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Execute&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user executed batch command&gt;"
+	content=" Info: PID &lt;process_id&gt;: User &lt;username&gt; executed batch command: &apos;&lt;action&gt;&apos;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_executed" 
-		id2="Info" 
-		eventcategory="1605000000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Execute&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user executed batch command&gt; Info: PID &lt;process_id&gt;: User &lt;username&gt; executed batch command: &apos;&lt;action&gt;&apos;" /> 
+	id1="Info_entered" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user entered action&gt;"
+	content=" Info: PID &lt;process_id&gt;: User &lt;username&gt; entered &apos;&lt;action&gt;&apos;; prompt was &apos;&lt;info&gt;&apos;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_entered" 
-		id2="Info" 
-		eventcategory="1605000000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:user entered action&gt; Info: PID &lt;process_id&gt;: User &lt;username&gt; entered &apos;&lt;action&gt;&apos;; prompt was &apos;&lt;info&gt;&apos;" /> 
+	id1="Info_attachment" 
+	id2="Info" 
+	eventcategory="1207010000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; attachment &apos;&lt;filename&gt;&apos;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_attachment" 
-		id2="Info" 
-		eventcategory="1207010000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; attachment &apos;&lt;filename&gt;&apos;" /> 
+	id1="Info_enqueued" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; enqueued for PXE encryption" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_enqueued" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; enqueued for PXE encryption" /> 
+	id1="Info_PXE" 
+	id2="Info" 
+	eventcategory="1207000000" 
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; was generated based on MID &lt;id1&gt; by PXE encryption filter &apos;&lt;filter&gt;&apos;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_PXE" 
-		id2="Info" 
-		eventcategory="1207000000" 
-		content="&lt;@ec_subject:Message&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: MID &lt;id&gt; was generated based on MID &lt;id1&gt; by PXE encryption filter &apos;&lt;filter&gt;&apos;" /> 
+	id1="Info_ICID:01" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;fld2&gt; &lt;fld1&gt;-&lt;shost&gt; &lt;protocol&gt;\r\n&lt;resultcode&gt; Hello &lt;dhost&gt; please proceed." />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_ICID" 
-		id2="Info" 
-		eventcategory="1605000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: ICID &lt;info&gt;" /> 
-
- <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_DNS_Temporary_Failure" 
-		id2="Info" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: DNS Temporary Failure &lt;hostname&gt; MX - unable to reach nameserver on any valid IP" /> 
+	id1="Info_ICID:02" 
+	id2="Info" 
+	eventcategory="1207010201" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;fld2&gt; &lt;fld1&gt;{ -\r\n | -&lt;shost&gt;\r\n }&lt;resultcode&gt; &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Outbreak_rule" 
-		id2="Info" 
-		eventcategory="1003010000" 
-		content="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: Outbreak Rule: &lt;rulename&gt; has threat level &lt;severity&gt;" />
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Info_Logfile" 
-		id2="Info" 
-		eventcategory="1605000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Info: &lt;info&gt;" />		
+	id1="Info_ICID:03" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; ACCEPT SG &lt;rulename&gt; match &lt;saddr&gt; SBRS { rfc1918 | &lt;reputation_num&gt; }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_DNS_Error" 
-		id2="Critical" 
-		eventcategory="1805010000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: LDAP: query DNS result DNS Soft Error looking up &lt;hostname&gt; (A) while asking Internal Resolver. Error was: &lt;result&gt;" />
+	id1="Info_ICID:04" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; REJECT SG &lt;rulename&gt; match &lt;saddr&gt; { SBRS not enabled | SBRS rfc1918 | SBRS &lt;reputation_num&gt; }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_LDAP_error" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: LDAP: query &lt;group_object&gt; result Operations error, server diagnostic: &lt;resultcode&gt;: LdapErr: &lt;fld25&gt;, comment: &lt;event_description&gt;" />
+	id1="Info_ICID:05" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; address &lt;saddr&gt; &lt;service&gt; host &lt;shost&gt; sbrs { rfc1918 | unable to retrieve | &lt;reputation_num&gt; }" />
+    
+<MESSAGE 
+	id1="Info_ICID:06" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;fld1&gt; RCPT { TO | To }:&lt;&lt;&lt;to&gt;&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_LDAP_query" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: LDAP: query &lt;group_object&gt; result &lt;result&gt;" />
+	id1="Info_ICID:07" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;fld1&gt; MAIL { From | FROM }:&lt;&lt;&lt;to&gt;&gt; { SIZE=&lt;filename_size&gt; BODY=&lt;fld2&gt; | SIZE=&lt;filename_size&gt; }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_LDAP_query_failure" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failure&gt; Critical: LDAP group query failure during per-recipient scanning, possible &lt;event_description&gt;" />
+	id1="Info_ICID:08" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;fld1&gt; &lt;resultcode&gt; { recipient &lt;&lt;&lt;to&gt;&gt; ok | sender &lt;&lt;&lt;from&gt;&gt; ok }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_alert_sent_error" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: Error while sending alert: Unable to look up &lt;domain&gt; in DNS: DNS Soft Error looking up &lt;fld1&gt; (MX) while asking &lt;fld2&gt; Error was: &lt;result&gt;" />
+	id1="Info_ICID:09" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; TLS success protocol &lt;protocol&gt; cipher &lt;s_cipher&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_alert_sent_error:01" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: Error while sending alert: Unable to send System/Warning alert to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;." />
+	id1="Info_ICID:10" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &lt;fld1&gt; EHLO &lt;dhost&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_Log_Error" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: Log Error: Push error for subscription &lt;event_log&gt;: SCP failed to transfer to &lt;daddr&gt;:&lt;dport&gt;: ssh: connect to host &lt;hostip&gt; port &lt;network_port&gt;: &lt;event_description&gt;" />
+	id1="Info_ICID:11" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;id1&gt; &gt;&gt; &lt;resultcode&gt; { &lt;dhost&gt; ESMTP | &lt;dhost&gt; }" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical_Log_Error:01" 
-		id2="Critical" 
-		eventcategory="1603050000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Critical: Log Error: Push error for subscription &lt;event_log&gt;: SCP failed to transfer to &lt;daddr&gt;:&lt;dport&gt;: &lt;event_description&gt;" />
+	id1="Info_ICID" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: ICID &lt;info&gt;" />
+<MESSAGE 
+	id1="Info_DNS_Temporary_Failure" 
+	id2="Info" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: DNS Temporary Failure &lt;hostname&gt; MX - unable to reach nameserver on any valid IP" />
+<MESSAGE 
+	id1="Info_Outbreak_rule" 
+	id2="Info" 
+	eventcategory="1003010000" 
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: Outbreak Rule: &lt;rulename&gt; has threat level &lt;severity&gt;" />
+<MESSAGE 
+	id1="Info_Logfile:01" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; AMP file reputation verdict : &lt;result&gt; " />
+    
+<MESSAGE 
+	id1="Info_Logfile:02" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; URL &lt;url&gt; has reputation &lt;reputation_num&gt; matched &lt;rulename&gt;" />
+    
+<MESSAGE 
+	id1="Info_Logfile:03" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: &lt;fld1&gt; MID: &lt;id&gt;: &lt;fld2&gt;: URL lookup success = &lt;result&gt;; &lt;fld3&gt; " />
+    
+<MESSAGE 
+	id1="Info_Logfile:04" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Info: DCID &lt;id1&gt; &lt;fld1&gt; RCPT TO:&lt;&lt;&lt;dhost&gt;&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_LDAP_query" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: LDAP: query &apos;&lt;group_object&gt;&apos; could not be found" />
+	id1="Info_Logfile:05" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Info: DCID &lt;id1&gt; &lt;fld1&gt; MAIL FROM:&lt;&lt;&lt;from&gt;&gt; SIZE=&lt;filename_size&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_Key_expire" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:License&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Your &quot;&lt;fld1&gt;&quot; key will expire in &lt;info&gt;" />
+	id1="Info_Logfile:06" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Info: DCID &lt;id1&gt; address &lt;saddr&gt; domain &lt;sdomain&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_DNS_query_error" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: DNS query network error &apos;&lt;result&gt;&apos; to &apos;&lt;daddr&gt;&apos; looking up &apos;&lt;fld1&gt;&apos;" />
+	id1="Info_Logfile:07" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Info: DCID &lt;id1&gt; TLS &lt;result&gt; protocol &lt;protocol&gt; cipher &lt;s_cipher&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_Bootstrap_failed" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failed&gt; Warning: Failed to bootstrap the DNS resolver. &lt;info&gt;" />
+	id1="Info_Logfile:08" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: DCID &lt;id1&gt; &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_System_limit_reached" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: System limit reached: connection limit for IP &lt;hostip&gt; on listener &lt;direction&gt; ICID &lt;id1&gt;: max: &lt;fld1&gt;" />
+	id1="Info_Logfile:09" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: MID &lt;id&gt; &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_Senderbase_participation" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: MID &lt;id&gt; CASE could not be reached for SenderBase Network Participation processing" />
+	id1="Info_Logfile" 
+	id2="Info" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_alert_sent_error" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Error while sending alert: &lt;result&gt; to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;, &lt;info&gt;" />
+	id1="Critical_DNS_Error" 
+	id2="Critical" 
+	eventcategory="1805010000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: LDAP: query DNS result DNS Soft Error looking up &lt;hostname&gt; (A) while asking Internal Resolver. Error was: &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_DNS_response_invalid" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Received an invalid DNS Response: &apos;&lt;result&gt;&apos; to IP &lt;daddr&gt; looking up &lt;hostname&gt;" />
+	id1="Critical_LDAP_error" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: LDAP: query &lt;group_object&gt; result Operations error, server diagnostic: &lt;resultcode&gt;: LdapErr: &lt;fld25&gt;, comment: &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_DNS_response_invalid:01" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Received an invalid DNS Response: rcode=&lt;result&gt; data=&lt;fld23&gt; to IP &lt;daddr&gt; looking up &lt;hostname&gt;" />
+	id1="Critical_LDAP_query" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: LDAP: query &lt;group_object&gt; result &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_SMTP_Error" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Internal SMTP Error: Failed to send message to host &lt;daddr&gt;:&lt;dport&gt; for recipient &lt;to&gt;: &lt;result&gt; &quot;&lt;resultcode&gt;&quot;, expecting code starting with &lt;fld23&gt;, response was [&apos;&lt;event_description&gt;&apos;]." />
+	id1="Critical_LDAP_query_failure" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failure&gt;"
+	content=" Critical: LDAP group query failure during per-recipient scanning, possible &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_SMTP_Error:01" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Internal SMTP Error: Failed to send message to host &lt;daddr&gt;:&lt;dport&gt; for recipient &lt;to&gt;: &lt;result&gt;: [Errno &lt;resultcode&gt;] &lt;event_description&gt;" />
+	id1="Critical_alert_sent_error" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: Error while sending alert: Unable to look up &lt;domain&gt; in DNS: DNS Soft Error looking up &lt;fld1&gt; (MX) while asking &lt;fld2&gt; Error was: &lt;result&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:01" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: No valid IP Addresses found for delivery to &lt;domain&gt;" />
+	id1="Critical_alert_sent_error:01" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: Error while sending alert: Unable to send System/Warning alert to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;." />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_MID_Error" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@fld61:*PARMVAL(context)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: MID &lt;id&gt;: &lt;context&gt; (&lt;event_description&gt;): &lt;result&gt;" />
+	id1="Critical_Log_Error" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: Log Error: Push error for subscription &lt;event_log&gt;: SCP failed to transfer to &lt;daddr&gt;:&lt;dport&gt;: ssh: connect to host &lt;hostip&gt; port &lt;network_port&gt;: &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:02" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: MID &lt;id&gt;, &lt;event_description&gt;" />
+	id1="Critical_Log_Error:01" 
+	id2="Critical" 
+	eventcategory="1603050000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Critical: Log Error: Push error for subscription &lt;event_log&gt;: SCP failed to transfer to &lt;daddr&gt;:&lt;dport&gt;: &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical:01" 
-		id2="Critical" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Critical: Error while sending alert: Unable to send System/Critical alert to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;." />
+	id1="Warning_LDAP_query" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: LDAP: query &apos;&lt;group_object&gt;&apos; could not be found" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical:02" 
-		id2="Critical" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Critical: Internal SMTP giving up on message to &lt;to&gt; with subject &apos;&lt;subject&gt;&apos;: &lt;fld1&gt;" />
+	id1="Warning_Key_expire" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:License&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Your &quot;&lt;fld1&gt;&quot; key will expire in &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Critical:03" 
-		id2="Critical" 
-		eventcategory="1603000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Critical: &lt;event_description&gt;" />
+	id1="Warning_DNS_query_error" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: DNS query network error &apos;&lt;result&gt;&apos; to &apos;&lt;daddr&gt;&apos; looking up &apos;&lt;fld1&gt;&apos;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:03" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: &lt;info&gt; from host=('&lt;saddr&gt;', &lt;fld3&gt;), dhap_limit=&lt;fld1&gt;, sender_group=&lt;group_object&gt;, listener=&lt;direction&gt;, reverse_dns=&lt;fld2&gt;, ICID &lt;id1&gt;" />
+	id1="Warning_Bootstrap_failed" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Failed&gt;"
+	content=" Warning: Failed to bootstrap the DNS resolver. &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:04" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: MID &lt;id&gt; &lt;info&gt;. &lt;event_description&gt;" />
+	id1="Warning_System_limit_reached" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: System limit reached: connection limit for IP &lt;hostip&gt; on listener &lt;direction&gt; ICID &lt;id1&gt;: max: &lt;fld1&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:05" 
-		id2="Warning" 
-		eventcategory="1001030000" 
-		content="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: &lt;info&gt;. &lt;event_description&gt;" />
+	id1="Warning_Senderbase_participation" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: MID &lt;id&gt; CASE could not be reached for SenderBase Network Participation processing" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_fetch_Error" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Could not fetch current Virus Threat Level: [Errno &lt;resultcode&gt;] &lt;event_description&gt;" />
+	id1="Warning_alert_sent_error" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Error while sending alert: &lt;result&gt; to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;, &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:06" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: MID &lt;id&gt; '&lt;username&gt;' &lt;event_description&gt;" />
+	id1="Warning_DNS_response_invalid" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Received an invalid DNS Response: &apos;&lt;result&gt;&apos; to IP &lt;daddr&gt; looking up &lt;hostname&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning_System_limit_reached:01" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: System limit reached: connection limit for listener &lt;direction&gt; ICID &lt;id1&gt;: max: &lt;fld1&gt;" />
+	id1="Warning_DNS_response_invalid:01" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Receive&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Received an invalid DNS Response: rcode=&lt;result&gt; data=&lt;fld23&gt; to IP &lt;daddr&gt; looking up &lt;hostname&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:07" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: MID &lt;id&gt; &lt;event_description&gt;" />
+	id1="Warning_SMTP_Error" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Internal SMTP Error: Failed to send message to host &lt;daddr&gt;:&lt;dport&gt; for recipient &lt;to&gt;: &lt;result&gt; &quot;&lt;resultcode&gt;&quot;, expecting code starting with &lt;fld23&gt;, response was [&apos;&lt;event_description&gt;&apos;]." />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:08" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Unexpected error initiating graymail scan&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: graymail [&lt;agent&gt;] MID &lt;id&gt; Unexpected error initiating graymail scan:" />
+	id1="Warning_SMTP_Error:01" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Internal SMTP Error: Failed to send message to host &lt;daddr&gt;:&lt;dport&gt; for recipient &lt;to&gt;: &lt;result&gt;: [Errno &lt;resultcode&gt;] &lt;event_description&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:09" 
-		id2="Warning" 
-		eventcategory="1612010000" 
-		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Service LDAP communication error&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: Service LDAP communication error (Failed binding with user &apos;&lt;dn&gt;&apos; and supplied password: &lt;result&gt;)" />
+	id1="Warning:01" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: No valid IP Addresses found for delivery to &lt;domain&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:10" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Unknown&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Graymail scan timed out&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Warning: graymail [&lt;agent&gt;] MID &lt;id&gt; Graymail scan timed out" />
+	id1="Warning_MID_Error" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: MID &lt;id&gt;: &lt;context&gt; (&lt;event_description&gt;): &lt;result&gt;" />
+
+<MESSAGE 
+	id1="Warning:02" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: MID &lt;id&gt;, &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Critical:01" 
+	id2="Critical" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Critical: Error while sending alert: Unable to send System/Critical alert to &lt;to&gt; with subject &quot;&lt;subject&gt;&quot;." />
+
+<MESSAGE 
+	id1="Critical:02" 
+	id2="Critical" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Critical: Internal SMTP giving up on message to &lt;to&gt; with subject &apos;&lt;subject&gt;&apos;: &lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="Critical:03" 
+	id2="Critical" 
+	eventcategory="1603000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Critical: &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Warning:03" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: &lt;info&gt; from host=('&lt;saddr&gt;', &lt;fld3&gt;), dhap_limit=&lt;fld1&gt;, sender_group=&lt;group_object&gt;, listener=&lt;direction&gt;, reverse_dns=&lt;fld2&gt;, ICID &lt;id1&gt;" />
+
+<MESSAGE 
+	id1="Warning:04" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: MID &lt;id&gt; &lt;info&gt;. &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Warning:05" 
+	id2="Warning" 
+	eventcategory="1001030000" 
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: &lt;info&gt;. &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Warning_fetch_Error" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Could not fetch current Virus Threat Level: [Errno &lt;resultcode&gt;] &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Warning:06" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: MID &lt;id&gt; '&lt;username&gt;' &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Warning_System_limit_reached:01" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: System limit reached: connection limit for listener &lt;direction&gt; ICID &lt;id1&gt;: max: &lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="Warning:07" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: MID &lt;id&gt; &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Warning:08" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Unexpected error initiating graymail scan&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: graymail [&lt;agent&gt;] MID &lt;id&gt; Unexpected error initiating graymail scan:" />
+<MESSAGE 
+	id1="Warning:09" 
+	id2="Warning" 
+	eventcategory="1612010000" 
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Service LDAP communication error&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: Service LDAP communication error (Failed binding with user &apos;&lt;dn&gt;&apos; and supplied password: &lt;result&gt;)" />
+
+<MESSAGE 
+	id1="Warning:10" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_activity:Scan&gt;&lt;@ec_outcome:Unknown&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Graymail scan timed out&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Warning: graymail [&lt;agent&gt;] MID &lt;id&gt; Graymail scan timed out" />
 
  
+<MESSAGE 
+	id1="Warning:11" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Invalid server idle from unknown child pid&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: Invalid server idle from unknown child pid=&lt;child_pid&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:11" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Invalid server idle from unknown child pid&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt; Warning: Invalid server idle from unknown child pid=&lt;child_pid&gt;" />
+	id1="Warning:12" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File reputation feature key is expired&gt;"
+	content=" Warning: &lt;fld1&gt; - File reputation feature key is expired" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:12" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File reputation feature key is expired&gt; Warning: &lt;fld1&gt; - File reputation feature key is expired" />
-
-<MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="Warning:13" 
-		id2="Warning" 
-		eventcategory="1603000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System limit reached&gt; Warning: &lt;fld3&gt; : total inbound connections ICID: &lt;id1&gt; max: &lt;fld1&gt;" />
+	id1="Warning:13" 
+	id2="Warning" 
+	eventcategory="1603000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System limit reached&gt;"
+	content=" Warning: &lt;fld3&gt; : total inbound connections ICID: &lt;id1&gt; max: &lt;fld1&gt;" />
 
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="CISCOIPORTESA_GENERIC" 
-		id2="CISCOIPORTESA_GENERIC" 		
-		eventcategory="1901000000"
-		functions="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld2,fld3,fld4,fld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@msg_id:*STRCAT(severity,_EVENT)&gt;&lt;@vid:*STRCAT(severity,_EVENT)&gt;"		
-		content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;severity&gt;: &lt;fld6&gt;" />
-
+	id1="CISCOIPORTESA_GENERIC" 
+	id2="CISCOIPORTESA_GENERIC" 		
+	eventcategory="1901000000"
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld2,fld3,fld4,fld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@msg_id:*STRCAT(severity,_EVENT)&gt;&lt;@vid:*STRCAT(severity,_EVENT)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;severity&gt;: &lt;fld6&gt;" />
 </DEVICEMESSAGES>
