@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="epolicy"
+	displayname="McAfee ePolicy Orchestrator"
+	group="Anti Virus">
 <VERSION
-	xml="69"
-	checksum="75a5bbd1552c4735aa32344ce62c90d0"
-	revision="108"
-    enVision="21060042"
+	xml="71"
+	checksum="32ec50330e5e774790929c9e777525ff"
+	revision="109"
     device="2.0" />
  
 <HEADER 
@@ -35,6 +37,10 @@
 	id1="0005" 
 	id2="0005"  
 	content="%ePolicy-&lt;level&gt;: &lt;hnumber&gt;,&lt;hnumber1&gt;,&lt;husername&gt;,&lt;hseverity&gt;,&lt;messageid&gt; &lt;!payload:hnumber&gt;" />
+<HEADER 
+	id1="0009" 
+	id2="0009"  
+	content="%ePolicy-&lt;level&gt;-&lt;hfld1&gt;: &lt;hnumber&gt;^^&lt;hnumber1&gt;^^&lt;husername&gt;^^&lt;hseverity&gt;^^&lt;messageid&gt;^^&lt;!payload:hnumber&gt;" />	
 <HEADER 
 	id1="0007" 
 	id2="0007"  
@@ -698,7 +704,7 @@
 	id1="1060:01" 
 	id2="1060" 
 	eventcategory="1605020000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:The scan cleaned a boot record&gt; &lt;@action:Detected with Scan Engine&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:The scan cleaned a boot record&gt;&lt;@action:Detected with Scan Engine&gt;"
 	content="The scan cleaned a boot record infected with the &lt;virusname&gt; &lt;fld1&gt;. Detected using Scan Engine version &lt;product&gt; DAT version &lt;content_version&gt;." />
 <MESSAGE 
 	id1="1061" 
@@ -1968,7 +1974,7 @@
 	id2="1317"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
-	content="&lt;fld1&gt;^^&lt;hostname&gt;^^&lt;recorded_time&gt;^^&lt;event_time&gt;^^&lt;fld10&gt;^^&lt;product&gt;^^&lt;version&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;content_version&gt;^^&lt;component_version&gt;^^&lt;event_source&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;username&gt;^^&lt;sport&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;filename&gt;^^&lt;vendor_event_cat&gt;^^&lt;id&gt;^^&lt;severity&gt;^^&lt;virusname&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;fld9&gt;"/>
+	content="&lt;fld1&gt;^^&lt;hostname&gt;^^&lt;recorded_time&gt;^^&lt;event_time&gt;^^&lt;fld10&gt;^^&lt;product&gt;^^&lt;version&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;content_version&gt;^^&lt;component_version&gt;^^&lt;event_source&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;username&gt;^^&lt;sport&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;filename&gt;^^&lt;vendor_event_cat&gt;^^&lt;id&gt;^^&lt;severity&gt;^^&lt;virusname&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;fld9&gt;" />
 
 		
 <MESSAGE 
@@ -5771,6 +5777,14 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="Intrusion detected (firewall rule)" />
 <MESSAGE 
+	id1="VIRUSCAN8800" 
+	id2="VIRUSCAN8800" 
+	eventcategory="1003000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+    content="&lt;fld12&gt;^^&lt;hostname&gt;^^&lt;recorded_time&gt;^^&lt;event_time&gt;^^&lt;fld10&gt;^^&lt;product&gt;^^&lt;version&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;content_version&gt;^^&lt;component_version&gt;^^&lt;event_source&gt;^^&lt;fld35&gt;^^&lt;fld36&gt;^^&lt;fld32&gt;^^&lt;fld33&gt;^^&lt;username&gt;^^&lt;sport&gt;^^&lt;fld34&gt;^^&lt;fld6&gt;^^&lt;filename&gt;^^&lt;vendor_event_cat&gt;^^&lt;id&gt;^^&lt;severity&gt;^^&lt;virusname&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;result&gt;" />
+
+	
+<MESSAGE 
 	id1="AddComputer" 
 	id2="AddComputer" 
 	eventcategory="1701010000" 
@@ -7311,8 +7325,8 @@
 	id1="Delete:02" 
 	id2="Delete" 
 	eventcategory="1701030000"
-	functions="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Delete Client Task Assignment&gt;" 
-	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Delete Client Task Assignment^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />        
+	functions="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Delete Client Task Assignment&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Delete Client Task Assignment^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
   
 <MESSAGE 
@@ -7470,7 +7484,7 @@
 	id1="DE_Export_recovery_information" 
 	id2="DE" 
 	eventcategory="1605000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Export recovery information&gt;&lt;@fld61:*PARMVAL(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Export recovery information&gt;"
 	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^DE - Export recovery information^^For system [&lt;node&gt;]^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 <MESSAGE 
 	id1="DE_Recovery:01" 
@@ -7482,13 +7496,13 @@
 	id1="DE_Recovery" 
 	id2="DE" 
 	eventcategory="1605000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fld61:*PARMVAL(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^DE -Recovery^^&lt;obj_name&gt; Recovery [&lt;node&gt;]^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 <MESSAGE 
 	id1="DE_Users" 
 	id2="DE" 
 	eventcategory="1402000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(node)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^DE - Users^^&lt;action&gt; &lt;obj_name&gt; [&lt;info&gt;] { from | to } node [&lt;node&gt;]^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 <MESSAGE 
 	id1="Synchronize_01" 
@@ -7704,7 +7718,7 @@
 	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Solidcore: Migration^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
   
-  <MESSAGE 
+<MESSAGE 
 	id1="Solidcore_Observations_Deprecated" 
 	id2="Solidcore:" 
 	eventcategory="1605000000" 
@@ -7736,47 +7750,47 @@
 	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^DE &lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 <MESSAGE
-	 id1="Deprovision"
-	 id2="Deprovision"
-	 eventcategory="1605020000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Deprovision VDI system&gt;"
-	 content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Deprovision&lt;fld2&gt;^^&lt;info&gt;&quot;&lt;hostname&gt;&quot;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;"/>
+	id1="Deprovision"
+	id2="Deprovision"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Deprovision VDI system&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Deprovision&lt;fld2&gt;^^&lt;info&gt;&quot;&lt;hostname&gt;&quot;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 <MESSAGE
-	 id1="Endpoint"
-	 id2="Endpoint"
-	 eventcategory="1605020000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Endpoint Security Firewall Property Translator&gt;"
-	 content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Endpoint&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;"/>
+	id1="Endpoint"
+	id2="Endpoint"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Endpoint Security Firewall Property Translator&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Endpoint&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 <MESSAGE
-	 id1="Duplicate"
-	 id2="Duplicate"
-	 eventcategory="1605020000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Duplicate Client Task&gt;"
-	 content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Duplicate&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;"/>
+	id1="Duplicate"
+	id2="Duplicate"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Duplicate Client Task&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Duplicate&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 <MESSAGE
-	 id1="Streamed"
-	 id2="Streamed"
-	 eventcategory="1605020000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Streamed Agent Bootstrap Package to user&gt;"
-	 content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Streamed&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;"/>
+	id1="Streamed"
+	id2="Streamed"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Streamed Agent Bootstrap Package to user&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Streamed&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 	 
 <MESSAGE
-	 id1="User"
-	 id2="User"
-	 eventcategory="1605020000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:User viewed the Agent Package Download page&gt;"
-	 content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^User &lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;"/>
+	id1="User"
+	id2="User"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:User viewed the Agent Package Download page&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^User &lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 <MESSAGE
-	 id1="Rule"
-	 id2="Rule"
-	 eventcategory="1605020000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Rule Groups&gt;"
-	 content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Rule&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;"/>
+	id1="Rule"
+	id2="Rule"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@action:Rule Groups&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Rule&lt;fld2&gt;^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 
 <MESSAGE 
 	id1="1023" 
