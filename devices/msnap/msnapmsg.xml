@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="msnap"
+	displayname="Microsoft Network Access Protection"
+	group="Access Control">
 <VERSION
-	xml="2"
-	checksum="234f6b55e16189b51e0dd72132da82a2"
+	xml="3"
+	checksum="41e335a7266c5a6b5a22087d97487f40"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="%MSNAP-&lt;messageid&gt;: &lt;!payload&gt;" /> 
-
+	id1="0001" 
+	id2="0001"  
+	content="%MSNAP-&lt;messageid&gt;: &lt;!payload&gt;" /> 
 <VALUEMAP 
 		name="eventType" 
 		default="$NONE" 
@@ -22,48 +23,33 @@ content="%MSNAP-&lt;messageid&gt;: &lt;!payload&gt;" />
 		default="Unknown" 
 		keyvaluepairs="1=&apos;Terminal Server Gateway&apos;|2=&apos;Remote Access Service&apos;|3=&apos;DHCP server&apos;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="1" 
 	id2="1" 
 	eventcategory="1801020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;"
+	content="&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="2:01" 
 	id2="2" 
 	eventcategory="1502010000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;event_source&gt;:&lt;disposition&gt;:&lt;fld7&gt;:&lt;fld8&gt;:&lt;fld9&gt;:(&lt;result&gt;):&lt;fld12&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;"
+	content="&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;event_source&gt;:&lt;disposition&gt;:&lt;fld7&gt;:&lt;fld8&gt;:&lt;fld9&gt;:(&lt;result&gt;):&lt;fld12&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="2" 
 	id2="2" 
 	eventcategory="1502010000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;"
+	content="&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="3" 
 	id2="3" 
 	eventcategory="1502020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;"
+	content="&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="4" 
 	id2="4" 
 	eventcategory="1602000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;&lt;@event_type:*eventType(id)&gt;&lt;@product:*productName(fld3)&gt;"
+	content="&lt;id&gt;^^&lt;fld1&gt;.&lt;fld2&gt;^^&lt;hostname&gt;^^&lt;username&gt;^^&lt;saddr&gt;^^&lt;saddr_v6&gt;^^&lt;shost&gt;^^&lt;version&gt;^^&lt;policyname&gt;^^&lt;fld3&gt;^^&lt;authmethod&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;info&gt;" />
 </DEVICEMESSAGES>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
-
+<DEVICEMESSAGES
+	name="citrixxa"
+	displayname="Citrix XenApp"
+	group="Virtualization">
 <VERSION
-	xml="11"
-	checksum="c694436463bb3a9f18c6aa8485616e63"
+	xml="12"
+	checksum="cc291474147c7e153a05049a87318e11"
 	revision="79"
-	enVision="35010000"
 	device="2.0" />
-
-
 <HEADER 
 	id1="0001" 
 	id2="0001"  
@@ -24,101 +22,65 @@ name="AdminTaskType"
 	keyvaluepairs="0='Application'|1='Application Isolation Environment'|2='AIE Application'|4='Farm'|5='File Type Association'|6='Folder'|7='Installation Manager Application'|8='Printer'|9='Server'|10='Server Group'|11='User'|12='Policy'|13='Monitoring Profile'|14='Load Manager'|15='Virtual IP Farm Range'|16='Virtual IP Server Range'|17='Print Driver'|18='Database'|19='Zone'"/>
 	
 <HEADER 
-    id1="0002" 
+	id1="0002" 
 	id2="0002"  
 	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
 	content="%citrixxa: &lt;hdatetime&gt;^^&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;^^&lt;!payload:hdatetime&gt;" />
 	
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="CONFIGINFO" 
 	id2="CONFIGINFO" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@operation_id:*operationtype(operation_id)&gt;&lt;@obj_type:*AdminTaskType(obj_type)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;administrator&gt;^^&lt;shost&gt;^^&lt;hostname&gt;^^&lt;operation_id&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@operation_id:*operationtype(operation_id)&gt;&lt;@obj_type:*AdminTaskType(obj_type)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;administrator&gt;^^&lt;shost&gt;^^&lt;hostname&gt;^^&lt;operation_id&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="SESSIONINFO" 
 	id2="SESSIONINFO" 
 	eventcategory="1612000000" 
-	content="&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F%H:%U:%O',fld1,fld2)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld4,fld5)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;hostname&gt;^^&lt;saddr&gt;^^&lt;application&gt;^^&lt;fld4&gt; &lt;fld5&gt;.&lt;fld6&gt;" />
-
+	functions="&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F%H:%U:%O',fld1,fld2)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;hostname&gt;^^&lt;saddr&gt;^^&lt;application&gt;^^&lt;fld4&gt; &lt;fld5&gt;.&lt;fld6&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="APPINFO" 
 	id2="APPINFO" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;domain&gt;^^&lt;group_object&gt;^^&lt;hostname&gt;^^&lt;application&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;domain&gt;^^&lt;group_object&gt;^^&lt;hostname&gt;^^&lt;application&gt;" />
  
 	
- <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
+<MESSAGE 
 	id1="Broker_SDK" 
 	id2="Broker_SDK" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
-
-   <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
+<MESSAGE 
 	id1="ConfigurationLogging" 
 	id2="ConfigurationLogging" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
-
-	<MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
+<MESSAGE 
 	id1="Monitor" 
 	id2="Monitor" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
-
-	<MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
+<MESSAGE 
 	id1="Analytics" 
 	id2="Analytics" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
-
-	<MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
+<MESSAGE 
 	id1="Storefront" 
 	id2="Storefront" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
-
-	<MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
+<MESSAGE 
 	id1="Configuration" 
 	id2="Configuration" 
 	eventcategory="1612000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt;^^&lt;event_type&gt;^^&lt;saddr&gt;^^&lt;event_description&gt;^^&lt;application&gt;" />
 </DEVICEMESSAGES>

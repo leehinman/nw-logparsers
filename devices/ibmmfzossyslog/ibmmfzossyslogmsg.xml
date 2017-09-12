@@ -1,127 +1,94 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="ibmmfzossyslog"
+	displayname="IBM Mainframe zOS System Log"
+	group="Mainframe">
 <VERSION
-	xml="9"
-	checksum="421cfda03b77d09d50a3a6ec805c8ebb"
+	xml="10"
+	checksum="c594751b2c52ad44a5bb7d1c9027d5a7"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
- <TAGVALMAP
+
+<TAGVALMAP
 		delimiter="| &quot;"/>
  
- <HEADER 
-		id1="0001" 
-		id2="0001" 
-		messageid="*STRCAT('IBMMFZOSSYSLOG','_','TVM')"
-		content="%IBMMFZOSSYSLOGTVM-4: &lt;!payload&gt;" />
 <HEADER 
-id1="0002" 
-id2="0002" 
-content="%IBMMFZOSSYSLOG-&lt;hfld5&gt;: RecType=&lt;messageid&gt;|&lt;!payload&gt;" /> 
-
+	id1="0001" 
+	id2="0001" 
+	messageid="*STRCAT('IBMMFZOSSYSLOG','_','TVM')"
+	content="%IBMMFZOSSYSLOGTVM-4: &lt;!payload&gt;" />
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	content="%IBMMFZOSSYSLOG-&lt;hfld5&gt;: RecType=&lt;messageid&gt;|&lt;!payload&gt;" /> 
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="N:01" 
 	id2="N" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="N" 
 	id2="N" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="X" 
 	id2="X" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="M" 
 	id2="M" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|JobId= &lt;operation_id&gt;|" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|JobId= &lt;operation_id&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="D" 
 	id2="D" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId= &lt;operation_id&gt;|MsgCode=&lt;fld11&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId= &lt;operation_id&gt;|MsgCode=&lt;fld11&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="E" 
 	id2="E" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId= &lt;operation_id&gt;|MsgCode=&lt;fld11&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId= &lt;operation_id&gt;|MsgCode=&lt;fld11&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="L" 
 	id2="L" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId= &lt;operation_id&gt;|MsgCode=&lt;fld11&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId= &lt;operation_id&gt;|MsgCode=&lt;fld11&gt;|AttnFlag=&lt;fld10&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="W" 
 	id2="W" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgNmbr= &lt;fld13&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld5,fld55)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;fld5&gt; &lt;fld55&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|AttnFlag=&lt;fld10&gt;|MsgNmbr= &lt;fld13&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="O" 
 	id2="O" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="Z" 
 	id2="Z" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ReqType=&lt;fld2&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ReqType=&lt;fld2&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;info&gt;|" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93" 
 	id1="IBMMFZOSSYSLOG_TVM" 
 	id2="IBMMFZOSSYSLOG_TVM" 
 	
 	eventcategory="1605000000" 
 	tagval="true"	
-	content="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;RecType=&lt;event_type&gt;|ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;event_time_string&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId=&lt;jobnum&gt;|AttnFlag=&lt;fld10&gt;|MsgNmbr=&lt;fld13&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;msg&gt;|" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="RecType=&lt;event_type&gt;|ReqType=&lt;fld2&gt;|RoutCd=&lt;fld3&gt;|Sysname=&lt;hostname&gt;|Timestamp=&lt;event_time_string&gt;|JulDate=&lt;fld6&gt;|Time=&lt;fld7&gt;|ReqFlags=&lt;fld8&gt;|ConsoleId=&lt;fld9&gt;|JobId=&lt;jobnum&gt;|AttnFlag=&lt;fld10&gt;|MsgNmbr=&lt;fld13&gt;|MsgCode=&lt;fld11&gt;|Message=&lt;msg&gt;|" />
 </DEVICEMESSAGES>

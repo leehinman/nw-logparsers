@@ -1,360 +1,222 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="vmware_vcloud"
+	displayname="VMware vCloud Director"
+	group="Configuration Management">
 <VERSION
-	xml="6"
-	checksum="a42af38c058b242567c53d8a64914747"
+	xml="7"
+	checksum="1f4a8976153f1d5cc0a3f67e8c7016af"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
-
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="&lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; | Event [id=&lt;hfld2&gt;, timestamp=&lt;hfld3&gt;, type=com/vmware/vcloud/event/&lt;messageid&gt;, &lt;!payload:hdate&gt;" /> 
-
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; | Event [id=&lt;hfld2&gt;, timestamp=&lt;hfld3&gt;, type=com/vmware/vcloud/event/&lt;messageid&gt;, &lt;!payload:hdate&gt;" /> 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="org/create" 
-		id2="org/create" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  org.description=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  org.ldap.searchBase=&lt;fld6&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  org.displayName=&lt;fld8&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  org.enabled=&lt;fld10&gt;,  org.name=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  org.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="org/create" 
+	id2="org/create" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  org.description=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  org.ldap.searchBase=&lt;fld6&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  org.displayName=&lt;fld8&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  org.enabled=&lt;fld10&gt;,  org.name=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  org.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="org/modify" 
-		id2="org/modify" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  org.enabled=&lt;fld10&gt;,  org.name=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  org.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="org/modify" 
+	id2="org/modify" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  org.enabled=&lt;fld10&gt;,  org.name=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  org.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="org/delete" 
-		id2="org/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  org.description=&lt;fld4&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  org.ldap.searchBase=&lt;fld6&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  org.displayName=&lt;fld8&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  org.enabled=&lt;fld10&gt;,  org.name=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  org.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="org/delete" 
+	id2="org/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  org.description=&lt;fld4&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  org.ldap.searchBase=&lt;fld6&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  org.displayName=&lt;fld8&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  org.enabled=&lt;fld10&gt;,  org.name=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  org.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="user/create" 
-		id2="user/create" 
-		eventcategory="1402020200" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.name=&lt;c_username&gt;,  user.id=&lt;fld22&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
-
+	id1="user/create" 
+	id2="user/create" 
+	eventcategory="1402020200" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.name=&lt;c_username&gt;,  user.id=&lt;fld22&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
 		
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="user/delete" 
-		id2="user/delete" 
-		eventcategory="1402020100" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.id=&lt;fld22&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
-
+	id1="user/delete" 
+	id2="user/delete" 
+	eventcategory="1402020100" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.id=&lt;fld22&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="user/modify" 
-		id2="user/modify" 
-		eventcategory="1402020300" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.name=&lt;fld26&gt;,  role.name=&lt;user_role&gt;,  role.id=&lt;fld25&gt;,  user.id=&lt;fld22&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  role.description=&lt;fld27&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
-
+	id1="user/modify" 
+	id2="user/modify" 
+	eventcategory="1402020300" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.name=&lt;fld26&gt;,  role.name=&lt;user_role&gt;,  role.id=&lt;fld25&gt;,  user.id=&lt;fld22&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  role.description=&lt;fld27&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="user/import" 
-		id2="user/import" 
-		eventcategory="1701040000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.name=&lt;fld26&gt;,  user.id=&lt;fld22&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
-
+	id1="user/import" 
+	id2="user/import" 
+	eventcategory="1701040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  user.name=&lt;fld26&gt;,  user.id=&lt;fld22&gt;,  user.org.id=&lt;fld23&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  user.nameInSource=&lt;fld24&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vm/deploy_request" 
-		id2="vm/deploy_request" 
-		eventcategory="1605020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vm.id=&lt;fld21&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
-
+	id1="vm/deploy_request" 
+	id2="vm/deploy_request" 
+	eventcategory="1605020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vm.id=&lt;fld21&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vm/deploy" 
-		id2="vm/deploy" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vm.id=&lt;fld21&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vm.name=&lt;fld31&gt;,  vm.externalAddresses=&lt;fld32&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  vm.externalPorts=&lt;fld33&gt;,  entity.name=&lt;obj_name&gt;,  vm.internalPorts=&lt;fld34&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vm/deploy" 
+	id2="vm/deploy" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vm.id=&lt;fld21&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vm.name=&lt;fld31&gt;,  vm.externalAddresses=&lt;fld32&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  vm.externalPorts=&lt;fld33&gt;,  entity.name=&lt;obj_name&gt;,  vm.internalPorts=&lt;fld34&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vm/delete" 
-		id2="vm/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vm.id=&lt;fld21&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vm.name=&lt;fld31&gt;,  vm.vapp.id=&lt;fld32&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  vm.state=&lt;fld33&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vm/delete" 
+	id2="vm/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vm.id=&lt;fld21&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vm.name=&lt;fld31&gt;,  vm.vapp.id=&lt;fld32&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  vm.state=&lt;fld33&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="network/delete" 
-		id2="network/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  network.linkType=&lt;fld27&gt;,  network.description=&lt;fld28&gt;,  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  network.isIpScopeInherited=&lt;fld38&gt;,  entity.type=&lt;obj_type&gt;,  network.scopeId=&lt;fld39&gt;,  network.ipStart=&lt;fld40&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  network.ipEnd=&lt;fld41&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
-
+	id1="network/delete" 
+	id2="network/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  network.linkType=&lt;fld27&gt;,  network.description=&lt;fld28&gt;,  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  network.isIpScopeInherited=&lt;fld38&gt;,  entity.type=&lt;obj_type&gt;,  network.scopeId=&lt;fld39&gt;,  network.ipStart=&lt;fld40&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  network.ipEnd=&lt;fld41&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="network/undeploy" 
-		id2="network/undeploy" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
-
+	id1="network/undeploy" 
+	id2="network/undeploy" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="network/create" 
-		id2="network/create" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  network.linkType=&lt;fld27&gt;,  network.description=&lt;fld28&gt;,  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  network.isIpScopeInherited=&lt;fld38&gt;,  entity.type=&lt;obj_type&gt;,  network.scopeId=&lt;fld39&gt;,  network.ipStart=&lt;fld40&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  network.ipEnd=&lt;fld41&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  network.linkLnetId=&lt;fld44&gt;,  }]" />
-
+	id1="network/create" 
+	id2="network/create" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  network.linkType=&lt;fld27&gt;,  network.description=&lt;fld28&gt;,  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  network.isIpScopeInherited=&lt;fld38&gt;,  entity.type=&lt;obj_type&gt;,  network.scopeId=&lt;fld39&gt;,  network.ipStart=&lt;fld40&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  network.ipEnd=&lt;fld41&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  network.linkLnetId=&lt;fld44&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="network/deploy" 
-		id2="network/deploy" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.realNetVcId=&lt;fld45&gt;,  network.scopeType=&lt;fld37&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  network.realNetMoref=&lt;fld46&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  network.shieldNetworkId=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
-
+	id1="network/deploy" 
+	id2="network/deploy" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.realNetVcId=&lt;fld45&gt;,  network.scopeType=&lt;fld37&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  network.realNetMoref=&lt;fld46&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  network.shieldNetworkId=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="network/modify" 
-		id2="network/modify" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  entity.type=&lt;obj_type&gt;,  network.unallocatedIpAddresses=&lt;fld47&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  network.allocatedIpAddresses=&lt;fld48&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
-
-
+	id1="network/modify" 
+	id2="network/modify" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  network.scopeType=&lt;fld37&gt;,  entity.type=&lt;obj_type&gt;,  network.unallocatedIpAddresses=&lt;fld47&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  network.allocatedIpAddresses=&lt;fld48&gt;,  entity.id=&lt;fld12&gt;,  network.id=&lt;fld42&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  network.name=&lt;fld43&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vdc/modify" 
-		id2="vdc/modify" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  vdc.enabled=&lt;fld46&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  vdc.name=&lt;info&gt;,  vdc.id=&lt;fld47&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vdc/modify" 
+	id2="vdc/modify" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  vdc.enabled=&lt;fld46&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  vdc.name=&lt;info&gt;,  vdc.id=&lt;fld47&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vdc/delete_request" 
-		id2="vdc/delete_request" 
-		eventcategory="1701070000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vdc.resourceGuaranteed=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  vdc.cpuAllocationMhz=&lt;fld46&gt;,  vdc.allocationModel=&lt;fld47&gt;,  currentContext.org.id=&lt;fld7&gt;,  vdc.providerTag=&lt;fld48&gt;,  entity.name=&lt;obj_name&gt;,  vdc.description=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  vdc.resourceGuaranteedCpu=&lt;fld50&gt;,  vdc.enabled=&lt;fld51&gt;,  currentContext.user.name=cloudadmin,  currentContext.success=true,  vdc.name=&lt;fld52&gt;,  vdc.id=&lt;fld53&gt;,  vdc.storageAllocationMb=&lt;fld54&gt;,  vdc.networksAllocated=&lt;fld55&gt;,  currentContext.login.org.id=&lt;fld56&gt;,  vdc.org.id=&lt;fld17&gt;,  vdc.memoryAllocationMb=&lt;fld18&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vdc/delete_request" 
+	id2="vdc/delete_request" 
+	eventcategory="1701070000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vdc.resourceGuaranteed=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  vdc.cpuAllocationMhz=&lt;fld46&gt;,  vdc.allocationModel=&lt;fld47&gt;,  currentContext.org.id=&lt;fld7&gt;,  vdc.providerTag=&lt;fld48&gt;,  entity.name=&lt;obj_name&gt;,  vdc.description=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  vdc.resourceGuaranteedCpu=&lt;fld50&gt;,  vdc.enabled=&lt;fld51&gt;,  currentContext.user.name=cloudadmin,  currentContext.success=true,  vdc.name=&lt;fld52&gt;,  vdc.id=&lt;fld53&gt;,  vdc.storageAllocationMb=&lt;fld54&gt;,  vdc.networksAllocated=&lt;fld55&gt;,  currentContext.login.org.id=&lt;fld56&gt;,  vdc.org.id=&lt;fld17&gt;,  vdc.memoryAllocationMb=&lt;fld18&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vdc/delete" 
-		id2="vdc/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vdc.resourceGuaranteed=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  vdc.cpuAllocationMhz=&lt;fld46&gt;,  vdc.allocationModel=&lt;fld47&gt;,  currentContext.org.id=&lt;fld7&gt;,  vdc.providerTag=&lt;fld48&gt;,  entity.name=&lt;obj_name&gt;,  vdc.description=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  vdc.resourceGuaranteedCpu=&lt;fld50&gt;,  vdc.enabled=&lt;fld51&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.success=&lt;result&gt;,  vdc.name=&lt;fld52&gt;,  vdc.id=&lt;fld53&gt;,  vdc.storageAllocationMb=&lt;fld54&gt;,  vdc.networksAllocated=&lt;fld55&gt;,  currentContext.login.org.id=&lt;fld56&gt;,  vdc.org.id=&lt;fld17&gt;,  vdc.memoryAllocationMb=&lt;fld18&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vdc/delete" 
+	id2="vdc/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vdc.resourceGuaranteed=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  vdc.cpuAllocationMhz=&lt;fld46&gt;,  vdc.allocationModel=&lt;fld47&gt;,  currentContext.org.id=&lt;fld7&gt;,  vdc.providerTag=&lt;fld48&gt;,  entity.name=&lt;obj_name&gt;,  vdc.description=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  vdc.resourceGuaranteedCpu=&lt;fld50&gt;,  vdc.enabled=&lt;fld51&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.success=&lt;result&gt;,  vdc.name=&lt;fld52&gt;,  vdc.id=&lt;fld53&gt;,  vdc.storageAllocationMb=&lt;fld54&gt;,  vdc.networksAllocated=&lt;fld55&gt;,  currentContext.login.org.id=&lt;fld56&gt;,  vdc.org.id=&lt;fld17&gt;,  vdc.memoryAllocationMb=&lt;fld18&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vdc/create_request" 
-		id2="vdc/create_request" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vdc.resourceGuaranteed=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  vdc.cpuAllocationMhz=&lt;fld46&gt;,  vdc.allocationModel=&lt;fld47&gt;,  currentContext.org.id=&lt;fld7&gt;,  vdc.providerTag=&lt;fld48&gt;,  entity.name=&lt;obj_name&gt;,  vdc.description=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  vdc.resourceGuaranteedCpu=&lt;fld50&gt;,  vdc.enabled=&lt;fld51&gt;,  currentContext.user.name=cloudadmin,  currentContext.success=true,  vdc.name=&lt;fld52&gt;,  vdc.id=&lt;fld53&gt;,  vdc.storageAllocationMb=&lt;fld54&gt;,  vdc.networksAllocated=&lt;fld55&gt;,  currentContext.login.org.id=&lt;fld56&gt;,  vdc.org.id=&lt;fld17&gt;,  vdc.memoryAllocationMb=&lt;fld18&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vdc/create_request" 
+	id2="vdc/create_request" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  vdc.resourceGuaranteed=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  vdc.cpuAllocationMhz=&lt;fld46&gt;,  vdc.allocationModel=&lt;fld47&gt;,  currentContext.org.id=&lt;fld7&gt;,  vdc.providerTag=&lt;fld48&gt;,  entity.name=&lt;obj_name&gt;,  vdc.description=&lt;fld49&gt;,  entity.id=&lt;fld12&gt;,  vdc.resourceGuaranteedCpu=&lt;fld50&gt;,  vdc.enabled=&lt;fld51&gt;,  currentContext.user.name=cloudadmin,  currentContext.success=true,  vdc.name=&lt;fld52&gt;,  vdc.id=&lt;fld53&gt;,  vdc.storageAllocationMb=&lt;fld54&gt;,  vdc.networksAllocated=&lt;fld55&gt;,  currentContext.login.org.id=&lt;fld56&gt;,  vdc.org.id=&lt;fld17&gt;,  vdc.memoryAllocationMb=&lt;fld18&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="catalog/create" 
-		id2="catalog/create" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  catalog.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  catalog.name=&lt;info&gt;,  catalog.org.id=&lt;fld43&gt;,  catalog.published=&lt;fld44&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="catalog/create" 
+	id2="catalog/create" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  catalog.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  catalog.name=&lt;info&gt;,  catalog.org.id=&lt;fld43&gt;,  catalog.published=&lt;fld44&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="catalog/delete" 
-		id2="catalog/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  catalog.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  catalog.name=&lt;info&gt;,  catalog.org.id=&lt;fld43&gt;,  catalog.published=&lt;fld44&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="catalog/delete" 
+	id2="catalog/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  catalog.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  catalog.name=&lt;info&gt;,  catalog.org.id=&lt;fld43&gt;,  catalog.published=&lt;fld44&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vapp/delete" 
-		id2="vapp/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  vapp.description=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  vapp.id=&lt;fld44&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vapp.name=&lt;info&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  vapp.vdc.id=&lt;fld10&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vapp/delete" 
+	id2="vapp/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  vapp.description=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  vapp.id=&lt;fld44&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vapp.name=&lt;info&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  vapp.vdc.id=&lt;fld10&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vapp/create_request" 
-		id2="vapp/create_request" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  currentContext.success=&lt;fld46&gt;,  currentContext.login.org.id=&lt;fld47&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld49&gt;,  currentContext.org.id=&lt;fld48&gt;,  }]" />
-
+	id1="vapp/create_request" 
+	id2="vapp/create_request" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  currentContext.success=&lt;fld46&gt;,  currentContext.login.org.id=&lt;fld47&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld49&gt;,  currentContext.org.id=&lt;fld48&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="session/login" 
-		id2="session/login" 
-		eventcategory="1401060000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.success=&lt;result&gt;,  currentContext.user.id=&lt;fld3&gt;,  currentContext.login.org.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  currentContext.org.id=&lt;fld44&gt;,  }]" />
-
+	id1="session/login" 
+	id2="session/login" 
+	eventcategory="1401060000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.success=&lt;result&gt;,  currentContext.user.id=&lt;fld3&gt;,  currentContext.login.org.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  entity.name=&lt;obj_name&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  currentContext.org.id=&lt;fld44&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vc/create" 
-		id2="vc/create" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  vc.url=&lt;url&gt;,  currentContext.user.id=&lt;fld3&gt;,  vc.id=&lt;fld44&gt;,  vc.name=&lt;fld45&gt;,  entity.type=&lt;obj_type&gt;,  vc.description=&lt;fld46&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vc.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  vc.uuid=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vc/create" 
+	id2="vc/create" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  vc.url=&lt;url&gt;,  currentContext.user.id=&lt;fld3&gt;,  vc.id=&lt;fld44&gt;,  vc.name=&lt;fld45&gt;,  entity.type=&lt;obj_type&gt;,  vc.description=&lt;fld46&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vc.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  vc.uuid=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vsm/create" 
-		id2="vsm/create" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  vsm.vc.id=&lt;fld49&gt;,  vsm.ipAddress=&lt;info&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vsm.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  vsm.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vsm/create" 
+	id2="vsm/create" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  vsm.vc.id=&lt;fld49&gt;,  vsm.ipAddress=&lt;info&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vsm.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  vsm.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vappTemplate/modify" 
-		id2="vappTemplate/modify" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  vappTemplate.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vappTemplate.name=&lt;fld6&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
-
+	id1="vappTemplate/modify" 
+	id2="vappTemplate/modify" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  vappTemplate.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  vappTemplate.name=&lt;fld6&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vappTemplate/create_request" 
-		id2="vappTemplate/create_request" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld44&gt;,  entity.type=&lt;obj_type&gt;,  vappTemplate.storageAllocationMb=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  currentContext.org.id=&lt;fld34&gt;,  }]" />
-
+	id1="vappTemplate/create_request" 
+	id2="vappTemplate/create_request" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld44&gt;,  entity.type=&lt;obj_type&gt;,  vappTemplate.storageAllocationMb=&lt;fld45&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  currentContext.org.id=&lt;fld34&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="media/create_request" 
-		id2="media/create_request" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  media.type=&lt;fld44&gt;,  currentContext.user.id=&lt;fld3&gt;,  media.vdc.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  media.description=&lt;fld46&gt; ,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  media.sizeInBytes=&lt;fld39&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  media.id=&lt;fld37&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  entity.name=&lt;obj_name&gt;,  media.name=&lt;fld24&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="media/create_request" 
+	id2="media/create_request" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  media.type=&lt;fld44&gt;,  currentContext.user.id=&lt;fld3&gt;,  media.vdc.id=&lt;fld4&gt;,  entity.type=&lt;obj_type&gt;,  media.description=&lt;fld46&gt; ,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  media.sizeInBytes=&lt;fld39&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  media.id=&lt;fld37&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  entity.name=&lt;obj_name&gt;,  media.name=&lt;fld24&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="media/modify" 
-		id2="media/modify" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  media.id=&lt;fld34&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  media.name=&lt;fld19&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
-
+	id1="media/modify" 
+	id2="media/modify" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  media.id=&lt;fld34&gt;,  currentContext.user.clientIpAddress=&lt;daddr&gt;,  media.name=&lt;fld19&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="catalogItem/create" 
-		id2="catalogItem/create" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  catalogItem.id=&lt;fld13&gt;,  }]" />
-
+	id1="catalogItem/create" 
+	id2="catalogItem/create" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties=&lt;fld11&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  catalogItem.id=&lt;fld13&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vc/modify" 
-		id2="vc/modify" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  vc.id=&lt;fld44&gt;,  vc.name=&lt;fld45&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
-
+	id1="vc/modify" 
+	id2="vc/modify" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  vc.id=&lt;fld44&gt;,  vc.name=&lt;fld45&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  entity.id=&lt;fld12&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vsm/delete" 
-		id2="vsm/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  vsm.vc.id=&lt;fld49&gt;,  vsm.ipAddress=&lt;info&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vsm.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  vsm.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
-
+	id1="vsm/delete" 
+	id2="vsm/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  currentContext.user.id=&lt;fld3&gt;,  entity.type=&lt;obj_type&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  vsm.vc.id=&lt;fld49&gt;,  vsm.ipAddress=&lt;info&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vsm.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  vsm.id=&lt;fld13&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="vc/delete" 
-		id2="vc/delete" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt; &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  vc.url=&lt;url&gt;,  currentContext.user.id=&lt;fld3&gt;,  vc.id=&lt;fld44&gt;,  vc.name=&lt;fld45&gt;,  entity.type=&lt;obj_type&gt;,  vc.description=&lt;fld46&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vc.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
-
+	id1="vc/delete" 
+	id2="vc/delete" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;"
+	content=" &lt;fld20&gt;,&lt;fld1&gt; | Event [id=&lt;fld2&gt;, timestamp=&lt;event_time_string&gt;, type=com/vmware/vcloud/event/&lt;action&gt;  properties={{  currentContext.org.name=&lt;user_org&gt;,  vc.url=&lt;url&gt;,  currentContext.user.id=&lt;fld3&gt;,  vc.id=&lt;fld44&gt;,  vc.name=&lt;fld45&gt;,  entity.type=&lt;obj_type&gt;,  vc.description=&lt;fld46&gt;,  currentContext.login.user.id=&lt;fld5&gt;,  currentContext.user.name=&lt;username&gt;,  currentContext.org.id=&lt;fld7&gt;,  currentContext.success=&lt;result&gt;,  currentContext.login.org.id=&lt;fld9&gt;,  entity.name=&lt;obj_name&gt;,  vc.username=&lt;fld51&gt;,  entity.id=&lt;fld12&gt;,  currentContext.cell.uuid=&lt;fld14&gt;,  }]" />
 </DEVICEMESSAGES>

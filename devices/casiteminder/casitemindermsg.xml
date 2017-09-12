@@ -1,321 +1,216 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="casiteminder"
+	displayname="CA Siteminder"
+	group="Access Control">
 <VERSION
-	xml="18"
-	checksum="20ff4eb155e6ad39d52ed584205f6414"
+	xml="19"
+	checksum="e1956b1283e89d5e86b94f2b1e9708f1"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
 <HEADER 
-		id1="0001" 
-		id2="0001" 
-		content="{ %Siteminder-4: | %siteminder-4: } &lt;messageid&gt; &lt;!payload&gt;" />
+	id1="0001" 
+	id2="0001" 
+	content="{ %Siteminder-4: | %siteminder-4: } &lt;messageid&gt; &lt;!payload&gt;" />
 
 <HEADER 
-		id1="0002" 
-		id2="0002" 
-		content="%siteminder-4: [&lt;hfld1&gt;][&lt;hfld2&gt;][&lt;hfld3&gt;][&lt;messageid&gt;] &lt;!payload:hfld1&gt;" />
+	id1="0002" 
+	id2="0002" 
+	content="%siteminder-4: [&lt;hfld1&gt;][&lt;hfld2&gt;][&lt;hfld3&gt;][&lt;messageid&gt;] &lt;!payload:hfld1&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminAuth:02" 
-		id2="AdminAuth" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;&lt;@action:Login&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot; Login&quot;" />
+	id1="AdminAuth:02" 
+	id2="AdminAuth" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;&lt;@action:Login&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot; Login&quot;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminAuth:01" 
-		id2="AdminAuth" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;&lt;@action:Logout&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot; Logout&quot;" />
+	id1="AdminAuth:01" 
+	id2="AdminAuth" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;&lt;@action:Logout&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot; Logout&quot;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminAuth" 
-		id2="AdminAuth" 
-		eventcategory="1605000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;username&gt; &lt;action&gt;&quot;" />
+	id1="AdminAuth" 
+	id2="AdminAuth" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;username&gt; &lt;action&gt;&quot;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminLogout" 
-		id2="AdminLogout" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;username&gt;&quot;" />
+	id1="AdminLogout" 
+	id2="AdminLogout" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;username&gt;&quot;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminChange" 
-		id2="AdminChange" 
-		eventcategory="1401000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- &lt;username&gt;&quot; &lt;action&gt; Policy &apos;&lt;policyname&gt;&apos;" />
+	id1="AdminChange" 
+	id2="AdminChange" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- &lt;username&gt;&quot; &lt;action&gt; Policy &apos;&lt;policyname&gt;&apos;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminChange:01" 
-		id2="AdminChange" 
-		eventcategory="1401000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- &lt;username&gt;&quot; &lt;action&gt; &lt;obj_type&gt; &apos;&lt;obj_name&gt;&apos;" />
+	id1="AdminChange:01" 
+	id2="AdminChange" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- &lt;username&gt;&quot; &lt;action&gt; &lt;obj_type&gt; &apos;&lt;obj_name&gt;&apos;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthLogout" 
-		id2="AuthLogout" 
-		eventcategory="1401070000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt;  [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AuthLogout" 
+	id2="AuthLogout" 
+	eventcategory="1401070000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt;  [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthLogout:01" 
-		id2="AuthLogout" 
-		eventcategory="1401070000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { username= | uid= } &lt;username&gt;,ou=&lt;dn&gt;&quot; &quot;&lt;realm&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt;  [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="AuthLogout:01" 
+	id2="AuthLogout" 
+	eventcategory="1401070000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { username= | uid= } &lt;username&gt;,ou=&lt;dn&gt;&quot; &quot;&lt;realm&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt;  [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminReject" 
-		id2="AdminReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; { &lt;fld24&gt;: LdapErr: &lt;fld25&gt;, comment: &lt;info&gt; | &lt;info&gt; }" />
+	id1="AdminReject" 
+	id2="AdminReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; { &lt;fld24&gt;: LdapErr: &lt;fld25&gt;, comment: &lt;info&gt; | &lt;info&gt; }" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ManagementCommand" 
-		id2="ManagementCommand" 
-		eventcategory="1401040000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- { CN= | cn= } &lt;username&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &lt;action&gt; { &apos;CN= | &apos;cn= } &lt;c_username&gt;,&lt;fld26&gt;&apos;" />
+	id1="ManagementCommand" 
+	id2="ManagementCommand" 
+	eventcategory="1401040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- { CN= | cn= } &lt;username&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &lt;action&gt; { &apos;CN= | &apos;cn= } &lt;c_username&gt;,&lt;fld26&gt;&apos;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ManagementCommand:01" 
-		id2="ManagementCommand" 
-		eventcategory="1401040000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- { UID= | uid= } &lt;uid&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &lt;action&gt; &apos;&lt;fld26&gt;&apos;" />
-
+	id1="ManagementCommand:01" 
+	id2="ManagementCommand" 
+	eventcategory="1401040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;- { UID= | uid= } &lt;uid&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &lt;action&gt; &apos;&lt;fld26&gt;&apos;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AdminLogin" 
-		id2="AdminLogin" 
-		eventcategory="1401060000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] { &quot;&lt;hostip&gt; &lt;username&gt;&quot; | &quot;&lt;space&gt;&quot; }" />
+	id1="AdminLogin" 
+	id2="AdminLogin" 
+	eventcategory="1401060000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] { &quot;&lt;hostip&gt; &lt;username&gt;&quot; | &quot;&lt;space&gt;&quot; }" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthAccept" 
-		id2="AuthAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AuthAccept" 
+	id2="AuthAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthAccept:01" 
-		id2="AuthAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="AuthAccept:01" 
+	id2="AuthAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AzAccept" 
-		id2="AzAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AzAccept" 
+	id2="AzAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AzAccept:01" 
-		id2="AzAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= }  &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AzAccept:01" 
+	id2="AzAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= }  &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AzAccept:02" 
-		id2="AzAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= }  &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;" />
+	id1="AzAccept:02" 
+	id2="AzAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= }  &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AzReject" 
-		id2="AzReject" 
-		eventcategory="1607000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= }&lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;]  &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AzReject" 
+	id2="AzReject" 
+	eventcategory="1607000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= }&lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;]  &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AzReject:01" 
-		id2="AzReject" 
-		eventcategory="1607000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;]  &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AzReject:01" 
+	id2="AzReject" 
+	eventcategory="1607000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { cn= | username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;]  &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthReject" 
-		id2="AuthReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AuthReject" 
+	id2="AuthReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthReject:02" 
-		id2="AuthReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AuthReject:02" 
+	id2="AuthReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 	
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthReject:01" 
-		id2="AuthReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="AuthReject:01" 
+	id2="AuthReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthReject:03" 
-		id2="AuthReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AuthReject:03" 
+	id2="AuthReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ValidateReject" 
-		id2="ValidateReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= | uid= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="ValidateReject" 
+	id2="ValidateReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= | uid= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ValidateReject:01" 
-		id2="ValidateReject" 
-		eventcategory="1401030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt;&quot; &quot;{ federation manager agent | &lt;realm&gt; } &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="ValidateReject:01" 
+	id2="ValidateReject" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt;&quot; &quot;{ federation manager agent | &lt;realm&gt; } &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;info&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ValidateAccept" 
-		id2="ValidateAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="ValidateAccept" 
+	id2="ValidateAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ CN= | cn= | OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ValidateAccept:01" 
-		id2="ValidateAccept" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="ValidateAccept:01" 
+	id2="ValidateAccept" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { username= | uid= } &lt;username&gt;,{ cn= | ou= | dc= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthAttempt" 
-		id2="AuthAttempt" 
-		eventcategory="1304000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="AuthAttempt" 
+	id2="AuthAttempt" 
+	eventcategory="1304000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; { CN= | cn= } &lt;username&gt;,{ OU= | ou= } &lt;dn&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthAttempt:01" 
-		id2="AuthAttempt" 
-		eventcategory="1303000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;]  &lt;fld7&gt;: LdapErr: &lt;fld6&gt;, comment: &lt;info&gt;, &lt;fld4&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
-
+	id1="AuthAttempt:01" 
+	id2="AuthAttempt" 
+	eventcategory="1303000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;]  &lt;fld7&gt;: LdapErr: &lt;fld6&gt;, comment: &lt;info&gt;, &lt;fld4&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="AuthAttempt:02" 
-		id2="AuthAttempt" 
-		eventcategory="1304000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt; &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
+	id1="AuthAttempt:02" 
+	id2="AuthAttempt" 
+	eventcategory="1304000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%N:%U:%O',fld20)&gt;"
+	content=" &lt;hostname&gt; [&lt;fld20&gt; &lt;fld21&gt;] &quot;&lt;hostip&gt; &lt;username&gt;&quot; &quot;&lt;realm&gt; &lt;web_method&gt; /&lt;webpage&gt;&quot; [&lt;fld23&gt;] &lt;space&gt; [&lt;fld1&gt;] &lt;space&gt; [&lt;fld2&gt;] [&lt;fld3&gt;]" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="ERROR" 
-		id2="ERROR" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W%N:%U:%O',fld20,fld21,fld22,fld23)&gt; &lt;id&gt;][&lt;fld19&gt; &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt;][&lt;application&gt;][&lt;severity&gt;] &lt;event_description&gt;" />
-
+	id1="ERROR" 
+	id2="ERROR" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W%N:%U:%O',fld20,fld21,fld22,fld23)&gt;"
+	content=" &lt;id&gt;][&lt;fld19&gt; &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt;][&lt;application&gt;][&lt;severity&gt;] &lt;event_description&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="INFO" 
-		id2="INFO" 
-		eventcategory="1605000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W%N:%U:%O',fld20,fld21,fld22,fld23)&gt; &lt;id&gt;][&lt;fld19&gt; &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt;][&lt;application&gt;][&lt;severity&gt;] &lt;event_description&gt;" />
-
+	id1="INFO" 
+	id2="INFO" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W%N:%U:%O',fld20,fld21,fld22,fld23)&gt;"
+	content=" &lt;id&gt;][&lt;fld19&gt; &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt;][&lt;application&gt;][&lt;severity&gt;] &lt;event_description&gt;" />
 </DEVICEMESSAGES>

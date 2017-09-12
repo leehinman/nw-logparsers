@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="radiator"
+	displayname="Radiator Radius Server"
+	group="Access Control">
 <VERSION
-	xml="3"
-	checksum="6e485698580728ee80eb1707ac8ed04d"
+	xml="4"
+	checksum="5b038d6fa2b85c3c4ac37036316dbb99"
 	revision="84"
-	enVision="35010000"
 	device="2.0" />
  
 <TAGVALMAP delimiter=" " /> 
   
-
 <HEADER 
-id1="0001" 
-id2="0001"
-messageid="*STRCAT(msgIdPart1,'_',msgIdPart2)"
-content="%RADIATOR-&lt;hlevel&gt;: CEF:0|Open System Consultants|&lt;hproduct&gt;|&lt;hversion&gt;|&lt;hevent_type&gt;|&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;|0|&lt;!payload&gt;" /> 
-
+	id1="0001" 
+	id2="0001"
+	messageid="*STRCAT(msgIdPart1,'_',msgIdPart2)"
+	content="%RADIATOR-&lt;hlevel&gt;: CEF:0|Open System Consultants|&lt;hproduct&gt;|&lt;hversion&gt;|&lt;hevent_type&gt;|&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;|0|&lt;!payload&gt;" /> 
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="81"
-id1="Access_rejected"
-id2="Access_rejected"
-eventcategory="1803030000"
-tagval="true"
-content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@event_type:*HDR(hevent_type)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;rt=&lt;fld3&gt; deviceExternalId=&lt;hostname&gt; dst=&lt;daddr&gt; dmac=&lt;dmacaddr&gt; smac=&lt;smacaddr&gt; src=&lt;saddr&gt; suser=&lt;username&gt; reason=&lt;result&gt; cs3_Label=&lt;fld41&gt; cs3=&lt;fld42&gt; "/>
+	id1="Access_rejected"
+	id2="Access_rejected"
+	eventcategory="1803030000"
+	tagval="true"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@event_type:*HDR(hevent_type)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="rt=&lt;fld3&gt; deviceExternalId=&lt;hostname&gt; dst=&lt;daddr&gt; dmac=&lt;dmacaddr&gt; smac=&lt;smacaddr&gt; src=&lt;saddr&gt; suser=&lt;username&gt; reason=&lt;result&gt; cs3_Label=&lt;fld41&gt; cs3=&lt;fld42&gt; " />
  
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="81"
-id1="Access_accepted"
-id2="Access_accepted"
-eventcategory="1801020000"
-tagval="true"
-content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@event_type:*HDR(hevent_type)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;rt=&lt;fld3&gt; deviceExternalId=&lt;hostname&gt; dst=&lt;daddr&gt; dmac=&lt;dmacaddr&gt; smac=&lt;smacaddr&gt; src=&lt;saddr&gt; suser=&lt;username&gt; reason=&lt;result&gt; cs3_Label=&lt;fld41&gt; cs3=&lt;fld42&gt; "/>
+	id1="Access_accepted"
+	id2="Access_accepted"
+	eventcategory="1801020000"
+	tagval="true"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@event_type:*HDR(hevent_type)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="rt=&lt;fld3&gt; deviceExternalId=&lt;hostname&gt; dst=&lt;daddr&gt; dmac=&lt;dmacaddr&gt; smac=&lt;smacaddr&gt; src=&lt;saddr&gt; suser=&lt;username&gt; reason=&lt;result&gt; cs3_Label=&lt;fld41&gt; cs3=&lt;fld42&gt; " />
  
 </DEVICEMESSAGES>

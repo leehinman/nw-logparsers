@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="rsaaveksa"
+	displayname="RSA AVEKSA"
+	group="Access Control">
 <VERSION
-	xml="5"
-	checksum="442c3dc72c68c682e148eae889d53520"
+	xml="6"
+	checksum="8c450f7ef8fa937622e314d9ce285013"
 	revision="0"
-	enVision="35010000"
 	device="2.0"/>
-
 <HEADER
 	id1="0002"
 	id2="0002"
@@ -26,108 +27,67 @@
 	name="clienttype"
 	default="$NONE"
 	keyvaluepairs="U='User Interface'|W='Web Service'|S='System'" />
-
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="Login:01"
 	id2="LOGIN"
 	eventcategory="1304000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;"
+	content="&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="Login"
 	id2="Login"
 	eventcategory="1401060000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;"
+	content="&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="Logout:01"
 	id2="LOGOUT"
 	eventcategory="1401070000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;"
+	content="&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="Logout"
 	id2="Logout"
 	eventcategory="1401070000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;"
+	content="&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="Add"
 	id2="Add"
 	eventcategory="1701010000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;"
+	content="&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="Remove"
 	id2="Remove"
 	eventcategory="1701030000"
- 	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*HDR(hfld3)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1,hfld2)&gt;"
+	content="&lt;username&gt;^^&lt;fld1&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;obj_name&gt;^^&lt;obj_type&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="SYSTEM_SETTING"
 	id2="SYSTEM_SETTING"
 	eventcategory="1701000000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;"
+	content="&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="SECURITY_SETTINGS"
 	id2="SECURITY_SETTINGS"
 	eventcategory="1701000000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;"
+	content="&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="AUTH_SOURCE"
 	id2="AUTH_SOURCE"
 	eventcategory="1304000000"
-	content="&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;"
+	content="&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="KEEP_ALIVE"
 	id2="KEEP_ALIVE"
 	eventcategory="1701000000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2)&gt;&lt;@result:*eventaction(fld10)&gt;&lt;@logon_type:*clienttype(fld3)&gt;"
+	content="&lt;sessionid&gt;^^&lt;fld2&gt;^^&lt;fld3&gt;^^&lt;saddr&gt;^^&lt;fld5&gt;^^&lt;fld6&gt;^^&lt;username&gt;^^&lt;uid&gt;^^&lt;action&gt;^^&lt;fld10&gt;^^&lt;daddr&gt;^^&lt;severity&gt;^^&lt;fld13&gt;^^&lt;fld14&gt;^^&lt;obj_type&gt;^^&lt;obj_name&gt;" />
 </DEVICEMESSAGES>

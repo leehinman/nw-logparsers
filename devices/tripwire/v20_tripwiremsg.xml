@@ -1,89 +1,90 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="tripwire"
+	displayname="Tripwire Enterprise"
+	group="Configuration Management">
 <VERSION
-	xml="28"
-	checksum="46c0ac95e1dbef2ff3a6130b11123286"
+	xml="29"
+	checksum="0b36089e8efc9280945ae70f069d72b4"
 	revision="108"
-	enVision="33040058"
 	device="2.0" />
 
  
 
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="%TRIPWIRE-&lt;hseverity&gt;: &lt;hdatetime&gt; username=&lt;husername&gt; message=&lt;messageid&gt; &lt;!payload:messageid&gt;"/>
+	
+<HEADER
+	id1="0002"
+	id2="0002"
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
+	content="%TRIPWIRE-&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;: &lt;!payload&gt;"/>
+	
+<HEADER
+	id1="0003"
+	id2="0003"
+	content="%TRIPWIRE-&lt;messageid&gt;: &lt;!payload&gt;"/>
+	
+<HEADER
+	id1="0004"
+	id2="0004"
+	content="&lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; Tripwire: &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
+	
+<HEADER
+	id1="0008"
+	id2="0008"
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3)"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostip&gt; TE: &lt;hseverity&gt; HostName=&lt;hhostname&gt; LogId=&lt;hfld1&gt; LogCategory=&quot;&lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt;&quot; &lt;!payload:hhostip&gt;"/>
+	
+	
+<HEADER
+	id1="0005"
+	id2="0005"
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostip&gt; TE: &lt;hseverity&gt; HostName=&lt;hhostname&gt; LogId=&lt;hfld1&gt; LogCategory=&quot;&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;&quot; &lt;!payload:hhostip&gt;"/>
+	
+<HEADER
+	id1="0006"
+	id2="0006"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostip&gt; TE: &lt;hseverity&gt; HostName=&lt;hhostname&gt; LogId=&lt;hfld1&gt; LogCategory=&lt;messageid&gt; &lt;!payload:hhostip&gt;"/>
+	
+<HEADER
+	id1="0007"
+	id2="0007"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostip&gt; TE: &lt;messageid&gt; &lt;!payload&gt;"/>
 
-	<HEADER
-		id1="0001"
-		id2="0001"
-		content="%TRIPWIRE-&lt;hseverity&gt;: &lt;hdatetime&gt; username=&lt;husername&gt; message=&lt;messageid&gt; &lt;!payload:messageid&gt;"/>
 	
-	<HEADER
-		id1="0002"
-		id2="0002"
-		messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
-		content="%TRIPWIRE-&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;: &lt;!payload&gt;"/>
-	
-	<HEADER
-		id1="0003"
-		id2="0003"
-		content="%TRIPWIRE-&lt;messageid&gt;: &lt;!payload&gt;"/>
-	
-	<HEADER
-		id1="0004"
-		id2="0004"
-		content="&lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; Tripwire: &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
-	
-	<HEADER
-		id1="0008"
-		id2="0008"
-		messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3)"
-		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostip&gt; TE: &lt;hseverity&gt; HostName=&lt;hhostname&gt; LogId=&lt;hfld1&gt; LogCategory=&quot;&lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt;&quot; &lt;!payload:hhostip&gt;"/>
-	
-	
-	<HEADER
-		id1="0005"
-		id2="0005"
-		messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
-		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostip&gt; TE: &lt;hseverity&gt; HostName=&lt;hhostname&gt; LogId=&lt;hfld1&gt; LogCategory=&quot;&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;&quot; &lt;!payload:hhostip&gt;"/>
-	
-	<HEADER
-		id1="0006"
-		id2="0006"
-		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostip&gt; TE: &lt;hseverity&gt; HostName=&lt;hhostname&gt; LogId=&lt;hfld1&gt; LogCategory=&lt;messageid&gt; &lt;!payload:hhostip&gt;"/>
-	
-	<HEADER
-		id1="0007"
-		id2="0007"
-		content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostip&gt; TE: &lt;messageid&gt; &lt;!payload&gt;"/>
-
-	
-	<HEADER
-		id1="0009"
-		id2="0009"
-		content="&lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; Tripwire - &lt;hseverity&gt; Log Event: &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
-
+<HEADER
+	id1="0009"
+	id2="0009"
+	content="&lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; Tripwire - &lt;hseverity&gt; Log Event: &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
 
 
-	<HEADER 
-    id1="9999" 
-    id2="9999"         
-    messageid="STRCAT('TRIPWIRE','_','GENERIC')"
+
+<HEADER 
+	id1="9999" 
+	id2="9999"         
+	messageid="STRCAT('TRIPWIRE','_','GENERIC')"
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; &lt;!payload&gt;"/>
 
 	
 
 	
-	<HEADER 
-		id1="9998" 
-		id2="9998"         
-		messageid="STRCAT('TRIPWIRE','_','GENERIC')"
-		content="&lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; Tripwire &lt;hfld&gt;: &lt;p_msgid&gt; &lt;!payload:hdate&gt;"/>
+<HEADER 
+	id1="9998" 
+	id2="9998"         
+	messageid="STRCAT('TRIPWIRE','_','GENERIC')"
+	content="&lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; Tripwire &lt;hfld&gt;: &lt;p_msgid&gt; &lt;!payload:hdate&gt;"/>
 
 
 	
-	<HEADER 
-		id1="9997" 
-		id2="9997"         
-		messageid="STRCAT('TRIPWIRE','_','GENERIC')"
-		content="%TRIPWIRE-&lt;hfld&gt;: &lt;!payload&gt;"/>
+<HEADER 
+	id1="9997" 
+	id2="9997"         
+	messageid="STRCAT('TRIPWIRE','_','GENERIC')"
+	content="%TRIPWIRE-&lt;hfld&gt;: &lt;!payload&gt;"/>
 
 <TAGVALMAP
     delimiter="  &quot;"/>
@@ -95,1057 +96,642 @@
 		expr="&lt;parm1&gt;(,) ? &apos; &apos;" />
 		
 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000001"
-		id2="_Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000002"
-		id2="Added"
-		eventcategory="1702010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Element&gt;Added Version &apos;&lt;version&gt;&apos; as baseline to Element &apos;&apos;&lt;obj_name&gt;&apos; from Node &apos;&lt;hostname&gt;&apos; and Rule &apos;&lt;rulename&gt;&apos;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000003"
-		id2="Baseline"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt; Baseline of node &apos;&lt;hostname&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000004"
-		id2="Baselining"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt; Baselining the elements of Node &apos;&lt;hostname&gt;&apos;, preserving any existing baselines."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000005"
-		id2="Baselining"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt; Baselining new elements associated with Task &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000006"
-		id2="Check"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt; Check of node &apos;&lt;hostname&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000007"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Report Group&gt;Created Report Group &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000008"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Role&gt;Created Role &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000009"
-		id2="Created"
-		eventcategory="1402020200"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:User&gt;Created User &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000010"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Archive Log Task&gt; Created Archive Log Task &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000011"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Severity Range&gt; Created Severity Range &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000012"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Update Baseline Action&gt; Created Update Baseline Action &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000013"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Change Window Action&gt; Created Change Window Action &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000014"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Compact Versions Task&gt; Created Compact Versions Task &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000015"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Criteria Set&gt; Created Criteria Set &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000016"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Log&gt; Created System Log &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000017"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Report Task&gt; Created Report Task &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000018"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Device Inventory&gt; Created Device Inventory &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000019"
-		id2="Created"
-		eventcategory="1501020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Access Control&gt; Created System Access Control &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000020"
-		id2="Created"
-		eventcategory="1402010200"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:AccessControl&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:User Roles&gt; Created User Roles &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000021"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Node Group&gt; Created Node Group &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000022"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Windows Server&gt; Created Windows Server &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000023"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Rule Group&gt; Created Rule Group &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000024"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Check Rule Task&gt; Created Check Rule Task &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000025"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Execution Action&gt; Created Execution Action &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000026"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Changed Elements &gt; Created Changed Elements &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000027"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Windows File System Rule&gt; Created Windows File System Rule &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000028"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:License&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@expiration_time:*EVNTTIME($MSG,&apos;%B %F %W&apos;,fld12,fld13,fld14)&gt;&lt;@obj_type:feature&gt; Created License for feature &apos;&lt;obj_name&gt;&apos; for host &apos;&lt;hostname&gt;&apos; with count &apos;&lt;dclass_counter1&gt;&apos; and expiring on &apos;&lt;fld12&gt; &lt;fld13&gt;, &lt;fld14&gt;&apos; Feature: &lt;fld2&gt; Host:&lt;fld3&gt; Count: &lt;fld4&gt; Expiring on: &lt;fld5&gt; "/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000029"
-		id2="Created"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:License&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@expiration_time:*EVNTTIME($MSG,&apos;%B %F %W&apos;,fld12,fld13,fld14)&gt;&lt;@obj_type:feature&gt; Created License for feature &apos;&lt;obj_name&gt;&apos; for host &apos;&lt;hostname&gt;&apos; with count &apos;&lt;dclass_counter1&gt;&apos; and expiring on &apos;&lt;fld12&gt; &lt;fld13&gt;, &lt;fld14&gt;&apos; "/>
-
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000030"
-		id2="Deleted"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Log&gt; Deleted System Log &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000031"
-		id2="Deleted"
-		eventcategory="1501030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Access Control&gt; Deleted System Access Control &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000032"
-		id2="Deleted"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Device Inventory&gt; Deleted Device Inventory &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000033"
-		id2="Deleted"
-		eventcategory="1402010100"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:User Roles&gt; Deleted User Roles &apos;&lt;obj_name&gt;&apos;."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000034"
-		id2="Directory_Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000035"
-		id2="Directory_Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000036"
-		id2="Directory_Removed"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000037"
-		id2="File_Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000038"
-		id2="File_Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000039"
-		id2="File_Removed"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000040"
-		id2="Key_Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000041"
-		id2="Key_Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000042"
-		id2="Key_Removed"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000043"
-		id2="Login"
-		eventcategory="1401030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;Login attempt for &apos;&lt;username&gt;&apos; failed."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000044"
-		id2="_Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000045"
-		id2="Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Log&gt; Modified System Log &apos;&lt;obj_name&gt;&apos;. Changed &apos;&lt;change_attribute&gt;&apos; from &quot;&lt;change_old&gt;&quot; to &quot;&lt;change_new&gt;&quot;."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000046"
-		id2="Moved"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@change_attribute:Node Group&gt; Moved Windows Server &apos;&lt;hostname&gt;&apos; from Node Group &apos;&lt;change_old&gt;&apos; to Node Group &apos;&lt;change_new&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000047"
-		id2="Node"
-		eventcategory="1610000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt; Node &lt;hostname&gt; started."/>
-
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000048"
-		id2="Password"
-		eventcategory="1402040100"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Success&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;Password was changed for user &apos;&lt;c_username&gt;&apos;."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000049"
-		id2="Promoting"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Element&gt; Promoting Element &apos;&apos;&lt;obj_name&gt;&apos; from Node &apos;&lt;hostname&gt;&apos; and Rule &apos;&lt;rulename&gt;&apos;&apos;."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000050"
-		id2="Promoting"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt; Promoting Node &apos;&lt;hostname&gt;&apos;."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000051"
-		id2="_Removed"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000052"
-		id2="Role"
-		eventcategory="1402020300"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Role&gt; Role &apos;&lt;obj_name&gt;&apos; was added to user &apos;&lt;c_username&gt;&apos;."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000053"
-		id2="Task"
-		eventcategory="1605020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt; Task &apos;&lt;obj_name&gt;&apos; was started."/>
-
+<MESSAGE
+	id1="000001"
+	id2="_Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000002"
+	id2="Added"
+	eventcategory="1702010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Element&gt;"
+	content="Added Version &apos;&lt;version&gt;&apos; as baseline to Element &apos;&apos;&lt;obj_name&gt;&apos; from Node &apos;&lt;hostname&gt;&apos; and Rule &apos;&lt;rulename&gt;&apos;&apos;." />
+<MESSAGE
+	id1="000003"
+	id2="Baseline"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;"
+	content=" Baseline of node &apos;&lt;hostname&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds." />
+<MESSAGE
+	id1="000004"
+	id2="Baselining"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;"
+	content=" Baselining the elements of Node &apos;&lt;hostname&gt;&apos;, preserving any existing baselines." />
+<MESSAGE
+	id1="000005"
+	id2="Baselining"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt;"
+	content=" Baselining new elements associated with Task &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000006"
+	id2="Check"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;"
+	content=" Check of node &apos;&lt;hostname&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds." />
+<MESSAGE
+	id1="000007"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Report Group&gt;"
+	content="Created Report Group &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000008"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Role&gt;"
+	content="Created Role &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000009"
+	id2="Created"
+	eventcategory="1402020200"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:User&gt;"
+	content="Created User &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000010"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Archive Log Task&gt;"
+	content=" Created Archive Log Task &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000011"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Severity Range&gt;"
+	content=" Created Severity Range &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000012"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Update Baseline Action&gt;"
+	content=" Created Update Baseline Action &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000013"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Change Window Action&gt;"
+	content=" Created Change Window Action &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000014"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Compact Versions Task&gt;"
+	content=" Created Compact Versions Task &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000015"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Criteria Set&gt;"
+	content=" Created Criteria Set &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000016"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Log&gt;"
+	content=" Created System Log &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000017"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Report Task&gt;"
+	content=" Created Report Task &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000018"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Device Inventory&gt;"
+	content=" Created Device Inventory &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000019"
+	id2="Created"
+	eventcategory="1501020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Access Control&gt;"
+	content=" Created System Access Control &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000020"
+	id2="Created"
+	eventcategory="1402010200"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:AccessControl&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:User Roles&gt;"
+	content=" Created User Roles &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000021"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Node Group&gt;"
+	content=" Created Node Group &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000022"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Windows Server&gt;"
+	content=" Created Windows Server &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000023"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Rule Group&gt;"
+	content=" Created Rule Group &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000024"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Check Rule Task&gt;"
+	content=" Created Check Rule Task &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000025"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Execution Action&gt;"
+	content=" Created Execution Action &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000026"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Changed Elements &gt;"
+	content=" Created Changed Elements &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000027"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Windows File System Rule&gt;"
+	content=" Created Windows File System Rule &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000028"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:License&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@expiration_time:*EVNTTIME($MSG,&apos;%B %F %W&apos;,fld12,fld13,fld14)&gt;&lt;@obj_type:feature&gt;"
+	content=" Created License for feature &apos;&lt;obj_name&gt;&apos; for host &apos;&lt;hostname&gt;&apos; with count &apos;&lt;dclass_counter1&gt;&apos; and expiring on &apos;&lt;fld12&gt; &lt;fld13&gt;, &lt;fld14&gt;&apos; Feature: &lt;fld2&gt; Host:&lt;fld3&gt; Count: &lt;fld4&gt; Expiring on: &lt;fld5&gt; " />
+<MESSAGE
+	id1="000029"
+	id2="Created"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:License&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@expiration_time:*EVNTTIME($MSG,&apos;%B %F %W&apos;,fld12,fld13,fld14)&gt;&lt;@obj_type:feature&gt;"
+	content=" Created License for feature &apos;&lt;obj_name&gt;&apos; for host &apos;&lt;hostname&gt;&apos; with count &apos;&lt;dclass_counter1&gt;&apos; and expiring on &apos;&lt;fld12&gt; &lt;fld13&gt;, &lt;fld14&gt;&apos; " />
+<MESSAGE
+	id1="000030"
+	id2="Deleted"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Log&gt;"
+	content=" Deleted System Log &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000031"
+	id2="Deleted"
+	eventcategory="1501030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Access Control&gt;"
+	content=" Deleted System Access Control &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000032"
+	id2="Deleted"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Device Inventory&gt;"
+	content=" Deleted Device Inventory &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000033"
+	id2="Deleted"
+	eventcategory="1402010100"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:User Roles&gt;"
+	content=" Deleted User Roles &apos;&lt;obj_name&gt;&apos;." />
+<MESSAGE
+	id1="000034"
+	id2="Directory_Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000035"
+	id2="Directory_Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000036"
+	id2="Directory_Removed"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000037"
+	id2="File_Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000038"
+	id2="File_Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000039"
+	id2="File_Removed"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000040"
+	id2="Key_Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000041"
+	id2="Key_Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000042"
+	id2="Key_Removed"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000043"
+	id2="Login"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="Login attempt for &apos;&lt;username&gt;&apos; failed." />
+<MESSAGE
+	id1="000044"
+	id2="_Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000045"
+	id2="Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:System Log&gt;"
+	content=" Modified System Log &apos;&lt;obj_name&gt;&apos;. Changed &apos;&lt;change_attribute&gt;&apos; from &quot;&lt;change_old&gt;&quot; to &quot;&lt;change_new&gt;&quot;." />
+<MESSAGE
+	id1="000046"
+	id2="Moved"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@change_attribute:Node Group&gt;"
+	content=" Moved Windows Server &apos;&lt;hostname&gt;&apos; from Node Group &apos;&lt;change_old&gt;&apos; to Node Group &apos;&lt;change_new&gt;&apos;." />
+<MESSAGE
+	id1="000047"
+	id2="Node"
+	eventcategory="1610000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;"
+	content=" Node &lt;hostname&gt; started." />
+<MESSAGE
+	id1="000048"
+	id2="Password"
+	eventcategory="1402040100"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Success&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Password was changed for user &apos;&lt;c_username&gt;&apos;." />
+<MESSAGE
+	id1="000049"
+	id2="Promoting"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Element&gt;"
+	content=" Promoting Element &apos;&apos;&lt;obj_name&gt;&apos; from Node &apos;&lt;hostname&gt;&apos; and Rule &apos;&lt;rulename&gt;&apos;&apos;." />
+<MESSAGE
+	id1="000050"
+	id2="Promoting"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;"
+	content=" Promoting Node &apos;&lt;hostname&gt;&apos;." />
+<MESSAGE
+	id1="000051"
+	id2="_Removed"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000052"
+	id2="Role"
+	eventcategory="1402020300"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Role&gt;"
+	content=" Role &apos;&lt;obj_name&gt;&apos; was added to user &apos;&lt;c_username&gt;&apos;." />
+<MESSAGE
+	id1="000053"
+	id2="Task"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt;"
+	content=" Task &apos;&lt;obj_name&gt;&apos; was started." />
 	
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000054"
-		id2="Task"
-		eventcategory="1605020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt; Task &apos;&lt;obj_name&gt;&apos; was completed in &lt;duration_string&gt; seconds."/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000055"
-		id2="Task"
-		eventcategory="1603110000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt; Task &apos;&lt;obj_name&gt;&apos; missed at least one run because the Scheduler was not running at a time that the task was scheduled to run."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000056"
-		id2="User"
-		eventcategory="1401070000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@severity:*HDR(hseverity)&gt;User &apos;&lt;username&gt;&apos; logged out."/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000057"
-		id2="User"
-		eventcategory="1401060000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@severity:*HDR(hseverity)&gt;User &apos;&lt;username&gt;&apos; logged in."/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000058"
-		id2="Value_Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="000059"
-		id2="Value_Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="86" 
-		id1="000060" 
-		id2="Value_Removed" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Regular_File_Added"
-		id2="Regular_File_Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11,fld12)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld13,fld14,fld15)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;, Attributes: &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Regular_File_Modified"
-		id2="Regular_File_Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11,fld12)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld13,fld14,fld15)&gt;&lt;@obj_type:Element&gt;node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;, Attributes: &lt;info&gt;"/>
-
+<MESSAGE
+	id1="000054"
+	id2="Task"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt;"
+	content=" Task &apos;&lt;obj_name&gt;&apos; was completed in &lt;duration_string&gt; seconds." />
+<MESSAGE
+	id1="000055"
+	id2="Task"
+	eventcategory="1603110000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@username:*HDR(husername)&gt;&lt;@obj_type:Task&gt;"
+	content=" Task &apos;&lt;obj_name&gt;&apos; missed at least one run because the Scheduler was not running at a time that the task was scheduled to run." />
+<MESSAGE
+	id1="000056"
+	id2="User"
+	eventcategory="1401070000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="User &apos;&lt;username&gt;&apos; logged out." />
+<MESSAGE
+	id1="000057"
+	id2="User"
+	eventcategory="1401060000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="User &apos;&lt;username&gt;&apos; logged in." />
+<MESSAGE
+	id1="000058"
+	id2="Value_Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="000059"
+	id2="Value_Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE 
+	id1="000060" 
+	id2="Value_Removed" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U%P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11)&gt;&lt;@event_time_string:*removeComma(event_time_string)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F  %W %N:%U:%O %P&apos;,&apos;%G/%F/%Y %N:%U %P&apos;,event_time_string)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;event_time_string&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="Regular_File_Added"
+	id2="Regular_File_Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11,fld12)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld13,fld14,fld15)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;, Attributes: &lt;info&gt;" />
+<MESSAGE
+	id1="Regular_File_Modified"
+	id2="Regular_File_Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld10,fld11,fld12)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U %P&apos;,fld13,fld14,fld15)&gt;&lt;@obj_type:Element&gt;"
+	content="node=&lt;hostname&gt;, server=&lt;event_source&gt;, rule=&lt;rulename&gt;, ruletype=&lt;rule_template&gt;, element=&lt;obj_name&gt;, version=&lt;fld10&gt; &lt;fld11&gt; &lt;fld12&gt;, changeType=&lt;fld1&gt;, changeTypeName=&lt;disposition&gt;, severity=&lt;fld2&gt;, severityname=&lt;severity&gt;, time=&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;, Attributes: &lt;info&gt;" />
 	
 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Modified"
-		id2="Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire: Modified &lt;filename&gt; on &lt;shost&gt; by &lt;rulename&gt;"/>
+<MESSAGE
+	id1="Modified"
+	id2="Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;"
+	content="&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire: Modified &lt;filename&gt; on &lt;shost&gt; by &lt;rulename&gt;" />
+<MESSAGE
+	id1="Added"
+	id2="Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;"
+	content="&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire: Added &lt;filename&gt; on &lt;fld7&gt; by &lt;rulename&gt;" />
+<MESSAGE
+	id1="Test_Connection"
+	id2="Test"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Test Connection&gt;"
+	content="Connection " />
+<MESSAGE
+	id1="Action"
+	id2="Action"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; {LogUser=&lt;username&gt; ElementId=&lt;fld18&gt; VerId=&lt;fld19&gt; | LogUser=&lt;username&gt;} AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Agent_Discovery"
+	id2="Agent_Discovery"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Audit_Event"
+	id2="Audit_Event"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:AppType&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AccessType=&lt;fld17&gt; EventType=&lt;action&gt; AppType=&lt;obj_name&gt; ElementId=&lt;fld18&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; {VerId=&lt;fld19&gt; AssociatedObjects=&lt;fld13&gt; | AssociatedObjects=&lt;fld13&gt;} { Msg=&quot;&apos;&lt;filename&gt;&apos; accessed by &lt;fld1&gt; &lt;info&gt; | &lt;info&gt; } " />
+<MESSAGE
+	id1="Asset_View_Change"
+	id2="Asset_View_Change"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:AppType&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Node_Baselining_completed"
+	id2="Baseline"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&quot;Baseline of node &apos;&lt;fld15&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds.&quot; " />
+<MESSAGE
+	id1="Baseline_Error"
+	id2="Baseline"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:Error&gt;"
+	content="&lt;hostip&gt; TE: Error HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Baseline"
+	id2="Baseline"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg={&quot;Baselining Node &apos;&lt;fld15&gt;&apos; with Rule &apos;&lt;rulename&gt;&apos;, preserving any existing baselines.&quot;|&quot;Baseline of node &apos;&lt;fld15&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds. (&lt;fld16&gt;)&quot;|&quot;Baselining Node &apos;&lt;fld15&gt;&apos; with Rule &apos;&lt;rulename&gt;&apos;, for all elements.&quot;} " />
+<MESSAGE
+	id1="Change_MODIFY"
+	id2="Change"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying existing configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MODIFY {AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; | Msg=&lt;info&gt;} " />
 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Added"
-		id2="Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire: Added &lt;filename&gt; on &lt;fld7&gt; by &lt;rulename&gt;"/>
+<MESSAGE
+	id1="Change_ADD"
+	id2="Change"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Adding new configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; {ChangeType=ADD NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; | ChangeType=ADD} AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Test_Connection"
-		id2="Test"
-		eventcategory="1801000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Test Connection&gt;Connection "/>
+<MESSAGE
+	id1="Change_REMOVE:01"
+	id2="Change"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Removing existing configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=REMOVE NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Change_REMOVE:02"
+	id2="Change"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Removing existing configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; { ChangeType=REMOVE AssociatedObjects=&lt;fld13&gt; | ChangeType=REMOVE } Msg=&lt;info&gt;" />
 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Action"
-		id2="Action"
-		eventcategory="1603000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; {LogUser=&lt;username&gt; ElementId=&lt;fld18&gt; VerId=&lt;fld19&gt; | LogUser=&lt;username&gt;} AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Agent_Discovery"
-		id2="Agent_Discovery"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Audit_Event"
-		id2="Audit_Event"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:AppType&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AccessType=&lt;fld17&gt; EventType=&lt;action&gt; AppType=&lt;obj_name&gt; ElementId=&lt;fld18&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; {VerId=&lt;fld19&gt; AssociatedObjects=&lt;fld13&gt; | AssociatedObjects=&lt;fld13&gt;} { Msg=&quot;&apos;&lt;filename&gt;&apos; accessed by &lt;fld1&gt; &lt;info&gt; | &lt;info&gt; } "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Asset_View_Change"
-		id2="Asset_View_Change"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:AppType&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Node_Baselining_completed"
-		id2="Baseline"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&quot;Baseline of node &apos;&lt;fld15&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds.&quot; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Baseline_Error"
-		id2="Baseline"
-		eventcategory="1603000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:Error&gt;&lt;hostip&gt; TE: Error HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Baseline"
-		id2="Baseline"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg={&quot;Baselining Node &apos;&lt;fld15&gt;&apos; with Rule &apos;&lt;rulename&gt;&apos;, preserving any existing baselines.&quot;|&quot;Baseline of node &apos;&lt;fld15&gt;&apos; was completed in &apos;&lt;duration_string&gt;&apos; seconds. (&lt;fld16&gt;)&quot;|&quot;Baselining Node &apos;&lt;fld15&gt;&apos; with Rule &apos;&lt;rulename&gt;&apos;, for all elements.&quot;} "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Change_MODIFY"
-		id2="Change"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying existing configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MODIFY {AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; | Msg=&lt;info&gt;} "/>
-
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Change_ADD"
-		id2="Change"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Adding new configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; {ChangeType=ADD NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; | ChangeType=ADD} AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Change_REMOVE:01"
-		id2="Change"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Removing existing configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=REMOVE NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Change_REMOVE:02"
-		id2="Change"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Removing existing configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; { ChangeType=REMOVE AssociatedObjects=&lt;fld13&gt; | ChangeType=REMOVE } Msg=&lt;info&gt;"/>
-
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Change_MOVE"
-		id2="Change"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Moving existing configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MOVE AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Element_Check"
-		id2="Element_Check"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Element_Check:01"
-		id2="Element_Check"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ElementId=&lt;fld16&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
+<MESSAGE
+	id1="Change_MOVE"
+	id2="Change"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Moving existing configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MOVE AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Element_Check"
+	id2="Element_Check"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Element_Check:01"
+	id2="Element_Check"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ElementId=&lt;fld16&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
 		
 	
-    <MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Node_Change:Add1"
-		id2="Node_Change"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=ADD NodeId=&lt;node&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
+<MESSAGE
+	id1="Node_Change:Add1"
+	id2="Node_Change"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=ADD NodeId=&lt;node&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
      
-   <MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Node_Change:Add"
-		id2="Node_Change"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=ADD AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Node_Change:Modify"
-		id2="Node_Change"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MODIFY { NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt;| AssociatedObjects=&lt;fld13&gt; } Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Node_Change:Remove"
-		id2="Node_Change"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=REMOVE { NodeId=&lt;fld14&gt; AssociatedObjects=&lt;fld13&gt;| AssociatedObjects=&lt;fld13&gt; } Msg=&lt;info&gt;"/>
-
+<MESSAGE
+	id1="Node_Change:Add"
+	id2="Node_Change"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=ADD AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Node_Change:Modify"
+	id2="Node_Change"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MODIFY { NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt;| AssociatedObjects=&lt;fld13&gt; } Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Node_Change:Remove"
+	id2="Node_Change"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=REMOVE { NodeId=&lt;fld14&gt; AssociatedObjects=&lt;fld13&gt;| AssociatedObjects=&lt;fld13&gt; } Msg=&lt;info&gt;" />
 	 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Policy_Score_Change"
-		id2="Policy_Score_Change"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rule_Change:Add"
-		id2="Rule_Change"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying rule&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=ADD AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rule_Change:Modify"
-		id2="Rule_Change"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying rule&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MODIFY AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rule_Change:Remove"
-		id2="Rule_Change"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying rule&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=REMOVE AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Security_Login_Failed"
-		id2="Security"
-		eventcategory="1401030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; Msg=&quot;Login attempt for &apos;&lt;username&gt;&apos; failed.&quot; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Security_User_Logout"
-		id2="Security"
-		eventcategory="1401070000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; AssociatedObjects=&lt;fld13&gt; Msg=&quot;User &apos;&lt;username&gt;&apos; logged out.&quot; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Security_User_Login"
-		id2="Security"
-		eventcategory="1401060000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; AssociatedObjects=&lt;fld13&gt; Msg=&quot;User &apos;&lt;username&gt;&apos; logged in.&quot; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Security"
-		id2="Security"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="System:01"
-		id2="System"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="System:02"
-		id2="System"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; Msg=&lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Task_Run"
-		id2="Task_Run"
-		eventcategory="1605000000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Error"
-		id2="Error"
-		tagval="true"
-		missField="true"
-		eventcategory="1603000000"
-		functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(messageid)&gt;"
-		content="HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
-		
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Information"
-		id2="Information"
-		tagval="true"
-		missField="true"
-		eventcategory="1605000000"
-		functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(messageid)&gt;"
-		content="HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; "/>
-
 <MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Modified:01"
-		id2="Modified"
-		eventcategory="1701020000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire - &lt;severity&gt; Log Event: Modified &lt;filename&gt;&lt;space&gt;on &lt;shost&gt; by &lt;rulename&gt;"/>
-
+	id1="Policy_Score_Change"
+	id2="Policy_Score_Change"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Rule_Change:Add"
+	id2="Rule_Change"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying rule&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=ADD AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Rule_Change:Modify"
+	id2="Rule_Change"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying rule&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=MODIFY AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+	
+<MESSAGE
+	id1="Rule_Change:Remove"
+	id2="Rule_Change"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@action:Modifying rule&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; ChangeType=REMOVE AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Security_Login_Failed"
+	id2="Security"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; Msg=&quot;Login attempt for &apos;&lt;username&gt;&apos; failed.&quot; " />
+<MESSAGE
+	id1="Security_User_Logout"
+	id2="Security"
+	eventcategory="1401070000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; AssociatedObjects=&lt;fld13&gt; Msg=&quot;User &apos;&lt;username&gt;&apos; logged out.&quot; " />
+<MESSAGE
+	id1="Security_User_Login"
+	id2="Security"
+	eventcategory="1401060000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; AssociatedObjects=&lt;fld13&gt; Msg=&quot;User &apos;&lt;username&gt;&apos; logged in.&quot; " />
+<MESSAGE
+	id1="Security"
+	id2="Security"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;fld6&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="System:01"
+	id2="System"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="System:02"
+	id2="System"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; Msg=&lt;info&gt;" />
+<MESSAGE
+	id1="Task_Run"
+	id2="Task_Run"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;hostip&gt; TE: &lt;severity&gt; HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
+<MESSAGE
+	id1="Error"
+	id2="Error"
+	tagval="true"
+	missField="true"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(messageid)&gt;"
+	content="HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
 		
 <MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Removed"
-		id2="Removed"
-		eventcategory="1701030000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire - &lt;severity&gt; Log Event: Removed &lt;filename&gt; on &lt;shost&gt; by &lt;rulename&gt;"/>                                                                                                                                                                                                                                     		
-
-	
-
+	id1="Information"
+	id2="Information"
+	tagval="true"
+	missField="true"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(messageid)&gt;"
+	content="HostName=&lt;hostname&gt; LogId=&lt;fld12&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AssociatedObjects=&lt;fld13&gt; Msg=&lt;info&gt; " />
 <MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Added:01"
-		id2="Added"
-		eventcategory="1701010000"
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire - &lt;severity&gt; Log Event: Added &lt;filename&gt; on &lt;shost&gt; by &lt;rulename&gt;"/>                                                                                                                                                                                                                                     		
-
+	id1="Modified:01"
+	id2="Modified"
+	eventcategory="1701020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;"
+	content="&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire - &lt;severity&gt; Log Event: Modified &lt;filename&gt;&lt;space&gt;on &lt;shost&gt; by &lt;rulename&gt;" />
+		
+<MESSAGE
+	id1="Removed"
+	id2="Removed"
+	eventcategory="1701030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;"
+	content="&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire - &lt;severity&gt; Log Event: Removed &lt;filename&gt; on &lt;shost&gt; by &lt;rulename&gt;" />
 	
-
+<MESSAGE
+	id1="Added:01"
+	id2="Added"
+	eventcategory="1701010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld10,fld11)&gt;"
+	content="&lt;fld10&gt; &lt;fld11&gt; &lt;hostname&gt; Tripwire - &lt;severity&gt; Log Event: Added &lt;filename&gt; on &lt;shost&gt; by &lt;rulename&gt;" />
+	
 
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="TRIPWIRE_GENERIC" 
 	id2="TRIPWIRE_GENERIC" 
 	eventcategory="1901000000"
 	tagval="true"
 	missField="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_type:AppType&gt;"
-	content="LogId=&lt;fld&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AccessType=&lt;fld&gt; EventType=&lt;action&gt; AppType=&lt;obj_name&gt; ChangeType=&lt;event_type&gt; ElementId=&lt;fld&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; VerId=&lt;fld&gt; AssociatedObjects=&lt;fld&gt; Msg=&lt;info&gt;"/>
-
+	content="LogId=&lt;fld&gt; LogCategory=&lt;category&gt; LogUser=&lt;username&gt; AccessType=&lt;fld&gt; EventType=&lt;action&gt; AppType=&lt;obj_name&gt; ChangeType=&lt;event_type&gt; ElementId=&lt;fld&gt; NodeId=&lt;fld14&gt; NodeName=&lt;shost&gt; NodeIp=&lt;saddr&gt; VerId=&lt;fld&gt; AssociatedObjects=&lt;fld&gt; Msg=&lt;info&gt;" />
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="TRIPWIRE_GENERIC:01" 
 	id2="TRIPWIRE_GENERIC" 
 	eventcategory="1901000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%O&apos;,fld1,fld2)&gt;&lt;@msg_id:*HDR(p_msgid)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;hostname&gt; {Tripwire - &lt;fld&gt;: | Tripwire:} &lt;fld&gt;"/>
-
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;hostname&gt; {Tripwire - &lt;fld&gt;: | Tripwire:} &lt;fld&gt;" />
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="TRIPWIRE_GENERIC:02" 
 	id2="TRIPWIRE_GENERIC" 
 	eventcategory="1901000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld&gt;"/>
-
+	content="&lt;fld&gt;" />
 	
 </DEVICEMESSAGES>

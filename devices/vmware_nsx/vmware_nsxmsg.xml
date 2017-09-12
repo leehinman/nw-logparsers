@@ -1,112 +1,85 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="vmware_nsx"
+	displayname="VMware NSX"
+	group="Virtualization">
 <VERSION
-	xml="6"
-	checksum="35db0a1b6f178a8bf8f2b3f558d2c0c7"
+	xml="7"
+	checksum="6390173b6aea5c014e7510384195572c"
 	revision="107"
-	enVision="35010000"
 	device="2.0" />
 <HEADER 
-id1="0002" 
-id2="0002"  
-content="&lt;hfld1&gt; &lt;hfld2&gt;T&lt;hfld3&gt;Z &lt;hfld4&gt; &lt;messageid&gt;: &lt;!payload:hfld2&gt;" />
+	id1="0002" 
+	id2="0002"  
+	content="&lt;hfld1&gt; &lt;hfld2&gt;T&lt;hfld3&gt;Z &lt;hfld4&gt; &lt;messageid&gt;: &lt;!payload:hfld2&gt;" />
 
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="&lt;hfld1&gt;T&lt;hfld2&gt;Z &lt;hfld3&gt; &lt;messageid&gt;: &lt;!payload:hfld1&gt;" />
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hfld1&gt;T&lt;hfld2&gt;Z &lt;hfld3&gt; &lt;messageid&gt;: &lt;!payload:hfld1&gt;" />
 
 <VALUEMAP
 	    name="getEventCategoryActivity"
 		default="$NONE"
 		keyvaluepairs="REJECT=&apos;Deny&apos;|DROP=&apos;Deny&apos;" />
-
 <VALUEMAP
 	    name="getDirection"
 		default="$NONE"
 		keyvaluepairs="IN=&apos;Inbound&apos;|OUT=&apos;Outbound&apos;" />
 		
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_L2_Permit" 
 	id2="dfwpktlogs" 
 	eventcategory="1801020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;@ec_activity:Permit&gt; &lt;@result:match&gt; &lt;@disposition:PASS&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: L2 match PASS &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;smacaddr&gt;-&gt;&lt;dmacaddr&gt; ETHTYPE &lt;fld6&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_activity:Permit&gt;&lt;@result:match&gt;&lt;@disposition:PASS&gt;"
+	content="       &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: L2 match PASS &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;smacaddr&gt;-&gt;&lt;dmacaddr&gt; ETHTYPE &lt;fld6&gt;" />
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_match_Permit:01"
 	id2="dfwpktlogs" 
 	eventcategory="1801020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;@ec_activity:Permit&gt; &lt;@result:match&gt; &lt;@disposition:PASS&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match PASS &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;fld8&gt; &lt;saddr&gt;-&gt;&lt;daddr&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_activity:Permit&gt;&lt;@result:match&gt;&lt;@disposition:PASS&gt;"
+	content="       &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match PASS &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;fld8&gt; &lt;saddr&gt;-&gt;&lt;daddr&gt;" />
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_match:01"
 	id2="dfwpktlogs" 
 	eventcategory="1801000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;@ec_activity:*getEventCategoryActivity(disposition)&gt; &lt;@result:match&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match &lt;disposition&gt; &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;fld8&gt; &lt;saddr&gt;-&gt;&lt;daddr&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_activity:*getEventCategoryActivity(disposition)&gt;&lt;@result:match&gt;"
+	content="      &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match &lt;disposition&gt; &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;fld8&gt; &lt;saddr&gt;-&gt;&lt;daddr&gt;" />
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_match_Permit:02"
 	id2="dfwpktlogs" 
 	eventcategory="1801020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;@ec_activity:Permit&gt; &lt;@result:match&gt; &lt;@disposition:PASS&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match PASS &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/{&lt;dport&gt; &lt;fld7&gt;|&lt;dport&gt;}" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_activity:Permit&gt;&lt;@result:match&gt;&lt;@disposition:PASS&gt;"
+	content="       &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match PASS &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/{&lt;dport&gt; &lt;fld7&gt;|&lt;dport&gt;}" />
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_match:02"
 	id2="dfwpktlogs" 
 	eventcategory="1801000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;@ec_activity:*getEventCategoryActivity(disposition)&gt; &lt;@result:match&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match &lt;disposition&gt; &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/{&lt;dport&gt; &lt;fld7&gt;|&lt;dport&gt;}" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_activity:*getEventCategoryActivity(disposition)&gt;&lt;@result:match&gt;"
+	content="      &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} match &lt;disposition&gt; &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;protocol&gt; &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/{&lt;dport&gt; &lt;fld7&gt;|&lt;dport&gt;}" />
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_TERM:01"
 	id2="dfwpktlogs" 
 	eventcategory="1801000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} TERM &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;protocol&gt; &lt;fld8&gt; &lt;saddr&gt;-&gt;&lt;daddr&gt; &lt;fld9&gt; &lt;fld10&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;"
+	content="    &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} TERM &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;protocol&gt; &lt;fld8&gt; &lt;saddr&gt;-&gt;&lt;daddr&gt; &lt;fld9&gt; &lt;fld10&gt;" />
 <MESSAGE 
-	level="1" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="76" 
 	id1="dfwpktlogs_TERM:02"
 	id2="dfwpktlogs" 
 	eventcategory="1801000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld4)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} TERM &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;protocol&gt; &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt; &lt;fld9&gt; &lt;fld10&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld4)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;"
+	content="    &lt;fld1&gt;T&lt;fld2&gt;Z &lt;hostname&gt; dfwpktlogs: {INET6|INET} TERM &lt;fld3&gt;/&lt;rule&gt; &lt;fld4&gt; &lt;protocol&gt; &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt; &lt;fld9&gt; &lt;fld10&gt;" />
 <MESSAGE
-	 id1="dfwpktlogs:01"
-	 id2="dfwpktlogs"
-	 eventcategory="1801000000"
-	 content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld5)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt; &lt;fld1&gt;T&lt;fld2&gt;Z&lt;hostname&gt;dfwpktlogs:&lt;fld3&gt;{INET6|INET} match&lt;disposition&gt;&lt;fld4&gt;/&lt;rule&gt;&lt;fld5&gt;&lt;fld6&gt;&lt;protocol&gt;{&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;&lt;fld7&gt;|&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;|&lt;fld11&gt;&lt;saddr&gt;-&gt;&lt;daddr&gt;|&lt;saddr&gt;-&gt;&lt;daddr&gt;}"/>
-
+	id1="dfwpktlogs:01"
+	id2="dfwpktlogs"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld5)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;"
+	content="    &lt;fld1&gt;T&lt;fld2&gt;Z&lt;hostname&gt;dfwpktlogs:&lt;fld3&gt;{INET6|INET} match&lt;disposition&gt;&lt;fld4&gt;/&lt;rule&gt;&lt;fld5&gt;&lt;fld6&gt;&lt;protocol&gt;{&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;&lt;fld7&gt;|&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;|&lt;fld11&gt;&lt;saddr&gt;-&gt;&lt;daddr&gt;|&lt;saddr&gt;-&gt;&lt;daddr&gt;}" />
 	 
 <MESSAGE
-	 id1="dfwpktlogs:02"
-	 id2="dfwpktlogs"
-	 eventcategory="1801000000"
-	 content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt; &lt;@direction:*getDirection(fld5)&gt; &lt;@ec_subject:NetworkComm&gt; &lt;@ec_theme:Communication&gt;&lt;fld1&gt;T&lt;fld2&gt;Z&lt;hostname&gt;dfwpktlogs:&lt;fld3&gt;{INET6|INET} TERM&lt;fld4&gt;/&lt;rule&gt;&lt;fld5&gt;&lt;protocol&gt;{&lt;fld11&gt;&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;|&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;|&lt;fld11&gt;&lt;saddr&gt;-&gt;&lt;daddr&gt;|&lt;saddr&gt;-&gt;&lt;daddr&gt;}&lt;fld9&gt;&lt;fld10&gt;"/>
-
+	id1="dfwpktlogs:02"
+	id2="dfwpktlogs"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@direction:*getDirection(fld5)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;"
+	content="   &lt;fld1&gt;T&lt;fld2&gt;Z&lt;hostname&gt;dfwpktlogs:&lt;fld3&gt;{INET6|INET} TERM&lt;fld4&gt;/&lt;rule&gt;&lt;fld5&gt;&lt;protocol&gt;{&lt;fld11&gt;&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;|&lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt;|&lt;fld11&gt;&lt;saddr&gt;-&gt;&lt;daddr&gt;|&lt;saddr&gt;-&gt;&lt;daddr&gt;}&lt;fld9&gt;&lt;fld10&gt;" />
 </DEVICEMESSAGES>

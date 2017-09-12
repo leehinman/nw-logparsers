@@ -1,78 +1,62 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="gecea"
+	displayname="GE Centricity Enterprise Archive"
+	group="Storage">
 <VERSION
-	xml="9"
-	checksum="5f43908fd9600c4ef88ec54855edd427"
+	xml="10"
+	checksum="765fdb341bbbd3ca8e8bb74a73f21c82"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 	
 	
-    <HEADER 
-		id1="0001" 
-		id2="0001" 
-        content="%GE_CEA: &lt;messageid&gt;^^&lt;!payload&gt;" />
-	<MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="90" 
-		id1="CONFIG_TRAIL" 
-		id2="CONFIG_TRAIL" 
-		eventcategory="1704010000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld0)&gt;&lt;fld0&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;info&gt;" />
+<HEADER 
+	id1="0001" 
+	id2="0001" 
+	content="%GE_CEA: &lt;messageid&gt;^^&lt;!payload&gt;" />
+<MESSAGE 
+	id1="CONFIG_TRAIL" 
+	id2="CONFIG_TRAIL" 
+	eventcategory="1704010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld0)&gt;"
+	content="&lt;fld0&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;info&gt;" />
     
 	
 	
-	<MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="90" 
-		id1="ILM_TRAIL:SAVE_RULE" 
-		id2="ILM_TRAIL" 
-		eventcategory="1704010000" 
-		content="&lt;@action:SAVE_RULE&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;&lt;fld0&gt;^^&lt;username&gt;^^SAVE_RULE^^&lt;fld1&gt;^^&lt;result&gt;^^RuleId=&lt;rule&gt;|RuleName=&lt;rulename&gt;|ArchiveName=&lt;fld4&gt;|CriteriaXml=&lt;fld5&gt;|RuleStatusId=&lt;fld6&gt;|Description=&lt;event_description&gt;|" />
+<MESSAGE 
+	id1="ILM_TRAIL:SAVE_RULE" 
+	id2="ILM_TRAIL" 
+	eventcategory="1704010000" 
+	functions="&lt;@action:SAVE_RULE&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;"
+	content="&lt;fld0&gt;^^&lt;username&gt;^^SAVE_RULE^^&lt;fld1&gt;^^&lt;result&gt;^^RuleId=&lt;rule&gt;|RuleName=&lt;rulename&gt;|ArchiveName=&lt;fld4&gt;|CriteriaXml=&lt;fld5&gt;|RuleStatusId=&lt;fld6&gt;|Description=&lt;event_description&gt;|" />
       
-	<MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="90" 
-		id1="ILM_TRAIL:MODIFY_RULE" 
-		id2="ILM_TRAIL" 
-		eventcategory="1704010000" 
-		content="&lt;@action:MODIFY_RULE&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;&lt;fld0&gt;^^&lt;username&gt;^^MODIFY_RULE^^&lt;fld1&gt;^^&lt;result&gt;^^RuleId=&lt;rule&gt;|RuleName=&lt;rulename&gt;|ArchiveName=&lt;fld4&gt;|CriteriaXml=&lt;fld5&gt;|RuleStatusId=&lt;fld6&gt;|Description=&lt;event_description&gt;|" />
+<MESSAGE 
+	id1="ILM_TRAIL:MODIFY_RULE" 
+	id2="ILM_TRAIL" 
+	eventcategory="1704010000" 
+	functions="&lt;@action:MODIFY_RULE&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;"
+	content="&lt;fld0&gt;^^&lt;username&gt;^^MODIFY_RULE^^&lt;fld1&gt;^^&lt;result&gt;^^RuleId=&lt;rule&gt;|RuleName=&lt;rulename&gt;|ArchiveName=&lt;fld4&gt;|CriteriaXml=&lt;fld5&gt;|RuleStatusId=&lt;fld6&gt;|Description=&lt;event_description&gt;|" />
       
-	<MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="90" 
-		id1="ILM_TRAIL:CONFIG_CHANGED" 
-		id2="ILM_TRAIL" 
-		eventcategory="1704010000" 
-		content="&lt;@action:CONFIG_CHANGED&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;&lt;fld0&gt;^^&lt;username&gt;^^CONFIG_CHANGED^^&lt;fld1&gt;^^&lt;result&gt;^^&lt;fld8&gt;Old Value=&lt;fld2&gt;|New Value=&lt;fld3&gt;&lt;fld9&gt;" />
+<MESSAGE 
+	id1="ILM_TRAIL:CONFIG_CHANGED" 
+	id2="ILM_TRAIL" 
+	eventcategory="1704010000" 
+	functions="&lt;@action:CONFIG_CHANGED&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;"
+	content="&lt;fld0&gt;^^&lt;username&gt;^^CONFIG_CHANGED^^&lt;fld1&gt;^^&lt;result&gt;^^&lt;fld8&gt;Old Value=&lt;fld2&gt;|New Value=&lt;fld3&gt;&lt;fld9&gt;" />
       
-	<MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="90" 
-		id1="ILM_TRAIL:START_RULE_ENGINE" 
-		id2="ILM_TRAIL" 
-		eventcategory="1704010000" 
-		content="&lt;@action:START_RULE_ENGINE&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;&lt;fld0&gt;^^&lt;username&gt;^^START_RULE_ENGINE^^&lt;fld1&gt;^^&lt;result&gt;^^&lt;info&gt;" />
+<MESSAGE 
+	id1="ILM_TRAIL:START_RULE_ENGINE" 
+	id2="ILM_TRAIL" 
+	eventcategory="1704010000" 
+	functions="&lt;@action:START_RULE_ENGINE&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;"
+	content="&lt;fld0&gt;^^&lt;username&gt;^^START_RULE_ENGINE^^&lt;fld1&gt;^^&lt;result&gt;^^&lt;info&gt;" />
        
  
-	<MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="90" 
-		id1="ILM_TRAIL" 
-		id2="ILM_TRAIL" 
-		eventcategory="1704010000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;&lt;fld0&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;result&gt;^^&lt;fld2&gt;" />
+<MESSAGE 
+	id1="ILM_TRAIL" 
+	id2="ILM_TRAIL" 
+	eventcategory="1704010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %Z',fld1)&gt;"
+	content="&lt;fld0&gt;^^&lt;username&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;result&gt;^^&lt;fld2&gt;" />
         
 </DEVICEMESSAGES>	

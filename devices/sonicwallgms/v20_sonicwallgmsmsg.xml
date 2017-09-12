@@ -1,130 +1,84 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="sonicwallgms"
+	displayname="SonicWALL GMS"
+	group="Configuration Management">
 <VERSION
-	xml="13"
-	checksum="3ea090c1bd1b23da087683f10e3cff66"
+	xml="15"
+	checksum="dbc0af5e4b517c7ce31220bc1fe1aead"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
-
 <HEADER 
-		id1="0001" 
-		id2="0001"
-		devts="TS('%B %F %W %N:%U:%O',hmonth,hday,hyear,htime)"
-		content="%SONICWALLGMS: &lt;messageid&gt;^^&lt;hyear&gt;-&lt;hmonth&gt;-&lt;hday&gt; &lt;htime&gt;^^&lt;!payload:messageid&gt;"/>
+	id1="0001" 
+	id2="0001"
+	content="%SONICWALLGMS: &lt;messageid&gt;^^&lt;hyear&gt;-&lt;hmonth&gt;-&lt;hday&gt; &lt;htime&gt;^^&lt;!payload:messageid&gt;"/>
 
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:01" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1401030000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Unsuccessful login attempt into the system by user: &lt;fld8&gt;" /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Unsuccessful login attempt into the system by user: &lt;fld8&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:02" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1302000000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Successful login into the system by user: &lt;fld8&gt;" /> 
-
-  <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Successful login into the system by user: &lt;fld8&gt;" />
+<MESSAGE 
 	id1="SW_AUDIT_LOG:03" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1301020000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Acquire Failed: Login error: &lt;result&gt;." /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Acquire Failed: Login error: &lt;result&gt;." />
 <MESSAGE  
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:04" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^&lt;service&gt; service has been &lt;fld21&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^&lt;service&gt; service has been &lt;fld21&gt;" />
  
-
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:05" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Database Healthcheck (&lt;info&gt;)" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Database Healthcheck (&lt;info&gt;)" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:06" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;serial_number&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;id&gt;^^Report data summarization started. &lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;serial_number&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;id&gt;^^Report data summarization started. &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:07" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Raw syslog file upload completed. &lt;info&gt;" />                                                                                   
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Raw syslog file upload completed. &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:08" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Shutting down &lt;info&gt;" />                                                                                   
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Shutting down &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:09" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Raw Syslog files selected for upload: &lt;info&gt;" />                                                                                   
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Raw Syslog files selected for upload: &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:10" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Report data summarized. &lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^Report data summarized. &lt;info&gt;" />
  
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="SW_AUDIT_LOG:11" 
 	id2="SW_AUDIT_LOG" 
 	eventcategory="1605030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld1,fld2,fld3,fld4,fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W %G %F %N %U %O',fld14,fld15,fld16,fld17,fld18,fld19)&gt;"
+	content="SW_AUDIT_LOG^^&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt; &lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;hostip&gt;^^{&lt;fld14&gt;-&lt;fld15&gt;-&lt;fld16&gt; &lt;fld17&gt;:&lt;fld18&gt;:&lt;fld19&gt;|(null)}^^&lt;fld20&gt;^^&lt;domain_id&gt;^^&lt;event_description&gt;" />
 </DEVICEMESSAGES>                                                                                        

@@ -1,1055 +1,618 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="mssccm"
+	displayname="Microsoft SCCM"
+	group="Configuration Management">
 <VERSION
-	xml="7"
-	checksum="75876175e16c83487d91c75d31cfa353"
+	xml="8"
+	checksum="3f9cb0447f53e14865997383c3f73b2b"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
   
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Server: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Server,&lt;!payload:hevent_log&gt;" /> 
-
+	id1="0001" 
+	id2="0001"  
+	content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Server: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Server,&lt;!payload:hevent_log&gt;" /> 
 <HEADER 
-id1="0002" 
-id2="0002"  
-content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Client: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Client,&lt;!payload:hevent_log&gt;" /> 
-
+	id1="0002" 
+	id2="0002"  
+	content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Client: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Client,&lt;!payload:hevent_log&gt;" /> 
 <HEADER 
-id1="0003" 
-id2="0003"  
-content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Provider: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Provider,&lt;!payload:hevent_log&gt;" /> 
-
+	id1="0003" 
+	id2="0003"  
+	content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Provider: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Provider,&lt;!payload:hevent_log&gt;" /> 
 <HEADER 
-id1="0004" 
-id2="0004"  
-content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Performance Data Provider: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Performance Data Provider,&lt;!payload:hevent_log&gt;" /> 
-
+	id1="0004" 
+	id2="0004"  
+	content="%NICWIN-&lt;level&gt;-{ &lt;messageid&gt; Performance Data Provider: | &lt;messageid&gt;: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SMS Performance Data Provider,&lt;!payload:hevent_log&gt;" /> 
 <HEADER 
-id1="0005" 
-id2="0005"  
-content="%NICWIN-&lt;level&gt;-&lt;messageid&gt;: &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SmsClient,&lt;!payload:hevent_log&gt;" /> 
-
+	id1="0005" 
+	id2="0005"  
+	content="%NICWIN-&lt;level&gt;-&lt;messageid&gt;: &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,SmsClient,&lt;!payload:hevent_log&gt;" /> 
 <HEADER 
-id1="0006" 
-id2="0006"  
-content="%NICWIN-&lt;level&gt;-&lt;messageid&gt;_&lt;hfld2&gt;_{ SMS: | SmsClient: | SMS Performance Data Provider: | SMS Provider: | SMS Client: | SMS Server: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,&lt;hevent_source&gt;,&lt;hevent_user&gt;,&lt;hseverity&gt;,&lt;!payload:hevent_log&gt;" /> 
-
+	id1="0006" 
+	id2="0006"  
+	content="%NICWIN-&lt;level&gt;-&lt;messageid&gt;_&lt;hfld2&gt;_{ SMS: | SmsClient: | SMS Performance Data Provider: | SMS Provider: | SMS Client: | SMS Server: } &lt;hevent_log&gt;,&lt;hnumber&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,&lt;hevent_source&gt;,&lt;hevent_user&gt;,&lt;hseverity&gt;,&lt;!payload:hevent_log&gt;" /> 
 
 <MESSAGE 
-	level="2" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5420_SmsClient" 
 	id2="Application_5420_SmsClient" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_10805_SmsClient" 
 	id2="Application_10805_SmsClient" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_500_SMS" 
 	id2="Application_500_SMS" 
 	eventcategory="1610000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_502_SMS" 
 	id2="Application_502_SMS" 
 	eventcategory="1611000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_679_SMS" 
 	id2="Application_679_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1014_SMS" 
 	id2="Application_1014_SMS" 
 	eventcategory="1704000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1015_SMS" 
 	id2="Application_1015_SMS" 
 	eventcategory="1704010000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1016_SMS" 
 	id2="Application_1016_SMS" 
 	eventcategory="1703000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1095_SMS" 
 	id2="Application_1095_SMS" 
 	eventcategory="1610000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1104_SMS" 
 	id2="Application_1104_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1105_SMS" 
 	id2="Application_1105_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1200_SMS" 
 	id2="Application_1200_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1201_SMS" 
 	id2="Application_1201_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1203_SMS" 
 	id2="Application_1203_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1300_SMS" 
 	id2="Application_1300_SMS" 
 	eventcategory="1610000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1302_SMS" 
 	id2="Application_1302_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1303_SMS" 
 	id2="Application_1303_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1304_SMS" 
 	id2="Application_1304_SMS" 
 	eventcategory="1611000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1305_SMS" 
 	id2="Application_1305_SMS" 
 	eventcategory="1611000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1307_SMS" 
 	id2="Application_1307_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1308_SMS" 
 	id2="Application_1308_SMS" 
 	eventcategory="1611000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_1312_SMS" 
 	id2="Application_1312_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2300_SMS" 
 	id2="Application_2300_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2301_SMS" 
 	id2="Application_2301_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2311_SMS" 
 	id2="Application_2311_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2317_SMS" 
 	id2="Application_2317_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2329_SMS" 
 	id2="Application_2329_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2330_SMS" 
 	id2="Application_2330_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2342_SMS" 
 	id2="Application_2342_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2404_SMS" 
 	id2="Application_2404_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2408_SMS" 
 	id2="Application_2408_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2413_SMS" 
 	id2="Application_2413_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2414_SMS" 
 	id2="Application_2414_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2503_SMS" 
 	id2="Application_2503_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2703_SMS" 
 	id2="Application_2703_SMS" 
 	eventcategory="1609000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2715_SMS" 
 	id2="Application_2715_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2722_SMS" 
 	id2="Application_2722_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 	
 
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2807_SMS" 
 	id2="Application_2807_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2811_SMS" 
 	id2="Application_2811_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2813_SMS" 
 	id2="Application_2813_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2814_SMS" 
 	id2="Application_2814_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2819_SMS" 
 	id2="Application_2819_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2865_SMS" 
 	id2="Application_2865_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_2866_SMS" 
 	id2="Application_2866_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3010_SMS" 
 	id2="Application_3010_SMS" 
 	eventcategory="1703000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3014_SMS" 
 	id2="Application_3014_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3303_SMS" 
 	id2="Application_3303_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3306_SMS" 
 	id2="Application_3306_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3307_SMS" 
 	id2="Application_3307_SMS" 
 	eventcategory="1701000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3701_SMS" 
 	id2="Application_3701_SMS" 
 	eventcategory="1703000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_3703_SMS" 
 	id2="Application_3703_SMS" 
 	eventcategory="1702000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4404_SMS" 
 	id2="Application_4404_SMS" 
 	eventcategory="1703000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4405_SMS" 
 	id2="Application_4405_SMS" 
 	eventcategory="1703000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4604_SMS" 
 	id2="Application_4604_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4605_SMS" 
 	id2="Application_4605_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4607_SMS" 
 	id2="Application_4607_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4608_SMS" 
 	id2="Application_4608_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4609_SMS" 
 	id2="Application_4609_SMS" 
 	eventcategory="1601000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4610_SMS" 
 	id2="Application_4610_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4611_SMS" 
 	id2="Application_4611_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4629_SMS" 
 	id2="Application_4629_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4630_SMS" 
 	id2="Application_4630_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4632_SMS" 
 	id2="Application_4632_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4720_SMS" 
 	id2="Application_4720_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4722_SMS" 
 	id2="Application_4722_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4724_SMS" 
 	id2="Application_4724_SMS" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_4970_SMS" 
 	id2="Application_4970_SMS" 
 	eventcategory="1703000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5104_SMS" 
 	id2="Application_5104_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5202_SMS" 
 	id2="Application_5202_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5302_SMS" 
 	id2="Application_5302_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5436_SMS" 
 	id2="Application_5436_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5600_SMS" 
 	id2="Application_5600_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5610_SMS" 
 	id2="Application_5610_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5804_SMS" 
 	id2="Application_5804_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_6503_SMS" 
 	id2="Application_6503_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_6504_SMS" 
 	id2="Application_6504_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_6505_SMS" 
 	id2="Application_6505_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_6510_SMS" 
 	id2="Application_6510_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_6700_SMS" 
 	id2="Application_6700_SMS" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_30034_SMS" 
 	id2="Application_30034_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application" 
 	id2="Application" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,Information,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,Information,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application:01" 
 	id2="Application" 
 	eventcategory="1607000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,Warning,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,Warning,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
-        id1="Application:02" 
+	id1="Application:02" 
 	id2="Application" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,Error,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,Error,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
-        id1="Application:03" 
+	id1="Application:03" 
 	id2="Application" 
 	eventcategory="1612000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,{SmsClient|SMS Performance Data Provider|SMS Provider|SMS Client|SMS Server},&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Application_5055_SMS" 
 	id2="Application_5055_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6829_SMS" 
 	id2="Application_6829_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6830_SMS" 
 	id2="Application_6830_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6831_SMS" 
 	id2="Application_6831_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_5056_SMS" 
 	id2="Application_5056_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_5057_SMS" 
 	id2="Application_5057_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6833_SMS" 
 	id2="Application_6833_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6701_SMS" 
 	id2="Application_6701_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6704_SMS" 
 	id2="Application_6704_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6705_SMS" 
 	id2="Application_6705_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6706_SMS" 
 	id2="Application_6706_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+<MESSAGE 
 	id1="Application_6702_SMS" 
 	id2="Application_6702_SMS" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',fld2)&gt;&lt;@event_user:*RMQ(event_user)&gt;"
+	content="&lt;event_log&gt;,&lt;fld&gt;,&lt;day&gt; &lt;fld2&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;severity&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 </DEVICEMESSAGES>

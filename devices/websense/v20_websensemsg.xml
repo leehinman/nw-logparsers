@@ -1,371 +1,249 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
-<DEVICEMESSAGES>
-
+<DEVICEMESSAGES
+	name="websense"
+	displayname="Websense Web Security"
+	group="Web Logs">
 <VERSION
-
-xml="28"
-checksum="d68f0dab922509b352e3889636e4bbfb"
+xml="29"
+checksum="3892f703cd77437a001673c435b8e9e3"
 revision="106"
-enVision="33010025"
 device="2.0"/>
+<HEADER 
+	id1="0001" 
+	id2="0001" 
+	content="%WEBSENSE &lt;messageid&gt; ^&lt;!payload&gt;" />
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	content="%WEBSENSE Date: &lt;hdate&gt; &lt;htime&gt;.Type:&lt;messageid&gt;.&lt;!payload&gt;" />
+<HEADER 
+	id1="0003" 
+	id2="0003"  
+	content="%WEBSENSE Websense &lt;messageid&gt;:  &lt;!payload&gt;" /> 
+<HEADER 
+	id1="0004" 
+	id2="0004"  
+	content="%WEBSENSE: &lt;hfld1&gt;^^&lt;hfld2&gt;^^&lt;hfld3&gt;^^&lt;hfld4&gt;^^&lt;hfld5&gt;^^&lt;messageid&gt;^^&lt;!payload:hfld2&gt;" /> 		
 
 <HEADER 
-		id1="0001" 
-		id2="0001" 
-		content="%WEBSENSE &lt;messageid&gt; ^&lt;!payload&gt;" />
-<HEADER 
-		id1="0002" 
-		id2="0002" 
-		content="%WEBSENSE Date: &lt;hdate&gt; &lt;htime&gt;.Type:&lt;messageid&gt;.&lt;!payload&gt;" />
-<HEADER 
-		id1="0003" 
-		id2="0003"  
-		content="%WEBSENSE Websense &lt;messageid&gt;:  &lt;!payload&gt;" /> 
-
-<HEADER 
-		id1="0004" 
-		id2="0004"  
-		content="%WEBSENSE: &lt;hfld1&gt;^^&lt;hfld2&gt;^^&lt;hfld3&gt;^^&lt;hfld4&gt;^^&lt;hfld5&gt;^^&lt;messageid&gt;^^&lt;!payload:hfld2&gt;" /> 		
-
-
-<HEADER 
-		id1="0005" 
-		id2="0005"  
-		content="&lt;hfld1&gt; vendor={Websense|Forcepoint} product=Security product_version=&lt;version&gt; action=&lt;messageid&gt; &lt;!payload&gt;" />
+	id1="0005" 
+	id2="0005"  
+	content="&lt;hfld1&gt; vendor={Websense|Forcepoint} product=Security product_version=&lt;version&gt; action=&lt;messageid&gt; &lt;!payload&gt;" />
 
  
 
  
 <HEADER 
-		id1="9999" 
-		id2="9999"  
-		messageid="*STRCAT('WEBSENSE','_','GENERIC')"
-		content="%WEBSENSE &lt;!payload&gt;" /> 
+	id1="9999" 
+	id2="9999"  
+	messageid="*STRCAT('WEBSENSE','_','GENERIC')"
+	content="%WEBSENSE &lt;!payload&gt;" /> 
 
 		
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Permitted" 
 	id2="Permitted" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;fld1&gt;.&lt;fld3&gt;^^&lt;hostip&gt;^^&lt;saddr&gt;^^&lt;daddr&gt;^^&lt;disposition&gt;^^&lt;event_description&gt;^^&lt;username&gt;^^&lt;category&gt;^^&lt;network_service&gt;^^&lt;dport&gt;^^&lt;sbytes&gt;^^&lt;rbytes&gt;^^&lt;event_state&gt;^^&lt;web_domain&gt;^^&lt;fld2&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;"
+	content="&lt;fld1&gt;.&lt;fld3&gt;^^&lt;hostip&gt;^^&lt;saddr&gt;^^&lt;daddr&gt;^^&lt;disposition&gt;^^&lt;event_description&gt;^^&lt;username&gt;^^&lt;category&gt;^^&lt;network_service&gt;^^&lt;dport&gt;^^&lt;sbytes&gt;^^&lt;rbytes&gt;^^&lt;event_state&gt;^^&lt;web_domain&gt;^^&lt;fld2&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="permitted" 
 	id2="permitted" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@disposition:*HDR(messageid)&gt;severity=&lt;severity&gt; category=&lt;category&gt; user=&lt;username&gt; src_host=&lt;saddr&gt; src_port=&lt;sport&gt; dst_host=&lt;dhost&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; bytes_out=&lt;sbytes&gt; bytes_in=&lt;rbytes&gt; http_response=&lt;resultcode&gt; http_method=&lt;web_method&gt; http_content_type=&lt;content_type&gt; http_user_agent=&lt;user_agent&gt; http_proxy_status_code=&lt;fld5&gt; reason=&lt;result&gt; disposition=&lt;fld6&gt; policy=&lt;policyname&gt; role=&lt;user_role&gt; duration=&lt;duration&gt; url=&lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@disposition:*HDR(messageid)&gt;"
+	content="severity=&lt;severity&gt; category=&lt;category&gt; user=&lt;username&gt; src_host=&lt;saddr&gt; src_port=&lt;sport&gt; dst_host=&lt;dhost&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; bytes_out=&lt;sbytes&gt; bytes_in=&lt;rbytes&gt; http_response=&lt;resultcode&gt; http_method=&lt;web_method&gt; http_content_type=&lt;content_type&gt; http_user_agent=&lt;user_agent&gt; http_proxy_status_code=&lt;fld5&gt; reason=&lt;result&gt; disposition=&lt;fld6&gt; policy=&lt;policyname&gt; role=&lt;user_role&gt; duration=&lt;duration&gt; url=&lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Blocked" 
 	id2="Blocked" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;fld1&gt;.&lt;fld3&gt;^^&lt;hostip&gt;^^&lt;saddr&gt;^^&lt;daddr&gt;^^&lt;disposition&gt;^^&lt;event_description&gt;^^&lt;username&gt;^^&lt;category&gt;^^&lt;network_service&gt;^^&lt;dport&gt;^^&lt;sbytes&gt;^^&lt;rbytes&gt;^^&lt;event_state&gt;^^&lt;web_domain&gt;^^&lt;fld2&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;"
+	content="&lt;fld1&gt;.&lt;fld3&gt;^^&lt;hostip&gt;^^&lt;saddr&gt;^^&lt;daddr&gt;^^&lt;disposition&gt;^^&lt;event_description&gt;^^&lt;username&gt;^^&lt;category&gt;^^&lt;network_service&gt;^^&lt;dport&gt;^^&lt;sbytes&gt;^^&lt;rbytes&gt;^^&lt;event_state&gt;^^&lt;web_domain&gt;^^&lt;fld2&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="blocked" 
 	id2="blocked" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@disposition:*HDR(messageid)&gt;severity=&lt;severity&gt; category=&lt;category&gt; user=&lt;username&gt; src_host=&lt;saddr&gt; src_port=&lt;sport&gt; dst_host=&lt;dhost&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; bytes_out=&lt;sbytes&gt; bytes_in=&lt;rbytes&gt; http_response=&lt;resultcode&gt; http_method=&lt;web_method&gt; http_content_type=&lt;content_type&gt; http_user_agent=&lt;user_agent&gt; http_proxy_status_code=&lt;fld5&gt; reason=&lt;result&gt; disposition=&lt;fld6&gt; policy=&lt;policyname&gt; role=&lt;user_role&gt; duration=&lt;duration&gt; url=&lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@disposition:*HDR(messageid)&gt;"
+	content="severity=&lt;severity&gt; category=&lt;category&gt; user=&lt;username&gt; src_host=&lt;saddr&gt; src_port=&lt;sport&gt; dst_host=&lt;dhost&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; bytes_out=&lt;sbytes&gt; bytes_in=&lt;rbytes&gt; http_response=&lt;resultcode&gt; http_method=&lt;web_method&gt; http_content_type=&lt;content_type&gt; http_user_agent=&lt;user_agent&gt; http_proxy_status_code=&lt;fld5&gt; reason=&lt;result&gt; disposition=&lt;fld6&gt; policy=&lt;policyname&gt; role=&lt;user_role&gt; duration=&lt;duration&gt; url=&lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Categories" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt; &lt;@action:URL Categories Added&gt;URL Categories Added..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;.. &lt;info&gt;..Note: &lt;comments&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@action:URL Categories Added&gt;"
+	content=" URL Categories Added..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;.. &lt;info&gt;..Note: &lt;comments&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Protocols" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt; &lt;@action:Network Protocols Added&gt;Network Protocols Added..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;.. &lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@action:Network Protocols Added&gt;"
+	content=" Network Protocols Added..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;.. &lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Search" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt; &lt;@action:Search Filtering Update&gt;Search Filtering Update..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;... &lt;info&gt;....&lt;comments&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@action:Search Filtering Update&gt;"
+	content=" Search Filtering Update..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;... &lt;info&gt;....&lt;comments&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Expiration" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt; &lt;@action:Approaching Subscription Expiration&gt;Approaching Subscription Expiration..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;...&lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@action:Approaching Subscription Expiration&gt;"
+	content=" Approaching Subscription Expiration..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;...&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Limit" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt; &lt;@action:Approaching Subscription Limit&gt;Approaching Subscription Limit..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;...&lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@action:Approaching Subscription Limit&gt;"
+	content=" Approaching Subscription Limit..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;...&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Exceeded" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt; &lt;@action:Subscription Exceeded&gt;Subscription Exceeded..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;...&lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@action:Subscription Exceeded&gt;"
+	content=" Subscription Exceeded..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..&lt;event_description&gt;...&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="PERMIT:01" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt; &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt; { .Category: &lt;category&gt;.Action: Permitted | .Protocol:&lt;protocol&gt;.Action: Permitted } ..--Most recent request--.URL:&lt;url&gt;.IP address: &lt;daddr&gt;.Port:&lt;dport&gt; " />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;"
+	content=" &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt; { .Category: &lt;category&gt;.Action: Permitted | .Protocol:&lt;protocol&gt;.Action: Permitted } ..--Most recent request--.URL:&lt;url&gt;.IP address: &lt;daddr&gt;.Port:&lt;dport&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="BLOCK:01" 
 	id2="Alert" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt; &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt;.Action: Blocked | .Protocol:&lt;protocol&gt;.Action: Blocked } ..--Most recent request--.URL:&lt;url&gt;.IP address: &lt;daddr&gt;.Port:&lt;dport&gt; " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content=" &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt;.Action: Blocked | .Protocol:&lt;protocol&gt;.Action: Blocked } ..--Most recent request--.URL:&lt;url&gt;.IP address: &lt;daddr&gt;.Port:&lt;dport&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="PERMIT:02" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt; &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt; { .Category: &lt;category&gt;.Action: Permitted | .Protocol:&lt;protocol&gt;.Action: Permitted } ..--Most recent request--.URL:&lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;"
+	content=" &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt; { .Category: &lt;category&gt;.Action: Permitted | .Protocol:&lt;protocol&gt;.Action: Permitted } ..--Most recent request--.URL:&lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="BLOCK:02" 
 	id2="Alert" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt; &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt; { .Category: &lt;category&gt;.Action: Blocked | .Protocol:&lt;protocol&gt;.Action: Blocked } ..--Most recent request--.URL:&lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content=" &lt;action&gt; - &lt;fld1&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt; { .Category: &lt;category&gt;.Action: Blocked | .Protocol:&lt;protocol&gt;.Action: Blocked } ..--Most recent request--.URL:&lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Suspicious" 
 	id2="Alert" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O','%F/%G/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt; &lt;event_description&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...Severity:&lt;fld32&gt;.Category: &lt;category&gt;.Filtering action: Blocked.Threshold (in hits): &lt;trigger_val&gt;..&lt;info&gt;.User:&lt;dn&gt;.IP address: &lt;saddr&gt;.URL: &lt;url&gt;.Destination IP address: &lt;daddr&gt;   Port: &lt;dport&gt;.&lt;fld35&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O','%F/%G/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content=" &lt;event_description&gt; (&lt;fld2&gt;)..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..&lt;trigger_desc&gt;...Severity:&lt;fld32&gt;.Category: &lt;category&gt;.Filtering action: Blocked.Threshold (in hits): &lt;trigger_val&gt;..&lt;info&gt;.User:&lt;dn&gt;.IP address: &lt;saddr&gt;.URL: &lt;url&gt;.Destination IP address: &lt;daddr&gt;   Port: &lt;dport&gt;.&lt;fld35&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Suspicious:01" 
 	id2="Alert" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O','%F/%G/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt; &lt;event_description&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;trigger_desc&gt; Severity:&lt;fld32&gt; Category: &lt;category&gt; Filtering action: Blocked Threshold (in hits): &lt;trigger_val&gt; &lt;info&gt; User:&lt;username&gt; IP address: &lt;saddr&gt; URL: &lt;url&gt; Destination IP address: &lt;daddr&gt; Port: &lt;dport&gt; &lt;fld35&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O','%F/%G/%W %N:%U:%O',fld20,fld21)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content=" &lt;event_description&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;trigger_desc&gt; Severity:&lt;fld32&gt; Category: &lt;category&gt; Filtering action: Blocked Threshold (in hits): &lt;trigger_val&gt; &lt;info&gt; User:&lt;username&gt; IP address: &lt;saddr&gt; URL: &lt;url&gt; Destination IP address: &lt;daddr&gt; Port: &lt;dport&gt; &lt;fld35&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="BLOCK" 
 	id2="BLOCK" 
 	eventcategory="1204020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt; &lt;category&gt;^&lt;dn&gt;^&lt;saddr&gt;^&lt;daddr&gt;^&lt;severity&gt;^&lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content=" &lt;category&gt;^&lt;dn&gt;^&lt;saddr&gt;^&lt;daddr&gt;^&lt;severity&gt;^&lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Error" 
 	id2="Error" 
 	eventcategory="1204000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key:&lt;fld1&gt;..&lt;event_description&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;"
+	content=" Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key:&lt;fld1&gt;..&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Information:01" 
 	id2="Information" 
 	eventcategory="1204010000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; &lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;  Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;..For more information, &lt;fld3&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Permitted..--Most recent request--{ .URL: &lt;url&gt;.IP address: | .IP address: } &lt;daddr&gt;.Port: &lt;dport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;"
+	content="   Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;..For more information, &lt;fld3&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Permitted..--Most recent request--{ .URL: &lt;url&gt;.IP address: | .IP address: } &lt;daddr&gt;.Port: &lt;dport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Information" 
 	id2="Information" 
 	eventcategory="1204020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; &lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt; Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;...User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;fld2&gt;.Category: &lt;filter&gt;.Disposition: &lt;disposition&gt;.URL: &lt;url&gt;.IP address: &lt;daddr&gt;.Port: &lt;dport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;"
+	content="  Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;...User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;fld2&gt;.Category: &lt;filter&gt;.Disposition: &lt;disposition&gt;.URL: &lt;url&gt;.IP address: &lt;daddr&gt;.Port: &lt;dport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Information:03" 
 	id2="Information" 
 	eventcategory="1204010000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; &lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;  Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;..For more information, &lt;fld3&gt;...User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Permitted..--Most recent request--{ .URL: &lt;url&gt;.IP address: | .IP address: } &lt;daddr&gt;.Port: &lt;dport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;"
+	content="   Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;..For more information, &lt;fld3&gt;...User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Permitted..--Most recent request--{ .URL: &lt;url&gt;.IP address: | .IP address: } &lt;daddr&gt;.Port: &lt;dport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Information:02" 
 	id2="Information" 
 	eventcategory="1204020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; &lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;  Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;..For more information, &lt;fld3&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Blocked..--Most recent request--{ .URL: &lt;url&gt;.IP address: | .IP address: } &lt;daddr&gt;.Port: &lt;dport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content="   Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;..For more information, &lt;fld3&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Blocked..--Most recent request--{ .URL: &lt;url&gt;.IP address: | .IP address: } &lt;daddr&gt;.Port: &lt;dport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Information:04" 
 	id2="Information" 
 	eventcategory="1204020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; &lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;  Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;...For more information, &lt;fld3&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Blocked..--Most recent request--.URL: &lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;"
+	content="   Source: &lt;agent&gt;..Websense Alert: &lt;action&gt; - &lt;fld1&gt;..A client &lt;fld2&gt;...For more information, &lt;fld3&gt;...User name: &lt;dn&gt;.User IP address: &lt;saddr&gt;.Threshold (in visits): &lt;trigger_val&gt;{ .Category: &lt;category&gt; | .Protocol: &lt;protocol&gt; } .Disposition: Blocked..--Most recent request--.URL: &lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="PERMIT" 
 	id2="PERMIT" 
 	eventcategory="1801000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt; &lt;category&gt;^&lt;dn&gt;^&lt;saddr&gt;^&lt;daddr&gt;^&lt;severity&gt;^&lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;"
+	content=" &lt;category&gt;^&lt;dn&gt;^&lt;saddr&gt;^&lt;daddr&gt;^&lt;severity&gt;^&lt;url&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Warning" 
 	id2="Warning" 
 	eventcategory="1204000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@event_description:URL categories have been removed from the Websense Master Database&gt; Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Policy Server: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..The following URL categories have been removed from the Websense Master Database. They will no longer exist in filtering policies. Your policies may need to be changed to compensate for these removals...&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@event_description:URL categories have been removed from the Websense Master Database&gt;"
+	content=" Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Policy Server: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..The following URL categories have been removed from the Websense Master Database. They will no longer exist in filtering policies. Your policies may need to be changed to compensate for these removals...&lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Warning:01" 
 	id2="Warning" 
 	eventcategory="1204000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@event_description:URL categories have been added to the Websense Master Database&gt; Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Policy Server: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..The following URL categories have been added to the Websense Master Database. Their default filtering settings are as listed below. To configure different filtering settings for these URL categories, edit the category sets associated with the desired policies. (&lt;comments&gt;)..&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;&lt;@event_description:URL categories have been added to the Websense Master Database&gt;"
+	content=" Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Policy Server: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..The following URL categories have been added to the Websense Master Database. Their default filtering settings are as listed below. To configure different filtering settings for these URL categories, edit the category sets associated with the desired policies. (&lt;comments&gt;)..&lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Warning:02" 
 	id2="Warning" 
 	eventcategory="1204000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..Your Websense subscription provides monitoring for up to &lt;fld2&gt; clients. Your current Websense usage exceeds &lt;fld3&gt; of this limit...&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;"
+	content=" Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..Your Websense subscription provides monitoring for up to &lt;fld2&gt; clients. Your current Websense usage exceeds &lt;fld3&gt; of this limit...&lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Warning:03" 
 	id2="Warning" 
 	eventcategory="1204000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt; Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Policy Server: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..The following network protocols have been added to the Websense Master Database. Their default filtering settings are as listed below. To configure different filtering settings for these protocols, edit the network protocol sets associated with the desired policies. (&lt;comments&gt;)..&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W %N:%U:%O ',hdate,htime)&gt;"
+	content=" Source: &lt;agent&gt;..Websense Alert: &lt;action&gt;..Policy Server: &lt;daddr&gt;.Subscription Key: &lt;fld1&gt;..The following network protocols have been added to the Websense Master Database. Their default filtering settings are as listed below. To configure different filtering settings for these protocols, edit the network protocol sets associated with the desired policies. (&lt;comments&gt;)..&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="DownloadFailure" 
 	id2="Alert" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@event_description:Database Download Failure&gt;Database Download Failure  Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt;  Filtering Service: &lt;daddr&gt; Subscription Key: &lt;fld11&gt; &lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@event_description:Database Download Failure&gt;"
+	content="Database Download Failure  Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt;  Filtering Service: &lt;daddr&gt; Subscription Key: &lt;fld11&gt; &lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Threshold_Exceeded_Permitted" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;&lt;@action:Threshold exceeded for Permitted Category&gt;&lt;@event_description:Threshold exceeded for Permitted Category&gt;Threshold exceeded for Permitted Category - &lt;fld1&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;dn&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Permitted | Protocol:&lt;protocol&gt; Action: Permitted } --Most recent request-- URL:&lt;url&gt; IP address: &lt;daddr&gt; Port: &lt;dport&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;&lt;@action:Threshold exceeded for Permitted Category&gt;&lt;@event_description:Threshold exceeded for Permitted Category&gt;"
+	content="Threshold exceeded for Permitted Category - &lt;fld1&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;dn&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Permitted | Protocol:&lt;protocol&gt; Action: Permitted } --Most recent request-- URL:&lt;url&gt; IP address: &lt;daddr&gt; Port: &lt;dport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Threshold_Exceeded_Blocked" 
 	id2="Alert" 
 	eventcategory="1204020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;&lt;@action:Threshold exceeded for Blocked Category&gt;&lt;@event_description:Threshold exceeded for Blocked Category&gt;Threshold exceeded for Blocked Category - &lt;fld1&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;username&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Blocked | Protocol:&lt;protocol&gt; Action: Blocked } &lt;fld3&gt; URL:&lt;url&gt; IP address:&lt;daddr&gt; Port: &lt;dport&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;&lt;@action:Threshold exceeded for Blocked Category&gt;&lt;@event_description:Threshold exceeded for Blocked Category&gt;"
+	content="Threshold exceeded for Blocked Category - &lt;fld1&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;username&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Blocked | Protocol:&lt;protocol&gt; Action: Blocked } &lt;fld3&gt; URL:&lt;url&gt; IP address:&lt;daddr&gt; Port: &lt;dport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Alert" 
 	id2="Alert" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;&lt;event_description&gt;..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld11&gt;..&lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld20,fld21)&gt;"
+	content="&lt;event_description&gt;..Date: &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt;.Type: &lt;severity&gt;.Source: &lt;agent&gt;..Filtering Service: &lt;daddr&gt;.Subscription Key: &lt;fld11&gt;..&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="82" 
 	id1="Alert:01" 
 	id2="Alert" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;event_description&gt; Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt;  &lt;info&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;"
+	content="&lt;event_description&gt; Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt;  &lt;info&gt;" />
 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="WEBSENSE_GENERIC" 
-		id2="WEBSENSE_GENERIC" 		
-		eventcategory="1901000000"
-		functions="&lt;@msg:*PARMVAL($MSG)&gt;"		
-		content="&lt;fld1&gt;" />
-
+	id1="WEBSENSE_GENERIC" 
+	id2="WEBSENSE_GENERIC" 		
+	eventcategory="1901000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;" />
 	
 </DEVICEMESSAGES>

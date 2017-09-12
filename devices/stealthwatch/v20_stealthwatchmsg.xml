@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="stealthwatch"
+	displayname="Lancope StealthWatch"
+	group="IDS">
 <VERSION 
-	xml="19"
-	checksum="1cf74fcb5cee0a11f7099e69db4fa467"
+	xml="20"
+	checksum="125a52b50bc3ca8f91c052bf78b78409"
 	revision="107"
-	enVision="33030068" 
 	device="2.0" />
 
 
 <HEADER 
-		id1="0001" 
-		id2="0001" 
-		messageid="" 
-		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hlhost&gt; StealthWatch[&lt;hdata&gt;]: StealthWatch: &lt;htype&gt;,&lt;hseverity&gt;,&lt;hdatetime&gt;,&lt;hfacility&gt;,&lt;haddr&gt;,&lt;hmessage&gt;,&lt;data&gt;,&lt;hevent_type&gt;,&lt;messageid&gt;,&lt;!payload:hmessage&gt;" />
+	id1="0001" 
+	id2="0001" 
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hlhost&gt; StealthWatch[&lt;hdata&gt;]: StealthWatch: &lt;htype&gt;,&lt;hseverity&gt;,&lt;hdatetime&gt;,&lt;hfacility&gt;,&lt;haddr&gt;,&lt;hmessage&gt;,&lt;data&gt;,&lt;hevent_type&gt;,&lt;messageid&gt;,&lt;!payload:hmessage&gt;" />
 
 		
 
 <HEADER 
-		id1="0002" 
-		id2="0002" 
-		messageid=""
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hlhost&gt; StealthWatch[&lt;hdata&gt;]: &lt;hdatetime&gt;,&lt;messageid&gt;,&lt;!payload:messageid&gt;" />
+	id1="0002" 
+	id2="0002" 
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hlhost&gt; StealthWatch[&lt;hdata&gt;]: &lt;hdatetime&gt;,&lt;messageid&gt;,&lt;!payload:messageid&gt;" />
 
 <HEADER 
-		id1="0003" 
-		id2="0003" 
-		messageid="*STRCAT('Stealthwatch','_','events')"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hlhost&gt; StealthWatch[&lt;hdata&gt;]: &lt;hdatetime&gt;,&lt;hfld1&gt;,&lt;!payload:hfld1&gt;" />
+	id1="0003" 
+	id2="0003" 
+	messageid="*STRCAT('Stealthwatch','_','events')"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hlhost&gt; StealthWatch[&lt;hdata&gt;]: &lt;hdatetime&gt;,&lt;hfld1&gt;,&lt;!payload:hfld1&gt;" />
 		
 
 		
-
  <VALUEMAP
 	    name="getEventCategorySubject"
 		default="$NONE"
@@ -45,7 +44,6 @@
 	    name="getEventCategoryTheme"
 		default="$NONE"
 		keyvaluepairs="11=&apos;TEV&apos;|14=&apos;Configuration&apos;|29=&apos;Communication&apos;|42=&apos;TEV&apos;|49=&apos;Communication&apos;|55=&apos;Communication&apos;|63=&apos;Communication&apos;|276=&apos;Communication&apos;|277=&apos;Communication&apos;|286=&apos;Communication&apos;|289=&apos;Communication&apos;|290=&apos;Communication&apos;|291=&apos;Communication&apos;|292=&apos;Communication&apos;|294=&apos;Communication&apos;|297=&apos;Communication&apos;|298=&apos;Communication&apos;|299=&apos;Communication&apos;|300=&apos;Communication&apos;|301=&apos;Communication&apos;|302=&apos;Communication&apos;|310=&apos;Communication&apos;|513=&apos;Communication&apos;|516=&apos;Communication&apos;|517=&apos;Communication&apos;|518=&apos;Communication&apos;|519=&apos;Communication&apos;|5011=&apos;Communication&apos;|5999=&apos;Communication&apos;|6010=&apos;Configuration&apos;|7001=&apos;Communication&apos;|7002=&apos;Communication&apos;|7003=&apos;Communication&apos;|7004=&apos;Communication&apos;|7006=&apos;Communication&apos;|7007=&apos;Communication&apos;|7009=&apos;Communication&apos;|7010=&apos;Communication&apos;|7011=&apos;Communication&apos;|60001=&apos;Communication&apos;|60015=&apos;Communication&apos;|600016=&apos;Communication&apos;|600017=&apos;Communication&apos;" />
-
  <VALUEMAP
 	    name="getEventCategoryOutcome"
 		default="$NONE"
@@ -71,843 +69,518 @@
 		name="getProtocol" 
 		default="$NONE" 
 		keyvaluepairs="17=&apos;UDP&apos;|6=&apos;TCP&apos;|1=&apos;ICMP or Other&apos;" />
-
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="1:01" 
-		id2="1" 
-		eventcategory="1001000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="1:01" 
+	id2="1" 
+	eventcategory="1001000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="1" 
-		id2="1" 
-		eventcategory="1001000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
-
+	id1="1" 
+	id2="1" 
+	eventcategory="1001000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="2:01" 
-		id2="2" 
-		eventcategory="1001000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="2:01" 
+	id2="2" 
+	eventcategory="1001000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="2" 
-		id2="2" 
-		eventcategory="1001000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
-
+	id1="2" 
+	id2="2" 
+	eventcategory="1001000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="4:01" 
-		id2="4" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="4:01" 
+	id2="4" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="4" 
-		id2="4" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
-
+	id1="4" 
+	id2="4" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
 <MESSAGE 
-		level="4"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="5:01" 
-		id2="5" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="5:01" 
+	id2="5" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="5" 
-		id2="5" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="5" 
+	id2="5" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="4"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="6:01" 
-		id2="6" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="6:01" 
+	id2="6" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="6" 
-		id2="6" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="6" 
+	id2="6" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 	
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="7:01" 
-		id2="7" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="7:01" 
+	id2="7" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="7" 
-		id2="7" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="7" 
+	id2="7" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="8:01" 
-		id2="8" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="8:01" 
+	id2="8" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="8" 
-		id2="8" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="8" 
+	id2="8" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9:01" 
-		id2="9" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="9:01" 
+	id2="9" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9" 
-		id2="9" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="9" 
+	id2="9" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="13:01" 
-		id2="13" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="13:01" 
+	id2="13" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="13" 
-		id2="13" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="13" 
+	id2="13" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="2"
-		parse="1"
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="15:01" 
-		id2="15" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="15:01" 
+	id2="15" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="15" 
-		id2="15" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="15" 
+	id2="15" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="16:01" 
-		id2="16" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="16:01" 
+	id2="16" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="16" 
-		id2="16" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="16" 
+	id2="16" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="17:01" 
-		id2="17" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="17:01" 
+	id2="17" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="17" 
-		id2="17" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="17" 
+	id2="17" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="18:01" 
-		id2="18" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="18:01" 
+	id2="18" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="18" 
-		id2="18" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="18" 
+	id2="18" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 	
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="19:01" 
-		id2="19" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="19:01" 
+	id2="19" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="19" 
-		id2="19" 
-		eventcategory="1002000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="19" 
+	id2="19" 
+	eventcategory="1002000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="20:01" 
-		id2="20" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="20:01" 
+	id2="20" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="20" 
-		id2="20" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="20" 
+	id2="20" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="24:01" 
-		id2="24" 
-		eventcategory="1001000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="24:01" 
+	id2="24" 
+	eventcategory="1001000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="24" 
-		id2="24" 
-		eventcategory="1001000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="24" 
+	id2="24" 
+	eventcategory="1001000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 		
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="28:01" 
-		id2="28" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="28:01" 
+	id2="28" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 	
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="28" 
-		id2="28" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="28" 
+	id2="28" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 	
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="30:01" 
-		id2="30" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="30:01" 
+	id2="30" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="30" 
-		id2="30" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="30" 
+	id2="30" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 		
 <MESSAGE 
-		level="4"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="32:01" 
-		id2="32" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="32:01" 
+	id2="32" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="32" 
-		id2="32" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="32" 
+	id2="32" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="33:01" 
-		id2="33" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="33:01" 
+	id2="33" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="33" 
-		id2="33" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
-
+	id1="33" 
+	id2="33" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
 	
 <MESSAGE 
-		level="4"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="34:01" 
-		id2="34" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="34:01" 
+	id2="34" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 	
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="34" 
-		id2="34" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
-
+	id1="34" 
+	id2="34" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
 	
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="35:01" 
-		id2="35" 
-		eventcategory="1003020000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="35:01" 
+	id2="35" 
+	eventcategory="1003020000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="35" 
-		id2="35" 
-		eventcategory="1003020000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
-
+	id1="35" 
+	id2="35" 
+	eventcategory="1003020000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld2&gt;,&lt;protocol&gt;" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="36:03" 
-		id2="36" 
-		eventcategory="1003020000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&quot;&lt;src_zone&gt;&quot;,&lt;daddr&gt;,&quot;&lt;dst_zone&gt;&quot;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="36:03" 
+	id2="36" 
+	eventcategory="1003020000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&quot;&lt;src_zone&gt;&quot;,&lt;daddr&gt;,&quot;&lt;dst_zone&gt;&quot;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="36" 
-		id2="36" 
-		eventcategory="1003020000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&lt;src_zone&gt;,&lt;daddr&gt;,&lt;dst_zone&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="36" 
+	id2="36" 
+	eventcategory="1003020000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&lt;src_zone&gt;,&lt;daddr&gt;,&lt;dst_zone&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="36:01" 
-		id2="36" 
-		eventcategory="1003020000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&lt;src_zone&gt;,&lt;daddr&gt;,&lt;dst_zone&gt;,&lt;fld10&gt;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="36:01" 
+	id2="36" 
+	eventcategory="1003020000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&lt;src_zone&gt;,&lt;daddr&gt;,&lt;dst_zone&gt;,&lt;fld10&gt;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="36:02" 
-		id2="36" 
-		eventcategory="1003020000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&lt;src_zone&gt;,&lt;daddr&gt;,&lt;dst_zone&gt;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="36:02" 
+	id2="36" 
+	eventcategory="1003020000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;,&lt;src_zone&gt;,&lt;daddr&gt;,&lt;dst_zone&gt;,&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="37:01" 
-		id2="37" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="37:01" 
+	id2="37" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="37" 
-		id2="37" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="37" 
+	id2="37" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 		
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="38:01" 
-		id2="38" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="38:01" 
+	id2="38" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="38" 
-		id2="38" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;"/>
-
+	id1="38" 
+	id2="38" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;,&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;fld7&gt;" />
 		
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="3010:01" 
-		id2="3010" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="3010:01" 
+	id2="3010" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="3010" 
-		id2="3010" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
-
+	id1="3010" 
+	id2="3010" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
 		
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="3020:01" 
-		id2="3020" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="3020:01" 
+	id2="3020" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="3020" 
-		id2="3020" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
-
+	id1="3020" 
+	id2="3020" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
 		
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="4010:01" 
-		id2="4010" 
-		eventcategory="1610000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="4010:01" 
+	id2="4010" 
+	eventcategory="1610000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 		
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="4010" 
-		id2="4010" 
-		eventcategory="1610000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
-
+	id1="4010" 
+	id2="4010" 
+	eventcategory="1610000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
 		
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9010:01" 
-		id2="9010" 
-		eventcategory="1610000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="9010:01" 
+	id2="9010" 
+	eventcategory="1610000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="4"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9010" 
-		id2="9010" 
-		eventcategory="1610000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;protocol&gt;" />
-
+	id1="9010" 
+	id2="9010" 
+	eventcategory="1610000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@protocol:*getProtocol(protocol)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;protocol&gt;" />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9030:01" 
-		id2="9030" 
-		eventcategory="1603000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="9030:01" 
+	id2="9030" 
+	eventcategory="1603000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 	
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9030" 
-		id2="9030" 
-		eventcategory="1603000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
-
+	id1="9030" 
+	id2="9030" 
+	eventcategory="1603000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
 		
 <MESSAGE 
-		level="5"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9998:01" 
-		id2="9998" 
-		eventcategory="1610000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="9998:01" 
+	id2="9998" 
+	eventcategory="1610000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="5"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9998" 
-		id2="9998" 
-		eventcategory="1610000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
-
+	id1="9998" 
+	id2="9998" 
+	eventcategory="1610000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
 		
 <MESSAGE 
-		level="6"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9999:01" 
-		id2="9999" 
-		eventcategory="1611000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="9999:01" 
+	id2="9999" 
+	eventcategory="1611000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="6"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="9999" 
-		id2="9999" 
-		eventcategory="1611000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
-
+	id1="9999" 
+	id2="9999" 
+	eventcategory="1611000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OTZD&apos;,hdatetime)&gt;&lt;@category:*HDR(hmsgtype)&gt;&lt;@category:*getMsgtype(category)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@severity:*getSeveritylevel(severity)&gt;&lt;@agent:*HDR(hfacilityid)&gt;&lt;@agent:*getFacilityID(agent)&gt;&lt;@info:*getEventType(info)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;,&lt;fld1&gt;,&lt;info&gt;,&lt;id&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;fld8&gt;,&lt;fld9&gt;" />
 <MESSAGE 
-		level="6"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="60000" 
-		id2="60000" 
-		eventcategory="1603000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="60000" 
+	id2="60000" 
+	eventcategory="1603000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="6"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="60002" 
-		id2="60002" 
-		eventcategory="1603000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="60002" 
+	id2="60002" 
+	eventcategory="1603000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="58" 
-		id2="58" 
-		eventcategory="1101000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="58" 
+	id2="58" 
+	eventcategory="1101000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="41" 
-		id2="41" 
-		eventcategory="1001030200" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="41" 
+	id2="41" 
+	eventcategory="1001030200" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="39" 
-		id2="39" 
-		eventcategory="1001030200" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="39" 
+	id2="39" 
+	eventcategory="1001030200" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="56" 
-		id2="56" 
-		eventcategory="1001030000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="56" 
+	id2="56" 
+	eventcategory="1001030000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="51" 
-		id2="51" 
-		eventcategory="1001030000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="51" 
+	id2="51" 
+	eventcategory="1001030000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="315" 
-		id2="315" 
-		eventcategory="1001030000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="315" 
+	id2="315" 
+	eventcategory="1001030000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="44" 
-		id2="44" 
-		eventcategory="1001030300" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="44" 
+	id2="44" 
+	eventcategory="1001030300" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="316" 
-		id2="316" 
-		eventcategory="1001030000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="316" 
+	id2="316" 
+	eventcategory="1001030000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="61" 
-		id2="61" 
-		eventcategory="1001030000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="61" 
+	id2="61" 
+	eventcategory="1001030000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="50" 
-		id2="50" 
-		eventcategory="1605000000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="50" 
+	id2="50" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="26" 
-		id2="26" 
-		eventcategory="1001030200" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="26" 
+	id2="26" 
+	eventcategory="1001030200" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="59" 
-		id2="59" 
-		eventcategory="1001030000" 
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="59" 
+	id2="59" 
+	eventcategory="1001030000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 <MESSAGE 
-		level="2"
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="78" 
-		id1="Stealthwatch_events" 
-		id2="Stealthwatch_events" 
-		eventcategory="1901000000" 
-		content="&lt;@ec_subject:*getEventCategorySubject(id)&gt;&lt;@ec_activity:*getEventCategoryActivity(id)&gt;&lt;@ec_theme:*getEventCategoryTheme(id)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(id)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
-
+	id1="Stealthwatch_events" 
+	id2="Stealthwatch_events" 
+	eventcategory="1901000000" 
+	functions="&lt;@ec_subject:*getEventCategorySubject(id)&gt;&lt;@ec_activity:*getEventCategoryActivity(id)&gt;&lt;@ec_theme:*getEventCategoryTheme(id)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(id)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%W-%G-%FT%N:%U:%OZ&apos;,fld4)&gt;&lt;@starttime:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%OZ&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;,&lt;event_type&gt;{,&quot;&lt;info&gt;&quot;,|,&lt;info&gt;,}&lt;saddr&gt;{,&quot;&lt;src_zone&gt;&quot;,|,&lt;src_zone&gt;,}&lt;daddr&gt;{,&quot;&lt;dst_zone&gt;&quot;,|,&lt;dst_zone&gt;,}&lt;dport&gt;,&lt;protocol&gt;,&lt;hostip&gt;,&lt;fld4&gt;,&lt;fld3&gt;,&lt;category&gt;,&lt;severity&gt;,&lt;fld5&gt;,&lt;fld6&gt; " />
 </DEVICEMESSAGES>

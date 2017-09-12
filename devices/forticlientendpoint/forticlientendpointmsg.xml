@@ -1,95 +1,66 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
- <VERSION 
-	xml="5"
-	enVision="33040030"
-	checksum="db83d0e2e2b4802608fe3c1be58e200a"
+<DEVICEMESSAGES
+	name="forticlientendpoint"
+	displayname="Fortinet FortiClient Endpoint Security"
+	group="Anti Virus">
+<VERSION 
+	xml="6"
+	checksum="c41df9f6c72f931e4fbe09d46cfd9c9b"
 	revision="0"
 	device="2.0" />
-
 <HEADER
-		id1="0001"
-		id2="0001"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;hdate&gt; &lt;hhostname&gt; proto=&lt;hprotocol&gt; service=&lt;messageid&gt; status=&lt;haction&gt; src=&lt;hsaddr&gt; dst=&lt;hdaddr&gt; src_port=&lt;hsport&gt; dst_port=&lt;hdport&gt; &lt;!payload:hmonth&gt;"/>
-	<HEADER
-		id1="0003"
-		id2="0003"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;hdate&gt; &lt;hhostname&gt; (&lt;messageid&gt; &lt;hfld5&gt; times in last &lt;hfld6&gt;) &lt;hfld7&gt; &lt;hfld8&gt;::&lt;!payload:hmonth&gt;"/>
-
-	<HEADER
-		id1="0002"
-		id2="0002"
-		content="&lt;hmonth&gt; &lt;hday&gt; &lt;hdate&gt; &lt;hhostname&gt; &lt;messageid&gt; &lt;hfld5&gt;::&lt;!payload:hmonth&gt;"/>
-
+	id1="0001"
+	id2="0001"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;hdate&gt; &lt;hhostname&gt; proto=&lt;hprotocol&gt; service=&lt;messageid&gt; status=&lt;haction&gt; src=&lt;hsaddr&gt; dst=&lt;hdaddr&gt; src_port=&lt;hsport&gt; dst_port=&lt;hdport&gt; &lt;!payload:hmonth&gt;"/>
+<HEADER
+	id1="0003"
+	id2="0003"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;hdate&gt; &lt;hhostname&gt; (&lt;messageid&gt; &lt;hfld5&gt; times in last &lt;hfld6&gt;) &lt;hfld7&gt; &lt;hfld8&gt;::&lt;!payload:hmonth&gt;"/>
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;hdate&gt; &lt;hhostname&gt; &lt;messageid&gt; &lt;hfld5&gt;::&lt;!payload:hmonth&gt;"/>
 	
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="82"
-		id1="enter"
-		id2="enter"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; enter &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="82"
-		id1="repeated"
-		id2="repeated"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; (repeated &lt;fld5&gt; times in last &lt;fld6&gt;) enter &lt;info&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="77"
-		id1="ms-wbt-server"
-		id2="ms-wbt-server"
-		eventcategory="1803000000"
-		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="77"
-		id1="http"
-		id2="http"
-		eventcategory="1803000000"
-		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="77"
-		id1="https"
-		id2="https"
-		eventcategory="1803000000"
-		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="77"
-		id1="smtp"
-		id2="smtp"
-		eventcategory="1803000000"
-		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="77"
-		id1="pop3"
-		id2="pop3"
-		eventcategory="1803000000"
-		content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;"/>
-
+<MESSAGE
+	id1="enter"
+	id2="enter"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; enter &lt;info&gt;" />
+<MESSAGE
+	id1="repeated"
+	id2="repeated"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; (repeated &lt;fld5&gt; times in last &lt;fld6&gt;) enter &lt;info&gt;" />
+<MESSAGE
+	id1="ms-wbt-server"
+	id2="ms-wbt-server"
+	eventcategory="1803000000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;" />
+<MESSAGE
+	id1="http"
+	id2="http"
+	eventcategory="1803000000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;" />
+<MESSAGE
+	id1="https"
+	id2="https"
+	eventcategory="1803000000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;" />
+<MESSAGE
+	id1="smtp"
+	id2="smtp"
+	eventcategory="1803000000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;" />
+<MESSAGE
+	id1="pop3"
+	id2="pop3"
+	eventcategory="1803000000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:block_count&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; status=deny src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; server_app=&lt;fld12&gt; pid=&lt;process_id&gt; app_name=&lt;fld14&gt; traff_direct=&lt;direction&gt; block_count=&lt;dclass_counter1&gt; logon_user=&lt;username&gt;@&lt;domain&gt; msg=&lt;result&gt;" />
 </DEVICEMESSAGES>

@@ -1,163 +1,115 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="oracleav"
+	displayname="Oracle Audit Vault"
+	group="Database">
 <VERSION
-	xml="4"
-	checksum="fbfbe638615ad00bb6c2a445bc2902c2"
+	xml="5"
+	checksum="73d98ba89990700ecea18e66a93796ff"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
+<HEADER 
+	id1="0001" 
+	id2="0001"
+	content="%ORACLEAV: &lt;hfld1&gt;^^&lt;messageid&gt;^^&lt;hfld2&gt;^^&lt;!payload:hfld1&gt;" />
 
 <HEADER 
-		id1="0001" 
-		id2="0001"
-		messageid=""
-		content="%ORACLEAV: &lt;hfld1&gt;^^&lt;messageid&gt;^^&lt;hfld2&gt;^^&lt;!payload:hfld1&gt;" />
-
-<HEADER 
-		id1="0002" 
-		id2="0002"
-		messageid=""
-		content="%ORACLE_&lt;messageid&gt;:&lt;!payload&gt;" />
+	id1="0002" 
+	id2="0002"
+	content="%ORACLE_&lt;messageid&gt;:&lt;!payload&gt;" />
 
 <VALUEMAP 
 		name="getSeverity" 
 		default="$NONE" 
 		keyvaluepairs="1=&apos;Critical&apos;|2=&apos;Warning&apos;" />
-
-
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="Alerts" 
-		id2="AuditVault" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;operation_id&gt;^^&lt;fld1&gt;^^&lt;fld4&gt;^^&lt;rulename&gt;^^&lt;fld5&gt;^^&lt;event_state&gt;" />
+	id1="Alerts" 
+	id2="AuditVault" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;fld1&gt;^^&lt;fld4&gt;^^&lt;rulename&gt;^^&lt;fld5&gt;^^&lt;event_state&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="ACCONT_MANAGEMENT" 
-		id2="1" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="ACCONT_MANAGEMENT" 
+	id2="1" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="USER_SESSION" 
-		id2="2" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="USER_SESSION" 
+	id2="2" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="OBJECT_MANAGEMENT" 
-		id2="3" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="OBJECT_MANAGEMENT" 
+	id2="3" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="SYSTEM_MANAGEMENT" 
-		id2="4" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="SYSTEM_MANAGEMENT" 
+	id2="4" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="APPLICATION_MANAGEMENT" 
-		id2="5" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="APPLICATION_MANAGEMENT" 
+	id2="5" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="ROLE_PRIVILEGE_MANAGEMENT" 
-		id2="6" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="ROLE_PRIVILEGE_MANAGEMENT" 
+	id2="6" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="DATA_ACCESS" 
-		id2="7" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="DATA_ACCESS" 
+	id2="7" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="SERVICE_APPLICATION_UTILIZAION" 
-		id2="8" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="SERVICE_APPLICATION_UTILIZAION" 
+	id2="8" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="PEER_ASSOCITION" 
-		id2="9" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="PEER_ASSOCITION" 
+	id2="9" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="AUDIT" 
-		id2="10" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="AUDIT" 
+	id2="10" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="EXCEPTIONAL" 
-		id2="11" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="EXCEPTIONAL" 
+	id2="11" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="INVALID_RECORD" 
-		id2="12" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="INVALID_RECORD" 
+	id2="12" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="UNKNOWN" 
-		id2="13" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="UNKNOWN" 
+	id2="13" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="92" 
-		id1="DATABASE_VAULT" 
-		id2="14" 
-		eventcategory="1609000000" 
-		content="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;&lt;@fld61:*PARMVAL(shost)&gt;&lt;@fld62:*PARMVAL(id1)&gt;&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
+	id1="DATABASE_VAULT" 
+	id2="14" 
+	eventcategory="1609000000" 
+	functions="&lt;@ec_subject:Database&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@severity:*getSeverity(fld5)&gt;"
+	content="&lt;operation_id&gt;^^&lt;id&gt;^^&lt;rulename&gt;^^&lt;event_state&gt;^^&lt;fld1&gt;^^&lt;event_type&gt;^^&lt;vendor_event_cat&gt;^^&lt;resultcode&gt;^^&lt;fld3&gt;^^&lt;fld4&gt;^^&lt;fld5&gt;^^&lt;owner&gt;^^&lt;obj_name&gt;^^&lt;fld6&gt;^^&lt;fld7&gt;^^&lt;shost&gt;^^&lt;event_computer&gt;^^&lt;process_id&gt;^^&lt;c_username&gt;^^&lt;instance&gt;^^&lt;context&gt;^^&lt;id1&gt;" />
 </DEVICEMESSAGES>

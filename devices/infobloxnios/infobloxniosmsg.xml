@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="61"
-		checksum="f34325e76255811b36bddf756d5dbc5c"
-		revision="109"
+		xml="62"
+		checksum="aeb8638797a3bdbab6dc5c66f5cf7d4f"
+		revision="110"
 		device="2.0" />
 	
 <HEADER
@@ -550,6 +550,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
 	content=" &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;: &lt;severity&gt;: error (&lt;result&gt;) resolving &apos;&lt;saddr&gt;.in-addr.arpa/&lt;event_description&gt;/IN&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
+<MESSAGE
+	id1="named:40"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	content=" &lt;fld1&gt; client &lt;saddr&gt;#&lt;sport&gt;: &lt;protocol&gt;: query: &lt;domain&gt; &lt;info&gt; response:&lt;result&gt; +" />
+
 <MESSAGE
 	id1="named:07"
 	id2="named"
@@ -1193,4 +1200,11 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@info:*HDR(hdata)&gt;"
 	content=" &lt;event_description&gt; " />
+<MESSAGE
+	id1="ipmievd"
+	id2="ipmievd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@info:*HDR(hdata)&gt;"
+	content=" &lt;fld1&gt; " />
+
 </DEVICEMESSAGES>

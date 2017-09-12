@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="fortinet"
+	displayname="Fortinet FortiGate"
+	group="Firewall">
 <VERSION
-		xml="110"
-		checksum="aa3afb3dec8da9235441939d78a1cda8"
+		xml="111"
+		checksum="9314abd73dc6ef292b981df407516eab"
 		revision="108"
-		enVision="21050025"
 		device="2.0"/>
  
 
@@ -206,7 +208,6 @@
 	eventcategory="1204000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; SN=&lt;serial_number&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} proto=&lt;protocol&gt; kind=&lt;fld9&gt; action=&lt;action&gt; laddr=&lt;saddr&gt; local=&lt;shost&gt;" />
-
 <MESSAGE
 	id1="0001000002"
 	id2="0001000002"
@@ -219,7 +220,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@dclass_counter1_string:The total number of packets sent during the session&gt;&lt;@dclass_counter2_string:The total number of packets received during the session&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; srcname=&lt;shost&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dstname=&lt;dhost&gt; dst_port=&lt;dport&gt; wanopt_app_type=&lt;fld23&gt; duration=&lt;duration&gt; rule=&lt;rule&gt; policyid=&lt;policy_id&gt; identidx=&lt;fld25&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst_int=&quot;&lt;dinterface&gt;&quot; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot;" />
-
 <MESSAGE
 	id1="0021000002"
 	id2="0021000002"
@@ -232,7 +232,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@dclass_counter1_string:The total number of packets sent during the session&gt;&lt;@dclass_counter2_string:The total number of packets received during the session&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="status=&lt;event_state&gt; vd=&quot;&lt;vsys&gt;&quot; dir_disp={ org | replay | reply } tran_disp={ noop | snat | dnat } src=&lt;saddr&gt; srcname=&lt;shost&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dstname=&lt;dhost&gt; dst_port=&lt;dport&gt; tran_i{{=&lt;stransaddr&gt; tran_port=&lt;stransport&gt; service=&lt;network_service&gt; proto=&lt;fld70&gt; app_type=&lt;obj_type&gt; duration=&lt;duration&gt; rule=&lt;rule&gt; policyid=&lt;policy_id&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; sent_pkt=&lt;dclass_counter1&gt; rcvd_pkt=&lt;dclass_counter2&gt; vpn=&quot;&lt;fld31&gt;&quot; src_int=&quot;&lt;sinterface&gt;&quot; dst_int=&quot;&lt;dinterface&gt;&quot; SN=&lt;serial_number&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; carrier_ep=&lt;fld2&gt;" />
-
 <MESSAGE
 	id1="0021000002:03"
 	id2="0021000002"
@@ -257,7 +256,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="status=&lt;event_state&gt; vd=&lt;vsys&gt; src=&lt;saddr&gt; srcname=&lt;shost&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dstname=&lt;dhost&gt; dst_country=&lt;location_dst&gt; src_country=&lt;location_src&gt; dst_port=&lt;dport&gt; service=&lt;network_service&gt; proto=&lt;fld70&gt; app_type=&lt;obj_type&gt; duration=&lt;duration&gt; rule=&lt;rule&gt; policyid=&lt;policy_id&gt; {identidx=&lt;fld1&gt; sent=&lt;sbytes&gt; | sent=&lt;sbytes&gt;} rcvd=&lt;rbytes&gt; { shaper_drop_sent=&lt;fld20&gt; shaper_drop_rcvd=&lt;fld2&gt; perip_drop=&lt;fld3&gt; shaper_sent_name=&lt;fld4&gt; shaper_rcvd_name=&lt;fld5&gt; perip_name=&lt;fld6&gt; vpn=&lt;fld31&gt; vpn_tunnel=&lt;fld32&gt; | vpn=&lt;fld31&gt; vpn_tunnel=&lt;fld32&gt; } src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; SN=&lt;serial_number&gt; { app=&lt;fld8&gt; app_cat=&lt;fld9&gt; user=&lt;username&gt; | user=&lt;username&gt; } group=&lt;group&gt; carrier_ep=&lt;fld26&gt;" />
-
 		
 		
 <MESSAGE
@@ -285,7 +283,6 @@
 	eventcategory="1803000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; service=&lt;network_service&gt; conserve=&lt;fld13&gt; free=&lt;fld14&gt; red=&lt;fld15&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022101"
 	id2="0100022101"
@@ -334,7 +331,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@dclass_counter1_string:The total number of packets sent during the session&gt;&lt;@dclass_counter2_string:The total number of packets received during the session&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="{vd=&lt;vsys&gt; SN=|SN=}&lt;serial_number&gt; duration=&lt;duration&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} rule=&lt;rule&gt; policyid=&lt;policy_id&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; app_type=&lt;obj_type&gt; status=&lt;event_state&gt; src=&lt;saddr&gt; srcname=&lt;shost&gt; dst=&lt;daddr&gt; dstname=&lt;dhost&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; sent_pkt=&lt;dclass_counter1&gt; rcvd_pkt=&lt;dclass_counter2&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; vpn=&lt;fld31&gt; tran_ip=&lt;stransaddr&gt; tran_port=&lt;stransport&gt; dir_disp={ org | replay | reply } tran_disp={ noop | snat | dnat }" />
-
 <MESSAGE
 	id1="0021010001:01"
 	id2="0021010001"
@@ -415,7 +411,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; src=&lt;saddr&gt; src_port=&lt;sport&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dst_port=&lt;dport&gt; dst_int=&quot;&lt;dinterface&gt;&quot; SN=&lt;serial_number&gt; status=&lt;event_state&gt; policyid=&lt;policy_id&gt; { dst_country=&quot;&lt;location_dst&gt;&quot; src_country=&quot;&lt;location_src&gt;&quot; | dst_country=&quot;&lt;location_dst&gt;&quot; } { tran_ip=&lt;stransaddr&gt; tran_port=&lt;stransport&gt; service=&lt;network_service&gt; | service=&lt;network_service&gt; } proto=&lt;fld70&gt; duration=&lt;duration&gt; sent=&lt;sbytes&gt; { rcvd=&lt;rbytes&gt; vpn=&quot;&lt;fld31&gt;&quot; vpn_type=&lt;fld23&gt; | rcvd=&lt;rbytes&gt; }" />
-
 <MESSAGE
 	id1="0315012552"
 	id2="0315012552"
@@ -436,7 +431,6 @@
 	tagval="true"	 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; sessionid=&lt;fld1&gt; user=&lt;username&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt;srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; service=&lt;network_service&gt; profile=&lt;rulename&gt; hostname=&lt;hostname&gt; action=&lt;action&gt; reqtype=&lt;fld18&gt; msg=&lt;event_description&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; url=&lt;url&gt; group=&lt;group&gt;" />
-
 <MESSAGE
 	id1="0038000005:01"
 	id2="0038000005"
@@ -467,7 +461,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="status=&lt;event_state&gt; vd=&lt;vsys&gt; src=&lt;saddr&gt; srcname=&lt;shost&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dstname=&lt;dhost&gt; dst_country=&lt;location_dst&gt; src_country={&quot;&lt;location_src&gt;&quot;|&lt;location_src&gt;} dst_port=&lt;dport&gt; service=&lt;network_service&gt; proto=&lt;fld70&gt; app_type=&lt;obj_type&gt; duration=&lt;duration&gt; rule=&lt;rule&gt; policyid=&lt;policy_id&gt; identidx=&lt;fld13&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; shaper_drop_sent=&lt;fld16&gt; shaper_drop_rcvd=&lt;fld17&gt; perip_drop=&lt;fld18&gt; shaper_sent_name=&lt;fld19&gt; shaper_rcvd_name=&lt;fld20&gt; perip_name=&lt;fld21&gt; vpn=&lt;fld22&gt; vpn_tunnel=&lt;fld24&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; SN=&lt;serial_number&gt; app={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;} app_cat=&lt;fld25&gt; user=&lt;username&gt; group=&lt;group&gt; msg=&quot;&lt;event_description&gt;&quot; carrier_ep=&lt;fld26&gt; profilegroup=&lt;rule_group&gt; subapp=&lt;fld27&gt; subappcat=&lt;fld28&gt;" />
-
 		
 		
 <MESSAGE
@@ -488,7 +481,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="status=&lt;event_state&gt; vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} src=&lt;saddr&gt; srcname=&lt;shost&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dstname=&lt;dhost&gt; dst_country=&lt;location_dst&gt; dst_port=&lt;dport&gt; service=&lt;network_service&gt; proto=&lt;fld70&gt; app_type=&lt;obj_type&gt; duration=&lt;duration&gt; rule=&lt;rule&gt; policyid=&lt;policy_id&gt; identidx=&lt;fld45&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; shaper_drop_sent=&lt;fld16&gt; shaper_drop_rcvd=&lt;fld17&gt; perip_drop=&lt;fld18&gt; shaper_sent_name=&lt;fld19&gt; shaper_rcvd_name=&lt;fld20&gt; perip_name=&lt;fld21&gt; vpn=&lt;fld22&gt; {vpn_type=&lt;fld23&gt; vpn_tunnel=&lt;fld24&gt;|vpn_tunnel=&lt;fld24&gt;} src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} SN=&lt;serial_number&gt; app={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;} app_cat=&lt;fld25&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} msg=&lt;event_description&gt; carrier_ep=&lt;fld26&gt; {profilegroup=&lt;rule_group&gt; subapp=&lt;fld27&gt; subappcat=&lt;fld28&gt;|profilegroup=&quot;&lt;rule_group&gt;&quot;}" />
-
 		
 <MESSAGE
 	id1="0038016002"
@@ -1002,7 +994,6 @@
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; loc_ip=|loc_ip=}&lt;saddr&gt; loc_port=&lt;sport&gt; rem_ip=&lt;daddr&gt; rem_port=&lt;dport&gt; out_if=&lt;sinterface&gt; vpn_tunnel=&lt;fld31&gt; cookies=&lt;fld10&gt; action=&lt;action&gt; init=&lt;fld11&gt; mode={ aggressive | main | quick | xauth } user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} stage=&lt;fld12&gt; dir=&lt;direction&gt; status=&lt;event_state&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0101023004:01"
 	id2="0101023004"
@@ -1142,12 +1133,11 @@
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; loc_ip=|loc_ip=}&lt;saddr&gt; rem_ip=&lt;daddr&gt; rem_port=&lt;dport&gt; out_if={ &quot;&lt;sinterface&gt;&quot; | &lt;sinterface&gt; } vpn_tunnel={ &quot;&lt;fld31&gt;&quot; | &lt;fld31&gt; } action=&lt;action&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0102026001"
 	id2="0102026001"
 	eventcategory="1703000000"
-	functions="&lt;@fld61:*PARMVAL(context)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; dhcp_msg=|dhcp_msg=}&lt;context&gt; dir=&lt;direction&gt; mac=&lt;smacaddr&gt; ip=&lt;hostip&gt; lease=&lt;duration_string&gt; msg=&lt;event_description&gt;" />
 <MESSAGE
 	id1="0102026002"
@@ -1185,7 +1175,6 @@
 	eventcategory="1703000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0102029003"
 	id2="0102029003"
@@ -1408,7 +1397,6 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } name=&lt;fld23&gt; remote-gw=&lt;daddr&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032121:04"
 	id2="0104032121"
@@ -1504,7 +1492,7 @@
 	id1="0102032128"
 	id2="0102032128"
 	eventcategory="1401040000"		
-	functions="&lt;@fld61:*PARMVAL(interface)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; user=|user=}&lt;username&gt; ui=&lt;interface&gt; seq=&lt;fld14&gt; sintf=&lt;sinterface&gt; dintf=&lt;dinterface&gt; saddr=&lt;saddr&gt; daddr=&lt;daddr&gt; &lt;fld3&gt; msg=&quot;&lt;event_description&gt;&quot;" />
 <MESSAGE
 	id1="0102032129"
@@ -1698,7 +1686,6 @@
 	eventcategory="1605030000"		
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; msg=&lt;event_description&gt; ha_role=&lt;fld23&gt; devintfname=&lt;fld24&gt;" />
-
 <MESSAGE
 	id1="0105037901"
 	id2="0105037901"
@@ -1764,9 +1751,8 @@
 	id1="0102037382"
 	id2="0102037382"
 	eventcategory="1703000000"
-	functions="&lt;@fld61:*PARMVAL(context)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; dhcp_msg=|dhcp_msg=}&lt;context&gt; dir=&lt;direction&gt; mac=&lt;smacaddr&gt; ip=&lt;hostip&gt; lease=&lt;duration_string&gt; hostname=&lt;shost&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0102038001"
 	id2="0102038001"
@@ -1803,7 +1789,6 @@
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; user=&quot;&lt;username&gt;&quot; server=&lt;fld13&gt; action=&lt;action&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043015"
 	id2="0106043015"
@@ -1828,63 +1813,54 @@
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; dst=&lt;daddr&gt; ui=&lt;fld4&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043022"
 	id2="0106043022"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; dst=&lt;daddr&gt; ui=&lt;fld4&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043020"
 	id2="0106043020"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; dst=&lt;daddr&gt; initiator=&lt;fld4&gt; status=&lt;event_state&gt; reason=&quot;&lt;result&gt;&quot; &lt;fld23&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043024"
 	id2="0106043024"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; dst=&lt;daddr&gt; ui=&lt;fld4&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043010"
 	id2="0106043010"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; dst=&lt;daddr&gt; policyid=&lt;policy_id&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; ui=&lt;fld24&gt; action=&lt;action&gt; status=&lt;event_state&gt; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043019"
 	id2="0106043019"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; dst=&lt;daddr&gt; initiator=&lt;fld4&gt; status=&lt;event_state&gt; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043009"
 	id2="0106043009"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; dst=&lt;daddr&gt; policyid=&lt;policy_id&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; ui=&lt;fld4&gt; action=&lt;action&gt; status=&lt;event_state&gt; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043018"
 	id2="0106043018"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; src=&lt;saddr&gt; dst=&lt;daddr&gt; initiator=&lt;fld4&gt; status=&lt;event_state&gt; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043021"
 	id2="0106043021"
 	eventcategory="1605030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; dst=&lt;daddr&gt; ui=&lt;fld4&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043008"
 	id2="0106043008"
@@ -1921,7 +1897,6 @@
 	eventcategory="1401040000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; status=&lt;event_state&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0106043013:01"
 	id2="0106043013"
@@ -2000,7 +1975,6 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } field=&lt;fld5&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104041990"
 	id2="0104041990"
@@ -2019,7 +1993,6 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; id=&lt;fld3&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0107042103"
 	id2="0107042103"
@@ -2044,7 +2017,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; status=|status=}&lt;event_state&gt; virdb=&lt;fld3&gt; idsdb=&lt;fld4&gt; libav=&lt;fld5&gt; aven=&lt;fld6&gt; imap=&lt;fld7&gt; smtp=&lt;fld8&gt; pop3=&lt;fld9&gt; http=&lt;fld10&gt; ftp=&lt;fld11&gt; fcni=&lt;fld12&gt; fdni=&lt;fld13&gt; idsmn=&lt;fld14&gt; idssn=&lt;fld15&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0102042103"
 	id2="0102042103"
@@ -2063,7 +2035,6 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; action=&lt;action&gt; user=&quot;&lt;username&gt;&quot; group=&lt;group&gt; policyid=&lt;policy_id&gt; &lt;fld23&gt;" />
-
 <MESSAGE
 	id1="0102070000"
 	id2="0102070000"
@@ -2074,7 +2045,7 @@
 	id1="0102073001"
 	id2="0102073001"
 	eventcategory="1003010000"
-	functions="&lt;@fld61:*PARMVAL(interface)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; attack_id=|attack_id=}&lt;sigid&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; interface=&lt;interface&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; status=&lt;event_state&gt; proto=&lt;protocol&gt; service=&lt;network_service&gt; msg=&quot;&lt;event_description&gt; [Reference: &lt;info&gt; ]&quot;" />
 <MESSAGE
 	id1="0102080000"
@@ -2316,14 +2287,12 @@
 	eventcategory="1605030000"		
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; action=|action=}&lt;action&gt; ui=&lt;saddr&gt; status=&lt;event_state&gt; user=&quot;&lt;username&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0134099810"
 	id2="0134099810"
 	eventcategory="1605030000"		
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; action=|action=}&lt;action&gt; ui=&lt;saddr&gt; status=&lt;event_state&gt; user=&quot;&lt;username&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0134099840"
 	id2="0134099840"
@@ -2354,7 +2323,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; vip=&lt;fld3&gt; server=&lt;daddr&gt; port=&lt;dport&gt; server-admin-status=&lt;event_state&gt; action=&lt;action&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0142040453"
 	id2="0142040453"
@@ -2362,35 +2330,30 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; vip=&lt;fld3&gt; server=&lt;daddr&gt; port=&lt;dport&gt; server-admin-status=&lt;event_state&gt; action=&lt;action&gt; msg=&quot;&lt;event_description&gt;&quot;" />
 
-
 <MESSAGE
 	id1="0104032001"
 	id2="0104032001"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@vsys:*HDR(hfld2)&gt;"
 	content="{vd=&lt;vsys&gt; user=|user=}&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; status=&lt;event_state&gt; reason=&lt;result&gt; profile=&quot;&lt;rulename&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032001:01"
 	id2="0104032001"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; status=&lt;event_state&gt; reason=&lt;result&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032006"
 	id2="0104032006"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032007"
 	id2="0104032007"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; reason=&lt;result&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032003:01"
 	id2="0104032003"
@@ -2403,14 +2366,12 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; status=&lt;event_state&gt; reason=&lt;result&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032126"
 	id2="0104032126"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } seq=&lt;fld14&gt; sintf=&quot;&lt;sinterface&gt;&quot; dintf=&quot;&lt;dinterface&gt;&quot; saddr=&lt;fld7&gt; daddr=&lt;fld8&gt; act=&lt;action&gt; nat=&lt;fld3&gt; iptype=&lt;fld4&gt; schd=&lt;fld5&gt; svr=&quot;&lt;fld6&gt;&quot; msg=&quot;&lt;event_description&gt;" />
-
 <MESSAGE
 	id1="0104032126:01"
 	id2="0104032126"
@@ -2429,7 +2390,6 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032129"
 	id2="0104032129"
@@ -2442,28 +2402,24 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@vsys:*HDR(hfld2)&gt;"
 	content="{vd=&lt;vsys&gt; user=|user=}&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032140"
 	id2="0104032140"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={ &lt;network_service&gt;(&lt;saddr&gt;) | &lt;network_service&gt; } action=&lt;action&gt; field=&lt;content_type&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032140:01"
 	id2="0104032140"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={ NONE | &lt;network_service&gt;(&lt;saddr&gt;) | &lt;network_service&gt; } field=&lt;content_type&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032401"
 	id2="0104032401"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } name=&lt;fld17&gt; action=&lt;action&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032142"
 	id2="0104032142"
@@ -2504,42 +2460,36 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; action=&lt;action&gt; {reason=&lt;result&gt; log=&lt;fld3&gt;|log=&lt;fld3&gt;} msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032002"
 	id2="0104032002"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; user=&quot;&lt;username&gt;&quot; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;network_service&gt; } action=&lt;action&gt; status=&lt;event_state&gt; reason=&lt;result&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0104032002:01"
 	id2="0104032002"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; ui={&lt;network_service&gt;(&lt;saddr&gt;) |&lt;saddr&gt; } action=&lt;action&gt; status=&lt;event_state&gt; reason=&lt;result&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022800"
 	id2="0100022800"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; service=&lt;network_service&gt; mode=&lt;scheme&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022802"
 	id2="0100022802"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; service=&lt;network_service&gt; &lt;fld3&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022803"
 	id2="0100022803"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; service=&lt;network_service&gt; &lt;fld3&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022901"
 	id2="0100022901"
@@ -2552,7 +2502,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; action=&lt;action&gt; status=&lt;event_state&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022902"
 	id2="0100022902"
@@ -2565,7 +2514,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; action=&lt;action&gt; status=&lt;event_state&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0100022903"
 	id2="0100022903"
@@ -2603,14 +2551,12 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="action=&lt;action&gt; tunnel_type=&lt;scheme&gt; vd=&quot;&lt;vsys&gt;&quot; tunnel_id=&lt;fld23&gt; remote_ip=&lt;daddr&gt; tunnel_ip=&lt;fld24&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; dst_host=&quot;&lt;dhost&gt;&quot; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0132039425"
 	id2="0132039425"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="action=&lt;action&gt; tunnel_type=&lt;scheme&gt; vd=&quot;&lt;vsys&gt;&quot; tunnel_id=&lt;fld23&gt; remote_ip=&lt;daddr&gt; tunnel_ip=&lt;fld24&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; dst_host=&quot;&lt;dhost&gt;&quot; reason=&quot;&lt;result&gt;&quot; duration=&lt;duration&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0132039426"
 	id2="0132039426"
@@ -2623,14 +2569,12 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="action=&lt;action&gt; tunnel_type=&lt;scheme&gt; vd=&quot;&lt;vsys&gt;&quot; tunnel_id=&lt;fld23&gt; remote_ip=&lt;daddr&gt; tunnel_ip=&lt;fld24&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; dst_host=&quot;&lt;dhost&gt;&quot; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0016058001"
 	id2="0016058001"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0134039938"
 	id2="0134039938"
@@ -2697,21 +2641,18 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="action=&lt;action&gt; tunnel_type=&lt;scheme&gt; vd=&quot;&lt;vsys&gt;&quot; tunnel_id=&lt;fld23&gt; remote_ip=&lt;daddr&gt; tunnel_ip=&lt;fld24&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; dst_host=&quot;&lt;dhost&gt;&quot; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0134039948"
 	id2="0134039948"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="action=&lt;action&gt; tunnel_type=&lt;scheme&gt; vd=&quot;&lt;vsys&gt;&quot; tunnel_id=&lt;fld23&gt; remote_ip=&lt;daddr&gt; tunnel_ip=&lt;fld24&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; dst_host=&quot;&lt;dhost&gt;&quot; duration=&lt;duration&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; reason=&quot;&lt;result&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0101037125"
 	id2="0101037125"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} rem_ip=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; out_intf=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; xauth_user=&lt;fld3&gt; xauth_group=&lt;fld4&gt; vpn_tunnel=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; error_reason=&lt;result&gt;" />
-
 <MESSAGE
 	id1="0101037125:01"
 	id2="0101037125"
@@ -2726,7 +2667,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} rem_ip=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; out_intf=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; xauth_user=&lt;fld3&gt; xauth_group=&lt;fld4&gt; vpn_tunnel=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; init=&lt;fld5&gt; mode=&lt;scheme&gt; dir=&lt;direction&gt; stage=&lt;fld6&gt; role=&lt;fld7&gt; result=&lt;result&gt;" />
-
 <MESSAGE
 	id1="0101037130:01"
 	id2="0101037130"
@@ -2741,7 +2681,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg=&lt;event_description&gt; action=&lt;action&gt; {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&lt;sinterface&gt; cookies=&lt;fld10&gt; user=&lt;username&gt; group=&lt;group&gt; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}=&lt;fld31&gt; enc_spi=&lt;fld14&gt; dec_spi=&lt;fld15&gt;" />
-
 <MESSAGE
 	id1="0101037135:01"
 	id2="0101037135"
@@ -2756,28 +2695,24 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} rem_ip=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; out_intf=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; xauth_user=&lt;fld3&gt; xauth_group=&lt;fld4&gt; vpn_tunnel=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt;" />
-
 <MESSAGE
 	id1="0101037138"
 	id2="0101037138"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} rem_ip=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; out_intf=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; xauth_user=&lt;fld3&gt; xauth_group=&lt;fld4&gt; vpn_tunnel=&quot;&lt;fld31&gt;&quot; tunnel_ip=&lt;fld24&gt; tunnel_id=&lt;fld23&gt; tunnel_type=&lt;scheme&gt; duration=&lt;duration&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; next_stat=&lt;fld32&gt; tunnel=&lt;fld34&gt;" />
-
 <MESSAGE
 	id1="0101037139"
 	id2="0101037139"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} rem_ip=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; out_intf=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; xauth_user=&lt;fld3&gt; xauth_group=&lt;fld4&gt; vpn_tunnel=&quot;&lt;fld31&gt;&quot; phase2_name=&lt;fld18&gt;" />
-
 <MESSAGE
 	id1="0101037122"
 	id2="0101037122"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; role=&lt;fld5&gt; {esp_transform|esptransform}=&lt;fld6&gt; {esp_auth|espauth}=&lt;fld7&gt;" />
-
 <MESSAGE
 	id1="0101037122:01"
 	id2="0101037122"
@@ -2792,7 +2727,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; error_reason=&lt;result&gt; peer_notif=&lt;fld6&gt;" />
-
 <MESSAGE
 	id1="0101037124:01"
 	id2="0101037124"
@@ -2807,7 +2741,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; init=&lt;fld32&gt; mode=&lt;fld34&gt; dir=&lt;direction&gt; stage=&lt;fld35&gt; role=&lt;fld36&gt; result=&lt;result&gt;" />
-
 <MESSAGE
 	id1="0101037128:01"
 	id2="0101037128"
@@ -2822,14 +2755,12 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} rem_ip=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; out_intf=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; xauth_user=&lt;fld3&gt; xauth_group=&lt;fld4&gt; vpn_tunnel=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; xauth_result=&lt;result&gt;" />
-
 <MESSAGE
 	id1="0101037129"
 	id2="0101037129"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}=&quot;&lt;fld31&gt;&quot; status=&lt;event_state&gt; init=&lt;fld5&gt; mode=&lt;scheme&gt; dir=&lt;direction&gt; stage=&lt;fld6&gt; role=&lt;fld7&gt; result=&lt;result&gt;" />
-
 <MESSAGE
 	id1="0101037129:01"
 	id2="0101037129"
@@ -2844,7 +2775,6 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg=&quot;&lt;event_description&gt;&quot; action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}=&quot;&lt;fld31&gt;&quot; role=&lt;fld5&gt; in_spi=&lt;dst_spi&gt; out_spi=&lt;src_spi&gt;" />
-
 <MESSAGE
 	id1="0101037133:01"
 	id2="0101037133"
@@ -2859,42 +2789,36 @@
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} {logdesc=&quot;&lt;fld1&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;| msg=&quot;&lt;event_description&gt;&quot;} action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&quot;&lt;sinterface&gt;&quot; cookies=&lt;fld10&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group=&lt;fld4&gt; assignip=&lt;fld5&gt; |xauthgroup=&lt;fld4&gt; assignip=&lt;fld5&gt;| xauth_group=&lt;fld4&gt;| xauthgroup=&lt;fld4&gt;} {vpn_tunnel|vpntunnel}=&quot;&lt;fld31&gt;&quot;" />
-
 <MESSAGE
 	id1="0101037134:01"
 	id2="0101037134"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} {logdesc=&quot;&lt;fld1&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;| msg=&quot;&lt;event_description&gt;&quot;} action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}=&lt;sinterface&gt; cookies=&lt;fld10&gt; user=&lt;username&gt; group=&lt;group&gt; {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group=&lt;fld4&gt; assignip=&lt;fld5&gt; |xauthgroup=&lt;fld4&gt; assignip=&lt;fld5&gt;| xauth_group=&lt;fld4&gt;| xauthgroup=&lt;fld4&gt;} {vpn_tunnel|vpntunnel}=&lt;fld31&gt;" />
-
 <MESSAGE
 	id1="0101037127"
 	id2="0101037127"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} action={&quot;&lt;action&gt;&quot;|&lt;action&gt;} {rem_ip|remip}=&lt;daddr&gt; {loc_ip|locip}=&lt;saddr&gt; {rem_port|remport}=&lt;dport&gt; {loc_port|locport}=&lt;sport&gt; {out_intf|outintf}={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} cookies=&lt;fld10&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} {xauth_user|xauthuser}=&lt;fld3&gt; {xauth_group|xauthgroup}=&lt;fld4&gt; {vpn_tunnel|vpntunnel}={&quot;&lt;group&gt;&quot;|&lt;group&gt;} status=&lt;event_state&gt; init=&lt;fld5&gt; mode=&lt;scheme&gt; dir=&lt;direction&gt; stage=&lt;fld6&gt; role=&lt;fld7&gt; result=&lt;result&gt;" />
-
 <MESSAGE
 	id1="0107041001"
 	id2="0107041001"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; status=&lt;event_state&gt; &lt;fld3&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0143040704"
 	id2="0143040704"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; action=&lt;action&gt; cpu=&lt;fld3&gt; mem=&lt;fld4&gt; total_session=&lt;fld5&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0143047001"
 	id2="0143047001"
 	eventcategory="1602000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@vsys:*HDR(hfld2)&gt;"
 	content="{vd=&lt;vsys&gt; action=|action=}&lt;action&gt; cpu=&lt;fld3&gt; mem=&lt;fld4&gt; total_session=&lt;fld5&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 
 
 <MESSAGE
@@ -2921,7 +2845,6 @@
 	eventcategory="1801000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; sn=&lt;serial_number&gt; ap=&lt;fld25&gt; vap=&lt;fld22&gt; ssid=&lt;ssid&gt; mac=&lt;smacaddr&gt; security=&lt;scheme&gt; action=&lt;action&gt;" />
-
 			
 
 <MESSAGE
@@ -2990,7 +2913,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:dclass_counter1_string:The Number of times same event was detected in a short period of time&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} {attackid|attack_id}=&lt;sigid&gt; {user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt;|srcip=&lt;saddr&gt;|src=&lt;saddr&gt;} {srcport|src_port}=&lt;sport&gt; {srcintf|src_int}={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} {dstip|dst}=&lt;daddr&gt; {dstport|dst_port}=&lt;dport&gt; {dstintf|dst_int}={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} {src_name=&quot;&lt;shost&gt;&quot; dst_name=&quot;&lt;dhost&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; profile=&quot;&lt;rulename&gt;&quot;|dstname=&quot;&lt;dhost&gt;&quot;} proto=&lt;fld70&gt; service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} {policyid=&lt;policy_id&gt; identidx=&lt;fld7&gt;|policyid=&lt;policy_id&gt;} {sessionid|serial}=&lt;fld1&gt; {applist|app_list}={&quot;&lt;group_object&gt;&quot;|&lt;group_object&gt;} {apptype|app_type}={&quot;&lt;obj_type&gt;&quot;|&lt;obj_type&gt;} app={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;} action=&lt;action&gt; {count=&lt;dclass_counter1&gt; hostname=&lt;shost&gt; url=&quot;&lt;url&gt;&quot;|count=&lt;dclass_counter1&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;}" />
-
 		
 <MESSAGE
 	id1="1059028705:01"
@@ -3018,7 +2940,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:dclass_counter1_string:The Number of times same event was detected in a short period of time&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} attack_id=&lt;sigid&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} src=&lt;saddr&gt; src_port=&lt;sport&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst=&lt;daddr&gt; dst_port=&lt;dport&gt; dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} src_name={&quot;&lt;shost&gt;&quot;|&lt;shost&gt;} dst_name={&quot;&lt;dhost&gt;&quot;|&lt;dhost&gt;} profilegroup={&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;} profiletype={&quot;&lt;rule_template&gt;&quot;|&lt;rule_template&gt;} profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} proto=&lt;fld70&gt; service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} policyid=&lt;policy_id&gt; { intf_policyid=&lt;fld5&gt; identidx=&lt;fld6&gt; serial=&lt;fld1&gt; | serial=&lt;fld1&gt; } app_list={&quot;&lt;group_object&gt;&quot;|&lt;group_object&gt;} app_type={&quot;&lt;obj_type&gt;&quot;|&lt;obj_type&gt;} app={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;} action=&lt;action&gt; {count=&lt;dclass_counter1&gt; hostname=&lt;hostname&gt; url=&lt;url&gt;|count=&quot;&lt;dclass_counter1&gt;&quot;|count=&lt;dclass_counter1&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;}" />
-
 		
 <MESSAGE
 	id1="1059028704:01"
@@ -3026,7 +2947,6 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:dclass_counter1_string:The Number of times same event was detected in a short period of time&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} src=&lt;saddr&gt; src_port=&lt;sport&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst=&lt;daddr&gt; dst_port=&lt;dport&gt; dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} src_name={&quot;&lt;shost&gt;&quot;|&lt;shost&gt;} dst_name={&quot;&lt;dhost&gt;&quot;|&lt;dhost&gt;} proto=&lt;fld70&gt; service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} policyid=&lt;policy_id&gt; serial=&lt;fld2&gt; app_list={&quot;&lt;group_object&gt;&quot;|&lt;group_object&gt;} app_type={&quot;&lt;obj_type&gt;&quot;|&lt;obj_type&gt;} app={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;} action=&lt;action&gt; count={&quot;&lt;dclass_counter1&gt;&quot;|&lt;dclass_counter1&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;}" />
-
 
 <MESSAGE
 	id1="0954024576:01"
@@ -3046,21 +2966,18 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; {policyid=&lt;policy_id&gt; identidx=&lt;fld10&gt;|policyid=&lt;policy_id&gt;} serial=&lt;fld1&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_port=&lt;fld28&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_port=&lt;fld29&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&lt;network_service&gt;  status=&lt;event_state&gt; hostname=&quot;&lt;hostname&gt;&quot; url=&quot;&lt;url&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} rulename=&quot;&lt;rulename&gt;&quot; {compoundname=&quot;&lt;fld2&gt;&quot; action=&lt;action&gt; severity=&lt;risk_num&gt;|compoundname=&quot;&lt;fld2&gt;&quot;}" />
-
 <MESSAGE
 	id1="0954024577:01"
 	id2="0954024577"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; user=&lt;username&gt; group=&lt;group&gt; src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&lt;sinterface&gt; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&lt;dinterface&gt; service=&lt;network_service&gt;  status=&lt;event_state&gt; hostname=&lt;hostname&gt; url=&lt;url&gt; from=&lt;from&gt; to=&lt;to&gt; msg=&lt;event_description&gt; rulename=&lt;rulename&gt; compoundname=&lt;fld2&gt; action=&lt;action&gt; severity=&lt;risk_num&gt;" />
-
 <MESSAGE
 	id1="0954024577:02"
 	id2="0954024577"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; identidx=&lt;fld13&gt; serial=&lt;fld1&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; {sport=&lt;sport&gt; src_port=&lt;fld7&gt;|sport=&lt;sport&gt;} src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; {dport=&lt;dport&gt; dst_port=&lt;fld8&gt;|dport=&lt;dport&gt;} dst_int=&quot;&lt;dinterface&gt;&quot; service=&lt;network_service&gt;  status=&lt;event_state&gt; hostname=&quot;&lt;hostname&gt;&quot; url=&quot;&lt;url&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0954024577:03"
 	id2="0954024577"
@@ -3092,7 +3009,6 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@dclass_counter1_string:The number of times the attack was detected&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;fld4&gt; attack_id=&lt;sigid&gt; severity=&lt;risk&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; icmp_id=&lt;fld2&gt; icmp_type=&lt;icmptype&gt; icmp_code=&lt;icmpcode&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} status=&lt;event_state&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; user=&lt;username&gt; group=&lt;group&gt; ref=&quot;&lt;info&gt;&quot; count=&lt;dclass_counter1&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0419070000:04"
 	id2="0419070000"
@@ -3129,7 +3045,6 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@dclass_counter1_string:The number of times the attack was detected&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; attack_id=&lt;sigid&gt; severity=&lt;risk&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; status=&lt;event_state&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; user=&lt;username&gt; group=&lt;group&gt; ref=&quot;&lt;info&gt;&quot; count=&lt;dclass_counter1&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0420070000"
 	id2="0420070000"
@@ -3166,14 +3081,12 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@dclass_counter1_string:The number of times the attack was detected&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="severity=&lt;risk&gt; carrier_ep=&lt;fld6&gt; profilegroup={&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;} profiletype={&quot;&lt;rule_template&gt;&quot;|&lt;rule_template&gt;} profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;fld7&gt; serial=&lt;fld4&gt; status=&lt;event_state&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; vd=&lt;vsys&gt; count=&lt;dclass_counter1&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; attack_id=&lt;sigid&gt; sensor=&quot;&lt;sensor&gt;&quot; ref=&quot;&lt;info&gt;&quot; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; incident_serialno=&lt;id&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0419016384:01"
 	id2="0419016384"
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@dclass_counter1_string:The number of times the attack was detected&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="severity=&lt;risk&gt; carrier_ep=&lt;fld6&gt; profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; serial=&lt;fld4&gt; status=&lt;event_state&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; vd=&lt;vsys&gt; count=&lt;dclass_counter1&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; attack_id=&lt;sigid&gt; sensor=&quot;&lt;sensor&gt;&quot; ref=&quot;&lt;info&gt;&quot; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; incident_serialno=&lt;id&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0419016385"
 	id2="0419016385"
@@ -3200,7 +3113,6 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="severity=&lt;risk&gt; carrier_ep=&lt;fld6&gt; profilegroup={&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;} profiletype={&quot;&lt;rule_template&gt;&quot;|&lt;rule_template&gt;} profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;fld7&gt; serial=&lt;fld4&gt; status=&lt;event_state&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; vd=&lt;vsys&gt; count=&lt;dclass_counter1&gt; attack_id=&lt;sigid&gt; sensor=&quot;&lt;sensor&gt;&quot; ref=&quot;&lt;info&gt;&quot; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; incident_serialno=&lt;id&gt; msg=&quot;&lt;event_description&gt;&quot;" />
 
-
 		
 
 <MESSAGE
@@ -3224,21 +3136,18 @@
 	tagval="true"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; msg=&lt;event_description&gt; service=&lt;network_service&gt; srcip=&lt;saddr&gt; dstip=&lt;daddr&gt; direction=&lt;direction&gt; filename=&lt;filename&gt; analyticscksum=&lt;fld16&gt; analyticssubmit=&lt;fld17&gt; crscore=&lt;reputation_num&gt; crlevel=&lt;fld38&gt; virus=&lt;virusname&gt; ref=&lt;info&gt; url=&lt;url&gt; profile=&lt;rulename&gt; action=&lt;action&gt; agent=&lt;fld7&gt; virusid=&lt;fld10&gt; quarskip=&lt;result&gt; dtype=&lt;fld6&gt; sessionid=&lt;sessionid&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; proto=&lt;fld70&gt;" />
-
 <MESSAGE
 	id1="0211008194"
 	id2="0211008194"
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; sport=&lt;sport&gt; src_port=&lt;fld2&gt; dport=&lt;dport&gt; dst_port=&lt;fld3&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;id&gt; serial=&lt;fld1&gt; file={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} checksum={&quot;&lt;checksum&gt;&quot;|&lt;checksum&gt;} quarskip={&quot;&lt;result&gt;&quot;|&lt;result&gt;} virus={&quot;&lt;virusname&gt;&quot;|&lt;virusname&gt;} dtype=&lt;fld4&gt; ref={&quot;&lt;info&gt;&quot;|&lt;info&gt;} url=&quot;&lt;url&gt;&quot; carrier_ep=&lt;fld5&gt; profiletype={&quot;&lt;rule_template&gt;&quot;|&lt;rule_template&gt;} profilegroup={&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;} profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot;" />
-
 <MESSAGE
 	id1="0211060000"
 	id2="0211060000"
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; serial=|serial=}&lt;fld1&gt; user={ &quot;&lt;username&gt;&quot; | &lt;username&gt; } group={ &quot;&lt;group&gt;&quot; | &lt;group&gt; } src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&lt;sinterface&gt; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&lt;dinterface&gt; service=&lt;network_service&gt; status=&lt;event_state&gt; {file=&quot;&lt;filename&gt;&quot; virus=&quot;&lt;virusname&gt;&quot; | virus=&quot;&lt;virusname&gt;&quot;} url=&quot;&lt;url&gt;&quot; ref=&quot;&lt;info&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0211060000:08"
 	id2="0211060000"
@@ -3299,7 +3208,6 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; sport=&lt;sport&gt; src_port=&lt;fld2&gt; dport=&lt;dport&gt; dst_port=&lt;fld3&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;id&gt; serial=&lt;fld1&gt; url=&quot;&lt;url&gt;&quot; user=&quot;&lt;username&gt;&quot; group=&lt;group&gt; command=&quot;&lt;action&gt;&quot;" />
-
 <MESSAGE
 	id1="0212008448"
 	id2="0212008448"
@@ -3314,14 +3222,12 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg=&lt;event_description&gt; status=&lt;event_state&gt; service=&lt;network_service&gt; srcip=&lt;saddr&gt; dstip=&lt;daddr&gt; srcport=&lt;sport&gt; dstport=&lt;fld3&gt; srcintf=&lt;sinterface&gt; dstintf=&lt;dinterface&gt; policyid=&lt;policy_id&gt; identidx=&lt;id&gt; sessionid=&lt;fld1&gt; direction=&lt;direction&gt; filefilter=&lt;fld21&gt; filetype=&lt;fld23&gt; file=&lt;filename&gt; quarskip=&lt;result&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot;" />
-
 <MESSAGE
 	id1="0212063000"
 	id2="0212063000"
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&lt;sinterface&gt; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&lt;dinterface&gt; filefilter=&lt;fld7&gt; service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} status=&lt;event_state&gt; file=&lt;filename&gt; url=&quot;&lt;url&gt;&quot; ref=&quot;&lt;info&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0212063000:01"
 	id2="0212063000"
@@ -3401,14 +3307,12 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} {srcip|src}=&lt;saddr&gt; {dstip|dst}=&lt;daddr&gt; {sport=&lt;sport&gt; src_port=&lt;fld2&gt;|srcport=&lt;sport&gt;} {dport=&lt;dport&gt; dst_port=&lt;fld3&gt;|dstport=&lt;dport&gt;} {srcintf|src_int}={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} {dstintf|dst_int}={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;id&gt; {sessionid|serial}=&lt;fld1&gt; {direction|dir}=&lt;direction&gt; file={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} checksum={&quot;&lt;checksum&gt;&quot;|&lt;checksum&gt;} quarskip={&quot;&lt;result&gt;&quot;|&lt;result&gt;} virus={&quot;&lt;virusname&gt;&quot;|&lt;virusname&gt;} dtype=&lt;fld4&gt; ref={&quot;&lt;info&gt;&quot;|&lt;info&gt;} url=&quot;&lt;url&gt;&quot; carrier_ep=&lt;fld5&gt; profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} profiletype={&quot;&lt;rule_template&gt;&quot;|&lt;rule_template&gt;} profilegroup={&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;} user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; agent=&lt;fld6&gt; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot;" />
-
 <MESSAGE
 	id1="0262008961:01"
 	id2="0262008961"
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; sport=&lt;sport&gt; src_port=&lt;fld2&gt; dport=&lt;dport&gt; dst_port=&lt;fld3&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; dir=&lt;direction&gt; file={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} checksum={&quot;&lt;checksum&gt;&quot;|&lt;checksum&gt;} quarskip={&quot;&lt;result&gt;&quot;|&lt;result&gt;} virus={&quot;&lt;virusname&gt;&quot;|&lt;virusname&gt;} dtype=&lt;fld4&gt; ref={&quot;&lt;info&gt;&quot;|&lt;info&gt;} url=&quot;&lt;url&gt;&quot; endpoint=&lt;fld5&gt; profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; agent=&lt;fld6&gt; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot;" />
-
 <MESSAGE
 	id1="0262008961:02"
 	id2="0262008961"
@@ -3421,14 +3325,12 @@
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; sport=&lt;sport&gt; src_port=&lt;fld2&gt; dport=&lt;dport&gt; dst_port=&lt;fld3&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; identidx=&lt;id&gt; serial=&lt;fld1&gt; file={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} url=&quot;&lt;url&gt;&quot; carrier_ep=&lt;fld5&gt; profiletype={&quot;&lt;rule_template&gt;&quot;|&lt;rule_template&gt;} profilegroup={&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;} profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; agent=&lt;fld6&gt;" />
-
 <MESSAGE
 	id1="0213008705:01"
 	id2="0213008705"
 	eventcategory="1003010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} src=&lt;saddr&gt; dst=&lt;daddr&gt; sport=&lt;sport&gt; dport=&lt;dport&gt; src_int={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} dst_int={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; file={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} url=&quot;&lt;url&gt;&quot; endpoint=&lt;fld33&gt; profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; agent=&lt;fld6&gt;" />
-
 
 	
 
@@ -3490,7 +3392,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} policyid=&lt;policy_id&gt; {serial|sessionid}=&lt;fld1&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&lt;sinterface&gt; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&lt;dinterface&gt; service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} profile={&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;} status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} req_type=&lt;fld8&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0315012549:02"
 	id2="0315012549"
@@ -3517,7 +3418,6 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; sessionid=&lt;fld1&gt; user=&lt;username&gt; group=&lt;group&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; service=&lt;network_service&gt; hostname=&lt;hostname&gt; action=&lt;action&gt; reqtype=&lt;fld8&gt; msg=&lt;event_description&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; profile=&lt;rulename&gt; url=&lt;url&gt;" />
-
 		
 <MESSAGE
 	id1="0315012550"
@@ -3525,14 +3425,12 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} policyid=&lt;policy_id&gt; {serial|sessionid}=&lt;fld1&gt; {user=&lt;username&gt; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt;|srcip=&lt;saddr&gt;} {srcport|sport}=&lt;sport&gt; {srcintf|src_int}=&lt;sinterface&gt; {dstip|dst}=&lt;daddr&gt; {dstport|dport}=&lt;dport&gt; {dstintf|dst_int}=&lt;dinterface&gt; service={&quot;&lt;network_service&gt;|&lt;network_service&gt;} {profiletype=&lt;rule_template&gt; profile=&lt;rulename&gt;|profile=&lt;rulename&gt;} status=&lt;event_state&gt; {reqtype|req_type}=&lt;fld8&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0315093000"
 	id2="0315093000"
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{vd=&lt;vsys&gt; msg=|msg=}&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0315093001"
 	id2="0315093001"
@@ -3557,7 +3455,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; user={ &quot;&lt;username&gt;&quot; | &lt;username&gt; } group={ &quot;&lt;group&gt;&quot; | &lt;group&gt; } src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&lt;sinterface&gt; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&lt;dinterface&gt; service=&lt;network_service&gt; hostname=&lt;hostname&gt; status=&lt;event_state&gt; url=&lt;url&gt; msg={ &quot;&lt;event_description&gt;&quot; | &lt;event_description&gt; }" />
-
 <MESSAGE
 	id1="0315093004"
 	id2="0315093004"
@@ -3576,7 +3473,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; identidx=&lt;fld2&gt; serial=&lt;fld1&gt; user={ &quot;&lt;username&gt;&quot; | &lt;username&gt; } group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_port=&lt;fld23&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_port=&lt;fld24&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&lt;hostname&gt; profiletype=&quot;&lt;rule_template&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; status=&quot;&lt;event_state&gt;&quot; req_type=&lt;fld45&gt; url=&quot;&lt;url&gt;&quot; msg={ &quot;&lt;event_description&gt;&quot; | &lt;event_description&gt; } error=&quot;&lt;result&gt;&quot;" />
-
 <MESSAGE
 	id1="0316099501:03"
 	id2="0316099501"
@@ -3601,7 +3497,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; user={ &quot;&lt;username&gt;&quot; | &lt;username&gt; } group=&lt;fld2&gt; src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&lt;sinterface&gt; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&lt;dinterface&gt; service=&lt;network_service&gt; method=&lt;fld3&gt; cat=&lt;fcatnum&gt; cat_desc=&quot;&lt;filter&gt;&quot; hostname=&lt;hostname&gt; status=&lt;event_state&gt; url=&lt;url&gt; msg={ &quot;&lt;event_description&gt;&quot; | &lt;event_description&gt; }" />
-
 <MESSAGE
 	id1="0317099501"
 	id2="0317099501"
@@ -3638,14 +3533,12 @@
 	eventcategory="1204010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; user={ &quot;&lt;username&gt;&quot; | &lt;username&gt; } group={ &quot;&lt;group&gt;&quot; | &lt;group&gt; } src=&lt;saddr&gt; sport=&lt;sport&gt; src_int={ &quot;&lt;sinterface&gt;&quot; | &lt;sinterface&gt; } dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int={&quot;&lt;dinterface&gt;&quot; | &lt;dinterface&gt; } service={ &quot;&lt;network_service&gt;&quot; | &lt;network_service&gt; } method={ &quot;&lt;fld3&gt;&quot; | &lt;fld3&gt; } cat=&lt;fcatnum&gt; cat_desc=&quot;&lt;filter&gt;&quot; mode=&quot;&lt;mode&gt;&quot; rule_type=&quot;&lt;fld4&gt;&quot; rule_data=&quot;&lt;fld5&gt;&quot; hostname={&quot;&lt;hostname&gt;&quot; | &lt;hostname&gt; } status=&lt;event_state&gt; url={ &quot;&lt;url&gt;&quot; | &lt;url&gt; } msg={ &quot;&lt;event_description&gt;&quot; | &lt;event_description&gt; }" />
-
 <MESSAGE
 	id1="0317013312"
 	id2="0317013312"
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; { intf_policyid=&lt;fld15&gt; identidx=&lt;id&gt; | identidx=&lt;id&gt; } {sessionid|serial}=&lt;fld1&gt; {user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot;|user=&quot;&lt;username&gt;&quot;} {srcip|src}=&lt;saddr&gt; {sport=&lt;sport&gt; src_port=&lt;fld6&gt;|srcport=&lt;fld6&gt;} {srcintf|src_int}=&quot;&lt;sinterface&gt;&quot; {dstip|dst}=&lt;daddr&gt; {dport=&lt;dport&gt; dst_port=&lt;fld7&gt;|dstport=&lt;fld7&gt;} {dstintf|dst_int}=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; { carrier_ep=&quot;&lt;fld10&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; | profiletype=&quot;&lt;rule_template&gt;&quot; } {profilegroup=&quot;&lt;rule_group&gt;&quot; profile=&quot;&lt;rulename&gt;&quot;|profile=&quot;&lt;rulename&gt;&quot;} status=&quot;&lt;event_state&gt;&quot; {req_type|reqtype}=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; { sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot; |sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot; | msg=&quot;&lt;event_description&gt;&quot; } method=&lt;fld3&gt; {class=&lt;fld4&gt; class_desc=&lt;fld5&gt;|class=&lt;fld4&gt;} {cat=&lt;fcatnum&gt; cat_desc=&quot;&lt;filter&gt;&quot;|cat=&lt;fcatnum&gt;}" />
-
 <MESSAGE
 	id1="0317013312:01"
 	id2="0317013312"
@@ -3665,7 +3558,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; identidx=&lt;id&gt; sessionid=&lt;fld1&gt; srcip=&lt;saddr&gt; srcport=&lt;fld6&gt; srcintf=&quot;&lt;sinterface&gt;&quot; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; status=&quot;&lt;event_state&gt;&quot; reqtype=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot; method=&lt;fld3&gt; class=&lt;fld4&gt; cat=&lt;fcatnum&gt; catdesc=&quot;&lt;filter&gt;&quot;" />
-
 		
 <MESSAGE
 	id1="0317013312:04"
@@ -3673,7 +3565,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; identidx=&lt;id&gt; sessionid=&lt;fld1&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&quot;&lt;sinterface&gt;&quot; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; status=&quot;&lt;event_state&gt;&quot; reqtype=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot; method=&lt;fld3&gt; class=&lt;fld4&gt; cat=&lt;fcatnum&gt; catdesc=&quot;&lt;filter&gt;&quot;" />
-
 				
 <MESSAGE
 	id1="0317013312:02"
@@ -3690,28 +3581,24 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} policyid=&lt;policy_id&gt; {intf_policyid=&lt;fld15&gt; identidx=&lt;id&gt; | identidx=&lt;id&gt;} {serial|sessionid}=&lt;fld1&gt; {user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;|srcip=&lt;saddr&gt;|src=&lt;saddr&gt;} {sport=&lt;sport&gt; src_port=&lt;fld6&gt;|srcport=&lt;sport&gt;} {src_int|srcintf}=&quot;&lt;sinterface&gt;&quot; {dstip|dst}=&lt;daddr&gt; {dport=&lt;dport&gt; dst_port=&lt;fld7&gt;|dstport=&lt;dport&gt;} {dst_int|dstintf}=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; { carrier_ep=&quot;&lt;fld10&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; | profiletype=&quot;&lt;rule_template&gt;&quot; } {profilegroup=&quot;&lt;rule_group&gt;&quot; profile=&quot;&lt;rulename&gt;&quot;|profile=&quot;&lt;rulename&gt;&quot;} status=&quot;&lt;event_state&gt;&quot; {req_type|reqtype}=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; {sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot;|sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot; | msg=&quot;&lt;event_description&gt;&quot; } method=&lt;fld3&gt; {class=&lt;fld4&gt; class_desc=&lt;fld5&gt;|class=&lt;fld4&gt;} cat=&lt;fcatnum&gt; {catdesc|cat_desc}=&quot;&lt;filter&gt;&quot;" />
-
 <MESSAGE
 	id1="0316013056:01"
 	id2="0316013056"
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} policyid=&lt;policy_id&gt; {serial=&lt;fld1&gt;|identidx=&lt;fld2&gt; sessionid=&lt;fld1&gt;} user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; {srcip|src}=&lt;saddr&gt; {sport=&lt;sport&gt; src_port=&lt;fld6&gt;|srcport=&lt;sport&gt;} {src_int|srcintf}=&quot;&lt;sinterface&gt;&quot; {dstip|dst}=&lt;daddr&gt; {dport=&lt;dport&gt; dst_port=&lt;fld7&gt;|dstport=&lt;dport&gt;} {dst_int|dstintf}=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; {profile=&quot;&lt;rulename&gt;&quot; status=&quot;&lt;event_state&gt;&quot;|status=&quot;&lt;event_state&gt;&quot;} {req_type|reqtype}=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; {msg=&quot;&lt;event_description&gt;&quot;|sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot;} method=&lt;fld3&gt; class=&lt;fld4&gt; {class_desc|classdesc}=&lt;fld5&gt; {cat=&lt;fcatnum&gt; cat_desc=&quot;&lt;filter&gt;&quot;|cat=&lt;fcatnum&gt;}" />
-
 <MESSAGE
 	id1="0316013312"
 	id2="0316013312"
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; serial=&lt;fld1&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service={&quot;&lt;network_service&gt;&quot;|&lt;network_service&gt;} hostname=&quot;&lt;hostname&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; status={&quot;&lt;event_state&gt;&quot;|&lt;event_state&gt;} req_type=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; msg=&quot;&lt;event_description&gt;&quot; method=&lt;fld3&gt; class=&lt;fld4&gt; class_desc=&lt;fld5&gt; cat=&lt;fcatnum&gt; cat_desc=&quot;&lt;filter&gt;&quot;" />
-
 <MESSAGE
 	id1="0315012545"
 	id2="0315012545"
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{urlfilter_idx=&lt;fld9&gt; urlfilter_list=&lt;fld10&gt; vd=&quot;&lt;vsys&gt;&quot;|vd=&quot;&lt;vsys&gt;&quot; urlfilteridx=&lt;fld9&gt; urlfilterlist=&lt;fld10&gt;} policyid=&lt;policy_id&gt; {intf_policyid=&lt;fld18&gt; identidx=&lt;id&gt;|identidx=&lt;id&gt;} {sessionid|serial}=&lt;fld1&gt; {user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;|srcip=&lt;saddr&gt;|src=&lt;saddr&gt;} {sport=&lt;sport&gt; src_port=&lt;fld6&gt;|srcport=&lt;fld6&gt;} {src_int|srcintf}=&quot;&lt;sinterface&gt;&quot; {dstip|dst}=&lt;daddr&gt; {dport=&lt;dport&gt; dst_port=&lt;fld7&gt;|dstport=&lt;fld7&gt;} {dst_int|dstintf}=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; {carrier_ep=&lt;fld19&gt; profiletype=&quot;&lt;rule_template&gt;&quot;|profiletype=&quot;&lt;rule_template&gt;&quot;} {profilegroup=&quot;&lt;rule_group&gt;&quot; profile=&quot;&lt;rulename&gt;&quot;|profile=&quot;&lt;rulename&gt;&quot;} status=&quot;&lt;event_state&gt;&quot; {req_type|reqtype}=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; {sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot;|sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot;|msg=&quot;&lt;event_description&gt;&quot;}" />
-
 <MESSAGE
 	id1="0315012545:01"
 	id2="0315012545"
@@ -3733,7 +3620,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="urlfilter_idx=&lt;fld9&gt; urlfilter_list=&lt;fld10&gt; vd=&quot;&lt;vsys&gt;&quot; policyid=&lt;policy_id&gt; identidx=&lt;id&gt; serial=&lt;fld1&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_port=&lt;fld6&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_port=&lt;fld7&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; status=&quot;&lt;event_state&gt;&quot; req_type=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 
 	
 
@@ -3779,35 +3665,30 @@
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;serial_number&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; status=&quot;&lt;event_state&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0509083010"
 	id2="0509083010"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;serial_number&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; status=&quot;&lt;event_state&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0509020482"
 	id2="0509020482"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="policyid=&lt;policy_id&gt; identidx=&lt;fld23&gt; serial=&lt;serial_number&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; vd=&lt;vsys&gt; src=&lt;saddr&gt; sport=&lt;sport&gt; src_port=&lt;fld24&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_port=&lt;fld25&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&lt;network_service&gt; carrier_ep=&lt;fld4&gt; profile=&quot;&lt;rulename&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; status=&lt;event_state&gt; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; tracker=&lt;fld34&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0509083009"
 	id2="0509083009"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; serial=&lt;serial_number&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt; sport=&lt;sport&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; status=&quot;&lt;event_state&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
-
 <MESSAGE
 	id1="0508020480"
 	id2="0508020480"
 	eventcategory="1401040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="policyid=&lt;policy_id&gt; identidx=&lt;fld23&gt; serial=&lt;serial_number&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; vd=&lt;vsys&gt; src=&lt;saddr&gt; sport=&lt;sport&gt; src_port=&lt;fld24&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst=&lt;daddr&gt; dport=&lt;dport&gt; dst_port=&lt;fld25&gt; dst_int=&quot;&lt;dinterface&gt;&quot; service=&lt;network_service&gt; carrier_ep=&lt;fld4&gt; profile=&quot;&lt;rulename&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot; profiletype=&quot;&lt;rule_template&gt;&quot; status=&lt;event_state&gt; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; tracker=&lt;fld34&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-
 
 	
 
@@ -3817,35 +3698,30 @@
 	eventcategory="1614000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; action=&lt;action&gt; start=&lt;fld1&gt;&lt;space&gt;end=&lt;fld2&gt;&lt;space&gt;engine=&lt;component_version&gt; plugin=&lt;content_version&gt;" />
-
 <MESSAGE
 	id1="1600004100"
 	id2="1600004100"
 	eventcategory="1614000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; action=&lt;action&gt; ip=&lt;hostip&gt; service=&lt;network_service&gt; proto=&lt;protocol&gt; port=&lt;dport&gt;" />
-
 <MESSAGE
 	id1="1600004099"
 	id2="1600004099"
 	eventcategory="1614000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; action=&lt;action&gt; ip=&lt;hostip&gt; os=&lt;fld2&gt; os_family=&lt;fld3&gt; os_gen=&lt;fld4&gt; os_vendor=&lt;fld5&gt;" />
-
 <MESSAGE
 	id1="1601004096"
 	id2="1601004096"
 	eventcategory="1614000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; action=&lt;action&gt; start=&lt;fld1&gt;&lt;space&gt;end=&lt;fld2&gt;&lt;space&gt;engine=&lt;component_version&gt; plugin=&lt;content_version&gt;" />
-
 <MESSAGE
 	id1="1601004098"
 	id2="1601004098"
 	eventcategory="1614000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; action=&lt;action&gt; ip=&lt;hostip&gt; &lt;fld23&gt; severity=&lt;fld35&gt; proto=&lt;protocol&gt; port=&lt;dport&gt;" />
-
 
 	
 
@@ -6885,7 +6761,6 @@
 	eventcategory="1603060000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="&lt;fld3&gt;" />
-
 <MESSAGE
 	id1="0100020203"
 	id2="0100020203"
@@ -7173,7 +7048,6 @@
 	eventcategory="1701020000"
 	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@ec_subject:User&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} logdesc={&quot;&lt;info&gt;&quot;|&lt;info&gt;} user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} ui={&quot;&lt;network_service&gt;(&lt;saddr&gt;)&quot;|&lt;network_service&gt;} action=&lt;action&gt; cfgtid=&lt;fld1&gt; cfgpath={&quot;&lt;fld2&gt;&quot;|&lt;fld2&gt;} cfgobj={&quot;&lt;fld3&gt;&quot;|&lt;fld3&gt;} cfgattr={&quot;&lt;fld4&gt;&quot;|&lt;fld4&gt;} msg=&quot;&lt;event_description&gt;&quot;" />
-
 	
 <MESSAGE
 	id1="0100044547"
@@ -7354,7 +7228,6 @@
 	tagval="true"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="vd=&lt;vsys&gt; policyid=&lt;policy_id&gt; sessionid=&lt;fld1&gt; user=&lt;username&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; service=&lt;network_service&gt; profile=&lt;rulename&gt; hostname=&lt;hostname&gt; action=&lt;action&gt; reqtype=&lt;fld18&gt; msg=&lt;event_description&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; logdesc=&lt;fld1&gt; authproto=&lt;protocol&gt; status=&lt;event_state&gt; reason=&lt;result&gt; group=&lt;group&gt; url=&lt;url&gt;" />
-
 <MESSAGE
 	id1="0102043008"
 	id2="0102043008"
@@ -7477,7 +7350,6 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; sessionid=&lt;sessionid&gt; dstcountry=&lt;location_dst&gt; srccountry=&lt;location_src&gt; service=&lt;network_service&gt; wanoptapptype=&lt;fld10&gt; proto=&lt;fld70&gt; duration=&lt;duration&gt; policyid=&lt;policy_id&gt; wanin=&lt;fld21&gt; rcvdbyte=&lt;rbytes&gt; wanout=&lt;fld13&gt; lanin=&lt;fld14&gt; sentbyte=&lt;sbytes&gt; lanout=&lt;fld15&gt; appcat=&lt;fld15&gt;" />
-
 		
 <MESSAGE
 	id1="0000000010"
@@ -7534,7 +7406,6 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; session_id=&lt;fld4&gt; epoch=&lt;fld5&gt; event_id=&lt;fld6&gt; srcip=&lt;saddr&gt; src_port=&lt;sport&gt; dstip=&lt;daddr&gt; dst_port=&lt;dport&gt; proto=&lt;fld70&gt; src_int=&quot;&lt;sinterface&gt;&quot; dst_int=&quot;&lt;dinterface&gt;&quot; policy_id=&lt;policy_id&gt; profile=&lt;rulename&gt; voip_proto=&lt;fld1&gt; kind=&lt;fld2&gt; action=&lt;action&gt; status=&lt;event_state&gt; duration=&lt;duration&gt; dir=&lt;direction&gt; call_id=&lt;id&gt; from=&lt;from&gt; to=&lt;to&gt;" />
-
 <MESSAGE
 	id1="0419016384:02"
 	id2="0419016384"
@@ -7797,7 +7668,6 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@category:*HDR(msgIdPart2)&gt;&lt;@fld36:communication&gt;&lt;@ec_activity:*getEventCategoryActivity(event_state)&gt;&lt;@ec_theme:*getEventCategoryTheme(fld36)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="level=&lt;severity&gt; pri=&lt;severity&gt; vd=&lt;vsys&gt; src=&lt;saddr&gt; user=&lt;username&gt; server=&lt;daddr&gt; action=&lt;action&gt; msg=&lt;event_description&gt; ui=&lt;network_service&gt; initiator=&lt;fld83&gt; status=&lt;event_state&gt; reason=&lt;result&gt; scope=&lt;fld13&gt; scope_data=&lt;fld23&gt; rule_type=&lt;fld6&gt; rule_data=&lt;fld8&gt; offsite=&lt;fld9&gt; expiry=&lt;fld52&gt; oldwprof=&lt;change_old&gt; newwprof=&lt;change_new&gt; dstname=&lt;fld29&gt; srcname=&lt;fld39&gt; dst=&lt;daddr&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; group=&lt;group&gt; dns_name=&lt;fld38&gt; dns_ip=&lt;fld37&gt; rem_ip|=&lt;daddr&gt; loc_ip=&lt;saddr&gt; rem_port=&lt;dport&gt; loc_port=&lt;sport&gt; policyid=&lt;policy_id&gt; adgroup=&lt;group&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; banned_src=&lt;fld3&gt; banned_rule=&lt;fld93&gt; sensor=&lt;sensor&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; sessionid=&lt;fld10&gt; dstcountry=&lt;location_dst&gt; srccountry=&lt;location_src&gt; trandisp=&lt;fld15&gt; transip=&lt;stransaddr&gt; transport=&lt;stransport&gt; appid=&lt;fld7&gt; app=&lt;obj_name&gt; appcat=&lt;fld8&gt; applist=&lt;fld9&gt; appact=&lt;fld11&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld12&gt; rcvdpkt=&lt;fld16&gt; wanoptapptype=&lt;fld17&gt; identidx=&lt;id&gt; wanin=&lt;fld18&gt; wanout=&lt;fld19&gt; lanin=&lt;fld20&gt; lanout=&lt;fld21&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld43&gt; crlevel=&lt;fld44&gt; poluuid=&lt;fld45&gt;" />
-
 	
 <MESSAGE
 	id1="traffic_local"
@@ -11346,7 +11216,6 @@
 	eventcategory="1002040000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; severity=&lt;risk&gt; {srcip|src}=&lt;saddr&gt; {dstip|dst}=&lt;daddr&gt; {srcintf=&quot;&lt;sinterface&gt;&quot; dstintf=&quot;&lt;dinterface&gt;&quot; sessionid=&lt;fld11&gt;|sessionid=&lt;fld11&gt;} action=&lt;action&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; attack=&lt;signame&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; direction=&lt;direction&gt; attackid=&lt;sigid&gt; profile=&quot;&lt;rulename&gt;&quot; {ref=&quot;&lt;info&gt;&quot; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot;|ref=&quot;&lt;info&gt;&quot; user=&quot;&lt;username&gt;&quot;|ref=&quot;&lt;info&gt;&quot;} {incidentserialno=&lt;fld26&gt; msg=&quot;&lt;event_description&gt;&quot;|incidentserialno=&lt;fld26&gt;}" />
-
 <MESSAGE
 	id1="0419016384:05"
 	id2="0419016384"
@@ -11400,21 +11269,18 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; appid=&lt;fld7&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; policyid=&lt;policy_id&gt; sessionid=&lt;fld1&gt; applist=&lt;group_object&gt; appcat=&lt;category&gt; app=&lt;obj_name&gt; action=&lt;action&gt; hostname=&lt;hostname&gt; url=&lt;url&gt; msg=&lt;event_description&gt; apprisk=&lt;risk&gt;" />
-
 <MESSAGE
 	id1="1059028704:13"
 	id2="1059028704"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; appid=&lt;fld7&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; policyid=&lt;policy_id&gt; sessionid=&lt;fld1&gt; applist=&lt;group_object&gt; appcat=&lt;category&gt; app=&lt;obj_name&gt; action=&lt;action&gt; url=&lt;url&gt; msg=&lt;event_description&gt; apprisk=&lt;risk&gt;" />
-
 <MESSAGE
 	id1="1059028704:15"
 	id2="1059028704"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd=&lt;vsys&gt; appid=&lt;fld7&gt; user={&quot;&lt;username&gt;&quot;|&lt;username&gt;} group={&quot;&lt;group&gt;&quot;|&lt;group&gt;} srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; proto=&lt;fld70&gt; service=&lt;network_service&gt; policyid=&lt;policy_id&gt; sessionid=&lt;fld1&gt; applist=&lt;group_object&gt; appcat=&lt;category&gt; app=&lt;obj_name&gt; action=&lt;action&gt; msg=&lt;event_description&gt; apprisk=&lt;risk&gt;" />
-
 <MESSAGE
 	id1="1059028704:09"
 	id2="1059028704"
@@ -11529,7 +11395,6 @@
 	eventcategory="1201000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
 	content="vd={&quot;&lt;vsys&gt;&quot;|&lt;vsys&gt;} sessionid=&lt;fld1&gt; {user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot;|user=&quot;&lt;username&gt;&quot;} {srcip|src}=&lt;saddr&gt; {srcport=&lt;sport&gt; srcintf=&quot;&lt;sinterface&gt;&quot;|sport=&lt;sport&gt; src_port=&lt;fld6&gt;|srcport=&lt;sport&gt;} {dstip|dst}=&lt;daddr&gt; {dstport=&lt;dport&gt; dstintf=&quot;&lt;dinterface&gt;&quot;|dport=&lt;dport&gt; dst_port=&lt;fld7&gt;|dstport=&lt;dport&gt;} proto=&lt;fld70&gt; service=&lt;network_service&gt; hostname=&quot;&lt;hostname&gt;&quot; profile=&quot;&lt;rulename&gt;&quot; action=&lt;action&gt; {reqtype|req_type}=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; direction=&lt;direction&gt; msg=&quot;&lt;event_description&gt;&quot; method=&lt;fld3&gt; cat=&lt;fcatnum&gt; catdesc=&quot;&lt;filter&gt;&quot; crscore=&lt;reputation_num&gt; crlevel=&lt;fld38&gt;" />
-
 <MESSAGE
 	id1="0316013056:04"
 	id2="0316013056"
@@ -11631,7 +11496,6 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="user=&quot;&lt;username&gt;&quot; userfrom=&quot;&lt;c_username&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
 
-
 <MESSAGE
 	id1="FORTINET_GENERIC"
 	id2="FORTINET_GENERIC"
@@ -11640,5 +11504,4 @@
 	tagval="true"	 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@msg_id:*STRCAT(event_type,_,category)&gt;&lt;@vid:*STRCAT(event_type,_,category)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
 	content="itime=&lt;fld50&gt; logver=&lt;fld51&gt; devname=&lt;event_source&gt; devid=&lt;hardware_id&gt; logid=&lt;id&gt; log_id=&lt;id&gt; type=&lt;event_type&gt; subtype=&lt;category&gt; level=&lt;severity&gt; pri=&lt;severity&gt; vd=&lt;vsys&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; sessionid=&lt;sessionid&gt; status=&lt;event_state&gt; policyid=&lt;policy_id&gt; dstcountry=&lt;location_dst&gt; srccountry=&lt;location_src&gt; trandisp=&lt;fld15&gt; service=&lt;network_service&gt; proto=&lt;protocol&gt; app=&lt;obj_name&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; src=&lt;saddr&gt; srcname=&lt;saddr&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dst_country=&lt;location_dst&gt; dst_port=&lt;dport&gt; tran_ip=&lt;stransaddr&gt; tran_port=&lt;stransport&gt; tran_sip=&lt;fld5&gt; tran_sport=&lt;fld15&gt; app_type=&lt;obj_type&gt; rule=&lt;rule&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; shaper_drop_sent=&lt;fld16&gt; shaper_drop_rcvd=&lt;fld17&gt; perip_drop=&lt;fld18&gt; shaper_sent_name=&lt;fld19&gt; shaper_rcvd_name=&lt;fld20&gt; perip_drop=&lt;fld18&gt; shaper_sent_name=&lt;fld19&gt; shaper_rcvd_name=&lt;fld20&gt; perip_name=&lt;fld21&gt; vpn=&lt;fld22&gt; vpn_type=&lt;fld23&gt; vpn_tunnel=&lt;fld24&gt; src_int=&lt;sinterface&gt; dst_int=&lt;dinterface&gt; SN=&lt;serial_number&gt; app=&lt;obj_name&gt; app_cat=&lt;fld25&gt; user=&lt;username&gt; group=&lt;group&gt; msg=&lt;event_description&gt; carrier_ep=&lt;fld26&gt; profilegroup=&lt;rule_group&gt; conserve=&lt;fld27&gt; free=&lt;fld27&gt; red=&lt;fld28&gt; action=&lt;action&gt; fwver=&lt;fld13&gt; ui=&lt;network_service&gt; count=&lt;fld26&gt; green=&lt;fld15&gt; process=&lt;process&gt; reason=&lt;result&gt; gateway=&lt;fld14&gt; interface=&lt;interface&gt; mode=&lt;scheme&gt; sysconserve=&lt;fld15&gt; total=&lt;fld12&gt; entermargin=&lt;fld16&gt; exitmargin=&lt;fld11&gt; file=&lt;filename&gt; size=&lt;fld7&gt; daemon=&lt;fld28&gt; pid=&lt;fld18&gt; cpu=&lt;fld27&gt; mem=&lt;fld10&gt; totalsession=&lt;fld11&gt; log=&lt;fld12&gt; cfgtid=&lt;fld26&gt; logdesc=&lt;info&gt; community=&lt;fld21&gt; port=&lt;sport&gt; version=&lt;version&gt; filesize=&lt;filename_size&gt; datarange=&lt;fld32&gt; reporttype=&lt;fld33&gt; processtime=&lt;fld34&gt;" />
-
 </DEVICEMESSAGES>

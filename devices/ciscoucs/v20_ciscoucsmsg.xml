@@ -1,915 +1,639 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="ciscoucs"
+	displayname="Cisco UCS Manager"
+	group="Configuration Management">
 <VERSION
-	xml="14"
-	checksum="462ae126dd06bedef97796f0f7a40bc3"
+	xml="15"
+	checksum="a0ea796dd0f6d214826f9984d18a9711"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
-
 <HEADER
 	id1="0001"
 	id2="0001"
 	content=": &lt;hyear&gt; &lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt;: %&lt;hfld1&gt;-&lt;hlevel&gt;-&lt;messageid&gt;: &lt;!payload&gt;"/>	
-
 <HEADER
 	id1="0002"
 	id2="0002"
 	content=": &lt;hyear&gt; &lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt;: %&lt;hfld1&gt;-&lt;hfld2&gt;-&lt;hlevel&gt;-&lt;messageid&gt;: &lt;!payload&gt;"/>	
-
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AUDIT"
 	id2="AUDIT"
 	eventcategory="1401060000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:local user logged in&gt;[session][&lt;fld1&gt;][creation][&lt;fld2&gt;] &lt;fld3&gt;: local user &lt;username&gt; logged in from &lt;saddr&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:local user logged in&gt;"
+	content="[session][&lt;fld1&gt;][creation][&lt;fld2&gt;] &lt;fld3&gt;: local user &lt;username&gt; logged in from &lt;saddr&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AUDIT:01"
 	id2="AUDIT"
 	eventcategory="1401070000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:user terminated session&gt;[session][&lt;fld1&gt;][deletion][&lt;fld2&gt;] &lt;fld3&gt;: user &lt;username&gt; terminated session id &lt;sessionid&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:user terminated session&gt;"
+	content="[session][&lt;fld1&gt;][deletion][&lt;fld2&gt;] &lt;fld3&gt;: user &lt;username&gt; terminated session id &lt;sessionid&gt;" />
         
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SERVICE_STARTED"
 	id2="SERVICE_STARTED"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Service started&gt;Service &quot;&lt;service&gt;&quot; in vdc &lt;info&gt; started with PID(&lt;process_id&gt;)."/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Service started&gt;"
+	content="Service &quot;&lt;service&gt;&quot; in vdc &lt;info&gt; started with PID(&lt;process_id&gt;)." />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SUBPROC_SUCCESS_EXIT"
 	id2="SUBPROC_SUCCESS_EXIT"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&quot;&lt;service&gt;&quot; (PID &lt;process_id&gt;) has successfully exited with exit code &lt;result&gt;."/>	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&quot;&lt;service&gt;&quot; (PID &lt;process_id&gt;) has successfully exited with exit code &lt;result&gt;." />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="HEARTBEAT_LOSS"
 	id2="HEARTBEAT_LOSS"
 	eventcategory="1604010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Heartbeat loss&gt;Service &quot;&lt;service&gt;&quot; heartbeat loss &lt;fld5&gt; ,max &lt;fld6&gt; ."/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Heartbeat loss&gt;"
+	content="Service &quot;&lt;service&gt;&quot; heartbeat loss &lt;fld5&gt; ,max &lt;fld6&gt; ." />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:start"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1602000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@action:start&gt;start:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@action:start&gt;"
+	content="start:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:update:01"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1602000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Update terminal length&gt;update:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:terminal length &lt;fld5&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Update terminal length&gt;"
+	content="update:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:terminal length &lt;fld5&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:update:02"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1602000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Update terminal session-timeout&gt;update:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:terminal session-timeout &lt;fld5&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Update terminal session-timeout&gt;"
+	content="update:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:terminal session-timeout &lt;fld5&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:update:03"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1701000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;update:port-&lt;portname&gt;::npv traffic-map server-interface &lt;interface&gt; external-interface"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="update:port-&lt;portname&gt;::npv traffic-map server-interface &lt;interface&gt; external-interface" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:update:04"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1701000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Update interface description&gt;update:&lt;portname&gt;::Interface &lt;interface&gt; description updated to server &lt;device&gt;, &lt;fld1&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Update interface description&gt;"
+	content="update:&lt;portname&gt;::Interface &lt;interface&gt; description updated to server &lt;device&gt;, &lt;fld1&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:update:05"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;update:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:scope system"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="update:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:scope system" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:update:06"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1801020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:enabled telnet&gt;update:&lt;fld22&gt;::enabled &lt;network_service&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:enabled telnet&gt;"
+	content="update:&lt;fld22&gt;::enabled &lt;network_service&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:stop:01"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1602010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Shell terminated gracefully&gt;stop:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:shell terminated gracefully"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Shell terminated gracefully&gt;"
+	content="stop:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:shell terminated gracefully" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="AAA_ACCOUNTING_MESSAGE:stop:02"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1602000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Shell terminated because of telnet closed&gt;stop:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:shell terminated because of telnet closed"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Shell terminated because of telnet closed&gt;"
+	content="stop:&lt;terminal&gt;_&lt;hostip&gt;:&lt;username&gt;:shell terminated because of telnet closed" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;action&gt;: &lt;protocol&gt; pid=&lt;process_id&gt; from=::ffff:&lt;saddr&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&lt;action&gt;: &lt;protocol&gt; pid=&lt;process_id&gt; from=::ffff:&lt;saddr&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;action&gt;: &lt;protocol&gt; pid=&lt;process_id&gt; from=&lt;saddr_v6&gt; - &lt;info&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&lt;action&gt;: &lt;protocol&gt; pid=&lt;process_id&gt; from=&lt;saddr_v6&gt; - &lt;info&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:03"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;directory&gt; line &lt;fld22&gt;: &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&lt;directory&gt; line &lt;fld22&gt;: &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:04"
 	id2="SYSTEM_MSG"
 	eventcategory="1302010200"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;(&lt;authmethod&gt;) &lt;event_description&gt; for user &lt;username&gt; by &lt;administrator&gt;(uid=&lt;uid&gt;) - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="(&lt;authmethod&gt;) &lt;event_description&gt; for user &lt;username&gt; by &lt;administrator&gt;(uid=&lt;uid&gt;) - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:05"
 	id2="SYSTEM_MSG"
 	eventcategory="1605020000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;(&lt;authmethod&gt;) &lt;event_description&gt; for user &lt;username&gt; - &lt;info&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="(&lt;authmethod&gt;) &lt;event_description&gt; for user &lt;username&gt; - &lt;info&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:06"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Could not load host key:&gt;error: Could not load host key: &lt;directory&gt; - &lt;info&gt; "/>
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Could not load host key:&gt;"
+	content="error: Could not load host key: &lt;directory&gt; - &lt;info&gt; " />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:07"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;(&lt;authmethod&gt;) authentication failure; logname=&lt;fld22&gt; uid=&lt;uid&gt; euid=&lt;fld23&gt; tty=&lt;fld24&gt; ruser=&lt;fld25&gt; rhost=&lt;fld26&gt;  user=&lt;username&gt; - &lt;fld1&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="(&lt;authmethod&gt;) authentication failure; logname=&lt;fld22&gt; uid=&lt;uid&gt; euid=&lt;fld23&gt; tty=&lt;fld24&gt; ruser=&lt;fld25&gt; rhost=&lt;fld26&gt;  user=&lt;username&gt; - &lt;fld1&gt;" />
 	
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:08"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;(&lt;authmethod&gt;) check pass; user unknown - &lt;fld1&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="(&lt;authmethod&gt;) check pass; user unknown - &lt;fld1&gt;" />
 	
 <MESSAGE
-	level="2"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:09"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;(&lt;authmethod&gt;) auth &lt;event_description&gt; for [&lt;username&gt;] - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="(&lt;authmethod&gt;) auth &lt;event_description&gt; for [&lt;username&gt;] - &lt;info&gt;" />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:10"
 	id2="SYSTEM_MSG"
 	eventcategory="1401040000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;username&gt; : TTY=&lt;terminal&gt; ; PWD=&lt;directory&gt; ; USER=&lt;c_username&gt; ; COMMAND=&lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&lt;username&gt; : TTY=&lt;terminal&gt; ; PWD=&lt;directory&gt; ; USER=&lt;c_username&gt; ; COMMAND=&lt;info&gt;" />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:11"
 	id2="SYSTEM_MSG"
 	eventcategory="1701000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:readjusting service&gt;readjusting service &lt;network_service&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:readjusting service&gt;"
+	content="readjusting service &lt;network_service&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:12"
 	id2="SYSTEM_MSG"
 	eventcategory="1701000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Reconfigured: new=&lt;fld22&gt; old=&lt;fld23&gt; dropped=&lt;fld24&gt; (services) - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Reconfigured: new=&lt;fld22&gt; old=&lt;fld23&gt; dropped=&lt;fld24&gt; (services) - &lt;info&gt;" />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:13"
 	id2="SYSTEM_MSG"
 	eventcategory="1701000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Starting reconfiguration&gt;Starting reconfiguration - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Starting reconfiguration&gt;"
+	content="Starting reconfiguration - &lt;info&gt;" />
 	
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:14"
 	id2="SYSTEM_MSG"
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;severity&gt;][&lt;resultcode&gt;][&lt;event_time_string&gt;]&lt;event_description&gt;  - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;severity&gt;][&lt;resultcode&gt;][&lt;event_time_string&gt;]&lt;event_description&gt;  - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:error:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;error: PAM: &lt;event_description&gt; for &lt;username&gt; from &lt;saddr&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="error: PAM: &lt;event_description&gt; for &lt;username&gt; from &lt;saddr&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:error:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;error: &lt;fld21&gt;:&lt;fld22&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="error: &lt;fld21&gt;:&lt;fld22&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Failed:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Failed keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Failed keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Failed:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1303000000"
-	content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Failed none for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Failed none for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Received"
 	id2="SYSTEM_MSG"
 	eventcategory="1801010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Received disconnect from &lt;saddr&gt;: &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Received disconnect from &lt;saddr&gt;: &lt;event_description&gt; - &lt;info&gt;" />
 	
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Connection:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1801020000"
-	content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Connection&gt;Connection from &lt;saddr&gt; port &lt;sport&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Connection&gt;"
+	content="Connection from &lt;saddr&gt; port &lt;sport&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Connection:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1801030000"
-	content="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Connection closed&gt;Connection closed by &lt;saddr&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Connection closed&gt;"
+	content="Connection closed by &lt;saddr&gt; - &lt;info&gt;" />
 	
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Postponed:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Postponed keyboard-interactive for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Postponed keyboard-interactive for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Postponed:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Postponed keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Postponed keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Postponed:03"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Postponed publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Postponed publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Accepted:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1302000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Accepted keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Accepted keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Accepted:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1302000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Accepted publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Accepted publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:lastlog:01"
 	id2="SYSTEM_MSG"
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;lastlog_filetype: Couldn't stat &lt;filename&gt;: No such file or directory - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="lastlog_filetype: Couldn't stat &lt;filename&gt;: No such file or directory - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:lastlog:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;lastlog_openseek: &lt;filename&gt; is not a file or directory! - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="lastlog_openseek: &lt;filename&gt; is not a file or directory! - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:Closing"
 	id2="SYSTEM_MSG"
 	eventcategory="1801030000"
-	content="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Closing connection&gt;Closing connection to &lt;saddr&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Closing connection&gt;"
+	content="Closing connection to &lt;saddr&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:WARNING"
 	id2="SYSTEM_MSG"
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:File does not exist&gt;WARNING: &lt;filename&gt; does not exist, using fixed modulus - &lt;info&gt;"/>	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:File does not exist&gt;"
+	content="WARNING: &lt;filename&gt; does not exist, using fixed modulus - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:15"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Invalid user&gt;input_userauth_request: invalid user &lt;username&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Invalid user&gt;"
+	content="input_userauth_request: invalid user &lt;username&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:16"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Invalid user&gt;Invalid user &lt;username&gt; from &lt;saddr&gt; - &lt;info&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Invalid user&gt;"
+	content="Invalid user &lt;username&gt; from &lt;saddr&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:authentication"
 	id2="SYSTEM_MSG"
 	eventcategory="1301000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:authentication failed&gt;authentication failed - sshd[&lt;info&gt;]"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:authentication failed&gt;"
+	content="authentication failed - sshd[&lt;info&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:17"
 	id2="SYSTEM_MSG"
 	eventcategory="1401000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;check_tty:&lt;event_description&gt;- &lt;network_service&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="check_tty:&lt;event_description&gt;- &lt;network_service&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:18"
 	id2="SYSTEM_MSG"
 	eventcategory="1401000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;event_description&gt; pam session - &lt;network_service&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&lt;event_description&gt; pam session - &lt;network_service&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:19"
 	id2="SYSTEM_MSG"
 	eventcategory="1401030000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:authentication failed&gt;authentication failed - &lt;network_service&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:authentication failed&gt;"
+	content="authentication failed - &lt;network_service&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:20"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Unreachable&gt;[F0206][&lt;severity&gt;] &lt;device&gt; is unreachable - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Unreachable&gt;"
+	content="[F0206][&lt;severity&gt;] &lt;device&gt; is unreachable - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:21"
 	id2="SYSTEM_MSG"
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Server discovery failed&gt;[F0314][&lt;severity&gt;] &lt;device&gt; (service profile: &lt;fld1&gt;) discovery: failed - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:Server discovery failed&gt;"
+	content="[F0314][&lt;severity&gt;] &lt;device&gt; (service profile: &lt;fld1&gt;) discovery: failed - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:22"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:link state: down&gt;[F0209][&lt;severity&gt;] &lt;device&gt; link state: down - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:link state: down&gt;"
+	content="[F0209][&lt;severity&gt;] &lt;device&gt; link state: down - &lt;info&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:23"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:speed: upper-non-critical&gt;[F0395][&lt;severity&gt;] &lt;device&gt; speed: upper-non-critical - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:speed: upper-non-critical&gt;"
+	content="[F0395][&lt;severity&gt;] &lt;device&gt; speed: upper-non-critical - &lt;info&gt;" />
 	
 <MESSAGE
-	level="2"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:24"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0455][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0455][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:25"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0429][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0429][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="2"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:26"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0452][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0452][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="2"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:27"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-    content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0451][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0451][&lt;severity&gt;] &lt;device&gt;, &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:28"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0320][&lt;severity&gt;] &lt;device&gt; (service profile: &lt;fld1&gt;) has an &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0320][&lt;severity&gt;] &lt;device&gt; (service profile: &lt;fld1&gt;) has an &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:29"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:CMOS battery voltage is lower-critical&gt;[F0424][&lt;severity&gt;] Possible loss of CMOS settings: &lt;device&gt; is lower-critical - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@event_description:CMOS battery voltage is lower-critical&gt;"
+	content="[F0424][&lt;severity&gt;] Possible loss of CMOS settings: &lt;device&gt; is lower-critical - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:30"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0373][&lt;severity&gt;] &lt;device&gt; operability: &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0373][&lt;severity&gt;] &lt;device&gt; operability: &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:31"
 	id2="SYSTEM_MSG"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[F0480][&lt;severity&gt;] &lt;device&gt; operability: &lt;event_description&gt; - &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[F0480][&lt;severity&gt;] &lt;device&gt; operability: &lt;event_description&gt; - &lt;info&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:32"
 	id2="SYSTEM_MSG"
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt; FELL OFF INPUT-rules: IN=&lt;fld1&gt; OUT=&lt;fld2&gt; MAC=&lt;fld3&gt; - &lt;fld4&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content=" FELL OFF INPUT-rules: IN=&lt;fld1&gt; OUT=&lt;fld2&gt; MAC=&lt;fld3&gt; - &lt;fld4&gt;" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:33"
 	id2="SYSTEM_MSG"
 	eventcategory="1302010200"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;&lt;@event_description:SSH2_MSG_KEXINIT&gt; &lt;severity&gt;: SSH2_MSG_KEXINIT &lt;action&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;&lt;@event_description:SSH2_MSG_KEXINIT&gt;"
+	content=" &lt;severity&gt;: SSH2_MSG_KEXINIT &lt;action&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:35"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt; &lt;severity&gt;: Client protocol version &lt;protocol_detail&gt;; client software version &lt;version&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;"
+	content=" &lt;severity&gt;: Client protocol version &lt;protocol_detail&gt;; client software version &lt;version&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:36"
 	id2="SYSTEM_MSG"
 	eventcategory="1303000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;&lt;@event_description:no match&gt; &lt;severity&gt;: no match: &lt;version&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;&lt;@event_description:no match&gt;"
+	content=" &lt;severity&gt;: no match: &lt;version&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:37"
 	id2="SYSTEM_MSG"
 	eventcategory="1701060000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;&lt;@event_description:Enabling compatibility mode for protocol&gt; &lt;severity&gt;: Enabling compatibility mode for protocol &lt;protocol_detail&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;&lt;@event_description:Enabling compatibility mode for protocol&gt;"
+	content=" &lt;severity&gt;: Enabling compatibility mode for protocol &lt;protocol_detail&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:38"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt; &lt;severity&gt;: Local version string &lt;version&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;"
+	content=" &lt;severity&gt;: Local version string &lt;version&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:39"
 	id2="SYSTEM_MSG"
 	eventcategory="1304000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt; &lt;severity&gt;: fd &lt;fld1&gt; is &lt;fld2&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;"
+	content=" &lt;severity&gt;: fd &lt;fld1&gt; is &lt;fld2&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:40"
 	id2="SYSTEM_MSG"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:httpd&gt;&lt;@event_description:UCSM_SESSION_LOCALES&gt;UCSM_SESSION_LOCALES -  - httpd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:httpd&gt;&lt;@event_description:UCSM_SESSION_LOCALES&gt;"
+	content="UCSM_SESSION_LOCALES -  - httpd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SYSTEM_MSG:34"
 	id2="SYSTEM_MSG"
 	eventcategory="1302010200"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt; &lt;severity&gt;: &lt;event_description&gt;: &lt;encryption_type&gt; - sshd[&lt;process_id&gt;]"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;@agent:sshd&gt;"
+	content=" &lt;severity&gt;: &lt;event_description&gt;: &lt;encryption_type&gt; - sshd[&lt;process_id&gt;]" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="FLOGI_RCVD"
 	id2="FLOGI_RCVD"
 	eventcategory="1801000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;&lt;fld22&gt; FLOGI is received on server interface &lt;interface&gt; with &lt;info&gt; pwwn &lt;pwwn&gt; nwwn &lt;nwwn&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="&lt;fld22&gt; FLOGI is received on server interface &lt;interface&gt; with &lt;info&gt; pwwn &lt;pwwn&gt; nwwn &lt;nwwn&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="LS_ACC_SENT"
 	id2="LS_ACC_SENT"
 	eventcategory="1801000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt; &lt;fld22&gt; LS_ACC is sent on server interface &lt;interface&gt; to &lt;info&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content=" &lt;fld22&gt; LS_ACC is sent on server interface &lt;interface&gt; to &lt;info&gt;" />
 	
   
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="FWM_FWM_ENM_MAC_AGED"
 	id2="FWM_ENM_MAC_AGED"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;mac address &lt;macaddr&gt; on vlan &lt;vlan&gt; is aged out"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="mac address &lt;macaddr&gt; on vlan &lt;vlan&gt; is aged out" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SERVER_ADDED"
 	id2="SERVER_ADDED"
 	eventcategory="1701010000"
-	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Server Added - Chassis ID &lt;fld22&gt; Port ID &lt;fld23&gt; on local port &lt;network_port&gt; "/>
-
+	functions="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Server Added - Chassis ID &lt;fld22&gt; Port ID &lt;fld23&gt; on local port &lt;network_port&gt; " />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SERVER_REMOVED"
 	id2="SERVER_REMOVED"
 	eventcategory="1701030000"
-	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;Server Removed - Chassis ID &lt;fld22&gt; Port ID &lt;fld23&gt; on local port &lt;network_port&gt; "/>
-
+	functions="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="Server Removed - Chassis ID &lt;fld22&gt; Port ID &lt;fld23&gt; on local port &lt;network_port&gt; " />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="THERMAL_PROBLEM"
 	id2="THERMAL_PROBLEM"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="DISCOVERY_FAILED"
 	id2="DISCOVERY_FAILED"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="EQUIPMENT_INOPERABLE"
 	id2="EQUIPMENT_INOPERABLE"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 	
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="LINK_DOWN"
 	id2="LINK_DOWN"
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="MEMBERSHIP_DOWN"
 	id2="MEMBERSHIP_DOWN"
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="OLD_FIRMWARE"
 	id2="OLD_FIRMWARE"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="OPERATIONAL_STATE_DOWN"
 	id2="OPERATIONAL_STATE_DOWN"
 	eventcategory="1801010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="PORT_FAILED"
 	id2="PORT_FAILED"
 	eventcategory="1801010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="VIF_DOWN"
 	id2="VIF_DOWN"
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="SERVER_MOVED"
 	id2="SERVER_MOVED"
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="UNASSOCIATED"
 	id2="UNASSOCIATED"
 	eventcategory="1801010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="CONNECTIVITY_PROBLEM"
 	id2="CONNECTIVITY_PROBLEM"
 	eventcategory="1801010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="LOG_CAPACITY"
 	id2="LOG_CAPACITY"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="PERFORMANCE_PROBLEM"
 	id2="PERFORMANCE_PROBLEM"
 	eventcategory="1603010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hyear,hmonth,hday,htime)&gt;"
+	content="[&lt;operation_id&gt;][&lt;severity&gt;][&lt;info&gt;][&lt;device&gt;] &lt;event_description&gt;" />
 	
 </DEVICEMESSAGES>

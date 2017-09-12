@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="sonicwallemail"
+	displayname="SonicWALL Email Security"
+	group="Application Firewall">
 <VERSION
-	xml="4"
-	checksum="1d9e0651856fc39059e6af7878ec5211"
+	xml="5"
+	checksum="46ca59d2371e92865133161a1aebcc3b"
 	revision="0"
-	enVision="33050000"
 	device="2.0" />
 
  
  
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hhostname&gt; id=EmailSecurity: sn=&lt;hfld4&gt; Subject=&lt;hsubject&gt; From=&lt;hfrom&gt; To=&lt;hto&gt; MlfUniqueID=&lt;hfld5&gt; Threat=&lt;messageid&gt; &lt;!payload:hfld4&gt;" /> 
-
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hhostname&gt; id=EmailSecurity: sn=&lt;hfld4&gt; Subject=&lt;hsubject&gt; From=&lt;hfrom&gt; To=&lt;hto&gt; MlfUniqueID=&lt;hfld5&gt; Threat=&lt;messageid&gt; &lt;!payload:hfld4&gt;" /> 
 
 
 
@@ -25,50 +26,34 @@ content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hhostname&gt; id=EmailSec
 
 
 <HEADER 
-id1="0002" 
-id2="0002"  
-content="id=EmailSecurity sn=&lt;hfld4&gt; Subject=&lt;hsubject&gt; From=&lt;hfrom&gt; To=&lt;hto&gt; MlfUniqueID=&lt;hfld5&gt; Threat=&lt;messageid&gt; &lt;!payload:hfld4&gt;" /> 
+	id1="0002" 
+	id2="0002"  
+	content="id=EmailSecurity sn=&lt;hfld4&gt; Subject=&lt;hsubject&gt; From=&lt;hfrom&gt; To=&lt;hto&gt; MlfUniqueID=&lt;hfld5&gt; Threat=&lt;messageid&gt; &lt;!payload:hfld4&gt;" /> 
 
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="good:clean_email" 
 	id2="good" 
 	eventcategory="1207010100" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 
 
 
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="plyt:policy_threat" 
 	id2="plyt" 
 	eventcategory="1207010200" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="dspm:detect_spam" 
 	id2="dspm" 
 	eventcategory="1207040200" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 
 
 
@@ -76,69 +61,40 @@ content="id=EmailSecurity sn=&lt;hfld4&gt; Subject=&lt;hsubject&gt; From=&lt;hfr
 
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="lspm:likely_spam" 
 	id2="lspm" 
 	eventcategory="1207040100" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 
 <MESSAGE 
-	level="2" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="dvir:detect_virus" 
 	id2="dvir" 
 	eventcategory="1003010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="lvir:likely_virus" 
 	id2="lvir" 
 	eventcategory="1003010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 <MESSAGE 
-	level="2" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="dphi:detect_phishing" 
 	id2="dphi" 
 	eventcategory="1001030000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="lphi:likely_phishing" 
 	id2="lphi" 
 	eventcategory="1001030000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 <MESSAGE 
-	level="2" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="ddha:harvesting_attack" 
 	id2="ddha" 
 	eventcategory="1101010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@virusname:*PARMVAL(policyname)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;fld4&gt; Subject=&lt;subject&gt; From=&lt;from&gt; To=&lt;to&gt; MlfUniqueID=&lt;fld5&gt; Threat=&lt;event_type&gt; VrsOrPolicyName=&lt;policyname&gt;" />
 </DEVICEMESSAGES>

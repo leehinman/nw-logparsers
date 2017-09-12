@@ -1,232 +1,162 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="avocentkvm"
+	displayname="Avocent KVM"
+	group="System">
 <VERSION
-	xml="3"
-	checksum="8f5a0f15fffc17e13c8f812cc207ca0f"
+	xml="4"
+	checksum="90289f7bf1a570046931ffc1b0a8b3a3"
 	revision="0"
-    enVision="35010000"
     device="2.0" />
 
  
   
 <HEADER 
-		id1="0001" 
-		id2="0001"  
-		content="%AVOCENT &lt;messageid&gt;-&lt;severity&gt; &lt;!payload&gt;" /> 
+	id1="0001" 
+	id2="0001"  
+	content="%AVOCENT &lt;messageid&gt;-&lt;severity&gt; &lt;!payload&gt;" /> 
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000001" 
-		id2="ACCOUNTLOCKED" 
-		eventcategory="1402000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ClientIP=&lt;saddr&gt;,LockedUser=&lt;username&gt;,LockedReason=&quot;&lt;result&gt;&quot; " />
+	id1="000001" 
+	id2="ACCOUNTLOCKED" 
+	eventcategory="1402000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ClientIP=&lt;saddr&gt;,LockedUser=&lt;username&gt;,LockedReason=&quot;&lt;result&gt;&quot; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000002" 
-		id2="ACCOUNTUNLOCKED" 
-		eventcategory="1402000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ClientIP=&lt;saddr&gt;,AdminUser=&lt;username&gt;,UnLockedUser=&lt;c_username&gt;,UnLockedReason=&quot;&lt;result&gt;&quot; " />
+	id1="000002" 
+	id2="ACCOUNTUNLOCKED" 
+	eventcategory="1402000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ClientIP=&lt;saddr&gt;,AdminUser=&lt;username&gt;,UnLockedUser=&lt;c_username&gt;,UnLockedReason=&quot;&lt;result&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000003" 
-		id2="ADDUSER" 
-		eventcategory="1402020200" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;AdminUser=&lt;username&gt;,AddedUser=&lt;c_username&gt; " />
+	id1="000003" 
+	id2="ADDUSER" 
+	eventcategory="1402020200" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="AdminUser=&lt;username&gt;,AddedUser=&lt;c_username&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74"
-		id1="000004"
-		id2="AUTHENTICAIONFAILED"
-		eventcategory="1301000000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:AUTHENTICAION FAILED&gt;SwitchUser=&lt;username&gt;" />
+	id1="000004"
+	id2="AUTHENTICAIONFAILED"
+	eventcategory="1301000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:AUTHENTICAION FAILED&gt;"
+	content="SwitchUser=&lt;username&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74"
-		id1="000023"
-		id2="AUTHENTICATIONFAILED"
-		eventcategory="1301000000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:AUTHENTICATION FAILED&gt;SwitchUser=&lt;username&gt;" />
+	id1="000023"
+	id2="AUTHENTICATIONFAILED"
+	eventcategory="1301000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:AUTHENTICATION FAILED&gt;"
+	content="SwitchUser=&lt;username&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74"
-		id1="000024"
-		id2="authenticationFailure"
-		eventcategory="1301000000" 
-		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Authentication Failure&gt;&lt;fld1&gt;" />
+	id1="000024"
+	id2="authenticationFailure"
+	eventcategory="1301000000" 
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Authentication Failure&gt;"
+	content="&lt;fld1&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000005" 
-		id2="CONFIGLOADED" 
-		eventcategory="1605030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SwitchUser=&lt;username&gt;,ConfigFileName=&lt;filename&gt; " />
+	id1="000005" 
+	id2="CONFIGLOADED" 
+	eventcategory="1605030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SwitchUser=&lt;username&gt;,ConfigFileName=&lt;filename&gt; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000006" 
-		id2="DELETEUSER" 
-		eventcategory="1402020100" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;AdminUser=&lt;username&gt;,DeletedUser=&lt;c_username&gt; " />
+	id1="000006" 
+	id2="DELETEUSER" 
+	eventcategory="1402020100" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="AdminUser=&lt;username&gt;,DeletedUser=&lt;c_username&gt; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000007" 
-		id2="LOCALSTART" 
-		eventcategory="1610000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;StartedLocalSessionServer=&quot;&lt;hostname&gt;&quot; " />
+	id1="000007" 
+	id2="LOCALSTART" 
+	eventcategory="1610000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="StartedLocalSessionServer=&quot;&lt;hostname&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000008" 
-		id2="LOCALSTOP" 
-		eventcategory="1611000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;StoppedLocalSessionServer=&quot;&lt;hostname&gt;&quot; " />
+	id1="000008" 
+	id2="LOCALSTOP" 
+	eventcategory="1611000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="StoppedLocalSessionServer=&quot;&lt;hostname&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000009" 
-		id2="MODIFYUSER" 
-		eventcategory="1402020300" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;AdminUser=&lt;username&gt;,ModifiedUser=&lt;c_username&gt; " />
+	id1="000009" 
+	id2="MODIFYUSER" 
+	eventcategory="1402020300" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="AdminUser=&lt;username&gt;,ModifiedUser=&lt;c_username&gt; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000010" 
-		id2="REBOOT" 
-		eventcategory="1606000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;RebootedSwitchUser=&lt;username&gt; " />
+	id1="000010" 
+	id2="REBOOT" 
+	eventcategory="1606000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="RebootedSwitchUser=&lt;username&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000011" 
-		id2="REMOTEEND" 
-		eventcategory="1801030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;TerminatedVideoSessionUser=&lt;username&gt;,TerminatedVideoSessionServer=&quot;&lt;hostname&gt;&quot; " />
+	id1="000011" 
+	id2="REMOTEEND" 
+	eventcategory="1801030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="TerminatedVideoSessionUser=&lt;username&gt;,TerminatedVideoSessionServer=&quot;&lt;hostname&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000012" 
-		id2="REMOTELOGIN" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:SwitchUserLoggedIn&gt;SwitchUserLoggedIn=&lt;username&gt;" />
+	id1="000012" 
+	id2="REMOTELOGIN" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:SwitchUserLoggedIn&gt;"
+	content="SwitchUserLoggedIn=&lt;username&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000013" 
-		id2="REMOTELOGOUT" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:SwitchUserLoggedOut&gt;SwitchUserLoggedOut=&lt;username&gt;" />
+	id1="000013" 
+	id2="REMOTELOGOUT" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:SwitchUserLoggedOut&gt;"
+	content="SwitchUserLoggedOut=&lt;username&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000014" 
-		id2="REMOTESTART" 
-		eventcategory="1610000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;StartedVideoSessionUser=&lt;username&gt;,StartedVideoSessionServer=&quot;&lt;hostname&gt;&quot; " />
+	id1="000014" 
+	id2="REMOTESTART" 
+	eventcategory="1610000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="StartedVideoSessionUser=&lt;username&gt;,StartedVideoSessionServer=&quot;&lt;hostname&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000015" 
-		id2="REMOTESTOP" 
-		eventcategory="1611000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;StoppedVideoSessionUser=&lt;username&gt;,StoppedVideoSessionServer=&quot;&lt;hostname&gt;&quot; " />
+	id1="000015" 
+	id2="REMOTESTOP" 
+	eventcategory="1611000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="StoppedVideoSessionUser=&lt;username&gt;,StoppedVideoSessionServer=&quot;&lt;hostname&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000016" 
-		id2="SERVERMODIFIED" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;OldServerName=&quot;&lt;change_old&gt;&quot;,NewServerName=&quot;&lt;change_new&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
+	id1="000016" 
+	id2="SERVERMODIFIED" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="OldServerName=&quot;&lt;change_old&gt;&quot;,NewServerName=&quot;&lt;change_new&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000017" 
-		id2="SIPADDED" 
-		eventcategory="1701010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SIPAdded=&quot;&lt;sessionid&gt;&quot; " />
+	id1="000017" 
+	id2="SIPADDED" 
+	eventcategory="1701010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SIPAdded=&quot;&lt;sessionid&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000018" 
-		id2="SIPREMOVED" 
-		eventcategory="1701030000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SIPRemoved=&quot;&lt;sessionid&gt;&quot; " />
+	id1="000018" 
+	id2="SIPREMOVED" 
+	eventcategory="1701030000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SIPRemoved=&quot;&lt;sessionid&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000019" 
-		id2="SIPRESTART" 
-		eventcategory="1606000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ServerName=&quot;&lt;hostname&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
+	id1="000019" 
+	id2="SIPRESTART" 
+	eventcategory="1606000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ServerName=&quot;&lt;hostname&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000020" 
-		id2="SIPUPGRADESTART" 
-		eventcategory="1605000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;UnkownSIPValue=&lt;fld12&gt;,ImageNewVersion=&quot;&lt;fld13&gt;&quot;,ImageCurrentVersion=&quot;&lt;fld14&gt;&quot;,ServerName=&quot;&lt;hostname&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
+	id1="000020" 
+	id2="SIPUPGRADESTART" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="UnkownSIPValue=&lt;fld12&gt;,ImageNewVersion=&quot;&lt;fld13&gt;&quot;,ImageCurrentVersion=&quot;&lt;fld14&gt;&quot;,ServerName=&quot;&lt;hostname&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000021" 
-		id2="SIPUPGRADERESULT" 
-		eventcategory="1605000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SIPUpgradeResults=&lt;fld11&gt;,UnkownSIPValue=&lt;fld12&gt;,ImageNewVersion=&quot;&lt;fld13&gt;&quot;,ImageCurrentVersion=&quot;&lt;fld14&gt;&quot;,ServerName=&quot;&lt;hostname&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
+	id1="000021" 
+	id2="SIPUPGRADERESULT" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SIPUpgradeResults=&lt;fld11&gt;,UnkownSIPValue=&lt;fld12&gt;,ImageNewVersion=&quot;&lt;fld13&gt;&quot;,ImageCurrentVersion=&quot;&lt;fld14&gt;&quot;,ServerName=&quot;&lt;hostname&gt;&quot;,SIPID=&quot;&lt;sessionid&gt;&quot; " />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000022" 
-		id2="USERDBLOADED" 
-		eventcategory="1401010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SwitchUser=&lt;username&gt;,DBFileName=&lt;filename&gt; " />
+	id1="000022" 
+	id2="USERDBLOADED" 
+	eventcategory="1401010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SwitchUser=&lt;username&gt;,DBFileName=&lt;filename&gt; " />
 </DEVICEMESSAGES>

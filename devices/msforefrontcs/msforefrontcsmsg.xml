@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="msforefrontcs"
+	displayname="Microsoft Forefront Client Security"
+	group="Anti Virus">
 <VERSION
-	xml="16"
-	checksum="9d8a085e6fbfc510cf82ca33068cd6f4"
+	xml="17"
+	checksum="70e6ed01ddbd3cb512e0243aaf607491"
 	revision="84"
-	enVision="35010000"
 	device="2.0" />
 
  
@@ -19,10 +21,10 @@
 	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, &apos;Microsoft-Windows-Security-Auditing&apos;)" 
 	content="%NICWIN-&lt;hlevel&gt;-&lt;Hmessageid&gt;: &lt;msgIdPart1&gt;,&lt;Hlinenum&gt;,&lt;Hday&gt; &lt;Hdatetime&gt;,&lt;msgIdPart2&gt;,Microsoft-Windows-Security-Auditing,&lt;Hevent_user&gt;,&lt;Hevent_type&gt;,&lt;Hevent_computer&gt;,&lt;Hcategory&gt;,&lt;Hdata&gt;,&lt;!payload&gt;" /> 
 
- <HEADER 
+<HEADER 
 	id1="0003" 
 	id2="0003"
-    messageid="STRCAT(msgIdPart1, &apos;_&apos; ,msgIdPart2)"
+	messageid="STRCAT(msgIdPart1, &apos;_&apos; ,msgIdPart2)"
 	content="%NICWIN-&lt;hlevel&gt;-&lt;msgIdPart1&gt; Endpoint Protection_&lt;msgIdPart2&gt;_&lt;hfld1&gt;: &lt;!payload&gt;" /> 
 
 	
@@ -37,1331 +39,855 @@
 	content="%NICWIN-&lt;hlevel&gt;-&lt;messageid&gt; &lt;hfld1&gt;: &lt;!payload&gt;" /> 
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="20000" 
 	id2="20000" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:Microsoft Forefront Client Security has finished analyzing the database for the malicious outbreak&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld14)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld13)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security has finished analyzing the database for the malicious outbreak  Version = &lt;version&gt;  Profile ID = &lt;fld3&gt;  Threat ID = &lt;fld4&gt;  Threat name = &lt;virusname&gt;  Alert level = &lt;fld5&gt;  Event count = &lt;event_counter&gt;  Protection type = &lt;fld7&gt;  First instance = &lt;fld8&gt;  Last instance = &lt;fld9&gt;  Window start time = &lt;fld13&gt;  Window end time = &lt;fld14&gt;  Outbreak time slot = &lt;fld12&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security has finished analyzing the database for the malicious outbreak&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld14)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld13)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security has finished analyzing the database for the malicious outbreak  Version = &lt;version&gt;  Profile ID = &lt;fld3&gt;  Threat ID = &lt;fld4&gt;  Threat name = &lt;virusname&gt;  Alert level = &lt;fld5&gt;  Event count = &lt;event_counter&gt;  Protection type = &lt;fld7&gt;  First instance = &lt;fld8&gt;  Last instance = &lt;fld9&gt;  Window start time = &lt;fld13&gt;  Window end time = &lt;fld14&gt;  Outbreak time slot = &lt;fld12&gt;" />
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="20002" 
 	id2="20002" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Agent state summary.  Version = &lt;version&gt;  Profile ID = &lt;fld3&gt;  Profile instance ID = &lt;fld15&gt;  OU = &lt;info&gt;  FQDNs = &lt;fqdn&gt;  IP addresses = &lt;hostip&gt;  MAC addresses = &lt;macaddr&gt;  &lt;context&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Agent state summary.  Version = &lt;version&gt;  Profile ID = &lt;fld3&gt;  Profile instance ID = &lt;fld15&gt;  OU = &lt;info&gt;  FQDNs = &lt;fqdn&gt;  IP addresses = &lt;hostip&gt;  MAC addresses = &lt;macaddr&gt;  &lt;context&gt;" />
 
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="20101" 
 	id2="20101" 
 	eventcategory="1603040000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^The following non-MOM API has failed: &lt;fld13&gt;.  Error code:&lt;resultcode&gt;  Error description:&lt;result&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^The following non-MOM API has failed: &lt;fld13&gt;.  Error code:&lt;resultcode&gt;  Error description:&lt;result&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="1006" 
 	id2="1006" 
 	eventcategory="1003050000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security scan has detected spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has detected spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User:&lt;event_user&gt;  Name:&lt;virusname&gt;  ID:&lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;  Detection Type: &lt;fld22&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security scan has detected spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has detected spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User:&lt;event_user&gt;  Name:&lt;virusname&gt;  ID:&lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;  Detection Type: &lt;fld22&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10002" 
 	id2="10002" 
 	eventcategory="1603000000" 
-	content="&lt;@event_description:A vulnerability scan on this computer detected the following results&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^A vulnerability scan on this computer detected the following results for the &lt;fld41&gt; issue:  Issue Name: &lt;fld34&gt;  Result: &lt;result&gt;  Risk: &lt;risk&gt;  Severity: &lt;fld19&gt;  More Information: &lt;info&gt;" />
-
+	functions="&lt;@event_description:A vulnerability scan on this computer detected the following results&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^A vulnerability scan on this computer detected the following results for the &lt;fld41&gt; issue:  Issue Name: &lt;fld34&gt;  Result: &lt;result&gt;  Risk: &lt;risk&gt;  Severity: &lt;fld19&gt;  More Information: &lt;info&gt;" />
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10012" 
 	id2="10012" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:Microsoft Update opt-in completed successfully.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Update opt-in completed successfully." />
-
+	functions="&lt;@event_description:Microsoft Update opt-in completed successfully.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Update opt-in completed successfully." />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="1001" 
 	id2="1001" 
 	eventcategory="1605000000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security scan has finished.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has finished.    Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User: &lt;event_user&gt;  Scan Time: &lt;duration_string&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security scan has finished.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has finished.    Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User: &lt;event_user&gt;  Scan Time: &lt;duration_string&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10005" 
 	id2="10005" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:The Forefront Client Security State Assessment Service has started.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^The Forefront Client Security State Assessment Service has started." />
-
+	functions="&lt;@event_description:The Forefront Client Security State Assessment Service has started.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^The Forefront Client Security State Assessment Service has started." />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10005:01" 
 	id2="10005" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:The Forefront Client Security State Assessment Service has stopped.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^The Forefront Client Security State Assessment Service has stopped." />
-
+	functions="&lt;@event_description:The Forefront Client Security State Assessment Service has stopped.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^The Forefront Client Security State Assessment Service has stopped." />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10001" 
 	id2="10001" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:A security state assessment scan completed successfully.&gt;&lt;@dclass_counter1_string:Error Issues&gt;&lt;@dclass_counter2_string:High Issues&gt;&lt;@dclass_counter3_string:Medium Issues&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W %H:%U:%O',fld4)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W %H:%U:%O',fld5)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^A security state assessment scan completed successfully.    Parameters:    Agent Version = &lt;component_version&gt;  Profile ID = &lt;fld3&gt;  Scan ID = &lt;operation_id&gt;  Start Time = &lt;fld4&gt;  Stop Time = &lt;fld5&gt;  Scan Status = &lt;fld38&gt;  Overall Score = &lt;fld39&gt;  Overall Severity = &lt;fld19&gt;  Error Issues = &lt;dclass_counter1&gt;  High Issues = &lt;dclass_counter2&gt;  Medium Issues = &lt;dclass_counter3&gt;  Low Issues = &lt;fld44&gt;  Informational Issues = &lt;fld45&gt;  Scan Type = &lt;event_type&gt;" />
-
+	functions="&lt;@event_description:A security state assessment scan completed successfully.&gt;&lt;@dclass_counter1_string:Error Issues&gt;&lt;@dclass_counter2_string:High Issues&gt;&lt;@dclass_counter3_string:Medium Issues&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W %H:%U:%O',fld4)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W %H:%U:%O',fld5)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^A security state assessment scan completed successfully.    Parameters:    Agent Version = &lt;component_version&gt;  Profile ID = &lt;fld3&gt;  Scan ID = &lt;operation_id&gt;  Start Time = &lt;fld4&gt;  Stop Time = &lt;fld5&gt;  Scan Status = &lt;fld38&gt;  Overall Score = &lt;fld39&gt;  Overall Severity = &lt;fld19&gt;  Error Issues = &lt;dclass_counter1&gt;  High Issues = &lt;dclass_counter2&gt;  Medium Issues = &lt;dclass_counter3&gt;  Low Issues = &lt;fld44&gt;  Informational Issues = &lt;fld45&gt;  Scan Type = &lt;event_type&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10009" 
 	id2="10009" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:An on-demand scan was successfully scheduled.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^An on-demand scan was successfully scheduled." />
-
+	functions="&lt;@event_description:An on-demand scan was successfully scheduled.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^An on-demand scan was successfully scheduled." />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="1008" 
 	id2="1008" 
 	eventcategory="1605000000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security scan has started.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has started.    Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User: &lt;event_user&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security scan has started.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has started.    Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User: &lt;event_user&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="1008:01" 
 	id2="1008" 
 	eventcategory="1003050000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security has encountered an error when taking action on spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security has encountered an error when taking action on spyware or other potentially unwanted software.   For more information please see the following:  &lt;info&gt;    Scan ID: &lt;operation_id&gt;     Scan Type: &lt;event_type&gt;    User: &lt;event_user&gt;    Name: &lt;virusname&gt;    ID: &lt;fld18&gt;    Severity: &lt;fld19&gt;    Category: &lt;category&gt;    Path:     Action: &lt;action&gt;    Error Code: &lt;resultcode&gt;    Error description: &lt;result&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security has encountered an error when taking action on spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security has encountered an error when taking action on spyware or other potentially unwanted software.   For more information please see the following:  &lt;info&gt;    Scan ID: &lt;operation_id&gt;     Scan Type: &lt;event_type&gt;    User: &lt;event_user&gt;    Name: &lt;virusname&gt;    ID: &lt;fld18&gt;    Severity: &lt;fld19&gt;    Category: &lt;category&gt;    Path:     Action: &lt;action&gt;    Error Code: &lt;resultcode&gt;    Error description: &lt;result&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="1000" 
 	id2="1000" 
 	eventcategory="1605000000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security scan has started.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has started.    Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User: &lt;event_user&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security scan has started.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security scan has started.    Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  Scan Parameters: &lt;param&gt;  User: &lt;event_user&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="2000" 
 	id2="2000" 
 	eventcategory="1605000000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security signature version has been updated&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security signature version has been updated.    Current Signature Version: &lt;version&gt;  Previous Signature Version: &lt;fld25&gt;  Update Source: &lt;fld26&gt;  Signature Type: &lt;event_type&gt;  Update Type: &lt;fld27&gt;  User: &lt;event_user&gt;  Current Engine Version: &lt;change_new&gt;  Previous Engine Version: &lt;change_old&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security signature version has been updated&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security signature version has been updated.    Current Signature Version: &lt;version&gt;  Previous Signature Version: &lt;fld25&gt;  Update Source: &lt;fld26&gt;  Signature Type: &lt;event_type&gt;  Update Type: &lt;fld27&gt;  User: &lt;event_user&gt;  Current Engine Version: &lt;change_new&gt;  Previous Engine Version: &lt;change_old&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="3004" 
 	id2="3004" 
 	eventcategory="1003010000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has detected changes. &gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has detected changes. Microsoft recommends you analyze the software that made these changes for potential risks. You can use information about how these programs operate to choose whether to allow them to run or remove them from your computer.  Allow changes only if you trust the program or the software publisher. Microsoft Forefront Client Security can't undo changes that you allow.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Agent: &lt;fld20&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;  Alert Type: &lt;fld30&gt;  Process Name: &lt;process&gt;  Detection Type: &lt;fld22&gt;  Status: &lt;event_state&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has detected changes. &gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has detected changes. Microsoft recommends you analyze the software that made these changes for potential risks. You can use information about how these programs operate to choose whether to allow them to run or remove them from your computer.  Allow changes only if you trust the program or the software publisher. Microsoft Forefront Client Security can't undo changes that you allow.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Agent: &lt;fld20&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;  Alert Type: &lt;fld30&gt;  Process Name: &lt;process&gt;  Detection Type: &lt;fld22&gt;  Status: &lt;event_state&gt;" />
 
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="3004:01" 
 	id2="3004" 
 	eventcategory="1003010000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has detected changes. &gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has detected changes. Microsoft recommends you analyze the software that made these changes for potential risks. You can use information about how these programs operate to choose whether to allow them to run or remove them from your computer.  Allow changes only if you trust the program or the software publisher. Microsoft Forefront Client Security can't undo changes that you allow.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Agent: &lt;fld20&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;" />
+	functions="&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has detected changes. &gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has detected changes. Microsoft recommends you analyze the software that made these changes for potential risks. You can use information about how these programs operate to choose whether to allow them to run or remove them from your computer.  Allow changes only if you trust the program or the software publisher. Microsoft Forefront Client Security can't undo changes that you allow.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Agent: &lt;fld20&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;" />
  
  
- <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
+<MESSAGE 
 	id1="2002" 
 	id2="2002" 
 	eventcategory="1605000000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security engine version has been updated.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security engine version has been updated.    Current Engine Version: &lt;fld33&gt;  Previous Engine Version: &lt;change_old&gt;  Update Source: &lt;fld26&gt;  User: &lt;event_user&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security engine version has been updated.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security engine version has been updated.    Current Engine Version: &lt;fld33&gt;  Previous Engine Version: &lt;change_old&gt;  Update Source: &lt;fld26&gt;  User: &lt;event_user&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="5007" 
 	id2="5007" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:Microsoft Forefront Client Security Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.    Old value: &lt;fld33&gt;  New value: &lt;change_new&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware.    Old value: &lt;fld33&gt;  New value: &lt;change_new&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="3005" 
 	id2="3005" 
 	eventcategory="1003010000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Alert Type: &lt;fld30&gt;  Action: &lt;action&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Alert Type: &lt;fld30&gt;  Action: &lt;action&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="1007" 
 	id2="1007" 
 	eventcategory="1003010000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security has taken action to protect this machine from spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security has taken action to protect this machine from spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt; Category: &lt;category&gt;  Action: &lt;action&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security has taken action to protect this machine from spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security has taken action to protect this machine from spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Scan Type: &lt;event_type&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt; Category: &lt;category&gt;  Action: &lt;action&gt;" />
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="20103" 
 	id2="20103" 
 	eventcategory="1605030000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^&lt;event_description&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^&lt;event_description&gt;" />
 	
 	
-
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="23015" 
 	id2="23015" 
 	eventcategory="1605030000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Alert Type: &lt;fld30&gt;  Action: &lt;action&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has taken action to protect this machine from spyware or other potentially unwanted software.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Alert Type: &lt;fld30&gt;  Action: &lt;action&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10069" 
 	id2="10069" 
 	eventcategory="1603000000" 
-	content="&lt;@event_description:Error reading string from registry&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Error reading string from registry &lt;fld46&gt;" />
-
+	functions="&lt;@event_description:Error reading string from registry&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Error reading string from registry &lt;fld46&gt;" />
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="23014" 
 	id2="23014" 
 	eventcategory="1607000000" 
-	content="&lt;@fld61:*PARMVAL(username)&gt;&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has detected changes.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has detected changes. Microsoft recommends you analyze the software that made these changes for potential risks. You can use information about how these programs operate to choose whether to allow them to run or remove them from your computer.  Allow changes only if you trust the program or the software publisher. Microsoft Forefront Client Security can't undo changes that you allow.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Agent: &lt;fld20&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;  Alert Type: &lt;fld30&gt;  Process Name: &lt;process&gt;  Detection Type: &lt;fld22&gt;  Status: &lt;event_state&gt;" />
-
+	functions="&lt;@event_description:Microsoft Forefront Client Security Real-Time Protection agent has detected changes.&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Microsoft Forefront Client Security Real-Time Protection agent has detected changes. Microsoft recommends you analyze the software that made these changes for potential risks. You can use information about how these programs operate to choose whether to allow them to run or remove them from your computer.  Allow changes only if you trust the program or the software publisher. Microsoft Forefront Client Security can't undo changes that you allow.   For more information please see the following: &lt;info&gt;  Scan ID: &lt;operation_id&gt;  Agent: &lt;fld20&gt;  User: &lt;event_user&gt;  Name: &lt;virusname&gt;  ID: &lt;fld18&gt;  Severity: &lt;fld19&gt;  Category: &lt;category&gt;  Path Found: &lt;filename&gt;  Alert Type: &lt;fld30&gt;  Process Name: &lt;process&gt;  Detection Type: &lt;fld22&gt;  Status: &lt;event_state&gt;" />
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10006" 
 	id2="10006" 
 	eventcategory="1605000000" 
-	content="&lt;@event_description:Forefront Client Security State Assessment Service policy applied successfully&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Forefront Client Security State Assessment Service policy applied successfully.    Applied the following settings:    &lt;info&gt;" />
-
+	functions="&lt;@event_description:Forefront Client Security State Assessment Service policy applied successfully&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Forefront Client Security State Assessment Service policy applied successfully.    Applied the following settings:    &lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="10006:01" 
 	id2="10006" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^&lt;event_description&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^&lt;event_description&gt;" />
 	
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30824" 
 	id2="30824" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30817" 
 	id2="30817" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30816" 
 	id2="30816" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 	
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30812" 
 	id2="30812" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30826" 
 	id2="30826" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30821" 
 	id2="30821" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30814" 
 	id2="30814" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30829" 
 	id2="30829" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30828" 
 	id2="30828" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30827" 
 	id2="30827" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30823" 
 	id2="30823" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30822" 
 	id2="30822" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30815" 
 	id2="30815" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30818" 
 	id2="30818" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30825" 
 	id2="30825" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30820" 
 	id2="30820" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30813" 
 	id2="30813" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30819" 
 	id2="30819" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30810" 
 	id2="30810" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Trend pre-calc event: &lt;fld33&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="84" 
 	id1="30811" 
 	id2="30811" 
 	eventcategory="1605000000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld58)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld58&gt;.&lt;fld59&gt;^^&lt;severity&gt;^^&lt;fld1&gt;^^&lt;domain&gt;\&lt;hostname&gt;^^&lt;event_source&gt;^^&lt;agent&gt;^^&lt;username&gt;^^&lt;fld2&gt;^^Finished calculating trend data of trend: &lt;fld33&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1000_Microsoft"
 	id2="System_1000_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has started&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has started. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; Scan Resources:%b&lt;fld5&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has started&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has started. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; Scan Resources:%b&lt;fld5&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1001_Microsoft"
 	id2="System_1001_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:SCan has finished&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has finished. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;Scan Time:%b&lt;fld10&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:SCan has finished&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has finished. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;Scan Time:%b&lt;fld10&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1002_Microsoft"
 	id2="System_1002_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has been stopped before completion&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has been stopped before completion. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has been stopped before completion&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has been stopped before completion. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1003_Microsoft"
 	id2="System_1003_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has been paused&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has been paused. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has been paused&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has been paused. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1004_Microsoft"
 	id2="System_1004_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has been resumed&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has resumed. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has been resumed&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has resumed. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1005_Microsoft"
 	id2="System_1005_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has encountered an error and terminated&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has encountered an error and terminated. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Scan has encountered an error and terminated&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scan has encountered an error and terminated. Scan ID:%b&lt;fld2&gt; Scan Type:%b&lt;agent&gt; Scan Parameters:%b&lt;fld4&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1006_Microsoft"
 	id2="System_1006_Microsoft"
 	eventcategory="1003010000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; Status:%b&lt;info&gt; User:%b&lt;username&gt;Process Name:%b&lt;fld18&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; Status:%b&lt;info&gt; User:%b&lt;username&gt;Process Name:%b&lt;fld18&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1007_Microsoft"
 	id2="System_1007_Microsoft"
 	eventcategory="1003010000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has taken action to protect this machine from malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has taken action to protect this machine from malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; User:%b&lt;username&gt;Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Action:%b&lt;action&gt; Status:%b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has taken action to protect this machine from malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has taken action to protect this machine from malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; User:%b&lt;username&gt;Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Action:%b&lt;action&gt; Status:%b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1008_Microsoft"
 	id2="System_1008_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error when taking action on malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; User:%b&lt;username&gt;Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Action:%b&lt;action&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Status:%b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error when taking action on malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; User:%b&lt;username&gt;Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Action:%b&lt;action&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Status:%b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1009_Microsoft"
 	id2="System_1009_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description: has restored an item from quarantine&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has restored an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description: has restored an item from quarantine&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has restored an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1010_Microsoft"
 	id2="System_1010_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to restore an item from quarantine&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to restore an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to restore an item from quarantine&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to restore an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1011_Microsoft"
 	id2="System_1011_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Has detected suspecious behaviour&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has deleted an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Has detected suspecious behaviour&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has deleted an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1012_Microsoft"
 	id2="System_1012_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to delete an item from quarantine&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to delete an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to delete an item from quarantine&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to delete an item from quarantine. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1013_Microsoft"
 	id2="System_1013_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has removed history of malware and other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld56&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has removed history of malware and other potentially unwanted software. Time:%b&lt;fld57&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has removed history of malware and other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld56&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has removed history of malware and other potentially unwanted software. Time:%b&lt;fld57&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1014_Microsoft"
 	id2="System_1014_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to remove history of malware and other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld56&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to remove history of malware and other potentially unwanted software. Time:%b&lt;fld57&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to remove history of malware and other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld56&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to remove history of malware and other potentially unwanted software. Time:%b&lt;fld57&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1015_Microsoft"
 	id2="System_1015_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected a suspicious behavior&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected a suspicious behavior. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; Status:%b&lt;info&gt; User:%b&lt;username&gt;Process Name:%b&lt;fld18&gt; Signature ID:%b&lt;fld56&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt; Fidelity Label: %b&lt;fld23&gt; Target File Name: %b&lt;fld24&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected a suspicious behavior&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected a suspicious behavior. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; Status:%b&lt;info&gt; User:%b&lt;username&gt;Process Name:%b&lt;fld18&gt; Signature ID:%b&lt;fld56&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt; Fidelity Label: %b&lt;fld23&gt; Target File Name: %b&lt;fld24&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1016_Microsoft"
 	id2="System_1016_Microsoft"
 	eventcategory="1001030400"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1017_Microsoft"
 	id2="System_1017_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has taken action to protect this machine from malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has taken action to protect this machine from malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has taken action to protect this machine from malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has taken action to protect this machine from malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1018_Microsoft"
 	id2="System_1018_Microsoft"
 	eventcategory="1603100000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a non-critical error when taking action on malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a non-critical error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a non-critical error when taking action on malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a non-critical error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1019_Microsoft"
 	id2="System_1019_Microsoft"
 	eventcategory="1601000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a critical error when taking action on malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a critical error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a critical error when taking action on malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a critical error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%&lt;username&gt; Process Name:%b&lt;fld10&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1100_Microsoft"
 	id2="System_1100_Microsoft"
 	eventcategory="1501040000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has blocked this software in accordance with the software restriction policy enforced by the system administrator&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has blocked this software in accordance with the software restriction policy enforced by the system administrator. Contact your helpdesk or system administrator for additional details. Process Name:%b&lt;fld18&gt; Product Name:%b&lt;fld10&gt; Product Version:%b&lt;fld11&gt; File Category:%b&lt;fld13&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has blocked this software in accordance with the software restriction policy enforced by the system administrator&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has blocked this software in accordance with the software restriction policy enforced by the system administrator. Contact your helpdesk or system administrator for additional details. Process Name:%b&lt;fld18&gt; Product Name:%b&lt;fld10&gt; Product Version:%b&lt;fld11&gt; File Category:%b&lt;fld13&gt; Path:%b&lt;filename&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1101_Microsoft"
 	id2="System_1101_Microsoft"
 	eventcategory="1501050000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:encountered an error trying to classify if this software is authorized by your software restriction policy. The software was allowed to run&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; encountered an error trying to classify if this software is authorized by your software restriction policy. The software was allowed to run. Contact your helpdesk or system administrator for additional details. Process Name:%b&lt;fld18&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:encountered an error trying to classify if this software is authorized by your software restriction policy. The software was allowed to run&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; encountered an error trying to classify if this software is authorized by your software restriction policy. The software was allowed to run. Contact your helpdesk or system administrator for additional details. Process Name:%b&lt;fld18&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1116_Microsoft"
 	id2="System_1116_Microsoft"
 	eventcategory="1003010000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected malware or other potentially unwanted software. For more information please see the following: &lt;url&gt;  Name:%b&lt;virusname&gt;  ID:%b&lt;fld58&gt;  Severity:%b&lt;severity&gt;  Category:%b&lt;fld12&gt;  Path:%b&lt;filename&gt;  Detection Origin:%b&lt;fld14&gt;  Detection Type:%b&lt;fld15&gt;  Detection Source:%b&lt;fld16&gt;  User:%b&lt;username&gt;  Process Name:%b&lt;fld18&gt;  Signature Version:%b&lt;content_version&gt;  Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has detected malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has detected malware or other potentially unwanted software. For more information please see the following: &lt;url&gt;  Name:%b&lt;virusname&gt;  ID:%b&lt;fld58&gt;  Severity:%b&lt;severity&gt;  Category:%b&lt;fld12&gt;  Path:%b&lt;filename&gt;  Detection Origin:%b&lt;fld14&gt;  Detection Type:%b&lt;fld15&gt;  Detection Source:%b&lt;fld16&gt;  User:%b&lt;username&gt;  Process Name:%b&lt;fld18&gt;  Signature Version:%b&lt;content_version&gt;  Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1116_Microsoft:01"
 	id2="System_1116_Microsoft"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;event_log&gt;,&lt;fld11&gt;,&lt;fld12&gt; &lt;datetime&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld2&gt;,&lt;event_description&gt; For more information please see the following: &lt;url&gt; Name: Virus:&lt;virusname&gt; &lt;fld3&gt; Path:&lt;filename&gt; Detection Origin: &lt;fld4&gt; Type:&lt;fld5&gt; Source:&lt;fld6&gt; User:&lt;fld20&gt; Process Name:&lt;process&gt; Version:&lt;fld7&gt; "/>	 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;"
+	content="&lt;event_log&gt;,&lt;fld11&gt;,&lt;fld12&gt; &lt;datetime&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld2&gt;,&lt;event_description&gt; For more information please see the following: &lt;url&gt; Name: Virus:&lt;virusname&gt; &lt;fld3&gt; Path:&lt;filename&gt; Detection Origin: &lt;fld4&gt; Type:&lt;fld5&gt; Source:&lt;fld6&gt; User:&lt;fld20&gt; Process Name:&lt;process&gt; Version:&lt;fld7&gt; " />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1117_Microsoft"
 	id2="System_1117_Microsoft"
 	eventcategory="1614000000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has taken action to protect this machine from malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has taken action to protect this machine from malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt;  Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b&lt;username&gt; Process Name:%b&lt;fld18&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has taken action to protect this machine from malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has taken action to protect this machine from malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt;  Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b&lt;username&gt; Process Name:%b&lt;fld18&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1118_Microsoft"
 	id2="System_1118_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a non-critical error when taking action on malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a non-critical error when taking action on malware or other potentially unwanted software.For more information please see the following:&lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%39 Process Name:%b&lt;fld18&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a non-critical error when taking action on malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a non-critical error when taking action on malware or other potentially unwanted software.For more information please see the following:&lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%39 Process Name:%b&lt;fld18&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_1119_Microsoft"
 	id2="System_1119_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a critical error when taking action on malware or other potentially unwanted software&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a critical error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%39 Process Name:%b&lt;fld18&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered a critical error when taking action on malware or other potentially unwanted software&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered a critical error when taking action on malware or other potentially unwanted software. For more information please see the following: &lt;url&gt; Name:%b&lt;virusname&gt; ID:%b&lt;fld58&gt; Severity:%b&lt;severity&gt; Category:%b&lt;fld12&gt; Path:%b&lt;filename&gt; Detection Origin:%b&lt;fld14&gt; Detection Type:%b&lt;fld15&gt; Detection Source:%b&lt;fld16&gt; User:%b%39 Process Name:%b&lt;fld18&gt; Action:%b&lt;action&gt; Action Status: %b&lt;info&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature Version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2000_Microsoft"
 	id2="System_2000_Microsoft"
 	eventcategory="1702010000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:Engine Version&gt;&lt;@change_attribute:Signature&gt;&lt;@event_description:signature version has been updated&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; signature version has been updated. Current Signature Version:%b&lt;change_new&gt; Previous Signature Version:%b&lt;change_old&gt; Signature Type:%b&lt;agent&gt; Update Type:%b&lt;fld29&gt; User:%b&lt;username&gt;Current Engine Version:%b&lt;fld30&gt; Previous Engine Version:%b&lt;fld31&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:Engine Version&gt;&lt;@change_attribute:Signature&gt;&lt;@event_description:signature version has been updated&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; signature version has been updated. Current Signature Version:%b&lt;change_new&gt; Previous Signature Version:%b&lt;change_old&gt; Signature Type:%b&lt;agent&gt; Update Type:%b&lt;fld29&gt; User:%b&lt;username&gt;Current Engine Version:%b&lt;fld30&gt; Previous Engine Version:%b&lt;fld31&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2001_Microsoft"
 	id2="System_2001_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:signature&gt;&lt;@event_description:has encountered an error trying to update signatures&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to update signatures. New Signature Version:%b&lt;change_new&gt; Previous Signature Version:%b&lt;change_old&gt; Update Source:%b&lt;fld32&gt; Update Stage:%b&lt;fld30&gt; Source Path:%b&lt;filename&gt; Signature Type:%b&lt;agent&gt; Update Type:%b&lt;fld29&gt; User:%b&lt;username&gt;Current Engine Version:%b&lt;fld31&gt; Previous Engine Version:%b&lt;fld35&gt; Error code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:signature&gt;&lt;@event_description:has encountered an error trying to update signatures&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to update signatures. New Signature Version:%b&lt;change_new&gt; Previous Signature Version:%b&lt;change_old&gt; Update Source:%b&lt;fld32&gt; Update Stage:%b&lt;fld30&gt; Source Path:%b&lt;filename&gt; Signature Type:%b&lt;agent&gt; Update Type:%b&lt;fld29&gt; User:%b&lt;username&gt;Current Engine Version:%b&lt;fld31&gt; Previous Engine Version:%b&lt;fld35&gt; Error code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2002_Microsoft"
 	id2="System_2002_Microsoft"
 	eventcategory="1702010000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:Engine&gt;&lt;@event_description:engine version has been updated&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; engine version has been updated. Current Engine Version:%b&lt;change_new&gt; Previous Engine Version:%b&lt;change_old&gt; Engine Type:%b&lt;agent&gt; User:%b&lt;username&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:Engine&gt;&lt;@event_description:engine version has been updated&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; engine version has been updated. Current Engine Version:%b&lt;change_new&gt; Previous Engine Version:%b&lt;change_old&gt; Engine Type:%b&lt;agent&gt; User:%b&lt;username&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2003_Microsoft"
 	id2="System_2003_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@fld61:*PARMVAL(event_user)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:Engine&gt;&lt;@event_description:has encountered an error trying to update the engine&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to update the engine. New Engine Version:%b&lt;change_new&gt; Previous Engine Version:%b&lt;change_old&gt; Engine Type:%b&lt;agent&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@change_attribute:Engine&gt;&lt;@event_description:has encountered an error trying to update the engine&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to update the engine. New Engine Version:%b&lt;change_new&gt; Previous Engine Version:%b&lt;change_old&gt; Engine Type:%b&lt;agent&gt; User:%b&lt;username&gt;Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2004_Microsoft"
 	id2="System_2004_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to load signatures and will attempt reverting back to a known-good set of signatures&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to load signatures and will attempt reverting back to a known-good set of signatures. Signatures Attempted:%b&lt;fld30&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to load signatures and will attempt reverting back to a known-good set of signatures&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to load signatures and will attempt reverting back to a known-good set of signatures. Signatures Attempted:%b&lt;fld30&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Signature version:%b&lt;content_version&gt; Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2010_Microsoft"
 	id2="System_2010_Microsoft"
 	eventcategory="1702010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:used Dynamic Signature Service to retrieve additional signatures to help protect your machine&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; used Dynamic Signature Service to retrieve additional signatures to help protect your machine. Current Signature Version:%b&lt;fld26&gt; Signature Type:%b&lt;agent&gt; Current Engine Version:%b&lt;component_version&gt; Dynamic Signature Type:%b&lt;fld31&gt; Persistence Path:%b&lt;fld42&gt; Dynamic Signature Version:%b&lt;content_version&gt; Dynamic Signature Compilation Timestamp:%b&lt;fld44&gt; Persistence Limit Type:%b&lt;fld45&gt; Persistence Limit:%b&lt;fld46&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:used Dynamic Signature Service to retrieve additional signatures to help protect your machine&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; used Dynamic Signature Service to retrieve additional signatures to help protect your machine. Current Signature Version:%b&lt;fld26&gt; Signature Type:%b&lt;agent&gt; Current Engine Version:%b&lt;component_version&gt; Dynamic Signature Type:%b&lt;fld31&gt; Persistence Path:%b&lt;fld42&gt; Dynamic Signature Version:%b&lt;content_version&gt; Dynamic Signature Compilation Timestamp:%b&lt;fld44&gt; Persistence Limit Type:%b&lt;fld45&gt; Persistence Limit:%b&lt;fld46&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2011_Microsoft"
 	id2="System_2011_Microsoft"
 	eventcategory="1702010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:used Dynamic Signature Service to discard obsolete signatures&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; used Dynamic Signature Service to discard obsolete signatures. Current Signature Version:%b&lt;fld26&gt; Signature Type:%b&lt;agent&gt; Current Engine Version:%b&lt;component_version&gt; Dynamic Signature Type:%b&lt;fld30&gt; Persistence Path:%b&lt;filename&gt; Dynamic Signature Version:%b&lt;content_version&gt; Dynamic Signature Compilation Timestamp:%b&lt;fld44&gt; Removal Reason:%b&lt;result&gt; Persistence Limit Type:%b&lt;fld45&gt; Persistence Limit:%b&lt;fld46&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:used Dynamic Signature Service to discard obsolete signatures&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; used Dynamic Signature Service to discard obsolete signatures. Current Signature Version:%b&lt;fld26&gt; Signature Type:%b&lt;agent&gt; Current Engine Version:%b&lt;component_version&gt; Dynamic Signature Type:%b&lt;fld30&gt; Persistence Path:%b&lt;filename&gt; Dynamic Signature Version:%b&lt;content_version&gt; Dynamic Signature Compilation Timestamp:%b&lt;fld44&gt; Removal Reason:%b&lt;result&gt; Persistence Limit Type:%b&lt;fld45&gt; Persistence Limit:%b&lt;fld46&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2012_Microsoft"
 	id2="System_2012_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to use Dynamic Signature Service&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to use Dynamic Signature Service. Current Signature Version:%b&lt;fld26&gt; Signature Type:%b&lt;fld30&gt; Current Engine Version:%b&lt;component_version&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Dynamic Signature Type:%b&lt;agent&gt; Persistence Path:%b&lt;filename&gt; Dynamic Signature Version:%b&lt;content_version&gt; Dynamic Signature Compilation Timestamp:%b&lt;fld44&gt; Persistence Limit Type:%b&lt;fld45&gt; Persistence Limit:%b&lt;fld46&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has encountered an error trying to use Dynamic Signature Service&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has encountered an error trying to use Dynamic Signature Service. Current Signature Version:%b&lt;fld26&gt; Signature Type:%b&lt;fld30&gt; Current Engine Version:%b&lt;component_version&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Dynamic Signature Type:%b&lt;agent&gt; Persistence Path:%b&lt;filename&gt; Dynamic Signature Version:%b&lt;content_version&gt; Dynamic Signature Compilation Timestamp:%b&lt;fld44&gt; Persistence Limit Type:%b&lt;fld45&gt; Persistence Limit:%b&lt;fld46&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_2013_Microsoft"
 	id2="System_2013_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:discarded all Dynamic Signature Service signatures&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; discarded all Dynamic Signature Service signatures. Current Engine Version:%b&lt;component_version&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:discarded all Dynamic Signature Service signatures&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; discarded all Dynamic Signature Service signatures. Current Engine Version:%b&lt;component_version&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_3002_Microsoft"
 	id2="System_3002_Microsoft"
 	eventcategory="1603040000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-Time Protection feature has encountered an error and failed&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-Time Protection feature has encountered an error and failed. Feature:%b&lt;change_attribute&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Reason:%b&lt;fld10&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-Time Protection feature has encountered an error and failed&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-Time Protection feature has encountered an error and failed. Feature:%b&lt;change_attribute&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt; Reason:%b&lt;fld10&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_3007_Microsoft"
 	id2="System_3007_Microsoft"
 	eventcategory="1603040000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection has restarted a feature. It is recommended that you run a full system scan to detect any items that may have been missed while this agent was down&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection has restarted a feature. It is recommended that you run a full system scan to detect any items that may have been missed while this agent was down. Feature:%b&lt;change_attribute&gt; Reason:%b&lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection has restarted a feature. It is recommended that you run a full system scan to detect any items that may have been missed while this agent was down&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection has restarted a feature. It is recommended that you run a full system scan to detect any items that may have been missed while this agent was down. Feature:%b&lt;change_attribute&gt; Reason:%b&lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5000_Microsoft"
 	id2="System_5000_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection scanning for malware and other potentially unwanted software was enabled&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection scanning for malware and other potentially unwanted software was enabled."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection scanning for malware and other potentially unwanted software was enabled&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection scanning for malware and other potentially unwanted software was enabled." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5001_Microsoft"
 	id2="System_5001_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection scanning for malware and other potentially unwanted software was disabled&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection scanning for malware and other potentially unwanted software was disabled."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection scanning for malware and other potentially unwanted software was disabled&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection scanning for malware and other potentially unwanted software was disabled." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5004_Microsoft"
 	id2="System_5004_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection feature configuration has changed&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection feature configuration has changed. Feature:%b&lt;change_attribute&gt; Configuration:%b&lt;change_new&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Real-time Protection feature configuration has changed&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Real-time Protection feature configuration has changed. Feature:%b&lt;change_attribute&gt; Configuration:%b&lt;change_new&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5007_Microsoft"
 	id2="System_5007_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Configuration has changed&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware. Old value:%b&lt;change_old&gt; New value:%b&lt;change_new&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Configuration has changed&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Configuration has changed. If this is an unexpected event you should review the settings as this may be the result of malware. Old value:%b&lt;change_old&gt; New value:%b&lt;change_new&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5008_Microsoft"
 	id2="System_5008_Microsoft"
 	eventcategory="1603090000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:engine has been terminated due to an unexpected error&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; engine has been terminated due to an unexpected error. Failure Type:%b&lt;result&gt; Exception code:%b&lt;resultcode&gt; Resource:%b&lt;fld55&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:engine has been terminated due to an unexpected error&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; engine has been terminated due to an unexpected error. Failure Type:%b&lt;result&gt; Exception code:%b&lt;resultcode&gt; Resource:%b&lt;fld55&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5009_Microsoft"
 	id2="System_5009_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for malware and other potentially unwanted software has been enabled&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for malware and other potentially unwanted software has been enabled."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for malware and other potentially unwanted software has been enabled&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for malware and other potentially unwanted software has been enabled." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5010_Microsoft"
 	id2="System_5010_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for malware and other potentially unwanted software is disabled.&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for malware and other potentially unwanted software is disabled."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for malware and other potentially unwanted software is disabled.&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for malware and other potentially unwanted software is disabled." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5011_Microsoft"
 	id2="System_5011_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for viruses has been enabled&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for viruses has been enabled."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for viruses has been enabled&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for viruses has been enabled." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5012_Microsoft"
 	id2="System_5012_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for viruses is disabled&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for viruses is disabled."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:scanning for viruses is disabled&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; scanning for viruses is disabled." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5100_Microsoft"
 	id2="System_5100_Microsoft"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has entered a grace period and will soon expire&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has entered a grace period and will soon expire. After expiration, this program will disable protection against viruses, spyware, and other potentially unwanted software. Expiration Reason:%b&lt;result&gt; Expiration Date (UTC):%b&lt;fld10&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:has entered a grace period and will soon expire&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; has entered a grace period and will soon expire. After expiration, this program will disable protection against viruses, spyware, and other potentially unwanted software. Expiration Reason:%b&lt;result&gt; Expiration Date (UTC):%b&lt;fld10&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="System_5101_Microsoft"
 	id2="System_5101_Microsoft"
 	eventcategory="1603040000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:grace period has expired. Protection against viruses, spyware, and other potentially unwanted software is disabled&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; grace period has expired. Protection against viruses, spyware, and other potentially unwanted software is disabled. Expiration Reason:%b&lt;fld10&gt; Expiration Date (UTC):%b&lt;fld59&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:grace period has expired. Protection against viruses, spyware, and other potentially unwanted software is disabled&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; grace period has expired. Protection against viruses, spyware, and other potentially unwanted software is disabled. Expiration Reason:%b&lt;fld10&gt; Expiration Date (UTC):%b&lt;fld59&gt; Error Code:%b&lt;resultcode&gt; Error description:%b&lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1000_FepSrv"
 	id2="Forefront_1000_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent started successfully&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent started successfully."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent started successfully&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent started successfully." />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1001_FepSrv"
 	id2="Forefront_1001_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent failed to start&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent failed to start due to the following exception: &lt;result&gt;, when starting agent &lt;agent&gt;."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent failed to start&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent failed to start due to the following exception: &lt;result&gt;, when starting agent &lt;agent&gt;." />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1002_FepSrv"
 	id2="Forefront_1002_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent failed to start&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent failed to start due to the following exception: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent failed to start&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent failed to start due to the following exception: &lt;result&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1003_FepSrv"
 	id2="Forefront_1003_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent stopped due to the following unhandled exception&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent stopped due to the following unhandled exception: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent stopped due to the following unhandled exception&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent stopped due to the following unhandled exception: &lt;result&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1004_FepSrv"
 	id2="Forefront_1004_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:An Out Of Memory exception occurred in the service&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,An Out Of Memory exception occurred in the service. Recovered exception: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:An Out Of Memory exception occurred in the service&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,An Out Of Memory exception occurred in the service. Recovered exception: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1005_FepSrv"
 	id2="Forefront_1005_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent stopped successfully&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent stopped successfully."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent stopped successfully&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent stopped successfully." />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1006_FepSrv"
 	id2="Forefront_1006_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent failed to stop due to the following exception&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent failed to stop due to the following exception: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent failed to stop due to the following exception&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent failed to stop due to the following exception: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1007_FepSrv"
 	id2="Forefront_1007_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent is operational&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent is operational."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent is operational&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent is operational." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1008_FepSrv"
 	id2="Forefront_1008_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Configuration file not found&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Configuration file &lt;filename&gt; was not found."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Configuration file not found&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Configuration file &lt;filename&gt; was not found." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1009_FepSrv"
 	id2="Forefront_1009_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent has been requested to stop due to the following reason&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent has been requested to stop due to the following reason: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:agent has been requested to stop due to the following reason&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; agent has been requested to stop due to the following reason: &lt;result&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1010_FepSrv"
 	id2="Forefront_1010_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager failed due to the following exception&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager failed due to the following exception: &lt;result&gt; This failure will be reported only once (if the service is not restarted) until problem will be solved."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager failed due to the following exception&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager failed due to the following exception: &lt;result&gt; This failure will be reported only once (if the service is not restarted) until problem will be solved." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_2000_FepSrv"
 	id2="Forefront_2000_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager recovered and successfully updated the database with latest signatures&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager recovered and successfully updated the database with latest signatures"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager recovered and successfully updated the database with latest signatures&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager recovered and successfully updated the database with latest signatures" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_2001_FepSrv"
 	id2="Forefront_2001_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager encountered warnings during its run&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager encountered warnings during its run: &lt;fld10&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager encountered warnings during its run&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager encountered warnings during its run: &lt;fld10&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_2002_FepSrv"
 	id2="Forefront_2002_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager recovered from the previous warnings&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager recovered from the previous warnings"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Metadata manager recovered from the previous warnings&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Metadata manager recovered from the previous warnings" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_2003_FepSrv"
 	id2="Forefront_2003_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:The Alerts Manager failed to send an e-mail&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,The Alerts Manager failed to send an e-mail that has the following subject line: &lt;info&gt;. Error received: %2. In the Microsoft System Center Configuration Manager 2007 console, select Forefront Endpoint Protection 2010, and select Alerts. In the Actions pane, click E-mail Settings, and verify that the settings are correct."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:The Alerts Manager failed to send an e-mail&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,The Alerts Manager failed to send an e-mail that has the following subject line: &lt;info&gt;. Error received: %2. In the Microsoft System Center Configuration Manager 2007 console, select Forefront Endpoint Protection 2010, and select Alerts. In the Actions pane, click E-mail Settings, and verify that the settings are correct." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3000_FepSrv"
 	id2="Forefront_3000_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager succeeded to send email after failure&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded to send email after failure"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager succeeded to send email after failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded to send email after failure" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3001_FepSrv"
 	id2="Forefront_3001_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager failed to process malware detection alert&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager failed to process malware detection alert. Error received: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager failed to process malware detection alert&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager failed to process malware detection alert. Error received: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3002_FepSrv"
 	id2="Forefront_3002_FepSrv"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager succeeded to process malware detection alert after failure&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded to process malware detection alert after failure"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager succeeded to process malware detection alert after failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded to process malware detection alert after failure" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3003_FepSrv"
 	id2="Forefront_3003_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager failed&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager failed. Error received: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager failed&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager failed. Error received: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3004_FepSrv"
 	id2="Forefront_3004_FepSrv"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager succeeded after failure&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded after failure"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Alerts manager succeeded after failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded after failure" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3005_FepSrv"
 	id2="Forefront_3005_FepSrv"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Malware Detection Forefront Endpoint Protection has detected malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Detection Forefront Endpoint Protection has detected malware on a computer in your organization. Detection time (UTC): &lt;fld2&gt; Computer name: &lt;hostname&gt; Malware Name: &lt;virusname&gt; To view more information about malware activity in your organization, run a Computer List Report. Note: No additional Malware Detection alerts will be generated for this computer for the next 24 hours."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Malware Detection Forefront Endpoint Protection has detected malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Detection Forefront Endpoint Protection has detected malware on a computer in your organization. Detection time (UTC): &lt;fld2&gt; Computer name: &lt;hostname&gt; Malware Name: &lt;virusname&gt; To view more information about malware activity in your organization, run a Computer List Report. Note: No additional Malware Detection alerts will be generated for this computer for the next 24 hours." />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3006_FepSrv"
 	id2="Forefront_3006_FepSrv"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Malware Outbreak Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Outbreak Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization. Malware name: &lt;virusname&gt; Number of computers affected: &lt;fld10&gt; Detection interval (minutes): &lt;result&gt;&lt;fld11&gt; To view more information about malware activity in your organization, run an Antimalware Activity Report. Note: No additional Malware Outbreak alerts will be generated for this malware for the next 24 hours."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Malware Outbreak Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Outbreak Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization. Malware name: &lt;virusname&gt; Number of computers affected: &lt;fld10&gt; Detection interval (minutes): &lt;result&gt;&lt;fld11&gt; To view more information about malware activity in your organization, run an Antimalware Activity Report. Note: No additional Malware Outbreak alerts will be generated for this malware for the next 24 hours." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3007_FepSrv"
 	id2="Forefront_3007_FepSrv"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Test Alert This message is generated by Forefront Endpoint Protection to test alert e-mail settings&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Test Alert This message is generated by Forefront Endpoint Protection to test alert e-mail settings. Receipt of this message confirms that you have correctly configured the e-mail settings, and that the specified mail server is delivering Forefront Endpoint Protection alert notifications. Important: To complete the configuration of alert e-mail notifications, you must add e-mail recipients to the relevant Forefront Endpoint Protection alerts."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Test Alert This message is generated by Forefront Endpoint Protection to test alert e-mail settings&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Test Alert This message is generated by Forefront Endpoint Protection to test alert e-mail settings. Receipt of this message confirms that you have correctly configured the e-mail settings, and that the specified mail server is delivering Forefront Endpoint Protection alert notifications. Important: To complete the configuration of alert e-mail notifications, you must add e-mail recipients to the relevant Forefront Endpoint Protection alerts." />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3008_FepSrv"
 	id2="Forefront_3008_FepSrv"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Repeated Malware Detection Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Repeated Malware Detection Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization. Malware name: &lt;virusname&gt; Computer name: &lt;hostname&gt; Number of detections: &lt;event_counter&gt; Detection interval (minutes): &lt;fld12&gt; To view more information about malware activity in your organization, run a Computer List Report. Note: No additional Repeated Malware Detection alerts will be generated for this computer in the next 24 hours."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Repeated Malware Detection Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Repeated Malware Detection Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization. Malware name: &lt;virusname&gt; Computer name: &lt;hostname&gt; Number of detections: &lt;event_counter&gt; Detection interval (minutes): &lt;fld12&gt; To view more information about malware activity in your organization, run a Computer List Report. Note: No additional Repeated Malware Detection alerts will be generated for this computer in the next 24 hours." />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3009_FepSrv"
 	id2="Forefront_3009_FepSrv"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Multiple Malware Detection Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Multiple Malware Detection Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization. Computer name: &lt;hostname&gt; Number of malware types: &lt;fld12&gt; Detection interval (minutes): &lt;fld11&gt; To view more information about malware activity in your organization, run a Computer List Report. Note: No additional Multiple Malware Detection alerts will be generated for this computer in the next 24 hours."/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Multiple Malware Detection Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Multiple Malware Detection Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization. Computer name: &lt;hostname&gt; Number of malware types: &lt;fld12&gt; Detection interval (minutes): &lt;fld11&gt; To view more information about malware activity in your organization, run a Computer List Report. Note: No additional Multiple Malware Detection alerts will be generated for this computer in the next 24 hours." />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3000_FEP"
 	id2="Forefront_3000_FEP"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:completed successfully the update of source files of FEP Security Policy package&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; completed successfully the update of source files of FEP Security Policy package"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:completed successfully the update of source files of FEP Security Policy package&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; completed successfully the update of source files of FEP Security Policy package" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3001_FEP"
 	id2="Forefront_3001_FEP"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:failed due to the following&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; failed due to the following: &lt;result&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:failed due to the following&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; failed due to the following: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3002_FEP"
 	id2="Forefront_3002_FEP"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:called to update the source files of FEP Security Policy package&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; called to update the source files of FEP Security Policy package"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:called to update the source files of FEP Security Policy package&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; called to update the source files of FEP Security Policy package" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3003_FEP"
 	id2="Forefront_3003_FEP"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:warning raised due to the following&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; warning raised due to the following: &lt;result&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:warning raised due to the following&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; warning raised due to the following: &lt;result&gt;" />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Security_4825_Microsoft-Windows-Security-Auditing"
 	id2="Security_4825_Microsoft-Windows-Security-Auditing"
 	eventcategory="1612000000"
-	summary="NIC_B_WINDOWS;sumtype=11;|NIC_B_WINDOWS;key=event_computer;sumtype=12;|NIC_B_WINDOWS;key=event_type;sumtype=13;|NIC_B_WINDOWS;key=category;sumtype=14;|NIC_B_CATEGORIES;sumtype=denied_in;|NIC_B_CATEGORIES;subkey=event_log;sumtype=connection;" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_log:*HDR(msgIdPart1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O %W',Hdatetime)&gt;&lt;@id:*HDR(msgIdPart2)&gt;&lt;@event_source:Microsoft-Windows-Security-Auditing&gt;&lt;@event_type:*HDR(Hevent_type)&gt;&lt;@event_user:*HDR(Hevent_user)&gt;&lt;@event_computer:*HDR(Hevent_computer)&gt;&lt;@category:*HDR(Hcategory)&gt;&lt;event_description&gt; Subject:&lt;fld2&gt;  User Name: &lt;fld12&gt;  Domain: &lt;domain&gt;  Logon ID: &lt;id&gt;  Additional Information:  Client Address: &lt;saddr&gt;   &lt;result&gt;"/>	
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_log:*HDR(msgIdPart1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O %W',Hdatetime)&gt;&lt;@id:*HDR(msgIdPart2)&gt;&lt;@event_source:Microsoft-Windows-Security-Auditing&gt;&lt;@event_type:*HDR(Hevent_type)&gt;&lt;@event_user:*HDR(Hevent_user)&gt;&lt;@event_computer:*HDR(Hevent_computer)&gt;&lt;@category:*HDR(Hcategory)&gt;"
+	content="&lt;event_description&gt; Subject:&lt;fld2&gt;  User Name: &lt;fld12&gt;  Domain: &lt;domain&gt;  Logon ID: &lt;id&gt;  Additional Information:  Client Address: &lt;saddr&gt;   &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_9000_FEP"
 	id2="Forefront_9000_FEP"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Policy Source Updater&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Policy Source Updater"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;&lt;@event_description:Policy Source Updater&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Policy Source Updater" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3000"
 	id2="Forefront_3000"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;," />
 	
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3002"
 	id2="Forefront_3002"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Policy Source Updater called to update the source files of FEP Security Policy package&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Policy Source Updater called to update the source files of FEP Security Policy package"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Policy Source Updater called to update the source files of FEP Security Policy package&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Policy Source Updater called to update the source files of FEP Security Policy package" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3001"
 	id2="Forefront_3001"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Alerts manager succeeded to send email after failure&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Alerts manager succeeded to send email after failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;," />
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3004"
 	id2="Forefront_3004"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Alerts manager failed&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager failed. Error received: &lt;result&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Alerts manager failed&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager failed. Error received: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3005"
 	id2="Forefront_3005"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Alerts manager succeeded after failure&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded after failure"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Alerts manager succeeded after failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Alerts manager succeeded after failure" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3006"
 	id2="Forefront_3006"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Malware Detection  Forefront Endpoint Protection has detected malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Detection  Forefront Endpoint Protection has detected malware on a computer in your organization. Detection time (UTC): &lt;fld2&gt; Computer name: &lt;hostname&gt; Malware Name: &lt;virusname&gt;  To view more information about malware activity in your organization, run a Computer List Report.  Note: No additional Malware Detection alerts will be generated for this computer for the next 24 hours."/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Malware Detection  Forefront Endpoint Protection has detected malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Detection  Forefront Endpoint Protection has detected malware on a computer in your organization. Detection time (UTC): &lt;fld2&gt; Computer name: &lt;hostname&gt; Malware Name: &lt;virusname&gt;  To view more information about malware activity in your organization, run a Computer List Report.  Note: No additional Malware Detection alerts will be generated for this computer for the next 24 hours." />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3006:01"
 	id2="Forefront_3006"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Malware Detection  Forefront Endpoint Protection has detected malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;, "/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Malware Detection  Forefront Endpoint Protection has detected malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;, " />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3007"
 	id2="Forefront_3007"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Malware Outbreak  Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Outbreak  Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization. Malware name: &lt;virusname&gt; Number of computers affected: &lt;fld10&gt; Detection interval (minutes): &lt;result&gt;  To view more information about malware activity in your organization, run an Antimalware Activity Report.  Note: No additional Malware Outbreak alerts will be generated for this malware for the next 24 hours."/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Malware Outbreak  Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Malware Outbreak  Forefront Endpoint Protection has detected a fast spreading malware on computers in your organization. Malware name: &lt;virusname&gt; Number of computers affected: &lt;fld10&gt; Detection interval (minutes): &lt;result&gt;  To view more information about malware activity in your organization, run an Antimalware Activity Report.  Note: No additional Malware Outbreak alerts will be generated for this malware for the next 24 hours." />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3008"
 	id2="Forefront_3008"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Test Alert  This message is generated by Forefront Endpoint Protection to test alert e-mail settings. Receipt of this message confirms that you have correctly configured the e-mail settings, and that the specified mail server is delivering Forefront Endpoint Protection alert notifications. &lt;info&gt;"/> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Test Alert  This message is generated by Forefront Endpoint Protection to test alert e-mail settings. Receipt of this message confirms that you have correctly configured the e-mail settings, and that the specified mail server is delivering Forefront Endpoint Protection alert notifications. &lt;info&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3009"
 	id2="Forefront_3009"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Repeated Malware Detection  Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Repeated Malware Detection  Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization. Malware name: &lt;virusname&gt; Computer name: &lt;hostname&gt; Number of detections: &lt;fld2&gt; Detection interval (minutes): &lt;result&gt;  To view more information about malware activity in your organization, run a Computer List Report.  Note: No additional Repeated Malware Detection alerts will be generated for this computer in the next 24 hours."/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Repeated Malware Detection  Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Repeated Malware Detection  Forefront Endpoint Protection has repeatedly detected the same malware on a computer in your organization. Malware name: &lt;virusname&gt; Computer name: &lt;hostname&gt; Number of detections: &lt;fld2&gt; Detection interval (minutes): &lt;result&gt;  To view more information about malware activity in your organization, run a Computer List Report.  Note: No additional Repeated Malware Detection alerts will be generated for this computer in the next 24 hours." />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_3010"
 	id2="Forefront_3010"
 	eventcategory="1003010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Multiple Malware Detection  Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Multiple Malware Detection  Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization. Computer name: &lt;hostname&gt; Number of malware types: &lt;fld12&gt; Detection interval (minutes): &lt;result&gt; To view more information about malware activity in your organization, run a Computer List Report.  Note: No additional Multiple Malware Detection alerts will be generated for this computer in the next 24 hours."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Multiple Malware Detection  Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,&lt;fld1&gt; Multiple Malware Detection  Forefront Endpoint Protection has detected multiple types of malware on a computer in your organization. Computer name: &lt;hostname&gt; Number of malware types: &lt;fld12&gt; Detection interval (minutes): &lt;result&gt; To view more information about malware activity in your organization, run a Computer List Report.  Note: No additional Multiple Malware Detection alerts will be generated for this computer in the next 24 hours." />
 				
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="Forefront_1000"
 	id2="Forefront_1000"
 	eventcategory="1603000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Forefront Endpoint Protection agent started successfully&gt;&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Forefront Endpoint Protection agent started successfully."/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime)&gt;&lt;@event_description:Forefront Endpoint Protection agent started successfully&gt;"
+	content="&lt;event_log&gt;,&lt;fld57&gt;,&lt;day&gt; &lt;datetime&gt;,&lt;event_id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;data&gt;,Forefront Endpoint Protection agent started successfully." />
 </DEVICEMESSAGES>

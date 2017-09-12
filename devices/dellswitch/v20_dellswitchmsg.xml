@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="dellswitch"
+	displayname="Dell PowerSwitch"
+	group="Switch">
 <VERSION 
-	xml="2"
-	checksum="893b23490619299dd0bba2d964e91aeb"
+	xml="3"
+	checksum="0fd3f76181f24de9bbf4e42b466fa6d4"
 	revision="0"
-	enVision="33040065" 
 	device="2.0" />
 
 <HEADER 
-		id1="0001" 
-		id2="0001" 
-		messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)" 
-		content="%&lt;msgIdPart1&gt;-&lt;hlevel&gt;-&lt;msgIdPart2&gt;: &lt;!payload:msgIdPart1&gt;" />
+	id1="0001" 
+	id2="0001" 
+	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)" 
+	content="%&lt;msgIdPart1&gt;-&lt;hlevel&gt;-&lt;msgIdPart2&gt;: &lt;!payload:msgIdPart1&gt;" />
 
 <VALUEMAP 
 		name="convertSeverity"
@@ -19,92 +21,63 @@
 		keyvaluepairs="W='Warning'|I='Informational'|E='Error'" />
 	
 <MESSAGE 
-		level="3" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000001" 
-		id2="AAA_AUTHFAIL" 
-		eventcategory="1301010000" 
-		content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;agent&gt;-&lt;severity&gt;-&lt;fld23&gt;: Authentication failed for &lt;network_service&gt;, source - &lt;saddr&gt; " />
+	id1="000001" 
+	id2="AAA_AUTHFAIL" 
+	eventcategory="1301010000" 
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;agent&gt;-&lt;severity&gt;-&lt;fld23&gt;: Authentication failed for &lt;network_service&gt;, source - &lt;saddr&gt; " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000002" 
-		id2="COPY_TRAP" 
-		eventcategory="1605000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: The copy operation was completed &lt;disposition&gt;" />
+	id1="000002" 
+	id2="COPY_TRAP" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: The copy operation was completed &lt;disposition&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000003" 
-		id2="COPY_TRAP" 
-		eventcategory="1601000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: The copy operation has &lt;disposition&gt;" />
+	id1="000003" 
+	id2="COPY_TRAP" 
+	eventcategory="1601000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: The copy operation has &lt;disposition&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000004" 
-		id2="INIT_Startup" 
-		eventcategory="1601000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: Warm Startup" />
+	id1="000004" 
+	id2="INIT_Startup" 
+	eventcategory="1601000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: Warm Startup" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000005" 
-		id2="LINK_Up" 
-		eventcategory="1801000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-Up:  &lt;interface&gt;" />
+	id1="000005" 
+	id2="LINK_Up" 
+	eventcategory="1801000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-Up:  &lt;interface&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000006" 
-		id2="LINK_Down" 
-		eventcategory="1801000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-Down:  &lt;interface&gt;" />
+	id1="000006" 
+	id2="LINK_Down" 
+	eventcategory="1801000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-Down:  &lt;interface&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000007" 
-		id2="MSCM_NEWTERM" 
-		eventcategory="1801020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;agent&gt;-&lt;severity&gt;-&lt;fld23&gt;: New &lt;network_service&gt; connection from &lt;saddr&gt;" />
+	id1="000007" 
+	id2="MSCM_NEWTERM" 
+	eventcategory="1801020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;agent&gt;-&lt;severity&gt;-&lt;fld23&gt;: New &lt;network_service&gt; connection from &lt;saddr&gt;" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000008" 
-		id2="MSCM_TERMTERMINATED" 
-		eventcategory="1801030000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;agent&gt;-&lt;severity&gt;-&lt;fld23&gt;: &lt;network_service&gt; connection from &lt;saddr&gt; terminated " />
+	id1="000008" 
+	id2="MSCM_TERMTERMINATED" 
+	eventcategory="1801030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;agent&gt;-&lt;severity&gt;-&lt;fld23&gt;: &lt;network_service&gt; connection from &lt;saddr&gt; terminated " />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000009" 
-		id2="STP_PORTSTATUS" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: &lt;interface&gt;: &lt;fld22&gt; status &lt;event_state&gt;" />
+	id1="000009" 
+	id2="STP_PORTSTATUS" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: &lt;interface&gt;: &lt;fld22&gt; status &lt;event_state&gt;" />
 <MESSAGE 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="74" 
-		id1="000010" 
-		id2="TFTP_TftpRxERROR" 
-		eventcategory="1603110000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt; &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: An error message was received: &lt;resultcode&gt; &lt;result&gt;" />
+	id1="000010" 
+	id2="TFTP_TftpRxERROR" 
+	eventcategory="1603110000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
+	content=" &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: An error message was received: &lt;resultcode&gt; &lt;result&gt;" />
 </DEVICEMESSAGES>

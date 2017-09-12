@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="rsaecat"
+	displayname="RSA ECAT"
+	group="Anti Virus">
 <VERSION
-	xml="14"
-	checksum="d403bacefa62ecf196d9bd23bb0a48bf"
+	xml="15"
+	checksum="863dc0f6498e7c0c624ca85dc42d09e8"
 	revision="97"
-	enVision="35010000"
 	device="2.0"/>
 	
 <TAGVALMAP
 	delimiter=" "
-	escapeValueDelim="\"
-	/>
+	escapeValueDelim="\" />
 	
 <HEADER
 	id1="0001"
@@ -23,58 +24,38 @@
 	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hhostname&gt; CEF:0|RSA|&lt;hproduct&gt;|&lt;hversion&gt;|&lt;messageid&gt;|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;"/>
 
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="MachineSuspectLevelChanged"
 	id2="MachineSuspectLevelChanged"
 	eventcategory="1003000000"
 	tagval="true"
-	content="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@obj_type:Suspect Level&gt;suid=&lt;fld1&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; cs1Label=&lt;fld1&gt; cs1=&lt;fld2&gt; cs2Label=&lt;fld3&gt; cs2=&lt;obj_name&gt;"/>
-
+	functions="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@obj_type:Suspect Level&gt;"
+	content="suid=&lt;fld1&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; cs1Label=&lt;fld1&gt; cs1=&lt;fld2&gt; cs2Label=&lt;fld3&gt; cs2=&lt;obj_name&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="MachineIOC"
 	id2="MachineIOC"
 	eventcategory="1003000000"
 	tagval="true"
-	content="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld4)&gt;agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; rt=&lt;fld4&gt; machineScore=&lt;risk_num&gt; userOU=&lt;user_org&gt; machineOU=&lt;dn&gt; deviceDnsDomain=&lt;domain&gt; suser=&lt;username&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt;"/>
-
+	functions="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld4)&gt;"
+	content="agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; rt=&lt;fld4&gt; machineScore=&lt;risk_num&gt; userOU=&lt;user_org&gt; machineOU=&lt;dn&gt; deviceDnsDomain=&lt;domain&gt; suser=&lt;username&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="ModuleIOC"
 	id2="ModuleIOC"
 	eventcategory="1003000000"
 	tagval="true"
-	content="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; fname=&lt;filename&gt; fsize=&lt;filename_size&gt; fileHash=&lt;checksum&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; machineScore=&lt;risk_num&gt; OPSWATResult=&lt;cs_opswatresult&gt; YARAResult=&lt;cs_yararesult&gt; Bit9Status=&lt;cs_bit9status&gt; ReputationResult=&lt;cs_represult&gt; moduleScore=&lt;cs_modulescore&gt; moduleSignature=&lt;cs_modulesign&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt; sha256sum=&lt;checksum&gt; md5sum=&lt;checksum&gt;"/>
-
+	functions="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; fname=&lt;filename&gt; fsize=&lt;filename_size&gt; fileHash=&lt;checksum&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; machineScore=&lt;risk_num&gt; OPSWATResult=&lt;cs_opswatresult&gt; YARAResult=&lt;cs_yararesult&gt; Bit9Status=&lt;cs_bit9status&gt; ReputationResult=&lt;cs_represult&gt; moduleScore=&lt;cs_modulescore&gt; moduleSignature=&lt;cs_modulesign&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt; sha256sum=&lt;checksum&gt; md5sum=&lt;checksum&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="IPIOC"
 	id2="IPIOC"
 	eventcategory="1003000000"
 	tagval="true"
-	content="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld31)&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld32)&gt;agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; machineScore=&lt;risk_num&gt; dst=&lt;daddr&gt; dhost=&lt;dhost&gt; start=&lt;fld31&gt; end=&lt;fld32&gt; destinationDnsDomain=&lt;ddomain&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt; protocol=&lt;protocol&gt; port=&lt;dport&gt; totalsent=&lt;sbytes&gt; totalreceived=&lt;rbytes&gt; useragent=&lt;user_agent&gt; filename=&lt;filename&gt;"/>
-
+	functions="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld31)&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld32)&gt;"
+	content="agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; machineScore=&lt;risk_num&gt; dst=&lt;daddr&gt; dhost=&lt;dhost&gt; start=&lt;fld31&gt; end=&lt;fld32&gt; destinationDnsDomain=&lt;ddomain&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt; protocol=&lt;protocol&gt; port=&lt;dport&gt; totalsent=&lt;sbytes&gt; totalreceived=&lt;rbytes&gt; useragent=&lt;user_agent&gt; filename=&lt;filename&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="84"
 	id1="SuspiciousEventIOC"
 	id2="SuspiciousEventIOC"
 	eventcategory="1003000000"
 	tagval="true"
-	content="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld4)&gt;agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; fname=&lt;filename&gt; fsize=&lt;filename_size&gt; fileHash=&lt;checksum&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; machineScore=&lt;risk_num&gt; rt=&lt;fld4&gt; sourceModule=&lt;cs_sourcemodule&gt; targetModule=&lt;cs_targetmodule&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt;"/>
-
+	functions="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %H:%T:%O',fld4)&gt;"
+	content="agentid=&lt;agent&gt; shost=&lt;shost&gt; src=&lt;saddr&gt; smac=&lt;smacaddr&gt; fname=&lt;filename&gt; fsize=&lt;filename_size&gt; fileHash=&lt;checksum&gt; instantIOCName=&lt;threat_name&gt; instantIOCLevel=&lt;threat_val&gt; machineScore=&lt;risk_num&gt; rt=&lt;fld4&gt; sourceModule=&lt;cs_sourcemodule&gt; targetModule=&lt;cs_targetmodule&gt; gatewayip=&lt;gateway&gt; remoteip=&lt;stransaddr&gt; os=&lt;os&gt; timezone=&lt;timezone&gt;" />
 </DEVICEMESSAGES>

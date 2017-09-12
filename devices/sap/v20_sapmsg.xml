@@ -1,483 +1,325 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
-  <VERSION 
-	xml="18"
-	checksum="d15dc66ef24adf67dc2a4a5b6b16bec9"
+<DEVICEMESSAGES
+	name="sap"
+	displayname="SAP ERP Central Component"
+	group="Application Servers">
+<VERSION 
+	xml="19"
+	checksum="8787b4f119da37b8577ec44cb73911f2"
 	revision="108"
-	enVision="33040030"
 	device="2.0" />
 
  
 
 <HEADER 
-		id1="0001" 
-		id2="0001" 
-		content="%SAP-&lt;level&gt;-&lt;messageid&gt; &lt;hfld1&gt;: &lt;hfld2&gt;|| &lt;!payload&gt;" />
+	id1="0001" 
+	id2="0001" 
+	content="%SAP-&lt;level&gt;-&lt;messageid&gt; &lt;hfld1&gt;: &lt;hfld2&gt;|| &lt;!payload&gt;" />
 		
 <HEADER 
-		id1="0002" 
-		id2="0002" 
-		content="%SAP-&lt;level&gt;-&lt;messageid&gt;: &lt;hfld2&gt;|| &lt;!payload&gt;" />
+	id1="0002" 
+	id2="0002" 
+	content="%SAP-&lt;level&gt;-&lt;messageid&gt;: &lt;hfld2&gt;|| &lt;!payload&gt;" />
 <HEADER 
-		id1="0003" 
-		id2="0003"
-		messageid="*STRCAT(&apos;INVALID&apos;,&apos;_&apos;,&apos;NOTFOUND&apos;)"
-		content="%SAP-&lt;level&gt;-INVALID_OR_NOT_FOUND: &lt;!payload&gt;" />
+	id1="0003" 
+	id2="0003"
+	messageid="*STRCAT(&apos;INVALID&apos;,&apos;_&apos;,&apos;NOTFOUND&apos;)"
+	content="%SAP-&lt;level&gt;-INVALID_OR_NOT_FOUND: &lt;!payload&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Logon" 
-		id2="Logon" 
-		eventcategory="1401030000" 
-        content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Logon Failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;||&lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||{Logon Failed | Logon failed} ({Reason =&lt;resultcode&gt;, Type =&lt;result&gt; | reason=&lt;resultcode&gt;, type=&lt;result&gt;, method=&lt;fld15&gt;}) &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
-
+	id1="Logon" 
+	id2="Logon" 
+	eventcategory="1401030000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Logon Failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;||&lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||{Logon Failed | Logon failed} ({Reason =&lt;resultcode&gt;, Type =&lt;result&gt; | reason=&lt;resultcode&gt;, type=&lt;result&gt;, method=&lt;fld15&gt;}) &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1"
-		tableid="88"
-		id1="Logon:01" 
-		id2="Logon" 
-		eventcategory="1401060000" 
-        content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Logon Successful&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||{Logon Successful | Logon successful} &lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Logon:01" 
+	id2="Logon" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Logon Successful&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||{Logon Successful | Logon successful} &lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Logon:02" 
-		id2="Logon" 
-		eventcategory="1402020400" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Locked Erroneous Password Checks&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Locked in Client &lt;fld6&gt; After Erroneous Password Checks &lt;fld13&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Logon:02" 
+	id2="Logon" 
+	eventcategory="1402020400" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Locked Erroneous Password Checks&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Locked in Client &lt;fld6&gt; After Erroneous Password Checks &lt;fld13&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Logon:03" 
-		id2="Logon" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Logoff&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User Logoff &lt;fld28&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
+	id1="Logon:03" 
+	id2="Logon" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Logoff&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User Logoff &lt;fld28&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Logon:04" 
-		id2="Logon" 
-		eventcategory="1402020400" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Unlocked after being locked&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Locked in Client &lt;fld6&gt; Unlocked After Being Locked Due to &lt;result&gt; &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Logon:04" 
+	id2="Logon" 
+	eventcategory="1402020400" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Unlocked after being locked&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Locked in Client &lt;fld6&gt; Unlocked After Being Locked Due to &lt;result&gt; &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Logon:05" 
-		id2="Logon" 
-		eventcategory="1402020400" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Unlocked after being locked&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; in Client &lt;fld6&gt; Unlocked After Being Locked Due to &lt;result&gt; &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Logon:05" 
+	id2="Logon" 
+	eventcategory="1402020400" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Unlocked after being locked&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; in Client &lt;fld6&gt; Unlocked After Being Locked Due to &lt;result&gt; &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Other" 
-		id2="Other" 
-		eventcategory="1401030000" 
-		content="&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password check failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Password check failed for user &lt;c_username&gt; in client &lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Other" 
+	id2="Other" 
+	eventcategory="1401030000" 
+	functions="&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password check failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Password check failed for user &lt;c_username&gt; in client &lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Other:01" 
-		id2="Other" 
-		eventcategory="1605000000" 
-		content="&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password check failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Field content change: &lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
-
+	id1="Other:01" 
+	id2="Other" 
+	eventcategory="1605000000" 
+	functions="&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password check failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Field content change: &lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Other:02" 
-		id2="Other" 
-		eventcategory="1605000000" 
-		content="&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password check failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||&gt; in program &lt;fld6&gt;, line &lt;fld13&gt;, event &lt;result&gt; ||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
-
+	id1="Other:02" 
+	id2="Other" 
+	eventcategory="1605000000" 
+	functions="&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password check failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||&gt; in program &lt;fld6&gt;, line &lt;fld13&gt;, event &lt;result&gt; ||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Other:03" 
-		id2="Other" 
-		eventcategory="1605000000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Download to File&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Download &lt;fld36&gt; Bytes to File &lt;filename&gt; ||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Other:03" 
+	id2="Other" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Download to File&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Download &lt;fld36&gt; Bytes to File &lt;filename&gt; ||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="RFC" 
-		id2="RFC" 
-		eventcategory="1602010000" 
-		content="&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Successful RFC Call&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Successful RFC Call &lt;statement&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
+	id1="RFC" 
+	id2="RFC" 
+	eventcategory="1602010000" 
+	functions="&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Successful RFC Call&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Successful RFC Call &lt;statement&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="RFC:01" 
-		id2="RFC" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:RFC/CPIC Logon Successful&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||RFC/CPIC {Logon Successful | logon successful} &lt;fld28&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
+	id1="RFC:01" 
+	id2="RFC" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:RFC/CPIC Logon Successful&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||RFC/CPIC {Logon Successful | logon successful} &lt;fld28&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="RFC:02" 
-		id2="RFC" 
-		eventcategory="1401030000" 
-		content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:RFC/CPIC Logon Failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||RFC/CPIC {Logon Failed | logon failed}, {Reason = &lt;resultcode&gt;, Type = &lt;result&gt; | reason=&lt;resultcode&gt;, type=&lt;result&gt;, method=&lt;fld15&gt;}||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
+	id1="RFC:02" 
+	id2="RFC" 
+	eventcategory="1401030000" 
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:RFC/CPIC Logon Failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||RFC/CPIC {Logon Failed | logon failed}, {Reason = &lt;resultcode&gt;, Type = &lt;result&gt; | reason=&lt;resultcode&gt;, type=&lt;result&gt;, method=&lt;fld15&gt;}||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="RFC:03" 
-		id2="RFC" 
-		eventcategory="1401030000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Generic table access by RFC&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Generic table access by RFC to &lt;info&gt; with activity &lt;resultcode&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
-
+	id1="RFC:03" 
+	id2="RFC" 
+	eventcategory="1401030000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Generic table access by RFC&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Generic table access by RFC to &lt;info&gt; with activity &lt;resultcode&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="RFC:04" 
-		id2="RFC" 
-		eventcategory="1401030000" 
-		content="&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Failed RFC Call &gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Failed RFC Call &lt;fld12&gt; (Function Group = &lt;info&gt;)&lt;fld13&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
+	id1="RFC:04" 
+	id2="RFC" 
+	eventcategory="1401030000" 
+	functions="&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Failed RFC Call &gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Failed RFC Call &lt;fld12&gt; (Function Group = &lt;info&gt;)&lt;fld13&gt;||&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="RFC:05" 
-		id2="RFC" 
-		eventcategory="1701000000" 
-	    content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;instance&gt;||&lt;parent_process&gt;||&lt;parent_pid&gt;||&lt;fld1&gt;&lt;fld29&gt;||&lt;fld2&gt;&lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Successful WS Call&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||"/>
-
+	id1="RFC:05" 
+	id2="RFC" 
+	eventcategory="1701000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;instance&gt;||&lt;parent_process&gt;||&lt;parent_pid&gt;||&lt;fld1&gt;&lt;fld29&gt;||&lt;fld2&gt;&lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Successful WS Call&lt;fld6&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Report" 
-		id2="Report" 
-		eventcategory="1605020000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Report Started&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Report &lt;fld6&gt; Started &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Report" 
+	id2="Report" 
+	eventcategory="1605020000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Report Started&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Report &lt;fld6&gt; Started &lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Report:01" 
-		id2="Report" 
-		eventcategory="1605020000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Start Report Failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Start Report &lt;fld6&gt; Failed (Reason = &lt;result&gt;)&lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
+	id1="Report:01" 
+	id2="Report" 
+	eventcategory="1605020000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Start Report Failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Start Report &lt;fld6&gt; Failed (Reason = &lt;result&gt;)&lt;fld28&gt;||&lt;fld7&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="System" 
-		id2="System" 
-		eventcategory="1701000000" 
-		content="&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Audit Configuration Changed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Audit Configuration Changed &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="System" 
+	id2="System" 
+	eventcategory="1701000000" 
+	functions="&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Audit Configuration Changed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Audit Configuration Changed &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="System:01" 
-		id2="System" 
-		eventcategory="1610000000" 
-		content="&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Start&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Application Server Started&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Application Server Started &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="System:01" 
+	id2="System" 
+	eventcategory="1610000000" 
+	functions="&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Start&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Application Server Started&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Application Server Started &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="System:02" 
-		id2="System" 
-		eventcategory="1612000000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Slot Inactive&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Audit: Slot &lt;fld8&gt; Inactive &lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
+	id1="System:02" 
+	id2="System" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Slot Inactive&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Audit: Slot &lt;fld8&gt; Inactive &lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="System:03" 
-		id2="System" 
-		eventcategory="1612000000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||&lt;action&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="System:03" 
+	id2="System" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||&lt;action&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Transaction" 
-		id2="Transaction" 
-		eventcategory="1602010000" 
-		content="&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Transaction Started&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Transaction &lt;fld8&gt; Started &lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
+	id1="Transaction" 
+	id2="Transaction" 
+	eventcategory="1602010000" 
+	functions="&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Transaction Started&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Transaction &lt;fld8&gt; Started &lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Transaction:01" 
-		id2="Transaction" 
-		eventcategory="1602020000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Start Transaction Failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Start Transaction &lt;fld8&gt; Failed &lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
+	id1="Transaction:01" 
+	id2="Transaction" 
+	eventcategory="1602020000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Start Transaction Failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Start Transaction &lt;fld8&gt; Failed &lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Transaction:02" 
-		id2="Transaction" 
-		eventcategory="1602020000" 
-		content="&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Start of transaction failed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Start of transaction &lt;fld8&gt; failed (Reason=&lt;result&gt;)&lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
-
+	id1="Transaction:02" 
+	id2="Transaction" 
+	eventcategory="1602020000" 
+	functions="&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Start of transaction failed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Start of transaction &lt;fld8&gt; failed (Reason=&lt;result&gt;)&lt;fld28&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Transaction:03" 
-		id2="Transaction" 
-		eventcategory="1602020000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Transaction Locked&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Transaction &lt;fld8&gt; Locked &lt;fld17&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
-
+	id1="Transaction:03" 
+	id2="Transaction" 
+	eventcategory="1602020000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Transaction Locked&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Transaction &lt;fld8&gt; Locked &lt;fld17&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Transaction:04" 
-		id2="Transaction" 
-		eventcategory="1602020000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Transaction Unlocked&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Transaction &lt;fld8&gt; Unlocked &lt;fld17&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
-
+	id1="Transaction:04" 
+	id2="Transaction" 
+	eventcategory="1602020000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Transaction Unlocked&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Transaction &lt;fld8&gt; Unlocked &lt;fld17&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;||&lt;fld14&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User" 
-		id2="User" 
-		eventcategory="1402020300" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Unlocked&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Unlocked &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User" 
+	id2="User" 
+	eventcategory="1402020300" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Unlocked&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Unlocked &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:01" 
-		id2="User" 
-		eventcategory="1402020400" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Locked&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Locked &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:01" 
+	id2="User" 
+	eventcategory="1402020400" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Locked&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Locked &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 		
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:02" 
-		id2="User" 
-		eventcategory="1402020400" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Perfil &lt;fld27&gt; Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
-
+	id1="User:02" 
+	id2="User" 
+	eventcategory="1402020400" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Perfil &lt;fld27&gt; Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:03" 
-		id2="User" 
-		eventcategory="1402020400" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||{ Autorización &lt;fld27&gt; Activated | Autorización } &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
-
-
+	id1="User:03" 
+	id2="User" 
+	eventcategory="1402020400" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||{ Autorización &lt;fld27&gt; Activated | Autorización } &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Other:04" 
-		id2="Other" 
-		eventcategory="1605000000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Field content changed: &lt;fld27&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
-
+	id1="Other:04" 
+	id2="Other" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Field content changed: &lt;fld27&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="Other:05" 
-		id2="Other" 
-		eventcategory="1605000000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Logical file name &lt;fld28&gt;  not configured. Physical file name &lt;fld27&gt;  not checked. &lt;fld38&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
-
+	id1="Other:05" 
+	id2="Other" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Logical file name &lt;fld28&gt;  not configured. Physical file name &lt;fld27&gt;  not checked. &lt;fld38&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:04" 
-		id2="User" 
-		eventcategory="1402040100" 
-		content="&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password changed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Password changed for user &lt;c_username&gt; in client &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:04" 
+	id2="User" 
+	eventcategory="1402040100" 
+	functions="&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Password changed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Password changed for user &lt;c_username&gt; in client &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:05" 
-		id2="User" 
-		eventcategory="1402020200" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Created&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Created &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:05" 
+	id2="User" 
+	eventcategory="1402020200" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Created&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Created &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:06" 
-		id2="User" 
-		eventcategory="1402030000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Master Record Changed&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User Master Record &lt;c_username&gt; Changed &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:06" 
+	id2="User" 
+	eventcategory="1402030000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Master Record Changed&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User Master Record &lt;c_username&gt; Changed &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:07" 
-		id2="User" 
-		eventcategory="1402030000" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Authorizations for User Changed &gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Authorizations for User &lt;c_username&gt; Changed &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:07" 
+	id2="User" 
+	eventcategory="1402030000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Authorizations for User Changed &gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Authorizations for User &lt;c_username&gt; Changed &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:08" 
-		id2="User" 
-		eventcategory="1402020100" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Deleted&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Deleted &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:08" 
+	id2="User" 
+	eventcategory="1402020100" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:User Deleted&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||User &lt;c_username&gt; Deleted &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:09" 
-		id2="User" 
-		eventcategory="1402020100" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Authorization Activated&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Authorization Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:09" 
+	id2="User" 
+	eventcategory="1402020100" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Authorization Activated&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Authorization Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:10" 
-		id2="User" 
-		eventcategory="1402020100" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Authorization Activated&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Authorization &lt;fld14&gt; Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:10" 
+	id2="User" 
+	eventcategory="1402020100" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Authorization Activated&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Authorization &lt;fld14&gt; Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:11" 
-		id2="User" 
-		eventcategory="1402020100" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Profile Activated&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Profile Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:11" 
+	id2="User" 
+	eventcategory="1402020100" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Profile Activated&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Profile Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="User:12" 
-		id2="User" 
-		eventcategory="1402020100" 
-		content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Profile Activated&gt;  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Profile &lt;fld14&gt; Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
+	id1="User:12" 
+	id2="User" 
+	eventcategory="1402020100" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D %H%T%S',fld1,fld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Profile Activated&gt;"
+	content="  &lt;instance&gt;|| &lt;parent_process&gt;||&lt;parent_pid&gt;|| &lt;fld1&gt; &lt;fld29&gt;||&lt;fld2&gt; &lt;fld30&gt;||&lt;fld33&gt;||&lt;username&gt;||&lt;hostname&gt;||&lt;trans_id&gt;||&lt;application&gt;||&lt;id&gt;||&lt;operation_id&gt;||&lt;fld35&gt;||&lt;severity&gt;||&lt;fld3&gt;||Profile &lt;fld14&gt; Activated &lt;fld28&gt;||&lt;fld8&gt;||&lt;fld9&gt;||&lt;fld10&gt;||&lt;fld11&gt;||&lt;fld12&gt;||&lt;fld13&gt;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND:01" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;NAME=&quot;&lt;filename&gt;&quot;" />	
+	id1="INVALID_NOTFOUND:01" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="NAME=&quot;&lt;filename&gt;&quot;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND:02" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;VALUE=&lt;fld1&gt;   SEVERITY=&lt;severity&gt;  UID=&lt;id&gt; TIME=&lt;fld2&gt;" />		
+	id1="INVALID_NOTFOUND:02" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="VALUE=&lt;fld1&gt;   SEVERITY=&lt;severity&gt;  UID=&lt;id&gt; TIME=&lt;fld2&gt;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND:03" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;REPORTED_BY=&quot;&lt;username&gt;&quot; STATUS=&lt;event_state&gt;" />
+	id1="INVALID_NOTFOUND:03" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="REPORTED_BY=&quot;&lt;username&gt;&quot; STATUS=&lt;event_state&gt;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND:04" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;LAST_STAT_CHNG_AT=&lt;fld2&gt; LAST_STAT_CHNG_BY=&quot;&lt;username&gt;&quot;" />
+	id1="INVALID_NOTFOUND:04" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="LAST_STAT_CHNG_AT=&lt;fld2&gt; LAST_STAT_CHNG_BY=&quot;&lt;username&gt;&quot;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND:05" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;MSG_TXT=&quot;&lt;event_description&gt;&quot;" />	
+	id1="INVALID_NOTFOUND:05" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="MSG_TXT=&quot;&lt;event_description&gt;&quot;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND:06" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;MANDT=&quot;&lt;fld1&gt;&quot; SAPUSERID=&quot;&lt;username&gt;&quot; EXTLID=&quot;&lt;id&gt;&quot;" />		
+	id1="INVALID_NOTFOUND:06" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="MANDT=&quot;&lt;fld1&gt;&quot; SAPUSERID=&quot;&lt;username&gt;&quot; EXTLID=&quot;&lt;id&gt;&quot;" />
 <MESSAGE 
-		level="7" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="88"
-		id1="INVALID_NOTFOUND" 
-		id2="INVALID_NOTFOUND" 
-		eventcategory="1612000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;info&gt;" />
+	id1="INVALID_NOTFOUND" 
+	id2="INVALID_NOTFOUND" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;info&gt;" />
 </DEVICEMESSAGES>

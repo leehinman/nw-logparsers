@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="firepass"
+	displayname="F5 Firepass"
+	group="VPN">
 <VERSION 
-	xml="18"
-	checksum="04435663796129c5a45769d7b1183fdf"
+	xml="19"
+	checksum="27dc9413852fdcb8aadcf7af410d6fd0"
 	revision="0"
-	enVision="33030002" 
 	device="2.0" />
-
 <HEADER 
 	id1="0005" 
 	id2="0005"  
@@ -39,666 +40,437 @@
 	id1="0004" 
 	id2="0004"  
 	content="&lt;messageid&gt;: &lt;!payload:messageid&gt;" />
-
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:01"
 	id2="firepass"
 	eventcategory="1401040000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Entered &lt;fld2&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Entered &lt;fld2&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:02"
 	id2="firepass"
 	eventcategory="1401070000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Logged out" />
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Logged out" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:03"
 	id2="firepass"
 	eventcategory="1401040000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Finished using &lt;fld2&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Finished using &lt;fld2&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:04"
 	id2="firepass"
 	eventcategory="1801020000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Open  &lt;fld2&gt; to Remote Host:&lt;dhost&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Open  &lt;fld2&gt; to Remote Host:&lt;dhost&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:05"
 	id2="firepass"
 	eventcategory="1701020000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;param &lt;fld1&gt; = &lt;fld2&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="param &lt;fld1&gt; = &lt;fld2&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:06"
 	id2="firepass"
 	eventcategory="1401040000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Access menu &lt;fld2&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Access menu &lt;fld2&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:07"
 	id2="firepass"
 	eventcategory="1401040000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Accessing &lt;url&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Accessing &lt;url&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:08"
 	id2="firepass"
 	eventcategory="1801000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Network Access: dialing Click to connect to Network Access" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Network Access: dialing Click to connect to Network Access" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:09"
 	id2="firepass"
 	eventcategory="1605000000"
-  	content="&lt;@ec_subject:Service&gt;&lt;@ec_activity:Stop&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;FirePass service stopped on &lt;hostname&gt;" /> 
+	functions="&lt;@ec_subject:Service&gt;&lt;@ec_activity:Stop&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="FirePass service stopped on &lt;hostname&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:10"
 	id2="firepass"
 	eventcategory="1605000000"
-  	content="&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;FirePass service started on &lt;hostname&gt;" /> 
+	functions="&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="FirePass service started on &lt;hostname&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:11"
 	id2="firepass"
 	eventcategory="1606000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:shutting down for system reboot&gt;shutting down for system reboot" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:shutting down for system reboot&gt;"
+	content="shutting down for system reboot" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="firepass:12"
 	id2="firepass"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;event_description&gt;" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:01"
 	id2="GarbageCollection"
 	eventcategory="1801030000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;User: &apos;&lt;username&gt;&apos; session expired due to inactivity. &lt;result&gt;." />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="User: &apos;&lt;username&gt;&apos; session expired due to inactivity. &lt;result&gt;." />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:02"
 	id2="GarbageCollection"
 	eventcategory="1801030000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;User: &apos;&lt;username&gt;&apos; session was terminated." />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="User: &apos;&lt;username&gt;&apos; session was terminated." />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:03"
 	id2="GarbageCollection"
 	eventcategory="1801030000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;session &apos;&lt;sessionid&gt;&apos; is expired due to inactivity. &lt;result&gt;." />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="session &apos;&lt;sessionid&gt;&apos; is expired due to inactivity. &lt;result&gt;." />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:04"
 	id2="GarbageCollection"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;apache server is not running. start it" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="apache server is not running. start it" />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:05"
 	id2="GarbageCollection"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld2&gt; already started with pid &lt;process_id&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld2&gt; already started with pid &lt;process_id&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:06"
 	id2="GarbageCollection"
 	eventcategory="1603110000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;no servers defined for Radius Accounting" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="no servers defined for Radius Accounting" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:07"
 	id2="GarbageCollection"
 	eventcategory="1603110000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;DHCP Agent is not running... Restarting it." /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="DHCP Agent is not running... Restarting it." />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:08"
 	id2="GarbageCollection"
 	eventcategory="1603110000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;session &apos;&lt;sessionid&gt;&apos; is terminated." /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="session &apos;&lt;sessionid&gt;&apos; is terminated." />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:09"
 	id2="GarbageCollection"
 	eventcategory="1603110000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:can not connect to database&gt;can not connect to database &lt;fld1&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:can not connect to database&gt;"
+	content="can not connect to database &lt;fld1&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="GarbageCollection:10"
 	id2="GarbageCollection"
 	eventcategory="1603110000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:timeout happened. restarting services&gt;timeout happened. restarting &lt;fld1&gt; services" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:timeout happened. restarting services&gt;"
+	content="timeout happened. restarting &lt;fld1&gt; services" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="maintenance:01"
 	id2="maintenance"
 	eventcategory="1603110000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Failed to upload backup file &lt;filename&gt;. &lt;info&gt; Server returned:&lt;result&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Failed to upload backup file &lt;filename&gt;. &lt;info&gt; Server returned:&lt;result&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="87" 
 	id1="maintenance:02" 
 	id2="maintenance" 
 	eventcategory="1605000000" 
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Logged out Sid = &lt;sessionid&gt; " />
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Logged out Sid = &lt;sessionid&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="87" 
 	id1="maintenance:03" 
 	id2="maintenance" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Network Access: &lt;info&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Network Access: &lt;info&gt; " />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="maintenance:04"
 	id2="maintenance"
 	eventcategory="1603110000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Trying connect to &lt;fld2&gt; on &lt;fqdn&gt;:&lt;network_port&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Trying connect to &lt;fld2&gt; on &lt;fqdn&gt;:&lt;network_port&gt; " />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="maintenance:05"
 	id2="maintenance"
 	eventcategory="1603110000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;info&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;info&gt; " />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="NetworkAccess:01"
 	id2="NetworkAccess"
 	eventcategory="1801020000"
-  	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;&lt;&lt;sessionid&gt;&gt; Open Network Access Connection using remote IP address &lt;daddr&gt;" /> 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; Open Network Access Connection using remote IP address &lt;daddr&gt;" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="NetworkAccess:02"
 	id2="NetworkAccess"
 	eventcategory="1801030000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;&lt;&lt;sessionid&gt;&gt; Network Access Connection terminated" />
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; Network Access Connection terminated" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="NetworkAccess:03"
 	id2="NetworkAccess"
 	eventcategory="1801010000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;&lt;&lt;sessionid&gt;&gt; Error - &lt;info&gt;" />	
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; Error - &lt;info&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:01"
 	id2="security"
 	eventcategory="1401060000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;User &lt;username&gt; logged on from { &lt;saddr&gt; to &lt;daddr&gt; Sid = &lt;sessionid&gt; | &lt;saddr&gt; Sid = &lt;sessionid&gt; | &lt;saddr&gt; }" />
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="User &lt;username&gt; logged on from { &lt;saddr&gt; to &lt;daddr&gt; Sid = &lt;sessionid&gt; | &lt;saddr&gt; Sid = &lt;sessionid&gt; | &lt;saddr&gt; }" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:02"
 	id2="security"
 	eventcategory="1401030000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;{ Invalid | Valid } user &lt;username&gt; failed to log on from &lt;saddr&gt;" />
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="{ Invalid | Valid } user &lt;username&gt; failed to log on from &lt;saddr&gt;" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:03"
 	id2="security"
 	eventcategory="1402040100"
-	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Successful password update for user &lt;user_fullname&gt;, username: &lt;username&gt; " />
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Successful password update for user &lt;user_fullname&gt;, username: &lt;username&gt; " />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:04"
 	id2="security"
 	eventcategory="1401030000"
-	content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Possible intrusion attempt!  &lt;fld1&gt; consecutive authentication failures happened within &lt;fld2&gt; min. Last Source IP Address: &lt;saddr&gt; &lt;info&gt;" />
-
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Possible intrusion attempt!  &lt;fld1&gt; consecutive authentication failures happened within &lt;fld2&gt; min. Last Source IP Address: &lt;saddr&gt; &lt;info&gt;" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:05"
 	id2="security"
 	eventcategory="1501000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;User [&lt;action&gt;] logon from &lt;saddr&gt;" />
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="User [&lt;action&gt;] logon from &lt;saddr&gt;" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:06"
 	id2="security"
 	eventcategory="1501000000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Non-administrator account &lt;username&gt; attempted to access admin account" />
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Non-administrator account &lt;username&gt; attempted to access admin account" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:07"
 	id2="security"
 	eventcategory="1401030000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:user exceeded the allowed number of concurrent logons&gt;User &lt;username&gt; exceeded the allowed number of concurrent logons" />
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:user exceeded the allowed number of concurrent logons&gt;"
+	content="User &lt;username&gt; exceeded the allowed number of concurrent logons" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:08"
 	id2="security"
 	eventcategory="1401000000"
-	content="&lt;@ec_subject:User&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:user presented with challenge&gt;User &lt;username&gt; from &lt;saddr&gt; presented with challenge" />
+	functions="&lt;@ec_subject:User&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:user presented with challenge&gt;"
+	content="User &lt;username&gt; from &lt;saddr&gt; presented with challenge" />
 <MESSAGE 
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="security:09"
 	id2="security"
 	eventcategory="1401000000"
-	content="&lt;@ec_subject:User&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Possible intrusion attempt detected&gt;Possible intrusion attempt detected against account &lt;fld1&gt; from source IP address &lt;saddr&gt; for URI=[&lt;fld2&gt;]&lt;info&gt;" />
+	functions="&lt;@ec_subject:User&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Possible intrusion attempt detected&gt;"
+	content="Possible intrusion attempt detected against account &lt;fld1&gt; from source IP address &lt;saddr&gt; for URI=[&lt;fld2&gt;]&lt;info&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="httpd"
 	id2="httpd"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;scr_monitor: &lt;fld1&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="scr_monitor: &lt;fld1&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="Miscellaneous:01"
 	id2="Miscellaneous"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Purge logs: not started. Next purge scheduled time &lt;fld1&gt; is not exceeded" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Purge logs: not started. Next purge scheduled time &lt;fld1&gt; is not exceeded" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="Miscellaneous:02"
 	id2="Miscellaneous"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Purge logs: finished. Deleted &lt;fld1&gt; logon records" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Purge logs: finished. Deleted &lt;fld1&gt; logon records" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="Miscellaneous:03"
 	id2="Miscellaneous"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Purge logs: auto started" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Purge logs: auto started" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="Miscellaneous:04"
 	id2="Miscellaneous"
 	eventcategory="1603000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Database error detected, dump: &lt;info&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Database error detected, dump: &lt;info&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="Miscellaneous:05"
 	id2="Miscellaneous"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Recovered database successfully" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Recovered database successfully" />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:07"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: Marketing_resource:&lt;fld1&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; &lt;info&gt; PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; &lt;fld3&gt;" /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: Marketing_resource:&lt;fld1&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; &lt;info&gt; PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; &lt;fld3&gt;" />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:01"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: Marketing_resource: &lt;info&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: Marketing_resource: &lt;info&gt;" />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:02"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: CSLIP: &lt;info&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: CSLIP: &lt;info&gt;" />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:03"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: PPP &lt;info&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: PPP &lt;info&gt;" />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:04"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: cdrom: open failed." />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: cdrom: open failed." />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:06"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: GlobalFilter:&lt;fld1&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; &lt;info&gt; PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; &lt;fld3&gt; " />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: GlobalFilter:&lt;fld1&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; &lt;info&gt; PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; &lt;fld3&gt; " />
 <MESSAGE 
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="kernel:05"
 	id2="kernel"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel: &lt;info&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel: &lt;info&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="sshd"
 	id2="sshd"
 	eventcategory="1401050100"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Accepted publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;fld2&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Accepted publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;fld2&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="ntpd:01"
 	id2="ntpd"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;frequency initialized &lt;fld1&gt; PPM from &lt;fld2&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="frequency initialized &lt;fld1&gt; PPM from &lt;fld2&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="ntpd:02"
 	id2="ntpd"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;kernel time sync status &lt;resultcode&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="kernel time sync status &lt;resultcode&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="ntpd:03"
 	id2="ntpd"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Listening on interface &lt;interface&gt;, &lt;hostip&gt;#&lt;network_port&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Listening on interface &lt;interface&gt;, &lt;hostip&gt;#&lt;network_port&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="ntpd:04"
 	id2="ntpd"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;precision = &lt;duration_string&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="precision = &lt;duration_string&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="ntpd:05"
 	id2="ntpd"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;ntpd &lt;info&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="ntpd &lt;info&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="AppTunnel:01"
 	id2="AppTunnel"
 	eventcategory="1801030000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;&lt;&lt;sessionid&gt;&gt; &lt;fld2&gt; connection  to &lt;dhost&gt;(&lt;daddr&gt;):&lt;dport&gt; terminated" />
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; &lt;fld2&gt; connection  to &lt;dhost&gt;(&lt;daddr&gt;):&lt;dport&gt; terminated" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="AppTunnel:02"
 	id2="AppTunnel"
 	eventcategory="1801020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;&lt;&lt;sessionid&gt;&gt; &lt;fld2&gt; connection  to &lt;dhost&gt;(&lt;daddr&gt;):&lt;dport&gt;" /> 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; &lt;fld2&gt; connection  to &lt;dhost&gt;(&lt;daddr&gt;):&lt;dport&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="AppTunnel:03"
 	id2="AppTunnel"
 	eventcategory="1801020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;&lt;&lt;sessionid&gt;&gt; Error - Connection timed out" /> 
-
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; Error - Connection timed out" />
 	
-
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="AppTunnel:04"
 	id2="AppTunnel"
 	eventcategory="1801020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;Connection to &lt;daddr&gt; port &lt;dport&gt; failed" /> 
-
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;"
+	content="Connection to &lt;daddr&gt; port &lt;dport&gt; failed" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="AppTunnel:05"
 	id2="AppTunnel"
 	eventcategory="1801020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;&lt;&lt;sessionid&gt;&gt; Error - Invalid session id" /> 
-
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;&lt;&lt;sessionid&gt;&gt; Error - Invalid session id" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="run-crons"
 	id2="run-crons"
 	eventcategory="1605000000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld2&gt; returned &lt;resultcode&gt;" /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld2&gt; returned &lt;resultcode&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="/USR/SBIN/CRON"
 	id2="/USR/SBIN/CRON"
 	eventcategory="1401040000"
-  	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;(&lt;username&gt;) CMD (&lt;action&gt;) " /> 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="(&lt;username&gt;) CMD (&lt;action&gt;) " />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="ntpdate"
 	id2="ntpdate"
 	eventcategory="1605030000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;adjust time server &lt;daddr&gt; offset &lt;duration_string&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="adjust time server &lt;daddr&gt; offset &lt;duration_string&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="heartbeat"
 	id2="heartbeat"
 	eventcategory="1604000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; info: &lt;info&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" info: &lt;info&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="mailer"
 	id2="mailer"
 	eventcategory="1207010200"
-	content="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;Failed to send \&apos;&lt;subject&gt;\&apos; to \&apos;&lt;to&gt;\&apos;" />
-
+	functions="&lt;@ec_subject:Message&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="Failed to send \&apos;&lt;subject&gt;\&apos; to \&apos;&lt;to&gt;\&apos;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="EndpointSecurity"
 	id2="EndpointSecurity"
 	eventcategory="1603060000"
-	content="&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;id[&lt;fld1&gt;]: &quot;{&lt;fld2&gt; - Connected|Connected} from &lt;saddr&gt; &lt;info&gt;&quot;" />
+	functions="&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="id[&lt;fld1&gt;]: &quot;{&lt;fld2&gt; - Connected|Connected} from &lt;saddr&gt; &lt;info&gt;&quot;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="EndpointSecurity:01"
 	id2="EndpointSecurity"
 	eventcategory="1603060000"
-	content="&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;id[&lt;fld1&gt;]: &lt;event_description&gt;" />
+	functions="&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="id[&lt;fld1&gt;]: &lt;event_description&gt;" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="snmp"
 	id2="snmp"
 	eventcategory="1603060000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SNMP handler started&gt;&lt;@action:started&gt;&lt;@protocol:SNMP&gt; SNMP handler started" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SNMP handler started&gt;&lt;@action:started&gt;&lt;@protocol:SNMP&gt;"
+	content=" SNMP handler started" />
 <MESSAGE 
-	level="5"
-	parse="1"
-	parsedefvalue="1"
-	tableid="87"
 	id1="snmp:01"
 	id2="snmp"
 	eventcategory="1603060000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;event_description&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;event_description&gt;" />
 </DEVICEMESSAGES>

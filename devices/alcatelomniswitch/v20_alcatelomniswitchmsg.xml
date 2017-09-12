@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="alcatelomniswitch"
+	displayname="Alcatel-Lucent OmniSwitch"
+	group="Switch">
 <VERSION
-	xml="7"
-	checksum="7eac378f87a55330df2040272d2aacdd"
+	xml="8"
+	checksum="2310bc706438f4e0912fb070579db2c9"
 	revision="0"
-	enVision="33050000"
 	device="2.0" />
 
  
@@ -22,401 +24,264 @@
 
 
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="CSM-CHASSIS" 
 	id2="CSM-CHASSIS" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;CSM-CHASSIS(&lt;number&gt;) Data: == &lt;service&gt; == &lt;status&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="CSM-CHASSIS(&lt;number&gt;) Data: == &lt;service&gt; == &lt;status&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="CVM-CHASSIS" 
 	id2="CVM-CHASSIS" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;CVM-CHASSIS(&lt;number&gt;) Data: == &lt;service&gt; == &lt;status&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="CVM-CHASSIS(&lt;number&gt;) Data: == &lt;service&gt; == &lt;status&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="STACK-MANAGER" 
 	id2="STACK-MANAGER" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;STACK-MANAGER(&lt;number&gt;) Data: == &lt;service&gt; == Stacking link &lt;event_description&gt;: &lt;status&gt; "/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="STACK-MANAGER(&lt;number&gt;) Data: == &lt;service&gt; == Stacking link &lt;event_description&gt;: &lt;status&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="HSM-CHASSIS" 
 	id2="HSM-CHASSIS" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;HSM-CHASSIS(&lt;number&gt;) Data: == &lt;service&gt; == &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="HSM-CHASSIS(&lt;number&gt;) Data: == &lt;service&gt; == &lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="PRB-CHASSIS" 
 	id2="PRB-CHASSIS" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;PRB-CHASSIS(&lt;number&gt;) Data: &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="PRB-CHASSIS(&lt;number&gt;) Data: &lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="DRC" 
 	id2="DRC" 
 	eventcategory="1701030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;DRC(&lt;number&gt;) Data: RDP interface &lt;interface&gt; vlan-&lt;vlan&gt; deleted"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="DRC(&lt;number&gt;) Data: RDP interface &lt;interface&gt; vlan-&lt;vlan&gt; deleted" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="DRC_OSPF_Status" 
 	id2="DRC" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:DRC&gt;DRC(&lt;number&gt;) Data: OSPF Nbr=&lt;daddr&gt; RID=&lt;group&gt; state &lt;status&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:DRC&gt;"
+	content="DRC(&lt;number&gt;) Data: OSPF Nbr=&lt;daddr&gt; RID=&lt;group&gt; state &lt;status&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="FTP_New_Connection" 
 	id2="FTP" 
 	eventcategory="1801020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:New FTP Connection&gt;FTP(&lt;number&gt;) Data: Session &lt;fld5&gt; New Connection, Client Address &lt;saddr&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:New FTP Connection&gt;"
+	content="FTP(&lt;number&gt;) Data: Session &lt;fld5&gt; New Connection, Client Address &lt;saddr&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="FTP_Session_Ending" 
 	id2="FTP" 
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:FTP Session Termination&gt;FTP(&lt;number&gt;) Data: Session &lt;fld5&gt; Ending"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:FTP Session Termination&gt;"
+	content="FTP(&lt;number&gt;) Data: Session &lt;fld5&gt; Ending" />
 	
-	<MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
+<MESSAGE 
 	id1="FTP_Session_Delete" 
 	id2="FTP" 
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:Session Deleted&gt;FTP(&lt;number&gt;) Data: Session &lt;fld5&gt;, Session Deleted"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:Session Deleted&gt;"
+	content="FTP(&lt;number&gt;) Data: Session &lt;fld5&gt;, Session Deleted" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="FTP_Info_Filename" 
 	id2="FTP" 
 	eventcategory="1401010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:Get Filename in FTP&gt;FTP(&lt;number&gt;) Data: Get &lt;filename&gt;!"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:FTP&gt;&lt;@event_description:Get Filename in FTP&gt;"
+	content="FTP(&lt;number&gt;) Data: Get &lt;filename&gt;!" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="IP_Duplicate" 
 	id2="IP" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:IP&gt;&lt;@event_description:Duplicate IP Address&gt;IP(&lt;number&gt;) Data: &lt;fld5&gt; duplicate IP address &lt;saddr&gt; from port &lt;sport&gt; eth addr &lt;smacaddr&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:IP&gt;&lt;@event_description:Duplicate IP Address&gt;"
+	content="IP(&lt;number&gt;) Data: &lt;fld5&gt; duplicate IP address &lt;saddr&gt; from port &lt;sport&gt; eth addr &lt;smacaddr&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="MIPGW_Trap_Generated" 
 	id2="MIPGW" 
 	eventcategory="1605020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Trap generated&gt;MIPGW(&lt;number&gt;) Data: === &lt;service&gt; === &lt;group&gt; trap generated"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Trap generated&gt;"
+	content="MIPGW(&lt;number&gt;) Data: === &lt;service&gt; === &lt;group&gt; trap generated" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SSH_New_Connection" 
 	id2="SSH" 
 	eventcategory="1801020000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:New SSH Connection&gt;SSH(&lt;number&gt;) Data: Session &lt;fld5&gt; New &lt;group&gt; Connection from &lt;saddr&gt; port &lt;sport&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:New SSH Connection&gt;"
+	content="SSH(&lt;number&gt;) Data: Session &lt;fld5&gt; New &lt;group&gt; Connection from &lt;saddr&gt; port &lt;sport&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SSH_Session_Deleted" 
 	id2="SSH" 
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:SSH Session Deleted&gt;SSH(&lt;number&gt;) Data: Session &lt;fld5&gt;, Session Deleted"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:SSH Session Deleted&gt;"
+	content="SSH(&lt;number&gt;) Data: Session &lt;fld5&gt;, Session Deleted" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SSH_Exchange_Identification" 
 	id2="SSH" 
 	eventcategory="1801010000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:SSH session identification failure&gt;SSH(&lt;number&gt;) Data: [&lt;service&gt; &lt;fld5&gt;] &lt;status&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:SSH session identification failure&gt;"
+	content="SSH(&lt;number&gt;) Data: [&lt;service&gt; &lt;fld5&gt;] &lt;status&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SSH_Session_Unavailable" 
 	id2="SSH" 
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:No more SSH session available in this minute&gt;SSH(&lt;number&gt;) Data: No more SSH session available in this minute"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:No more SSH session available in this minute&gt;"
+	content="SSH(&lt;number&gt;) Data: No more SSH session available in this minute" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SSH_Session_Unavailable01" 
 	id2="SSH" 
 	eventcategory="1801030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:No more SSH session available in this minute&gt;SSH(&lt;number&gt;) Data: SSH Connection from &lt;saddr&gt; refused : no more SSH session available"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;&lt;@event_description:No more SSH session available in this minute&gt;"
+	content="SSH(&lt;number&gt;) Data: SSH Connection from &lt;saddr&gt; refused : no more SSH session available" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SSH" 
 	id2="SSH" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;SSH(&lt;number&gt;) Data: Maximum session:&lt;fld1&gt;,Established:&lt;fld2&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;"
+	content="SSH(&lt;number&gt;) Data: Maximum session:&lt;fld1&gt;,Established:&lt;fld2&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="CCM-CHASSIS" 
 	id2="CCM-CHASSIS" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;CCM-CHASSIS(&lt;number&gt;) Data: CMM Slot [&lt;fld5&gt;] detected [Power supply is inoperable] on device [&lt;fld2&gt;]"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="CCM-CHASSIS(&lt;number&gt;) Data: CMM Slot [&lt;fld5&gt;] detected [Power supply is inoperable] on device [&lt;fld2&gt;]" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SYSTEM_Device_Enabled_Output" 
 	id2="SYSTEM" 
 	eventcategory="1804010000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SYSTEM&gt;&lt;@event_description:Remote Device enabled for output&gt;SYSTEM(&lt;number&gt;) Data: &lt;interface&gt; &apos;&lt;saddr&gt;&apos; enabled for output"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SYSTEM&gt;&lt;@event_description:Remote Device enabled for output&gt;"
+	content="SYSTEM(&lt;number&gt;) Data: &lt;interface&gt; &apos;&lt;saddr&gt;&apos; enabled for output" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SYSTEM_Boot_Param_Activity" 
 	id2="SYSTEM" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SYSTEM&gt;&lt;@event_description:Boot Param activity&gt;SYSTEM(&lt;number&gt;) Data: Boot param &lt;reason&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SYSTEM&gt;&lt;@event_description:Boot Param activity&gt;"
+	content="SYSTEM(&lt;number&gt;) Data: Boot param &lt;reason&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SYSTEM_Wrong_Ifa" 
 	id2="SYSTEM" 
 	eventcategory="1603030000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SYSTEM&gt;&lt;@event_description:Wrong ifa&gt;SYSTEM(&lt;number&gt;) Data: &lt;group&gt;: wrong ifa (&lt;interface&gt;) was (&lt;reason&gt;)"/>	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SYSTEM&gt;&lt;@event_description:Wrong ifa&gt;"
+	content="SYSTEM(&lt;number&gt;) Data: &lt;group&gt;: wrong ifa (&lt;interface&gt;) was (&lt;reason&gt;)" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="WEB_Successful_Login" 
 	id2="WEB" 
 	eventcategory="1401060000"
-	content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Successful Web Login&gt;WEB(&lt;number&gt;) Data: The &lt;group&gt; session login successful!"/>
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Successful Web Login&gt;"
+	content="WEB(&lt;number&gt;) Data: The &lt;group&gt; session login successful!" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="WEB_Successful_Logout" 
 	id2="WEB" 
 	eventcategory="1401070000"
-	content="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Successful Web Logout&gt;WEB(&lt;number&gt;) Data: The &lt;protocol&gt; session logout successful!"/>
+	functions="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Successful Web Logout&gt;"
+	content="WEB(&lt;number&gt;) Data: The &lt;protocol&gt; session logout successful!" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="WEB_User_Successful_Logout" 
 	id2="WEB" 
 	eventcategory="1401070000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Successful Logout by the User&gt;WEB(&lt;number&gt;) Data: The &lt;protocol&gt; session user logout successful!"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Successful Logout by the User&gt;"
+	content="WEB(&lt;number&gt;) Data: The &lt;protocol&gt; session user logout successful!" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="WEB_Login_Failed" 
 	id2="WEB" 
 	eventcategory="1401030000" 
-	content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Web User Login Failed!&gt;WEB(&lt;number&gt;) Data: &lt;protocol&gt; login attempt failed!"/>
-
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:WEB&gt;&lt;@event_description:Web User Login Failed!&gt;"
+	content="WEB(&lt;number&gt;) Data: &lt;protocol&gt; login attempt failed!" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="TELNET_Session_created" 
 	id2="TELNET" 
 	eventcategory="1801020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:TELNET&gt;&lt;@event_description:Telnet Session Created&gt;TELNET(&lt;number&gt;) Data: Session &lt;fld5&gt;, Created"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:TELNET&gt;&lt;@event_description:Telnet Session Created&gt;"
+	content="TELNET(&lt;number&gt;) Data: Session &lt;fld5&gt;, Created" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="TELNET_New_Connection" 
 	id2="TELNET" 
 	eventcategory="1801020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:TELNET&gt;TELNET(&lt;number&gt;) Data: &lt;status&gt;, Address  &lt;saddr&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:TELNET&gt;"
+	content="TELNET(&lt;number&gt;) Data: &lt;status&gt;, Address  &lt;saddr&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="TELNET_Session_Ending" 
 	id2="TELNET" 
 	eventcategory="1801030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:TELNET&gt;&lt;@event_description:Telnet Session Ending&gt;TELNET(&lt;number&gt;) Data: Session &lt;fld5&gt;, Session Ending"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:TELNET&gt;&lt;@event_description:Telnet Session Ending&gt;"
+	content="TELNET(&lt;number&gt;) Data: Session &lt;fld5&gt;, Session Ending" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="CLI_Login_Timeout" 
 	id2="CLI" 
 	eventcategory="1401070000" 
-	content="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Login timeout at login&gt; CLI(&lt;number&gt;) Data: [CLISHELL &lt;fld5&gt;] fd = &lt;filename&gt;, Login timeout at { login | password }:"/>
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Login timeout at login&gt;"
+	content=" CLI(&lt;number&gt;) Data: [CLISHELL &lt;fld5&gt;] fd = &lt;filename&gt;, Login timeout at { login | password }:" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="CLI_Maximum_Logins_Reached" 
 	id2="CLI" 
 	eventcategory="1401030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Maximum number of login attempt reached&gt; CLI(&lt;number&gt;) Data: [CLISHELL &lt;fld5&gt;] Maximum number of login attempt reached"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Maximum number of login attempt reached&gt;"
+	content=" CLI(&lt;number&gt;) Data: [CLISHELL &lt;fld5&gt;] Maximum number of login attempt reached" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="CLI_Connection_Closed" 
 	id2="CLI" 
 	eventcategory="1401070000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Remote Host closed connection&gt;CLI(&lt;number&gt;) Data: [CLISHELL &lt;fld5&gt;] Connection closed by remote host!"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Remote Host closed connection&gt;"
+	content="CLI(&lt;number&gt;) Data: [CLISHELL &lt;fld5&gt;] Connection closed by remote host!" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SESSION_Authentication_failed" 
 	id2="SESSION" 
 	eventcategory="1803000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Authentication Failed&gt; SESSION(&lt;number&gt;) Data: [SES] Authentication failed: { Session | Sesion } &lt;fld5&gt;, access type &lt;group&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Authentication Failed&gt;"
+	content=" SESSION(&lt;number&gt;) Data: [SES] Authentication failed: { Session | Sesion } &lt;fld5&gt;, access type &lt;group&gt;" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SESSION_Info_Username" 
 	id2="SESSION" 
 	eventcategory="1803010000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Session User&gt;SESSION(&lt;number&gt;) Data: [SES] { Session | Sesion } &lt;fld5&gt;, user &quot;&lt;username&gt;&quot;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Session User&gt;"
+	content="SESSION(&lt;number&gt;) Data: [SES] { Session | Sesion } &lt;fld5&gt;, user &quot;&lt;username&gt;&quot;" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SESSION_Info_UserIP" 
 	id2="SESSION" 
 	eventcategory="1803030000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Session User IP address&gt;SESSION(&lt;number&gt;) Data: [SES] { Session | Sesion } &lt;fld5&gt;, IP address &lt;saddr&gt;"/>	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Session User IP address&gt;"
+	content="SESSION(&lt;number&gt;) Data: [SES] { Session | Sesion } &lt;fld5&gt;, IP address &lt;saddr&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="STP_Topology_Changed" 
 	id2="STP" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Topology changed on VLAN&gt; STP(&lt;number&gt;) Data: Topology changed on VLAN/STP id &lt;vlan&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:CLI&gt;&lt;@event_description:Topology changed on VLAN&gt;"
+	content=" STP(&lt;number&gt;) Data: Topology changed on VLAN/STP id &lt;vlan&gt;" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="VRRP_toggled" 
 	id2="VRRP" 
 	eventcategory="1805020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:VRRP&gt;&lt;@event_description:VRRP toggled&gt;VRRP(77) Data: VRRP toggled once in the last minute. VRID=&lt;vlan&gt;"/>	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:VRRP&gt;&lt;@event_description:VRRP toggled&gt;"
+	content="VRRP(77) Data: VRRP toggled once in the last minute. VRID=&lt;vlan&gt;" />
 	
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Session_SNMP_Authentication_Failure" 
 	id2="SESSION" 
 	eventcategory="1803000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_description&gt;^^SessionAccessType=&lt;tbdstr1&gt;^^SessionUserName=&quot;&lt;username&gt;&quot;^^SessionUserIpAddress=&lt;saddr&gt;^^SessionAuthFailure=&lt;tbdstr2&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;^^SessionAccessType=&lt;tbdstr1&gt;^^SessionUserName=&quot;&lt;username&gt;&quot;^^SessionUserIpAddress=&lt;saddr&gt;^^SessionAuthFailure=&lt;tbdstr2&gt;" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="WEB-MGMNT_HTTP_Server_Under_DOS_Attack" 
 	id2="WEB-MGMNT" 
 	eventcategory="1002000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_description&gt;^^httpConnectionStats=&lt;tbdstr1&gt;^^httpsConnectionStats=&lt;tbdstr2&gt;^^httpServerDoSAttackSrcIp=&lt;saddr&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;^^httpConnectionStats=&lt;tbdstr1&gt;^^httpsConnectionStats=&lt;tbdstr2&gt;^^httpServerDoSAttackSrcIp=&lt;saddr&gt;" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="IP_DOS_Attack_Detected" 
 	id2="IP" 
 	eventcategory="1002000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_description&gt;^^alaDoSType=&lt;tbdstr1&gt;^^alaDoSDetected=&lt;tbdstr2&gt;^^alaDosSourceIP=&lt;saddr&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;^^alaDoSType=&lt;tbdstr1&gt;^^alaDoSDetected=&lt;tbdstr2&gt;^^alaDosSourceIP=&lt;saddr&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="TRAP-MNGR_Absorption_Trap_Sent" 
 	id2="TRAP-MNGR" 
 	eventcategory="1802000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_description&gt;^^trapAbsorStamp=&lt;tbdstr1&gt;^^trapAbsorTrapId=&lt;number&gt;^^trapAbsorCounter=&lt;fld8&gt;^^trapAbsorTime=&lt;tbdstr2&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;^^trapAbsorStamp=&lt;tbdstr1&gt;^^trapAbsorTrapId=&lt;number&gt;^^trapAbsorCounter=&lt;fld8&gt;^^trapAbsorTime=&lt;tbdstr2&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="WEB" 
 	id2="WEB" 
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;WEB(&lt;number&gt;) Data: &lt;event_description&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="WEB(&lt;number&gt;) Data: &lt;event_description&gt;" />
 </DEVICEMESSAGES>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="ciscomeraki"
+	displayname="Cisco Meraki"
+	group="Configuration Management">
 <VERSION
-	xml="16"
-	checksum="198c187c373f0a82906044d67f222ff6"
+	xml="17"
+	checksum="933d15619b1b4a506b5045c23eeea51b"
 	revision="109"
-	enVision="35010000"
 	device="2.0" />
 
  
@@ -42,15 +44,13 @@
 	id2="flows"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="&lt;node&gt; flows &lt;action&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; mac=&lt;smacaddr&gt; { protocol=&lt;protocol&gt; sport=&lt;sport&gt; dport=&lt;dport&gt; | protocol=&lt;protocol&gt; type=&lt;event_type&gt; | protocol=&lt;protocol&gt; } "/>
-
+	content="&lt;node&gt; flows &lt;action&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; mac=&lt;smacaddr&gt; { protocol=&lt;protocol&gt; sport=&lt;sport&gt; dport=&lt;dport&gt; | protocol=&lt;protocol&gt; type=&lt;event_type&gt; | protocol=&lt;protocol&gt; } " />
 <MESSAGE
 	id1="flows:02"
 	id2="flows"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="&lt;node&gt; flows &lt;action&gt;" />	
-
+	content="&lt;node&gt; flows &lt;action&gt;" />
 <MESSAGE
 	id1="urls"
 	id2="urls"
@@ -76,34 +76,30 @@
 	id2="events"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:content_filtering_block&gt;&lt;@sensor:*HDR(node)&gt;"
-	content="content_filtering_block url=&apos;&lt;url&gt;&apos; category0=&apos;&lt;category&gt;&apos; server=&apos;&lt;daddr&gt;:&lt;dport&gt;&apos;"/>
-
+	content="content_filtering_block url=&apos;&lt;url&gt;&apos; category0=&apos;&lt;category&gt;&apos; server=&apos;&lt;daddr&gt;:&lt;dport&gt;&apos;" />
 <MESSAGE
 	id1="events:03"
 	id2="events"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events IDS&gt;&lt;@sensor:*HDR(node)&gt;"
-	content="IDS: &lt;info&gt;"/>
-
+	content="IDS: &lt;info&gt;" />
 <MESSAGE
-  id1="events:04"
-  id2="events"
-  eventcategory="1605020000"
-  functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events DHCP&gt;&lt;@sensor:*HDR(node)&gt;"
-  content="dhcp {no offers|release} for mac &lt;macaddr&gt;"/>
+	id1="events:04"
+	id2="events"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events DHCP&gt;&lt;@sensor:*HDR(node)&gt;"
+	content="dhcp {no offers|release} for mac &lt;macaddr&gt;" />
   
 <MESSAGE
-  id1="events:05"
-  id2="events"
-  eventcategory="1605020000"
-  functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: events MAC&gt;&lt;@sensor:*HDR(node)&gt;"
-  content="MAC &lt;macaddr&gt; and MAC &lt;macaddr&gt; both claim IP: &lt;saddr&gt;"/>
-
+	id1="events:05"
+	id2="events"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: events MAC&gt;&lt;@sensor:*HDR(node)&gt;"
+	content="MAC &lt;macaddr&gt; and MAC &lt;macaddr&gt; both claim IP: &lt;saddr&gt;" />
 <MESSAGE
 	id1="ids-alerts:01"
 	id2="ids-alerts"
 	eventcategory="1607000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:ids-alerts&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt; {dhost=&lt;dmacaddr&gt;|shost=&lt;smacaddr&gt;} direction=&lt;direction&gt; protocol=&lt;protocol&gt; {src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt;|src=&lt;saddr&gt; dst=&lt;daddr&gt;} message: &lt;signame&gt;"/>
-
+	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt; {dhost=&lt;dmacaddr&gt;|shost=&lt;smacaddr&gt;} direction=&lt;direction&gt; protocol=&lt;protocol&gt; {src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt;|src=&lt;saddr&gt; dst=&lt;daddr&gt;} message: &lt;signame&gt;" />
 </DEVICEMESSAGES>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="barracudasf"
+	displayname="Barracuda Spam Firewall"
+	group="Anti Virus">
 <VERSION 
-	xml="8"
-	checksum="b6148a09545fde6c0fd03a4dfcb31f0c"
+	xml="9"
+	checksum="4771f027e1d8023fd0c3b902c60b0abd"
 	revision="103"
-	enVision="37010025" 
 	device="2.0" />
-
 
  
 <HEADER 
@@ -22,206 +23,130 @@
 	id2="0003"  
 	content="&lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000001"
-		id2="inbound/pass1" 
-		eventcategory="1207010201" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;inbound/pass1[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;from&gt; &lt;to&gt; &lt;info&gt;" /> 	
-
+	id1="000001"
+	id2="inbound/pass1" 
+	eventcategory="1207010201" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="inbound/pass1[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;from&gt; &lt;to&gt; &lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="inbound/pass1"
 	id2="inbound/pass1" 
 	eventcategory="1207010201" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;domain&gt; &lt;info&gt;" /> 	
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;domain&gt; &lt;info&gt;" />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000002"
-		id2="outbound/smtp" 
-		eventcategory="1207010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;info&gt;" /> 
+	id1="000002"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="outbound/smtp"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;}  {[InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;event_description&gt; #to#&lt;ddomain&gt; | [InternalId=&lt;id&gt;] &lt;event_description&gt; #to#&lt;daddr&gt; | [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;info&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;}" /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;}  {[InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;event_description&gt; #to#&lt;ddomain&gt; | [InternalId=&lt;id&gt;] &lt;event_description&gt; #to#&lt;daddr&gt; | [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;info&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;}" />
 	
-
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="000009"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {&lt;fld8&gt; ok&lt;fld9&gt;| ok&lt;fld9&gt;} Message &lt;fld10&gt; accepted #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {&lt;fld8&gt; ok&lt;fld9&gt;| ok&lt;fld9&gt;} Message &lt;fld10&gt; accepted #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
 	
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="000010"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {Ok &lt;fld9&gt; &lt;fld10&gt; - gsmtp| Ok: queued as &lt;fld9&gt; |ok &lt;fld9&gt;| Ok (&lt;fld9&gt;)| OK &lt;fld9&gt; | &lt;fld9&gt; } #to#&lt;daddr&gt;" /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {Ok &lt;fld9&gt; &lt;fld10&gt; - gsmtp| Ok: queued as &lt;fld9&gt; |ok &lt;fld9&gt;| Ok (&lt;fld9&gt;)| OK &lt;fld9&gt; | &lt;fld9&gt; } #to#&lt;daddr&gt;" />
 	
-
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="000011"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;  connect to &lt;ddomain&gt;[&lt;daddr&gt;]: &lt;event_description&gt; "/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;  connect to &lt;ddomain&gt;[&lt;daddr&gt;]: &lt;event_description&gt; " />
 	
 
 	
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="000012"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; [&lt;ddomain&gt;]: &lt;event_description&gt; "/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; [&lt;ddomain&gt;]: &lt;event_description&gt; " />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="000013"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;&lt;&lt;from&gt;&gt;: &lt;event_description&gt; "/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;&lt;&lt;from&gt;&gt;: &lt;event_description&gt; " />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="000014"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;event_description&gt; "/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;event_description&gt; " />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000003"
-		id2="scan" 
-		eventcategory="1207040000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;scan[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; -  &lt;from&gt; &lt;to&gt; &lt;info&gt; " /> 
-
+	id1="000003"
+	id2="scan" 
+	eventcategory="1207040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="scan[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; -  &lt;from&gt; &lt;to&gt; &lt;info&gt; " />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="scan"
 	id2="scan" 
 	eventcategory="1207040000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;scan: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld8&gt; &lt;from&gt; &lt;to&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {SZ:&lt;fld8&gt; SUBJ:&lt;subject&gt;| &lt;info&gt;} " /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="scan: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld8&gt; &lt;from&gt; &lt;to&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {SZ:&lt;fld8&gt; SUBJ:&lt;subject&gt;| &lt;info&gt;} " />
 		
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000004"
-		id2="web" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;web: Ret Policy Summary (Del:&lt;fld1&gt; Kept:&lt;fld2&gt;)" /> 
+	id1="000004"
+	id2="web" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="web: Ret Policy Summary (Del:&lt;fld1&gt; Kept:&lt;fld2&gt;)" />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000005"
-		id2="web" 
-		eventcategory="1401030000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:FAILED_LOGIN&gt;web: [&lt;saddr&gt;] FAILED_LOGIN (&lt;username&gt;)" /> 
+	id1="000005"
+	id2="web" 
+	eventcategory="1401030000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:FAILED_LOGIN&gt;"
+	content="web: [&lt;saddr&gt;] FAILED_LOGIN (&lt;username&gt;)" />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000006"
-		id2="web" 
-		eventcategory="1605000000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;web: Retention violating accounts: &lt;fld1&gt; total" /> 
+	id1="000006"
+	id2="web" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="web: Retention violating accounts: &lt;fld1&gt; total" />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000007"
-		id2="web" 
-		eventcategory="1701020000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:CHANGE&gt;web: [&lt;saddr&gt;] global CHANGE &lt;category&gt; (&lt;info&gt;)" />
+	id1="000007"
+	id2="web" 
+	eventcategory="1701020000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:CHANGE&gt;"
+	content="web: [&lt;saddr&gt;] global CHANGE &lt;category&gt; (&lt;info&gt;)" />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000029"
-		id2="web" 
-		eventcategory="1401070000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:LOGOUT&gt;web: [&lt;saddr&gt;] LOGOUT (&lt;username&gt;)" /> 
-
+	id1="000029"
+	id2="web" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:LOGOUT&gt;"
+	content="web: [&lt;saddr&gt;] LOGOUT (&lt;username&gt;)" />
 <MESSAGE 
-		level="4" 
-		tableid="84" 
-		parse="1" 
-		parsedefvalue="1"
-		id1="000030"
-		id2="web" 
-		eventcategory="1401060000" 
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:LOGIN&gt;web: [&lt;saddr&gt;] LOGIN (&lt;username&gt;)" /> 
-
+	id1="000030"
+	id2="web" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:LOGIN&gt;"
+	content="web: [&lt;saddr&gt;] LOGIN (&lt;username&gt;)" />
 <MESSAGE 
-		level="4" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="84" 
-		id1="000008" 
-		id2="notify/smtp" 
-		eventcategory="1207010000" 
-		content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;notify/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;bytes&gt; &lt;version&gt; &lt;from&gt; &lt;info&gt;" />
-
+	id1="000008" 
+	id2="notify/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="notify/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;bytes&gt; &lt;version&gt; &lt;from&gt; &lt;info&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1"
-	tableid="84"
 	id1="reports"
 	id2="reports" 
 	eventcategory="1207040000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:report queued&gt;reports: REPORTS (&lt;process&gt;) queued as &lt;fld1&gt;" /> 
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:report queued&gt;"
+	content="reports: REPORTS (&lt;process&gt;) queued as &lt;fld1&gt;" />
 </DEVICEMESSAGES>

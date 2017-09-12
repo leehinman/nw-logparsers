@@ -1,58 +1,42 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
-
-	<VERSION
-		xml="10"
-		checksum="f2ebb11c6cdd3e49e16616fa1d4e05b0"
+<DEVICEMESSAGES
+	name="eeyeretina"
+	displayname="eEye Retina"
+	group="IDS">
+<VERSION
+		xml="11"
+		checksum="26765f496b30ee3ccc40fe10d4efc717"
 		revision="0"
-		enVision="35010000"
 		device="2.0"/>
 
 
-
-	<HEADER
-		id1="0001"
-		id2="0001"
-		content="&lt;htime&gt; Retina: {The &lt;messageid&gt;|&lt;messageid&gt;} &lt;!payload:messageid&gt;"/>
-
-	<HEADER
-		id1="0002"
-		id2="0002"
-		content="%Retina: {The &lt;messageid&gt;|&lt;messageid&gt;} &lt;!payload:messageid&gt;"/>
-
-
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="&lt;htime&gt; Retina: {The &lt;messageid&gt;|&lt;messageid&gt;} &lt;!payload:messageid&gt;"/>
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="%Retina: {The &lt;messageid&gt;|&lt;messageid&gt;} &lt;!payload:messageid&gt;"/>
 	
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="83"
-		id1="Retina"
-		id2="Retina"
-		eventcategory="1614000000"
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W- %G-%F %N:%U:%O&apos;,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;Retina has found &lt;severity&gt; {Severity audit|audit} &lt;threat_name&gt; on ip {&lt;hostip&gt; &lt;fld1&gt;|&lt;hostip&gt;} "/>
-
+<MESSAGE
+	id1="Retina"
+	id2="Retina"
+	eventcategory="1614000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W- %G-%F %N:%U:%O&apos;,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Retina has found &lt;severity&gt; {Severity audit|audit} &lt;threat_name&gt; on ip {&lt;hostip&gt; &lt;fld1&gt;|&lt;hostip&gt;} " />
 	
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="83"
-		id1="Retina:01"
-		id2="Retina"
-		eventcategory="1614000000"
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W- %G-%F %N:%U:%O&apos;,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:Informational&gt;Retina has {started|finished} scanning {ip &lt;hostip&gt;|job &lt;fld1&gt;} "/>
-
+<MESSAGE
+	id1="Retina:01"
+	id2="Retina"
+	eventcategory="1614000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W- %G-%F %N:%U:%O&apos;,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:Informational&gt;"
+	content="Retina has {started|finished} scanning {ip &lt;hostip&gt;|job &lt;fld1&gt;} " />
 	
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="83"
-		id1="Retina:02"
-		id2="Retina"
-		eventcategory="1610000000"
-		content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W- %G-%F %N:%U:%O&apos;,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:Informational&gt;Retina Service Started Sucessfully."/>
-
+<MESSAGE
+	id1="Retina:02"
+	id2="Retina"
+	eventcategory="1610000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W- %G-%F %N:%U:%O&apos;,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:Informational&gt;"
+	content="Retina Service Started Sucessfully." />
 </DEVICEMESSAGES>

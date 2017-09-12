@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
-	<VERSION
-		xml="8"
-		checksum="3b7799cb56981b2d81ecc624be5bc6d5"
+<DEVICEMESSAGES
+	name="ibmicsf"
+	displayname="IBM Mainframe ICSF"
+	group="Mainframe">
+<VERSION
+		xml="9"
+		checksum="72dd421693a02981ad4f44655c6024ca"
 		revision="80"
-		enVision="33040058"
 		device="2.0"/>
 
-	<HEADER
-		id1="0001"
-		id2="0001"
-		content="%IBMICSF-4: SMF_Type=82|SubType=&lt;messageid&gt;|&lt;!payload&gt;"/>
-  <HEADER 
-		id1="0002" 
-		id2="0002" 
-		messageid="STRCAT('IBMICSF','_','TVM')"
-		content="%IBMICSFTVM-4: &lt;!payload&gt;" />
-  <TAGVALMAP
+
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="%IBMICSF-4: SMF_Type=82|SubType=&lt;messageid&gt;|&lt;!payload&gt;"/>
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	messageid="STRCAT('IBMICSF','_','TVM')"
+	content="%IBMICSFTVM-4: &lt;!payload&gt;" />
+
+<TAGVALMAP
 		delimiter="| &quot;"/>
+
 		
   <VALUEMAP
 	    name="getEventCategorySubject"
@@ -40,214 +45,145 @@
          default="$NONE" 
          keyvaluepairs="1=&apos;ICSF is started&apos;|3=&apos;change in the number of available processors&apos;|4=&apos;ICSF handles error conditions for cryptographic feature&apos;|5=&apos;change to special security mode is detected&apos;|6=&apos;key part is entered via the key entry unit&apos;|7=&apos;key part is entered via the key entry unit&apos;|8=&apos;In-storage copy of the CKDS is refreshed&apos;|9=&apos;CKDS is updated by a dynamic CKDS update &apos;|10=&apos;clear key part is entered for one of the PKA master keys&apos;|11=&apos;clear key part is entered for the DES master key&apos;|12=&apos;request and reply from calls to the CSFSPKSC service by TKE&apos;|13=&apos;PKDS is updated by a dynamic PKDS update service&apos;|14=&apos;clear key part is entered for PCI Cryptographic Coprocessor master keys&apos;|15=&apos;PCI Cryptographic Coprocessor retained key is created or deleted&apos;|16=&apos;request and reply from calls to the CSFPCI service by TKE&apos;|17=&apos;indication of PCI Cryptographic Coprocessor usage&apos;|18=&apos;PCI Cryptographic Processors and accelerators cam online or offline&apos;|19=&apos;PCI X Cryptographic Coprocessor operation begins or ends&apos;|20=&apos;ICSF to record processing times for PCIXCCs and CEX2Cs&apos;|21=&apos;ICSF issued IXCJOIN to join the ICSF sysplex group or issued IXCLEAVE to leave the sysplex group&apos;|22=&apos;Trusted Block Create Callable services are invoked&apos;|23=&apos;token data set (TKDS) is updated&apos;" />
 		 
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="1"
-		id2="1"
-		eventcategory="1605020000"
-		content="&lt;@action:ICSF is started&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CCVE_Status=&lt;fld4&gt;|CCVT_Status=&lt;fld5&gt;|CryptoDomainIndex=&lt;fld6&gt;|TraceEntries=&lt;fld7&gt;|CKDSRead=&lt;fld8&gt;|DataLength=&lt;fld9&gt;|UserParm=&lt;fld10&gt;|PKDS=&lt;fld11&gt;|TKDS=&lt;fld12&gt;|"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="3"
-		id2="3"
-		eventcategory="1701020000"
-		content="&lt;@action:change in the number of available processors&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|NumberStatus_ChangeSections=&lt;fld4&gt;|SCSSection=&lt;fld5&gt;|CPUNumber=&lt;fld6&gt;|KSUNumber=&lt;fld7&gt;|DomainIndex=&lt;fld8&gt;|CurrentMasterKeyVersion=&lt;fld9&gt;|CPStatus=&lt;fld10&gt;|StatusIndicator=&lt;fld11&gt;|MK_Verif_Pattern=&lt;fld12&gt;|NMK_Auth_Pattern=&lt;fld13&gt;|NMK_Verif_Pattern=&lt;fld14&gt;|OMK_Verif_Pattern=&lt;fld15&gt;|"/>
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="4"
-		id2="4"
-		eventcategory="1603110000"
-		content="&lt;@action:ICSF handles error conditions for cryptographic feature&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|Code3Status=&lt;fld4&gt;|CPUNumber=&lt;fld5&gt;|Curr_CryptoDomain=&lt;fld6&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="5"
-		id2="5"
-		eventcategory="1701020000"
-		content="&lt;@action:change to special security mode is detected&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|SSM=&lt;fld4&gt;"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="6"
-		id2="6"
-		eventcategory="1605020000"
-		content="&lt;@action:key part is entered via the key entry unit&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|MKPart=&lt;fld4&gt;|NMK_Verif_Pattern=&lt;fld5&gt;|Verif_Pattern=&lt;fld6&gt;|KSU=&lt;fld7&gt;|Curr_CryptoDomain=&lt;fld8&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="7"
-		id2="7"
-		eventcategory="1605020000"
-		content="&lt;@action:key part is entered via the key entry unit&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|OperKey=&lt;fld4&gt;|OperKey_Verif_Pattern=&lt;fld5&gt;|CoProcNumber=&lt;fld6&gt;|Curr_CryptoDomain=&lt;fld7&gt;|CKDS=&lt;fld8&gt;|CKDS_Modified=&lt;fld9&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="8"
-		id2="8"
-		eventcategory="1605020000"
-		content="&lt;@action:In-storage copy of the CKDS is refreshed&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CKDS_Old=&lt;fld4&gt;|CKDS_New=&lt;fld5&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="9"
-		id2="9"
-		eventcategory="1605020000"
-		content="&lt;@action:CKDS is updated by a dynamic CKDS update &gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CKDS_Update=&lt;fld4&gt;|CKDS=&lt;fld5&gt;|CKDS_Modified=&lt;fld6&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="10"
-		id2="10"
-		eventcategory="1605020000"
-		content="&lt;@action:clear key part is entered for one of the PKA master keys&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|PKA=&lt;fld4&gt;|MK_Hash=&lt;fld5&gt;|KP_HashPattern=&lt;fld6&gt;|KSUNumber=&lt;fld7&gt;|Curr_CryptoDomain=&lt;fld8&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="11"
-		id2="11"
-		eventcategory="1605020000"
-		content="&lt;@action:clear key part is entered for the DES master key&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|MK_Entry=&lt;fld4&gt;|NMK_HashPattern=&lt;fld5&gt;|NMK_Verif_Pattern=&lt;fld6&gt;|KP_HashPattern=&lt;fld7&gt;|KP_Verif_Pattern=&lt;fld8&gt;|KSUNumber=&lt;fld9&gt;|Curr_CrptoDomain=&lt;fld10&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="12"
-		id2="12"
-		eventcategory="1605020000"
-		content="&lt;@action:request and reply from calls to the CSFSPKSC service by TKE&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|PKSC_Request=&lt;fld4&gt;|AuthRegister=&lt;fld8&gt;|DomainIndex=&lt;fld9&gt;|KeyType=&lt;fld10&gt;|PKSC_ReplyType=&lt;fld11&gt;|ReplyLength=&lt;fld12&gt;|PKSC_Reply=&lt;fld13&gt;|CryptoModId=&lt;fld14&gt;|CryptoModSig=&lt;fld15&gt;|TransSeq=&lt;fld16&gt;|"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="13"
-		id2="13"
-		eventcategory="1701020000"
-		content="&lt;@action:PKDS is updated by a dynamic PKDS update service&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|PKDS_Update=&lt;fld4&gt;|PKDS=&lt;fld5&gt;|PKDS_modified=&lt;fld6&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="14"
-		id2="14"
-		eventcategory="1605020000"
-		content="&lt;@action:clear key part is entered for PCI Cryptographic Coprocessor master keys&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|AP_NMK=&lt;fld4&gt;|NMK_Verif_Pattern=&lt;fld5&gt;|KP_Verif_Pattern=&lt;fld6&gt;|CPUNumber=&lt;fld7&gt;|SerialNum=&lt;fld8&gt;|Curr_CrptoDomain=&lt;fld9&gt;|"/>
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="15"
-		id2="15"
-		eventcategory="1701020000"
-		content="&lt;@action:PCI Cryptographic Coprocessor retained key is created or deleted&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CCR_key=&lt;fld4&gt;|RetKey=&lt;fld5&gt;|PCI_Proc=&lt;fld6&gt;|PCI_Serial=&lt;fld7&gt;|PCI_Domain=&lt;fld8&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="16"
-		id2="16"
-		eventcategory="1605020000"
-		content="&lt;@action:request and reply from calls to the CSFPCI service by TKE&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|TKE=&lt;fld4&gt;|Recv_PCI_Index=&lt;fld5&gt;|Recv_PCI_Serial=&lt;fld6&gt;|Recv_PCI_Domain=&lt;fld7&gt;|Parm_BlockLen=&lt;fld8&gt;|Parm_DataLen=&lt;fld9&gt;|FuncId=&lt;fld10&gt;|FuncRC=&lt;fld11&gt;|Desc=&lt;fld12&gt;|UserId=&lt;fld13&gt;|TKE_auth=&lt;fld14&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="17"
-		id2="17"
-		eventcategory="1605020000"
-		content="&lt;@action:indication of PCI Cryptographic Coprocessor usage&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|&lt;fld4&gt;|Time_beforeNQAP=&lt;fld5&gt;|Time_afterDQAP=&lt;fld6&gt;|Time_afterWAIT=&lt;fld7&gt;|PCICC_queue=&lt;fld8&gt;|PCICC_SubFunc=&lt;fld9&gt;|PCICC_Index=&lt;fld10&gt;|PCICC_SerNum=&lt;fld11&gt;|Domain=&lt;fld12&gt;|RefNum=&lt;fld13&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="18"
-		id2="18"
-		eventcategory="1605020000"
-		content="&lt;@action:PCI Cryptographic Processors and accelerators cam online or offline&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|OperConfig=&lt;fld4&gt;|OperIndex=&lt;fld5&gt;|Oper_SnNum=&lt;fld6&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="19"
-		id2="19"
-		eventcategory="1605020000"
-		content="&lt;@action:PCI X Cryptographic Coprocessor operation begins or ends&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|&lt;fld4&gt;|Time_beforeNQAP=&lt;fld5&gt;|Time_afterDQAP=&lt;fld6&gt;|Time_afterWAIT=&lt;fld7&gt;|PCIXCC_queue=&lt;fld8&gt;|PCIXCC_SubFunc=&lt;fld9&gt;|PCIXCC_index=&lt;fld10&gt;|PCIXCC_SnNum=&lt;fld11&gt;|PCIXCC_Domain=&lt;fld12&gt;|PCIXCC_Ref=&lt;fld13&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="20"
-		id2="20"
-		eventcategory="1605020000"
-		content="&lt;@action:ICSF to record processing times for PCIXCCs and CEX2Cs&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|AP_ProcTiming=&lt;fld4&gt;|AP_Time_beforeNQAP=&lt;fld5&gt;|AP_Time_afterDQAP=&lt;fld6&gt;|AP_Time_afterWAIT=&lt;fld7&gt;|AP_queue=&lt;fld8&gt;|AP_SubFunc=&lt;fld9&gt;|AP_index=&lt;fld10&gt;|AP_SerNum=&lt;fld11&gt;|AP_Domain=&lt;fld12&gt;|AP_Ref=&lt;fld13&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="21"
-		id2="21"
-		eventcategory="1605020000"
-		content="&lt;@action:ICSF issued IXCJOIN to join the ICSF sysplex group or issued IXCLEAVE to leave the sysplex group&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|Sysplex_group=&lt;fld4&gt;|Sysplex_member=&lt;fld5&gt;|Member action=&lt;fld6&gt;|Member status=&lt;fld7&gt;|Time_Join/Leave=&lt;fld8&gt;|CKDS/TKDS=&lt;fld9&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="22"
-		id2="22"
-		eventcategory="1605020000"
-		content="&lt;@action:Trusted Block Create Callable services are invoked&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|TB_CallType=&lt;fld4&gt;|ASID=&lt;fld5&gt;|TB_inputLabel=&lt;fld6&gt;|TB_outputLabel=&lt;fld7&gt;|TransportKeyIdLabel=&lt;fld8&gt;|"/>
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="23"
-		id2="23"
-		eventcategory="1605020000"
-		content="&lt;@action:token data set (TKDS) is updated&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|TKDS_update=&lt;fld4&gt;|TKDS=&lt;fld6&gt;|TKDS_handle=&lt;fld5&gt;|"/>
+<MESSAGE
+	id1="1"
+	id2="1"
+	eventcategory="1605020000"
+	functions="&lt;@action:ICSF is started&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CCVE_Status=&lt;fld4&gt;|CCVT_Status=&lt;fld5&gt;|CryptoDomainIndex=&lt;fld6&gt;|TraceEntries=&lt;fld7&gt;|CKDSRead=&lt;fld8&gt;|DataLength=&lt;fld9&gt;|UserParm=&lt;fld10&gt;|PKDS=&lt;fld11&gt;|TKDS=&lt;fld12&gt;|" />
+<MESSAGE
+	id1="3"
+	id2="3"
+	eventcategory="1701020000"
+	functions="&lt;@action:change in the number of available processors&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|NumberStatus_ChangeSections=&lt;fld4&gt;|SCSSection=&lt;fld5&gt;|CPUNumber=&lt;fld6&gt;|KSUNumber=&lt;fld7&gt;|DomainIndex=&lt;fld8&gt;|CurrentMasterKeyVersion=&lt;fld9&gt;|CPStatus=&lt;fld10&gt;|StatusIndicator=&lt;fld11&gt;|MK_Verif_Pattern=&lt;fld12&gt;|NMK_Auth_Pattern=&lt;fld13&gt;|NMK_Verif_Pattern=&lt;fld14&gt;|OMK_Verif_Pattern=&lt;fld15&gt;|" />
+<MESSAGE
+	id1="4"
+	id2="4"
+	eventcategory="1603110000"
+	functions="&lt;@action:ICSF handles error conditions for cryptographic feature&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|Code3Status=&lt;fld4&gt;|CPUNumber=&lt;fld5&gt;|Curr_CryptoDomain=&lt;fld6&gt;|" />
+<MESSAGE
+	id1="5"
+	id2="5"
+	eventcategory="1701020000"
+	functions="&lt;@action:change to special security mode is detected&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|SSM=&lt;fld4&gt;" />
+<MESSAGE
+	id1="6"
+	id2="6"
+	eventcategory="1605020000"
+	functions="&lt;@action:key part is entered via the key entry unit&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|MKPart=&lt;fld4&gt;|NMK_Verif_Pattern=&lt;fld5&gt;|Verif_Pattern=&lt;fld6&gt;|KSU=&lt;fld7&gt;|Curr_CryptoDomain=&lt;fld8&gt;|" />
+<MESSAGE
+	id1="7"
+	id2="7"
+	eventcategory="1605020000"
+	functions="&lt;@action:key part is entered via the key entry unit&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|OperKey=&lt;fld4&gt;|OperKey_Verif_Pattern=&lt;fld5&gt;|CoProcNumber=&lt;fld6&gt;|Curr_CryptoDomain=&lt;fld7&gt;|CKDS=&lt;fld8&gt;|CKDS_Modified=&lt;fld9&gt;|" />
+<MESSAGE
+	id1="8"
+	id2="8"
+	eventcategory="1605020000"
+	functions="&lt;@action:In-storage copy of the CKDS is refreshed&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CKDS_Old=&lt;fld4&gt;|CKDS_New=&lt;fld5&gt;|" />
+<MESSAGE
+	id1="9"
+	id2="9"
+	eventcategory="1605020000"
+	functions="&lt;@action:CKDS is updated by a dynamic CKDS update &gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CKDS_Update=&lt;fld4&gt;|CKDS=&lt;fld5&gt;|CKDS_Modified=&lt;fld6&gt;|" />
+<MESSAGE
+	id1="10"
+	id2="10"
+	eventcategory="1605020000"
+	functions="&lt;@action:clear key part is entered for one of the PKA master keys&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|PKA=&lt;fld4&gt;|MK_Hash=&lt;fld5&gt;|KP_HashPattern=&lt;fld6&gt;|KSUNumber=&lt;fld7&gt;|Curr_CryptoDomain=&lt;fld8&gt;|" />
+<MESSAGE
+	id1="11"
+	id2="11"
+	eventcategory="1605020000"
+	functions="&lt;@action:clear key part is entered for the DES master key&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|MK_Entry=&lt;fld4&gt;|NMK_HashPattern=&lt;fld5&gt;|NMK_Verif_Pattern=&lt;fld6&gt;|KP_HashPattern=&lt;fld7&gt;|KP_Verif_Pattern=&lt;fld8&gt;|KSUNumber=&lt;fld9&gt;|Curr_CrptoDomain=&lt;fld10&gt;|" />
+<MESSAGE
+	id1="12"
+	id2="12"
+	eventcategory="1605020000"
+	functions="&lt;@action:request and reply from calls to the CSFSPKSC service by TKE&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|PKSC_Request=&lt;fld4&gt;|AuthRegister=&lt;fld8&gt;|DomainIndex=&lt;fld9&gt;|KeyType=&lt;fld10&gt;|PKSC_ReplyType=&lt;fld11&gt;|ReplyLength=&lt;fld12&gt;|PKSC_Reply=&lt;fld13&gt;|CryptoModId=&lt;fld14&gt;|CryptoModSig=&lt;fld15&gt;|TransSeq=&lt;fld16&gt;|" />
+<MESSAGE
+	id1="13"
+	id2="13"
+	eventcategory="1701020000"
+	functions="&lt;@action:PKDS is updated by a dynamic PKDS update service&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|PKDS_Update=&lt;fld4&gt;|PKDS=&lt;fld5&gt;|PKDS_modified=&lt;fld6&gt;|" />
+<MESSAGE
+	id1="14"
+	id2="14"
+	eventcategory="1605020000"
+	functions="&lt;@action:clear key part is entered for PCI Cryptographic Coprocessor master keys&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|AP_NMK=&lt;fld4&gt;|NMK_Verif_Pattern=&lt;fld5&gt;|KP_Verif_Pattern=&lt;fld6&gt;|CPUNumber=&lt;fld7&gt;|SerialNum=&lt;fld8&gt;|Curr_CrptoDomain=&lt;fld9&gt;|" />
+<MESSAGE
+	id1="15"
+	id2="15"
+	eventcategory="1701020000"
+	functions="&lt;@action:PCI Cryptographic Coprocessor retained key is created or deleted&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|CCR_key=&lt;fld4&gt;|RetKey=&lt;fld5&gt;|PCI_Proc=&lt;fld6&gt;|PCI_Serial=&lt;fld7&gt;|PCI_Domain=&lt;fld8&gt;|" />
+<MESSAGE
+	id1="16"
+	id2="16"
+	eventcategory="1605020000"
+	functions="&lt;@action:request and reply from calls to the CSFPCI service by TKE&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|TKE=&lt;fld4&gt;|Recv_PCI_Index=&lt;fld5&gt;|Recv_PCI_Serial=&lt;fld6&gt;|Recv_PCI_Domain=&lt;fld7&gt;|Parm_BlockLen=&lt;fld8&gt;|Parm_DataLen=&lt;fld9&gt;|FuncId=&lt;fld10&gt;|FuncRC=&lt;fld11&gt;|Desc=&lt;fld12&gt;|UserId=&lt;fld13&gt;|TKE_auth=&lt;fld14&gt;|" />
+<MESSAGE
+	id1="17"
+	id2="17"
+	eventcategory="1605020000"
+	functions="&lt;@action:indication of PCI Cryptographic Coprocessor usage&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|&lt;fld4&gt;|Time_beforeNQAP=&lt;fld5&gt;|Time_afterDQAP=&lt;fld6&gt;|Time_afterWAIT=&lt;fld7&gt;|PCICC_queue=&lt;fld8&gt;|PCICC_SubFunc=&lt;fld9&gt;|PCICC_Index=&lt;fld10&gt;|PCICC_SerNum=&lt;fld11&gt;|Domain=&lt;fld12&gt;|RefNum=&lt;fld13&gt;|" />
+<MESSAGE
+	id1="18"
+	id2="18"
+	eventcategory="1605020000"
+	functions="&lt;@action:PCI Cryptographic Processors and accelerators cam online or offline&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|OperConfig=&lt;fld4&gt;|OperIndex=&lt;fld5&gt;|Oper_SnNum=&lt;fld6&gt;|" />
+<MESSAGE
+	id1="19"
+	id2="19"
+	eventcategory="1605020000"
+	functions="&lt;@action:PCI X Cryptographic Coprocessor operation begins or ends&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|&lt;fld4&gt;|Time_beforeNQAP=&lt;fld5&gt;|Time_afterDQAP=&lt;fld6&gt;|Time_afterWAIT=&lt;fld7&gt;|PCIXCC_queue=&lt;fld8&gt;|PCIXCC_SubFunc=&lt;fld9&gt;|PCIXCC_index=&lt;fld10&gt;|PCIXCC_SnNum=&lt;fld11&gt;|PCIXCC_Domain=&lt;fld12&gt;|PCIXCC_Ref=&lt;fld13&gt;|" />
+<MESSAGE
+	id1="20"
+	id2="20"
+	eventcategory="1605020000"
+	functions="&lt;@action:ICSF to record processing times for PCIXCCs and CEX2Cs&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|AP_ProcTiming=&lt;fld4&gt;|AP_Time_beforeNQAP=&lt;fld5&gt;|AP_Time_afterDQAP=&lt;fld6&gt;|AP_Time_afterWAIT=&lt;fld7&gt;|AP_queue=&lt;fld8&gt;|AP_SubFunc=&lt;fld9&gt;|AP_index=&lt;fld10&gt;|AP_SerNum=&lt;fld11&gt;|AP_Domain=&lt;fld12&gt;|AP_Ref=&lt;fld13&gt;|" />
+<MESSAGE
+	id1="21"
+	id2="21"
+	eventcategory="1605020000"
+	functions="&lt;@action:ICSF issued IXCJOIN to join the ICSF sysplex group or issued IXCLEAVE to leave the sysplex group&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|Sysplex_group=&lt;fld4&gt;|Sysplex_member=&lt;fld5&gt;|Member action=&lt;fld6&gt;|Member status=&lt;fld7&gt;|Time_Join/Leave=&lt;fld8&gt;|CKDS/TKDS=&lt;fld9&gt;|" />
+<MESSAGE
+	id1="22"
+	id2="22"
+	eventcategory="1605020000"
+	functions="&lt;@action:Trusted Block Create Callable services are invoked&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|TB_CallType=&lt;fld4&gt;|ASID=&lt;fld5&gt;|TB_inputLabel=&lt;fld6&gt;|TB_outputLabel=&lt;fld7&gt;|TransportKeyIdLabel=&lt;fld8&gt;|" />
+<MESSAGE
+	id1="23"
+	id2="23"
+	eventcategory="1605020000"
+	functions="&lt;@action:token data set (TKDS) is updated&gt;&lt;@eventtime:*EVNTTIME($MSG,'%G-%F-%W %N:%U:%O',fld3,fld33)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;fld3&gt; &lt;fld33&gt;|TKDS_update=&lt;fld4&gt;|TKDS=&lt;fld6&gt;|TKDS_handle=&lt;fld5&gt;|" />
 		
 <MESSAGE 
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="93"
-		id1="IBMICSF_TVM"
-		id2="IBMICSF_TVM"
-		eventcategory="1605000000"
-		tagval="true"
-		content="&lt;@action:*getAction(fld2)&gt;&lt;@ec_subject:*getEventCategorySubject(fld2)&gt;&lt;@ec_activity:*getEventCategoryActivity(fld2)&gt;&lt;@ec_theme:*getEventCategoryTheme(fld2)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(fld2)&gt;&lt;@eventtime:*EVNTTIME($MSG,&apos;%G-%F-%W %N:%U:%O&apos;,event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMFType=&lt;fld1&gt;|SubType=&lt;fld2&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;event_time_string&gt;|ENTRY_NAME=&lt;event_type&gt;|CCVEStatus=&lt;fld7&gt;|CCVTStatus=&lt;fld8&gt;|CryptoDomainIdx=&lt;fld9&gt;|TraceEntries=&lt;fld10&gt;|CKDSRead=&lt;fld11&gt;|DataLength=&lt;fld12&gt;|UserParm=&lt;fld13&gt;|PKDS=&lt;fld14&gt;|TKDS=&lt;fld15&gt;|NmbrStatChgSec=&lt;fld16&gt;|SCSSection=&lt;fld17&gt;|CPUNmbr=&lt;fld18&gt;|KSUNmbr=&lt;fld19&gt;|DomainIdx=&lt;fld20&gt;|CurrMstrKeyVersion=&lt;fld21&gt;|CPStatus=&lt;fld22&gt;|StatusIndicator=&lt;fld23&gt;|MKVerifPattern=&lt;fld24&gt;|NMKAuthPattern=&lt;fld25&gt;|NMKVerifPattern=&lt;fld26&gt;|OMKVerifPattern=&lt;fld27&gt;|Code3Status=&lt;fld28&gt;|CurrCryptoDomain=&lt;fld29&gt;|SSM=&lt;fld30&gt;|MKPart=&lt;fld31&gt;|VerifPattern=&lt;fld32&gt;|KSU=&lt;fld33&gt;|OperKey=&lt;fld34&gt;|OperKeyVerifPattern=&lt;fld35&gt;|CoProcNmbr=&lt;fld36&gt;|CKDS=&lt;fld37&gt;|CKDSModified=&lt;fld38&gt;|CKDSOld=&lt;fld39&gt;|CKDSNew=&lt;fld40&gt;|CKDSUpdate=&lt;fld41&gt;|PKA=&lt;fld42&gt;|MKHash=&lt;fld43&gt;|KPHashPattern=&lt;fld44&gt;|CNMKStatus=&lt;fld45&gt;|CNMKHashPattern=&lt;fld46&gt;|CNMKVerifPattern=&lt;fld47&gt;|KPVerifPattern=&lt;fld48&gt;|PKSCReqMsgType=&lt;fld49&gt;|UCQQueryId=&lt;fld50&gt;|SCBId=&lt;fld51&gt;|SCBTransSN=&lt;fld52&gt;|ReqLength=&lt;fld53&gt;|PKSCReq=&lt;fld54&gt;|AuthRegister=&lt;fld55&gt;|KeyType=&lt;fld56&gt;|PKSCReplyMsgType=&lt;fld57&gt;|PKSCReplyType=&lt;fld58&gt;|ReplyLength=&lt;fld59&gt;|PKSCReply=&lt;fld60&gt;|CryptoModId=&lt;fld76&gt;|CryptoModSig=&lt;fld77&gt;|TransSeq=&lt;fld78&gt;|PKDSUpdate=&lt;fld79&gt;|PKDSmodified=&lt;fld80&gt;|APNMK=&lt;fld81&gt;|SerialNum=&lt;fld82&gt;|CCRKey=&lt;fld83&gt;|RetKey=&lt;fld84&gt;|PCIProc=&lt;fld85&gt;|PCISerial=&lt;fld86&gt;|PCIDomain=&lt;fld87&gt;|TKE=&lt;fld88&gt;|RecvPCIIdx=&lt;fld89&gt;|RecvPCISerial=&lt;fld90&gt;|RecvPCIDomain=&lt;fld91&gt;|ParmBlockLength=&lt;fld92&gt;|ParmDataLength=&lt;fld93&gt;|FuncId=&lt;fld94&gt;|FuncRC=&lt;fld95&gt;|Desc=&lt;fld96&gt;|UserId=&lt;fld97&gt;|TKEAuth=&lt;fld98&gt;|TimeBeforeNQAP=&lt;fld99&gt;|TimeAfterDQAP=&lt;fld100&gt;|TimeAfterWAIT=&lt;fld101&gt;|PCICCQueue=&lt;fld102&gt;|PCICCSubFunc=&lt;fld103&gt;|PCICCIdx=&lt;fld104&gt;|PCICCSerNum=&lt;fld105&gt;|Domain=&lt;fld106&gt;|RefNum=&lt;fld107&gt;|OperConfig=&lt;fld108&gt;|OperIdx=&lt;fld109&gt;|OperSnNum=&lt;fld110&gt;|PCIXCCQueue=&lt;fld111&gt;|PCIXCCSubFunc=&lt;fld112&gt;|PCIXCCIdx=&lt;fld113&gt;|PCIXCCSnNum=&lt;fld114&gt;|PCIXCCDomain=&lt;fld115&gt;|PCIXCCRef=&lt;fld116&gt;|APProcTiming=&lt;fld117&gt;|APTimeBeforeNQAP=&lt;fld118&gt;|APTimeAfterDQAP=&lt;fld119&gt;|APTimeAfterWAIT=&lt;fld120&gt;|APQueue=&lt;fld121&gt;|APSubFunc=&lt;fld122&gt;|APIdx=&lt;fld123&gt;|APSerNum=&lt;fld124&gt;|APDomain=&lt;fld125&gt;|APRef=&lt;fld126&gt;|SysplexGroup=&lt;fld127&gt;|SysplexMember=&lt;fld128&gt;|MemberAction=&lt;fld129&gt;|MemberStatus=&lt;fld130&gt;|TimeJoinLeave=&lt;fld131&gt;|CKDS/TKDS=&lt;fld132&gt;|TBCallType=&lt;fld133&gt;|ASID=&lt;fld134&gt;|TBInput=&lt;fld135&gt;|TBInputLabel=&lt;fld136&gt;|TBOutput=&lt;fld137&gt;|TBOutputLabel=&lt;fld138&gt;|TransportKeyId=&lt;fld139&gt;|TransportKeyIdLabel=&lt;fld140&gt;|TKDSUpdate=&lt;fld141&gt;|TKDSHandle=&lt;fld142&gt;|" />
+	id1="IBMICSF_TVM"
+	id2="IBMICSF_TVM"
+	eventcategory="1605000000"
+	tagval="true"
+	functions="&lt;@action:*getAction(fld2)&gt;&lt;@ec_subject:*getEventCategorySubject(fld2)&gt;&lt;@ec_activity:*getEventCategoryActivity(fld2)&gt;&lt;@ec_theme:*getEventCategoryTheme(fld2)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(fld2)&gt;&lt;@eventtime:*EVNTTIME($MSG,&apos;%G-%F-%W %N:%U:%O&apos;,event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMFType=&lt;fld1&gt;|SubType=&lt;fld2&gt;|SysId=&lt;hostname&gt;|SubSystem=&lt;instance&gt;|Timestamp=&lt;event_time_string&gt;|ENTRY_NAME=&lt;event_type&gt;|CCVEStatus=&lt;fld7&gt;|CCVTStatus=&lt;fld8&gt;|CryptoDomainIdx=&lt;fld9&gt;|TraceEntries=&lt;fld10&gt;|CKDSRead=&lt;fld11&gt;|DataLength=&lt;fld12&gt;|UserParm=&lt;fld13&gt;|PKDS=&lt;fld14&gt;|TKDS=&lt;fld15&gt;|NmbrStatChgSec=&lt;fld16&gt;|SCSSection=&lt;fld17&gt;|CPUNmbr=&lt;fld18&gt;|KSUNmbr=&lt;fld19&gt;|DomainIdx=&lt;fld20&gt;|CurrMstrKeyVersion=&lt;fld21&gt;|CPStatus=&lt;fld22&gt;|StatusIndicator=&lt;fld23&gt;|MKVerifPattern=&lt;fld24&gt;|NMKAuthPattern=&lt;fld25&gt;|NMKVerifPattern=&lt;fld26&gt;|OMKVerifPattern=&lt;fld27&gt;|Code3Status=&lt;fld28&gt;|CurrCryptoDomain=&lt;fld29&gt;|SSM=&lt;fld30&gt;|MKPart=&lt;fld31&gt;|VerifPattern=&lt;fld32&gt;|KSU=&lt;fld33&gt;|OperKey=&lt;fld34&gt;|OperKeyVerifPattern=&lt;fld35&gt;|CoProcNmbr=&lt;fld36&gt;|CKDS=&lt;fld37&gt;|CKDSModified=&lt;fld38&gt;|CKDSOld=&lt;fld39&gt;|CKDSNew=&lt;fld40&gt;|CKDSUpdate=&lt;fld41&gt;|PKA=&lt;fld42&gt;|MKHash=&lt;fld43&gt;|KPHashPattern=&lt;fld44&gt;|CNMKStatus=&lt;fld45&gt;|CNMKHashPattern=&lt;fld46&gt;|CNMKVerifPattern=&lt;fld47&gt;|KPVerifPattern=&lt;fld48&gt;|PKSCReqMsgType=&lt;fld49&gt;|UCQQueryId=&lt;fld50&gt;|SCBId=&lt;fld51&gt;|SCBTransSN=&lt;fld52&gt;|ReqLength=&lt;fld53&gt;|PKSCReq=&lt;fld54&gt;|AuthRegister=&lt;fld55&gt;|KeyType=&lt;fld56&gt;|PKSCReplyMsgType=&lt;fld57&gt;|PKSCReplyType=&lt;fld58&gt;|ReplyLength=&lt;fld59&gt;|PKSCReply=&lt;fld60&gt;|CryptoModId=&lt;fld76&gt;|CryptoModSig=&lt;fld77&gt;|TransSeq=&lt;fld78&gt;|PKDSUpdate=&lt;fld79&gt;|PKDSmodified=&lt;fld80&gt;|APNMK=&lt;fld81&gt;|SerialNum=&lt;fld82&gt;|CCRKey=&lt;fld83&gt;|RetKey=&lt;fld84&gt;|PCIProc=&lt;fld85&gt;|PCISerial=&lt;fld86&gt;|PCIDomain=&lt;fld87&gt;|TKE=&lt;fld88&gt;|RecvPCIIdx=&lt;fld89&gt;|RecvPCISerial=&lt;fld90&gt;|RecvPCIDomain=&lt;fld91&gt;|ParmBlockLength=&lt;fld92&gt;|ParmDataLength=&lt;fld93&gt;|FuncId=&lt;fld94&gt;|FuncRC=&lt;fld95&gt;|Desc=&lt;fld96&gt;|UserId=&lt;fld97&gt;|TKEAuth=&lt;fld98&gt;|TimeBeforeNQAP=&lt;fld99&gt;|TimeAfterDQAP=&lt;fld100&gt;|TimeAfterWAIT=&lt;fld101&gt;|PCICCQueue=&lt;fld102&gt;|PCICCSubFunc=&lt;fld103&gt;|PCICCIdx=&lt;fld104&gt;|PCICCSerNum=&lt;fld105&gt;|Domain=&lt;fld106&gt;|RefNum=&lt;fld107&gt;|OperConfig=&lt;fld108&gt;|OperIdx=&lt;fld109&gt;|OperSnNum=&lt;fld110&gt;|PCIXCCQueue=&lt;fld111&gt;|PCIXCCSubFunc=&lt;fld112&gt;|PCIXCCIdx=&lt;fld113&gt;|PCIXCCSnNum=&lt;fld114&gt;|PCIXCCDomain=&lt;fld115&gt;|PCIXCCRef=&lt;fld116&gt;|APProcTiming=&lt;fld117&gt;|APTimeBeforeNQAP=&lt;fld118&gt;|APTimeAfterDQAP=&lt;fld119&gt;|APTimeAfterWAIT=&lt;fld120&gt;|APQueue=&lt;fld121&gt;|APSubFunc=&lt;fld122&gt;|APIdx=&lt;fld123&gt;|APSerNum=&lt;fld124&gt;|APDomain=&lt;fld125&gt;|APRef=&lt;fld126&gt;|SysplexGroup=&lt;fld127&gt;|SysplexMember=&lt;fld128&gt;|MemberAction=&lt;fld129&gt;|MemberStatus=&lt;fld130&gt;|TimeJoinLeave=&lt;fld131&gt;|CKDS/TKDS=&lt;fld132&gt;|TBCallType=&lt;fld133&gt;|ASID=&lt;fld134&gt;|TBInput=&lt;fld135&gt;|TBInputLabel=&lt;fld136&gt;|TBOutput=&lt;fld137&gt;|TBOutputLabel=&lt;fld138&gt;|TransportKeyId=&lt;fld139&gt;|TransportKeyIdLabel=&lt;fld140&gt;|TKDSUpdate=&lt;fld141&gt;|TKDSHandle=&lt;fld142&gt;|" />
 		
 </DEVICEMESSAGES>

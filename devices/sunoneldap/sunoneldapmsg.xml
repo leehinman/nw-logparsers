@@ -1,55 +1,54 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="sunoneldap"
+	displayname="SunOne LDAP Directory Server"
+	group="Access Control">
 <VERSION
-	xml="8"
-	checksum="b0d2b5ac083b7abb444d8ad1d99b1a58"
+	xml="10"
+	checksum="01d941e883054908832c4c4db84aa766"
 	revision="83"
-	enVision="35010000"
 	device="2.0" />
 
  
 
-
   
-
-	<TAGVALMAP encapsulator="&quot;" pairdelimiter=" " valuedelimiter="=" delimiter="  &quot;" />
+<TAGVALMAP encapsulator="&quot;" pairdelimiter=" " valuedelimiter="=" delimiter="  &quot;" />
 	
-	<HEADER 
+<HEADER 
 	id1="0001" 
 	id2="0001"
 	content="%SunOneLDAP-4: time: &lt;hfld1&gt;  time: &lt;hfld2&gt;  dn: &lt;hfld3&gt;  changetype: &lt;messageid&gt; &lt;!payload:hfld2&gt;" /> 
 	
-	<HEADER 
+<HEADER 
 	id1="0002" 
 	id2="0002"
 	content="%SunOneLDAP-4: time: &lt;hfld1&gt;  dn: &lt;hfld2&gt;  changetype: &lt;messageid&gt; &lt;!payload:hfld1&gt;" /> 
 	
-	<HEADER 
+<HEADER 
 	id1="0003" 
 	id2="0003"
 	content="%OracleDS-4: time: &lt;hfld1&gt;^^dn: &lt;hfld2&gt;^^changetype: &lt;messageid&gt;^^&lt;!payload:hfld1&gt;" /> 
 
 
-	<HEADER 
+<HEADER 
 	id1="0004" 
 	id2="0004"
 	content="%OracleDSTVM-4: [&lt;hfld1&gt; &lt;hfld2&gt;] conn=&lt;hfld1&gt; op=&lt;hfld2&gt; msgId=-&lt;hfld3&gt; - &lt;messageid&gt; &lt;!payload&gt;" /> 
 
-	<HEADER 
+<HEADER 
 	id1="0005" 
 	id2="0005"
 	content="%OracleDSTVM-4: [&lt;hfld1&gt; &lt;hfld2&gt;] conn=&lt;hfld1&gt; op=&lt;hfld2&gt; msgId=&lt;hfld3&gt; - &lt;messageid&gt; &lt;!payload&gt;" /> 
 
 
-	<HEADER 
+<HEADER 
 	id1="0006" 
 	id2="0006"
 	messageid="STRCAT(&apos;Oracle&apos;, &apos;_&apos;, &apos;DS&apos;)"
 	content="%OracleDSTVM-4: [&lt;hfld1&gt; &lt;hfld2&gt;] conn=&lt;hfld1&gt; op=&lt;hfld2&gt; msgId=-&lt;hfld3&gt; - &lt;!payload&gt;" /> 
 
 	
-
-	<HEADER 
+<HEADER 
 	id1="0007" 
 	id2="0007"
 	messageid="STRCAT(&apos;Oracle&apos;, &apos;_&apos;, &apos;DS&apos;)"
@@ -57,237 +56,156 @@
 
 	
 
-
 	
-
 	
-	<MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="modify:03" 
 	id2="modify" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
 	
-	<MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="add:01" 
 	id2="add" 
 	eventcategory="1701010000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
 	
-	<MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="delete:01" 
 	id2="delete" 
 	eventcategory="1701030000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
-
-	<MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
+<MESSAGE 
 	id1="modrdn:01" 
 	id2="modrdn" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;^^dn: &lt;dst_dn&gt;^^changetype: &lt;action&gt;^^&lt;info&gt;" />
 	
 	
 	
 	
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="modify:01" 
 	id2="modify" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  -  replace: modifiersname  modifiersname: &lt;src_dn&gt;  -  replace: modifytimestamp  modifytimestamp: &lt;fld2&gt;  -" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  -  replace: modifiersname  modifiersname: &lt;src_dn&gt;  -  replace: modifytimestamp  modifytimestamp: &lt;fld2&gt;  -" />
     
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="modify:02" 
 	id2="modify" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  replace: modifiersname  modifiersname: &lt;src_dn&gt;  replace: modifytimestamp  modifytimestamp: &lt;fld2&gt;  -" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  replace: modifiersname  modifiersname: &lt;src_dn&gt;  replace: modifytimestamp  modifytimestamp: &lt;fld2&gt;  -" />
 	
 	
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="add" 
 	id2="add" 
 	eventcategory="1701010000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  modifiersName: &lt;src_dn&gt;  createTimestamp: &lt;fld2&gt;  modifyTimestamp: &lt;fld3&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  modifiersName: &lt;src_dn&gt;  createTimestamp: &lt;fld2&gt;  modifyTimestamp: &lt;fld3&gt;" />
       
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="delete" 
 	id2="delete" 
 	eventcategory="1701030000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  modifiersname: &lt;src_dn&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  modifiersname: &lt;src_dn&gt;" />
     
 	
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="modrdn" 
 	id2="modrdn" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  -  replace: modifiersname  modifiersname: &lt;src_dn&gt;  -  replace: modifytimestamp  modifytimestamp: &lt;fld2&gt;  -" /> 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W%M%D%H%T%S',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;  dn: &lt;dst_dn&gt;  changetype: &lt;action&gt;  &lt;info&gt;  -  replace: modifiersname  modifiersname: &lt;src_dn&gt;  -  replace: modifytimestamp  modifytimestamp: &lt;fld2&gt;  -" />
 	
 	
 
 	
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+<MESSAGE 
 	id1="RESULT" 
 	id2="RESULT" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hfld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:RESULT&gt;err=&lt;result_code&gt; tag=&lt;fld1&gt; nentries=&lt;fld2&gt; etime=&lt;duration&gt; csn=&lt;fld3&gt; notes=&lt;fld4&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hfld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:RESULT&gt;"
+	content="err=&lt;result_code&gt; tag=&lt;fld1&gt; nentries=&lt;fld2&gt; etime=&lt;duration&gt; csn=&lt;fld3&gt; notes=&lt;fld4&gt;" />
+<MESSAGE 
 	id1="EXT" 
 	id2="EXT" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hfld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:EXT&gt;oid=&lt;fld4&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hfld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:EXT&gt;"
+	content="oid=&lt;fld4&gt;" />
+<MESSAGE 
 	id1="MOD" 
 	id2="MOD" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hfld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:MOD&gt;dn=&lt;dst_dn&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hfld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:MOD&gt;"
+	content="dn=&lt;dst_dn&gt;" />
+<MESSAGE 
 	id1="SRCH" 
 	id2="SRCH" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:SRCH&gt;base=&lt;src_dn&gt; scope=&lt;fld5&gt; filter=&lt;fld6&gt; attrs=&lt;fld7&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:SRCH&gt;"
+	content="base=&lt;src_dn&gt; scope=&lt;fld5&gt; filter=&lt;fld6&gt; attrs=&lt;fld7&gt;" />
+<MESSAGE 
 	id1="BIND" 
 	id2="BIND" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:BIND&gt;dn=&lt;dst_dn&gt; method=&lt;fld7&gt; version=&lt;version&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:BIND&gt;"
+	content="dn=&lt;dst_dn&gt; method=&lt;fld7&gt; version=&lt;version&gt;" />
+<MESSAGE 
 	id1="ABANDON" 
 	id2="ABANDON" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:ABANDON&gt;targetop=&lt;fld1&gt; msgid=&lt;fld2&gt; nentries=&lt;fld2&gt; etime=&lt;duration&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:ABANDON&gt;"
+	content="targetop=&lt;fld1&gt; msgid=&lt;fld2&gt; nentries=&lt;fld2&gt; etime=&lt;duration&gt;" />
+<MESSAGE 
 	id1="ADD" 
 	id2="ADD" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:ADD&gt;dn=&lt;dst_dn&gt;" />
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:ADD&gt;"
+	content="dn=&lt;dst_dn&gt;" />
+<MESSAGE 
 	id1="MODRDN" 
 	id2="MODRDN" 
 	tagval="true"
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:MODRDN&gt;dn=&lt;dst_dn&gt; newrdn=&lt;fld4&gt; newsuperior=&lt;fld5&gt;" />
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:MODRDN&gt;"
+	content="dn=&lt;dst_dn&gt; newrdn=&lt;fld4&gt; newsuperior=&lt;fld5&gt;" />
+<MESSAGE 
 	id1="LDAP_Connection" 
 	id2="Oracle_DS" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:LDAP connection&gt;&lt;fld1&gt; LDAP connection from &lt;saddr&gt;:&lt;sport&gt; to &lt;daddr&gt;" />
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:LDAP connection&gt;"
+	content="&lt;fld1&gt; LDAP connection from &lt;saddr&gt;:&lt;sport&gt; to &lt;daddr&gt;" />
+<MESSAGE 
 	id1="UNBIND" 
 	id2="Oracle_DS" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:UNBIND&gt;UNBIND" />
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:UNBIND&gt;"
+	content="UNBIND" />
+<MESSAGE 
 	id1="closed" 
 	id2="Oracle_DS" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:connection closed&gt; closed." />
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:connection closed&gt;"
+	content=" closed." />
+<MESSAGE 
 	id1="closing_connection" 
 	id2="Oracle_DS" 
 	eventcategory="1701020000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:connection closed&gt; closing from &lt;saddr&gt;:&lt;sport&gt; - U1 - Connection closed by unbind client &lt;fld1&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O %E',hfld1,hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:connection closed&gt;"
+	content=" closing from &lt;saddr&gt;:&lt;sport&gt; - U1 - Connection closed by unbind client &lt;fld1&gt;" />
 </DEVICEMESSAGES>

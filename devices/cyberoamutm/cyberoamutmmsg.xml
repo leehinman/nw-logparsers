@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="cyberoamutm"
+	displayname="Cyberoam UTM"
+	group="Firewall">
 <VERSION
-	xml="6"
-	checksum="c919e98362e26a385916bde548528e68"
+	xml="7"
+	checksum="a5f7a6bff6fafd3c135b016ce525deea"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 	
 	
-
 <TAGVALMAP 
 		delimiter="  &quot;" />
-
 		
-
 <HEADER 
-		id1="0001" 
-		id2="0001"
-		messageid="STRCAT(&apos;Cyberoam&apos;,&apos;_&apos;,&apos;log&apos;)"
-		content="date=&lt;hfld15&gt; time=&lt;hfld14&gt; timezone=&lt;hfld13&gt; device_name=&lt;hfld12&gt; device_id=&lt;hfld16&gt; log_id=&lt;hfld1&gt; log_type=&lt;hfld17&gt; &lt;!payload:$START&gt;" />
-
+	id1="0001" 
+	id2="0001"
+	messageid="STRCAT(&apos;Cyberoam&apos;,&apos;_&apos;,&apos;log&apos;)"
+	content="date=&lt;hfld15&gt; time=&lt;hfld14&gt; timezone=&lt;hfld13&gt; device_name=&lt;hfld12&gt; device_id=&lt;hfld16&gt; log_id=&lt;hfld1&gt; log_type=&lt;hfld17&gt; &lt;!payload:$START&gt;" />
 <VALUEMAP 
 		name="ectheme" 
 		default="$NONE" 
@@ -36,83 +34,53 @@
 		keyvaluepairs="Allowed=&apos;Enable&apos;|Denied=&apos;Deny&apos;|Detect=&apos;Detect&apos;|Drop=&apos;Deny&apos;|Virus=&apos;Detect&apos;|Spam=&apos;Detect&apos;|Probable Spam=&apos;Detect&apos;" />
 		
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:Authentication" 
-		id2="Cyberoam_log" 
-		eventcategory="1304000000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; accesstimepolicy=&lt;policyname&gt; auth_client=&lt;federated_idp&gt; auth_mechanism=&lt;authmethod&gt; datatransferpolicy=&lt;policyname&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; message=&lt;event_description&gt; priority=&lt;severity&gt; reason=&lt;result&gt; source_ip=&lt;saddr&gt; sslvpnpolicyname=&lt;policyname&gt; status=&lt;disposition&gt; surfingquotapolicy=&lt;policyname&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; usergroupname=&lt;group&gt; username=&lt;username&gt; vpntype=&lt;scheme&gt; src_ip=&lt;saddr&gt; user_name=&lt;username&gt;" />
-
-
+	id1="Cyberoam_log:Authentication" 
+	id2="Cyberoam_log" 
+	eventcategory="1304000000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" accesstimepolicy=&lt;policyname&gt; auth_client=&lt;federated_idp&gt; auth_mechanism=&lt;authmethod&gt; datatransferpolicy=&lt;policyname&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; message=&lt;event_description&gt; priority=&lt;severity&gt; reason=&lt;result&gt; source_ip=&lt;saddr&gt; sslvpnpolicyname=&lt;policyname&gt; status=&lt;disposition&gt; surfingquotapolicy=&lt;policyname&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; usergroupname=&lt;group&gt; username=&lt;username&gt; vpntype=&lt;scheme&gt; src_ip=&lt;saddr&gt; user_name=&lt;username&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:AntiVirus" 
-		id2="Cyberoam_log" 
-		eventcategory="1003010000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; av_policy_name=&lt;policy_id&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; domainname=&lt;domain&gt; dst_country_code=&lt;fld&gt; dst_domainname=&lt;ddomain&gt; dstdomain=&lt;ddomain&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; filename=&lt;filename&gt; file_path=&lt;directory&gt; file_size=&lt;filename_size&gt; from_email_address=&lt;from&gt; FTP_direction=&lt;direction&gt; FTP_url=&lt;url&gt; ftpcommand=&lt;info&gt; fw_rule_id=&lt;rule_uid&gt; iap=&lt;policy_id&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; mailid=&lt;mail_id&gt; mailsize=&lt;filename_size&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; quarantine=&lt;info&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; src_country_code=&lt;fld&gt; src_domainname=&lt;sdomain&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; subject=&lt;subject&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; to_email_address=&lt;to&gt; url=&lt;url&gt; user_name=&lt;username&gt; virus=&lt;threat_name&gt; oldversion=&lt;fld&gt; updatefrom=&lt;fld&gt; updatetype=&lt;fld&gt; message=&lt;event_description&gt;" />
-
+	id1="Cyberoam_log:AntiVirus" 
+	id2="Cyberoam_log" 
+	eventcategory="1003010000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" av_policy_name=&lt;policy_id&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; domainname=&lt;domain&gt; dst_country_code=&lt;fld&gt; dst_domainname=&lt;ddomain&gt; dstdomain=&lt;ddomain&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; filename=&lt;filename&gt; file_path=&lt;directory&gt; file_size=&lt;filename_size&gt; from_email_address=&lt;from&gt; FTP_direction=&lt;direction&gt; FTP_url=&lt;url&gt; ftpcommand=&lt;info&gt; fw_rule_id=&lt;rule_uid&gt; iap=&lt;policy_id&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; mailid=&lt;mail_id&gt; mailsize=&lt;filename_size&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; quarantine=&lt;info&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; src_country_code=&lt;fld&gt; src_domainname=&lt;sdomain&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; subject=&lt;subject&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; to_email_address=&lt;to&gt; url=&lt;url&gt; user_name=&lt;username&gt; virus=&lt;threat_name&gt; oldversion=&lt;fld&gt; updatefrom=&lt;fld&gt; updatetype=&lt;fld&gt; message=&lt;event_description&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:AntiSpam" 
-		id2="Cyberoam_log" 
-		eventcategory="1207040000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; av_policy_name=&lt;policy_id&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; dst_country_code=&lt;fld&gt; dst_domainname=&lt;ddomain&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; email_subject=&lt;subject&gt; from_email_address=&lt;from&gt; fw_rule_id=&lt;rule_uid&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; mailid=&lt;mail_id&gt; mailsize=&lt;filename_size&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; reason=&lt;result&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; spamaction=&lt;action&gt; src_country_code=&lt;fld&gt; src_domainname=&lt;sdomain&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; to_email_address=&lt;to&gt; user_name=&lt;username&gt;" />
-
+	id1="Cyberoam_log:AntiSpam" 
+	id2="Cyberoam_log" 
+	eventcategory="1207040000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" av_policy_name=&lt;policy_id&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; dst_country_code=&lt;fld&gt; dst_domainname=&lt;ddomain&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; email_subject=&lt;subject&gt; from_email_address=&lt;from&gt; fw_rule_id=&lt;rule_uid&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; mailid=&lt;mail_id&gt; mailsize=&lt;filename_size&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; reason=&lt;result&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; spamaction=&lt;action&gt; src_country_code=&lt;fld&gt; src_domainname=&lt;sdomain&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; to_email_address=&lt;to&gt; user_name=&lt;username&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:WebFilter" 
-		id2="Cyberoam_log" 
-		eventcategory="1612000000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; category=&lt;product&gt; category_type=&lt;info&gt; contenttype=&lt;info&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; domain=&lt;web_domain&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; fw_rule_id=&lt;rule_uid&gt; httpresponsecode=&lt;resultcode&gt; iap=&lt;policy_id&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; url=&lt;url&gt; user_gp=&lt;group&gt; user_name=&lt;username&gt;" />
-
+	id1="Cyberoam_log:WebFilter" 
+	id2="Cyberoam_log" 
+	eventcategory="1612000000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" category=&lt;product&gt; category_type=&lt;info&gt; contenttype=&lt;info&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; domain=&lt;web_domain&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; fw_rule_id=&lt;rule_uid&gt; httpresponsecode=&lt;resultcode&gt; iap=&lt;policy_id&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; url=&lt;url&gt; user_gp=&lt;group&gt; user_name=&lt;username&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:Firewall" 
-		id2="Cyberoam_log" 
-		eventcategory="1605020000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; appfilter_policy_id=&lt;policy_id&gt; application=&lt;application&gt; connevent=&lt;fld&gt; connid=&lt;connectionid&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; dir_disp=&lt;fld&gt; dst_country_code=&lt;fld&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; dstzonetype=&lt;fld&gt; duration=&lt;duration&gt; fw_rule_id=&lt;rule_uid&gt; iap=&lt;policy_id&gt; icmp_code=&lt;icmpcode&gt; icmp_type=&lt;icmptype&gt; in_interface=&lt;dinterface&gt; ips_policy_id=&lt;policy_id&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; out_interface=&lt;sinterface&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; recv_pkts=&lt;fld&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; sent_pkts=&lt;fld&gt; src_country_code=&lt;fld&gt; src_ip=&lt;saddr&gt; src_mac=&lt;smacaddr&gt; src_port=&lt;sport&gt; srczonetype=&lt;fld&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; tran_dst_ip=&lt;dtransaddr&gt; tran_dst_port=&lt;dtransport&gt; tran_src_ip=&lt;stransaddr&gt; tran_src_port=&lt;stransport&gt; user_gp=&lt;group&gt; user_name=&lt;username&gt; vconnid=&lt;connectionid&gt; application_risk=&lt;risk_num&gt; application_technology=&lt;info&gt; application_category=&lt;category&gt; srczone=&lt;src_zone&gt; dstzone=&lt;dst_zone&gt;" />
-
+	id1="Cyberoam_log:Firewall" 
+	id2="Cyberoam_log" 
+	eventcategory="1605020000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" appfilter_policy_id=&lt;policy_id&gt; application=&lt;application&gt; connevent=&lt;fld&gt; connid=&lt;connectionid&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; dir_disp=&lt;fld&gt; dst_country_code=&lt;fld&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; dstzonetype=&lt;fld&gt; duration=&lt;duration&gt; fw_rule_id=&lt;rule_uid&gt; iap=&lt;policy_id&gt; icmp_code=&lt;icmpcode&gt; icmp_type=&lt;icmptype&gt; in_interface=&lt;dinterface&gt; ips_policy_id=&lt;policy_id&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; out_interface=&lt;sinterface&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; recv_pkts=&lt;fld&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; sent_pkts=&lt;fld&gt; src_country_code=&lt;fld&gt; src_ip=&lt;saddr&gt; src_mac=&lt;smacaddr&gt; src_port=&lt;sport&gt; srczonetype=&lt;fld&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; tran_dst_ip=&lt;dtransaddr&gt; tran_dst_port=&lt;dtransport&gt; tran_src_ip=&lt;stransaddr&gt; tran_src_port=&lt;stransport&gt; user_gp=&lt;group&gt; user_name=&lt;username&gt; vconnid=&lt;connectionid&gt; application_risk=&lt;risk_num&gt; application_technology=&lt;info&gt; application_category=&lt;category&gt; srczone=&lt;src_zone&gt; dstzone=&lt;dst_zone&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:ApplicationFilter" 
-		id2="Cyberoam_log" 
-		eventcategory="1612000000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; application_filter_policy=&lt;policy_id&gt; application_name=&lt;application&gt; category=&lt;product&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; dst_country_code=&lt;fld&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; fw_rule_id=&lt;rule_uid&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; message=&lt;event_description&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; src_country_code=&lt;fld&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; user_gp=&lt;group&gt; user_name=&lt;username&gt;" />
-
+	id1="Cyberoam_log:ApplicationFilter" 
+	id2="Cyberoam_log" 
+	eventcategory="1612000000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" application_filter_policy=&lt;policy_id&gt; application_name=&lt;application&gt; category=&lt;product&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; dst_country_code=&lt;fld&gt; dst_ip=&lt;daddr&gt; dst_port=&lt;dport&gt; fw_rule_id=&lt;rule_uid&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; message=&lt;event_description&gt; priority=&lt;severity&gt; protocol=&lt;protocol&gt; recv_bytes=&lt;rbytes&gt; sent_bytes=&lt;sbytes&gt; src_country_code=&lt;fld&gt; src_ip=&lt;saddr&gt; src_port=&lt;sport&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt; user_gp=&lt;group&gt; user_name=&lt;username&gt;" />
 <MESSAGE 
-		level="5" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="77" 
-		id1="Cyberoam_log:SystemEvent" 
-		id2="Cyberoam_log" 
-		eventcategory="1612000000" 
-		tagval="true"
-		content="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt; client_host_name=&lt;dhost&gt; client_physical_address=&lt;daddr&gt; connectionname=&lt;info&gt; connectiontype=&lt;fld&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; ipaddress=&lt;hostip&gt; ipsec=&lt;fld&gt; isakmp=&lt;fld&gt; localgateway=&lt;gateway&gt; localinterfaceip=&lt;sinterface&gt; localnetwork=&lt;smask&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; message=&lt;event_description&gt; messageid=&lt;operation_id&gt; peerid=&lt;peer_id&gt; policybits=&lt;policy_value&gt; priority=&lt;severity&gt; raw_data=&lt;fld&gt; remoteinterfaceip=&lt;dinterface&gt; remotenetwork=&lt;dmask&gt; state=&lt;disposition&gt; State=&lt;disposition&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt;" />
-
-
+	id1="Cyberoam_log:SystemEvent" 
+	id2="Cyberoam_log" 
+	eventcategory="1612000000" 
+	tagval="true"
+	functions="&lt;@ec_theme:*ectheme(vendor_event_cat)&gt;&lt;@ec_outcome:*ecoutcome(disposition)&gt;&lt;@ec_activity:*ecactivity(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content=" client_host_name=&lt;dhost&gt; client_physical_address=&lt;daddr&gt; connectionname=&lt;info&gt; connectiontype=&lt;fld&gt; date=&lt;fld1&gt; device_id=&lt;hostid&gt; device_name=&lt;hostname&gt; ipaddress=&lt;hostip&gt; ipsec=&lt;fld&gt; isakmp=&lt;fld&gt; localgateway=&lt;gateway&gt; localinterfaceip=&lt;sinterface&gt; localnetwork=&lt;smask&gt; log_component=&lt;event_source&gt; log_id=&lt;id&gt; log_subtype=&lt;event_type&gt; log_type=&lt;vendor_event_cat&gt; message=&lt;event_description&gt; messageid=&lt;operation_id&gt; peerid=&lt;peer_id&gt; policybits=&lt;policy_value&gt; priority=&lt;severity&gt; raw_data=&lt;fld&gt; remoteinterfaceip=&lt;dinterface&gt; remotenetwork=&lt;dmask&gt; state=&lt;disposition&gt; State=&lt;disposition&gt; status=&lt;disposition&gt; time=&lt;fld2&gt; timezone=&lt;timezone&gt;" />
 		
 </DEVICEMESSAGES>

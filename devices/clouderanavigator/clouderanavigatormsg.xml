@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="clouderanavigator"
+	displayname="Cloudera Navigator"
+	group="Access Control">
 <VERSION
-	xml="4"
-	checksum="09ba458a21bfad03f6ba333cd5364a50"
+	xml="5"
+	checksum="c4774499096d42a805ad62a359857ba2"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
-
 <TAGVALMAP 
 		delimiter=", &quot;" />
 <HEADER 
-		id1="0001" 
-		id2="0001"
-        messageid="*STRCAT('Cloudera','_','Navigator')"
-		content="Cloudera|Navigator|&lt;hfld1&gt;|&lt;!payload&gt;" />
+	id1="0001" 
+	id2="0001"
+	messageid="*STRCAT('Cloudera','_','Navigator')"
+	content="Cloudera|Navigator|&lt;hfld1&gt;|&lt;!payload&gt;" />
 		
 <HEADER 
-		id1="0002" 
-		id2="0002"
-        messageid="*STRCAT('Cloudera','_','Navigator')"
-		content="&lt;hfld2&gt;Cloudera|Navigator|&lt;hfld1&gt;|&lt;!payload&gt;" />
-
+	id1="0002" 
+	id2="0002"
+	messageid="*STRCAT('Cloudera','_','Navigator')"
+	content="&lt;hfld2&gt;Cloudera|Navigator|&lt;hfld1&gt;|&lt;!payload&gt;" />
 <VALUEMAP 
 		name="ecactivity" 
 		default="$NONE" 
@@ -29,13 +29,10 @@
 		
 
 <MESSAGE
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="81" 
-		id1="Cloudera_Navigator" 
-		id2="Cloudera_Navigator"
-        tagval="true"
-		eventcategory="1401060000" 
-		content="&lt;@ec_activity:*ecactivity(fld5)&gt;&lt;@ec_theme:AccessControl&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt; type=&lt;node&gt;,allowed=&lt;fld5&gt;,time=&lt;event_time_string&gt;,service=&lt;service&gt;,path=&lt;directory&gt;,user=&lt;username&gt;,ip=&lt;hostip&gt;,op=&lt;action&gt;,opText=&lt;event_description&gt;,status=&lt;fld2&gt;,db=&lt;db_name&gt;,table=&lt;tbl_name&gt;,privilege=&lt;accesses&gt;,objType=&lt;obj_type&gt;,family=&lt;fld4&gt;,qualifier=&lt;fld3&gt;,src=&lt;directory&gt;,dst=&lt;info&gt;,perms=&lt;permissions&gt;,impersonator=&lt;c_username&gt;" />	
+	id1="Cloudera_Navigator" 
+	id2="Cloudera_Navigator"
+	tagval="true"
+	eventcategory="1401060000" 
+	functions="&lt;@ec_activity:*ecactivity(fld5)&gt;&lt;@ec_theme:AccessControl&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',event_time_string)&gt;"
+	content=" type=&lt;node&gt;,allowed=&lt;fld5&gt;,time=&lt;event_time_string&gt;,service=&lt;service&gt;,path=&lt;directory&gt;,user=&lt;username&gt;,ip=&lt;hostip&gt;,op=&lt;action&gt;,opText=&lt;event_description&gt;,status=&lt;fld2&gt;,db=&lt;db_name&gt;,table=&lt;tbl_name&gt;,privilege=&lt;accesses&gt;,objType=&lt;obj_type&gt;,family=&lt;fld4&gt;,qualifier=&lt;fld3&gt;,src=&lt;directory&gt;,dst=&lt;info&gt;,perms=&lt;permissions&gt;,impersonator=&lt;c_username&gt;" />
 </DEVICEMESSAGES>

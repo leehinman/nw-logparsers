@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="websenseds"
+	displayname="Websense Data Security"
+	group="DLP">
 <VERSION
-	xml="16"
-	checksum="620022f4c112af0c88752c555db926ec"
+	xml="17"
+	checksum="e0fe917af735f8589668bfed02c549c2"
 	revision="108"
-	enVision="35010000"
 	device="2.0"/>
 	
 <TAGVALMAP
@@ -32,17 +34,11 @@
 	    name="getEventLegacyCategory"
 		default="1901000000"
 		keyvaluepairs="Permitted=&apos;1502020000&apos;|Blocked=&apos;1502010000&apos;" />	
-
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="73"
 	id1="websense_ds"
 	id2="websense_ds"
 	eventcategory="1502010000"
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@product:*HDR(hproduct)&gt;&lt;@version:*HDR(hversion)&gt;&lt;@event_type:*HDR(hevent_type)&gt;&lt;@event_description:*HDR(hevent_description)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time_str:*HDR(hevent_time_str)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-    content="act=&lt;action&gt; duser=&lt;username&gt; fname=&lt;filename&gt; msg=&lt;msg&gt; suser=&lt;c_username&gt; cat=&lt;category&gt; sourceServiceName=&lt;service&gt; analyzedBy=&lt;cs_analyzedby&gt; loginName=&lt;cs_loginname&gt; sourceIp=&lt;saddr&gt; severityType=&lt;severity&gt; sourceHost=&lt;shost&gt; productVersion=&lt;fld1&gt; maxMatches=&lt;fld2&gt; timeStamp=&lt;event_time&gt; destinationHosts=&lt;dhost&gt;"/>
-
+	content="act=&lt;action&gt; duser=&lt;username&gt; fname=&lt;filename&gt; msg=&lt;msg&gt; suser=&lt;c_username&gt; cat=&lt;category&gt; sourceServiceName=&lt;service&gt; analyzedBy=&lt;cs_analyzedby&gt; loginName=&lt;cs_loginname&gt; sourceIp=&lt;saddr&gt; severityType=&lt;severity&gt; sourceHost=&lt;shost&gt; productVersion=&lt;fld1&gt; maxMatches=&lt;fld2&gt; timeStamp=&lt;event_time&gt; destinationHosts=&lt;dhost&gt;" />
 </DEVICEMESSAGES>

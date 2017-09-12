@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="unboundidids"
+	displayname="UnboundID Identity Data Store"
+	group="Access Control">
 <VERSION
-	xml="27"
-	checksum="97311582e41732882fec44de90f00c61"
+	xml="28"
+	checksum="31d93431a31036c9eb4adc7ab55f46a7"
 	revision="102"
-	enVision="35010000"
 	device="2.0" />
 
  
@@ -22,10 +24,10 @@
 
 	
 <HEADER 
-    id1="9999" 
-    id2="9999"         
-    messageid="STRCAT('UNBOUNDIDIDS','_','TVM')"
-    content="&lt;hmonth&gt; &lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hostname&gt; &lt;p_msgid1&gt; &lt;p_msgid2&gt; &lt;hfld1&gt; requesterIP=&lt;hfld2&gt; &lt;!payload:hfld1&gt;" />
+	id1="9999" 
+	id2="9999"         
+	messageid="STRCAT('UNBOUNDIDIDS','_','TVM')"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hostname&gt; &lt;p_msgid1&gt; &lt;p_msgid2&gt; &lt;hfld1&gt; requesterIP=&lt;hfld2&gt; &lt;!payload:hfld1&gt;" />
 	
  
 
@@ -33,42 +35,30 @@
 	name="getEventLegacyCategory"
 	default="1605000000"
 	keyvaluepairs="MODIFY=&apos;1701020000&apos;" />
-
 <VALUEMAP
 	name="getEventLegacyCategoryName"
 	default="System.Normal Conditions"
 	keyvaluepairs="1701020000=&apos;Config.Changes.Modify&apos;" />	
-
 <VALUEMAP
     name="getEventCategoryActivity"
 	default="$NONE"
 	keyvaluepairs="SEARCH_REQUEST=&apos;Request&apos;|DELETE_RESULT=&apos;Delete&apos;|DELETE_REQUEST=&apos;Request&apos;|UNBIND_REQUEST=&apos;Request&apos;|BIND_REQUEST=&apos;Request&apos;|MODIFY_REQUEST=&apos;Request&apos;|MODIFY_RESULT=&apos;Modify&apos;|EXTENDED_REQUEST=&apos;Request&apos;|ADD_REQUEST=&apos;Request&apos;"/>		
-
 <VALUEMAP
 	    name="getEventCategoryOutcome"
 		default="$NONE"
 		keyvaluepairs="Success=&apos;Success&apos;|Failed=&apos;Failure&apos;" />
-
 		
 
 <MESSAGE
-	level="4"
-	parse="1"
-	parsedefvalue="1"
-	tableid="81"
 	id1="vasac_helper"
 	id2="vasac_helper"
 	eventcategory="1605000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%B %F %H:%U:%O&apos;,hmonth,hday,htime)&gt;&lt;process_id&gt;]: &lt;event_description&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%B %F %H:%U:%O&apos;,hmonth,hday,htime)&gt;"
+	content="&lt;process_id&gt;]: &lt;event_description&gt;" />
 
 
 			
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="UNBOUNDIDIDS_TVM" 
 	id2="UNBOUNDIDIDS_TVM" 
 	tagval="true"

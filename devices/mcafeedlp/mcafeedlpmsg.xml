@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="mcafeedlp"
+	displayname="McAfee Host DLP"
+	group="DLP">
 <VERSION
-	xml="10"
-	checksum="50fa9bf9915ed18c326796ccd1e00f49"
+	xml="11"
+	checksum="46e728934f5abd145258a899111ded5d"
 	revision="103"
-	enVision="35010000"
 	device="2.0" />
 
  
 <TAGVALMAP
 	pairdelimiter="^^" encapsulator="&quot;" />
-
 
 <HEADER 
 	id1="0001" 
@@ -23,7 +24,6 @@
 	messageid="STRCAT('MCAFEEDLP_TVM')"
 	content="%MCAFEEDLPTVM: &lt;hdate&gt; &lt;htime&gt;^^&lt;!payload&gt;" />
 
-
 		
 <VALUEMAP
 	name="getAction"
@@ -33,265 +33,175 @@
 	name="getSeverity"
 	default="$NONE"
 	keyvaluepairs="0=&apos;Information&apos;|1=&apos;Warning&apos;|2=&apos;Minor&apos;|3=&apos;Major&apos;|4=&apos;Critical&apos;" />
-
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_INSTALL" 
 	id2="AGENT_INSTALL" 
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_UP" 
 	id2="AGENT_UP" 
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_DOWN" 
 	id2="AGENT_DOWN" 
 	eventcategory="1611000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="POLICY_CHANGE" 
 	id2="POLICY_CHANGE" 
 	eventcategory="1502050000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_PING" 
 	id2="AGENT_PING" 
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="POLICY_APPLIED" 
 	id2="POLICY_APPLIED" 
 	eventcategory="1502000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_OVERRIDE_KEY_GENERATED" 
 	id2="AGENT_OVERRIDE_KEY_GENERATED" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_UNINSTALL_KEY_GENERATED" 
 	id2="AGENT_UNINSTALL_KEY_GENERATED" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_ENTERS_BYPASS" 
 	id2="AGENT_ENTERS_BYPASS" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="FILE_RELEASED_FROM_QUARANTINE" 
 	id2="FILE_RELEASED_FROM_QUARANTINE" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_UNQUARANTINE_KEY_GENERATED" 
 	id2="AGENT_UNQUARANTINE_KEY_GENERATED" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="AGENT_LEAVES_BYPASS" 
 	id2="AGENT_LEAVES_BYPASS" 
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="SAFE_MODE_WAS_DETECTED" 
 	id2="SAFE_MODE_WAS_DETECTED" 
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="FILE_REP_GENERAL_FAILURE" 
 	id2="FILE_REP_GENERAL_FAILURE" 
 	eventcategory="1603000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="DEVICE_PLUG" 
 	id2="DEVICE_PLUG" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="DEVICE_UNPLUG" 
 	id2="DEVICE_UNPLUG" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="UKNOWN_DEVICE_PLUGGED" 
 	id2="UKNOWN_DEVICE_PLUGGED" 
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="INCOMING_FS" 
 	id2="INCOMING_FS" 
 	eventcategory="1001030000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_FS" 
 	id2="OUTGOING_FS" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_FS_REMOVABLE" 
 	id2="OUTGOING_FS_REMOVABLE" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_EMAIL" 
 	id2="OUTGOING_EMAIL" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_PRINTER" 
 	id2="OUTGOING_PRINTER" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_NETWORK" 
 	id2="OUTGOING_NETWORK" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_HTTP" 
 	id2="OUTGOING_HTTP" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_MEMORY_VIA_FS" 
 	id2="OUTGOING_MEMORY_VIA_FS" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="OUTGOING_MEMORY_VIA_SCREEN_CAPTURE" 
 	id2="OUTGOING_MEMORY_VIA_SCREEN_CAPTURE" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="DISCOVERY" 
 	id2="DISCOVERY" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="73" 
 	id1="DISCOVERY_SUMMARY_REPORT" 
 	id2="DISCOVERY_SUMMARY_REPORT" 
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt; &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@logon_id:*PARMVAL(c_username)&gt;"
+	content=" &lt;directory&gt;^^&lt;fld80&gt;^^&lt;version&gt;^^&lt;policy_id&gt;^^&lt;fld81&gt;^^&lt;effective_time&gt;^^&lt;policyname&gt;^^&lt;fld82&gt;^^&lt;c_username&gt;^^&lt;shost&gt;^^&lt;fld83&gt;^^&lt;event_type&gt;^^&lt;event_description&gt;^^&lt;fld1&gt;^^&lt;event_counter&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;application&gt;^^&lt;recorded_time&gt;^^&lt;fld88&gt;^^&lt;info&gt;^^&lt;forensic_info&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="73"
 	id1="MCAFEEDLP_TVM"
 	id2="MCAFEEDLP_TVM"
 	eventcategory="1901000000"

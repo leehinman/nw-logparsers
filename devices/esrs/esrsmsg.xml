@@ -1,256 +1,167 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="esrs"
+	displayname="EMC Secure Remote Support"
+	group="Access Control">
 <VERSION
-	xml="2"
-	checksum="08fa750265f7d8f291e87c8cefe72065"
+	xml="4"
+	checksum="ccd622282d7d7cfa5870e20eb2c54786"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
-
  
 <HEADER
-		id1="0001"
-		id2="0001"
-		content="&lt;hfld1&gt; &lt;hfld2&gt;,&lt;hfld3&gt;: EMC Policy Manager Audit: &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt; &lt;hfld9&gt;, &lt;hfld10&gt;, &lt;hfld11&gt;, &lt;messageid&gt; &lt;!payload:hfld4&gt;"/>
+	id1="0001"
+	id2="0001"
+	content="&lt;hfld1&gt; &lt;hfld2&gt;,&lt;hfld3&gt;: EMC Policy Manager Audit: &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt; &lt;hfld9&gt;, &lt;hfld10&gt;, &lt;hfld11&gt;, &lt;messageid&gt; &lt;!payload:hfld4&gt;"/>
 		
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="User_Logged_In" 
 	id2="User" 
 	eventcategory="1401060000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Logged In"/> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Logged In" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="User_Logged_out" 
 	id2="User" 
 	eventcategory="1401070000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Logged out"/> 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Logged out" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Remote_Session_Started" 
 	id2="Remote" 
 	eventcategory="1204010000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@starttime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; started on device &lt;fld55&gt; with model &lt;fld21&gt; by remote user &lt;c_username&gt; from enterprise &lt;fld22&gt; at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;"/> 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@starttime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; started on device &lt;fld55&gt; with model &lt;fld21&gt; by remote user &lt;c_username&gt; from enterprise &lt;fld22&gt; at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Remote_Session_Status_Change_Started" 
 	id2="Remote" 
 	eventcategory="1204010000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@starttime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; status changed to Session Started at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;"/> 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@starttime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; status changed to Session Started at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Remote_Session_Terminated" 
 	id2="Remote" 
 	eventcategory="1204020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@endtime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; terminated at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;"/> 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@endtime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; terminated at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Remote_Session_Status_Change_End" 
 	id2="Remote" 
 	eventcategory="1204020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@endtime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; status changed to Session Ended at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;"/> 
-
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@endtime:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld16,fld17,fld18,fld20)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; status changed to Session Ended at &lt;fld15&gt; &lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; &lt;fld20&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Remote_Session_Status_Denied" 
 	id2="Remote" 
 	eventcategory="1204020000"
-	content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; status changed to Session Denied at &lt;fld15&gt;"/>
-
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Remote Session &lt;sessionid&gt; status changed to Session Denied at &lt;fld15&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Device_Processed_Action_Successful" 
 	id2="Device" 
 	eventcategory="1401050100"
-	content="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Execute&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Device &lt;fld55&gt; successfully processed Action: &lt;action&gt;: &lt;info&gt; Permission: &lt;policyname&gt;"/>
-
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Execute&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Device &lt;fld55&gt; successfully processed Action: &lt;action&gt;: &lt;info&gt; Permission: &lt;policyname&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Processed_Request_Accepted" 
 	id2="Processed" 
 	eventcategory="1401040000"
-	content="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Processed request for device &lt;fld55&gt; to accept pending action: Action: &lt;action&gt;; Permission: &lt;policyname&gt;; Parameters [Notes = &lt;fld23&gt;, Remote Application Name = &lt;process&gt;, Remote Session id = &lt;sessionid&gt;]"/>
-
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Processed request for device &lt;fld55&gt; to accept pending action: Action: &lt;action&gt;; Permission: &lt;policyname&gt;; Parameters [Notes = &lt;fld23&gt;, Remote Application Name = &lt;process&gt;, Remote Session id = &lt;sessionid&gt;]" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Pending_Action_Request" 
 	id2="Pending" 
 	eventcategory="1401040000"
-	content="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Request&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Unknown&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Pending action for device &lt;fld55&gt; timedout. Action: Action: &lt;action&gt;; Permission: &lt;policyname&gt;; Parameters [Notes = &lt;fld24&gt;, Remote Application Name = &lt;process&gt;, Remote Session id = &lt;sessionid&gt;]"/>
-
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Request&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Unknown&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Pending action for device &lt;fld55&gt; timedout. Action: Action: &lt;action&gt;; Permission: &lt;policyname&gt;; Parameters [Notes = &lt;fld24&gt;, Remote Application Name = &lt;process&gt;, Remote Session id = &lt;sessionid&gt;]" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Set_Right_Override" 
 	id2="Set" 
 	eventcategory="1401040000"
-	content="&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Set the right override for group &lt;fld55&gt; to right=(&lt;fld29&gt;)"/>
-
+	functions="&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Set the right override for group &lt;fld55&gt; to right=(&lt;fld29&gt;)" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Modified_Policy" 
 	id2="Modified" 
 	eventcategory="1402020300"
-	content="&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified policy: [&lt;policyname&gt;: &lt;info&gt;]]"/>
-
+	functions="&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified policy: [&lt;policyname&gt;: &lt;info&gt;]]" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Modified_Group" 
 	id2="Modified" 
 	eventcategory="1402010300"
-	content="&lt;@ec_subject:Group&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified group &lt;fld55&gt;.  group(name=&lt;fld59&gt;, description=&lt;fld33&gt;)"/>
-
+	functions="&lt;@ec_subject:Group&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified group &lt;fld55&gt;.  group(name=&lt;fld59&gt;, description=&lt;fld33&gt;)" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Modified_Action" 
 	id2="Modified" 
 	eventcategory="1402020300"
-	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified action: name=(&lt;action&gt;), description=(&lt;fld41&gt;), pending timeout=(&lt;fld42&gt;), permission[name=&lt;info&gt;]"/>
-
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified action: name=(&lt;action&gt;), description=(&lt;fld41&gt;), pending timeout=(&lt;fld42&gt;), permission[name=&lt;info&gt;]" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Modified_Permission" 
 	id2="Modified" 
 	eventcategory="1402020300"
-	content="&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified permission: , permission[name=(&lt;policyname&gt;), description=(&lt;fld44&gt;), right=(&lt;fld45&gt;), parameters=(&lt;info&gt;), group=(group(name=&lt;fld55&gt;, description=&lt;fld48&gt;))]"/>
-
-
+	functions="&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Modified permission: , permission[name=(&lt;policyname&gt;), description=(&lt;fld44&gt;), right=(&lt;fld45&gt;), parameters=(&lt;info&gt;), group=(group(name=&lt;fld55&gt;, description=&lt;fld48&gt;))]" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="User_Created" 
 	id2="User" 
 	eventcategory="1402020200"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Created: &lt;fld58&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Created: &lt;fld58&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="User_Updated" 
 	id2="User" 
 	eventcategory="1402020300"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Updated: &lt;fld58&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Updated: &lt;fld58&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Role_Created" 
 	id2="Role" 
 	eventcategory="1402020300"
-	content="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Role Created: &lt;fld39&gt;"/>
-
+	functions="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Role Created: &lt;fld39&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Role_Updated" 
 	id2="Role" 
 	eventcategory="1502050000"
-	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Role Updated: &lt;fld39&gt;"/>
-
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Role Updated: &lt;fld39&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Role_Deleted" 
 	id2="Role" 
 	eventcategory="1502040000"
-	content="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Role Deleted: &lt;fld39&gt;"/>
+	functions="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Role Deleted: &lt;fld39&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="User_Deleted" 
 	id2="User" 
 	eventcategory="1402020100"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Deleted: &lt;fld58&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, User Deleted: &lt;fld58&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Profile_Created" 
 	id2="Profile" 
 	eventcategory="1402020300"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Profile Created: &lt;fld40&gt;"/>
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Profile Created: &lt;fld40&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Profile_Updated" 
 	id2="Profile" 
 	eventcategory="1502050000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Profile Updated: &lt;fld40&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Profile Updated: &lt;fld40&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Profile_Deleted" 
 	id2="Profile" 
 	eventcategory="1502040000"
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Profile Deleted: &lt;fld40&gt;"/>
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld5,fld6,fld7,fld9)&gt;"
+	content=" &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;timezone&gt; &lt;fld9&gt;, &lt;group&gt;, &lt;username&gt;, Profile Deleted: &lt;fld40&gt;" />
 </DEVICEMESSAGES>

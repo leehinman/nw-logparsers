@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="59"
-	checksum="41a73fbbcb70240d29efc033d32dec3a"
-	revision="109"
+	xml="62"
+	checksum="39dfac7a06c527979b6755b4dd78388b"
+	revision="110"
 	device="2.0" />
 
  
@@ -371,7 +371,7 @@
 	id2="SNMP_TRAP_SENT" 
 	eventcategory="1603000000" 
 	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="  &lt;obj_type&gt; ( entityName = &quot;&lt;obj_name&gt;(&lt;info&gt;...&quot;, alarmEntityCurState = &lt;event_state&gt;, sysIpAddress = &lt;hostip&gt;)" />
+	content="  &lt;obj_type&gt; ( &lt;space&gt;entityName = {&quot;&lt;obj_name&gt;(&lt;info&gt;...&quot;,|&quot;&lt;obj_name&gt;...&quot;,} alarmEntityCurState = &lt;event_state&gt;, {svcServiceFullName.&lt;fld2&gt; = &quot;&lt;service&gt;&quot;, nsPartitionName = &lt;fld4&gt;|vsvrFullName.&lt;fld3&gt; = &quot;&lt;obj_server&gt;&quot;, nsPartitionName = &lt;fld4&gt;|svcGrpMemberFullName.&lt;fld6&gt; = &quot;&lt;fld7&gt;&quot;, nsPartitionName = &lt;fld4&gt;|sysIpAddress = &lt;hostip&gt;})" />
 <MESSAGE 
 	id1="SNMP_TRAP_SENT8" 
 	id2="SNMP_TRAP_SENT" 
@@ -389,7 +389,7 @@
 	id2="SNMP_TRAP_SENT" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="  &lt;obj_type&gt; ( haPeerSystemState = &quot;&lt;event_state&gt;&quot;, sysIpAddress = &lt;hostip&gt;)" />
+	content="  &lt;obj_type&gt; ( &lt;space&gt;haPeerSystemState = &quot;&lt;event_state&gt;&quot;, sysIpAddress = &lt;hostip&gt;)" />
 <MESSAGE 
 	id1="SNMP_TRAP_SENT11" 
 	id2="SNMP_TRAP_SENT" 
@@ -449,7 +449,7 @@
 	id2="SNMP_TRAP_SENT" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="  &lt;obj_type&gt; ( &lt;space&gt; {partition id = &lt;fld12&gt;, nsUserName = &quot;&lt;username&gt;&quot;,|nsUserName = &quot;&lt;username&gt;&quot;,} configurationCmd = &quot;&lt;action&gt;&quot;, authorizationStatus = &lt;event_state&gt;, commandExecutionStatus = &lt;disposition&gt;, {commandFailureReason = &quot;&lt;result&gt;&quot;, nsClientIPAddr = &lt;saddr&gt;, nsPartitionName = &lt;fld1&gt;|nsClientIPAddr = &lt;saddr&gt;, nsPartitionName = &lt;fld1&gt;|nsClientIPAddr = &lt;saddr&gt;, sysIpAddress =&lt;hostip&gt; |sysIpAddress =&lt;hostip&gt;})" />
+	content="  &lt;obj_type&gt; ( &lt;space&gt; {partition id = &lt;fld12&gt;, nsUserName = &quot;&lt;username&gt;&quot;,|nsUserName = &quot;&lt;username&gt;&quot;,} configurationCmd = &quot;&lt;action&gt;&quot;, authorizationStatus = &lt;event_state&gt;, commandExecutionStatus = &lt;disposition&gt;, {commandFailureReason = &quot;&lt;result&gt;&quot;, nsClientIPAddr = &lt;saddr&gt;, sysIpAddress =&lt;hostip&gt;|commandFailureReason = &quot;&lt;result&gt;&quot;, nsClientIPAddr = &lt;saddr&gt;, nsPartitionName = &lt;fld1&gt;|nsClientIPAddr = &lt;saddr&gt;, nsPartitionName = &lt;fld1&gt;|nsClientIPAddr = &lt;saddr&gt;, sysIpAddress =&lt;hostip&gt; |sysIpAddress =&lt;hostip&gt;})" />
 <MESSAGE 
 	id1="SNMP_TRAP_SENT1" 
 	id2="SNMP_TRAP_SENT" 
@@ -532,6 +532,18 @@
 	eventcategory="1605000000" 
 	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content="  &lt;info&gt; (sysIpAddress = &lt;hostip&gt;)" />
+<MESSAGE 
+	id1="SNMP_TRAP_SENT28" 
+	id2="SNMP_TRAP_SENT" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&lt;obj_type&gt;(lldpRemLocalPortNum.&lt;fld1&gt;= &quot;&lt;fld5&gt;&quot;, lldpRemChassisId.&lt;fld2&gt;= &quot;&lt;dmacaddr&gt;&quot;, lldpRemPortId.&lt;fld3&gt;= &quot;&lt;dinterface&gt;&quot;, sysIpAddress =&lt;hostip&gt;)"/>
+<MESSAGE 
+	id1="SNMP_TRAP_SENT29" 
+	id2="SNMP_TRAP_SENT" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&lt;obj_type&gt;(haNicMonitorSucceeded = &quot;&lt;fld1&gt;&quot;, sysIpAddress =&lt;hostip&gt;)"/>
 <MESSAGE 
 	id1="SSLVPN_CLISEC_CHECK" 
 	id2="SSLVPN_CLISEC_CHECK" 

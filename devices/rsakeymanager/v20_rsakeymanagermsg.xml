@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="rsakeymanager"
+	displayname="RSA Key Manager"
+	group="Access Control">
 <VERSION
-	xml="16"
-	checksum="0ef9d9964d8b0b0dfd0c7479c6c3b85e"
+	xml="17"
+	checksum="29a91122631579be7adc4802a4ea2ea1"
 	revision="0"
-	enVision="37000016"
 	device="2.0" />
-
 <HEADER 
 	id1="0001"
 	id2="0001"
-	devts="TS(&apos;%W-%G-%F %H:%T:%S&apos;,hdate)" 		  
 	content="%RSARKMS ^ &lt;hdate&gt;,&lt;hfld1&gt; &lt;htzone&gt; ^ &lt;messageid&gt; ^ &lt;!payload:messageid&gt;" /> 
 
 <HEADER 
@@ -20,306 +19,188 @@
 	content="&lt;hdate&gt;,&lt;hfld1&gt; - [&lt;messageid&gt;] &lt;!payload:messageid&gt;" /> 
 
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="RKMA_MONITORING_EVENT" 
 	id2="RKMA_MONITORING_EVENT" 
 	eventcategory="1604000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; RKMA_MONITORING_EVENT]HostName=&lt;hostname&gt;,&lt;info&gt;" /> 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" RKMA_MONITORING_EVENT]HostName=&lt;hostname&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="VIEW_MONITORING_EVENT" 
 	id2="VIEW_MONITORING_EVENT" 
 	eventcategory="1401000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; VIEW_MONITORING_EVENT] User &lt;username&gt; viewed the monitoring screen." /> 
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" VIEW_MONITORING_EVENT] User &lt;username&gt; viewed the monitoring screen." />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultSecurityProviders" 
 	id2="DefaultSecurityProviders" 
 	eventcategory="1610000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultSecurityProviders ^ &lt;fld1&gt; ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;info&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultSecurityProviders ^ &lt;fld1&gt; ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultProviderEnforcer" 
 	id2="DefaultProviderEnforcer" 
 	eventcategory="1610000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultProviderEnforcer ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;info&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultProviderEnforcer ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultRandomAssembler" 
 	id2="DefaultRandomAssembler" 
 	eventcategory="1610000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultRandomAssembler ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : Internal|&lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;event_description&gt;, algorithm: &lt;fld4&gt;, provider: &lt;fld5&gt; " /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultRandomAssembler ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : Internal|&lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;event_description&gt;, algorithm: &lt;fld4&gt;, provider: &lt;fld5&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultSecretKeyAssembler:01" 
 	id2="DefaultSecretKeyAssembler" 
 	eventcategory="1610000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultSecretKeyAssembler ^ &lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;) ^ &lt;severity&gt; ^ &lt;fld3&gt; ^ &lt;action&gt; - &lt;info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultSecretKeyAssembler ^ &lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;) ^ &lt;severity&gt; ^ &lt;fld3&gt; ^ &lt;action&gt; - &lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultSecretKeyAssembler" 
 	id2="DefaultSecretKeyAssembler" 
 	eventcategory="1610000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultSecretKeyAssembler ^ &lt;fld1&gt; ^ &lt;severity&gt; ^ &lt;fld3&gt; ^ &lt;action&gt; - &lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultSecretKeyAssembler ^ &lt;fld1&gt; ^ &lt;severity&gt; ^ &lt;fld3&gt; ^ &lt;action&gt; - &lt;info&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="LoginAction:01" 
 	id2="LoginAction" 
 	eventcategory="1401060000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; LoginAction ^ &lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;) ^ &lt;severity&gt; ^ &lt;fld3&gt; ^ Client : &lt;saddr&gt;, Logged in :&lt;fld10&gt; (&lt;fld12&gt;) as &lt;user_role&gt; using &lt;authmethod&gt;" /> 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" LoginAction ^ &lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;) ^ &lt;severity&gt; ^ &lt;fld3&gt; ^ Client : &lt;saddr&gt;, Logged in :&lt;fld10&gt; (&lt;fld12&gt;) as &lt;user_role&gt; using &lt;authmethod&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="LoginAction" 
 	id2="LoginAction" 
 	eventcategory="1401060000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; LoginAction ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Logged in: &lt;fld10&gt; (&lt;fld12&gt;) as &lt;user_role&gt; " /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" LoginAction ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Logged in: &lt;fld10&gt; (&lt;fld12&gt;) as &lt;user_role&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuthenticationServletFilter" 
 	id2="AuthenticationServletFilter" 
 	eventcategory="1401030000" 
-	content="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Error&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuthenticationServletFilter ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;fld6&gt; " /> 
-
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Error&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuthenticationServletFilter ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;fld6&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="LogKeyClassNatural" 
 	id2="LogKeyClassNatural" 
 	eventcategory="1613040100" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; LogKeyClassNatural ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;obj_type&gt; &lt;obj_name&gt; generated in class &lt;fld7&gt; " /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" LogKeyClassNatural ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;obj_type&gt; &lt;obj_name&gt; generated in class &lt;fld7&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultKeyClassNatural" 
 	id2="DefaultKeyClassNatural" 
 	eventcategory="1613040100" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultKeyClassNatural ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;obj_type&gt; &lt;obj_name&gt; generated in class &lt;fld7&gt; " /> 
-
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultKeyClassNatural ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;obj_type&gt; &lt;obj_name&gt; generated in class &lt;fld7&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple" 
 	id2="AuditSimple" 
 	eventcategory="1401040000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Get security objects with uuids [ &lt;obj_name&gt; ] from class &lt;fld7&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Get security objects with uuids [ &lt;obj_name&gt; ] from class &lt;fld7&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:01" 
 	id2="AuditSimple" 
 	eventcategory="1401050100" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Returned security object with uuids &lt;obj_name&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Returned security object with uuids &lt;obj_name&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:02" 
 	id2="AuditSimple" 
 	eventcategory="1401050100" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Returned key &lt;obj_name&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Returned key &lt;obj_name&gt;" />
 	
-
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:03" 
 	id2="AuditSimple" 
 	eventcategory="1402010200" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created identity group &lt;group&gt;" /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created identity group &lt;group&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:04" 
 	id2="AuditSimple" 
 	eventcategory="1402020200" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created identity &lt;fld8&gt;" /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created identity &lt;fld8&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:05" 
 	id2="AuditSimple" 
 	eventcategory="1502030000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created security class &lt;fld6&gt; with group &lt;group&gt; " /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created security class &lt;fld6&gt; with group &lt;group&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:06" 
 	id2="AuditSimple" 
 	eventcategory="1502030000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created crypto policy &lt;policy_id&gt;"/> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created crypto policy &lt;policy_id&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:07" 
 	id2="AuditSimple" 
 	eventcategory="1402030000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} {Bound|Unbound} groups [ &lt;group&gt; ] to identity &lt;c_username&gt;"/> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} {Bound|Unbound} groups [ &lt;group&gt; ] to identity &lt;c_username&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:08" 
 	id2="AuditSimple" 
 	eventcategory="1402030000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} {Bound|Unbound} role &lt;user_role&gt; to identity &lt;c_username&gt;"/> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} {Bound|Unbound} role &lt;user_role&gt; to identity &lt;c_username&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:10" 
 	id2="AuditSimple" 
 	eventcategory="1402010100" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Deleted Identity Group &lt;group&gt;"/> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Deleted Identity Group &lt;group&gt;" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:11" 
 	id2="AuditSimple" 
 	eventcategory="1402020100" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Deleted Identity &lt;c_username&gt;  "/> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Deleted Identity &lt;c_username&gt;  " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="AuditSimple:09" 
 	id2="AuditSimple" 
 	eventcategory="1401040000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; AuditSimple ^ { &lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;) | &lt;connectionid&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;fld7&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" AuditSimple ^ { &lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;) | &lt;connectionid&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;fld7&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="LogoutAction" 
 	id2="LogoutAction"
 	eventcategory="1401070000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; LogoutAction ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Logged out: &lt;fld11&gt; (&lt;fld12&gt;)" /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" LogoutAction ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Logged out: &lt;fld11&gt; (&lt;fld12&gt;)" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultAuditStatements" 
 	id2="DefaultAuditStatements" 
 	eventcategory="1613040200" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultAuditStatements ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} State changed to &lt;disposition&gt; for security object with {muid|uuid} &lt;obj_name&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultAuditStatements ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} State changed to &lt;disposition&gt; for security object with {muid|uuid} &lt;obj_name&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81"
 	id1="DefaultAuditStatements:01" 
 	id2="DefaultAuditStatements" 
 	eventcategory="1402040100" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultAuditStatements ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} {Bound|Unbound} &lt;authmethod&gt; authentication to identity &lt;fld8&gt; "/>
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultAuditStatements ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} {Bound|Unbound} &lt;authmethod&gt; authentication to identity &lt;fld8&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81"
 	id1="DefaultAuditStatements:02" 
 	id2="DefaultAuditStatements" 
 	eventcategory="1502030000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultAuditStatements ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created key class &lt;fld7&gt; with group &lt;group&gt; " />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultAuditStatements ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} Created key class &lt;fld7&gt; with group &lt;group&gt; " />
 <MESSAGE 
-	level="2" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="TransactionLayer" 
 	id2="TransactionLayer" 
 	eventcategory="1603000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; TransactionLayer ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;fld9&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" TransactionLayer ^ {&lt;fld1&gt; &lt;username&gt; (&lt;fld2&gt;)|&lt;fld1&gt;} ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;fld9&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="DefaultUpgradeService" 
 	id2="DefaultUpgradeService" 
 	eventcategory="1610000000" 
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt; DefaultUpgradeService ^ &lt;fld1&gt; ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;info&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%T:%S&apos;,hdate)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" DefaultUpgradeService ^ &lt;fld1&gt; ^ &lt;severity&gt; ^ {&lt;fld3&gt; ^ Client : &lt;saddr&gt;,|&lt;fld3&gt; ^} &lt;info&gt;" />
 </DEVICEMESSAGES>

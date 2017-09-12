@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="iseries"
+	displayname="iSeries"
+	group="Midrange">
 <VERSION
-	xml="42"
-	checksum="63dddc815912bc7b74fd29feec9e7c10"
+	xml="43"
+	checksum="c5bb32042b480d50a804085d4391223d"
 	revision="97"
-    enVision="21050025"
     device="2.0" />
-
 <TAGVALMAP
             delimiter="| &quot;"/>
 
 		
-
  <VALUEMAP
 	    name="getEventCategorySubject"
 		default="$NONE"
@@ -26,13 +26,12 @@
 	    name="getEventCategoryTheme"
 		default="$NONE"
 		keyvaluepairs="VL=&apos;Authentication&apos;|JS=&apos;Configuration&apos;|SF=&apos;Configuration&apos;|ND=&apos;Policy&apos;|NE=&apos;Policy&apos;|SG=&apos;Configuration&apos;|AU=&apos;Configuration&apos;|AD=&apos;Configuration&apos;|RA=&apos;Configuration&apos;|CA=&apos;Configuration&apos;|AF=&apos;Authentication&apos;|VV=&apos;Configuration&apos;|CQ=&apos;Configuration&apos;|JD=&apos;Configuration&apos;|VU=&apos;Configuration&apos;|ZC=&apos;Configuration&apos;|RO=&apos;Configuration&apos;|PG=&apos;Configuration&apos;|SD=&apos;Configuration&apos;|VA=&apos;Configuration&apos;|RZ=&apos;Configuration&apos;|VF=&apos;Communication&apos;|CU=&apos;Configuration&apos;|CD=&apos;Configuration&apos;|VC=&apos;Communication&apos;|CV=&apos;Communication&apos;|CO=&apos;Configuration&apos;|CY=&apos;Configuration&apos;|DO=&apos;Configuration&apos;|LD=&apos;Configuration&apos;|DI=&apos;Configuration&apos;|YC=&apos;AccessControl&apos;|YR=&apos;AccessControl&apos;|DS=&apos;Configuration&apos;|X1=&apos;Authentication&apos;|IS=&apos;Authentication&apos;|IP=&apos;Communication&apos;|PW=&apos;Password&apos;|IR=&apos;Policy&apos;|KF=&apos;Authentication&apos;|VN=&apos;Authentication&apos;|X0=&apos;Authentication&apos;|VP=&apos;Password&apos;|OM=&apos;Configuration&apos;|OW=&apos;Configuration&apos;|OR=&apos;Configuration&apos;|AP=&apos;AccessControl&apos;|ML=&apos;Communication&apos;|O2=&apos;AccessControl&apos;|O1=&apos;AccessControl&apos;|O3=&apos;AccessControl&apos;|PS=&apos;UserGroup&apos;|PA=&apos;Configuration&apos;|ZR=&apos;AccessControl&apos;|RP=&apos;Configuration&apos;|RQ=&apos;Configuration&apos;|RJ=&apos;Configuration&apos;|RU=&apos;Configuration&apos;|SK=&apos;Authentication&apos;|SO=&apos;Configuration&apos;|GS=&apos;Configuration&apos;|=&apos;AccessControl&apos;|SE=&apos;Configuration&apos;|EV=&apos;Configuration&apos;|SM=&apos;Configuration&apos;|SV=&apos;Configuration&apos;|ST=&apos;Configuration&apos;|CP=&apos;Configuration&apos;|VO=&apos;Configuration&apos;|CG=&apos;Configuration&apos;|JC=&apos;Configuration&apos;|CT=&apos;Configuration&apos;|XD=&apos;Configuration&apos;|DF=&apos;Configuration&apos;|FM=&apos;Configuration&apos;|DZ=&apos;Configuration&apos;|DH=&apos;Configuration&apos;|IM=&apos;Authentication&apos;|DE=&apos;Configuration&apos;|FD=&apos;Configuration&apos;|MR=&apos;Configuration&apos;|MS=&apos;Configuration&apos;" />
-
  <VALUEMAP
 	    name="getEventCategoryOutcome"
 		default="$NONE"
 		keyvaluepairs="VL=&apos;Failure&apos;|SG=&apos;Error&apos;|AF=&apos;Failure&apos;|PW=&apos;Failure&apos;|VP=&apos;Error&apos;" />
 		
- <HEADER 
+<HEADER 
 	id1="0001" 
 	id2="0001" 
 	messageid="*STRCAT('ISERIES','_','TVM')"
@@ -41,885 +40,484 @@
 <HEADER 
 	id1="0002" 
 	id2="0002" 
-	devts="TS('%W-%G-%F-%H.%U.%O',timestamp)"
 	content="%ISERIES-&lt;messageid&gt;: &lt;fld1&gt;,&lt;seqnum&gt;,&lt;fld2&gt;,&lt;hevent_id&gt;,&lt;timestamp&gt;,&lt;hjobname&gt;,&lt;c_username&gt;,&lt;number&gt;,&lt;application&gt;,&lt;library&gt;,&lt;device&gt;,&lt;prog_asp_num&gt;,&lt;profile&gt;,&lt;filesystem&gt;,&lt;count&gt;,&lt;rec_library&gt;,&lt;rec_asp_device&gt;,&lt;rec_asp_num&gt;,&lt;index&gt;,&lt;id&gt;,&lt;id2&gt;,&lt;id3&gt;,&lt;addr&gt;,&lt;sport&gt;,&lt;saddr&gt;,&lt;packet_length&gt;,&lt;!payload:packet_length&gt;" />
-<SUMDATA 
-	bucket="NIC_B_DEVICES" 
-	key="event_id"
-	fields="1,0" />
-
-<SUMDATA 
-	bucket="NIC_B_CATEGORIES" 
-	key="hjobname"
-	fields="1,0" />
-
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AccountLimitExceeded" 
 	id2="AccountLimitExceeded" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1301000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;resultcode&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;info&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;resultcode&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ActionsThatLeftJobs" 
 	id2="ActionsThatLeftJobs" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;type1&gt;,&lt;jobname&gt;,&lt;info&gt;" /> 
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;type1&gt;,&lt;jobname&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ActionsToSpooledFiles" 
 	id2="ActionsToSpooledFiles" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;type&gt;,&lt;jobname&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;type&gt;,&lt;jobname&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AppnDirectorySearchFilterViolation" 
 	id2="AppnDirectorySearchFilterViolation" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AppnEndPointFilterViolation" 
 	id2="AppnEndPointFilterViolation" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AsynchronousSignals" 
 	id2="AsynchronousSignals" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;jobnum&gt;,&lt;action&gt;,&lt;fld2&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;jobnum&gt;,&lt;action&gt;,&lt;fld2&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AttributeChanges" 
 	id2="AttributeChanges" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;change_attribute&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;change_attribute&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AuditChanges" 
 	id2="AuditChanges" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;obj_value&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;obj_value&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AuthorityChangeDuringRestore" 
 	id2="AuthorityChangeDuringRestore" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AuthorityChanges" 
 	id2="AuthorityChanges" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld55&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld55&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="AuthorityFail" 
 	id2="AuthorityFail" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;resultcode&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;resultcode&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="TypeURecord" 
 	id2="AuthorityFail" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1301000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="      &lt;data&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangeServiceStatus" 
 	id2="ChangeServiceStatus" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;result&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;result&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangeCrqdObject" 
 	id2="ChangeCrqdObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangeJobDescription" 
 	id2="ChangeJobDescription" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;event_description&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;fld55&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;event_description&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;fld55&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangeNetProfile" 
 	id2="ChangeNetProfile" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;type&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;action&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;type&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;action&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangeObject" 
 	id2="ChangeObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangeObjectOwner" 
 	id2="ChangeObjectOwner" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangePrimaryGroup" 
 	id2="ChangePrimaryGroup" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangesToSysDistDir" 
 	id2="ChangesToSysDistDir" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;type1&gt;,&lt;fld2&gt;,&lt;profile&gt;,&lt;device&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;type1&gt;,&lt;fld2&gt;,&lt;profile&gt;,&lt;device&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangingAnAccessControlList" 
 	id2="ChangingAnAccessControlList" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;result&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;action&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;result&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;action&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ChangingAPrimaryGroup" 
 	id2="ChangingAPrimaryGroup" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ClosingServerFiles" 
 	id2="ClosingServerFiles" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801030000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;resultcode&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;resultcode&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ClusterOperations" 
 	id2="ClusterOperations" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;result&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;result&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="CommandStringAudit:02" 
 	id2="CommandStringAudit" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@fld61:*PARMVAL(event_type)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,{ &lt;fld55&gt;, | &lt;fld55&gt;  }&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,{ &lt;fld55&gt;, | &lt;fld55&gt;  }&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="CommandStringAudit:01" 
 	id2="CommandStringAudit" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;," />
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;," />
 	
 	
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="Connection" 
 	id2="Connection" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;action&gt;,&lt;jobname&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;fld2&gt;,&lt;resultcode&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;action&gt;,&lt;jobname&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;fld2&gt;,&lt;resultcode&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ConnectionVerification" 
 	id2="ConnectionVerification" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;&lt;@fld61:*PARMVAL(laddr)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;profile&gt;,&lt;protocol&gt;,&lt;laddr&gt;,&lt;saddr&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;profile&gt;,&lt;protocol&gt;,&lt;laddr&gt;,&lt;saddr&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="CreateObject" 
 	id2="CreateObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="CryptographicConfig" 
 	id2="CryptographicConfig" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="DeleteObject" 
 	id2="DeleteObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;  &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="   &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="DirectoryEntry" 
 	id2="DirectoryEntry" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,{&lt;event_type&gt;,&lt;info&gt; | &lt;info&gt;}" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,{&lt;event_type&gt;,&lt;info&gt; | &lt;info&gt;}" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="DirectoryServices" 
 	id2="DirectoryServices" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;resultcode&gt;,&lt;change_attribute&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;resultcode&gt;,&lt;change_attribute&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="DLOChange" 
 	id2="DLOChange" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;event_computer&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;event_computer&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="DLORead" 
 	id2="DLORead" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;event_computer&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;event_computer&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="DstSecurityPwdReset" 
 	id2="DstSecurityPwdReset" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;fld2&gt;,&lt;type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;fld2&gt;,&lt;type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="GenericRecord" 
 	id2="GenericRecord" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;action&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="IdentityToken" 
 	id2="IdentityToken" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1304000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;resultcode&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;resultcode&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="InternetSecurityManagement" 
 	id2="InternetSecurityManagement" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;daddr&gt;,&lt;dport&gt;,&lt;saddr&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;daddr&gt;,&lt;dport&gt;,&lt;saddr&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="InterprocessCommunication" 
 	id2="InterprocessCommunication" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="InvalidPassword" 
 	id2="InvalidPassword" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1301000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;username&gt;,&lt;device&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;fld2&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;username&gt;,&lt;device&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;fld2&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="InvalidPassword:01" 
 	id2="InvalidPassword" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1301000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;username&gt;,&lt;device&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;fld2&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;username&gt;,&lt;device&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;fld2&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="IpRulesActions" 
 	id2="IpRulesActions" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="KeyRingFile" 
 	id2="KeyRingFile" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;type1&gt;,&lt;action&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;type1&gt;,&lt;action&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="Logging" 
 	id2="Logging" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;type&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;privilege&gt;,&lt;resultcode&gt;,&lt;event_description&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;type&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;privilege&gt;,&lt;resultcode&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="NetAuthentication" 
 	id2="NetAuthentication" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;result&gt;,&lt;fld2&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;result&gt;,&lt;fld2&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="NetPasswordError" 
 	id2="NetPasswordError" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;resultcode&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;resultcode&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="NetResourceAccess" 
 	id2="NetResourceAccess" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;result&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;result&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="NetworkAttributeChange" 
 	id2="NetworkAttributeChange" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;change_attribute&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;change_attribute&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ObjectMoveOrRename" 
 	id2="ObjectMoveOrRename" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;obj_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;obj_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ObjectOwnershipChanged" 
 	id2="ObjectOwnershipChanged" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ObjectRestore" 
 	id2="ObjectRestore" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;result&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;result&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ObtainAdoptedAuthority" 
 	id2="ObtainAdoptedAuthority" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1302000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="OfficeServicesMailActions" 
 	id2="OfficeServicesMailActions" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605020000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;username&gt;,&lt;daddr&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;username&gt;,&lt;daddr&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="OpticalAccessDual" 
 	id2="OpticalAccessDual" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="OpticalAccessSingle" 
 	id2="OpticalAccessSingle" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;obj_name&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;obj_name&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="OpticalAccessVolume" 
 	id2="OpticalAccessVolume" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="PrintedOutput" 
 	id2="PrintedOutput" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1605000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@profile1:*HDR(profile)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;result&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;jobnum&gt;,&lt;profile&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;result&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;jobnum&gt;,&lt;profile&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ProfileSwap" 
 	id2="ProfileSwap" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt;&lt;@username:*PARMVAL(profile)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;fld2&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@username:*PARMVAL(profile)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;fld2&gt;,&lt;change_old&gt;,&lt;change_new&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ProgramChanged" 
 	id2="ProgramChanged" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;jobname&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;jobname&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ReadObject" 
 	id2="ReadObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;event_description&gt;,&lt;info&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;event_description&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ReadObject:01" 
 	id2="ReadObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1501000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;event_description&gt;" />
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;type&gt;,&lt;event_description&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="RestoringAdoptedAuthorityProg" 
 	id2="RestoringAdoptedAuthorityProg" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;jobname&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;jobname&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="RestoringCrqdObject" 
 	id2="RestoringCrqdObject" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1302000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="RestoringJobDescription" 
 	id2="RestoringJobDescription" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;event_description&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;event_description&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="RestoringUserProfileAuthority" 
 	id2="RestoringUserProfileAuthority" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;username&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;username&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SecureSocketsConnections" 
 	id2="SecureSocketsConnections" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;daddr&gt;,&lt;dport&gt;,&lt;saddr&gt;,&lt;sport&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;daddr&gt;,&lt;dport&gt;,&lt;saddr&gt;,&lt;sport&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ServerSecurity" 
 	id2="ServerSecurity" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;&lt;@fld61:*PARMVAL(password)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;type&gt;,&lt;password&gt;,&lt;device&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;type&gt;,&lt;password&gt;,&lt;device&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ServerSession" 
 	id2="ServerSession" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1801000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@fld61:*PARMVAL(date)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;action&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;privilege&gt;,&lt;resultcode&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;action&gt;,&lt;device&gt;,&lt;date&gt;,&lt;time&gt;,&lt;event_computer&gt;,&lt;username&gt;,&lt;privilege&gt;,&lt;resultcode&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SocketDescGivenToAnotherJob" 
 	id2="SocketDescGivenToAnotherJob" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1603000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;info&gt; " />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content=" &lt;data&gt;,&lt;event_type&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;info&gt; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SOMMethodAccess" 
 	id2="SOMMethodAccess" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1401010000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SubsysRoutingEntryChanged" 
 	id2="SubsysRoutingEntryChanged" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;jobname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld55&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;jobname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld55&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SystemEnvVariables" 
 	id2="SystemEnvVariables" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SystemManagementChanges" 
 	id2="SystemManagementChanges" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;jobname&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;jobname&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="SytemValueChanged" 
 	id2="SytemValueChanged" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@fld61:*PARMVAL(service)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;service&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;service&gt;,&lt;change_new&gt;,&lt;change_old&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="UseOfServiceToos" 
 	id2="UseOfServiceToos" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1603000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@fld61:*PARMVAL(service)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;service&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;service&gt;,&lt;obj_name&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;jobname&gt;,&lt;username&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="UserProfile" 
 	id2="UserProfile" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1402000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt; &lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;&lt;@fld61:*PARMVAL(password)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;fld55&gt;,&lt;password_chg&gt;,&lt;password&gt;,&lt;password_expire&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;&lt;@profile1:*HDR(profile)&gt;"
+	content="     &lt;data&gt;,&lt;event_type&gt;,&lt;profile&gt;,&lt;library&gt;,&lt;obj_type&gt;,&lt;fld55&gt;,&lt;password_chg&gt;,&lt;password&gt;,&lt;password_expire&gt;,&lt;info&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="93"
 	id1="ValidationListActions" 
 	id2="ValidationListActions" 
-	summary="NIC_B_DEVICES;|NIC_B_CATEGORIES"
 	eventcategory="1701000000"
-	content="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt; &lt;@hjobname:*HDR(hjobname)&gt; &lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt; &lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt; &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;fld2&gt;,&lt;library&gt;,&lt;info&gt;" />
-
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F-%H.%U.%O&apos;,timestamp)&gt;&lt;@event_id:*HDR(hevent_id)&gt;&lt;@hjobname:*HDR(hjobname)&gt;&lt;@c_username:*HDR(c_username)&gt;&lt;@application:*HDR(application)&gt;&lt;@fld50:*HDR(filesystem)&gt;&lt;@saddr:*HDR(saddr)&gt;&lt;@jobnum:*HDR(number)&gt;&lt;@entry:*HDR(count)&gt;"
+	content="    &lt;data&gt;,&lt;event_type&gt;,&lt;type&gt;,&lt;fld2&gt;,&lt;library&gt;,&lt;info&gt;" />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="93"
 	id1="ISERIES_TVM"
 	id2="ISERIES_TVM"
 	eventcategory="1605000000"
 	missField="true"
 	tagval="true"
 	functions="&lt;@ec_subject:*getEventCategorySubject(event_id)&gt;&lt;@ec_activity:*getEventCategoryActivity(event_id)&gt;&lt;@ec_theme:*getEventCategoryTheme(event_id)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(event_id)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F-%H.%U.%O&apos;,event_time_string)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="ENTRY_NAME=&lt;event_type&gt;|ENTRY_LENGTH=&lt;fld1&gt;|HD_SEQ_NUMBER=&lt;seqnum&gt;|JNL_CODE=&lt;vendor_event_cat&gt;|JNL_ENTRY_TYPE=&lt;event_id&gt;|TIMESTAMP=&lt;event_time_string&gt;|HD_JOB_NAME=&lt;jobname&gt;|HD_USER_NAME=&lt;c_username&gt;|HD_JOB_NUMBER=&lt;jobnum&gt;|HD_PGM_NAME=&lt;application&gt;|HD_PGM_LIB=&lt;library&gt;|PGM_ASP_DEVICE=&lt;device&gt;|PGM_ASP_NUMBER=&lt;prog_asp_num&gt;|HD_OBJ_NAME=&lt;obj_name&gt;|HD_OBJ_LIB=&lt;filesystem&gt;|HD_MEMBER_NAME=&lt;fld3&gt;|COUNT/RRN=&lt;count&gt;|FLAG=&lt;fld4&gt;|COMMIT_CYC_ID=&lt;fld5&gt;|HD_USER_PROFILE=&lt;profile&gt;|SYS_NAME=&lt;hostid&gt;|JNL_ID=&lt;id&gt;|REF_CONSTRAINT=&lt;fld7&gt;|TRIGGER=&lt;fld8&gt;|INCOMP_DATA=&lt;fld9&gt;|IGN_RMVJRNCHG=&lt;fld10&gt;|MIN_ESD=&lt;fld11&gt;|OBJ_IND=&lt;fld12&gt;|SYS_SEQ=&lt;fld13&gt;|HD_RECEIVER=&lt;rec_library&gt;|RECEIVER_LIB=&lt;rec_asp_device&gt;|RECEIVER_ASP_DEVICE=&lt;rec_asp_num&gt;|RECEIVER_ASP_NUMBER=&lt;index&gt;|ARM_NUMBER=&lt;id&gt;|THREAD_ID=&lt;id2&gt;|THREAD_ID_HEX=&lt;fld17&gt;|ASP_NAME_VALID_LIST_LIB=&lt;fld18&gt;|LOG_UNIT_WORK=&lt;fld19&gt;|NULL_VALUE_IND=&lt;fld21&gt;|VALID_LIST=&lt;fld22&gt;|ENTRY_DATA_IND=&lt;fld24&gt;|ENTRY_ID_LENGTH=&lt;fld25&gt;|DATA_LENGTH=&lt;fld26&gt;|ENCRYPT_DATA_ATTR=&lt;fld27&gt;|X_CERT_ATTR=&lt;fld28&gt;|ENTRY_ID=&lt;fld29&gt;|ENTRY_DATA=&lt;fld30&gt;|HD_ADDR_FAMILY=&lt;fld31&gt;|ASP_NUMBER_VALID_LIST_LIB=&lt;fld56&gt;|HD_REMOTE_PORT=&lt;sport&gt;|REMOTE_ADDR=&lt;saddr&gt;|TRAN_ID=&lt;trans_id&gt;|ENTRY_DATA_LNGTH=&lt;packet_length&gt;|REASON=&lt;resultcode&gt;|SERVER_NAME=&lt;device&gt;|SERVER_DATE=&lt;date&gt;|SERVER_TIME=&lt;time&gt;|COMPUTER_NAME=&lt;event_computer&gt;|USER=&lt;username&gt;|ENTRY_TYPE=&lt;entry&gt;|JOB_TYPE=&lt;type&gt;|JOB_SUBTYPE=&lt;type1&gt;|JOB_NAME=&lt;jobname&gt;|JOB_USER_NAME=&lt;c_username&gt;|JOB_NUMBER=&lt;jobnum&gt;|DEVICE_NAME=&lt;device&gt;|EFF_USER_PROF=&lt;profile&gt;|OUT_QUE_LIB=&lt;fld93&gt;|PRINTER_DEVICE=&lt;fld94&gt;|LIB_LIST=&lt;fld95&gt;|EFF_GROUP_PROF_NAME=&lt;profile&gt;|JUID_DESC=&lt;fld98&gt;|JUID_FIELD=&lt;fld99&gt;|REAL_USER_PROF=&lt;profile&gt;|SAVE_USER_PROF=&lt;profile&gt;|REAL_GROUP_PROF=&lt;profile&gt;|SAVE_GROUP_PROF=&lt;profile&gt;|REAL_USER_CHG=&lt;fld104&gt;|EFF_USER_CHG=&lt;fld105&gt;|SAVE_USER_CHG=&lt;fld106&gt;|REAL_GROUP_CHG=&lt;fld107&gt;|EFF_GROUP_CHG=&lt;fld108&gt;|SAVE_GROUP_CHG=&lt;fld109&gt;|SUPP_GROUP_CHG=&lt;fld110&gt;|LIB_LIST_NUMBER=&lt;fld111&gt;|LIB_LIST_EXTRACT=&lt;fld148&gt;|LIB_ASPGROUP=&lt;fld112&gt;|ASP_NAME=&lt;fld42&gt;|ASP_NUMBER=&lt;fld41&gt;|TIME_ZONE_NAME=&lt;fld113&gt;|EXIT_JOB_NAME=&lt;process&gt;|EXIT_JOB_USER=&lt;uid&gt;|EXIT_JOB_NUMBER=&lt;fld116&gt;|EXIT_PGM_NAME=&lt;process&gt;|EXIT_PGM_LIB=&lt;library&gt;|JOB_Q_LIB_ASP_NAME=&lt;fld367&gt;|ACCESS_TYPE=&lt;type&gt;|DBFILE_NAME=&lt;jobname&gt;|LIB_NAME=&lt;library&gt;|OBJ_TYPE=&lt;obj_type&gt;|MEMBER_NAME=&lt;fld6&gt;|JOB_DESC_NAME=&lt;fld143&gt;|JOB_DESC_LIB=&lt;fld144&gt;|JOB_QUE_NAME=&lt;fld145&gt;|JOB_QUE_LIB=&lt;fld146&gt;|OUT_QUE_NAME=&lt;fld147&gt;|SPOOL_FILE_NAME=&lt;fld173&gt;|SHORT_SPOOL_FILE_NUMBER=&lt;fld172&gt;|SPOOL_FILE_NUMBER=&lt;fld171&gt;|OLD_COPIES=&lt;fld170&gt;|NEW_COPIES=&lt;fld169&gt;|OLD_PRINTER=&lt;fld258&gt;|NEW_PRINTER=&lt;fld257&gt;|NEW_OUT_QUE=&lt;fld229&gt;|NEW_OUT_QUE_LIB=&lt;fld168&gt;|OLD_FORM_TYPE=&lt;fld167&gt;|NEW_FORM_TYPE=&lt;fld166&gt;|OLD_RESTART_PAGE=&lt;fld165&gt;|NEW_RESTART_PAGE=&lt;fld164&gt;|OLD_PAGE_RANGE_START=&lt;fld230&gt;|NEW_PAGE_RANGE_START=&lt;fld231&gt;|OLD_PAGE_RANGE_END=&lt;fld232&gt;|NEW_PAGE_RANGE_END=&lt;fld233&gt;|SPOOL_FILE_JOB_NAME=&lt;process&gt;|SPOOL_FILE_JOB_USER=&lt;uid&gt;|SPOOL_FILE_JOB_NUMBER=&lt;fld236&gt;|OLD_DRAWER=&lt;fld164&gt;|NEW_DRAWER=&lt;fld163&gt;|OLD_PAGE_DEFINED_NAME=&lt;fld162&gt;|OLD_PAGE_DEFINED_LIB=&lt;fld161&gt;|NEW_PAGE_DEFINED_NAME=&lt;fld160&gt;|NEW_PAGE_DEFINED_LIB=&lt;fld159&gt;|OLD_FORM_DEFINED_NAME=&lt;fld158&gt;|OLD_FORM_DEFINED_LIB=&lt;fld157&gt;|NAME_NEW_FORM_DEFINED=&lt;fld156&gt;|NEW_FORM_DEFINED_LIB=&lt;fld155&gt;|OLD_USER_DEFINED_OPT_1=&lt;fld154&gt;|OLD_USER_DEFINED_OPT_2=&lt;fld153&gt;|OLD_USER_DEFINED_OPT_3=&lt;fld152&gt;|OLD_USER_DEFINED_OPT_4=&lt;fld259&gt;|NEW_USER_DEFINED_OPT_1=&lt;fld149&gt;|NEW_USER_DEFINED_OPT_2=&lt;fld150&gt;|NEW_USER_DEFINED_OPT_3=&lt;fld151&gt;|NEW_USER_DEFINED_OPT_4=&lt;fld142&gt;|OLD_USER_DEFINED_OBJ=&lt;fld141&gt;|OLD_USER_DEFINED_OBJ_LIB=&lt;fld140&gt;|OLD_USER_DEFINED_OBJ_TYPE=&lt;fld139&gt;|NEW_USER_DEFINED_OBJ=&lt;fld138&gt;|NEW_USER_DEFINED_OBJ_LIB=&lt;fld137&gt;|NEW_USER_DEFINED_OBJ_TYPE=&lt;fld136&gt;|SPOOL_FILE_JOB_SYSNAME=&lt;hostname&gt;|SPOOL_FILE_CREATE_DATE=&lt;fld134&gt;|SPOOL_FILE_CREATE_TIME=&lt;fld133&gt;|NAME_OLD_USER_DEFINED_DATA=&lt;fld132&gt;|NAME_NEW_USER_DEFINED_DATA=&lt;fld131&gt;|FILE_ASP_NAME=&lt;fld130&gt;|FILE_ASP_NUMBER=&lt;fld129&gt;|OUT_QUE_ASP_NAME=&lt;fld128&gt;|OUT_QUE_ASP_NUMBER=&lt;fld127&gt;|NEW_OUT_QUE_ASP_NAME=&lt;fld126&gt;|NEW_OUT_QUE_ASP_NUMBER=&lt;fld125&gt;|OLD_SPOOL_FILE_STATUS=&lt;fld124&gt;|NEW_SPOOL_FILE_STATUS=&lt;fld123&gt;|ORIGINAL_CREATE_DATE=&lt;fld122&gt;|ORIGINAL_CREATE_TIME=&lt;fld121&gt;|OLD_SPOOL_FILE_EXPIRE_DATE=&lt;fld120&gt;|NEW_SPOOL_FILE_EXPIRE_DATE=&lt;fld119&gt;|SPOOL_FILE_CREATE_DATE_UTC=&lt;fld467&gt;|SPOOL_FILE_CREATE_TIME_UTC=&lt;fld468&gt;|REMOTE_LOCATION_NAME=&lt;fld275&gt;|SIGNAL_NUMBER=&lt;jobnum&gt;|HANDLE_ACTION=&lt;action&gt;|SIGNAL_SOURCE=&lt;fld77&gt;|SOURCE_JOB_NAME=&lt;jobname&gt;|SOURCE_JOB_USER_NAME=&lt;username&gt;|SOURCE_JOB_CURRENT_USER=&lt;fld81&gt;|GENERATION_TIMESTAMP=&lt;fld82&gt;|ACTION=&lt;action&gt;|NAME=&lt;change_attribute&gt;|NEW_VALUE=&lt;change_new&gt;|OLD_VALUE=&lt;change_old&gt;|OBJ_NAME=&lt;obj_name&gt;|OBJ_AUDIT_VALUE=&lt;obj_value&gt;|CHANGE_USER_AUDIT_CREATE=&lt;fld219&gt;|CHANGE_USER_AUDIT_DELETE=&lt;fld218&gt;|CHANGE_USER_AUDIT_JOB_DTA=&lt;fld245&gt;|CHANGE_USER_AUDIT_OBJMGT=&lt;fld246&gt;|CHANGE_USER_AUDIT_OFCSRV=&lt;fld247&gt;|CHANGE_USER_AUDIT_PGMADP=&lt;fld250&gt;|CHANGE_USER_AUDIT_SAVRST=&lt;fld251&gt;|CHANGE_USER_AUDIT_SECURITY=&lt;fld252&gt;|CHANGE_USER_AUDIT_SERVICE=&lt;fld253&gt;|CHANGE_USER_AUDIT_SPOOLED_DATA=&lt;fld254&gt;|CHANGE_USER_AUDIT_SYSMGT=&lt;fld255&gt;|CHANGE_USER_AUDIT_OPTICAL=&lt;fld249&gt;|CHANGE_USER_AUDIT_AUTFAIL=&lt;fld244&gt;|CHANGE_USER_AUDIT_JOBBAS=&lt;fld217&gt;|CHANGE_USER_AUDIT_JOBCHGUSER=&lt;fld216&gt;|CHANGE_USER_AUDIT_NETBAS=&lt;fld215&gt;|CHANGE_USER_AUDIT_NETCLU=&lt;fld214&gt;|CHANGE_USER_AUDIT_NETCMN=&lt;fld213&gt;|CHANGE_USER_AUDIT_NETFAIL=&lt;fld212&gt;|CHANGE_USER_AUDIT_NETSTCK=&lt;fld211&gt;|CHANGE_USER_AUDIT_PGMFAIL=&lt;fld210&gt;|CHANGE_USER_AUDIT_PRTDTA=&lt;fld209&gt;|CHANGE_USER_AUDIT_SECCFG=&lt;fld208&gt;|CHANGE_USER_AUDIT_SECDIRSRV=&lt;fld207&gt;|CHANGE_USER_AUDIT_SECIPC=&lt;fld206&gt;|CHANGE_USER_AUDIT_SECNAS=&lt;fld205&gt;|CHANGE_USER_AUDIT_SECRUN=&lt;fld204&gt;|CHANGE_USER_AUDIT_SECSCKD=&lt;fld203&gt;|CHANGE_USER_AUDIT_SECVFY=&lt;fld202&gt;|CHANGE_USER_AUDIT_SECVLDL=&lt;fld201&gt;|DLO_NAME=&lt;fld53&gt;|FOLDER_PATH=&lt;fld52&gt;|OBJ_NAME_LENGTH=&lt;fld50&gt;|OBJ_NAME_CCSID=&lt;fld49&gt;|OBJ_NAME_COUNTRY_REGION_ID=&lt;fld48&gt;|OBJ_NAME_LANG_ID=&lt;fld47&gt;|PARENT_FILE_ID=&lt;filename&gt;|OBJ_FILE_ID=&lt;filename&gt;|OBJ_NAME_LONG=&lt;fld44&gt;|OBJ_FILE_ID_2=&lt;filename&gt;|PATH_NAME_CCSID=&lt;fld40&gt;|PATH_NAME_COUNTRY_REGION_ID=&lt;fld39&gt;|PATH_NAME_LANG_ID=&lt;fld38&gt;|PATH_NAME_LENGTH=&lt;fld37&gt;|PATH_NAME_IND=&lt;fld36&gt;|RELATIVE_DIRECTORY_FILE_ID=&lt;fld35&gt;|PATH_NAME=&lt;fld34&gt;|PUBLIC_AUTH=&lt;fld86&gt;|OBJ_NAME_COUNTRY_REGION=&lt;fld240&gt;|PATH_NAME_COUNTRY_REGION=&lt;fld241&gt;|USER_NAME=&lt;username&gt;|OBJ_EXIST=&lt;fld188&gt;|OBJ_MANAGEMENT=&lt;fld187&gt;|OBJ_OPERATIONAL=&lt;fld186&gt;|AUTH_LIST_MGMT=&lt;fld224&gt;|AUTH_LIST=&lt;fld243&gt;|READ_AUTH=&lt;fld190&gt;|ADD_AUTH=&lt;fld191&gt;|UPDATE_AUTH=&lt;fld192&gt;|DEL_AUTH=&lt;fld193&gt;|EXCL_AUTH=&lt;fld225&gt;|EXEC_AUTH=&lt;fld194&gt;|OBJ_ALT_AUTH=&lt;fld195&gt;|OBJ_REF_AUTH=&lt;fld196&gt;|COMMAND_TYPE=&lt;fld197&gt;|FIELD_NAME=&lt;fld198&gt;|OFFICE_USER=&lt;uid&gt;|OFFICE_BEHALF_OF_USER=&lt;uid&gt;|PERSONAL_STATUS=&lt;fld199&gt;|ACCESS_CODE=&lt;fld200&gt;|ACCESS_CODE_DESC=&lt;fld226&gt;|VIOLATION_TYPE=&lt;fld263&gt;|VALID_ERROR_ACTION=&lt;resultcode&gt;|PGM_NAME=&lt;application&gt;|PGM_LIB=&lt;library&gt;|USER_PROFILE=&lt;profile&gt;|WORK_STATION_NAME=&lt;fld264&gt;|PROGRAM_INSTR_NUMBER=&lt;fld265&gt;|OPERATOR_VIOLATION_CODE=&lt;fld261&gt;|ASP_PGM_LIB_NAME=&lt;library&gt;|ASP_PGM_LIB_NUMBER=&lt;fld267&gt;|CHG_FIELD_TYPE=&lt;fld325&gt;|LENGTH_TRIGGER_LIB_NAME=&lt;fld326&gt;|OFFSET_TRIGGER_LIB_NAME=&lt;fld327&gt;|LENGTH_TRIGGER_NAME=&lt;fld328&gt;|OFFSET_TRIGGER_NAME=&lt;fld329&gt;|NUMBER_PHYSICAL_FILES=&lt;fld330&gt;|NEXT_OFFSET=&lt;fld331&gt;|NOT_LOG_IND=&lt;fld332&gt;|SOURCE_FILE_IND=&lt;fld333&gt;|INTERNAL_DATA=&lt;fld334&gt;|NEW_ATTR_VALUE=&lt;change_new&gt;|JOB_DESC=&lt;event_description&gt;|OLD_USER=&lt;profile&gt;|NEW_USER=&lt;profile&gt;|TYPE=&lt;type&gt;|OLD_OWNER=&lt;change_old&gt;|NEW_OWNER=&lt;change_new&gt;|OBJ_LIB=&lt;library&gt;|OLD_PRIMARY_GROUP=&lt;change_old&gt;|NEW_PRIMARY_GROUP=&lt;change_new&gt;|REVOKE_OLD_PRIMARY_GROUP=&lt;fld476&gt;|OFFICE_BEHALF_USER=&lt;uid&gt;|STATUS=&lt;result&gt;|RETURN_VALUE=&lt;resultcode&gt;|SERVICE=&lt;service&gt;|TYPE_CHG=&lt;type&gt;|TYPE_REC=&lt;type1&gt;|ORIGINAL_SYS=&lt;change_old&gt;|USER_PROF=&lt;profile&gt;|REQ_SYS=&lt;device&gt;|USER_ID=&lt;uid&gt;|ADDR=&lt;user_address&gt;|NETWORK_USER_ID=&lt;uid&gt;|REQ_NAME=&lt;username&gt;|ACTION_PERFORMED=&lt;action&gt;|CLOSE_REASON=&lt;resultcode&gt;|CONN_USER=&lt;username&gt;|FILE_ID=&lt;filename&gt;|ENTRY_ACTION=&lt;action&gt;|SOURCE_NODE_ID=&lt;fld447&gt;|SOURCE_USER_NAME=&lt;uid&gt;|RUN_FROM_CL_PGM=&lt;type&gt;|COMMAND_STRING=&lt;action&gt;|ASP_NAME_COMMAND_LIB=&lt;library&gt;|ASP_NUMBER_COMMAND_LIB=&lt;fld371&gt;|CONNECT_ACTION=&lt;action&gt;|REJECT_REASON=&lt;resultcode&gt;|PT_TO_PT_PROFILE_NAME=&lt;profile&gt;|PROTOCOL=&lt;protocol&gt;|LOCAL_AUTH_METHOD=&lt;laddr&gt;|REMOTE_AUTH_METHOD=&lt;saddr&gt;|VALID_USER_NAME=&lt;username&gt;|LOCAL_IPADDR=&lt;daddr&gt;|REMOTE_IPADDR=&lt;saddr&gt;|AUTH_IPADDR=&lt;saddr&gt;|FIELD_CCSID_1=&lt;fld174&gt;|FIELD_LENGTH_1=&lt;fld175&gt;|FIELD_1=&lt;fld176&gt;|FIELD_CCSID_2=&lt;fld177&gt;|FIELD_LENGTH_2=&lt;fld178&gt;|FIELD_2=&lt;fld179&gt;|FIELD_CCSID_3=&lt;fld180&gt;|FIELD_LENGTH_3=&lt;fld181&gt;|FIELD_3=&lt;fld182&gt;|FIELD_CCSID_4=&lt;fld183&gt;|FIELD_LENGTH_4=&lt;fld184&gt;|FIELD_4=&lt;fld185&gt;|OPERATION_TYPE=&lt;type&gt;|AUTH_FAIL_CODE=&lt;resultcode&gt;|CFG_CHG=&lt;change_attribute&gt;|CLIENT_IPADDR=&lt;saddr&gt;|OWNER_NAME=&lt;owner&gt;|NEW_NAME=&lt;change_new&gt;|LOCAL_USER_PROFILE=&lt;profile&gt;|INSTANCE_NAME=&lt;instance&gt;|FOLDER_DOC_NAME=&lt;event_computer&gt;|BEHALF_USER=&lt;uid&gt;|SERVICE_TOOLS_USER_ID_TYPE=&lt;type&gt;|SERVICE_TOOLS_USER_ID_NEW_NAME2=&lt;uid&gt;|SERVICE_TOOLS_USER_ID_REQ_PROF=&lt;uid&gt;|OBJ_NAME_BEFORE=&lt;fld335&gt;|LIB_NAME_BEFORE=&lt;change_old&gt;|MEMBER_NAME_BEFORE=&lt;fld337&gt;|OBJ_NAME_AFTER=&lt;fld338&gt;|LIB_NAME_AFTER=&lt;change_new&gt;|MEMBER_NAME_AFTER=&lt;fld340&gt;|MEDIA_TYPE=&lt;fld341&gt;|1ST_VOLUME_ID=&lt;fld342&gt;|START_SAVE_REST_DATE=&lt;fld360&gt;|START_SAVE_REST_TIME=&lt;fld361&gt;|UPDATE_HIST=&lt;fld345&gt;|FILE_NAME=&lt;filename&gt;|FILE_LIB=&lt;fld365&gt;|MEDIA_FILE_ID=&lt;filename&gt;|REST_FILE_ID=&lt;filename&gt;|REST_OVER_FILE_ID=&lt;filename&gt;|START_SAVE_DATE=&lt;fld343&gt;|START_SAVE_TIME=&lt;fld344&gt;|ACTION_VALUE=&lt;fld366&gt;|START_SAVE_ACTION_DATE=&lt;fld349&gt;|START_SAVE_ACTION_TIME=&lt;fld350&gt;|PRIMARY_REC_NAME=&lt;fld351&gt;|PRIMARY_REC_LIB=&lt;fld352&gt;|DUAL_REC_NAME=&lt;fld353&gt;|DUAL_REC_LIB=&lt;fld354&gt;|SEQ_NUMBER_MTCH_START_SAVE_ENTRY=&lt;fld355&gt;|FILE_ID_OBJ_REST=&lt;filename&gt;|LG_SEQ_NUMBER_MTCH_START_SAVE_ENTRY=&lt;fld357&gt;|LIB_ASP_DEVICE=&lt;fld358&gt;|CONTENTS_SAVE=&lt;fld359&gt;|REASON_CODE=&lt;resultcode&gt;|RECEIVER=&lt;fld14&gt;|LOCAL_IPADDR_1=&lt;daddr&gt;|LOCAL_CLIENT_ID_PORT=&lt;dport&gt;|REMOTE_IPADDR_1=&lt;saddr&gt;|REMOTE_CLIENT_ID_PORT=&lt;sport&gt;|LOCAL_IPADDR_2=&lt;daddr&gt;|REMOTE_IPADDR_2=&lt;saddr&gt;|RESULT_CODE=&lt;resultcode&gt;|IPC_TYPE=&lt;type&gt;|IPC_HANDLE=&lt;change_new&gt;|OWNER_AUTH=&lt;fld90&gt;|NEW_GROUP=&lt;change_new&gt;|OLD_GROUP=&lt;change_old&gt;|GROUP_AUTH=&lt;fld87&gt;|CCSID_SEMPHR_NAME=&lt;fld85&gt;|LENGTH_SEMPHR_NAME=&lt;fld84&gt;|SEMPHR_NAME=&lt;fld83&gt;|LOCAL_PORT_NUMBER=&lt;dport&gt;|REMOTE_PORT_NUMBER=&lt;sport&gt;|VIOLATION_ENTRY_TYPE=&lt;fld274&gt;|NETWORK_ID=&lt;fld273&gt;|FILE_NAME_LONG=&lt;filename&gt;|CERT_OPERATOR=&lt;type&gt;|KEY_RING_OPERATOR=&lt;type1&gt;|TRUST_ROUTE_OPERATOR=&lt;action&gt;|OBJ_DIRECTORY_FILE_ID=&lt;fld411&gt;|SOURCE_NAME_LENGTH=&lt;fld420&gt;|SOURCE_NAME_CCSID=&lt;fld417&gt;|SOURCE_NAME_COUNTRY_REGION=&lt;fld418&gt;|SOURCE_NAME_LANG_ID=&lt;fld419&gt;|SOURCE_PARENT_FILE_ID=&lt;fld421&gt;|OBJ_TARGET_FILE_ID=&lt;fld412&gt;|CERT_LABEL_LENGTH=&lt;fld409&gt;|CERT_LABEL=&lt;fld408&gt;|ABS_PATH_NAME=&lt;fld406&gt;|SOURCE_FILE_ID=&lt;filename&gt;|SOURCE_ASP_NAME=&lt;fld414&gt;|SOURCE_ASP_NUMBER=&lt;fld415&gt;|SOURCE_PATH_NAME_CCSID=&lt;fld422&gt;|SOURCE_PATH_NAME_COUNTRY_REGION=&lt;fld423&gt;|SOURCE_PATH_NAME_LANG_ID=&lt;fld425&gt;|SOURCE_PATH_NAME_LENGTH=&lt;fld426&gt;|SOURCE_PATH_NAME_IND=&lt;fld424&gt;|SOURCE_RELATIVE_DIRECTORY_FILE_ID=&lt;fld427&gt;|SOURCE_ABS_PATH_NAME=&lt;fld413&gt;|LOG_TYPE=&lt;type&gt;|USER_PRIVILEGE=&lt;privilege&gt;|ADDITIONAL_REASON=&lt;event_description&gt;|STATUS_CODE=&lt;result&gt;|ERROR_TYPE=&lt;resultcode&gt;|ATTR=&lt;change_attribute&gt;|OLD_ATTR_VALUE=&lt;change_old&gt;|OLD_OBJ_NAME=&lt;fld296&gt;|OLD_LIB_NAME=&lt;change_old&gt;|NEW_OBJ_NAME=&lt;obj_name&gt;|NEW_LIB_NAME=&lt;library&gt;|OLD_FOLDER_DOC_NAME=&lt;fld292&gt;|OLD_FOLDER_PATH=&lt;fld293&gt;|NEW_FOLDER_DOC_NAME=&lt;fld276&gt;|NEW_FOLDER_PATH=&lt;fld277&gt;|OLD_PARENT_FILE_ID=&lt;fld298&gt;|OLD_OBJ_FILE_ID=&lt;filename&gt;|OLD_OBJ_NAME_LONG=&lt;fld297&gt;|NEW_PARENT_FILE_ID=&lt;fld284&gt;|NEW_OBJ_NAME_LONG=&lt;fld283&gt;|ASP_NAME_1=&lt;fld301&gt;|ASP_NUMBER_1=&lt;fld300&gt;|PATH_NAME_CCSID_1=&lt;fld299&gt;|NEW_OBJ_FILE_ID=&lt;filename&gt;|NEW_ASP_NAME=&lt;fld278&gt;|NEW_ASP_NUMBER=&lt;fld279&gt;|NEW_PATH_NAME_CCSID=&lt;fld286&gt;|NEW_PATH_NAME_COUNTRY_REGION=&lt;fld287&gt;|NEW_PATH_NAME_LANG_ID=&lt;fld289&gt;|NEW_PATH_NAME_LENGTH=&lt;fld290&gt;|NEW_PATH_NAME_IND=&lt;fld288&gt;|NEW_RELATIVE_DIRECTORY_FILE_ID=&lt;fld291&gt;|NEW_PATH_NAME=&lt;fld285&gt;|REST_OBJ_NAME=&lt;obj_name&gt;|REST_LIB_NAME=&lt;library&gt;|SAVE_OBJ_NAME=&lt;fld319&gt;|SAVE_LIB_NAME=&lt;library&gt;|PGM_STATUS_E=&lt;result&gt;|SETUID_MODE=&lt;fld322&gt;|SETGID_MODE=&lt;fld321&gt;|SIGNAL_STATUS=&lt;fld323&gt;|SCAN_ATTR=&lt;fld320&gt;|REST_DLO_NAME=&lt;fld312&gt;|REST_FOLDER_PATH=&lt;fld313&gt;|SAVE_DLO_NAME=&lt;fld316&gt;|SAVE_FOLDER_PATH=&lt;fld317&gt;|PRIVATE_AUTH_REST=&lt;fld310&gt;|PRIVATE_AUTH_SAVE=&lt;fld311&gt;|NUMBER_PRIVATE_AUTH_REST=&lt;fld307&gt;|OLD_FILE_ID=&lt;change_old&gt;|OWNING_USER_PROFILE=&lt;profile&gt;|SOURCE_DEVICE_NAME=&lt;library&gt;|SOURCE_CSI_NAME=&lt;obj_name&gt;|SOURCE_CSI_LIB=&lt;library&gt;|SOURCE_VOLUME_NAME=&lt;disk_volume&gt;|SOURCE_OBJ_NAME=&lt;filename&gt;|TARGET_DEVICE_NAME=&lt;library&gt;|TARGET_CSI_NAME=&lt;obj_name&gt;|TARGET_CSI_LIB=&lt;library&gt;|TARGET_VOLUME_NAME=&lt;disk_volume&gt;|TARGET_OBJ_NAME=&lt;filename&gt;|ASP_NAME_TARGET_CSI_LIB=&lt;library&gt;|CSI_NAME=&lt;fld304&gt;|CSI_LIB=&lt;fld303&gt;|VOLUME_NAME=&lt;fld305&gt;|OLD_VOLUME_NAME=&lt;change_old&gt;|NEW_VOLUME_NAME=&lt;change_new&gt;|SAVE_FILE_NAME=&lt;filename&gt;|SAVE_FILE_LIB=&lt;library&gt;|SAVE_ACTION_VALUE=&lt;fld348&gt;|OUT_TYPE=&lt;fld463&gt;|STATUS_AFTER_PRINTING=&lt;result&gt;|OUT_QUE_LIB_NAME=&lt;library&gt;|DEVICE_TYPE=&lt;fld459&gt;|DEVICE_MODEL=&lt;fld458&gt;|DEVICE_FILE_NAME=&lt;filename&gt;|DEVICE_FILE_LIB=&lt;library&gt;|FORM_TYPE=&lt;fld460&gt;|USER_DATA=&lt;fld470&gt;|REMOTE_SYS=&lt;fld465&gt;|REMOTE_SYSPRIN_TQUE=&lt;fld466&gt;|SOURCE_LOCATION=&lt;fld271&gt;|ORIGINAL_TARGET_USER_PROF=&lt;change_old&gt;|NEW_TARGET_USER_PROF=&lt;change_new&gt;|PROFILE_TOKEN_TYPE=&lt;fld238&gt;|PROFILE_TOKEN_TIMEOUT=&lt;fld239&gt;|OWNER=&lt;owner&gt;|IXV_TX_MODE=&lt;fld404&gt;|PRIMARY_GROUP_OWNER=&lt;fld405&gt;|LOCAL_PORT=&lt;dport&gt;|REMOTE_PORT=&lt;sport&gt;|FILTER_DESC=&lt;fld27&gt;|FILTER_DATA_LENGTH=&lt;fld28&gt;|FILTER_DATA=&lt;fld29&gt;|ADDR_FAMILY=&lt;fld30&gt;|MAC_ADDRESS=&lt;fld144&gt;|HOST_NAME=&lt;fld33&gt;|USER_INFO_ENTRY_TYPE=&lt;type&gt;|PASSWORD_STORED=&lt;password&gt;|USER_ID_LENGTH=&lt;fld403&gt;|SESSION_ACTION=&lt;action&gt;|USER_PROF_NAME=&lt;profile&gt;|JUID=&lt;fld256&gt;|SUBSYS_NAME=&lt;obj_name&gt;|OBJ_LIB_NAME=&lt;library&gt;|PGM_LIB_NAME=&lt;library&gt;|SEQ_NUMBER=&lt;seqnum&gt;|COMMAND_NAME=&lt;fld401&gt;|ASP_NAME_PGM_LIB=&lt;library&gt;|MESSAGE_ID=&lt;resultcode&gt;|RELATIVE_DBNAME=&lt;jobname&gt;|NETWORK_FILE_NAME=&lt;filename&gt;|NETWORK_FILE_OWNER=&lt;profile&gt;|NETWORK_FILE_ORIGINAL_USER=&lt;profile&gt;|SYS_VALUE_SERVICE_ATTR=&lt;service&gt;|OLD_VALUE_CONT=&lt;fld453&gt;|SERVICE_TOOL=&lt;service&gt;|OBJ_TYPE_1=&lt;obj_type&gt;|LIB_NAME_DUMP_SYSOBJ=&lt;fld440&gt;|OBJ_TYPE_2=&lt;fld442&gt;|EARLY_TRACE_ACTION=&lt;fld439&gt;|APP_TRACE_OPT=&lt;fld429&gt;|APP_TRACED=&lt;fld430&gt;|SERVICE_TOOLS_PROF=&lt;profile&gt;|SOURCE_USER=&lt;uid&gt;|ASP_NAME_OBJ_LIB=&lt;fld432&gt;|ASP_NUMBER_OBJ_LIB=&lt;fld434&gt;|ASP_NAME_DUMP_SYS_OBJ_LIB=&lt;fld431&gt;|ASP_NUMBER_DUMP_SYS_OBJ_LIB=&lt;fld433&gt;|CONSOLE_TYPE=&lt;fld436&gt;|CONSOLE_ACTION=&lt;fld435&gt;|PREVIOUS_IPADDR=&lt;fld444&gt;|PREVIOUS_DEVICE_ID=&lt;fld443&gt;|CURRENT_IPADDR=&lt;fld438&gt;|CURRENT_DEVICE_ID=&lt;fld437&gt;|WATCH_SESSION=&lt;fld449&gt;|ENTRY=&lt;entry&gt;|RELATIVE_OBJ=&lt;obj_name&gt;|RELATIVE_OBJ_LIB=&lt;library&gt;|USER_PROFILE_NAME=&lt;profile&gt;|PASSWORD_CHG=&lt;password_chg&gt;|PASSWORD_NONE=&lt;password&gt;|PASSWORD_EXPIRED=&lt;password_expire&gt;|JOB_CTRL_SPECIAL_AUTH=&lt;fld376&gt;|SAVE_SYS_SPECIAL_AUTH=&lt;fld377&gt;|SEC_ADMIN_SPECIAL_AUTH=&lt;fld378&gt;|SPOOL_CONTROL_SPECIAL_AUTH=&lt;fld379&gt;|SERVICE_SPECIAL_AUTH=&lt;fld380&gt;|AUDIT_SPECIAL_AUTH=&lt;fld381&gt;|SYS_CFG_SPECIAL_AUTH=&lt;fld382&gt;|GROUP_PROFILE=&lt;profile&gt;|INITIAL_PGM=&lt;process&gt;|INITIAL_PGM_LIB=&lt;library&gt;|INITIAL_MENU=&lt;fld387&gt;|INITIAL_MENU_LIB=&lt;fld388&gt;|CURRENT_ENTRY_LIB=&lt;fld389&gt;|LIMITED_CAPABILITY=&lt;fld390&gt;|USER_CLASS=&lt;fld391&gt;|PRIORITY_LIMIT=&lt;fld392&gt;|PROFILE_STATUS=&lt;fld393&gt;|GROUP_AUTH_TYPE=&lt;fld394&gt;|GROUP_ID=&lt;fld396&gt;|LOCAL_PASSWORD_MGMT=&lt;fld397&gt;|PASSWORD_COMPOSITION_CONFORM=&lt;fld398&gt;|PASSWORD_EXPIRE_INTERVAL=&lt;fld399&gt;|BLOCK_PASSWORD_CHG=&lt;fld400&gt;|UNSUCCESSFUL_TYPE=&lt;type&gt;|ENCRYPT_DATA=&lt;info&gt;|RESOURCE_NAME=&lt;fld477&gt;|SUPP_GROUP_PROFILE=&lt;fld478&gt;|JOB_Q_LIB_ASP_NUMBER=&lt;fld479&gt;|FILTER_CONTROL_PNT_NAME=&lt;fld480&gt;|FILTER_CONTROL_PNT_NETID=&lt;fld481&gt;|FILTER_CP_LOCATION_NAME=&lt;fld482&gt;|FILTER_CP_LOCATION_NETID=&lt;fld483&gt;|POINTER_LOCATION_NAME=&lt;fld484&gt;|POINTER_LOCATION_NETID=&lt;fld485&gt;|INBOUND_SESSION=&lt;fld486&gt;|OUTBOUND_SESSION=&lt;fld487&gt;|LOCAL_LOCATION_NAME=&lt;fld488&gt;|REMOTE_NETID=&lt;fld489&gt;|SOURCE_JOB_NUMBER=&lt;fld490&gt;|NEW_VALUE_LENGTH=&lt;fld491&gt;|NEW_VALUE_CCSID=&lt;fld492&gt;|NEW_VAL_COUNTRY_REGION_ID=&lt;fld493&gt;|NEW_VALUE_LANG_ID=&lt;fld494&gt;|OLD_VALUE_LENGTH=&lt;fld495&gt;|OLD_VALUE_CCSID=&lt;fld496&gt;|OLD_VALUE_COUNTRY_REGION_ID=&lt;fld497&gt;|OLD_VALUE_LANGUAGE_ID=&lt;fld498&gt;|CHANGE_USER_AUDIT_CMD=&lt;fld499&gt;|AUTH_LIST_NAME=&lt;fld500&gt;|PRIVATE_AUTH=&lt;fld501&gt;|AUTL_REMOVED=&lt;fld502&gt;|OBJ_ATTR=&lt;fld503&gt;|OFFSET_NAME_1ST_PHYSICAL_FILE=&lt;fld504&gt;|ATTR_CHG=&lt;fld505&gt;|DISP_INHER_RULES=&lt;fld506&gt;|ACCESS_SPEC_DATA=&lt;fld507&gt;|OBJ_MGMT=&lt;fld508&gt;|OBJ_OPERATOR=&lt;fld509&gt;|OBJ_ALTER=&lt;fld510&gt;|OBJ_REF=&lt;fld511&gt;|DELETE_AUTH=&lt;fld512&gt;|SERVICE_CODE=&lt;fld513&gt;|TEXT_SET=&lt;fld514&gt;|FUNC_REQ=&lt;fld515&gt;|DURATION=&lt;fld516&gt;|CRG_OBJ_NAME=&lt;fld517&gt;|CRG_LIB_NAME=&lt;fld518&gt;|CLUSTER_NAME=&lt;fld519&gt;|NODE_ID=&lt;fld520&gt;|USER_QUEUE_NAME=&lt;fld521&gt;|USER_QUEUE_LIB=&lt;fld522&gt;|CONN_ID=&lt;fld523&gt;|NETWORK_NAME=&lt;fld524&gt;|IP_FORWARDING=&lt;fld525&gt;|PROXY_ARP=&lt;fld526&gt;|RADIUS_NAME=&lt;fld527&gt;|ACCT_SESSION_ID=&lt;fld528&gt;|MULTI_SESSION_ID=&lt;fld529&gt;|ACCT_LINK_COUNT=&lt;fld530&gt;|TUNNEL_TYPE=&lt;fld531&gt;|TUNNEL_CLIENT_END_PT=&lt;fld532&gt;|TUNNEL_SERVER_END_PT=&lt;fld533&gt;|ACCT_SESSION_TIME=&lt;fld534&gt;|CARD_PROFILE=&lt;fld535&gt;|CARD_ROLE=&lt;fld536&gt;|MSTR_KEY_ID=&lt;fld537&gt;|MSTR_KEY_ENCRYPT=&lt;fld538&gt;|MSTR_KEY_VERSION=&lt;fld539&gt;|XREF=&lt;fld540&gt;|FIELD_CCSID_5=&lt;fld541&gt;|FIELD_LENGTH_5=&lt;fld542&gt;|FIELD_5=&lt;fld543&gt;|CFG_CHG_CODE=&lt;fld544&gt;|PROPAGATE_FLAG=&lt;fld545&gt;|BIND_AUTH_CHOICE=&lt;fld546&gt;|LDAP_VERSION=&lt;fld547&gt;|SSL_IND=&lt;fld548&gt;|REQ_TYPE=&lt;fld549&gt;|USER_NAME_CCSID=&lt;fld550&gt;|USER_NAME_LENGTH=&lt;fld551&gt;|OWNER_NAME_CCSID=&lt;fld552&gt;|OWNER_NAME_LENGTH=&lt;fld553&gt;|NEW_NAME_CCSID=&lt;fld554&gt;|NEW_NAME_LENGTH=&lt;fld555&gt;|ADMIN_IND=&lt;fld556&gt;|PROXY_ID_CCSID=&lt;fld557&gt;|PROXY_ID_LENGTH=&lt;fld558&gt;|PROXY_ID=&lt;fld559&gt;|GROUP_ASSERT=&lt;fld560&gt;|ROUTE_CCSID=&lt;fld561&gt;|ROUTE_LENGTH=&lt;fld562&gt;|ROUTE=&lt;fld563&gt;|SERVICE_TOOLS_USER_ID_RESET=&lt;fld564&gt;|SERVICE_TOOLS_USER_ID_NEW_NAME_1=&lt;fld565&gt;|SERVICE_TOOLS_USER_ID_PWD_CHG=&lt;fld566&gt;|DATA_CCSID=&lt;fld567&gt;|RECEIVER_LENGTH=&lt;fld568&gt;|SENDER_LENGTH=&lt;fld569&gt;|SENDER=&lt;fld570&gt;|INITIATOR_LENGTH=&lt;fld571&gt;|INITIATOR=&lt;fld572&gt;|CHAIN_LENGTH=&lt;fld573&gt;|CHAIN=&lt;fld574&gt;|CHAIN_ENTRIES=&lt;fld575&gt;|CHAIN_ENTRIES_AVAIL=&lt;fld576&gt;|SOURCE_REG_LENGTH=&lt;fld577&gt;|SOURCE_REG=&lt;fld578&gt;|SOURCE_REG_USER_LENGTH=&lt;fld579&gt;|SOURCE_REG_USER=&lt;fld580&gt;|TARGET_REG_LENGTH=&lt;fld581&gt;|TARGET_REG=&lt;fld582&gt;|TARGET_REG_USER_LENGTH=&lt;fld583&gt;|TARGET_REG_USER=&lt;fld584&gt;|LOCAL_IPADDR_FAMILY=&lt;fld585&gt;|REMOTE_IPADDR_FAMILY=&lt;fld586&gt;|CCSID=&lt;fld587&gt;|LOCAL_ID=&lt;fld588&gt;|LOCAL_CLIENT_ID_TYPE=&lt;fld589&gt;|LOCAL_CLIENT_ID_VALUE=&lt;fld590&gt;|LOCAL_CLIENT_ID_PROTOCOL=&lt;fld591&gt;|REMOTE_ID=&lt;fld592&gt;|REMOTE_CLIENT_ID_TYPE=&lt;fld593&gt;|REMOTE_CLIENT_ID_VALUE=&lt;fld594&gt;|REMOTE_CLIENT_ID_PROTOCOL=&lt;fld595&gt;|TIME_EVENT=&lt;fld596&gt;|DETPT_ID=&lt;fld597&gt;|LOCAL_ADDR_FAMILY=&lt;fld598&gt;|REMOTE_ADDR_FAMILY=&lt;fld599&gt;|PROBE_TYPE_ID=&lt;fld600&gt;|EVENT_CORRELATOR=&lt;fld601&gt;|EVENT_TYPE_L=&lt;fld602&gt;|COND=&lt;fld603&gt;|THROTTLING=&lt;fld604&gt;|DISCARD_PACKET=&lt;fld605&gt;|TARGET_TCPIP_STACK=&lt;fld606&gt;|SUSPECTED_PACKET=&lt;fld607&gt;|FILE_NAME_LENGTH=&lt;fld608&gt;|FILE_NAME_CCSID=&lt;fld609&gt;|FILE_COUNTRY_REGION_ID=&lt;fld610&gt;|FILE_LANG_ID=&lt;fld611&gt;|CONN_SEQ=&lt;fld612&gt;|GSS_STATUS_VALUE=&lt;fld613&gt;|ENCRYPT_ADDR=&lt;fld614&gt;|ENCRYPT_ADDR_IND=&lt;fld615&gt;|TICKET_FLAGS=&lt;fld616&gt;|TICKET_AUTH_TIME=&lt;fld617&gt;|TICKET_START_TIME=&lt;fld618&gt;|TICKET_END_TIME=&lt;fld619&gt;|TICKET_RENEW_TIME=&lt;fld620&gt;|MESSAGE_TIMESTAMP=&lt;fld621&gt;|GSS_EXPIRE_TIMESTAMP=&lt;fld622&gt;|SERVER_PRIN_CCSID=&lt;fld623&gt;|SERVER_PRIN_LENGTH=&lt;fld624&gt;|SERVER_PRIN_IND=&lt;fld625&gt;|SERVER_PRIN=&lt;fld626&gt;|SERVER_PRIN_PARAM_CCSID=&lt;fld627&gt;|SERVER_PRIN_PARAM_LENGTH=&lt;fld628&gt;|SERVER_PRIN_PARAM_IND=&lt;fld629&gt;|SERVER_PRIN_PARAM=&lt;fld630&gt;|CLIENT_PRIN_AUTH_CCSID=&lt;fld631&gt;|CLIENT_PRIN_AUTH_LENGTH=&lt;fld632&gt;|CLIENT_PRIN_AUTH_IND=&lt;fld633&gt;|CLIENT_PRIN_AUTH=&lt;fld634&gt;|CLIENT_PRIN_TKT_CCSID=&lt;fld635&gt;|CLIENT_PRIN_TKT_LENGTH=&lt;fld636&gt;|CLIENT_PRIN_TKT_IND=&lt;fld637&gt;|CLIENT_PRIN_TKT=&lt;fld638&gt;|GSS_SERVER_PRIN_CCSID=&lt;fld639&gt;|GSS_SERVER_PRIN_LENGTH=&lt;fld640&gt;|GSS_SERVER_PRIN_IND=&lt;fld640&gt;|GSS_SERVER_PRIN=&lt;fld641&gt;|GSS_LOCAL_PRIN_CCSID=&lt;fld642&gt;|GSS_LOCAL_PRIN_LENGTH=&lt;fld643&gt;|GSS_LOCAL_PRIN_IND=&lt;fld644&gt;|GSS_LOCAL_PRIN=&lt;fld645&gt;|GSS_REMOTE_PRIN_CCSID=&lt;fld646&gt;|GSS_REMOTE_PRIN_LENGTH=&lt;fld647&gt;|GSS_REMOTE_PRIN_IND=&lt;fld648&gt;|GSS_REMOTE_PRIN=&lt;fld649&gt;|RETURN_CODE=&lt;fld650&gt;|SERVER_MESSAGE=&lt;fld651&gt;|SYS_COMMAND=&lt;fld652&gt;|ASP_NUMBER_TARGET_CSI_LIB=&lt;fld653&gt;|OLD_AUTH_LIST=&lt;fld654&gt;|NEW_AUTH_LIST=&lt;fld655&gt;|LENGTH=&lt;fld656&gt;|OBJ_NAME_OFFSET=&lt;fld657&gt;|START_JOURNALING_IND=&lt;fld658&gt;|OUT_QUE=&lt;fld659&gt;|AUTH_REST=&lt;fld660&gt;|SOCKET_DESCRIPTOR=&lt;fld661&gt;|ASP_NAME_SBSD_LIB=&lt;fld662&gt;|ASP_NUMBER_SBSD_LIB=&lt;fld663&gt;|ASP_NUMBER_PGM_LIB=&lt;fld664&gt;|NAME_TRUNCATED=&lt;fld665&gt;|ENV_VAR_NAME=&lt;fld666&gt;|NEW_NAME_TRUNCATED=&lt;fld667&gt;|NEW_NAMELENGTH=&lt;fld668&gt;|NEW_ENV_VAR_NAME=&lt;fld669&gt;|FILE_SYSNAME=&lt;fld670&gt;|BACKUP_OPT_CHG=&lt;fld671&gt;|BACKUP_LIST_CHG=&lt;fld672&gt;|NETWORK_FILE_MEMBER=&lt;fld673&gt;|NETWORK_FILE_NUMBER=&lt;fld674&gt;|NETWORK_FILE_ORIGINAL_ADDR=&lt;fld675&gt;|NEW_VALUE_CONT=&lt;fld676&gt;|NEW_VALUE_CONT_EXT=&lt;fld677&gt;|OLD_VALUE_CONT_EXT=&lt;fld678&gt;|ALL_OBJ_SPECIAL_AUTH=&lt;fld679&gt;"/>
-	</DEVICEMESSAGES>
+	content="ENTRY_NAME=&lt;event_type&gt;|ENTRY_LENGTH=&lt;fld1&gt;|HD_SEQ_NUMBER=&lt;seqnum&gt;|JNL_CODE=&lt;vendor_event_cat&gt;|JNL_ENTRY_TYPE=&lt;event_id&gt;|TIMESTAMP=&lt;event_time_string&gt;|HD_JOB_NAME=&lt;jobname&gt;|HD_USER_NAME=&lt;c_username&gt;|HD_JOB_NUMBER=&lt;jobnum&gt;|HD_PGM_NAME=&lt;application&gt;|HD_PGM_LIB=&lt;library&gt;|PGM_ASP_DEVICE=&lt;device&gt;|PGM_ASP_NUMBER=&lt;prog_asp_num&gt;|HD_OBJ_NAME=&lt;obj_name&gt;|HD_OBJ_LIB=&lt;filesystem&gt;|HD_MEMBER_NAME=&lt;fld3&gt;|COUNT/RRN=&lt;count&gt;|FLAG=&lt;fld4&gt;|COMMIT_CYC_ID=&lt;fld5&gt;|HD_USER_PROFILE=&lt;profile&gt;|SYS_NAME=&lt;hostid&gt;|JNL_ID=&lt;id&gt;|REF_CONSTRAINT=&lt;fld7&gt;|TRIGGER=&lt;fld8&gt;|INCOMP_DATA=&lt;fld9&gt;|IGN_RMVJRNCHG=&lt;fld10&gt;|MIN_ESD=&lt;fld11&gt;|OBJ_IND=&lt;fld12&gt;|SYS_SEQ=&lt;fld13&gt;|HD_RECEIVER=&lt;rec_library&gt;|RECEIVER_LIB=&lt;rec_asp_device&gt;|RECEIVER_ASP_DEVICE=&lt;rec_asp_num&gt;|RECEIVER_ASP_NUMBER=&lt;index&gt;|ARM_NUMBER=&lt;id&gt;|THREAD_ID=&lt;id2&gt;|THREAD_ID_HEX=&lt;fld17&gt;|ASP_NAME_VALID_LIST_LIB=&lt;fld18&gt;|LOG_UNIT_WORK=&lt;fld19&gt;|NULL_VALUE_IND=&lt;fld21&gt;|VALID_LIST=&lt;fld22&gt;|ENTRY_DATA_IND=&lt;fld24&gt;|ENTRY_ID_LENGTH=&lt;fld25&gt;|DATA_LENGTH=&lt;fld26&gt;|ENCRYPT_DATA_ATTR=&lt;fld27&gt;|X_CERT_ATTR=&lt;fld28&gt;|ENTRY_ID=&lt;fld29&gt;|ENTRY_DATA=&lt;fld30&gt;|HD_ADDR_FAMILY=&lt;fld31&gt;|ASP_NUMBER_VALID_LIST_LIB=&lt;fld56&gt;|HD_REMOTE_PORT=&lt;sport&gt;|REMOTE_ADDR=&lt;saddr&gt;|TRAN_ID=&lt;trans_id&gt;|ENTRY_DATA_LNGTH=&lt;packet_length&gt;|REASON=&lt;resultcode&gt;|SERVER_NAME=&lt;device&gt;|SERVER_DATE=&lt;date&gt;|SERVER_TIME=&lt;time&gt;|COMPUTER_NAME=&lt;event_computer&gt;|USER=&lt;username&gt;|ENTRY_TYPE=&lt;entry&gt;|JOB_TYPE=&lt;type&gt;|JOB_SUBTYPE=&lt;type1&gt;|JOB_NAME=&lt;jobname&gt;|JOB_USER_NAME=&lt;c_username&gt;|JOB_NUMBER=&lt;jobnum&gt;|DEVICE_NAME=&lt;device&gt;|EFF_USER_PROF=&lt;profile&gt;|OUT_QUE_LIB=&lt;fld93&gt;|PRINTER_DEVICE=&lt;fld94&gt;|LIB_LIST=&lt;fld95&gt;|EFF_GROUP_PROF_NAME=&lt;profile&gt;|JUID_DESC=&lt;fld98&gt;|JUID_FIELD=&lt;fld99&gt;|REAL_USER_PROF=&lt;profile&gt;|SAVE_USER_PROF=&lt;profile&gt;|REAL_GROUP_PROF=&lt;profile&gt;|SAVE_GROUP_PROF=&lt;profile&gt;|REAL_USER_CHG=&lt;fld104&gt;|EFF_USER_CHG=&lt;fld105&gt;|SAVE_USER_CHG=&lt;fld106&gt;|REAL_GROUP_CHG=&lt;fld107&gt;|EFF_GROUP_CHG=&lt;fld108&gt;|SAVE_GROUP_CHG=&lt;fld109&gt;|SUPP_GROUP_CHG=&lt;fld110&gt;|LIB_LIST_NUMBER=&lt;fld111&gt;|LIB_LIST_EXTRACT=&lt;fld148&gt;|LIB_ASPGROUP=&lt;fld112&gt;|ASP_NAME=&lt;fld42&gt;|ASP_NUMBER=&lt;fld41&gt;|TIME_ZONE_NAME=&lt;fld113&gt;|EXIT_JOB_NAME=&lt;process&gt;|EXIT_JOB_USER=&lt;uid&gt;|EXIT_JOB_NUMBER=&lt;fld116&gt;|EXIT_PGM_NAME=&lt;process&gt;|EXIT_PGM_LIB=&lt;library&gt;|JOB_Q_LIB_ASP_NAME=&lt;fld367&gt;|ACCESS_TYPE=&lt;type&gt;|DBFILE_NAME=&lt;jobname&gt;|LIB_NAME=&lt;library&gt;|OBJ_TYPE=&lt;obj_type&gt;|MEMBER_NAME=&lt;fld6&gt;|JOB_DESC_NAME=&lt;fld143&gt;|JOB_DESC_LIB=&lt;fld144&gt;|JOB_QUE_NAME=&lt;fld145&gt;|JOB_QUE_LIB=&lt;fld146&gt;|OUT_QUE_NAME=&lt;fld147&gt;|SPOOL_FILE_NAME=&lt;fld173&gt;|SHORT_SPOOL_FILE_NUMBER=&lt;fld172&gt;|SPOOL_FILE_NUMBER=&lt;fld171&gt;|OLD_COPIES=&lt;fld170&gt;|NEW_COPIES=&lt;fld169&gt;|OLD_PRINTER=&lt;fld258&gt;|NEW_PRINTER=&lt;fld257&gt;|NEW_OUT_QUE=&lt;fld229&gt;|NEW_OUT_QUE_LIB=&lt;fld168&gt;|OLD_FORM_TYPE=&lt;fld167&gt;|NEW_FORM_TYPE=&lt;fld166&gt;|OLD_RESTART_PAGE=&lt;fld165&gt;|NEW_RESTART_PAGE=&lt;fld164&gt;|OLD_PAGE_RANGE_START=&lt;fld230&gt;|NEW_PAGE_RANGE_START=&lt;fld231&gt;|OLD_PAGE_RANGE_END=&lt;fld232&gt;|NEW_PAGE_RANGE_END=&lt;fld233&gt;|SPOOL_FILE_JOB_NAME=&lt;process&gt;|SPOOL_FILE_JOB_USER=&lt;uid&gt;|SPOOL_FILE_JOB_NUMBER=&lt;fld236&gt;|OLD_DRAWER=&lt;fld164&gt;|NEW_DRAWER=&lt;fld163&gt;|OLD_PAGE_DEFINED_NAME=&lt;fld162&gt;|OLD_PAGE_DEFINED_LIB=&lt;fld161&gt;|NEW_PAGE_DEFINED_NAME=&lt;fld160&gt;|NEW_PAGE_DEFINED_LIB=&lt;fld159&gt;|OLD_FORM_DEFINED_NAME=&lt;fld158&gt;|OLD_FORM_DEFINED_LIB=&lt;fld157&gt;|NAME_NEW_FORM_DEFINED=&lt;fld156&gt;|NEW_FORM_DEFINED_LIB=&lt;fld155&gt;|OLD_USER_DEFINED_OPT_1=&lt;fld154&gt;|OLD_USER_DEFINED_OPT_2=&lt;fld153&gt;|OLD_USER_DEFINED_OPT_3=&lt;fld152&gt;|OLD_USER_DEFINED_OPT_4=&lt;fld259&gt;|NEW_USER_DEFINED_OPT_1=&lt;fld149&gt;|NEW_USER_DEFINED_OPT_2=&lt;fld150&gt;|NEW_USER_DEFINED_OPT_3=&lt;fld151&gt;|NEW_USER_DEFINED_OPT_4=&lt;fld142&gt;|OLD_USER_DEFINED_OBJ=&lt;fld141&gt;|OLD_USER_DEFINED_OBJ_LIB=&lt;fld140&gt;|OLD_USER_DEFINED_OBJ_TYPE=&lt;fld139&gt;|NEW_USER_DEFINED_OBJ=&lt;fld138&gt;|NEW_USER_DEFINED_OBJ_LIB=&lt;fld137&gt;|NEW_USER_DEFINED_OBJ_TYPE=&lt;fld136&gt;|SPOOL_FILE_JOB_SYSNAME=&lt;hostname&gt;|SPOOL_FILE_CREATE_DATE=&lt;fld134&gt;|SPOOL_FILE_CREATE_TIME=&lt;fld133&gt;|NAME_OLD_USER_DEFINED_DATA=&lt;fld132&gt;|NAME_NEW_USER_DEFINED_DATA=&lt;fld131&gt;|FILE_ASP_NAME=&lt;fld130&gt;|FILE_ASP_NUMBER=&lt;fld129&gt;|OUT_QUE_ASP_NAME=&lt;fld128&gt;|OUT_QUE_ASP_NUMBER=&lt;fld127&gt;|NEW_OUT_QUE_ASP_NAME=&lt;fld126&gt;|NEW_OUT_QUE_ASP_NUMBER=&lt;fld125&gt;|OLD_SPOOL_FILE_STATUS=&lt;fld124&gt;|NEW_SPOOL_FILE_STATUS=&lt;fld123&gt;|ORIGINAL_CREATE_DATE=&lt;fld122&gt;|ORIGINAL_CREATE_TIME=&lt;fld121&gt;|OLD_SPOOL_FILE_EXPIRE_DATE=&lt;fld120&gt;|NEW_SPOOL_FILE_EXPIRE_DATE=&lt;fld119&gt;|SPOOL_FILE_CREATE_DATE_UTC=&lt;fld467&gt;|SPOOL_FILE_CREATE_TIME_UTC=&lt;fld468&gt;|REMOTE_LOCATION_NAME=&lt;fld275&gt;|SIGNAL_NUMBER=&lt;jobnum&gt;|HANDLE_ACTION=&lt;action&gt;|SIGNAL_SOURCE=&lt;fld77&gt;|SOURCE_JOB_NAME=&lt;jobname&gt;|SOURCE_JOB_USER_NAME=&lt;username&gt;|SOURCE_JOB_CURRENT_USER=&lt;fld81&gt;|GENERATION_TIMESTAMP=&lt;fld82&gt;|ACTION=&lt;action&gt;|NAME=&lt;change_attribute&gt;|NEW_VALUE=&lt;change_new&gt;|OLD_VALUE=&lt;change_old&gt;|OBJ_NAME=&lt;obj_name&gt;|OBJ_AUDIT_VALUE=&lt;obj_value&gt;|CHANGE_USER_AUDIT_CREATE=&lt;fld219&gt;|CHANGE_USER_AUDIT_DELETE=&lt;fld218&gt;|CHANGE_USER_AUDIT_JOB_DTA=&lt;fld245&gt;|CHANGE_USER_AUDIT_OBJMGT=&lt;fld246&gt;|CHANGE_USER_AUDIT_OFCSRV=&lt;fld247&gt;|CHANGE_USER_AUDIT_PGMADP=&lt;fld250&gt;|CHANGE_USER_AUDIT_SAVRST=&lt;fld251&gt;|CHANGE_USER_AUDIT_SECURITY=&lt;fld252&gt;|CHANGE_USER_AUDIT_SERVICE=&lt;fld253&gt;|CHANGE_USER_AUDIT_SPOOLED_DATA=&lt;fld254&gt;|CHANGE_USER_AUDIT_SYSMGT=&lt;fld255&gt;|CHANGE_USER_AUDIT_OPTICAL=&lt;fld249&gt;|CHANGE_USER_AUDIT_AUTFAIL=&lt;fld244&gt;|CHANGE_USER_AUDIT_JOBBAS=&lt;fld217&gt;|CHANGE_USER_AUDIT_JOBCHGUSER=&lt;fld216&gt;|CHANGE_USER_AUDIT_NETBAS=&lt;fld215&gt;|CHANGE_USER_AUDIT_NETCLU=&lt;fld214&gt;|CHANGE_USER_AUDIT_NETCMN=&lt;fld213&gt;|CHANGE_USER_AUDIT_NETFAIL=&lt;fld212&gt;|CHANGE_USER_AUDIT_NETSTCK=&lt;fld211&gt;|CHANGE_USER_AUDIT_PGMFAIL=&lt;fld210&gt;|CHANGE_USER_AUDIT_PRTDTA=&lt;fld209&gt;|CHANGE_USER_AUDIT_SECCFG=&lt;fld208&gt;|CHANGE_USER_AUDIT_SECDIRSRV=&lt;fld207&gt;|CHANGE_USER_AUDIT_SECIPC=&lt;fld206&gt;|CHANGE_USER_AUDIT_SECNAS=&lt;fld205&gt;|CHANGE_USER_AUDIT_SECRUN=&lt;fld204&gt;|CHANGE_USER_AUDIT_SECSCKD=&lt;fld203&gt;|CHANGE_USER_AUDIT_SECVFY=&lt;fld202&gt;|CHANGE_USER_AUDIT_SECVLDL=&lt;fld201&gt;|DLO_NAME=&lt;fld53&gt;|FOLDER_PATH=&lt;fld52&gt;|OBJ_NAME_LENGTH=&lt;fld50&gt;|OBJ_NAME_CCSID=&lt;fld49&gt;|OBJ_NAME_COUNTRY_REGION_ID=&lt;fld48&gt;|OBJ_NAME_LANG_ID=&lt;fld47&gt;|PARENT_FILE_ID=&lt;filename&gt;|OBJ_FILE_ID=&lt;filename&gt;|OBJ_NAME_LONG=&lt;fld44&gt;|OBJ_FILE_ID_2=&lt;filename&gt;|PATH_NAME_CCSID=&lt;fld40&gt;|PATH_NAME_COUNTRY_REGION_ID=&lt;fld39&gt;|PATH_NAME_LANG_ID=&lt;fld38&gt;|PATH_NAME_LENGTH=&lt;fld37&gt;|PATH_NAME_IND=&lt;fld36&gt;|RELATIVE_DIRECTORY_FILE_ID=&lt;fld35&gt;|PATH_NAME=&lt;fld34&gt;|PUBLIC_AUTH=&lt;fld86&gt;|OBJ_NAME_COUNTRY_REGION=&lt;fld240&gt;|PATH_NAME_COUNTRY_REGION=&lt;fld241&gt;|USER_NAME=&lt;username&gt;|OBJ_EXIST=&lt;fld188&gt;|OBJ_MANAGEMENT=&lt;fld187&gt;|OBJ_OPERATIONAL=&lt;fld186&gt;|AUTH_LIST_MGMT=&lt;fld224&gt;|AUTH_LIST=&lt;fld243&gt;|READ_AUTH=&lt;fld190&gt;|ADD_AUTH=&lt;fld191&gt;|UPDATE_AUTH=&lt;fld192&gt;|DEL_AUTH=&lt;fld193&gt;|EXCL_AUTH=&lt;fld225&gt;|EXEC_AUTH=&lt;fld194&gt;|OBJ_ALT_AUTH=&lt;fld195&gt;|OBJ_REF_AUTH=&lt;fld196&gt;|COMMAND_TYPE=&lt;fld197&gt;|FIELD_NAME=&lt;fld198&gt;|OFFICE_USER=&lt;uid&gt;|OFFICE_BEHALF_OF_USER=&lt;uid&gt;|PERSONAL_STATUS=&lt;fld199&gt;|ACCESS_CODE=&lt;fld200&gt;|ACCESS_CODE_DESC=&lt;fld226&gt;|VIOLATION_TYPE=&lt;fld263&gt;|VALID_ERROR_ACTION=&lt;resultcode&gt;|PGM_NAME=&lt;application&gt;|PGM_LIB=&lt;library&gt;|USER_PROFILE=&lt;profile&gt;|WORK_STATION_NAME=&lt;fld264&gt;|PROGRAM_INSTR_NUMBER=&lt;fld265&gt;|OPERATOR_VIOLATION_CODE=&lt;fld261&gt;|ASP_PGM_LIB_NAME=&lt;library&gt;|ASP_PGM_LIB_NUMBER=&lt;fld267&gt;|CHG_FIELD_TYPE=&lt;fld325&gt;|LENGTH_TRIGGER_LIB_NAME=&lt;fld326&gt;|OFFSET_TRIGGER_LIB_NAME=&lt;fld327&gt;|LENGTH_TRIGGER_NAME=&lt;fld328&gt;|OFFSET_TRIGGER_NAME=&lt;fld329&gt;|NUMBER_PHYSICAL_FILES=&lt;fld330&gt;|NEXT_OFFSET=&lt;fld331&gt;|NOT_LOG_IND=&lt;fld332&gt;|SOURCE_FILE_IND=&lt;fld333&gt;|INTERNAL_DATA=&lt;fld334&gt;|NEW_ATTR_VALUE=&lt;change_new&gt;|JOB_DESC=&lt;event_description&gt;|OLD_USER=&lt;profile&gt;|NEW_USER=&lt;profile&gt;|TYPE=&lt;type&gt;|OLD_OWNER=&lt;change_old&gt;|NEW_OWNER=&lt;change_new&gt;|OBJ_LIB=&lt;library&gt;|OLD_PRIMARY_GROUP=&lt;change_old&gt;|NEW_PRIMARY_GROUP=&lt;change_new&gt;|REVOKE_OLD_PRIMARY_GROUP=&lt;fld476&gt;|OFFICE_BEHALF_USER=&lt;uid&gt;|STATUS=&lt;result&gt;|RETURN_VALUE=&lt;resultcode&gt;|SERVICE=&lt;service&gt;|TYPE_CHG=&lt;type&gt;|TYPE_REC=&lt;type1&gt;|ORIGINAL_SYS=&lt;change_old&gt;|USER_PROF=&lt;profile&gt;|REQ_SYS=&lt;device&gt;|USER_ID=&lt;uid&gt;|ADDR=&lt;user_address&gt;|NETWORK_USER_ID=&lt;uid&gt;|REQ_NAME=&lt;username&gt;|ACTION_PERFORMED=&lt;action&gt;|CLOSE_REASON=&lt;resultcode&gt;|CONN_USER=&lt;username&gt;|FILE_ID=&lt;filename&gt;|ENTRY_ACTION=&lt;action&gt;|SOURCE_NODE_ID=&lt;fld447&gt;|SOURCE_USER_NAME=&lt;uid&gt;|RUN_FROM_CL_PGM=&lt;type&gt;|COMMAND_STRING=&lt;action&gt;|ASP_NAME_COMMAND_LIB=&lt;library&gt;|ASP_NUMBER_COMMAND_LIB=&lt;fld371&gt;|CONNECT_ACTION=&lt;action&gt;|REJECT_REASON=&lt;resultcode&gt;|PT_TO_PT_PROFILE_NAME=&lt;profile&gt;|PROTOCOL=&lt;protocol&gt;|LOCAL_AUTH_METHOD=&lt;laddr&gt;|REMOTE_AUTH_METHOD=&lt;saddr&gt;|VALID_USER_NAME=&lt;username&gt;|LOCAL_IPADDR=&lt;daddr&gt;|REMOTE_IPADDR=&lt;saddr&gt;|AUTH_IPADDR=&lt;saddr&gt;|FIELD_CCSID_1=&lt;fld174&gt;|FIELD_LENGTH_1=&lt;fld175&gt;|FIELD_1=&lt;fld176&gt;|FIELD_CCSID_2=&lt;fld177&gt;|FIELD_LENGTH_2=&lt;fld178&gt;|FIELD_2=&lt;fld179&gt;|FIELD_CCSID_3=&lt;fld180&gt;|FIELD_LENGTH_3=&lt;fld181&gt;|FIELD_3=&lt;fld182&gt;|FIELD_CCSID_4=&lt;fld183&gt;|FIELD_LENGTH_4=&lt;fld184&gt;|FIELD_4=&lt;fld185&gt;|OPERATION_TYPE=&lt;type&gt;|AUTH_FAIL_CODE=&lt;resultcode&gt;|CFG_CHG=&lt;change_attribute&gt;|CLIENT_IPADDR=&lt;saddr&gt;|OWNER_NAME=&lt;owner&gt;|NEW_NAME=&lt;change_new&gt;|LOCAL_USER_PROFILE=&lt;profile&gt;|INSTANCE_NAME=&lt;instance&gt;|FOLDER_DOC_NAME=&lt;event_computer&gt;|BEHALF_USER=&lt;uid&gt;|SERVICE_TOOLS_USER_ID_TYPE=&lt;type&gt;|SERVICE_TOOLS_USER_ID_NEW_NAME2=&lt;uid&gt;|SERVICE_TOOLS_USER_ID_REQ_PROF=&lt;uid&gt;|OBJ_NAME_BEFORE=&lt;fld335&gt;|LIB_NAME_BEFORE=&lt;change_old&gt;|MEMBER_NAME_BEFORE=&lt;fld337&gt;|OBJ_NAME_AFTER=&lt;fld338&gt;|LIB_NAME_AFTER=&lt;change_new&gt;|MEMBER_NAME_AFTER=&lt;fld340&gt;|MEDIA_TYPE=&lt;fld341&gt;|1ST_VOLUME_ID=&lt;fld342&gt;|START_SAVE_REST_DATE=&lt;fld360&gt;|START_SAVE_REST_TIME=&lt;fld361&gt;|UPDATE_HIST=&lt;fld345&gt;|FILE_NAME=&lt;filename&gt;|FILE_LIB=&lt;fld365&gt;|MEDIA_FILE_ID=&lt;filename&gt;|REST_FILE_ID=&lt;filename&gt;|REST_OVER_FILE_ID=&lt;filename&gt;|START_SAVE_DATE=&lt;fld343&gt;|START_SAVE_TIME=&lt;fld344&gt;|ACTION_VALUE=&lt;fld366&gt;|START_SAVE_ACTION_DATE=&lt;fld349&gt;|START_SAVE_ACTION_TIME=&lt;fld350&gt;|PRIMARY_REC_NAME=&lt;fld351&gt;|PRIMARY_REC_LIB=&lt;fld352&gt;|DUAL_REC_NAME=&lt;fld353&gt;|DUAL_REC_LIB=&lt;fld354&gt;|SEQ_NUMBER_MTCH_START_SAVE_ENTRY=&lt;fld355&gt;|FILE_ID_OBJ_REST=&lt;filename&gt;|LG_SEQ_NUMBER_MTCH_START_SAVE_ENTRY=&lt;fld357&gt;|LIB_ASP_DEVICE=&lt;fld358&gt;|CONTENTS_SAVE=&lt;fld359&gt;|REASON_CODE=&lt;resultcode&gt;|RECEIVER=&lt;fld14&gt;|LOCAL_IPADDR_1=&lt;daddr&gt;|LOCAL_CLIENT_ID_PORT=&lt;dport&gt;|REMOTE_IPADDR_1=&lt;saddr&gt;|REMOTE_CLIENT_ID_PORT=&lt;sport&gt;|LOCAL_IPADDR_2=&lt;daddr&gt;|REMOTE_IPADDR_2=&lt;saddr&gt;|RESULT_CODE=&lt;resultcode&gt;|IPC_TYPE=&lt;type&gt;|IPC_HANDLE=&lt;change_new&gt;|OWNER_AUTH=&lt;fld90&gt;|NEW_GROUP=&lt;change_new&gt;|OLD_GROUP=&lt;change_old&gt;|GROUP_AUTH=&lt;fld87&gt;|CCSID_SEMPHR_NAME=&lt;fld85&gt;|LENGTH_SEMPHR_NAME=&lt;fld84&gt;|SEMPHR_NAME=&lt;fld83&gt;|LOCAL_PORT_NUMBER=&lt;dport&gt;|REMOTE_PORT_NUMBER=&lt;sport&gt;|VIOLATION_ENTRY_TYPE=&lt;fld274&gt;|NETWORK_ID=&lt;fld273&gt;|FILE_NAME_LONG=&lt;filename&gt;|CERT_OPERATOR=&lt;type&gt;|KEY_RING_OPERATOR=&lt;type1&gt;|TRUST_ROUTE_OPERATOR=&lt;action&gt;|OBJ_DIRECTORY_FILE_ID=&lt;fld411&gt;|SOURCE_NAME_LENGTH=&lt;fld420&gt;|SOURCE_NAME_CCSID=&lt;fld417&gt;|SOURCE_NAME_COUNTRY_REGION=&lt;fld418&gt;|SOURCE_NAME_LANG_ID=&lt;fld419&gt;|SOURCE_PARENT_FILE_ID=&lt;fld421&gt;|OBJ_TARGET_FILE_ID=&lt;fld412&gt;|CERT_LABEL_LENGTH=&lt;fld409&gt;|CERT_LABEL=&lt;fld408&gt;|ABS_PATH_NAME=&lt;fld406&gt;|SOURCE_FILE_ID=&lt;filename&gt;|SOURCE_ASP_NAME=&lt;fld414&gt;|SOURCE_ASP_NUMBER=&lt;fld415&gt;|SOURCE_PATH_NAME_CCSID=&lt;fld422&gt;|SOURCE_PATH_NAME_COUNTRY_REGION=&lt;fld423&gt;|SOURCE_PATH_NAME_LANG_ID=&lt;fld425&gt;|SOURCE_PATH_NAME_LENGTH=&lt;fld426&gt;|SOURCE_PATH_NAME_IND=&lt;fld424&gt;|SOURCE_RELATIVE_DIRECTORY_FILE_ID=&lt;fld427&gt;|SOURCE_ABS_PATH_NAME=&lt;fld413&gt;|LOG_TYPE=&lt;type&gt;|USER_PRIVILEGE=&lt;privilege&gt;|ADDITIONAL_REASON=&lt;event_description&gt;|STATUS_CODE=&lt;result&gt;|ERROR_TYPE=&lt;resultcode&gt;|ATTR=&lt;change_attribute&gt;|OLD_ATTR_VALUE=&lt;change_old&gt;|OLD_OBJ_NAME=&lt;fld296&gt;|OLD_LIB_NAME=&lt;change_old&gt;|NEW_OBJ_NAME=&lt;obj_name&gt;|NEW_LIB_NAME=&lt;library&gt;|OLD_FOLDER_DOC_NAME=&lt;fld292&gt;|OLD_FOLDER_PATH=&lt;fld293&gt;|NEW_FOLDER_DOC_NAME=&lt;fld276&gt;|NEW_FOLDER_PATH=&lt;fld277&gt;|OLD_PARENT_FILE_ID=&lt;fld298&gt;|OLD_OBJ_FILE_ID=&lt;filename&gt;|OLD_OBJ_NAME_LONG=&lt;fld297&gt;|NEW_PARENT_FILE_ID=&lt;fld284&gt;|NEW_OBJ_NAME_LONG=&lt;fld283&gt;|ASP_NAME_1=&lt;fld301&gt;|ASP_NUMBER_1=&lt;fld300&gt;|PATH_NAME_CCSID_1=&lt;fld299&gt;|NEW_OBJ_FILE_ID=&lt;filename&gt;|NEW_ASP_NAME=&lt;fld278&gt;|NEW_ASP_NUMBER=&lt;fld279&gt;|NEW_PATH_NAME_CCSID=&lt;fld286&gt;|NEW_PATH_NAME_COUNTRY_REGION=&lt;fld287&gt;|NEW_PATH_NAME_LANG_ID=&lt;fld289&gt;|NEW_PATH_NAME_LENGTH=&lt;fld290&gt;|NEW_PATH_NAME_IND=&lt;fld288&gt;|NEW_RELATIVE_DIRECTORY_FILE_ID=&lt;fld291&gt;|NEW_PATH_NAME=&lt;fld285&gt;|REST_OBJ_NAME=&lt;obj_name&gt;|REST_LIB_NAME=&lt;library&gt;|SAVE_OBJ_NAME=&lt;fld319&gt;|SAVE_LIB_NAME=&lt;library&gt;|PGM_STATUS_E=&lt;result&gt;|SETUID_MODE=&lt;fld322&gt;|SETGID_MODE=&lt;fld321&gt;|SIGNAL_STATUS=&lt;fld323&gt;|SCAN_ATTR=&lt;fld320&gt;|REST_DLO_NAME=&lt;fld312&gt;|REST_FOLDER_PATH=&lt;fld313&gt;|SAVE_DLO_NAME=&lt;fld316&gt;|SAVE_FOLDER_PATH=&lt;fld317&gt;|PRIVATE_AUTH_REST=&lt;fld310&gt;|PRIVATE_AUTH_SAVE=&lt;fld311&gt;|NUMBER_PRIVATE_AUTH_REST=&lt;fld307&gt;|OLD_FILE_ID=&lt;change_old&gt;|OWNING_USER_PROFILE=&lt;profile&gt;|SOURCE_DEVICE_NAME=&lt;library&gt;|SOURCE_CSI_NAME=&lt;obj_name&gt;|SOURCE_CSI_LIB=&lt;library&gt;|SOURCE_VOLUME_NAME=&lt;disk_volume&gt;|SOURCE_OBJ_NAME=&lt;filename&gt;|TARGET_DEVICE_NAME=&lt;library&gt;|TARGET_CSI_NAME=&lt;obj_name&gt;|TARGET_CSI_LIB=&lt;library&gt;|TARGET_VOLUME_NAME=&lt;disk_volume&gt;|TARGET_OBJ_NAME=&lt;filename&gt;|ASP_NAME_TARGET_CSI_LIB=&lt;library&gt;|CSI_NAME=&lt;fld304&gt;|CSI_LIB=&lt;fld303&gt;|VOLUME_NAME=&lt;fld305&gt;|OLD_VOLUME_NAME=&lt;change_old&gt;|NEW_VOLUME_NAME=&lt;change_new&gt;|SAVE_FILE_NAME=&lt;filename&gt;|SAVE_FILE_LIB=&lt;library&gt;|SAVE_ACTION_VALUE=&lt;fld348&gt;|OUT_TYPE=&lt;fld463&gt;|STATUS_AFTER_PRINTING=&lt;result&gt;|OUT_QUE_LIB_NAME=&lt;library&gt;|DEVICE_TYPE=&lt;fld459&gt;|DEVICE_MODEL=&lt;fld458&gt;|DEVICE_FILE_NAME=&lt;filename&gt;|DEVICE_FILE_LIB=&lt;library&gt;|FORM_TYPE=&lt;fld460&gt;|USER_DATA=&lt;fld470&gt;|REMOTE_SYS=&lt;fld465&gt;|REMOTE_SYSPRIN_TQUE=&lt;fld466&gt;|SOURCE_LOCATION=&lt;fld271&gt;|ORIGINAL_TARGET_USER_PROF=&lt;change_old&gt;|NEW_TARGET_USER_PROF=&lt;change_new&gt;|PROFILE_TOKEN_TYPE=&lt;fld238&gt;|PROFILE_TOKEN_TIMEOUT=&lt;fld239&gt;|OWNER=&lt;owner&gt;|IXV_TX_MODE=&lt;fld404&gt;|PRIMARY_GROUP_OWNER=&lt;fld405&gt;|LOCAL_PORT=&lt;dport&gt;|REMOTE_PORT=&lt;sport&gt;|FILTER_DESC=&lt;fld27&gt;|FILTER_DATA_LENGTH=&lt;fld28&gt;|FILTER_DATA=&lt;fld29&gt;|ADDR_FAMILY=&lt;fld30&gt;|MAC_ADDRESS=&lt;fld144&gt;|HOST_NAME=&lt;fld33&gt;|USER_INFO_ENTRY_TYPE=&lt;type&gt;|PASSWORD_STORED=&lt;password&gt;|USER_ID_LENGTH=&lt;fld403&gt;|SESSION_ACTION=&lt;action&gt;|USER_PROF_NAME=&lt;profile&gt;|JUID=&lt;fld256&gt;|SUBSYS_NAME=&lt;obj_name&gt;|OBJ_LIB_NAME=&lt;library&gt;|PGM_LIB_NAME=&lt;library&gt;|SEQ_NUMBER=&lt;seqnum&gt;|COMMAND_NAME=&lt;fld401&gt;|ASP_NAME_PGM_LIB=&lt;library&gt;|MESSAGE_ID=&lt;resultcode&gt;|RELATIVE_DBNAME=&lt;jobname&gt;|NETWORK_FILE_NAME=&lt;filename&gt;|NETWORK_FILE_OWNER=&lt;profile&gt;|NETWORK_FILE_ORIGINAL_USER=&lt;profile&gt;|SYS_VALUE_SERVICE_ATTR=&lt;service&gt;|OLD_VALUE_CONT=&lt;fld453&gt;|SERVICE_TOOL=&lt;service&gt;|OBJ_TYPE_1=&lt;obj_type&gt;|LIB_NAME_DUMP_SYSOBJ=&lt;fld440&gt;|OBJ_TYPE_2=&lt;fld442&gt;|EARLY_TRACE_ACTION=&lt;fld439&gt;|APP_TRACE_OPT=&lt;fld429&gt;|APP_TRACED=&lt;fld430&gt;|SERVICE_TOOLS_PROF=&lt;profile&gt;|SOURCE_USER=&lt;uid&gt;|ASP_NAME_OBJ_LIB=&lt;fld432&gt;|ASP_NUMBER_OBJ_LIB=&lt;fld434&gt;|ASP_NAME_DUMP_SYS_OBJ_LIB=&lt;fld431&gt;|ASP_NUMBER_DUMP_SYS_OBJ_LIB=&lt;fld433&gt;|CONSOLE_TYPE=&lt;fld436&gt;|CONSOLE_ACTION=&lt;fld435&gt;|PREVIOUS_IPADDR=&lt;fld444&gt;|PREVIOUS_DEVICE_ID=&lt;fld443&gt;|CURRENT_IPADDR=&lt;fld438&gt;|CURRENT_DEVICE_ID=&lt;fld437&gt;|WATCH_SESSION=&lt;fld449&gt;|ENTRY=&lt;entry&gt;|RELATIVE_OBJ=&lt;obj_name&gt;|RELATIVE_OBJ_LIB=&lt;library&gt;|USER_PROFILE_NAME=&lt;profile&gt;|PASSWORD_CHG=&lt;password_chg&gt;|PASSWORD_NONE=&lt;password&gt;|PASSWORD_EXPIRED=&lt;password_expire&gt;|JOB_CTRL_SPECIAL_AUTH=&lt;fld376&gt;|SAVE_SYS_SPECIAL_AUTH=&lt;fld377&gt;|SEC_ADMIN_SPECIAL_AUTH=&lt;fld378&gt;|SPOOL_CONTROL_SPECIAL_AUTH=&lt;fld379&gt;|SERVICE_SPECIAL_AUTH=&lt;fld380&gt;|AUDIT_SPECIAL_AUTH=&lt;fld381&gt;|SYS_CFG_SPECIAL_AUTH=&lt;fld382&gt;|GROUP_PROFILE=&lt;profile&gt;|INITIAL_PGM=&lt;process&gt;|INITIAL_PGM_LIB=&lt;library&gt;|INITIAL_MENU=&lt;fld387&gt;|INITIAL_MENU_LIB=&lt;fld388&gt;|CURRENT_ENTRY_LIB=&lt;fld389&gt;|LIMITED_CAPABILITY=&lt;fld390&gt;|USER_CLASS=&lt;fld391&gt;|PRIORITY_LIMIT=&lt;fld392&gt;|PROFILE_STATUS=&lt;fld393&gt;|GROUP_AUTH_TYPE=&lt;fld394&gt;|GROUP_ID=&lt;fld396&gt;|LOCAL_PASSWORD_MGMT=&lt;fld397&gt;|PASSWORD_COMPOSITION_CONFORM=&lt;fld398&gt;|PASSWORD_EXPIRE_INTERVAL=&lt;fld399&gt;|BLOCK_PASSWORD_CHG=&lt;fld400&gt;|UNSUCCESSFUL_TYPE=&lt;type&gt;|ENCRYPT_DATA=&lt;info&gt;|RESOURCE_NAME=&lt;fld477&gt;|SUPP_GROUP_PROFILE=&lt;fld478&gt;|JOB_Q_LIB_ASP_NUMBER=&lt;fld479&gt;|FILTER_CONTROL_PNT_NAME=&lt;fld480&gt;|FILTER_CONTROL_PNT_NETID=&lt;fld481&gt;|FILTER_CP_LOCATION_NAME=&lt;fld482&gt;|FILTER_CP_LOCATION_NETID=&lt;fld483&gt;|POINTER_LOCATION_NAME=&lt;fld484&gt;|POINTER_LOCATION_NETID=&lt;fld485&gt;|INBOUND_SESSION=&lt;fld486&gt;|OUTBOUND_SESSION=&lt;fld487&gt;|LOCAL_LOCATION_NAME=&lt;fld488&gt;|REMOTE_NETID=&lt;fld489&gt;|SOURCE_JOB_NUMBER=&lt;fld490&gt;|NEW_VALUE_LENGTH=&lt;fld491&gt;|NEW_VALUE_CCSID=&lt;fld492&gt;|NEW_VAL_COUNTRY_REGION_ID=&lt;fld493&gt;|NEW_VALUE_LANG_ID=&lt;fld494&gt;|OLD_VALUE_LENGTH=&lt;fld495&gt;|OLD_VALUE_CCSID=&lt;fld496&gt;|OLD_VALUE_COUNTRY_REGION_ID=&lt;fld497&gt;|OLD_VALUE_LANGUAGE_ID=&lt;fld498&gt;|CHANGE_USER_AUDIT_CMD=&lt;fld499&gt;|AUTH_LIST_NAME=&lt;fld500&gt;|PRIVATE_AUTH=&lt;fld501&gt;|AUTL_REMOVED=&lt;fld502&gt;|OBJ_ATTR=&lt;fld503&gt;|OFFSET_NAME_1ST_PHYSICAL_FILE=&lt;fld504&gt;|ATTR_CHG=&lt;fld505&gt;|DISP_INHER_RULES=&lt;fld506&gt;|ACCESS_SPEC_DATA=&lt;fld507&gt;|OBJ_MGMT=&lt;fld508&gt;|OBJ_OPERATOR=&lt;fld509&gt;|OBJ_ALTER=&lt;fld510&gt;|OBJ_REF=&lt;fld511&gt;|DELETE_AUTH=&lt;fld512&gt;|SERVICE_CODE=&lt;fld513&gt;|TEXT_SET=&lt;fld514&gt;|FUNC_REQ=&lt;fld515&gt;|DURATION=&lt;fld516&gt;|CRG_OBJ_NAME=&lt;fld517&gt;|CRG_LIB_NAME=&lt;fld518&gt;|CLUSTER_NAME=&lt;fld519&gt;|NODE_ID=&lt;fld520&gt;|USER_QUEUE_NAME=&lt;fld521&gt;|USER_QUEUE_LIB=&lt;fld522&gt;|CONN_ID=&lt;fld523&gt;|NETWORK_NAME=&lt;fld524&gt;|IP_FORWARDING=&lt;fld525&gt;|PROXY_ARP=&lt;fld526&gt;|RADIUS_NAME=&lt;fld527&gt;|ACCT_SESSION_ID=&lt;fld528&gt;|MULTI_SESSION_ID=&lt;fld529&gt;|ACCT_LINK_COUNT=&lt;fld530&gt;|TUNNEL_TYPE=&lt;fld531&gt;|TUNNEL_CLIENT_END_PT=&lt;fld532&gt;|TUNNEL_SERVER_END_PT=&lt;fld533&gt;|ACCT_SESSION_TIME=&lt;fld534&gt;|CARD_PROFILE=&lt;fld535&gt;|CARD_ROLE=&lt;fld536&gt;|MSTR_KEY_ID=&lt;fld537&gt;|MSTR_KEY_ENCRYPT=&lt;fld538&gt;|MSTR_KEY_VERSION=&lt;fld539&gt;|XREF=&lt;fld540&gt;|FIELD_CCSID_5=&lt;fld541&gt;|FIELD_LENGTH_5=&lt;fld542&gt;|FIELD_5=&lt;fld543&gt;|CFG_CHG_CODE=&lt;fld544&gt;|PROPAGATE_FLAG=&lt;fld545&gt;|BIND_AUTH_CHOICE=&lt;fld546&gt;|LDAP_VERSION=&lt;fld547&gt;|SSL_IND=&lt;fld548&gt;|REQ_TYPE=&lt;fld549&gt;|USER_NAME_CCSID=&lt;fld550&gt;|USER_NAME_LENGTH=&lt;fld551&gt;|OWNER_NAME_CCSID=&lt;fld552&gt;|OWNER_NAME_LENGTH=&lt;fld553&gt;|NEW_NAME_CCSID=&lt;fld554&gt;|NEW_NAME_LENGTH=&lt;fld555&gt;|ADMIN_IND=&lt;fld556&gt;|PROXY_ID_CCSID=&lt;fld557&gt;|PROXY_ID_LENGTH=&lt;fld558&gt;|PROXY_ID=&lt;fld559&gt;|GROUP_ASSERT=&lt;fld560&gt;|ROUTE_CCSID=&lt;fld561&gt;|ROUTE_LENGTH=&lt;fld562&gt;|ROUTE=&lt;fld563&gt;|SERVICE_TOOLS_USER_ID_RESET=&lt;fld564&gt;|SERVICE_TOOLS_USER_ID_NEW_NAME_1=&lt;fld565&gt;|SERVICE_TOOLS_USER_ID_PWD_CHG=&lt;fld566&gt;|DATA_CCSID=&lt;fld567&gt;|RECEIVER_LENGTH=&lt;fld568&gt;|SENDER_LENGTH=&lt;fld569&gt;|SENDER=&lt;fld570&gt;|INITIATOR_LENGTH=&lt;fld571&gt;|INITIATOR=&lt;fld572&gt;|CHAIN_LENGTH=&lt;fld573&gt;|CHAIN=&lt;fld574&gt;|CHAIN_ENTRIES=&lt;fld575&gt;|CHAIN_ENTRIES_AVAIL=&lt;fld576&gt;|SOURCE_REG_LENGTH=&lt;fld577&gt;|SOURCE_REG=&lt;fld578&gt;|SOURCE_REG_USER_LENGTH=&lt;fld579&gt;|SOURCE_REG_USER=&lt;fld580&gt;|TARGET_REG_LENGTH=&lt;fld581&gt;|TARGET_REG=&lt;fld582&gt;|TARGET_REG_USER_LENGTH=&lt;fld583&gt;|TARGET_REG_USER=&lt;fld584&gt;|LOCAL_IPADDR_FAMILY=&lt;fld585&gt;|REMOTE_IPADDR_FAMILY=&lt;fld586&gt;|CCSID=&lt;fld587&gt;|LOCAL_ID=&lt;fld588&gt;|LOCAL_CLIENT_ID_TYPE=&lt;fld589&gt;|LOCAL_CLIENT_ID_VALUE=&lt;fld590&gt;|LOCAL_CLIENT_ID_PROTOCOL=&lt;fld591&gt;|REMOTE_ID=&lt;fld592&gt;|REMOTE_CLIENT_ID_TYPE=&lt;fld593&gt;|REMOTE_CLIENT_ID_VALUE=&lt;fld594&gt;|REMOTE_CLIENT_ID_PROTOCOL=&lt;fld595&gt;|TIME_EVENT=&lt;fld596&gt;|DETPT_ID=&lt;fld597&gt;|LOCAL_ADDR_FAMILY=&lt;fld598&gt;|REMOTE_ADDR_FAMILY=&lt;fld599&gt;|PROBE_TYPE_ID=&lt;fld600&gt;|EVENT_CORRELATOR=&lt;fld601&gt;|EVENT_TYPE_L=&lt;fld602&gt;|COND=&lt;fld603&gt;|THROTTLING=&lt;fld604&gt;|DISCARD_PACKET=&lt;fld605&gt;|TARGET_TCPIP_STACK=&lt;fld606&gt;|SUSPECTED_PACKET=&lt;fld607&gt;|FILE_NAME_LENGTH=&lt;fld608&gt;|FILE_NAME_CCSID=&lt;fld609&gt;|FILE_COUNTRY_REGION_ID=&lt;fld610&gt;|FILE_LANG_ID=&lt;fld611&gt;|CONN_SEQ=&lt;fld612&gt;|GSS_STATUS_VALUE=&lt;fld613&gt;|ENCRYPT_ADDR=&lt;fld614&gt;|ENCRYPT_ADDR_IND=&lt;fld615&gt;|TICKET_FLAGS=&lt;fld616&gt;|TICKET_AUTH_TIME=&lt;fld617&gt;|TICKET_START_TIME=&lt;fld618&gt;|TICKET_END_TIME=&lt;fld619&gt;|TICKET_RENEW_TIME=&lt;fld620&gt;|MESSAGE_TIMESTAMP=&lt;fld621&gt;|GSS_EXPIRE_TIMESTAMP=&lt;fld622&gt;|SERVER_PRIN_CCSID=&lt;fld623&gt;|SERVER_PRIN_LENGTH=&lt;fld624&gt;|SERVER_PRIN_IND=&lt;fld625&gt;|SERVER_PRIN=&lt;fld626&gt;|SERVER_PRIN_PARAM_CCSID=&lt;fld627&gt;|SERVER_PRIN_PARAM_LENGTH=&lt;fld628&gt;|SERVER_PRIN_PARAM_IND=&lt;fld629&gt;|SERVER_PRIN_PARAM=&lt;fld630&gt;|CLIENT_PRIN_AUTH_CCSID=&lt;fld631&gt;|CLIENT_PRIN_AUTH_LENGTH=&lt;fld632&gt;|CLIENT_PRIN_AUTH_IND=&lt;fld633&gt;|CLIENT_PRIN_AUTH=&lt;fld634&gt;|CLIENT_PRIN_TKT_CCSID=&lt;fld635&gt;|CLIENT_PRIN_TKT_LENGTH=&lt;fld636&gt;|CLIENT_PRIN_TKT_IND=&lt;fld637&gt;|CLIENT_PRIN_TKT=&lt;fld638&gt;|GSS_SERVER_PRIN_CCSID=&lt;fld639&gt;|GSS_SERVER_PRIN_LENGTH=&lt;fld640&gt;|GSS_SERVER_PRIN_IND=&lt;fld640&gt;|GSS_SERVER_PRIN=&lt;fld641&gt;|GSS_LOCAL_PRIN_CCSID=&lt;fld642&gt;|GSS_LOCAL_PRIN_LENGTH=&lt;fld643&gt;|GSS_LOCAL_PRIN_IND=&lt;fld644&gt;|GSS_LOCAL_PRIN=&lt;fld645&gt;|GSS_REMOTE_PRIN_CCSID=&lt;fld646&gt;|GSS_REMOTE_PRIN_LENGTH=&lt;fld647&gt;|GSS_REMOTE_PRIN_IND=&lt;fld648&gt;|GSS_REMOTE_PRIN=&lt;fld649&gt;|RETURN_CODE=&lt;fld650&gt;|SERVER_MESSAGE=&lt;fld651&gt;|SYS_COMMAND=&lt;fld652&gt;|ASP_NUMBER_TARGET_CSI_LIB=&lt;fld653&gt;|OLD_AUTH_LIST=&lt;fld654&gt;|NEW_AUTH_LIST=&lt;fld655&gt;|LENGTH=&lt;fld656&gt;|OBJ_NAME_OFFSET=&lt;fld657&gt;|START_JOURNALING_IND=&lt;fld658&gt;|OUT_QUE=&lt;fld659&gt;|AUTH_REST=&lt;fld660&gt;|SOCKET_DESCRIPTOR=&lt;fld661&gt;|ASP_NAME_SBSD_LIB=&lt;fld662&gt;|ASP_NUMBER_SBSD_LIB=&lt;fld663&gt;|ASP_NUMBER_PGM_LIB=&lt;fld664&gt;|NAME_TRUNCATED=&lt;fld665&gt;|ENV_VAR_NAME=&lt;fld666&gt;|NEW_NAME_TRUNCATED=&lt;fld667&gt;|NEW_NAMELENGTH=&lt;fld668&gt;|NEW_ENV_VAR_NAME=&lt;fld669&gt;|FILE_SYSNAME=&lt;fld670&gt;|BACKUP_OPT_CHG=&lt;fld671&gt;|BACKUP_LIST_CHG=&lt;fld672&gt;|NETWORK_FILE_MEMBER=&lt;fld673&gt;|NETWORK_FILE_NUMBER=&lt;fld674&gt;|NETWORK_FILE_ORIGINAL_ADDR=&lt;fld675&gt;|NEW_VALUE_CONT=&lt;fld676&gt;|NEW_VALUE_CONT_EXT=&lt;fld677&gt;|OLD_VALUE_CONT_EXT=&lt;fld678&gt;|ALL_OBJ_SPECIAL_AUTH=&lt;fld679&gt;" />
+</DEVICEMESSAGES>

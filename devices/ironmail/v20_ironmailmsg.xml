@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="ironmail"
+	displayname="McAfee Email Gateway"
+	group="Application Firewall">
 <VERSION
-	xml="28"
-	checksum="5799dd5b16b820ad434e86dc9193e106"
+	xml="29"
+	checksum="11f803ec93c39f4be10237a18e126d98"
 	revision="109"
-	enVision="33030068"
 	device="2.0" />
-
 	
 <HEADER 
-		id1="0001" 
-		id2="0001" 
-		content="%IRONMAIL &lt;fld1&gt; (&lt;fld2&gt;),&lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,{[&lt;messageid&gt;]|&lt;messageid&gt;} &lt;!payload:fld1&gt;" />		
-
+	id1="0001" 
+	id2="0001" 
+	content="%IRONMAIL &lt;fld1&gt; (&lt;fld2&gt;),&lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,{[&lt;messageid&gt;]|&lt;messageid&gt;} &lt;!payload:fld1&gt;" />		
 <HEADER 
-		id1="0002" 
-		id2="0002" 
-		content="%IRONMAIL &lt;fld1&gt; (&lt;fld2&gt;)&lt;fld3&gt; &lt;fld4&gt;{&lt;fld5&gt; [&lt;messageid&gt;]|UTC&lt;fld6&gt;_&lt;messageid&gt;} &lt;!payload:fld1&gt;" />		
+	id1="0002" 
+	id2="0002" 
+	content="%IRONMAIL &lt;fld1&gt; (&lt;fld2&gt;)&lt;fld3&gt; &lt;fld4&gt;{&lt;fld5&gt; [&lt;messageid&gt;]|UTC&lt;fld6&gt;_&lt;messageid&gt;} &lt;!payload:fld1&gt;" />		
  
-
 <HEADER 
-		id1="0003" 
-		id2="0003" 
-		content="%IRONMAIL &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+	id1="0003" 
+	id2="0003" 
+	content="%IRONMAIL &lt;messageid&gt; &lt;!payload:messageid&gt;" />
  	
 <HEADER 
-		id1="0004" 
-		id2="0004" 
-		content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;messageid&gt; &lt;!payload:fld1&gt;" />
-
+	id1="0004" 
+	id2="0004" 
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;messageid&gt; &lt;!payload:fld1&gt;" />
 <HEADER
-		id1="0005"
-		id2="0005"
-		content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;]&lt;messageid&gt; &lt;!payload:fld1&gt;" />
-
+	id1="0005"
+	id2="0005"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;]&lt;messageid&gt; &lt;!payload:fld1&gt;" />
 
 
 <HEADER 
-		id1="9999" 
-		id2="9999" 
-		messageid="STRCAT('IRONMAIL_GENERIC')"
-		content="%IRONMAIL &lt;!payload&gt;" />
-
+	id1="9999" 
+	id2="9999" 
+	messageid="STRCAT('IRONMAIL_GENERIC')"
+	content="%IRONMAIL &lt;!payload&gt;" />
 
 <VALUEMAP
 		name="getEventLegacyCategoryName"
@@ -54,931 +50,578 @@
 		keyvaluepairs="Email Delivered=&apos;1207010100&apos;|Email Rejected=&apos;1207010200&apos;|Email Deferred=&apos;1207000000&apos;" />	
 		
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="ADE-SYSTEM-RULE" 
 	id2="ADE-SYSTEM-RULE" 		
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;ADE-SYSTEM-RULE &apos;Host:&lt;fld1&gt; - &lt;action&gt; for the rule: &lt;rule&gt;&apos;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="ADE-SYSTEM-RULE &apos;Host:&lt;fld1&gt; - &lt;action&gt; for the rule: &lt;rule&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75"
 	id1="ADMIN-UP" 
 	id2="ADMIN-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;ADMIN-UP &apos;Host:&lt;fld1&gt; - Admin Server Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="ADMIN-UP &apos;Host:&lt;fld1&gt; - Admin Server Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="AVQ-FILE-ENCRYPTION-ERROR" 
 	id2="AVQ-FILE-ENCRYPTION-ERROR" 
 	eventcategory="1603000000" 
-	content="&lt;@ec_theme:Encryption&gt;&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;action&gt; &apos;Host:&lt;fld1&gt; - Virus Engine: &lt;product&gt;&apos;" /> 
+	functions="&lt;@ec_theme:Encryption&gt;&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;action&gt; &apos;Host:&lt;fld1&gt; - Virus Engine: &lt;product&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="AVQ-UP" 
 	id2="AVQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;AVQ-UP &apos;Host:&lt;fld1&gt; - Anti Virus Queue Test Passed.&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="AVQ-UP &apos;Host:&lt;fld1&gt; - Anti Virus Queue Test Passed.&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="AVQ-VIRUS-FOUND" 
 	id2="AVQ-VIRUS-FOUND" 		
 	eventcategory="1003010000" 
-	content="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;AVQ-VIRUS-FOUND &apos;Host:&lt;fld1&gt; - Virus Engine: &lt;product&gt;, Virus Name: &lt;virusname&gt;&apos;" /> 
+	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;"
+	content="AVQ-VIRUS-FOUND &apos;Host:&lt;fld1&gt; - Virus Engine: &lt;product&gt;, Virus Name: &lt;virusname&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="CFQ-ERROR" 
 	id2="CFQ-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;&lt;@dclass_counter1_string:Messages&gt;CFQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="CFQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="CFQ-UP" 
 	id2="CFQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;CFQ-UP &apos;Host:&lt;fld1&gt; - Content Filtering Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="CFQ-UP &apos;Host:&lt;fld1&gt; - Content Filtering Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="EUSRQUARANTINE-UP" 
 	id2="EUSRQUARANTINE-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;EUSRQUARANTINE-UP &apos;Host:&lt;fld1&gt; - EUQ Server Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="EUSRQUARANTINE-UP &apos;Host:&lt;fld1&gt; - EUQ Server Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="HEARTBEAT" 
 	id2="HEARTBEAT" 	
 	eventcategory="1604000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;HEARTBEAT &apos;&lt;event_description&gt;&apos;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="HEARTBEAT &apos;&lt;event_description&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="HTTPD-UP" 
 	id2="HTTPD-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_subject:Process&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;HTTPD-UP &apos;Host:&lt;fld1&gt; - Web Admin Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="HTTPD-UP &apos;Host:&lt;fld1&gt; - Web Admin Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="IMAP4PROXY-UP" 
 	id2="IMAP4PROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_subject:Service&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;IMAP4PROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_subject:Service&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="IMAP4PROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="IMAP4SPROXY-UP" 
 	id2="IMAP4SPROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_subject:Service&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;IMAP4SPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_subject:Service&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="IMAP4SPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="INTERNAL-SERVER-ERROR" 
 	id2="INTERNAL-SERVER-ERROR" 		
 	eventcategory="1603110000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Failed&gt;INTERNAL-SERVER-ERROR &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Internal Server Test Failed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Failed&gt;"
+	content="INTERNAL-SERVER-ERROR &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Internal Server Test Failed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="INTERNAL-SERVER-UP" 
 	id2="INTERNAL-SERVER-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;INTERNAL-SERVER-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Internal Server Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="INTERNAL-SERVER-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Internal Server Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="JOINQ-ERROR" 
 	id2="JOINQ-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;JOINQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="JOINQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="JOINQ-UP" 
 	id2="JOINQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;JOINQ-UP &apos;Host:&lt;fld1&gt; - Mime Joining Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="JOINQ-UP &apos;Host:&lt;fld1&gt; - Mime Joining Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="MMQ-UP" 
 	id2="MMQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;MMQ-UP &apos;Host:&lt;fld1&gt; - Mail Monitoring Queue Test Passed.&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="MMQ-UP &apos;Host:&lt;fld1&gt; - Mail Monitoring Queue Test Passed.&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="POP3PROXY-UP" 
 	id2="POP3PROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;POP3PROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="POP3PROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="POP3SPROXY-UP" 
 	id2="POP3SPROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;POP3SPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="POP3SPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="REPORTS-UP" 
 	id2="REPORTS-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;REPORTS-UP &apos;Host:&lt;fld1&gt; - Reports Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="REPORTS-UP &apos;Host:&lt;fld1&gt; - Reports Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="RIPQ-ERROR" 
 	id2="RIPQ-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;RIPQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="RIPQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="RIPQ-MIME-PARSE-FAILURE" 
 	id2="RIPQ-MIME-PARSE-FAILURE" 		
 	eventcategory="1601000000" 
-	content="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;RIPQ-MIME-PARSE-FAILURE &apos;Host:&lt;fld1&gt; - &lt;result&gt;&apos;" />
+	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="RIPQ-MIME-PARSE-FAILURE &apos;Host:&lt;fld1&gt; - &lt;result&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="RIPQ-UP" 
 	id2="RIPQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;RIPQ-UP &apos;Host:&lt;fld1&gt; - Mime Ripping Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="RIPQ-UP &apos;Host:&lt;fld1&gt; - Mime Ripping Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPO-DNS-FAILURE" 
 	id2="SMTPO-DNS-FAILURE" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPO-DNS-FAILURE &apos;Host:&lt;fld1&gt; - No DNS Response for &lt;domain&gt;&apos;" /> 
+	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPO-DNS-FAILURE &apos;Host:&lt;fld1&gt; - No DNS Response for &lt;domain&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPO-DSN-FINAL" 
 	id2="SMTPO-DSN-FINAL" 		
 	eventcategory="1605020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPO-DSN-FINAL &apos;Host:&lt;fld1&gt; - Final DSN for domain: &lt;domain&gt; Recipients: &lt;to&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPO-DSN-FINAL &apos;Host:&lt;fld1&gt; - Final DSN for domain: &lt;domain&gt; Recipients: &lt;to&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPO-ERROR" 
 	id2="SMTPO-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;SMTPO-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="SMTPO-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPO-UP:01" 
 	id2="SMTPO-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SMTPO-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Outbound Queue Test { Passed.&apos; | Passed. &apos; }" /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SMTPO-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Outbound Queue Test { Passed.&apos; | Passed. &apos; }" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPO-UP:02" 
 	id2="SMTPO-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SMTPO-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Outbound Queue Count Test Passed. &apos;" /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SMTPO-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Outbound Queue Count Test Passed. &apos;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPPROXY-ESMTP-SIZE-FAILURE" 
 	id2="SMTPPROXY-ESMTP-SIZE-FAILURE" 		
 	eventcategory="1601000000" 
-	content="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPPROXY-ESMTP-SIZE-FAILURE &apos;Host:&lt;fld1&gt; - Mail Size: &lt;bytes&gt;(bytes) Connection: &lt;fld2&gt;(IP-Port)&apos;" />
-
+	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPPROXY-ESMTP-SIZE-FAILURE &apos;Host:&lt;fld1&gt; - Mail Size: &lt;bytes&gt;(bytes) Connection: &lt;fld2&gt;(IP-Port)&apos;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPPROXY-DOS-ATTACK" 
 	id2="SMTPPROXY-DOS-ATTACK" 
 	eventcategory="1001000000" 
-	content="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPPROXY-DOS-ATTACK &apos;Host:&lt;fld1&gt; - Attack From IP: &lt;saddr&gt;&apos;" />
+	functions="&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPPROXY-DOS-ATTACK &apos;Host:&lt;fld1&gt; - Attack From IP: &lt;saddr&gt;&apos;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPPROXY-RELAY-FAILURE" 
 	id2="SMTPPROXY-RELAY-FAILURE" 		
 	eventcategory="1601000000" 
-	content="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPPROXY-RELAY-FAILURE &apos;Host:&lt;fld1&gt; - For Recipient: &lt;to&gt;&apos;" />
-
+	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPPROXY-RELAY-FAILURE &apos;Host:&lt;fld1&gt; - For Recipient: &lt;to&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPPROXY-TLS-FAILURE" 
 	id2="SMTPPROXY-TLS-FAILURE" 		
 	eventcategory="1601000000" 
-	content="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPPROXY-TLS-FAILURE &apos;Host:&lt;fld1&gt; - For IP: &lt;hostip&gt;&apos;" />
-
+	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPPROXY-TLS-FAILURE &apos;Host:&lt;fld1&gt; - For IP: &lt;hostip&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPPROXY-UP:01" 
 	id2="SMTPPROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SMTPPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; In Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SMTPPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; In Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPPROXY-UP:02" 
 	id2="SMTPPROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SMTPPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test for VIP [ id=&lt;&lt;&lt;id&gt;&gt;, name=&lt;&lt;&lt;fld2&gt;&gt;, network_active=&lt;&lt;&lt;fld3&gt;&gt;] Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SMTPPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; Proxy Test for VIP [ id=&lt;&lt;&lt;id&gt;&gt;, name=&lt;&lt;&lt;fld2&gt;&gt;, network_active=&lt;&lt;&lt;fld3&gt;&gt;] Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " />
  
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPSPROXY-TLS-FAILURE" 
 	id2="SMTPSPROXY-TLS-FAILURE" 		
 	eventcategory="1601000000" 
-	content="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SMTPSPROXY-TLS-FAILURE &apos;Host:&lt;fld1&gt; - For IP: &lt;hostip&gt;&apos;" />
-
+	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SMTPSPROXY-TLS-FAILURE &apos;Host:&lt;fld1&gt; - For IP: &lt;hostip&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SMTPSPROXY-UP" 
 	id2="SMTPSPROXY-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SMTPSPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; In Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SMTPSPROXY-UP &apos;Host:&lt;fld1&gt; - &lt;network_service&gt; In Proxy Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SPAMQ-ERROR" 
 	id2="SPAMQ-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;SPAMQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
-
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="SPAMQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SPAMQ-ESP-DETECTED" 
 	id2="SPAMQ-ESP-DETECTED" 		
 	eventcategory="1207040000" 
-	content="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SPAMQ-ESP-DETECTED &apos;Host:&lt;fld1&gt; - &lt;threat_name&gt;... Detected under &lt;product&gt; for Message ID: &lt;&lt;&lt;id&gt;&gt;&apos;" />
-
+	functions="&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SPAMQ-ESP-DETECTED &apos;Host:&lt;fld1&gt; - &lt;threat_name&gt;... Detected under &lt;product&gt; for Message ID: &lt;&lt;&lt;id&gt;&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SPAMQ-UP" 
 	id2="SPAMQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SPAMQ-UP &apos;Host:&lt;fld1&gt; - Spam Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SPAMQ-UP &apos;Host:&lt;fld1&gt; - Spam Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SSHD-CLI-UP" 
 	id2="SSHD-CLI-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SSHD-CLI-UP &apos;Host:&lt;fld1&gt; - SSHD CLI Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SSHD-CLI-UP &apos;Host:&lt;fld1&gt; - SSHD CLI Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SSHD-MAINT-UP" 
 	id2="SSHD-MAINT-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SSHD-MAINT-UP &apos;Host:&lt;fld1&gt; - SSHD Maint Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SSHD-MAINT-UP &apos;Host:&lt;fld1&gt; - SSHD Maint Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SUPERQ-ERROR" 
 	id2="SUPERQ-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;SUPERQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
-
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="SUPERQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SUPERQ-UP:01" 
 	id2="SUPERQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SUPERQ-UP &apos;Host:&lt;fld1&gt; - Super Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; | Passed. &apos;}" />
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SUPERQ-UP &apos;Host:&lt;fld1&gt; - Super Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; | Passed. &apos;}" />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SUPERQ-UP:02" 
 	id2="SUPERQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SUPERQ-UP &apos;Host:&lt;fld1&gt; - Super Queue Count Test Passed. &apos;" />
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SUPERQ-UP &apos;Host:&lt;fld1&gt; - Super Queue Count Test Passed. &apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SYS-DISK-ERROR" 
 	id2="SYS-DISK-ERROR" 		
 	eventcategory="1603010100" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;SYS-DISK-ERROR &apos;Host:&lt;fld1&gt; - /: &lt;fld2&gt; full. /usr: &lt;fld3&gt; full.&apos;" /> 
-
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="SYS-DISK-ERROR &apos;Host:&lt;fld1&gt; - /: &lt;fld2&gt; full. /usr: &lt;fld3&gt; full.&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SYS-DISK-UP" 
 	id2="SYS-DISK-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SYS-DISK-UP &apos;Host:&lt;fld1&gt; - System Status Test - Disk { Passed.&apos; | Passed. &apos;}" /> 
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SYS-DISK-UP &apos;Host:&lt;fld1&gt; - System Status Test - Disk { Passed.&apos; | Passed. &apos;}" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SYS-DNSHIJACK-UP" 
 	id2="SYS-DNSHIJACK-UP" 	
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SYS-DNSHIJACK-UP &apos;Host:&lt;fld1&gt; - System Status Test - DNS Hijack { Passed.&apos; | Passed. &apos;}" />
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SYS-DNSHIJACK-UP &apos;Host:&lt;fld1&gt; - System Status Test - DNS Hijack { Passed.&apos; | Passed. &apos;}" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SYS-INODE-UP" 
 	id2="SYS-INODE-UP" 	
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;SYS-INODE-UP &apos;Host:&lt;fld1&gt; - System Status Test - Inode { Passed.&apos; | Passed. &apos;}" />
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="SYS-INODE-UP &apos;Host:&lt;fld1&gt; - System Status Test - Inode { Passed.&apos; | Passed. &apos;}" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="TOMCAT-UP:01" 
 	id2="TOMCAT-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;TOMCAT-UP &apos;Host:&lt;fld1&gt; - Web Admin JSP Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " /> 
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="TOMCAT-UP &apos;Host:&lt;fld1&gt; - Web Admin JSP Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " />
 	
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="TOMCAT-UP:02" 
 	id2="TOMCAT-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;TOMCAT-UP &apos;Host:&lt;fld1&gt; - URQ Web Admin JSP Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " /> 	
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="TOMCAT-UP &apos;Host:&lt;fld1&gt; - URQ Web Admin JSP Test Passed. Host - &lt;hostname&gt;, Port - &lt;network_port&gt;&apos; " />
  
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="UPDATE-SUCCESS:01" 
 	id2="UPDATE-SUCCESS" 	
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;UPDATE-SUCCESS &apos;Host:&lt;fld1&gt; - &lt;agent&gt;. Downloaded successfully&apos;" />
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="UPDATE-SUCCESS &apos;Host:&lt;fld1&gt; - &lt;agent&gt;. Downloaded successfully&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="UPDATE-SUCCESS:02" 
 	id2="UPDATE-SUCCESS" 	
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;UPDATE-SUCCESS &apos;Host:&lt;fld1&gt; - &lt;agent&gt;. Installed successfully&apos;" />
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="UPDATE-SUCCESS &apos;Host:&lt;fld1&gt; - &lt;agent&gt;. Installed successfully&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="VFQ-ERROR" 
 	id2="VFQ-ERROR" 		
 	eventcategory="1603000000" 
-	content="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;VFQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
-
+	functions="&lt;@ec_outcome:Error&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Messages&gt;"
+	content="VFQ-ERROR &apos;Host:&lt;fld1&gt; - &lt;dclass_counter1&gt; messages idle&apos;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="VFQ-UP" 
 	id2="VFQ-UP" 		
 	eventcategory="1605020000" 
-	content="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;VFQ-UP &apos;Host:&lt;fld1&gt; - Content Extraction Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
-
+	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
+	content="VFQ-UP &apos;Host:&lt;fld1&gt; - Content Extraction Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
+<MESSAGE 
+	id1="SCM_HEARTBEAT" 
+	id2="SCM_HEARTBEAT" 
+	eventcategory="1604000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,SCM_HEARTBEAT i.now=&lt;fld7&gt;" />
+<MESSAGE 
+	id1="HEARTBEAT:01" 
+	id2="HEARTBEAT" 
+	eventcategory="1604000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt;SCM_HEARTBEAT i.now=&lt;fld5&gt;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="SCM_HEARTBEAT" 
-		id2="SCM_HEARTBEAT" 
-		eventcategory="1604000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,SCM_HEARTBEAT i.now=&lt;fld7&gt;"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="HEARTBEAT:01" 
-		id2="HEARTBEAT" 
-		eventcategory="1604000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt;SCM_HEARTBEAT i.now=&lt;fld5&gt;"/>
-
-
-	<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":01" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, SMTP Messages Received=&apos;&lt;fld4&gt;&apos;, SMTP Total Detections=&apos;&lt;fld5&gt;&apos;, Sender Connection Detections=&apos;&lt;fld6&gt;&apos;, Deny Sender Detections=&apos;&lt;fld7&gt;&apos;, RBL Detections=&apos;&lt;fld8&gt;&apos;, BATV Detections=&apos;&lt;fld9&gt;&apos;, SPF Detections=&apos;&lt;fld10&gt;&apos;, Recipient Detections=&apos;&lt;fld11&gt;&apos;, Anti Relay Detections=&apos;&lt;fld12&gt;&apos;, Grey Listing Detections=&apos;&lt;fld13&gt;&apos;, LDAP Recipient Detections=&apos;&lt;fld14&gt;&apos;, Directoty Harvesting Detections=&apos;&lt;fld15&gt;&apos;, Content Detections=&apos;&lt;fld16&gt;&apos;, GTI Message Reputation Detections=&apos;&lt;fld17&gt;&apos;, Sender ID Detections=&apos;&lt;fld18&gt;&apos;, DKIM Detections=&apos;&lt;fld19&gt;&apos;, Spam Detections =&apos;&lt;fld20&gt;&apos;, Phish Detections =&apos;&lt;fld21&gt;&apos;, Mail Filtering Detections =&apos;&lt;fld22&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld23&gt;&apos;, File Filtering Detections =&apos;&lt;fld24&gt;&apos;, Compliance Detections =&apos;&lt;fld25&gt;&apos;, Image Filtering Detections =&apos;&lt;fld26&gt;&apos;, DLP Detections =&apos;&lt;fld27&gt;&apos;, Virus Detected =&apos;&lt;fld28&gt;&apos;, Pups Detected =&apos;&lt;fld29&gt;&apos;, Packers Detected =&apos;&lt;fld30&gt;&apos;, POP3 Messages Received=&apos;&lt;fld31&gt;&apos;, POP3 Total Detections=&apos;&lt;fld32&gt;&apos;, Spam Detections =&apos;&lt;fld33&gt;&apos;, Phish Detections =&apos;&lt;fld34&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld35&gt;&apos;, Image Filtering Detections =&apos;&lt;fld36&gt;&apos;, Virus Detected =&apos;&lt;fld37&gt;&apos;, Pups Detected =&apos;&lt;fld38&gt;&apos;, Packers Detected =&apos;&lt;fld39&gt;&apos;" />
-
+	id1=":01" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, SMTP Messages Received=&apos;&lt;fld4&gt;&apos;, SMTP Total Detections=&apos;&lt;fld5&gt;&apos;, Sender Connection Detections=&apos;&lt;fld6&gt;&apos;, Deny Sender Detections=&apos;&lt;fld7&gt;&apos;, RBL Detections=&apos;&lt;fld8&gt;&apos;, BATV Detections=&apos;&lt;fld9&gt;&apos;, SPF Detections=&apos;&lt;fld10&gt;&apos;, Recipient Detections=&apos;&lt;fld11&gt;&apos;, Anti Relay Detections=&apos;&lt;fld12&gt;&apos;, Grey Listing Detections=&apos;&lt;fld13&gt;&apos;, LDAP Recipient Detections=&apos;&lt;fld14&gt;&apos;, Directoty Harvesting Detections=&apos;&lt;fld15&gt;&apos;, Content Detections=&apos;&lt;fld16&gt;&apos;, GTI Message Reputation Detections=&apos;&lt;fld17&gt;&apos;, Sender ID Detections=&apos;&lt;fld18&gt;&apos;, DKIM Detections=&apos;&lt;fld19&gt;&apos;, Spam Detections =&apos;&lt;fld20&gt;&apos;, Phish Detections =&apos;&lt;fld21&gt;&apos;, Mail Filtering Detections =&apos;&lt;fld22&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld23&gt;&apos;, File Filtering Detections =&apos;&lt;fld24&gt;&apos;, Compliance Detections =&apos;&lt;fld25&gt;&apos;, Image Filtering Detections =&apos;&lt;fld26&gt;&apos;, DLP Detections =&apos;&lt;fld27&gt;&apos;, Virus Detected =&apos;&lt;fld28&gt;&apos;, Pups Detected =&apos;&lt;fld29&gt;&apos;, Packers Detected =&apos;&lt;fld30&gt;&apos;, POP3 Messages Received=&apos;&lt;fld31&gt;&apos;, POP3 Total Detections=&apos;&lt;fld32&gt;&apos;, Spam Detections =&apos;&lt;fld33&gt;&apos;, Phish Detections =&apos;&lt;fld34&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld35&gt;&apos;, Image Filtering Detections =&apos;&lt;fld36&gt;&apos;, Virus Detected =&apos;&lt;fld37&gt;&apos;, Pups Detected =&apos;&lt;fld38&gt;&apos;, Packers Detected =&apos;&lt;fld39&gt;&apos;" />
 	
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":02" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {from | From}=&lt;from&gt;, size=&lt;fld4&gt;, source=(&lt;fld5&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, VHost=&lt;fld41&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, {relay=(&lt;shost&gt;)|relay=&lt;fld18&gt;(&lt;shost&gt;)}, {status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;}, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
+	id1=":02" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {from | From}=&lt;from&gt;, size=&lt;fld4&gt;, source=(&lt;fld5&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, VHost=&lt;fld41&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, {relay=(&lt;shost&gt;)|relay=&lt;fld18&gt;(&lt;shost&gt;)}, {status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;}, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
   
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":03" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} {status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,} {original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;| attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|original-sender=&apos;&lt;fld16&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}" />
-
+	id1=":03" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} {status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,} {original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;| attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|original-sender=&apos;&lt;fld16&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}" />
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="26" 
-		id1=":26" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@ec_subject:Mailbox&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;bytes&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, {received-email-over-tls=&apos;&lt;fld51&gt;&apos;, sent-email-over-tls=&apos;&lt;fld53&gt;&apos; | received-email-over-tls=&apos;&lt;fld51&gt;&apos;}, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
-
-	
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":04" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), {status=&apos;&lt;result&gt;&apos;, received-email-over-tls='&lt;fld54&gt;', |status=&apos;&lt;result&gt;&apos;,} subject='&lt;subject&gt;', attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
-
-	
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":05" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, {value=&lt;fld5&gt;, rule=&lt;fld6&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, convid=&lt;fld8&gt;| to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, convid=&lt;fld8&gt;}" />
-
+	id1=":26" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@ec_subject:Mailbox&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;bytes&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, {received-email-over-tls=&apos;&lt;fld51&gt;&apos;, sent-email-over-tls=&apos;&lt;fld53&gt;&apos; | received-email-over-tls=&apos;&lt;fld51&gt;&apos;}, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
 	
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":06" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, convid=&lt;fld6&gt;" />
-
+	id1=":04" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), {status=&apos;&lt;result&gt;&apos;, received-email-over-tls='&lt;fld54&gt;', |status=&apos;&lt;result&gt;&apos;,} subject='&lt;subject&gt;', attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
 	
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":07" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld5&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, contentrule=&lt;fld6&gt;, filename=[&lt;filename&gt;], scan-identity-name=&lt;fld7&gt;" />
+	id1=":05" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, {value=&lt;fld5&gt;, rule=&lt;fld6&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, convid=&lt;fld8&gt;| to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, convid=&lt;fld8&gt;}" />
+	
+<MESSAGE 
+	id1=":06" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, convid=&lt;fld6&gt;" />
+	
+<MESSAGE 
+	id1=":07" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld5&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, contentrule=&lt;fld6&gt;, filename=[&lt;filename&gt;], scan-identity-name=&lt;fld7&gt;" />
+<MESSAGE 
+	id1=":08" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld6&gt;, spamthreshold=&lt;fld7&gt;, spamrules=&lt;fld8&gt;, GTI message reputation score=&lt;fld9&gt;, GTI message ip reputation status code=&lt;fld10&gt;, GTI message hash length=&lt;fld11&gt;, {GTI message hash=&lt;fld12&gt;, scan-identity-name=&lt;fld13&gt;| GTI message hash=&lt;fld12&gt;}" />
+<MESSAGE 
+	id1=":09" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld5&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, rule=&lt;fld6&gt;.  Cause of corruption: &lt;fld7&gt;, filename=&lt;filename&gt;, scan-identity-name=&lt;fld8&gt;" />
+<MESSAGE 
+	id1=":10" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld6&gt;, spamthreshold=&lt;fld7&gt;, spamrules=&lt;fld8&gt;, scan-identity-name=&lt;fld12&gt;" />
+<MESSAGE 
+	id1=":11" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld6&gt;, spamthreshold=&lt;fld7&gt;, spamrules=&lt;fld8&gt;" />
+<MESSAGE 
+	id1=":12" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld7&gt;, spamthreshold=&lt;fld8&gt;, spamrules=&lt;fld9&gt;" />
+<MESSAGE 
+	id1=":13" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, contentrule=&lt;fld6&gt;, filename=[&lt;filename&gt;]" />
+<MESSAGE 
+	id1=":14" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, {contentrule=&lt;fld7&gt;| rule=&lt;fld7&gt;}, filename=&lt;filename&gt;" />
+<MESSAGE 
+	id1=":15" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld10&gt;&apos;" />
+<MESSAGE 
+	id1=":16" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, filename=&lt;filename&gt;, IA Score=&lt;fld7&gt;, IA Threshold=&lt;fld8&gt;" />
+<MESSAGE 
+	id1=":17" 
+	id2=":" 
+	eventcategory="1003010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, virusname=&lt;virusname&gt;, filename=&lt;filename&gt;" />
+<MESSAGE 
+	id1=":18" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&lt;attachment&gt;" />
+<MESSAGE 
+	id1=":19" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":08" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld6&gt;, spamthreshold=&lt;fld7&gt;, spamrules=&lt;fld8&gt;, GTI message reputation score=&lt;fld9&gt;, GTI message ip reputation status code=&lt;fld10&gt;, GTI message hash length=&lt;fld11&gt;, {GTI message hash=&lt;fld12&gt;, scan-identity-name=&lt;fld13&gt;| GTI message hash=&lt;fld12&gt;}" />
+	id1="scmgateway:07" 
+	id2="scmgateway" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; UTC,&lt;fld5&gt;,&lt;fld6&gt;, [AV-DAT]" />
+<MESSAGE 
+	id1="scmgateway:08" 
+	id2="scmgateway" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; UTC,&lt;fld4&gt;,&lt;fld5&gt;, [SPAM-ENG] &lt;fld6&gt; [FILES] &lt;filename&gt;" />
+<MESSAGE 
+	id1="scmgateway:01" 
+	id2="scmgateway" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [AV-DAT] &lt;fld5&gt; [SOURCE-IP] &lt;fld6&gt; [USER-NAME] &lt;username&gt;" />
+<MESSAGE 
+	id1="scmgateway:02" 
+	id2="scmgateway" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [PROTOCOL] &lt;fld6&gt;" />
+<MESSAGE 
+	id1="scmgateway:03" 
+	id2="scmgateway" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [SPAM-RULES] &lt;fld5&gt;" />
+<MESSAGE 
+	id1="scmgateway:04" 
+	id2="scmgateway" 
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [SOURCE-IP] &lt;fld5&gt; [USER-NAME] &lt;username&gt;" />
+<MESSAGE 
+	id1="scmgateway:05" 
+	id2="scmgateway" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; (&lt;fld3&gt;)&lt;fld4&gt; &lt;fld5&gt; UTC&lt;fld6&gt;:&lt;fld7&gt; &lt;event_description&gt;,src-ip:&lt;saddr&gt;,id:&lt;id&gt;" />
+<MESSAGE 
+	id1="scmgateway:06" 
+	id2="scmgateway"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)" />
+<MESSAGE 
+	id1="mx6" 
+	id2="mx6" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; (&lt;saddr&gt;)" />
 
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":09" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld5&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, rule=&lt;fld6&gt;.  Cause of corruption: &lt;fld7&gt;, filename=&lt;filename&gt;, scan-identity-name=&lt;fld8&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":10" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld6&gt;, spamthreshold=&lt;fld7&gt;, spamrules=&lt;fld8&gt;, scan-identity-name=&lt;fld12&gt;" />
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":11" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld6&gt;, spamthreshold=&lt;fld7&gt;, spamrules=&lt;fld8&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":12" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;fld7&gt;, spamthreshold=&lt;fld8&gt;, spamrules=&lt;fld9&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":13" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, contentrule=&lt;fld6&gt;, filename=[&lt;filename&gt;]" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":14" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, {contentrule=&lt;fld7&gt;| rule=&lt;fld7&gt;}, filename=&lt;filename&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":15" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld5&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld10&gt;&apos;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":16" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, filename=&lt;filename&gt;, IA Score=&lt;fld7&gt;, IA Threshold=&lt;fld8&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":17" 
-		id2=":" 
-		eventcategory="1003010000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, virusname=&lt;virusname&gt;, filename=&lt;filename&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":18" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&lt;attachment&gt;" />
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":19" 
-		id2=":" 
-		eventcategory="1901000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;fld4&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;" />
-
-
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:07" 
-		id2="scmgateway" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; UTC,&lt;fld5&gt;,&lt;fld6&gt;, [AV-DAT]"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:08" 
-		id2="scmgateway" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; UTC,&lt;fld4&gt;,&lt;fld5&gt;, [SPAM-ENG] &lt;fld6&gt; [FILES] &lt;filename&gt;"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:01" 
-		id2="scmgateway" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [AV-DAT] &lt;fld5&gt; [SOURCE-IP] &lt;fld6&gt; [USER-NAME] &lt;username&gt;"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:02" 
-		id2="scmgateway" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [PROTOCOL] &lt;fld6&gt;"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:03" 
-		id2="scmgateway" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [SPAM-RULES] &lt;fld5&gt;"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:04" 
-		id2="scmgateway" 
-		eventcategory="1605020000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [SOURCE-IP] &lt;fld5&gt; [USER-NAME] &lt;username&gt;"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:05" 
-		id2="scmgateway" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; (&lt;fld3&gt;)&lt;fld4&gt; &lt;fld5&gt; UTC&lt;fld6&gt;:&lt;fld7&gt; &lt;event_description&gt;,src-ip:&lt;saddr&gt;,id:&lt;id&gt;" />
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="scmgateway:06" 
-		id2="scmgateway"
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)"/>
-
-<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1="mx6" 
-		id2="mx6" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; (&lt;saddr&gt;)"/>
-
-
-	<MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1" 
-		tableid="75" 
-		id1=":20" 
-		id2=":" 
-		eventcategory="1603000000" 
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, SMTP Messages Received=&apos;&lt;fld4&gt;&apos;, SMTP Total Detections=&apos;&lt;fld5&gt;&apos;, Sender Connection Detections=&apos;&lt;fld6&gt;&apos;, Deny Sender Detections=&apos;&lt;fld7&gt;&apos;, RBL Detections=&apos;&lt;fld8&gt;&apos;, BATV Detections=&apos;&lt;fld9&gt;&apos;, SPF Detections=&apos;&lt;fld10&gt;&apos;, Recipient Detections=&apos;&lt;fld11&gt;&apos;, Anti Relay Detections=&apos;&lt;fld12&gt;&apos;, Grey Listing Detections=&apos;&lt;fld13&gt;&apos;, LDAP Recipient Detections=&apos;&lt;fld14&gt;&apos;, Directory Harvesting Detections=&apos;&lt;fld15&gt;&apos;, Content Detections=&apos;&lt;fld16&gt;&apos;, GTI Message Reputation Detections=&apos;&lt;fld17&gt;&apos;, Sender ID Detections=&apos;&lt;fld18&gt;&apos;, DKIM Detections=&apos;&lt;fld19&gt;&apos;, Spam Detections =&apos;&lt;fld20&gt;&apos;, Phish Detections =&apos;&lt;fld21&gt;&apos;, Mail Filtering Detections =&apos;&lt;fld22&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld23&gt;&apos;, File Filtering Detections =&apos;&lt;fld24&gt;&apos;, Compliance Detections =&apos;&lt;fld25&gt;&apos;, Image Filtering Detections =&apos;&lt;fld26&gt;&apos;, DLP Detections =&apos;&lt;fld27&gt;&apos;, Virus Detected =&apos;&lt;fld28&gt;&apos;, Pups Detected =&apos;&lt;fld29&gt;&apos;, Packers Detected =&apos;&lt;fld30&gt;&apos;, Mail URL Detected =&apos;&lt;fld31&gt;&apos;, Max Mail URLs =&apos;&lt;fld32&gt;&apos;, ClickProtect URLs =&apos;&lt;fld33&gt;&apos;, ClickProtect Not Possible =&apos;&lt;fld34&gt;&apos;, Unscannable Content Detected =&apos;&lt;fld35&gt;&apos;, POP3 Messages Received=&apos;&lt;fld36&gt;&apos;, POP3 Total Detections=&apos;&lt;fld37&gt;&apos;, Spam Detections =&apos;&lt;fld38&gt;&apos;, &lt;fld39&gt; "/>
-
+	id1=":20" 
+	id2=":" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, SMTP Messages Received=&apos;&lt;fld4&gt;&apos;, SMTP Total Detections=&apos;&lt;fld5&gt;&apos;, Sender Connection Detections=&apos;&lt;fld6&gt;&apos;, Deny Sender Detections=&apos;&lt;fld7&gt;&apos;, RBL Detections=&apos;&lt;fld8&gt;&apos;, BATV Detections=&apos;&lt;fld9&gt;&apos;, SPF Detections=&apos;&lt;fld10&gt;&apos;, Recipient Detections=&apos;&lt;fld11&gt;&apos;, Anti Relay Detections=&apos;&lt;fld12&gt;&apos;, Grey Listing Detections=&apos;&lt;fld13&gt;&apos;, LDAP Recipient Detections=&apos;&lt;fld14&gt;&apos;, Directory Harvesting Detections=&apos;&lt;fld15&gt;&apos;, Content Detections=&apos;&lt;fld16&gt;&apos;, GTI Message Reputation Detections=&apos;&lt;fld17&gt;&apos;, Sender ID Detections=&apos;&lt;fld18&gt;&apos;, DKIM Detections=&apos;&lt;fld19&gt;&apos;, Spam Detections =&apos;&lt;fld20&gt;&apos;, Phish Detections =&apos;&lt;fld21&gt;&apos;, Mail Filtering Detections =&apos;&lt;fld22&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld23&gt;&apos;, File Filtering Detections =&apos;&lt;fld24&gt;&apos;, Compliance Detections =&apos;&lt;fld25&gt;&apos;, Image Filtering Detections =&apos;&lt;fld26&gt;&apos;, DLP Detections =&apos;&lt;fld27&gt;&apos;, Virus Detected =&apos;&lt;fld28&gt;&apos;, Pups Detected =&apos;&lt;fld29&gt;&apos;, Packers Detected =&apos;&lt;fld30&gt;&apos;, Mail URL Detected =&apos;&lt;fld31&gt;&apos;, Max Mail URLs =&apos;&lt;fld32&gt;&apos;, ClickProtect URLs =&apos;&lt;fld33&gt;&apos;, ClickProtect Not Possible =&apos;&lt;fld34&gt;&apos;, Unscannable Content Detected =&apos;&lt;fld35&gt;&apos;, POP3 Messages Received=&apos;&lt;fld36&gt;&apos;, POP3 Total Detections=&apos;&lt;fld37&gt;&apos;, Spam Detections =&apos;&lt;fld38&gt;&apos;, &lt;fld39&gt; " />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="75"
-		id1=":21"
-		id2=":"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;MISversion&quot;: &quot;&lt;fld6&gt;&quot;,&quot;SUMversion&quot;: &quot;&lt;fld7&gt;&quot;,&quot;OSversion&quot;: &quot;&lt;version&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;Parent MD5&quot;: &quot;&lt;fld14&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;Src IP&quot;: &quot;&lt;saddr&gt;&quot;,&quot;Dst IP&quot;: &quot;&lt;daddr&gt;&quot;,&quot;TaskId&quot;: &quot;&lt;fld10&gt;&quot;,&quot;JobId&quot;: &quot;&lt;fld11&gt;&quot;,&quot;JSONversion&quot;: &quot;&lt;fld12&gt;&quot;,&quot;hasDynamicAnalysis&quot;: &quot;&lt;fld13&gt;&quot;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;fld15&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;md5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;sha-1&quot;: &quot;&lt;fld16&gt;&quot;,&quot;size&quot;: &quot;&lt;filename_size&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;parent_archive&quot;: &quot;&lt;fld17&gt;&quot;},&quot;Selectors&quot;: [&lt;fld45&gt;&quot;Engine&quot;: &quot;&lt;fld18&gt;&quot;,&quot;MalwareName&quot;: &quot;&lt;threat_name&gt;&quot;,&quot;Severity&quot;: &quot;&lt;severity&gt;&quot;}],&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &quot;&lt;fld19&gt;&quot;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;},&quot;Stats&quot;: [&lt;fld47&gt;&quot;ID&quot;: &quot;&lt;fld20&gt;&quot;,&quot;Category&quot;: &quot;&lt;category&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld21&gt;&quot;},&lt;fld48&gt;&quot;ID&quot;: &quot;&lt;fld22&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld23&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld24&gt;&quot;},&lt;fld49&gt;&quot;ID&quot;: &quot;&lt;fld25&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld26&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld27&gt;&quot;},&lt;fld50&gt;&quot;ID&quot;: &quot;&lt;fld28&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld29&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld30&gt;&quot;},&lt;fld51&gt;&quot;ID&quot;: &quot;&lt;fld31&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld32&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld33&gt;&quot;},&lt;fld52&gt;&quot;ID&quot;: &quot;&lt;fld34&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld35&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld36&gt;&quot;},&lt;fld53&gt;&quot;ID&quot;: &quot;&lt;fld37&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld38&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld39&gt;&quot;}],&quot;Behavior&quot;: [&quot;&lt;fld40&gt;&quot;,&quot;&lt;fld41&gt;&quot;]}}"/>
-
+	id1=":21"
+	id2=":"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;MISversion&quot;: &quot;&lt;fld6&gt;&quot;,&quot;SUMversion&quot;: &quot;&lt;fld7&gt;&quot;,&quot;OSversion&quot;: &quot;&lt;version&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;Parent MD5&quot;: &quot;&lt;fld14&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;Src IP&quot;: &quot;&lt;saddr&gt;&quot;,&quot;Dst IP&quot;: &quot;&lt;daddr&gt;&quot;,&quot;TaskId&quot;: &quot;&lt;fld10&gt;&quot;,&quot;JobId&quot;: &quot;&lt;fld11&gt;&quot;,&quot;JSONversion&quot;: &quot;&lt;fld12&gt;&quot;,&quot;hasDynamicAnalysis&quot;: &quot;&lt;fld13&gt;&quot;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;fld15&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;md5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;sha-1&quot;: &quot;&lt;fld16&gt;&quot;,&quot;size&quot;: &quot;&lt;filename_size&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;parent_archive&quot;: &quot;&lt;fld17&gt;&quot;},&quot;Selectors&quot;: [&lt;fld45&gt;&quot;Engine&quot;: &quot;&lt;fld18&gt;&quot;,&quot;MalwareName&quot;: &quot;&lt;threat_name&gt;&quot;,&quot;Severity&quot;: &quot;&lt;severity&gt;&quot;}],&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &quot;&lt;fld19&gt;&quot;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;},&quot;Stats&quot;: [&lt;fld47&gt;&quot;ID&quot;: &quot;&lt;fld20&gt;&quot;,&quot;Category&quot;: &quot;&lt;category&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld21&gt;&quot;},&lt;fld48&gt;&quot;ID&quot;: &quot;&lt;fld22&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld23&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld24&gt;&quot;},&lt;fld49&gt;&quot;ID&quot;: &quot;&lt;fld25&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld26&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld27&gt;&quot;},&lt;fld50&gt;&quot;ID&quot;: &quot;&lt;fld28&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld29&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld30&gt;&quot;},&lt;fld51&gt;&quot;ID&quot;: &quot;&lt;fld31&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld32&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld33&gt;&quot;},&lt;fld52&gt;&quot;ID&quot;: &quot;&lt;fld34&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld35&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld36&gt;&quot;},&lt;fld53&gt;&quot;ID&quot;: &quot;&lt;fld37&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld38&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld39&gt;&quot;}],&quot;Behavior&quot;: [&quot;&lt;fld40&gt;&quot;,&quot;&lt;fld41&gt;&quot;]}}" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="75"
-		id1=":22"
-		id2=":"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;MISversion&quot;: &quot;&lt;fld6&gt;&quot;,&quot;SUMversion&quot;: &quot;&lt;fld7&gt;&quot;,&quot;OSversion&quot;: &quot;&lt;version&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;Parent MD5&quot;: &quot;&lt;fld14&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;Src IP&quot;: &quot;&lt;saddr&gt;&quot;,&quot;Dst IP&quot;: &quot;&lt;daddr&gt;&quot;,&quot;TaskId&quot;: &quot;&lt;fld10&gt;&quot;,&quot;JobId&quot;: &quot;&lt;fld11&gt;&quot;,&quot;JSONversion&quot;: &quot;&lt;fld12&gt;&quot;,&quot;hasDynamicAnalysis&quot;: &quot;&lt;fld13&gt;&quot;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;fld15&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;md5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;sha-1&quot;: &quot;&lt;fld16&gt;&quot;,&quot;size&quot;: &quot;&lt;filename_size&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;parent_archive&quot;: &quot;&lt;fld17&gt;&quot;},&quot;Selectors&quot;: [&lt;fld45&gt;&quot;Engine&quot;: &quot;&lt;fld18&gt;&quot;,&quot;MalwareName&quot;: &quot;&lt;threat_name&gt;&quot;,&quot;Severity&quot;: &quot;&lt;severity&gt;&quot;}],&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &quot;&lt;fld19&gt;&quot;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;}}}"/>
-
+	id1=":22"
+	id2=":"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;MISversion&quot;: &quot;&lt;fld6&gt;&quot;,&quot;SUMversion&quot;: &quot;&lt;fld7&gt;&quot;,&quot;OSversion&quot;: &quot;&lt;version&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;Parent MD5&quot;: &quot;&lt;fld14&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;Src IP&quot;: &quot;&lt;saddr&gt;&quot;,&quot;Dst IP&quot;: &quot;&lt;daddr&gt;&quot;,&quot;TaskId&quot;: &quot;&lt;fld10&gt;&quot;,&quot;JobId&quot;: &quot;&lt;fld11&gt;&quot;,&quot;JSONversion&quot;: &quot;&lt;fld12&gt;&quot;,&quot;hasDynamicAnalysis&quot;: &quot;&lt;fld13&gt;&quot;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;fld15&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;md5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;sha-1&quot;: &quot;&lt;fld16&gt;&quot;,&quot;size&quot;: &quot;&lt;filename_size&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;parent_archive&quot;: &quot;&lt;fld17&gt;&quot;},&quot;Selectors&quot;: [&lt;fld45&gt;&quot;Engine&quot;: &quot;&lt;fld18&gt;&quot;,&quot;MalwareName&quot;: &quot;&lt;threat_name&gt;&quot;,&quot;Severity&quot;: &quot;&lt;severity&gt;&quot;}],&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &quot;&lt;fld19&gt;&quot;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;}}}" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="75"
-		id1=":23"
-		id2=":"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;JobId&quot;: &lt;fld11&gt;,&quot;TaskId&quot;: &lt;fld10&gt;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;filename&gt;&quot;,&quot;MD5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;Size&quot;: &lt;filename_size&gt;},&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &lt;severity&gt;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;}}}"/>
-
+	id1=":23"
+	id2=":"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;JobId&quot;: &lt;fld11&gt;,&quot;TaskId&quot;: &lt;fld10&gt;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;filename&gt;&quot;,&quot;MD5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;Size&quot;: &lt;filename_size&gt;},&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &lt;severity&gt;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;}}}" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="75"
-		id1=":24"
-		id2=":"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, spf_query=&lt;fld5&gt;, spf_result_code=&lt;fld6&gt;, spf_result_text=&lt;fld9&gt;, spf_header=&lt;fld8&gt;, scan-identity-name=&lt;policyname&gt;" />
-
+	id1=":24"
+	id2=":"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, spf_query=&lt;fld5&gt;, spf_result_code=&lt;fld6&gt;, spf_result_text=&lt;fld9&gt;, spf_header=&lt;fld8&gt;, scan-identity-name=&lt;policyname&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="75"
-		id1=":25"
-		id2=":"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, URLS=&apos;&lt;url&gt;&apos;, scan-identity-name=&lt;policyname&gt;" />
-
+	id1=":25"
+	id2=":"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, URLS=&apos;&lt;url&gt;&apos;, scan-identity-name=&lt;policyname&gt;" />
  
 <MESSAGE 
-		level="6" 
-		parse="1" 
-		parsedefvalue="1"  
-		id1=":27" 
-		id2=":" 
-		eventcategory="1901000000" 
-        content="&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;: Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from|From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, {encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}"/>
-
+	id1=":27" 
+	id2=":" 
+	eventcategory="1901000000" 
+	functions="&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;: Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from|From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;fld7&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;fld8&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, {encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}" />
 
 
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="IRONMAIL_GENERIC" 
 	id2="IRONMAIL_GENERIC" 
 	eventcategory="1901000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt;" /> 
-
+	content="&lt;fld1&gt; &lt;fld2&gt;" />
 </DEVICEMESSAGES>
-

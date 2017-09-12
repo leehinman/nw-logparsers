@@ -1,77 +1,57 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="beewarewaf"
+	displayname="Beeware Web Application Firewall"
+	group="Application Firewall">
 <VERSION
-	xml="4"
-	checksum="139198726e429a7ce7d174c8e7f92614"
+	xml="5"
+	checksum="882afb1a4501256896b3f9639cfc6b9f"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 	
 	
  
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; Beeware &lt;hfld4&gt; : &lt;hfld5&gt; &lt;hfld6&gt; [&lt;hfld7&gt; &lt;hfld8&gt; &lt;hfld9&gt; &lt;hfld10&gt; &lt;hfld11&gt;] [error] ICX rejected the request: sid=&lt;hfld12&gt;, time=&lt;hfld13&gt;, IpSrc=&lt;hfld14&gt;, reason=&lt;&lt;&lt;messageid&gt; &lt;!payload:hfld5&gt;" />
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; Beeware &lt;hfld4&gt; : &lt;hfld5&gt; &lt;hfld6&gt; [&lt;hfld7&gt; &lt;hfld8&gt; &lt;hfld9&gt; &lt;hfld10&gt; &lt;hfld11&gt;] [error] ICX rejected the request: sid=&lt;hfld12&gt;, time=&lt;hfld13&gt;, IpSrc=&lt;hfld14&gt;, reason=&lt;&lt;&lt;messageid&gt; &lt;!payload:hfld5&gt;" />
 
 <HEADER 
-id1="0002" 
-id2="0002"  
-content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; WEBSERVER Beeware: &lt;hfld4&gt; &lt;hfld5&gt; [IAM] &lt;hfld6&gt;/&lt;hfld7&gt; : &lt;hfld8&gt; - &lt;messageid&gt; &lt;!payload:hfld4&gt;" />
-
+	id1="0002" 
+	id2="0002"  
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; WEBSERVER Beeware: &lt;hfld4&gt; &lt;hfld5&gt; [IAM] &lt;hfld6&gt;/&lt;hfld7&gt; : &lt;hfld8&gt; - &lt;messageid&gt; &lt;!payload:hfld4&gt;" />
 <HEADER 
-id1="0003" 
-id2="0003"  
-content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; Beeware &lt;hfld4&gt; : &lt;hfld5&gt; &lt;hfld6&gt; [&lt;messageid&gt;] &lt;!payload:hfld5&gt;" />
-
+	id1="0003" 
+	id2="0003"  
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; Beeware &lt;hfld4&gt; : &lt;hfld5&gt; &lt;hfld6&gt; [&lt;messageid&gt;] &lt;!payload:hfld5&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Command" 
 	id2="Command" 
 	eventcategory="1001020200" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld13,fld14)&gt;&lt;hostname&gt; &lt;hostip&gt; [&lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt;] [error] ICX rejected the request: sid=&lt;&lt;&lt;fld12&gt;&gt;, time=&lt;&lt;&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;&gt;, IpSrc=&lt;&lt;&lt;saddr&gt;&gt;, reason=&lt;&lt;&lt;rulename&gt;&gt;, proto=&lt;&lt;&lt;protocol&gt;&gt;, method=&lt;&lt;&lt;web_method&gt;&gt;, uri=&lt;&lt;&lt;fld17&gt;&gt;, query=&lt;&lt;&lt;web_query&gt;&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld13,fld14)&gt;"
+	content="&lt;hostname&gt; &lt;hostip&gt; [&lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt;] [error] ICX rejected the request: sid=&lt;&lt;&lt;fld12&gt;&gt;, time=&lt;&lt;&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;&gt;, IpSrc=&lt;&lt;&lt;saddr&gt;&gt;, reason=&lt;&lt;&lt;rulename&gt;&gt;, proto=&lt;&lt;&lt;protocol&gt;&gt;, method=&lt;&lt;&lt;web_method&gt;&gt;, uri=&lt;&lt;&lt;fld17&gt;&gt;, query=&lt;&lt;&lt;web_query&gt;&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="SQL" 
 	id2="SQL" 
 	eventcategory="1001020202" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld13,fld14)&gt;&lt;hostname&gt; &lt;hostip&gt; [&lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt;] [error] ICX rejected the request: sid=&lt;&lt;&lt;fld12&gt;&gt;, time=&lt;&lt;&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;&gt;, IpSrc=&lt;&lt;&lt;saddr&gt;&gt;, reason=&lt;&lt;&lt;rulename&gt;&gt;, proto=&lt;&lt;&lt;protocol&gt;&gt;, method=&lt;&lt;&lt;web_method&gt;&gt;, uri=&lt;&lt;&lt;fld17&gt;&gt;, query=&lt;&lt;&lt;web_query&gt;&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld13,fld14)&gt;"
+	content="&lt;hostname&gt; &lt;hostip&gt; [&lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt; &lt;fld11&gt;] [error] ICX rejected the request: sid=&lt;&lt;&lt;fld12&gt;&gt;, time=&lt;&lt;&lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;&gt;, IpSrc=&lt;&lt;&lt;saddr&gt;&gt;, reason=&lt;&lt;&lt;rulename&gt;&gt;, proto=&lt;&lt;&lt;protocol&gt;&gt;, method=&lt;&lt;&lt;web_method&gt;&gt;, uri=&lt;&lt;&lt;fld17&gt;&gt;, query=&lt;&lt;&lt;web_query&gt;&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="PERIM_AUTH_SUCCESS" 
 	id2="PERIM_AUTH_SUCCESS" 
 	eventcategory="1401060000" 
-	content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld8,fld9)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostname&gt; &lt;hostip&gt; [IAM] &lt;fld6&gt;/&lt;fld7&gt; : &lt;fld8&gt; &lt;fld9&gt; - &lt;event_type&gt; &lt;username&gt; Perimeter authentication successful from &lt;saddr&gt; on &lt;url&gt; " />
-
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld8,fld9)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;hostip&gt; [IAM] &lt;fld6&gt;/&lt;fld7&gt; : &lt;fld8&gt; &lt;fld9&gt; - &lt;event_type&gt; &lt;username&gt; Perimeter authentication successful from &lt;saddr&gt; on &lt;url&gt; " />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="PERIM_AUTH_FAILURE" 
 	id2="PERIM_AUTH_FAILURE" 
 	eventcategory="1401030000" 
-	content="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld8,fld9)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostname&gt; &lt;hostip&gt; [IAM] &lt;fld6&gt;/&lt;fld7&gt; : &lt;fld8&gt; &lt;fld9&gt; - &lt;event_type&gt; &lt;username&gt; Perimeter authentication failed from &lt;saddr&gt; on &lt;url&gt; " />
-
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld8,fld9)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;hostip&gt; [IAM] &lt;fld6&gt;/&lt;fld7&gt; : &lt;fld8&gt; &lt;fld9&gt; - &lt;event_type&gt; &lt;username&gt; Perimeter authentication failed from &lt;saddr&gt; on &lt;url&gt; " />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="BLOCKED" 
 	id2="BLOCKED" 
 	eventcategory="1001020200" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld13,fld14)&gt;&lt;hostname&gt; &lt;hostip&gt; [&lt;action&gt;] &lt;fld22&gt;[&lt;fld23&gt;] : &lt;fld13&gt; &lt;fld14&gt; - &lt;threat_name&gt; in GET_VAR from &lt;saddr&gt; on &lt;url&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld13,fld14)&gt;"
+	content="&lt;hostname&gt; &lt;hostip&gt; [&lt;action&gt;] &lt;fld22&gt;[&lt;fld23&gt;] : &lt;fld13&gt; &lt;fld14&gt; - &lt;threat_name&gt; in GET_VAR from &lt;saddr&gt; on &lt;url&gt;" />
 </DEVICEMESSAGES>

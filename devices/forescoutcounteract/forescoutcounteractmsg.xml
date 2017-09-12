@@ -1,460 +1,297 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="forescoutcounteract"
+	displayname="Forescout CounterAct"
+	group="Access Control">
 <VERSION
-	xml="11"
-	checksum="8f2ae3ad0c2d8f84a2231f5b77e15585"
+	xml="12"
+	checksum="f93ebe6dd85b6a051283c1201f9bcd92"
 	revision="107"
-	enVision="35010000"
 	device="2.0" />
 
  
 <HEADER 
-id1="0001" 
-id2="0001"
-messageid="STRCAT(msgIdPart1,'_',msgIdPart2,'_',msgIdPart3)"  
-content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt;: &lt;!payload:msgIdPart1&gt;" /> 
+	id1="0001" 
+	id2="0001"
+	messageid="STRCAT(msgIdPart1,'_',msgIdPart2,'_',msgIdPart3)"  
+	content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt;: &lt;!payload:msgIdPart1&gt;" /> 
+<HEADER 
+	id1="0002" 
+	id2="0002"
+	messageid="STRCAT(msgIdPart1,'_',msgIdPart2)"  
+	content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;msgIdPart1&gt; &lt;msgIdPart2&gt;: &lt;!payload:msgIdPart1&gt;" /> 
+<HEADER 
+	id1="0003" 
+	id2="0003" 
+	content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
+<HEADER 
+	id1="0004" 
+	id2="0004" 
+	content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;messageid&gt;, &lt;!payload:messageid&gt;" /> 
+<HEADER 
+	id1="0005" 
+	id2="0005" 
+	content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+<HEADER 
+	id1="0006" 
+	id2="0006"
+	messageid="STRCAT('NAC','_','LOG')"  
+	content="CounterACT[&lt;hfld2&gt;]: %NACLOG &lt;!payload&gt;" />
 
 <HEADER 
-id1="0002" 
-id2="0002"
-messageid="STRCAT(msgIdPart1,'_',msgIdPart2)"  
-content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;msgIdPart1&gt; &lt;msgIdPart2&gt;: &lt;!payload:msgIdPart1&gt;" /> 
-
-<HEADER 
-id1="0003" 
-id2="0003" 
-content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
-
-<HEADER 
-id1="0004" 
-id2="0004" 
-content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;messageid&gt;, &lt;!payload:messageid&gt;" /> 
-
-<HEADER 
-id1="0005" 
-id2="0005" 
-content="&lt;hfld1&gt;[&lt;hfld2&gt;]: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
-
-<HEADER 
-id1="0006" 
-id2="0006"
-messageid="STRCAT('NAC','_','LOG')"  
-content="CounterACT[&lt;hfld2&gt;]: %NACLOG &lt;!payload&gt;" />
-
-<HEADER 
-id1="0007" 
-id2="0007"
-messageid="STRCAT('NAC','_','LOG')"  
-content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; CounterACT[&lt;hfld2&gt;]: %NACLOG &lt;!payload&gt;" />
+	id1="0007" 
+	id2="0007"
+	messageid="STRCAT('NAC','_','LOG')"  
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; CounterACT[&lt;hfld2&gt;]: %NACLOG &lt;!payload&gt;" />
 
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:10" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;,  {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt;, MTS:&lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;,  {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt;, MTS:&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:09" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;username&gt;,_&lt;fld2&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, &lt;result&gt;, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt; " /> 
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;username&gt;,_&lt;fld2&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, &lt;result&gt;, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt; " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:08" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;fld2&gt;, &lt;username&gt;,_&lt;fld3&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, &lt;result&gt;" /> 
-
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;fld2&gt;, &lt;username&gt;,_&lt;fld3&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, &lt;result&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:14" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt; (&lt;fld1&gt;)&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt; " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt; (&lt;fld1&gt;)&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt; " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:13" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;username&gt;,&lt;fld2&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt; " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;username&gt;,&lt;fld2&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, &lt;fld6&gt; " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:07" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, {&lt;fld6&gt;, MTS:&lt;info&gt; | &lt;fld6&gt;} " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;fld1&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, &lt;fld4&gt;, &lt;fld5&gt;, {&lt;fld6&gt;, MTS:&lt;info&gt; | &lt;fld6&gt;} " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:06" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, MTS:&lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, MTS:&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:05" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Pivotal User&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;saddr&gt;, &lt;smacaddr&gt;, &lt;fld4&gt;, &lt;username&gt;, {{Pivotal User}" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Pivotal User&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;saddr&gt;, &lt;smacaddr&gt;, &lt;fld4&gt;, &lt;username&gt;, {{Pivotal User}" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:12" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;username&gt;&quot;, Unknown, &lt;mail_id&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;username&gt;&quot;, Unknown, &lt;mail_id&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:11" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;fld2&gt;&quot;, Irresolvable, &lt;fld3&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;fld2&gt;&quot;, Irresolvable, &lt;fld3&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:04" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;{&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;| &lt;shost&gt;, &quot;&lt;fld1&gt;&quot;}, &lt;mail_id&gt;, &lt;fld5&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="{&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;| &lt;shost&gt;, &quot;&lt;fld1&gt;&quot;}, &lt;mail_id&gt;, &lt;fld5&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:03" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;fld2&gt;&quot;, &lt;fld3&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, MTS:&lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;fld2&gt;&quot;, &lt;fld3&gt;, &lt;saddr&gt;, &lt;smacaddr&gt;, {{&lt;result&gt;}, MTS:&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:01" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;{&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;| &lt;shost&gt;, &quot;&lt;fld2&gt;&quot;}, &lt;mail_id&gt;, &lt;username&gt;, &lt;saddr&gt;, &lt;fld1&gt;, &lt;result&gt; " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="{&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;| &lt;shost&gt;, &quot;&lt;fld2&gt;&quot;}, &lt;mail_id&gt;, &lt;username&gt;, &lt;saddr&gt;, &lt;fld1&gt;, &lt;result&gt; " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG:02" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;fld1&gt;, &lt;result&gt; " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;user_lname&gt;, &lt;user_fname&gt;&quot;, &lt;username&gt;, &lt;saddr&gt;, &lt;fld1&gt;, &lt;result&gt; " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_LOG" 
 	id2="NAC_LOG" 
 	eventcategory="1502000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;shost&gt;, &quot;&lt;username&gt;&quot;,&lt;saddr&gt;,&lt;smacaddr&gt;,&lt;result&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;shost&gt;, &quot;&lt;username&gt;&quot;,&lt;saddr&gt;,&lt;smacaddr&gt;,&lt;result&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_Policy_Log:01" 
 	id2="NAC_Policy_Log" 
 	eventcategory="1502050000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Match:&lt;rulename&gt;, Category:&lt;fld2&gt;, Details:&lt;info&gt; Reason:&lt;result&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Match:&lt;rulename&gt;, Category:&lt;fld2&gt;, Details:&lt;info&gt; Reason:&lt;result&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="NAC_Policy_Log" 
 	id2="NAC_Policy_Log" 
 	eventcategory="1502050000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Details:&lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Details:&lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="System_statistics" 
 	id2="System_statistics" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;System statistics: CPU usage: &lt;fld11&gt;, Available memory : &lt;fld12&gt;, Used memory: &lt;fld13&gt;, Available swap: &lt;fld14&gt;, Used swap: &lt;fld15&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="System statistics: CPU usage: &lt;fld11&gt;, Available memory : &lt;fld12&gt;, Used memory: &lt;fld13&gt;, Available swap: &lt;fld14&gt;, Used swap: &lt;fld15&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Application_status" 
 	id2="Application_status" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;Application status: &lt;fld11&gt;;Connected clients: &lt;fld12&gt;;Hosts: &lt;fld14&gt;;Attacked Services: &lt;fld15&gt;;Installed Plugins: &lt;fld16&gt;;Stopped Plugins: &lt;fld17&gt;;Assigned ips: &lt;fld18&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Application status: &lt;fld11&gt;;Connected clients: &lt;fld12&gt;;Hosts: &lt;fld14&gt;;Attacked Services: &lt;fld15&gt;;Installed Plugins: &lt;fld16&gt;;Stopped Plugins: &lt;fld17&gt;;Assigned ips: &lt;fld18&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Uptime" 
 	id2="Uptime" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:uptime in seconds&gt; Uptime &lt;duration_string&gt; seconds" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:uptime in seconds&gt;"
+	content=" Uptime &lt;duration_string&gt; seconds" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log" 
 	id2="Log" 
 	eventcategory="1401060000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; Log: Login success by &lt;fld11&gt;. Details: User &lt;username&gt; logged in from &lt;hostip&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" Log: Login success by &lt;fld11&gt;. Details: User &lt;username&gt; logged in from &lt;hostip&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:01" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:CounterACT Appliance stopped by user&gt; Log: CounterACT Appliance stopped by user. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:CounterACT Appliance stopped by user&gt;"
+	content=" Log: CounterACT Appliance stopped by user. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:02" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:PE params auto-refresh&gt; Log: PE params auto-refresh. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:PE params auto-refresh&gt;"
+	content=" Log: PE params auto-refresh. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:03" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The Legitimate Traffic Rule Reset action completed successfully&gt; Log: The Legitimate Traffic Rule Reset action completed successfully. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The Legitimate Traffic Rule Reset action completed successfully&gt;"
+	content=" Log: The Legitimate Traffic Rule Reset action completed successfully. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:04" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Database vacuum started&gt; Log: Database vacuum started. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Database vacuum started&gt;"
+	content=" Log: Database vacuum started. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:05" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Database vacuumed&gt; Log: Database vacuumed. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Database vacuumed&gt;"
+	content=" Log: Database vacuumed. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:06" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The demo license is going to expire&gt; Log: The demo license is going to expire. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The demo license is going to expire&gt;"
+	content=" Log: The demo license is going to expire. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:07" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:CounterACT Appliance backup&gt; Log: CounterACT Appliance backup. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:CounterACT Appliance backup&gt;"
+	content=" Log: CounterACT Appliance backup. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:08" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Symmetric traffic test failed&gt; Log: Symmetric traffic test failed. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Symmetric traffic test failed&gt;"
+	content=" Log: Symmetric traffic test failed. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:09" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Symmetric traffic test succeeded&gt; Log: Symmetric traffic test succeeded. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Symmetric traffic test succeeded&gt;"
+	content=" Log: Symmetric traffic test succeeded. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:10" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Valid Mirror Traffic&gt; Log: Valid Mirror Traffic. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Valid Mirror Traffic&gt;"
+	content=" Log: Valid Mirror Traffic. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:11" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Low Mirror Traffic&gt; Log: Low Mirror Traffic. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Low Mirror Traffic&gt;"
+	content=" Log: Low Mirror Traffic. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:12" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Enterprise Manager backup&gt; Log: Enterprise Manager backup. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Enterprise Manager backup&gt;"
+	content=" Log: Enterprise Manager backup. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:13" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Built-in firewall reset&gt; Log: Built-in firewall reset. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Built-in firewall reset&gt;"
+	content=" Log: Built-in firewall reset. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:14" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Connected to CounterACT Appliance&gt; Log: Connected to CounterACT Appliance at &lt;hostip&gt;. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Connected to CounterACT Appliance&gt;"
+	content=" Log: Connected to CounterACT Appliance at &lt;hostip&gt;. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Log:15" 
 	id2="Log" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: Failed to connect to CounterACT Appliance&gt; Log: Failed to connect to CounterACT Appliance at &lt;hostip&gt;. Details: &lt;info&gt;. Severity: &lt;severity&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: Failed to connect to CounterACT Appliance&gt;"
+	content=" Log: Failed to connect to CounterACT Appliance at &lt;hostip&gt;. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Port_bite" 
 	id2="Port" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:port bite&gt; Port bite. Source: &lt;saddr&gt;. Destination: &lt;daddr&gt;:&lt;dport&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:port bite&gt;"
+	content=" Port bite. Source: &lt;saddr&gt;. Destination: &lt;daddr&gt;:&lt;dport&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Scan_event" 
 	id2="Scan" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:scan event&gt; Scan event. Source: &lt;saddr&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:scan event&gt;"
+	content=" Scan event. Source: &lt;saddr&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Manual_event" 
 	id2="Manual" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:manual event&gt; Manual event. Source: &lt;saddr&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:manual event&gt;"
+	content=" Manual event. Source: &lt;saddr&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="User" 
 	id2="User" 
 	eventcategory="1401000000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:user changed configuration&gt; User &lt;username&gt; changed &lt;fld1&gt;. Details: &lt;info&gt; " /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:user changed configuration&gt;"
+	content=" User &lt;username&gt; changed &lt;fld1&gt;. Details: &lt;info&gt; " />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="81" 
 	id1="Windows" 
 	id2="Windows" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;Windows,&lt;username&gt;,&lt;fld1&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;info&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Windows,&lt;username&gt;,&lt;fld1&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;info&gt;" />
 	
-	</DEVICEMESSAGES>
+</DEVICEMESSAGES>

@@ -1,1054 +1,668 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="bluecoatdirector"
+	displayname="Blue Coat Director"
+	group="Configuration Management">
 <VERSION
-	xml="8"
-	checksum="7552b36aa29df3ed74c1f90394524ad0"
+	xml="9"
+	checksum="cf3580090b985bc5ce2da4a0c150b689"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="&lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" /> 
+	id1="0001" 
+	id2="0001"  
+	content="&lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" /> 
 
 <HEADER 
-id1="0002" 
-id2="0002"  
-content="&lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
-
+	id1="0002" 
+	id2="0002"  
+	content="&lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
 <HEADER 
-id1="0003" 
-id2="0003"  
-content="&lt;hfld1&gt;&lt;hfld2&gt;&lt;hfld3&gt;&lt;hfld4&gt;&lt;messageid&gt;[&lt;hfld5&gt;]: &lt;!payload:messageid&gt;" /> 
-
+	id1="0003" 
+	id2="0003"  
+	content="&lt;hfld1&gt;&lt;hfld2&gt;&lt;hfld3&gt;&lt;hfld4&gt;&lt;messageid&gt;[&lt;hfld5&gt;]: &lt;!payload:messageid&gt;" /> 
 <HEADER 
-id1="0004" 
-id2="0004"  
-content="&lt;hfld1&gt;&lt;hfld2&gt;&lt;hfld3&gt;&lt;hfld4&gt;&lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
-  <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	id1="0004" 
+	id2="0004"  
+	content="&lt;hfld1&gt;&lt;hfld2&gt;&lt;hfld3&gt;&lt;hfld4&gt;&lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
+<MESSAGE 
 	id1="cli" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Processing command: &lt;action&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Processing command: &lt;action&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:01" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Processing command &lt;action&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Processing command &lt;action&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:02" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Leaving config mode&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Leaving config mode" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Leaving config mode&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Leaving config mode" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:03" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entering config mode&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Entering config mode" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entering config mode&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Entering config mode" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:04" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:CLI exiting&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: CLI exiting" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:CLI exiting&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: CLI exiting" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:05" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:CLI launched&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: CLI launched" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:CLI launched&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: CLI launched" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Automatically" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Automatically logged out due to keyboard inactivity&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Automatically logged out due to keyboard inactivity." /> 
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Automatically logged out due to keyboard inactivity&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Automatically logged out due to keyboard inactivity." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:06" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entering enable mode&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Entering enable mode" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entering enable mode&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Entering enable mode" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:07" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Leaving enable mode&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Leaving enable mode" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Leaving enable mode&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Leaving enable mode" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Processing" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Processing a secure command&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Processing a secure command..." /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Processing a secure command&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;-&lt;fld20&gt;.&lt;severity&gt;&gt; { &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt; | &lt;username&gt;@&lt;domain&gt; }: Processing a secure command..." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cli:pam" 
 	id2="cli" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:bad variable&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): pam_putenv: &lt;fld3&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:bad variable&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): pam_putenv: &lt;fld3&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="schedulerd" 
 	id2="schedulerd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Executing Job &quot;&lt;operation_id&gt;&quot; execution &lt;fld6&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Executing Job &quot;&lt;operation_id&gt;&quot; execution &lt;fld6&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="schedulerd:01" 
 	id2="schedulerd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System time changed, recomputing job run times&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; System time changed, recomputing job run times." /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System time changed, recomputing job run times&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; System time changed, recomputing job run times." />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="configd:Rotating" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Rotating out backup file &quot;&lt;filename&gt;&quot; for device &quot;&lt;hostname&gt;&quot;." /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Rotating out backup file &quot;&lt;filename&gt;&quot; for device &quot;&lt;hostname&gt;&quot;." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="configd:Deleting" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Deleting backup &lt;filename&gt; from device &quot;&lt;hostname&gt;&quot;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Deleting backup &lt;filename&gt; from device &quot;&lt;hostname&gt;&quot;" />
 	
-  <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+<MESSAGE 
 	id1="configd" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &quot;&lt;hostname&gt;&quot; completed command(s) &lt;&lt;&lt;action&gt;&gt; ..." /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &quot;&lt;hostname&gt;&quot; completed command(s) &lt;&lt;&lt;action&gt;&gt; ..." />
 	
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+<MESSAGE 
 	id1="configd:01" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Sending commands to Device &lt;hostname&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Sending commands to Device &lt;hostname&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="configd:11" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@&lt;fld6&gt;: Sending commands to Device &lt;hostname&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@&lt;fld6&gt;: Sending commands to Device &lt;hostname&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="file" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:This file is automatically generated&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: command: &lt;action&gt; ;; CPL generated by Visual Policy Manager: &lt;fld10&gt; ;&lt;fld11&gt; ; &lt;fld12&gt; ; &lt;info&gt;" /> 	
- <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:This file is automatically generated&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: command: &lt;action&gt; ;; CPL generated by Visual Policy Manager: &lt;fld10&gt; ;&lt;fld11&gt; ; &lt;fld12&gt; ; &lt;info&gt;" />
+<MESSAGE 
 	id1="configd:02" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: command: &lt;action&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: command: &lt;action&gt;" />
+<MESSAGE 
 	id1="configd:22" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@&lt;fld6&gt;: command: &lt;action&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@&lt;fld6&gt;: command: &lt;action&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="configd:03" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Commands sent to Device &lt;hostname&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Commands sent to Device &lt;hostname&gt;" />
+<MESSAGE 
 	id1="configd:33" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@&lt;fld6&gt;: Commands sent to Device &lt;hostname&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@&lt;fld6&gt;: Commands sent to Device &lt;hostname&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Backup" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Backup import command finished for all devices&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Backup import command finished for all devices." /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Backup import command finished for all devices&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Backup import command finished for all devices." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Beginning" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Beginning to make backup of cache&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Beginning to make backup of cache &lt;hostname&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Beginning to make backup of cache&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Beginning to make backup of cache &lt;hostname&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Inputting" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Inputting overlay&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Inputting overlay &lt;&lt;&lt;fld10&gt;&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Inputting overlay&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Inputting overlay &lt;&lt;&lt;fld10&gt;&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Saved" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Saved &lt;info&gt; to &lt;filename&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Saved &lt;info&gt; to &lt;filename&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Importing" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Importing overlay &lt;&lt;&lt;fld25&gt;&gt; from &lt;hostname&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Importing overlay &lt;&lt;&lt;fld25&gt;&gt; from &lt;hostname&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Overlay" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Overlay &quot;&lt;fld25&gt;&quot; imported from device &quot;&lt;hostname&gt;&quot;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Overlay &quot;&lt;fld25&gt;&quot; imported from device &quot;&lt;hostname&gt;&quot;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Executed" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Executed the last created overlay. The filename is &lt;filename&gt;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Executed the last created overlay. The filename is &lt;filename&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Configuration" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Configuration system online&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Configuration system online" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Configuration system online&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Configuration system online" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Create" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Table creation&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; CREATE &lt;info&gt;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Table creation&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; CREATE &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Loaded" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Loaded config file initial&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Loaded config file initial" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Loaded config file initial&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Loaded config file initial" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Setting" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Setting set-reply timeout&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Setting set-reply timeout to &lt;fld1&gt;" /> 	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Setting set-reply timeout&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Setting set-reply timeout to &lt;fld1&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="CCD" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; CCD lost connection to device &quot;&lt;hostname&gt;&quot;: &lt;event_description&gt;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; CCD lost connection to device &quot;&lt;hostname&gt;&quot;: &lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Device" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &quot;&lt;hostname&gt;&quot; is now online." /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &quot;&lt;hostname&gt;&quot; is now online." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Output" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: &lt;fld9&gt; Output for device &quot;&lt;hostname&gt;&quot; &lt;fld10&gt;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: &lt;fld9&gt; Output for device &quot;&lt;hostname&gt;&quot; &lt;fld10&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ssh" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; (ssh) &lt;event_description&gt;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; (ssh) &lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Applying" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Applying overlay to group&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Applying overlay &lt;&lt;&lt;fld10&gt;&gt; to group &lt;group_object&gt;" /> 	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Applying overlay to group&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Applying overlay &lt;&lt;&lt;fld10&gt;&gt; to group &lt;group_object&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="Applying:01" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Applying overlay to cache&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Applying overlay &lt;&lt;&lt;fld10&gt;&gt; to cache &lt;hostname&gt;" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Applying overlay to cache&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;username&gt;@::&lt;fld5&gt;:&lt;saddr&gt;-&lt;fld6&gt;: Applying overlay &lt;&lt;&lt;fld10&gt;&gt; to cache &lt;hostname&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="configd:backup" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Backup complete for device&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Backup complete for device &quot;&lt;hostname&gt;&quot;. ID &lt;fld10&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Backup complete for device&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Backup complete for device &quot;&lt;hostname&gt;&quot;. ID &lt;fld10&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="file:01" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:This file is automatically generated&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &quot;&lt;hostname&gt;&quot; completed command(s) &lt;action&gt; ;; CPL generated by Visual Policy Manager: &lt;fld10&gt; ;&lt;fld11&gt; ; &lt;fld12&gt; ; &lt;info&gt;" /> 	
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:This file is automatically generated&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &quot;&lt;hostname&gt;&quot; completed command(s) &lt;action&gt; ;; CPL generated by Visual Policy Manager: &lt;fld10&gt; ;&lt;fld11&gt; ; &lt;fld12&gt; ; &lt;info&gt;" />
+<MESSAGE 
 	id1="configd:connection" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connection reset by peer&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; read: Connection reset by peer" /> 	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connection reset by peer&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; read: Connection reset by peer" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="configd:failed" 
 	id2="configd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cd session read failed&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;info&gt; failed" /> 	
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cd session read failed&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;info&gt; failed" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="poller" 
 	id2="poller" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Querying content system for job results&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Querying content system for job results." /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Querying content system for job results&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Querying content system for job results." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="heartbeat" 
 	id2="heartbeat" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Processing command: &lt;action&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Processing command: &lt;action&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="heartbeat:01" 
 	id2="heartbeat" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; The HB command is &lt;action&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; The HB command is &lt;action&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="heartbeat:02" 
 	id2="heartbeat" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:director heartbeat client exiting&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; director heartbeat client exiting." /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:director heartbeat client exiting&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; director heartbeat client exiting." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="heartbeat:03" 
 	id2="heartbeat" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:director heartbeat client launched&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; director heartbeat client launched." /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:director heartbeat client launched&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; director heartbeat client launched." />
+<MESSAGE 
 	id1="heartbeat:crit1" 
 	id2="heartbeat" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:undefined symbol&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;filename&gt;: undefined symbol: &lt;info&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:undefined symbol&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;filename&gt;: undefined symbol: &lt;info&gt;" />
+<MESSAGE 
 	id1="heartbeat:crit2" 
 	id2="heartbeat" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No such file or directory&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; connect: &lt;fld1&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No such file or directory&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; connect: &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="runner" 
 	id2="runner" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Job &quot;&lt;operation_id&gt;&quot; execution &lt;fld6&gt; command &lt;fld7&gt;: &quot;&lt;action&gt;&quot;. Output &lt;fld9&gt;: &lt;result&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Job &quot;&lt;operation_id&gt;&quot; execution &lt;fld6&gt; command &lt;fld7&gt;: &quot;&lt;action&gt;&quot;. Output &lt;fld9&gt;: &lt;result&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="runner:01" 
 	id2="runner" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Processing command: &lt;action&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Processing command: &lt;action&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="runner:02" 
 	id2="runner" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Job &quot;&lt;operation_id&gt;&quot; execution &lt;fld6&gt; finished running." /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Job &quot;&lt;operation_id&gt;&quot; execution &lt;fld6&gt; finished running." />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="runner:crit1" 
 	id2="runner" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Failed to exec &lt;filename&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Failed to exec &lt;filename&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="runner:crit2" 
 	id2="runner" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File reading failed&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; File reading failed" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File reading failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; File reading failed" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: attempting connection using &lt;fld6&gt; on port: &lt;fld7&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: attempting connection using &lt;fld6&gt; on port: &lt;fld7&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:01" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: &lt;event_description&gt;, Reason &lt;result&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: &lt;event_description&gt;, Reason &lt;result&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:03" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: couldn't match the response &lt;&lt;&lt;event_description&gt;&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: couldn't match the response &lt;&lt;&lt;event_description&gt;&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:04" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: Did not get echo for the command &lt;&lt;&lt;action&gt;&gt;for past &lt;fld10&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: Did not get echo for the command &lt;&lt;&lt;action&gt;&gt;for past &lt;fld10&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:02" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:info on device connection&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: &lt;info&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:info on device connection&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device &lt;hostname&gt;: &lt;info&gt;" />
 	
-
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:05" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:write to ssh pipe&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; write to &lt;fld1&gt; pipe : &lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:write to ssh pipe&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; write to &lt;fld1&gt; pipe : &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:06" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ccd handle read failure&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; ccd_handle_read_failure(), &lt;info&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ccd handle read failure&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; ccd_handle_read_failure(), &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:07" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:device communication daemon online&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device Communication Daemon online" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:device communication daemon online&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device Communication Daemon online" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ccd:08" 
 	id2="ccd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:system memory size&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; System memory is: &lt;fld1&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:system memory size&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; System memory is: &lt;fld1&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="sshd" 
 	id2="sshd" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; error: Bind to port &lt;fld10&gt; on &lt;fld5&gt; failed: &lt;result&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; error: Bind to port &lt;fld10&gt; on &lt;fld5&gt; failed: &lt;result&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="sshd:01" 
 	id2="sshd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:bad username&gt;&lt;agent&gt;: bad username &lt;fld1&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:bad username&gt;"
+	content="&lt;agent&gt;: bad username &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="sshd:02" 
 	id2="sshd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authentication failure&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): authentication failure; &lt;info&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authentication failure&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): authentication failure; &lt;info&gt;" />
+<MESSAGE 
 	id1="sshd:03" 
 	id2="sshd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:check pass, user unknown&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): check pass; &lt;fld3&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:check pass, user unknown&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): check pass; &lt;fld3&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="sshd:04" 
 	id2="sshd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authentication failure&gt;&lt;agent&gt;[&lt;process_id&gt;]: PAM &lt;fld1&gt; more authentication failure; &lt;info&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authentication failure&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: PAM &lt;fld1&gt; more authentication failure; &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="sshd:pam" 
 	id2="sshd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:bad variable&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): pam_putenv: &lt;fld3&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:bad variable&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld21&gt;(&lt;fld1&gt;:&lt;fld2&gt;): pam_putenv: &lt;fld3&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="dmd" 
 	id2="dmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; inserted device id = &lt;hostname&gt; and serial number = &lt;fld6&gt; into DB" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; inserted device id = &lt;hostname&gt; and serial number = &lt;fld6&gt; into DB" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="dmd:01" 
 	id2="dmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Health state for metric&quot;&lt;hostname&gt;&quot; &quot;&lt;change_old&gt;&quot; changed to &quot;&lt;change_new&gt;&quot;, reason: &quot;&lt;result&gt;&quot;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Health state for metric&quot;&lt;hostname&gt;&quot; &quot;&lt;change_old&gt;&quot; changed to &quot;&lt;change_new&gt;&quot;, reason: &quot;&lt;result&gt;&quot;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="dmd:11" 
 	id2="dmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Health state for group &quot;&lt;group_object&gt;&quot; changed from &quot;&lt;change_old&gt;&quot; to &quot;&lt;change_new&gt;&quot;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Health state for group &quot;&lt;group_object&gt;&quot; changed from &quot;&lt;change_old&gt;&quot; to &quot;&lt;change_new&gt;&quot;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="dmd:02" 
 	id2="dmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Filter on (&lt;fld5&gt;) things. &lt;event_description&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Filter on (&lt;fld5&gt;) things. &lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="dmd:03" 
 	id2="dmd" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device ID &quot;&lt;hostname&gt;&quot; error: &lt;event_description&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Device ID &quot;&lt;hostname&gt;&quot; error: &lt;event_description&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="logrotate" 
 	id2="logrotate" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ALERT exited abnormally&gt;&lt;agent&gt;: ALERT exited abnormally with &lt;fld10&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ALERT exited abnormally&gt;"
+	content="&lt;agent&gt;: ALERT exited abnormally with &lt;fld10&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ntpd" 
 	id2="ntpd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:kernel time sync enabled&gt;&lt;agent&gt;[&lt;process_id&gt;]: kernel time sync enabled &lt;fld10&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:kernel time sync enabled&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: kernel time sync enabled &lt;fld10&gt;" />
+<MESSAGE 
 	id1="ntpd:01" 
 	id2="ntpd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:time reset&gt;&lt;agent&gt;[&lt;process_id&gt;]: time reset &lt;fld10&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:time reset&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: time reset &lt;fld10&gt;" />
+<MESSAGE 
 	id1="ntpd:02" 
 	id2="ntpd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: ntpd &lt;fld10&gt;-r &lt;fld11&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: ntpd &lt;fld10&gt;-r &lt;fld11&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ntpd:03" 
 	id2="ntpd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ntpd exiting on signal&gt;&lt;agent&gt;[&lt;process_id&gt;]: ntpd exiting on signal &lt;fld10&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ntpd exiting on signal&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: ntpd exiting on signal &lt;fld10&gt;" />
 	
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="pm" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ntpd will start in few secs&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; ntpd will start in &lt;fld10&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ntpd will start in few secs&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; ntpd will start in &lt;fld10&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="pm:01" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ntpd started&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; ntpd started" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ntpd started&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; ntpd started" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="pm:02" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:print message&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; print_msg(), &lt;info&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:print message&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; print_msg(), &lt;info&gt;" />
+<MESSAGE 
 	id1="pm:03" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:service started&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;info&gt; started" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:service started&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;info&gt; started" />
+<MESSAGE 
 	id1="pm:04" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:service will start&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;info&gt; will start in &lt;fld1&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:service will start&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; &lt;info&gt; will start in &lt;fld1&gt;" />
+<MESSAGE 
 	id1="pm:05" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:check license validity&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; check_license_validity(), &lt;fld1&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:check license validity&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; check_license_validity(), &lt;fld1&gt;" />
+<MESSAGE 
 	id1="pm:06" 
 	id2="pm" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:connected to config daemon&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Connected to config daemon" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:connected to config daemon&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; Connected to config daemon" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="anacron" 
 	id2="anacron" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:updated timestamp&gt;&lt;agent&gt;[&lt;process_id&gt;]: Updated timestamp for job &lt;info&gt; to &lt;fld1&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:updated timestamp&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Updated timestamp for job &lt;info&gt; to &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="anacron:01" 
 	id2="anacron" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:anacron started&gt;&lt;agent&gt;[&lt;process_id&gt;]: Anacron &lt;version&gt; started on &lt;fld1&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:anacron started&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Anacron &lt;version&gt; started on &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="anacron:02" 
 	id2="anacron" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:normal exit&gt;&lt;agent&gt;[&lt;process_id&gt;]: Normal exit &lt;fld1&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:normal exit&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Normal exit &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="epmd" 
 	id2="epmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid packet size&gt;&lt;agent&gt;: epmd: invalid packet size (&lt;fld1&gt;)" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid packet size&gt;"
+	content="&lt;agent&gt;: epmd: invalid packet size (&lt;fld1&gt;)" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="epmd:01" 
 	id2="epmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: epmd: got &lt;info&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: epmd: got &lt;info&gt;" />
+<MESSAGE 
 	id1="epmd:02" 
 	id2="epmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: epmd: epmd running &lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: epmd: epmd running &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="xinetd" 
 	id2="xinetd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: xinetd &lt;event_description&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: xinetd &lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="xinetd:01" 
 	id2="xinetd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;[&lt;process_id&gt;]: Started working: &lt;fld1&gt; available services" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Started working: &lt;fld1&gt; available services" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="auditd" 
 	id2="auditd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Audit daemon rotating log files&gt;&lt;agent&gt;[&lt;process_id&gt;]: Audit daemon rotating log files" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Audit daemon rotating log files&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Audit daemon rotating log files" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="restorecond" 
 	id2="restorecond" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Reset file&gt;&lt;agent&gt;: Reset file context &lt;filename&gt;: &lt;fld1&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Reset file&gt;"
+	content="&lt;agent&gt;: Reset file context &lt;filename&gt;: &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="authd" 
 	id2="authd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:handle authd unknown message&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; handle_authd unknown message =&lt;fld1&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:handle authd unknown message&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; handle_authd unknown message =&lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="authd:01" 
 	id2="authd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authd signal handler&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; authd_signal_handler(), &lt;fld1&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authd signal handler&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; authd_signal_handler(), &lt;fld1&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="authd:02" 
 	id2="authd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authd close&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; authd_close(): &lt;info&gt;" /> 
-
-	<MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authd close&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; authd_close(): &lt;info&gt;" />
+<MESSAGE 
 	id1="rsyslogd" 
 	id2="rsyslogd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;agent&gt;: {WARNING|Warning}: &lt;event_description&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: {WARNING|Warning}: &lt;event_description&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="shutdown" 
 	id2="shutdown" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:shutting down&gt;&lt;agent&gt;[&lt;process_id&gt;]: shutting down &lt;info&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:shutting down&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: shutting down &lt;info&gt;" />
 <MESSAGE 
-	level="7" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="cmd" 
 	id2="cmd" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cmd starting&gt;&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; cmd starting &lt;fld1&gt;" /> 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cmd starting&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld20&gt;.&lt;severity&gt;&gt; cmd starting &lt;fld1&gt;" />
 	
 </DEVICEMESSAGES>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="trendmicroimss"
+	displayname="Trend Micro IMSS"
+	group="Application Firewall">
 <VERSION
-	xml="5"
-	checksum="1af819657818a0df264a26b1d34a3049"
+	xml="6"
+	checksum="b4b962ef80aca94b85b87b32ce2ff201"
 	revision="105"
-	enVision="35010000"
 	device="2.0" />
 
  
@@ -41,429 +43,337 @@
 
 
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Active_Update_status:01" 
 	id2="Active_Update_status" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@agent:ScanEngine&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld4,fld5)&gt;Server: &lt;hostname&gt;^^Time: &lt;fld4&gt; &lt;fld5&gt;^^Component: ScanEngine^^Version attempted to download: &lt;component_version&gt;^^Outcome: &lt;disposition&gt;^^Errors: &lt;result&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@agent:ScanEngine&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld4,fld5)&gt;"
+	content="Server: &lt;hostname&gt;^^Time: &lt;fld4&gt; &lt;fld5&gt;^^Component: ScanEngine^^Version attempted to download: &lt;component_version&gt;^^Outcome: &lt;disposition&gt;^^Errors: &lt;result&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Active_Update_status:02" 
 	id2="Active_Update_status" 
 	eventcategory="1605000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@agent:VirusPattern&gt;Server: &lt;hostname&gt;^^Time: &lt;fld4&gt; &lt;fld5&gt;^^Component: VirusPattern^^Version attempted to download: &lt;content_version&gt;^^Outcome: &lt;disposition&gt;^^Errors: &lt;result&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@agent:VirusPattern&gt;"
+	content="Server: &lt;hostname&gt;^^Time: &lt;fld4&gt; &lt;fld5&gt;^^Component: VirusPattern^^Version attempted to download: &lt;content_version&gt;^^Outcome: &lt;disposition&gt;^^Errors: &lt;result&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Diskspace_below_threshold" 
 	id2="Diskspace_below_threshold" 
 	eventcategory="1603020000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_description&gt;" /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;" />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Mail_queue_status" 
 	id2="Mail_queue_status" 
 	eventcategory="1603000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;event_description&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;" />
 
 
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Msg_Accepted_by_Destination_Server" 
 	id2="0" 
 	eventcategory="1207010100" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^0^^&lt;from&gt;^^&lt;to&gt;^^Message&lt;&lt;&lt;fld12&gt;&gt; accepted from [&lt;saddr&gt;] to [&lt;&lt;&lt;fld13&gt;&gt;;].^^&lt;fld14&gt;^^ " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^0^^&lt;from&gt;^^&lt;to&gt;^^Message&lt;&lt;&lt;fld12&gt;&gt; accepted from [&lt;saddr&gt;] to [&lt;&lt;&lt;fld13&gt;&gt;;].^^&lt;fld14&gt;^^ " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Successful_Msg_Relay_to_Destination_Host" 
 	id2="256" 
 	eventcategory="1207010100" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^256^^&lt;from&gt;^^&lt;to&gt;^^Message&lt;&lt;&lt;fld12&gt;&gt; relayed through host[&lt;daddr&gt;] to [&lt;fld13&gt;] successfully.^^&lt;fld14&gt;^^ " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^256^^&lt;from&gt;^^&lt;to&gt;^^Message&lt;&lt;&lt;fld12&gt;&gt; relayed through host[&lt;daddr&gt;] to [&lt;fld13&gt;] successfully.^^&lt;fld14&gt;^^ " />
 	
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Unsuccessful_Connection_to_Destination_Server:01" 
 	id2="257" 
 	eventcategory="1207010200" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^257^^&lt;from&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^&lt;fld11&gt; " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^257^^&lt;from&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^&lt;fld11&gt; " />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Msg_Relay_Unsuccessful" 
 	id2="259" 
 	eventcategory="1207010201" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^259^^&lt;fld9&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^ " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^259^^&lt;fld9&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^ " />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Unsuccessful_Connection_to_Destination_Server:02" 
 	id2="513" 
 	eventcategory="1207010200" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^513^^&lt;from&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^&lt;fld11&gt; " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^513^^&lt;from&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^&lt;fld11&gt; " />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Max_Msg_Delivery_Retries_Exceeded" 
 	id2="515" 
 	eventcategory="1207010200" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^515^^&lt;from&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^ " /> 
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^515^^&lt;from&gt;^^&lt;to&gt;^^&lt;message_body&gt;^^&lt;fld10&gt;^^ " />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Successful_Msg_relay_MTA_queue" 
 	id2="768" 
 	eventcategory="1207010100" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^768^^&lt;from&gt;^^&lt;to&gt;^^Message&lt;&lt;&lt;fld12&gt;&gt; relayed to MTA queue successfully.^^&lt;fld13&gt;^^ " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;fld8&gt;^^768^^&lt;from&gt;^^&lt;to&gt;^^Message&lt;&lt;&lt;fld12&gt;&gt; relayed to MTA queue successfully.^^&lt;fld13&gt;^^ " />
 	
- <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
+<MESSAGE 
 	id1="4:Mail_Event" 
 	id2="4" 
 	eventcategory="1207000000" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;from&gt;^^&lt;to&gt;^^&lt;subject&gt;^^&lt;fld14&gt;^^^^&lt;fld15&gt;^^^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^0^^^^^^^^^^0^^0^^0^^0^^&lt;&lt;&lt;fld12&gt;&gt;^^0^^0^^^^^^  " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;from&gt;^^&lt;to&gt;^^&lt;subject&gt;^^&lt;fld14&gt;^^^^&lt;fld15&gt;^^^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^0^^^^^^^^^^0^^0^^0^^0^^&lt;&lt;&lt;fld12&gt;&gt;^^0^^0^^^^^^  " />
 <MESSAGE 
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="4:Mail_Event_Violation" 
 	id2="4" 
 	eventcategory="1207040100" 
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:High&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;from&gt;^^&lt;to&gt;^^&lt;subject&gt;^^&lt;fld14&gt;^^&lt;rulename&gt;^^&lt;fld15&gt;^^^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^0^^0^^&lt;filename&gt;^^^^&lt;virusname&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;^^&lt;fld21&gt;^^0^^0^^&lt;&lt;&lt;fld12&gt;&gt;^^0^^0^^^^^^ " />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:High&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld4,fld5)&gt;"
+	content="&lt;fld4&gt; &lt;fld5&gt; &lt;timezone&gt;^^&lt;fld7&gt;^^&lt;from&gt;^^&lt;to&gt;^^&lt;subject&gt;^^&lt;fld14&gt;^^&lt;rulename&gt;^^&lt;fld15&gt;^^^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^0^^0^^&lt;filename&gt;^^^^&lt;virusname&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;^^&lt;fld21&gt;^^0^^0^^&lt;&lt;&lt;fld12&gt;&gt;^^0^^0^^^^^^ " />
 <MESSAGE  
 	id1="smtpd:01" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: NOQUEUE: &lt;action&gt;: RCPT from unknown[&lt;saddr&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;&lt;&lt;fld3&gt;&gt;: &lt;event_description&gt;; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;&lt;&lt;fld4&gt;&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: NOQUEUE: &lt;action&gt;: RCPT from unknown[&lt;saddr&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;&lt;&lt;fld3&gt;&gt;: &lt;event_description&gt;; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;&lt;&lt;fld4&gt;&gt;" />
 <MESSAGE  
 	id1="smtpd:02" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;action&gt; from unknown[&lt;saddr&gt;]"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;action&gt; from unknown[&lt;saddr&gt;]" />
 <MESSAGE  
 	id1="smtpd:03" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:client=unknown&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: { NOQUEUE | &lt;sessionid&gt; }: client=unknown[&lt;saddr&gt;]"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:client=unknown&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: { NOQUEUE | &lt;sessionid&gt; }: client=unknown[&lt;saddr&gt;]" />
 <MESSAGE  
 	id1="smtpd:04" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;: END-OF-MESSAGE: &lt;fld1&gt;: queued as &lt;sessionid&gt; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;fld2&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;: END-OF-MESSAGE: &lt;fld1&gt;: queued as &lt;sessionid&gt; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;fld2&gt;" />
 <MESSAGE  
 	id1="smtpd:05" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro RBL+&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; }{NOTIFY=FAILURE&quot;: | &quot;: } &quot;&lt;fld1&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro RBL+. Please see &lt;url&gt; &quot;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro RBL+&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; }{NOTIFY=FAILURE&quot;: | &quot;: } &quot;&lt;fld1&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro RBL+. Please see &lt;url&gt; &quot;" />
 <MESSAGE  
 	id1="smtpd:06" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro RBL+&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; } ORCPT=&lt;fld2&gt;&quot;: &quot;&lt;fld1&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro RBL+. Please see &lt;url&gt; &quot;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro RBL+&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; } ORCPT=&lt;fld2&gt;&quot;: &quot;&lt;fld1&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro RBL+. Please see &lt;url&gt; &quot;" />
 <MESSAGE  
 	id1="smtpd:07" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro Email Reputation Service&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; } ORCPT=&lt;fld1&gt;&quot;: &quot;&lt;fld2&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro Email Reputation Service. Please see &lt;url&gt; &quot;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro Email Reputation Service&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; } ORCPT=&lt;fld1&gt;&quot;: &quot;&lt;fld2&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro Email Reputation Service. Please see &lt;url&gt; &quot;" />
 <MESSAGE  
 	id1="smtpd:08" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro Email Reputation Service&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; }{NOTIFY=FAILURE&quot;: | &quot;: } &quot;&lt;fld1&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro Email Reputation Service. Please see &lt;url&gt; &quot;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:blocked using Trend Micro Email Reputation Service&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; }{NOTIFY=FAILURE&quot;: | &quot;: } &quot;&lt;fld1&gt; Service { temporarily unavailable | unavailable}; Client Host [&lt;saddr&gt;] blocked using Trend Micro Email Reputation Service. Please see &lt;url&gt; &quot;" />
 <MESSAGE  
 	id1="smtpd:09" 
 	id2="smtpd" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Transaction failed&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; } ORCPT=&lt;fld2&gt;&quot;: &quot;&lt;fld1&gt; Transaction failed&quot;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Transaction failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt;: proxy inet:&lt;daddr&gt;:&lt;dport&gt; &lt;action&gt; &quot;RCPT { To | TO }{: &lt;&lt;&lt;to&gt;&gt; | :&lt;&lt;&lt;to&gt;&gt; } ORCPT=&lt;fld2&gt;&quot;: &quot;&lt;fld1&gt; Transaction failed&quot;" />
 <MESSAGE  
 	id1="smtpd:10" 
 	id2="smtpd" 
 	eventcategory="1301000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: certificate verification failed for &lt;domain&gt;[&lt;saddr&gt;]: untrusted issuer &lt;fld1&gt;/CN=&lt;cert_issuer&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: certificate verification failed for &lt;domain&gt;[&lt;saddr&gt;]: untrusted issuer &lt;fld1&gt;/CN=&lt;cert_issuer&gt;" />
 <MESSAGE  
 	id1="smtpd:11" 
 	id2="smtpd" 
 	eventcategory="1301000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: certificate verification failed for &lt;domain&gt;[&lt;saddr&gt;]: self-signed certificate"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: certificate verification failed for &lt;domain&gt;[&lt;saddr&gt;]: self-signed certificate" />
 <MESSAGE  
 	id1="smtpd:12" 
 	id2="smtpd" 
 	eventcategory="1301000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: { client certificate | certificate } verification failed for &lt;domain&gt;[&lt;saddr&gt;]: &lt;info&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: { client certificate | certificate } verification failed for &lt;domain&gt;[&lt;saddr&gt;]: &lt;info&gt;" />
 <MESSAGE  
 	id1="smtp:01" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: to=&lt;&lt;&lt;to&gt;&gt;, relay=&lt;fld1&gt;, delay=&lt;fld2&gt;, delays=&lt;fld3&gt;, dsn=&lt;fld4&gt;, status=&lt;disposition&gt; &lt;fld5&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: to=&lt;&lt;&lt;to&gt;&gt;, relay=&lt;fld1&gt;, delay=&lt;fld2&gt;, delays=&lt;fld3&gt;, dsn=&lt;fld4&gt;, status=&lt;disposition&gt; &lt;fld5&gt;" />
 <MESSAGE  
 	id1="smtp:02" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: Used &lt;protocol&gt; for &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: Used &lt;protocol&gt; for &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
 <MESSAGE  
 	id1="smtp:03" 
 	id2="smtp" 
 	eventcategory="1301000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: { CA certificate | server certificate | certificate } verification failed for &lt;domain&gt;[&lt;saddr&gt;]:&lt;sport&gt;: &lt;info&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:certificate verification failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: { CA certificate | server certificate | certificate } verification failed for &lt;domain&gt;[&lt;saddr&gt;]:&lt;sport&gt;: &lt;info&gt;" />
 <MESSAGE  
 	id1="smtp:04" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:enabling PIX workarounds&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: enabling PIX workarounds: &lt;action&gt; for &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:enabling PIX workarounds&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: enabling PIX workarounds: &lt;action&gt; for &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
 <MESSAGE  
 	id1="smtp:05" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: connect to &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;: &lt;event_description&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: connect to &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;: &lt;event_description&gt;" />
 <MESSAGE  
 	id1="smtp:06" 
 	id2="smtp" 
 	eventcategory="1207040200"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt; host &lt;domain&gt;[&lt;saddr&gt;] said: &lt;resultcode&gt; &lt;info&gt;. &lt;fld2&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt; host &lt;domain&gt;[&lt;saddr&gt;] said: &lt;resultcode&gt; &lt;info&gt;. &lt;fld2&gt;" />
 <MESSAGE  
 	id1="smtp:07" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:lost connection&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: lost connection with &lt;domain&gt;[&lt;daddr&gt;] &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:lost connection&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: lost connection with &lt;domain&gt;[&lt;daddr&gt;] &lt;fld1&gt;" />
 <MESSAGE  
 	id1="smtp:08" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:SSL_connect error&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: SSL_connect error to &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;: &lt;resultcode&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:SSL_connect error&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: SSL_connect error to &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;: &lt;resultcode&gt;" />
 <MESSAGE  
 	id1="smtp:09" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: conversation with &lt;domain&gt;[&lt;daddr&gt;] timed out while receiving the initial server greeting"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: conversation with &lt;domain&gt;[&lt;daddr&gt;] timed out while receiving the initial server greeting" />
 <MESSAGE  
 	id1="smtp:10" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Unused TLS&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: Unused TLS for &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Unused TLS&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: Unused TLS for &lt;domain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
 
 <MESSAGE  
 	id1="smtp" 
 	id2="smtp" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 <MESSAGE  
 	id1="qmgr:01" 
 	id2="qmgr" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: from=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: from=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="qmgr" 
 	id2="qmgr" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;fld1&gt;" />
 <MESSAGE  
 	id1="cleanup:01" 
 	id2="cleanup" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;severity&gt;: header &lt;fld1&gt;: { Used | Unused } from &lt;domain&gt;[&lt;saddr&gt;]; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;fld2&gt;: &lt;event_description&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;severity&gt;: header &lt;fld1&gt;: { Used | Unused } from &lt;domain&gt;[&lt;saddr&gt;]; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;fld2&gt;: &lt;event_description&gt;" />
 <MESSAGE  
 	id1="cleanup:02" 
 	id2="cleanup" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;severity&gt;: header &lt;fld1&gt;: &lt;daddr&gt;:&lt;dport&gt; from &lt;domain&gt;[&lt;saddr&gt;]; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;fld2&gt;: &lt;fld3&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;severity&gt;: header &lt;fld1&gt;: &lt;daddr&gt;:&lt;dport&gt; from &lt;domain&gt;[&lt;saddr&gt;]; from=&lt;&lt;&lt;from&gt;&gt; to=&lt;&lt;&lt;to&gt;&gt; proto=&lt;protocol&gt; helo=&lt;fld2&gt;: &lt;fld3&gt;" />
 
 <MESSAGE  
 	id1="cleanup" 
 	id2="cleanup" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;fld1&gt;" />
 <MESSAGE  
 	id1="imss:01" 
 	id2="imss" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Accept connection from client&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;	[&lt;fld4&gt;] &lt;severity&gt;: Accept connection from client [&lt;saddr&gt;]."/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Accept connection from client&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;	[&lt;fld4&gt;] &lt;severity&gt;: Accept connection from client [&lt;saddr&gt;]." />
 
 <MESSAGE  
 	id1="imss" 
 	id2="imss" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="bounce" 
 	id2="bounce" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="anvil" 
 	id2="anvil" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="scache" 
 	id2="scache" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 <MESSAGE  
 	id1="error" 
 	id2="error" 
 	eventcategory="1207010200"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:delivery temporarily suspended&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: to=&lt;&lt;&lt;to&gt;&gt;, &lt;fld1&gt;, status=&lt;disposition&gt; (delivery temporarily suspended: lost connection with &lt;domain&gt;[&lt;daddr&gt;] while receiving the initial server greeting) "/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:delivery temporarily suspended&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: to=&lt;&lt;&lt;to&gt;&gt;, &lt;fld1&gt;, status=&lt;disposition&gt; (delivery temporarily suspended: lost connection with &lt;domain&gt;[&lt;daddr&gt;] while receiving the initial server greeting) " />
 
 <MESSAGE  
 	id1="foxmsg" 
 	id2="foxmsg" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; "/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; " />
 <MESSAGE  
 	id1="tlsagent:01" 
 	id2="tlsagent" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; [&lt;fld4&gt;] [&lt;severity&gt;]Connected from [&lt;saddr&gt;], sender is [&lt;from&gt;], matched policy name is [&lt;policyname&gt;], &lt;disposition&gt; "/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; [&lt;fld4&gt;] [&lt;severity&gt;]Connected from [&lt;saddr&gt;], sender is [&lt;from&gt;], matched policy name is [&lt;policyname&gt;], &lt;disposition&gt; " />
 
 <MESSAGE  
 	id1="imssps" 
 	id2="imssps" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="imssmgr" 
 	id2="imssmgr" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="imsstasks" 
 	id2="imsstasks" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="foxreport" 
 	id2="foxreport" 
 	eventcategory="1207000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;" 
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
 </DEVICEMESSAGES>

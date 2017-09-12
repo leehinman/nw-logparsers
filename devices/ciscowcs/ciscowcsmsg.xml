@@ -1,1080 +1,693 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
-
-	<VERSION
-		xml="24"
-		checksum="e746311b4a5b0a597a08c637e447687a"
+<DEVICEMESSAGES
+	name="ciscowcs"
+	displayname="Cisco WCS"
+	group="Configuration Management">
+<VERSION
+		xml="25"
+		checksum="34a9936c0a3c9816b69aa5b18963c68d"
 		revision="107"
-		enVision="35010000"
 		device="2.0"/>
 
-
-	<HEADER
-		id1="0001"
-		id2="0001"
-		content="%CISCOWCS &lt;messageid&gt; &lt;hfld1&gt;|&lt;!payload:messageid&gt;"/>
-	<HEADER
-		id1="0002"
-		id2="0002"
-		content="%CISCOWCS |&lt;hfld1&gt;|&lt;messageid&gt; &lt;hfld2&gt; &lt;!payload:hfld1&gt;"/>
-	<HEADER
-		id1="0003"
-		id2="0003"
-		content="%CISCOWCS |&lt;hfld1&gt;|&apos;&lt;messageid&gt; &lt;hfld2&gt; &lt;!payload:hfld1&gt;"/>
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Network"
-		id2="Network"
-		eventcategory="1301000000"
-		content="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;&lt;hostip&gt;|&apos;Network User&apos; &apos;&lt;username&gt;&apos; failed authentication on Controller &apos;&lt;daddr&gt;&apos;."/>
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected; it was detected as Rogue AP by AP &apos;&lt;access_point&gt;&apos; Radio Type &apos;&lt;protocol&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:12"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected; it was detected as Rogue AP by AP &apos;&lt;access_point&gt;&apos; Radio Type &apos;&lt;protocol&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Adhoc"
-		id2="Adhoc"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected; it was detected as Rogue AP by AP &apos;&lt;access_point&gt;&apos; Radio Type &apos;&lt;protocol&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Adhoc:01"
-		id2="Adhoc"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;id&gt;|&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Adhoc:02"
-		id2="Adhoc"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;id&gt;|&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; { with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos; | with RSSI &apos;&lt;data&gt;&apos; }."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Adhoc:05"
-		id2="Adhoc"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; { with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos; | with RSSI &apos;&lt;data&gt;&apos; }."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Adhoc:03"
-		id2="Adhoc"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Adhoc Rogue &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network."/>
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="%CISCOWCS &lt;messageid&gt; &lt;hfld1&gt;|&lt;!payload:messageid&gt;"/>
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="%CISCOWCS |&lt;hfld1&gt;|&lt;messageid&gt; &lt;hfld2&gt; &lt;!payload:hfld1&gt;"/>
+<HEADER
+	id1="0003"
+	id2="0003"
+	content="%CISCOWCS |&lt;hfld1&gt;|&apos;&lt;messageid&gt; &lt;hfld2&gt; &lt;!payload:hfld1&gt;"/>
 	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Adhoc:04"
-		id2="Adhoc"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Rogue AP &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network."/>
-
-		
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Northbound"
-		id2="Northbound"
-		eventcategory="1801000000"
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Northbound notification server &apos;&lt;daddr&gt;&apos; is reachable."/>
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:04"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:01"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;."/>
-
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:02"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;id&gt;|&lt;hostip&gt;|Adhoc Rogue &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;."/>
-
-    <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:03"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;id&gt;|&lt;hostip&gt;|Adhoc Rogue  &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;."/>
-    <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:05"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;id&gt;|&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:06"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; { and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP | is detected by AP } &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; { with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos; | with RSSI &apos;&lt;data&gt;&apos; }."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:07"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Adhoc Rogue &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network."/>
-		
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:09"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|Rogue AP &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:08"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;id&gt;|&lt;hostip&gt;|{ Rogue AP | Adhoc Rogue } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is reported by controller &apos;&lt;fld2&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;."/>
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:10"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|{ Rogue AP | Adhoc Rogue } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is reported by controller &apos;&lt;fld2&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:11"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|Rogue AP classified as &lt;info&gt;."/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:13"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &lt;data&gt; and SNR &apos;&lt;dclass_ratio1&gt;&apos;."/>
-
+	id1="Network"
+	id2="Network"
+	eventcategory="1301000000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;"
+	content="&lt;hostip&gt;|&apos;Network User&apos; &apos;&lt;username&gt;&apos; failed authentication on Controller &apos;&lt;daddr&gt;&apos;." />
 	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Rogue:14"
-		id2="Rogue"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;&lt;hostip&gt;|{ Rogue AP | Adhoc Rogue } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;."/>
-
+	id1="Rogue"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected; it was detected as Rogue AP by AP &apos;&lt;access_point&gt;&apos; Radio Type &apos;&lt;protocol&gt;&apos;." />
+<MESSAGE
+	id1="Rogue:12"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected; it was detected as Rogue AP by AP &apos;&lt;access_point&gt;&apos; Radio Type &apos;&lt;protocol&gt;&apos;." />
+<MESSAGE
+	id1="Adhoc"
+	id2="Adhoc"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected; it was detected as Rogue AP by AP &apos;&lt;access_point&gt;&apos; Radio Type &apos;&lt;protocol&gt;&apos;." />
+<MESSAGE
+	id1="Adhoc:01"
+	id2="Adhoc"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
+<MESSAGE
+	id1="Adhoc:02"
+	id2="Adhoc"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; { with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos; | with RSSI &apos;&lt;data&gt;&apos; }." />
+<MESSAGE
+	id1="Adhoc:05"
+	id2="Adhoc"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; { with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos; | with RSSI &apos;&lt;data&gt;&apos; }." />
+<MESSAGE
+	id1="Adhoc:03"
+	id2="Adhoc"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Adhoc Rogue &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network." />
 	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Air"
-		id2="Air"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Air Quality Index on Channel &apos;&lt;wifi_channel&gt;&apos; is &apos;&lt;fld1&gt;&apos; (Threshold:&apos;&lt;fld2&gt;&apos;)."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="RADIUS"
-		id2="RADIUS"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Radius server &apos;&lt;saddr&gt;&apos;(port &lt;sport&gt;) failed to respond to request from client &apos;&lt;fld1&gt;&apos; with MAC &apos;&lt;smacaddr&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radius"
-		id2="Radius"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Radius server &apos;&lt;saddr&gt;&apos;(port &lt;sport&gt;) failed to respond to request from client &apos;&lt;fld1&gt;&apos; with MAC &apos;&lt;smacaddr&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radius:01"
-		id2="Radius"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Radius server &apos;&lt;saddr&gt;&apos;(port &lt;sport&gt;) { is activated on WLAN &apos;&lt;fld11&gt;&apos;. | is activated. }"/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="MSE"
-		id2="MSE"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;application&gt;&apos; is down on Mobility Services Engine &apos;&lt;shost&gt;&apos; with IP Address &apos;&lt;saddr&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="MSE:01"
-		id2="MSE"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;application&gt;&apos; is up on Mobility Services Engine &apos;&lt;shost&gt;&apos; with IP Address &apos;&lt;saddr&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="MSE:02"
-		id2="MSE"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Mobility Services Engine &apos;&lt;shost&gt;&apos; with IP Address &apos;&lt;saddr&gt;&apos; on port &apos;&lt;sport&gt;&apos; is reachable."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="MSE:03"
-		id2="MSE"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Evaluation license for &lt;application&gt; is expired."/>
-		
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="MSE:04"
-		id2="MSE"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Element limit for Context Aware Service is reached or exceeded &lt;fld2&gt;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Controller"
-		id2="Controller"
-		eventcategory="1801020000"
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Controller &apos;&lt;saddr&gt;&apos; is reachable."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Controller:01"
-		id2="Controller"
-		eventcategory="1801010000"
-		content="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Controller &apos;&lt;saddr&gt;&apos; is unreachable."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Link:01"
-		id2="Link"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Port &apos;&lt;sport&gt;&apos; is up on {Controller|device} &apos;&lt;saddr&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Link:02"
-		id2="Link"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Port &apos;&lt;sport&gt;&apos; is down on {Controller|device} &apos;&lt;saddr&gt;&apos;."/>
-
-		<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="802.11b/g/n"
-		id2="802.11b/g/n"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|&lt;interface&gt; interface of AP  &lt;access_point&gt; is down: Controller &lt;saddr&gt;"/>
-
-		<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="'802.11b/g/n'"
-		id2="'802.11b/g/n'"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|&lt;interface&gt; interface of AP  &lt;access_point&gt; associated to controller &apos;&lt;fld1&gt;&apos; is { down | up }. Reason &lt;result&gt;"/>
-
-		<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="'802.11a/n'"
-		id2="'802.11a/n'"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|&lt;interface&gt; interface of AP  &lt;access_point&gt; associated to controller &apos;&lt;fld1&gt;&apos; is { down | up }. Reason &lt;result&gt;"/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|{ Interference | Load | Noise} threshold violation reported by &apos;&lt;interface&gt;&apos; interface &lt;space&gt; of AP &apos;&lt;access_point&gt;&apos;, connected to Controller { &apos;&lt;saddr&gt;&apos;. | &apos;&lt;saddr&gt;&apos; }"/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:01"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|{ Interference | Load | Transmit Power| Noise} changed to { acceptable level | &apos;&lt;change_new&gt;&apos; } on &apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:02"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; is down: Controller &lt;saddr&gt;"/>
-	
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:03"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; is down. Reason: &lt;result&gt;"/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:04"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; associated to controller &lt;saddr&gt; is up. Reason: &lt;result&gt;"/>
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:05"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos; associated to controller &apos;&lt;info&gt;&apos; is up."/>
-
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:06"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Coverage changed to acceptable level on &apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;."/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:07"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Coverage threshold of &apos;&lt;fld11&gt;&apos; violated on &apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;. Total no of clients is &apos;&lt;fld12&gt;&apos; and no of failed clients is &apos;&lt;fld13&gt;&apos;.&lt;info&gt;"/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:08"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Channel changed due to &apos;&lt;fld11&gt;&apos;, from &apos;&lt;fld12&gt;&apos; to &apos;&lt;fld13&gt;&apos; on interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;.&lt;info&gt;"/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:09"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; is up: Controller &lt;saddr&gt;"/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radio:10"
-		id2="Radio"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Coverage threshold violated on &apos;&lt;interface&gt;&apos; interface  of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;."/>
-
-	
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Interferer"
-		id2="Interferer"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Security-risk Interferer &apos;&lt;fld1&gt;&apos; {  is detected by &apos;&lt;fld11&gt;&apos;. | is detected. }"/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Interferer:01"
-		id2="Interferer"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Security-risk Interferer &apos;&lt;fld1&gt;&apos; {  is no longer detected by &apos;&lt;fld11&gt;&apos;. | is no longer detected. }"/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:01"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; disassociated from Controller &apos;&lt;saddr&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:02"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; associated with Controller &apos;&lt;saddr&gt;&apos; on Port number &apos;&lt;sport&gt;&apos;."/>
-	
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:03"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; is being contained. This is due to rogue device spoofing or targeting AP &apos;&lt;fld3&gt;&apos; BSSID on &apos;&lt;fld2&gt;&apos; radio."/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:04"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; with protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos; is no longer being contained. Service is restored."/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:05"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;AP reboot reason|&lt;hostip&gt;|Access Point &apos;&lt;access_point&gt;&apos; associated to controller &apos;&lt;fld13&gt;&apos;. Reason for association &apos;&lt;result&gt;&apos;."/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:06"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;AP maximum rogue count exceeded|&lt;hostip&gt;|Rogue AP count on AP &apos;&lt;access_point&gt;&apos; associated with Controller &apos;&lt;fld13&gt;&apos; has exceeded the security warning threshold of &apos;&lt;fld11&gt;&apos;. Fake AP or other attack may be in progress.  - Controller Name: &lt;fld14&gt;"/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:07"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; disassociated."/>
-	
-
-	
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:08"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Fake AP or other attack on AP &apos;&lt;access_point&gt;&apos; associated with Controller &lt;saddr&gt;&apos; has cleared now.&lt;info&gt;"/>
-	
-
-	
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:09"
-		id2="AP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;AP maximum rogue count exceeded|&lt;hostip&gt;|Rogue AP count on AP &apos;&lt;access_point&gt;&apos; associated with Controller &apos;&lt;fld13&gt;&apos; has exceeded the security warning threshold of &apos;&lt;fld11&gt;&apos;.&lt;info&gt;"/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="AP:10"
-		id2="AP"
-		eventcategory="1607000000"
-		content="&lt;@ec_activity:Detect&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|AP Impersonation of MAC &apos;&lt;dmacaddr&gt;&apos; using source MAC &apos;&lt;smacaddr&gt;&apos; is detected by authenticated AP &apos;&lt;access_point&gt;&apos; on &apos;&lt;interface&gt;&apos; radio and Slot ID &lt;fld11&gt;."/>
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Signature"
-		id2="Signature"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:number of detections&gt;&lt;id&gt;|&lt;hostip&gt;|IDS &apos;&lt;signame&gt;&apos; Signature attack detected on AP &apos;&lt;access_point&gt;&apos; protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos;. The Signature description is &apos;&lt;context&gt;&apos;, with precedence &apos;&lt;severity&gt;&apos;. The attacker's mac address is &apos;&lt;smacaddr&gt;&apos;, channel number is &apos;&lt;wifi_channel&gt;&apos;, and the number of detections is &apos;&lt;dclass_counter1&gt;&apos;."/>
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Signature:02"
-		id2="Signature"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:number of detections&gt;&lt;id&gt;|&lt;hostip&gt;|IDS &apos;&lt;signame&gt;&apos; Signature attack detected on AP &apos;&lt;access_point&gt;&apos; protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos;. The Signature description is &apos;&lt;context&gt;&apos;, with precedence &apos;&lt;severity&gt;&apos;. The channel number is &apos;&lt;wifi_channel&gt;&apos;, the number of detections is &apos;&lt;dclass_counter1&gt;&apos;, and one of potentially several attackers&apos; mac addresses is &apos;&lt;smacaddr&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="78"
-		id1="Signature:01"
-		id2="Signature"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|IDS &apos;&lt;signame&gt;&apos; Signature attack cleared on AP &apos;&lt;access_point&gt;&apos; protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos;. The Signature description is &apos;&lt;context&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client"
-		id2="Client"
-		eventcategory="1603030000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; failed to associate with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;. The reason code is &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:01"
-		id2="Client"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt;&apos; completed security policy with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;."/>
-
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:03"
-		id2="Client"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; is associated with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:04"
-		id2="Client"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;c_username&gt; ,&lt;saddr&gt;)&apos; is disassociated from interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos; with reason code &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:02"
-		id2="Client"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; is { disassociated | deauthenticated } from interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos; with reason code &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:05"
-		id2="Client"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client Traps are disabled on controller(s) &lt;saddr&gt;"/>
+	id1="Adhoc:04"
+	id2="Adhoc"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Rogue AP &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network." />
 		
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:06"
-		id2="Client"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; { (&lt;c_username&gt; ,&lt;saddr&gt;)&apos; | (&lt;saddr&gt;)&apos; } which was associated with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos; is excluded. The reason code is &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;."/>
+	id1="Northbound"
+	id2="Northbound"
+	eventcategory="1801000000"
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Northbound notification server &apos;&lt;daddr&gt;&apos; is reachable." />
+	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Client:07"
-		id2="Client"
-		eventcategory="1401030000"
-		content="&lt;@ec_subject:Agent&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; has failed authenticating with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;. The reason code is &lt;resultcode&gt;"/>
-
-		<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Voice"
-		id2="Voice"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Pre-Coverage Hole reported by &apos;&lt;fld1&gt;&apos; was found on Controller &apos;&lt;saddr&gt;&apos; near &apos;&lt;access_point&gt;&apos; with MacAddress &apos;&lt;fld2&gt;&apos;."/>
-	<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="NMSP"
-		id2="NMSP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|NMSP Connection Status: &lt;event_state&gt;, Controller IP: &lt;saddr&gt;"/>
-
+	id1="Rogue:04"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="NMSP:01"
-		id2="NMSP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|NMSP Connection Status: &lt;event_state&gt;, Controller IP: &lt;saddr&gt;"/>
-
-
+	id1="Rogue:01"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
+	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Mobility"
-		id2="Mobility"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Controller &apos;&lt;saddr&gt;&apos;. Data path on anchor &apos;&lt;fld11&gt;&apos; is { up. | down. }"/>
-
+	id1="Rogue:02"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Adhoc Rogue &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Device"
-		id2="Device"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. Configuration management event has been recorded in ccmHistoryEventTable."/>
-
+	id1="Rogue:03"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Adhoc Rogue  &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Device:01"
-		id2="Device"
-		eventcategory="1401030000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. Authentication failed for request from &apos;&lt;saddr&gt;&apos;."/>
-
+	id1="Rogue:05"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|{ Adhoc Rogue | Rogue AP } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Device:02"
-		id2="Device"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. PSE Threshold usage indication is on, the usage power is above the threshold."/>
-
+	id1="Rogue:06"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; { and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP | is detected by AP } &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; { with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos; | with RSSI &apos;&lt;data&gt;&apos; }." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Device:03"
-		id2="Device"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. The value of vlanTrunkPortDynamicStatus object has been changed."/>
+	id1="Rogue:07"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Adhoc Rogue &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network." />
 		
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Switch"
-		id2="Switch"
-		eventcategory="1801010000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos; is { unreachable. | reachable. }"/>
-
+	id1="Rogue:09"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|Rogue AP &lt;space&gt; &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Malformed"
-		id2="Malformed"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.             &lt;smacaddr&gt;-g [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;] has been attacked by malformed 802.11 frames &lt;context&gt;"/>
-
+	id1="Rogue:08"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|{ Rogue AP | Adhoc Rogue } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is reported by controller &apos;&lt;fld2&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;." />
+	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="HT-Intolerant:02"
-		id2="HT-Intolerant"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected &lt;interface&gt; client &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;,&lt;vsys&gt;,&lt;access_point&gt; ] is sending an association request frame to &lt;fld1&gt;] with HT Capability information element, &lt;context&gt;.."/>
+	id1="Rogue:10"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|{ Rogue AP | Adhoc Rogue } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is reported by controller &apos;&lt;fld2&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;." />
+<MESSAGE
+	id1="Rogue:11"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|Rogue AP classified as &lt;info&gt;." />
+<MESSAGE
+	id1="Rogue:13"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &lt;data&gt; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
+	
+<MESSAGE
+	id1="Rogue:14"
+	id2="Rogue"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;&lt;@id:Rogue AP&gt;"
+	content="&lt;hostip&gt;|{ Rogue AP | Adhoc Rogue } &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;." />
+	
+<MESSAGE
+	id1="Air"
+	id2="Air"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Air Quality Index on Channel &apos;&lt;wifi_channel&gt;&apos; is &apos;&lt;fld1&gt;&apos; (Threshold:&apos;&lt;fld2&gt;&apos;)." />
+<MESSAGE
+	id1="RADIUS"
+	id2="RADIUS"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Radius server &apos;&lt;saddr&gt;&apos;(port &lt;sport&gt;) failed to respond to request from client &apos;&lt;fld1&gt;&apos; with MAC &apos;&lt;smacaddr&gt;&apos;." />
+<MESSAGE
+	id1="Radius"
+	id2="Radius"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Radius server &apos;&lt;saddr&gt;&apos;(port &lt;sport&gt;) failed to respond to request from client &apos;&lt;fld1&gt;&apos; with MAC &apos;&lt;smacaddr&gt;&apos;." />
+<MESSAGE
+	id1="Radius:01"
+	id2="Radius"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Radius server &apos;&lt;saddr&gt;&apos;(port &lt;sport&gt;) { is activated on WLAN &apos;&lt;fld11&gt;&apos;. | is activated. }" />
+<MESSAGE
+	id1="MSE"
+	id2="MSE"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;application&gt;&apos; is down on Mobility Services Engine &apos;&lt;shost&gt;&apos; with IP Address &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="MSE:01"
+	id2="MSE"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;application&gt;&apos; is up on Mobility Services Engine &apos;&lt;shost&gt;&apos; with IP Address &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="MSE:02"
+	id2="MSE"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Mobility Services Engine &apos;&lt;shost&gt;&apos; with IP Address &apos;&lt;saddr&gt;&apos; on port &apos;&lt;sport&gt;&apos; is reachable." />
+<MESSAGE
+	id1="MSE:03"
+	id2="MSE"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Evaluation license for &lt;application&gt; is expired." />
+		
+<MESSAGE
+	id1="MSE:04"
+	id2="MSE"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Element limit for Context Aware Service is reached or exceeded &lt;fld2&gt;." />
+<MESSAGE
+	id1="Controller"
+	id2="Controller"
+	eventcategory="1801020000"
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Controller &apos;&lt;saddr&gt;&apos; is reachable." />
+<MESSAGE
+	id1="Controller:01"
+	id2="Controller"
+	eventcategory="1801010000"
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Controller &apos;&lt;saddr&gt;&apos; is unreachable." />
+<MESSAGE
+	id1="Link:01"
+	id2="Link"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Port &apos;&lt;sport&gt;&apos; is up on {Controller|device} &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="Link:02"
+	id2="Link"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Port &apos;&lt;sport&gt;&apos; is down on {Controller|device} &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="802.11b/g/n"
+	id2="802.11b/g/n"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|&lt;interface&gt; interface of AP  &lt;access_point&gt; is down: Controller &lt;saddr&gt;" />
+<MESSAGE
+	id1="'802.11b/g/n'"
+	id2="'802.11b/g/n'"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|&lt;interface&gt; interface of AP  &lt;access_point&gt; associated to controller &apos;&lt;fld1&gt;&apos; is { down | up }. Reason &lt;result&gt;" />
+<MESSAGE
+	id1="'802.11a/n'"
+	id2="'802.11a/n'"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|&lt;interface&gt; interface of AP  &lt;access_point&gt; associated to controller &apos;&lt;fld1&gt;&apos; is { down | up }. Reason &lt;result&gt;" />
+<MESSAGE
+	id1="Radio"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|{ Interference | Load | Noise} threshold violation reported by &apos;&lt;interface&gt;&apos; interface &lt;space&gt; of AP &apos;&lt;access_point&gt;&apos;, connected to Controller { &apos;&lt;saddr&gt;&apos;. | &apos;&lt;saddr&gt;&apos; }" />
+<MESSAGE
+	id1="Radio:01"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|{ Interference | Load | Transmit Power| Noise} changed to { acceptable level | &apos;&lt;change_new&gt;&apos; } on &apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="Radio:02"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; is down: Controller &lt;saddr&gt;" />
+	
+<MESSAGE
+	id1="Radio:03"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; is down. Reason: &lt;result&gt;" />
+<MESSAGE
+	id1="Radio:04"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; associated to controller &lt;saddr&gt; is up. Reason: &lt;result&gt;" />
+	
+<MESSAGE
+	id1="Radio:05"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos; associated to controller &apos;&lt;info&gt;&apos; is up." />
+	
+<MESSAGE
+	id1="Radio:06"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Coverage changed to acceptable level on &apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="Radio:07"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Coverage threshold of &apos;&lt;fld11&gt;&apos; violated on &apos;&lt;interface&gt;&apos; interface of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;. Total no of clients is &apos;&lt;fld12&gt;&apos; and no of failed clients is &apos;&lt;fld13&gt;&apos;.&lt;info&gt;" />
+<MESSAGE
+	id1="Radio:08"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Channel changed due to &apos;&lt;fld11&gt;&apos;, from &apos;&lt;fld12&gt;&apos; to &apos;&lt;fld13&gt;&apos; on interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;.&lt;info&gt;" />
+<MESSAGE
+	id1="Radio:09"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&lt;interface&gt; interface of AP &lt;access_point&gt; is up: Controller &lt;saddr&gt;" />
+<MESSAGE
+	id1="Radio:10"
+	id2="Radio"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Coverage threshold violated on &apos;&lt;interface&gt;&apos; interface  of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;." />
+	
+	
+<MESSAGE
+	id1="Interferer"
+	id2="Interferer"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Security-risk Interferer &apos;&lt;fld1&gt;&apos; {  is detected by &apos;&lt;fld11&gt;&apos;. | is detected. }" />
+<MESSAGE
+	id1="Interferer:01"
+	id2="Interferer"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Security-risk Interferer &apos;&lt;fld1&gt;&apos; {  is no longer detected by &apos;&lt;fld11&gt;&apos;. | is no longer detected. }" />
+<MESSAGE
+	id1="AP:01"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; disassociated from Controller &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="AP:02"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; associated with Controller &apos;&lt;saddr&gt;&apos; on Port number &apos;&lt;sport&gt;&apos;." />
+	
+<MESSAGE
+	id1="AP:03"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; is being contained. This is due to rogue device spoofing or targeting AP &apos;&lt;fld3&gt;&apos; BSSID on &apos;&lt;fld2&gt;&apos; radio." />
+<MESSAGE
+	id1="AP:04"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; with protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos; is no longer being contained. Service is restored." />
+<MESSAGE
+	id1="AP:05"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="AP reboot reason|&lt;hostip&gt;|Access Point &apos;&lt;access_point&gt;&apos; associated to controller &apos;&lt;fld13&gt;&apos;. Reason for association &apos;&lt;result&gt;&apos;." />
+<MESSAGE
+	id1="AP:06"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="AP maximum rogue count exceeded|&lt;hostip&gt;|Rogue AP count on AP &apos;&lt;access_point&gt;&apos; associated with Controller &apos;&lt;fld13&gt;&apos; has exceeded the security warning threshold of &apos;&lt;fld11&gt;&apos;. Fake AP or other attack may be in progress.  - Controller Name: &lt;fld14&gt;" />
+<MESSAGE
+	id1="AP:07"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|AP &apos;&lt;access_point&gt;&apos; disassociated." />
+	
+
+	
+<MESSAGE
+	id1="AP:08"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Fake AP or other attack on AP &apos;&lt;access_point&gt;&apos; associated with Controller &lt;saddr&gt;&apos; has cleared now.&lt;info&gt;" />
+	
+
+	
+<MESSAGE
+	id1="AP:09"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="AP maximum rogue count exceeded|&lt;hostip&gt;|Rogue AP count on AP &apos;&lt;access_point&gt;&apos; associated with Controller &apos;&lt;fld13&gt;&apos; has exceeded the security warning threshold of &apos;&lt;fld11&gt;&apos;.&lt;info&gt;" />
+<MESSAGE
+	id1="AP:10"
+	id2="AP"
+	eventcategory="1607000000"
+	functions="&lt;@ec_activity:Detect&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|AP Impersonation of MAC &apos;&lt;dmacaddr&gt;&apos; using source MAC &apos;&lt;smacaddr&gt;&apos; is detected by authenticated AP &apos;&lt;access_point&gt;&apos; on &apos;&lt;interface&gt;&apos; radio and Slot ID &lt;fld11&gt;." />
+<MESSAGE
+	id1="Signature"
+	id2="Signature"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:number of detections&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|IDS &apos;&lt;signame&gt;&apos; Signature attack detected on AP &apos;&lt;access_point&gt;&apos; protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos;. The Signature description is &apos;&lt;context&gt;&apos;, with precedence &apos;&lt;severity&gt;&apos;. The attacker's mac address is &apos;&lt;smacaddr&gt;&apos;, channel number is &apos;&lt;wifi_channel&gt;&apos;, and the number of detections is &apos;&lt;dclass_counter1&gt;&apos;." />
+<MESSAGE
+	id1="Signature:02"
+	id2="Signature"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:number of detections&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|IDS &apos;&lt;signame&gt;&apos; Signature attack detected on AP &apos;&lt;access_point&gt;&apos; protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos;. The Signature description is &apos;&lt;context&gt;&apos;, with precedence &apos;&lt;severity&gt;&apos;. The channel number is &apos;&lt;wifi_channel&gt;&apos;, the number of detections is &apos;&lt;dclass_counter1&gt;&apos;, and one of potentially several attackers&apos; mac addresses is &apos;&lt;smacaddr&gt;&apos;." />
+<MESSAGE
+	id1="Signature:01"
+	id2="Signature"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|IDS &apos;&lt;signame&gt;&apos; Signature attack cleared on AP &apos;&lt;access_point&gt;&apos; protocol &apos;&lt;interface&gt;&apos; on Controller &apos;&lt;saddr&gt;&apos;. The Signature description is &apos;&lt;context&gt;&apos;." />
+<MESSAGE
+	id1="Client"
+	id2="Client"
+	eventcategory="1603030000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; failed to associate with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;. The reason code is &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;." />
+<MESSAGE
+	id1="Client:01"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt;&apos; completed security policy with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;." />
+<MESSAGE
+	id1="Client:03"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; is associated with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;." />
+<MESSAGE
+	id1="Client:04"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;c_username&gt; ,&lt;saddr&gt;)&apos; is disassociated from interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos; with reason code &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;." />
+<MESSAGE
+	id1="Client:02"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; is { disassociated | deauthenticated } from interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos; with reason code &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;." />
+<MESSAGE
+	id1="Client:05"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client Traps are disabled on controller(s) &lt;saddr&gt;" />
+		
+<MESSAGE
+	id1="Client:06"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; { (&lt;c_username&gt; ,&lt;saddr&gt;)&apos; | (&lt;saddr&gt;)&apos; } which was associated with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos; is excluded. The reason code is &apos;&lt;resultcode&gt;(&lt;result&gt;)&apos;." />
+<MESSAGE
+	id1="Client:07"
+	id2="Client"
+	eventcategory="1401030000"
+	functions="&lt;@ec_subject:Agent&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Client &apos;&lt;smacaddr&gt; (&lt;saddr&gt;)&apos; has failed authenticating with interface &apos;&lt;interface&gt;&apos; of AP &apos;&lt;access_point&gt;&apos;. The reason code is &lt;resultcode&gt;" />
+<MESSAGE
+	id1="Voice"
+	id2="Voice"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Pre-Coverage Hole reported by &apos;&lt;fld1&gt;&apos; was found on Controller &apos;&lt;saddr&gt;&apos; near &apos;&lt;access_point&gt;&apos; with MacAddress &apos;&lt;fld2&gt;&apos;." />
+<MESSAGE
+	id1="NMSP"
+	id2="NMSP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|NMSP Connection Status: &lt;event_state&gt;, Controller IP: &lt;saddr&gt;" />
+<MESSAGE
+	id1="NMSP:01"
+	id2="NMSP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|NMSP Connection Status: &lt;event_state&gt;, Controller IP: &lt;saddr&gt;" />
+<MESSAGE
+	id1="Mobility"
+	id2="Mobility"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Controller &apos;&lt;saddr&gt;&apos;. Data path on anchor &apos;&lt;fld11&gt;&apos; is { up. | down. }" />
+<MESSAGE
+	id1="Device"
+	id2="Device"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. Configuration management event has been recorded in ccmHistoryEventTable." />
+<MESSAGE
+	id1="Device:01"
+	id2="Device"
+	eventcategory="1401030000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. Authentication failed for request from &apos;&lt;saddr&gt;&apos;." />
+<MESSAGE
+	id1="Device:02"
+	id2="Device"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. PSE Threshold usage indication is on, the usage power is above the threshold." />
+<MESSAGE
+	id1="Device:03"
+	id2="Device"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos;. The value of vlanTrunkPortDynamicStatus object has been changed." />
+		
+<MESSAGE
+	id1="Switch"
+	id2="Switch"
+	eventcategory="1801010000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Device &apos;&lt;fld11&gt;&apos; is { unreachable. | reachable. }" />
+<MESSAGE
+	id1="Malformed"
+	id2="Malformed"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.             &lt;smacaddr&gt;-g [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;] has been attacked by malformed 802.11 frames &lt;context&gt;" />
+<MESSAGE
+	id1="HT-Intolerant:02"
+	id2="HT-Intolerant"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected &lt;interface&gt; client &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;,&lt;vsys&gt;,&lt;access_point&gt; ] is sending an association request frame to &lt;fld1&gt;] with HT Capability information element, &lt;context&gt;.." />
  
  
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="HT-Intolerant:01"
-		id2="HT-Intolerant"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected &lt;interface&gt; client &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;,&lt;access_point&gt; ] is sending an association request frame to &lt;fld1&gt;] with HT Capability information element, &lt;context&gt;.."/>
+	id1="HT-Intolerant:01"
+	id2="HT-Intolerant"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected &lt;interface&gt; client &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;,&lt;access_point&gt; ] is sending an association request frame to &lt;fld1&gt;] with HT Capability information element, &lt;context&gt;.." />
  
   
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="HT-Intolerant"
-		id2="HT-Intolerant"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected &lt;interface&gt; client &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is sending an association request frame to &lt;fld1&gt;] with HT Capability information element, &lt;context&gt;.."/>
-
+	id1="HT-Intolerant"
+	id2="HT-Intolerant"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected &lt;interface&gt; client &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is sending an association request frame to &lt;fld1&gt;] with HT Capability information element, &lt;context&gt;.." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Improper"
-		id2="Improper"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|....The system has detected wireless device &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is broadcasting wireless frames with &lt;fld1&gt; type and &lt;fld2&gt; subtype that does not support broadcast. &lt;context&gt;."/>
-
+	id1="Improper"
+	id2="Improper"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|....The system has detected wireless device &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is broadcasting wireless frames with &lt;fld1&gt; type and &lt;fld2&gt; subtype that does not support broadcast. &lt;context&gt;." />
   
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="NetStumbler:01"
-		id2="NetStumbler"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;It has been determined that &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;,&lt;access_point&gt; ] is potentially running Netstumbler. &lt;context&gt;.."/>
-
+	id1="NetStumbler:01"
+	id2="NetStumbler"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;It has been determined that &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt;,&lt;access_point&gt; ] is potentially running Netstumbler. &lt;context&gt;.." />
  
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="NetStumbler"
-		id2="NetStumbler"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;It has been determined that &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is potentially running Netstumbler. &lt;context&gt;.."/>
-
+	id1="NetStumbler"
+	id2="NetStumbler"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;It has been determined that &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is potentially running Netstumbler. &lt;context&gt;.." />
   
-
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Unauthorized"
-		id2="Unauthorized"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;Approved (In ACL) client station &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is detected to be connected to rogue access point &lt;fld1&gt;] operating in channel #&lt;fld2&gt;#. &lt;context&gt;.."/>
-
+	id1="Unauthorized"
+	id2="Unauthorized"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;Approved (In ACL) client station &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] is detected to be connected to rogue access point &lt;fld1&gt;] operating in channel #&lt;fld2&gt;#. &lt;context&gt;.." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Spoofed"
-		id2="Spoofed"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;A device spoofing the MAC address of &lt;shost&gt; [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] was detected. Please power off &lt;fld1&gt; [&lt;fld2&gt;] to see if 802.11 frames transmitted from the same MAC address still exist. &lt;context&gt;.."/>
-
+	id1="Spoofed"
+	id2="Spoofed"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;A device spoofing the MAC address of &lt;shost&gt; [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] was detected. Please power off &lt;fld1&gt; [&lt;fld2&gt;] to see if 802.11 frames transmitted from the same MAC address still exist. &lt;context&gt;.." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="DoS"
-		id2="DoS:"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;There may have been a Denial-of-Service attack underway to the Station &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ].  The system detected a number of Probe Response frames sent to &lt;fld1&gt;[&lt;fld2&gt;]&apos;s MAC address. &lt;context&gt;.."/>
-
-	
-
-<MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="DoS:01"
-		id2="DoS:"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;There may have been a Denial-of-Service attack underway from the Station &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ].  The system detected a number of Probe Request frames sent from the &lt;fld1&gt;[&lt;fld2&gt;]&apos;s MAC address. &lt;context&gt;.."/>
-
+	id1="DoS"
+	id2="DoS:"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;There may have been a Denial-of-Service attack underway to the Station &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ].  The system detected a number of Probe Response frames sent to &lt;fld1&gt;[&lt;fld2&gt;]&apos;s MAC address. &lt;context&gt;.." />
 	
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="DoS:02"
-		id2="DoS:"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;There may have been a Denial-of-Service attack underway from the AP &lt;shost&gt; [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ].  The system detected a number of out of sequence beacon frames sent from the &lt;fld1&gt;[&lt;fld2&gt;]&apos;s MAC address. &lt;context&gt;.."/>
-
+	id1="DoS:01"
+	id2="DoS:"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;There may have been a Denial-of-Service attack underway from the Station &lt;smacaddr&gt;-{a|g} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ].  The system detected a number of Probe Request frames sent from the &lt;fld1&gt;[&lt;fld2&gt;]&apos;s MAC address. &lt;context&gt;.." />
+	
+<MESSAGE
+	id1="DoS:02"
+	id2="DoS:"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;There may have been a Denial-of-Service attack underway from the AP &lt;shost&gt; [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ].  The system detected a number of out of sequence beacon frames sent from the &lt;fld1&gt;[&lt;fld2&gt;]&apos;s MAC address. &lt;context&gt;.." />
 																  
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="DoS:03"
-		id2="DoS:"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected a DoS Block ACK attack from &lt;shost&gt; [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] against &lt;smacaddr&gt;-a [&lt;fld3&gt;]. &lt;fld4&gt;-a [&lt;fld5&gt;] &lt;context&gt;.."/>
-
+	id1="DoS:03"
+	id2="DoS:"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected a DoS Block ACK attack from &lt;shost&gt; [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ] against &lt;smacaddr&gt;-a [&lt;fld3&gt;]. &lt;fld4&gt;-a [&lt;fld5&gt;] &lt;context&gt;.." />
 																  
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="DoS:04"
-		id2="DoS:"
-		eventcategory="1609000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected a DoS Block ACK attack from &lt;smacaddr&gt;-{g|a} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ]. By sending a lot of misconfigured Block ACK action frames, &lt;fld2&gt; [&lt;fld3&gt;] &lt;context&gt;.."/>
-
+	id1="DoS:04"
+	id2="DoS:"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|.&lt;space&gt;The system has detected a DoS Block ACK attack from &lt;smacaddr&gt;-{g|a} [Channel: &lt;wifi_channel&gt;, SSID:&lt;ssid&gt; ]. By sending a lot of misconfigured Block ACK action frames, &lt;fld2&gt; [&lt;fld3&gt;] &lt;context&gt;.." />
 																  
-
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Guest"
-		id2="Guest"
-		eventcategory="1609000000"
-        content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;hostip&gt;|Guest user &apos;&lt;fld11&gt;&apos; &lt;fld12&gt; &apos;&lt;saddr&gt;&apos;."/>	
-
+	id1="Guest"
+	id2="Guest"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostip&gt;|Guest user &apos;&lt;fld11&gt;&apos; &lt;fld12&gt; &apos;&lt;saddr&gt;&apos;." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Radar"
-		id2="Radar"
-		eventcategory="1609000000"
-        content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:number of detections&gt;&lt;id&gt;|&lt;hostip&gt;|Radar has been detected on channel &apos;&lt;wifi_channel&gt;&apos; by AP &apos;&lt;access_point&gt;&apos; on 5GHz Radio."/>
-
+	id1="Radar"
+	id2="Radar"
+	eventcategory="1609000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:number of detections&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Radar has been detected on channel &apos;&lt;wifi_channel&gt;&apos; by AP &apos;&lt;access_point&gt;&apos; on 5GHz Radio." />
 		
-
-
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Configuration"
-		id2="Configuration"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld13&gt;|&lt;hostip&gt;|&lt;fld12&gt;. Controller &apos;&lt;saddr&gt;&apos;.	"/>	
-
+	id1="Configuration"
+	id2="Configuration"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld13&gt;|&lt;hostip&gt;|&lt;fld12&gt;. Controller &apos;&lt;saddr&gt;&apos;.	" />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Access"
-		id2="Access"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|Access point &apos;&lt;access_point&gt;&apos; tried to join controller &apos;&lt;shost&gt;&apos; and failed.  Associate failure reason: &apos;&lt;result&gt;&apos;."/>
-
+	id1="Access"
+	id2="Access"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|Access point &apos;&lt;access_point&gt;&apos; tried to join controller &apos;&lt;shost&gt;&apos; and failed.  Associate failure reason: &apos;&lt;result&gt;&apos;." />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="Audit"
-		id2="Audit"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;access_point&gt;,&lt;fld1&gt;&apos; Audit done at &apos;&lt;event_time_string&gt;&apos;..&lt;info&gt;"/>
-
+	id1="Audit"
+	id2="Audit"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|&apos;&lt;access_point&gt;,&lt;fld1&gt;&apos; Audit done at &apos;&lt;event_time_string&gt;&apos;..&lt;info&gt;" />
 <MESSAGE
-		level="7"
-		parse="1"
-		parsedefvalue="1"
-		tableid="86"
-		id1="VoIP"
-		id2="VoIP"
-		eventcategory="1605000000"
-		content="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;id&gt;|&lt;hostip&gt;|VoIP Call failure of &apos;&lt;result&gt;&apos; (Error Code &lt;resultcode&gt;) occurred on Client &apos;&lt;smacaddr&gt;&apos; which was associated with AP &apos;&lt;access_point&gt;&apos; on interface &apos;&lt;interface&gt;&apos;."/>
-
+	id1="VoIP"
+	id2="VoIP"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;id&gt;|&lt;hostip&gt;|VoIP Call failure of &apos;&lt;result&gt;&apos; (Error Code &lt;resultcode&gt;) occurred on Client &apos;&lt;smacaddr&gt;&apos; which was associated with AP &apos;&lt;access_point&gt;&apos; on interface &apos;&lt;interface&gt;&apos;." />
 														  
 <MESSAGE
-		id1="Unclassified:01"
-		id2="Unclassified"
-		eventcategory="1605000000"
-        functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
-		content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;. - Device Name: &lt;device&gt; - Reporting Address: &lt;saddr&gt;"/>
-
+	id1="Unclassified:01"
+	id2="Unclassified"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;. - Device Name: &lt;device&gt; - Reporting Address: &lt;saddr&gt;" />
 <MESSAGE
-		id1="Friendly:01"
-		id2="Friendly"
-		eventcategory="1605000000"
-        functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
-		content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;."/>
-
+	id1="Friendly:01"
+	id2="Friendly"
+	eventcategory="1605000000"
+	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
+	content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
 <MESSAGE
-		id1="User:01"
-		id2="User"
-		eventcategory="1301000000"
-		functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;"
-		content="User authentication failure|&lt;fld1&gt;|&apos;Network User&apos; &apos;&lt;username&gt;&apos; failed authentication on Controller &apos;&lt;daddr&gt;&apos;."/>
-
+	id1="User:01"
+	id2="User"
+	eventcategory="1301000000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;"
+	content="User authentication failure|&lt;fld1&gt;|&apos;Network User&apos; &apos;&lt;username&gt;&apos; failed authentication on Controller &apos;&lt;daddr&gt;&apos;." />
 </DEVICEMESSAGES>

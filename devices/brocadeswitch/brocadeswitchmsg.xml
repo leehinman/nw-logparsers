@@ -1,352 +1,247 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="brocadeswitch"
+	displayname="Brocade FastIron Switch"
+	group="Switch">
 <VERSION
-	xml="5"
-	checksum="45c6f799a3871d0c6da9148a635e6973"
+	xml="6"
+	checksum="3acffb7b5bd00d3143c2d4400141c3d4"
 	revision="103"
-	enVision="35010000"
 	device="2.0" />
 
  
 
   
 <HEADER 
-id1="0001" 
-id2="0001"  
-messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3)"
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; by &lt;husername&gt; from src IP &lt;hsaddr&gt; &lt;msgIdPart3&gt;, &lt;!payload:haddr&gt;"/>
+	id1="0001" 
+	id2="0001"  
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2, &apos;_&apos;, msgIdPart3)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; by &lt;husername&gt; from src IP &lt;hsaddr&gt; &lt;msgIdPart3&gt;, &lt;!payload:haddr&gt;"/>
+<HEADER 
+	id1="0002" 
+	id2="0002"  
+	messageid="STRCAT(msgIdPart1, &apos;-&apos;, msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;msgIdPart1&gt;-&lt;msgIdPart2&gt; &lt;!payload:haddr&gt;"/> 
 
 <HEADER 
-id1="0002" 
-id2="0002"  
-messageid="STRCAT(msgIdPart1, &apos;-&apos;, msgIdPart2)"
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;msgIdPart1&gt;-&lt;msgIdPart2&gt; &lt;!payload:haddr&gt;"/> 
+	id1="0004" 
+	id2="0004"  
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:haddr&gt;"/> 
 
 <HEADER 
-id1="0004" 
-id2="0004"  
-messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;!payload:haddr&gt;"/> 
+	id1="0005" 
+	id2="0005"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt;! &lt;!payload:haddr&gt;"/>
+<HEADER 
+	id1="0003" 
+	id2="0003"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt;: &lt;!payload:haddr&gt;"/>
 
 <HEADER 
-id1="0005" 
-id2="0005"
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt;! &lt;!payload:haddr&gt;"/>
-
-<HEADER 
-id1="0003" 
-id2="0003"
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt;: &lt;!payload:haddr&gt;"/>
-
-<HEADER 
-id1="0006" 
-id2="0006"
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt; &lt;!payload:haddr&gt;"/>
-
+	id1="0006" 
+	id2="0006"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt; &lt;!payload:haddr&gt;"/>
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="AuthControlledPortStatus_Change" 
 	id2="DOT1X" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DOT1X AuthControlledPortStatus change&gt; &lt;event_source&gt; DOT1X: Port &lt;portname&gt; - mac &lt;macaddr&gt; AuthControlledPortStatus change: &lt;state&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DOT1X AuthControlledPortStatus change&gt;"
+	content=" &lt;event_source&gt; DOT1X: Port &lt;portname&gt; - mac &lt;macaddr&gt; AuthControlledPortStatus change: &lt;state&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Interface_State_Status" 
 	id2="Interface" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface status&gt; &lt;event_source&gt;, Interface &lt;hostname&gt; &lt;interface&gt;, &lt;reason&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface status&gt;"
+	content=" &lt;event_source&gt;, Interface &lt;hostname&gt; &lt;interface&gt;, &lt;reason&gt;" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Max_Connection_Rate_Reached" 
 	id2="L4_server" 
 	eventcategory="1603000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:max connection rate reached in asm App&gt; &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; max connection rate &lt;info&gt; reached in asm App &lt;portname&gt; at &lt;device&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:max connection rate reached in asm App&gt;"
+	content=" &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; max connection rate &lt;info&gt; reached in asm App &lt;portname&gt; at &lt;device&gt;" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Port_Down" 
 	id2="L4_server" 
 	eventcategory="1603000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Port Down&gt; &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; port &lt;sport&gt; is down { due to &lt;reason&gt; | &lt;space&gt; }"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Port Down&gt;"
+	content=" &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; port &lt;sport&gt; is down { due to &lt;reason&gt; | &lt;space&gt; }" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Port_Up" 
 	id2="L4_server" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Port Down&gt; &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; port &lt;sport&gt; is up"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Port Down&gt;"
+	content=" &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; port &lt;sport&gt; is up" />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Hostname_Down" 
 	id2="L4_server" 
 	eventcategory="1603000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hostname Down&gt; &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; is down"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hostname Down&gt;"
+	content=" &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; is down" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Hostname_Up" 
 	id2="L4_server" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hostname Up&gt; &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; is up"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hostname Up&gt;"
+	content=" &lt;event_source&gt;, L4 server &lt;hostip&gt; &lt;hostname&gt; is up" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="List_Denied_Connection" 
 	id2="list_10" 
 	eventcategory="1603000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:list denied tcp connection&gt; &lt;event_source&gt;, list 10 denied &lt;protocol&gt; &lt;saddr&gt;(&lt;sport&gt;)(Ethernet &lt;sinterface&gt; &lt;smacaddr&gt;) -&gt; &lt;daddr&gt;(&lt;dport&gt;), &lt;info&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:list denied tcp connection&gt;"
+	content=" &lt;event_source&gt;, list 10 denied &lt;protocol&gt; &lt;saddr&gt;(&lt;sport&gt;)(Ethernet &lt;sinterface&gt; &lt;smacaddr&gt;) -&gt; &lt;daddr&gt;(&lt;dport&gt;), &lt;info&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="running-config_changed" 
 	id2="running-config" 
 	eventcategory="1701020000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Current running configuration changed.&gt;&lt;logip&gt; running-config was changed from &lt;network_service&gt; client &lt;saddr&gt;"/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Current running configuration changed.&gt;"
+	content="&lt;logip&gt; running-config was changed from &lt;network_service&gt; client &lt;saddr&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Security_New_User_Added" 
 	id2="Security" 
 	eventcategory="1402020200" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New User added.&gt;&lt;logip&gt; Security: user &lt;username&gt; added by &lt;host&gt; from &lt;network_service&gt; session."/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New User added.&gt;"
+	content="&lt;logip&gt; Security: user &lt;username&gt; added by &lt;host&gt; from &lt;network_service&gt; session." />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Security_SSH_login_successful" 
 	id2="Security" 
 	eventcategory="1401060000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSH Login&gt; &lt;event_source&gt; Security: SSH login by &lt;username&gt; from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; &lt;state&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSH Login&gt;"
+	content=" &lt;event_source&gt; Security: SSH login by &lt;username&gt; from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; &lt;state&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Security_SSH_logout_successful" 
 	id2="Security" 
 	eventcategory="1401070000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSH Logout&gt; &lt;event_source&gt; Security: SSH logout by &lt;username&gt; from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; &lt;state&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSH Logout&gt;"
+	content=" &lt;event_source&gt; Security: SSH logout by &lt;username&gt; from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; &lt;state&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Security_Telnet_login_successful" 
 	id2="Security" 
 	eventcategory="1401060000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:Successful Telnet login for user.&gt;&lt;logip&gt; Security: telnet {login &lt;fld1&gt; | login} from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; to &lt;info&gt; mode "/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:Successful Telnet login for user.&gt;"
+	content="&lt;logip&gt; Security: telnet {login &lt;fld1&gt; | login} from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; to &lt;info&gt; mode " />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Security_Telnet_logout_successful" 
 	id2="Security" 
 	eventcategory="1401070000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Successful Telnet logout for user.&gt;&lt;logip&gt; Security: telnet logout from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt;"/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Successful Telnet logout for user.&gt;"
+	content="&lt;logip&gt; Security: telnet logout from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Security_Web_login_successful" 
 	id2="Security" 
 	eventcategory="1401060000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@c_username:*PARMVAL(username)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:Successful Web login for the user.&gt;&lt;logip&gt; Security: Web login by &lt;username&gt; from src IP &lt;saddr&gt; src MAC &lt;smacaddr&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@c_username:*PARMVAL(username)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:Successful Web login for the user.&gt;"
+	content="&lt;logip&gt; Security: Web login by &lt;username&gt; from src IP &lt;saddr&gt; src MAC &lt;smacaddr&gt;" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="SNMP_Auth_Failure" 
 	id2="SNMP" 
 	eventcategory="1301000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:SNMP authorization failure.&gt;&lt;logip&gt; SNMP: Auth. failure, intruder IP:  &lt;saddr&gt;"/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:SNMP authorization failure.&gt;"
+	content="&lt;logip&gt; SNMP: Auth. failure, intruder IP:  &lt;saddr&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="startup-config_changed" 
 	id2="startup-config" 
 	eventcategory="1701020000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Start-up configuration changed.&gt;&lt;logip&gt; startup-config was changed from &lt;network_service&gt; client &lt;saddr&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Start-up configuration changed.&gt;"
+	content="&lt;logip&gt; startup-config was changed from &lt;network_service&gt; client &lt;saddr&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="STP_Bridge_Status" 
 	id2="STP" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Bridge TC Event.&gt;&lt;logip&gt; STP: VLAN &lt;vlan&gt; Port &lt;fld1&gt; Bridge TC Event (&lt;status&gt;)"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Bridge TC Event.&gt;"
+	content="&lt;logip&gt; STP: VLAN &lt;vlan&gt; Port &lt;fld1&gt; Bridge TC Event (&lt;status&gt;)" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="STP_VLAN_Startup_State" 
 	id2="STP" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:VLAN Startup State status&gt; &lt;logip&gt; STP: VLAN &lt;vlan&gt; Port &lt;portname&gt; STP State -&gt; &lt;status&gt; (&lt;state&gt;)"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:VLAN Startup State status&gt;"
+	content=" &lt;logip&gt; STP: VLAN &lt;vlan&gt; Port &lt;portname&gt; STP State -&gt; &lt;status&gt; (&lt;state&gt;)" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Fan_Speed_Changed" 
 	id2="System" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Fan speed changed automatically&gt; &lt;event_source&gt; System: Fan speed changed automatically to &lt;state&gt; "/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Fan speed changed automatically&gt;"
+	content=" &lt;event_source&gt; System: Fan speed changed automatically to &lt;state&gt; " />
 <MESSAGE
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Ethernet_Interface_down" 
 	id2="System" 
 	eventcategory="1603000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ethernet interface state change to down&gt; &lt;event_source&gt; System: Interface ethernet &lt;interface&gt;, state down"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ethernet interface state change to down&gt;"
+	content=" &lt;event_source&gt; System: Interface ethernet &lt;interface&gt;, state down" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Ethernet_Interface_up" 
 	id2="System" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ethernet interface state change to up&gt;&lt;@state:up&gt; &lt;logip&gt; System: Interface ethernet &lt;interface&gt;, state up "/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ethernet interface state change to up&gt;&lt;@state:up&gt;"
+	content=" &lt;logip&gt; System: Interface ethernet &lt;interface&gt;, state up " />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Reboot_Warm_Start" 
 	id2="System" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Warm Start.&gt;&lt;logip&gt; System: Warm start "/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Warm Start.&gt;"
+	content="&lt;logip&gt; System: Warm start " />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Stack_Power_supply_status" 
 	id2="System" 
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Power Supply status for the stack unit.&gt;&lt;logip&gt; System: Stack unit &lt;serial_number&gt;   Power supply &lt;fld2&gt;  is &lt;status&gt;"/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Power Supply status for the stack unit.&gt;"
+	content="&lt;logip&gt; System: Stack unit &lt;serial_number&gt;   Power supply &lt;fld2&gt;  is &lt;status&gt;" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Syslog_Enabled" 
 	id2="System" 
 	eventcategory="1701060000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Syslog Enabled.&gt;&lt;logip&gt; System: Syslog operation enabled by &lt;host&gt; from &lt;network_service&gt; session."/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Syslog Enabled.&gt;"
+	content="&lt;logip&gt; System: Syslog operation enabled by &lt;host&gt; from &lt;network_service&gt; session." />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="System_Syslog_Disabled" 
 	id2="System" 
 	eventcategory="1701070000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Syslog Disabled.&gt;&lt;logip&gt; System: Syslog operation disabled by &lt;host&gt; from &lt;network_service&gt; session."/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Syslog Disabled.&gt;"
+	content="&lt;logip&gt; System: Syslog operation disabled by &lt;host&gt; from &lt;network_service&gt; session." />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="ARP_Table_Not_In_FINISH" 
 	id2="Warning" 
 	eventcategory="1603000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP table not in FINISH&gt; &lt;event_source&gt;, Warning! &lt;hostname&gt; ARP table not in FINISH for &lt;number&gt; sec"/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP table not in FINISH&gt;"
+	content=" &lt;event_source&gt;, Warning! &lt;hostname&gt; ARP table not in FINISH for &lt;number&gt; sec" />
 <MESSAGE
-	level="4" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="Web_access_rejected" 
 	id2="Web_access_rejected" 
 	eventcategory="1301000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@c_username:*PARMVAL(username)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:Web Access rejected for user.&gt; &lt;logip&gt; Web access by &lt;username&gt; from src IP &lt;saddr&gt; rejected, &lt;number&gt; attempt(s)"/>	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@c_username:*PARMVAL(username)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_description:Web Access rejected for user.&gt;"
+	content=" &lt;logip&gt; Web access by &lt;username&gt; from src IP &lt;saddr&gt; rejected, &lt;number&gt; attempt(s)" />
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="raslogd" 
 	id2="raslogd" 
 	eventcategory="1401030000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Security violation: Login failure attempt&gt; &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [SEC-1193], &lt;serial_number&gt;, &lt;fld3&gt;, &lt;severity&gt;, &lt;hostname&gt;, Security violation: &lt;action&gt; failure attempt via &lt;network_service&gt;. IP Addr: &lt;saddr&gt;"/>	
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Security violation: Login failure attempt&gt;"
+	content=" &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [SEC-1193], &lt;serial_number&gt;, &lt;fld3&gt;, &lt;severity&gt;, &lt;hostname&gt;, Security violation: &lt;action&gt; failure attempt via &lt;network_service&gt;. IP Addr: &lt;saddr&gt;" />
 	
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="raslogd:01" 
 	id2="raslogd" 
 	eventcategory="1401030000" 
-	content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Failed login attempt.&gt; &lt;event_source&gt;raslogd: AUDIT,&lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt; &lt;fld55&gt;, [SEC-3021], &lt;severity&gt;, SECURITY, &lt;fld31&gt;, &lt;location_desc&gt;, &lt;fld11&gt;, , , , , , , Event:&lt;fld12&gt;, Status: &lt;disposition&gt;, &lt;fld13&gt;: Failed login attempt via REMOTE, IP Addr: &lt;saddr&gt;"/>	
-
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Failed login attempt.&gt;"
+	content=" &lt;event_source&gt;raslogd: AUDIT,&lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt; &lt;fld55&gt;, [SEC-3021], &lt;severity&gt;, SECURITY, &lt;fld31&gt;, &lt;location_desc&gt;, &lt;fld11&gt;, , , , , , , Event:&lt;fld12&gt;, Status: &lt;disposition&gt;, &lt;fld13&gt;: Failed login attempt via REMOTE, IP Addr: &lt;saddr&gt;" />
 	
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="raslogd:02" 
 	id2="raslogd" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Frame timeout detected.&gt; &lt;event_source&gt;raslogd: AUDIT, &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt; &lt;fld55&gt;, [AN-1014], &lt;severity&gt;, FABRIC, &lt;fld20&gt;, &lt;location_desc&gt;, &lt;fld11&gt;, , , , , , , Frame timeout detected, tx port &lt;sport&gt; rx port &lt;dport&gt;, sid &lt;fld23&gt;, did &lt;fld24&gt;, timestamp &lt;fld25&gt;"/>	
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Frame timeout detected.&gt;"
+	content=" &lt;event_source&gt;raslogd: AUDIT, &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt; &lt;fld55&gt;, [AN-1014], &lt;severity&gt;, FABRIC, &lt;fld20&gt;, &lt;location_desc&gt;, &lt;fld11&gt;, , , , , , , Frame timeout detected, tx port &lt;sport&gt; rx port &lt;dport&gt;, sid &lt;fld23&gt;, did &lt;fld24&gt;, timestamp &lt;fld25&gt;" />
 	
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="raslogd:03" 
 	id2="raslogd" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Log message AN-1014 flooding detected and blocked.&gt; &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [LOG-1004], &lt;serial_number&gt;, &lt;fld1&gt;, &lt;severity&gt;, &lt;hostname&gt;, Log message AN-1014 flooding detected and blocked." />	
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Log message AN-1014 flooding detected and blocked.&gt;"
+	content=" &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [LOG-1004], &lt;serial_number&gt;, &lt;fld1&gt;, &lt;severity&gt;, &lt;hostname&gt;, Log message AN-1014 flooding detected and blocked." />
 	
 <MESSAGE
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="74" 
 	id1="raslogd:04" 
 	id2="raslogd" 
 	eventcategory="1610000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Link Reset on Port.&gt; &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [C2-1014], &lt;serial_number&gt;, &lt;fld1&gt;, &lt;severity&gt;, &lt;hostname&gt;, Link Reset on Port &lt;fld2&gt;,P&lt;sport&gt;(&lt;fld3&gt;) vc_no=&lt;fld4&gt; crd(s)lost=&lt;fld5&gt; auto trigger." />	
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Link Reset on Port.&gt;"
+	content=" &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [C2-1014], &lt;serial_number&gt;, &lt;fld1&gt;, &lt;severity&gt;, &lt;hostname&gt;, Link Reset on Port &lt;fld2&gt;,P&lt;sport&gt;(&lt;fld3&gt;) vc_no=&lt;fld4&gt; crd(s)lost=&lt;fld5&gt; auto trigger." />
 </DEVICEMESSAGES>

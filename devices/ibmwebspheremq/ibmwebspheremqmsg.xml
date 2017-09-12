@@ -1,1109 +1,677 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
-
-	<VERSION
-		xml="3"
-		checksum="aea3e56e24c327df1df85d54cb04eecb"
+<DEVICEMESSAGES
+	name="ibmwebspheremq"
+	displayname="IBM WebSphere MQ"
+	group="Messaging">
+<VERSION
+		xml="4"
+		checksum="1623281e2918744dfe09f32458cfd183"
 		revision="0"
-		enVision="35010000"
 		device="2.0"/>
 
 
-
-	<HEADER
-		id1="001"
-		id2="001"
-		content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: --- &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
-
-	<HEADER
-		id1="002"
-		id2="002"
-		content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: -- &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
-
-	<HEADER
-		id1="003"
-		id2="003"
-		content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: - &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
-
-	<HEADER
-		id1="004"
-		id2="004"
-		content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
-
+<HEADER
+	id1="001"
+	id2="001"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: --- &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
+<HEADER
+	id1="002"
+	id2="002"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: -- &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
+<HEADER
+	id1="003"
+	id2="003"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: - &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
+<HEADER
+	id1="004"
+	id2="004"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;hfld1&gt; &lt;hfld2&gt; - Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                      Host(&lt;hostname&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
 	
-	<HEADER
-		id1="005"
-		id2="005"
-		content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
-
+<HEADER
+	id1="005"
+	id2="005"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
 	
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="-"
-		id2="-"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Line&gt; - &lt;process&gt; : &lt;dclass_counter1&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="--"
-		id2="--"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Line&gt; -- &lt;process&gt; : &lt;dclass_counter1&gt;"/>
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="---"
-		id2="---"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt; --- "/>
-
-	<MESSAGE
-		level="2"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4000"
-		id2="AMQ4000"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4001"
-		id2="AMQ4001"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4002"
-		id2="AMQ4002"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4003"
-		id2="AMQ4003"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4004"
-		id2="AMQ4004"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4015"
-		id2="AMQ4015"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4016"
-		id2="AMQ4016"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4032"
-		id2="AMQ4032"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4033"
-		id2="AMQ4033"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4043"
-		id2="AMQ4043"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4044"
-		id2="AMQ4044"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4045"
-		id2="AMQ4045"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4053"
-		id2="AMQ4053"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ4054"
-		id2="AMQ4054"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5022"
-		id2="AMQ5022"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5023"
-		id2="AMQ5023"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5024"
-		id2="AMQ5024"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5025"
-		id2="AMQ5025"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5026"
-		id2="AMQ5026"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5027"
-		id2="AMQ5027"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5037"
-		id2="AMQ5037"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5038"
-		id2="AMQ5038"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; with error-code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5041"
-		id2="AMQ5041"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5042"
-		id2="AMQ5042"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5043"
-		id2="AMQ5043"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; due to error code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5044"
-		id2="AMQ5044"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; due to Reason Code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5046"
-		id2="AMQ5046"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; due to error code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5806"
-		id2="AMQ5806"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ5807"
-		id2="AMQ5807"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6025"
-		id2="AMQ6025"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6026"
-		id2="AMQ6026"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6035"
-		id2="AMQ6035"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6090"
-		id2="AMQ6090"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6125"
-		id2="AMQ6125"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6183"
-		id2="AMQ6183"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6209"
-		id2="AMQ6209"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ6287"
-		id2="AMQ6287"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:WebSphere version&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: WebSphere MQ &lt;version&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7001"
-		id2="AMQ7001"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7008"
-		id2="AMQ7008"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7010"
-		id2="AMQ7010"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7028"
-		id2="AMQ7028"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7030"
-		id2="AMQ7030"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7031"
-		id2="AMQ7031"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7041"
-		id2="AMQ7041"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7042"
-		id2="AMQ7042"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7048"
-		id2="AMQ7048"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7125"
-		id2="AMQ7125"
-		eventcategory="1608000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@dclass_counter1_string:Days&gt;&lt;@info:Trial date left&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: There are &lt;dclass_counter1&gt; days left in the trial period for this copy of WebSphere  MQ.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7229"
-		id2="AMQ7229"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@dclass_counter1_string:Logs&gt;&lt;@info:Log records accessed during replay&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;dclass_counter1&gt; log records accessed on queue manager &apos;&lt;agent&gt;&apos; during the log  replay phase.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7230"
-		id2="AMQ7230"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7231"
-		id2="AMQ7231"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@dclass_counter1_string:Logs&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;dclass_counter1&gt; log &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7232"
-		id2="AMQ7232"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7233"
-		id2="AMQ7233"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7257"
-		id2="AMQ7257"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7332"
-		id2="AMQ7332"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ7334"
-		id2="AMQ7334"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; for reason &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8003"
-		id2="AMQ8003"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8004"
-		id2="AMQ8004"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8024"
-		id2="AMQ8024"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8048"
-		id2="AMQ8048"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@dclass_counter1_string:Created&gt;&lt;@dclass_counter2_string:Replaced&gt;&lt;@dclass_counter3_string:Failed&gt;&lt;@info:Default objects statistics&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Default objects statistics : &lt;dclass_counter1&gt; created. &lt;dclass_counter2&gt; replaced. &lt;dclass_counter3&gt; failed.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8061"
-		id2="AMQ8061"
-		eventcategory="1603050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8062"
-		id2="AMQ8062"
-		eventcategory="1603050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@fld62:*PARMVAL(context)&gt;&lt;@info:Unexpected return code&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Unexpected return code, &lt;resultcode&gt;, from command &lt;context&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8063"
-		id2="AMQ8063"
-		eventcategory="1603050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8064"
-		id2="AMQ8064"
-		eventcategory="1501050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8065"
-		id2="AMQ8065"
-		eventcategory="1501050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8066"
-		id2="AMQ8066"
-		eventcategory="1501050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8067"
-		id2="AMQ8067"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8068"
-		id2="AMQ8068"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8072"
-		id2="AMQ8072"
-		eventcategory="1501050000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8084"
-		id2="AMQ8084"
-		eventcategory="1801000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8085"
-		id2="AMQ8085"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8086"
-		id2="AMQ8086"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8094"
-		id2="AMQ8094"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8095"
-		id2="AMQ8095"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8096"
-		id2="AMQ8096"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8108"
-		id2="AMQ8108"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8109"
-		id2="AMQ8109"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ8110"
-		id2="AMQ8110"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9001"
-		id2="AMQ9001"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9002"
-		id2="AMQ9002"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9204"
-		id2="AMQ9204"
-		eventcategory="1803000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:Connection to host rejected&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Connection to host &apos;&lt;dhost&gt;&apos; rejected.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9205"
-		id2="AMQ9205"
-		eventcategory="1803010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: The host name supplied is not valid.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9206"
-		id2="AMQ9206"
-		eventcategory="1803010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:Error sending data to host&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Error sending data to host &lt;dhost&gt; (&lt;daddr&gt;).    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9207"
-		id2="AMQ9207"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:Data from host not valid&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: The data received from host &lt;shost&gt; (&lt;saddr&gt;) is not valid.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9208"
-		id2="AMQ9208"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:Error receiving from host&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Error on receive from host &lt;shost&gt; (&lt;saddr&gt;).    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9209"
-		id2="AMQ9209"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:Connection to host closed&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Connection to host &lt;dhost&gt; (&lt;daddr&gt;) closed.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9223"
-		id2="AMQ9223"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9410"
-		id2="AMQ9410"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt;   EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9411"
-		id2="AMQ9411"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9418"
-		id2="AMQ9418"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt;   EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9420"
-		id2="AMQ9420"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9502"
-		id2="AMQ9502"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9506"
-		id2="AMQ9506"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9508"
-		id2="AMQ9508"
-		eventcategory="1801010000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9509"
-		id2="AMQ9509"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt;   EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9519"
-		id2="AMQ9519"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9526"
-		id2="AMQ9526"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9527"
-		id2="AMQ9527"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9542"
-		id2="AMQ9542"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9545"
-		id2="AMQ9545"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="5"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9547"
-		id2="AMQ9547"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9565"
-		id2="AMQ9565"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9631"
-		id2="AMQ9631"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9780"
-		id2="AMQ9780"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;@info:Channel ending due to error&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Channel to remote machine &apos;&lt;daddr&gt;&apos; is ending due to an error.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="80"
-		id1="AMQ9999"
-		id2="AMQ9999"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@fld61:*PARMVAL(process_id)&gt;&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;"/>
-
+<MESSAGE
+	id1="-"
+	id2="-"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Line&gt;"
+	content=" - &lt;process&gt; : &lt;dclass_counter1&gt;" />
+<MESSAGE
+	id1="--"
+	id2="--"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Line&gt;"
+	content=" -- &lt;process&gt; : &lt;dclass_counter1&gt;" />
+<MESSAGE
+	id1="---"
+	id2="---"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" --- " />
+<MESSAGE
+	id1="AMQ4000"
+	id2="AMQ4000"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4001"
+	id2="AMQ4001"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4002"
+	id2="AMQ4002"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4003"
+	id2="AMQ4003"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4004"
+	id2="AMQ4004"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4015"
+	id2="AMQ4015"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4016"
+	id2="AMQ4016"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4032"
+	id2="AMQ4032"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4033"
+	id2="AMQ4033"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4043"
+	id2="AMQ4043"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4044"
+	id2="AMQ4044"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4045"
+	id2="AMQ4045"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4053"
+	id2="AMQ4053"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ4054"
+	id2="AMQ4054"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5022"
+	id2="AMQ5022"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5023"
+	id2="AMQ5023"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5024"
+	id2="AMQ5024"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5025"
+	id2="AMQ5025"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5026"
+	id2="AMQ5026"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5027"
+	id2="AMQ5027"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5037"
+	id2="AMQ5037"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5038"
+	id2="AMQ5038"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; with error-code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5041"
+	id2="AMQ5041"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5042"
+	id2="AMQ5042"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5043"
+	id2="AMQ5043"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; due to error code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5044"
+	id2="AMQ5044"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; due to Reason Code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5046"
+	id2="AMQ5046"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; due to error code &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5806"
+	id2="AMQ5806"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ5807"
+	id2="AMQ5807"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6025"
+	id2="AMQ6025"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6026"
+	id2="AMQ6026"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6035"
+	id2="AMQ6035"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6090"
+	id2="AMQ6090"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6125"
+	id2="AMQ6125"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6183"
+	id2="AMQ6183"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6209"
+	id2="AMQ6209"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6287"
+	id2="AMQ6287"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:WebSphere version&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: WebSphere MQ &lt;version&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7001"
+	id2="AMQ7001"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7008"
+	id2="AMQ7008"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7010"
+	id2="AMQ7010"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7028"
+	id2="AMQ7028"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7030"
+	id2="AMQ7030"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7031"
+	id2="AMQ7031"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7041"
+	id2="AMQ7041"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7042"
+	id2="AMQ7042"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7048"
+	id2="AMQ7048"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7125"
+	id2="AMQ7125"
+	eventcategory="1608000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@dclass_counter1_string:Days&gt;&lt;@info:Trial date left&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: There are &lt;dclass_counter1&gt; days left in the trial period for this copy of WebSphere  MQ.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7229"
+	id2="AMQ7229"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@dclass_counter1_string:Logs&gt;&lt;@info:Log records accessed during replay&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;dclass_counter1&gt; log records accessed on queue manager &apos;&lt;agent&gt;&apos; during the log  replay phase.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7230"
+	id2="AMQ7230"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7231"
+	id2="AMQ7231"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@dclass_counter1_string:Logs&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;dclass_counter1&gt; log &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7232"
+	id2="AMQ7232"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7233"
+	id2="AMQ7233"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7257"
+	id2="AMQ7257"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7332"
+	id2="AMQ7332"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7334"
+	id2="AMQ7334"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; for reason &lt;resultcode&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8003"
+	id2="AMQ8003"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8004"
+	id2="AMQ8004"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8024"
+	id2="AMQ8024"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8048"
+	id2="AMQ8048"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@dclass_counter1_string:Created&gt;&lt;@dclass_counter2_string:Replaced&gt;&lt;@dclass_counter3_string:Failed&gt;&lt;@info:Default objects statistics&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Default objects statistics : &lt;dclass_counter1&gt; created. &lt;dclass_counter2&gt; replaced. &lt;dclass_counter3&gt; failed.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8061"
+	id2="AMQ8061"
+	eventcategory="1603050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8062"
+	id2="AMQ8062"
+	eventcategory="1603050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Unexpected return code&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Unexpected return code, &lt;resultcode&gt;, from command &lt;context&gt;.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8063"
+	id2="AMQ8063"
+	eventcategory="1603050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8064"
+	id2="AMQ8064"
+	eventcategory="1501050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8065"
+	id2="AMQ8065"
+	eventcategory="1501050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8066"
+	id2="AMQ8066"
+	eventcategory="1501050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8067"
+	id2="AMQ8067"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8068"
+	id2="AMQ8068"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8072"
+	id2="AMQ8072"
+	eventcategory="1501050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8084"
+	id2="AMQ8084"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8085"
+	id2="AMQ8085"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8086"
+	id2="AMQ8086"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8094"
+	id2="AMQ8094"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8095"
+	id2="AMQ8095"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8096"
+	id2="AMQ8096"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8108"
+	id2="AMQ8108"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8109"
+	id2="AMQ8109"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ8110"
+	id2="AMQ8110"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9001"
+	id2="AMQ9001"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9002"
+	id2="AMQ9002"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9204"
+	id2="AMQ9204"
+	eventcategory="1803000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Connection to host rejected&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Connection to host &apos;&lt;dhost&gt;&apos; rejected.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9205"
+	id2="AMQ9205"
+	eventcategory="1803010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: The host name supplied is not valid.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9206"
+	id2="AMQ9206"
+	eventcategory="1803010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Error sending data to host&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Error sending data to host &lt;dhost&gt; (&lt;daddr&gt;).    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9207"
+	id2="AMQ9207"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Data from host not valid&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: The data received from host &lt;shost&gt; (&lt;saddr&gt;) is not valid.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9208"
+	id2="AMQ9208"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Error receiving from host&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Error on receive from host &lt;shost&gt; (&lt;saddr&gt;).    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9209"
+	id2="AMQ9209"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Connection to host closed&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Connection to host &lt;dhost&gt; (&lt;daddr&gt;) closed.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9223"
+	id2="AMQ9223"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9410"
+	id2="AMQ9410"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt;   EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9411"
+	id2="AMQ9411"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9418"
+	id2="AMQ9418"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt;   EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9420"
+	id2="AMQ9420"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9502"
+	id2="AMQ9502"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9506"
+	id2="AMQ9506"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9508"
+	id2="AMQ9508"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9509"
+	id2="AMQ9509"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt;   EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9519"
+	id2="AMQ9519"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9526"
+	id2="AMQ9526"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9527"
+	id2="AMQ9527"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9542"
+	id2="AMQ9542"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9545"
+	id2="AMQ9545"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9547"
+	id2="AMQ9547"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9565"
+	id2="AMQ9565"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9631"
+	id2="AMQ9631"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9780"
+	id2="AMQ9780"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Channel ending due to error&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: Channel to remote machine &apos;&lt;daddr&gt;&apos; is ending due to an error.    EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ9999"
+	id2="AMQ9999"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
 </DEVICEMESSAGES>

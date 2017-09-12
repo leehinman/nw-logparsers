@@ -1,108 +1,75 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="ncircleccm"
+	displayname="nCircle CCM"
+	group="Configuration Management">
 <VERSION
-	xml="4"
-	checksum="5801fba1ae16ffd32c76e04438e00534"
+	xml="5"
+	checksum="7ac50ba67e3faae9e6bc9c275ac95424"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
 <HEADER 
 	id1="0001" 
 	id2="0001" 
-	messageid="" 
 	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; Type: &lt;messageid&gt;, &lt;!payload&gt;" />
-
 <HEADER 
 	id1="0002" 
 	id2="0002" 
-	messageid="" 
 	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;messageid&gt;: &lt;!payload&gt;" />
 			
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="TaskComplete"
 	id2="TaskComplete"
-	tableid="86"
 	eventcategory="1701000000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt; Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt; status: &lt;event_state&gt; Result: &lt;result&gt;"/>
-
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;"
+	content="Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt; Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt; status: &lt;event_state&gt; Result: &lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="NewHost"
 	id2="NewHost"
-	tableid="86"
 	eventcategory="1701010000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt;, Event Severity: &lt;severity&gt;, OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;"/>
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;"
+	content="Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt;, Event Severity: &lt;severity&gt;, OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;" />
 		
 
 <MESSAGE
-        level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="PropertyChanged"
 	id2="PropertyChanged"
-	tableid="86"
 	eventcategory="1701020000"
-	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt; Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary:&lt;info&gt; Asset Status changed:&lt;result&gt;"/>
-
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;"
+	content="Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt; Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary:&lt;info&gt; Asset Status changed:&lt;result&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="PropertyChanged:01"
 	id2="PropertyChanged"
-	tableid="86"
 	eventcategory="1701020000"
-	content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt; Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;"/>
-
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;"
+	content="Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt; Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;" />
 		
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="ObjectRemoved"
 	id2="ObjectRemoved"
-	tableid="86"
 	eventcategory="1701030000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt;, Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;"/>
-
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;"
+	content="Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt;, Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt;, Event Severity: &lt;severity&gt; OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="NewObject"
 	id2="NewObject"
-	tableid="86"
 	eventcategory="1701010000"
-	content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt; Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt;, Event Severity: &lt;severity&gt;, OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;"/>
-
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld1,fld2,fld3)&gt;"
+	content="Timestamp: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;, Event ID: &lt;fld4&gt;, IP: &lt;hostip&gt;, Host: &lt;hostname&gt;, MAC: &lt;macaddr&gt;, Compound Risk: &lt;risk&gt; Event Risk: &lt;fld9&gt;, Host Criticality: &lt;fld10&gt;, Event Severity: &lt;severity&gt;, OS: &lt;os&gt;, Who Made The Change: &lt;username&gt;, Summary: &lt;info&gt;" />
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="ID"
 	id2="ID"
-	tableid="86"
 	eventcategory="1604000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld8)&gt;&lt;fld1&gt; Recovered: &lt;disposition&gt; Type: &lt;event_type&gt; Severity: &lt;severity&gt; Component: &lt;agent&gt; Host: &lt;fld6&gt; Failure Date: &lt;fld7&gt; Last Date: &lt;fld8&gt; Information: &lt;event_description&gt; Asset ID: &lt;fld10&gt; Network Profile: &lt;fld11&gt; Asset Group: &lt;group_object&gt; Meta Asset: &lt;os&gt; Task: &lt;action&gt; {(&lt;fld14&gt;) Recovery Information:&lt;fld15&gt;|(&lt;fld14&gt;)}"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld8)&gt;"
+	content="&lt;fld1&gt; Recovered: &lt;disposition&gt; Type: &lt;event_type&gt; Severity: &lt;severity&gt; Component: &lt;agent&gt; Host: &lt;fld6&gt; Failure Date: &lt;fld7&gt; Last Date: &lt;fld8&gt; Information: &lt;event_description&gt; Asset ID: &lt;fld10&gt; Network Profile: &lt;fld11&gt; Asset Group: &lt;group_object&gt; Meta Asset: &lt;os&gt; Task: &lt;action&gt; {(&lt;fld14&gt;) Recovery Information:&lt;fld15&gt;|(&lt;fld14&gt;)}" />
  
-
 <MESSAGE
-	level="5"
-	parse="1"
-	parsedefvalue="1"
 	id1="ID:01"
 	id2="ID"
-	tableid="86"
 	eventcategory="1604000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld8)&gt;&lt;fld1&gt; Recovered: &lt;disposition&gt; Type: &lt;event_type&gt; Severity: &lt;severity&gt; Component: &lt;agent&gt; Host: &lt;fld6&gt; Failure Date: &lt;fld7&gt; Last Date: &lt;fld8&gt; Information:&lt;event_description&gt;"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hfld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld8)&gt;"
+	content="&lt;fld1&gt; Recovered: &lt;disposition&gt; Type: &lt;event_type&gt; Severity: &lt;severity&gt; Component: &lt;agent&gt; Host: &lt;fld6&gt; Failure Date: &lt;fld7&gt; Last Date: &lt;fld8&gt; Information:&lt;event_description&gt;" />
  
 </DEVICEMESSAGES>

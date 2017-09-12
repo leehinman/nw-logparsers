@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="zenprisemdm"
+	displayname="Zenprise MobileManager"
+	group="Configuration Management">
 <VERSION
-	xml="26"
-	checksum="cf2f3f6d3f4326a8b77798d693dd4546"
+	xml="27"
+	checksum="2267d8023d961c3d0ba51b26664e8625"
 	revision="108"
-	enVision="33050000"
 	device="2.0"/>
 	
 	
@@ -17,12 +19,10 @@
 	id1="0002"
 	id2="0002"
 	content="'ZENPRISEMDM' &lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; [&lt;hprocess&gt;] &lt;messageid&gt; &lt;!payload:hdate&gt;"/>
-
 <HEADER
 	id1="0001"
 	id2="0001"
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hhostip&gt; ZENPRISEMDM &lt;hhostname&gt;\SMG: action=&lt;messageid&gt;, &lt;!payload&gt;"/>
-
 
      
 <HEADER
@@ -43,10 +43,10 @@
 	messageid="STRCAT('xenmobile')"
 	content="&lt;hdate&gt;T&lt;hfld1&gt; &quot;&lt;username&gt;&quot; &quot;&lt;sessionid&gt;&quot; &lt;!payload&gt;"/>
 <HEADER
-	 id1="0006"
-	 id2="0006"
-	 messageid="STRCAT('Audit')"
-	 content="&lt;hfld1&gt;&lt;hdate&gt;T&lt;hfld2&gt;&lt;hhost&gt;XMS -&lt;id&gt;&lt;!payload:hhost&gt;"/>
+	id1="0006"
+	id2="0006"
+	messageid="STRCAT('Audit')"
+	content="&lt;hfld1&gt;&lt;hdate&gt;T&lt;hfld2&gt;&lt;hhost&gt;XMS -&lt;id&gt;&lt;!payload:hhost&gt;"/>
 
 <VALUEMAP
 	name="getEventLegacyCategory"
@@ -59,280 +59,179 @@
 	default="Other.Default"
 	keyvaluepairs="1301000000=&apos;Auth.Failures&apos;|1302000000=&apos;Auth.Successful&apos;|1401030000=&apos;User.Activity.Failed Logins&apos;|1401040000=&apos;User.Activity.Normal Activity&apos;|1401060000=&apos;User.Activity.Successful Logins&apos;|1401070000=&apos;User.Activity.Logoff&apos;|1603000000=&apos;System.Errors&apos;|1605000000=&apos;System.Normal Conditions&apos;|1610000000=&apos;System.Startup&apos;|1611000000=&apos;System.Shutdown&apos;|1701010000=&apos;Config.Changes.Add&apos;|1701020000=&apos;Config.Changes.Modify&apos;|1701030000=&apos;Config.Changes.Delete&apos;|1703000000=&apos;Config.Errors&apos;" />	
 		
-
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="allow"
 	id2="allow"
 	eventcategory="1801020000"
 	tagval="true"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',hmonth,hday,htime)&gt;group=&lt;group&gt;, user=&lt;username&gt;, did=&lt;serial_number&gt;, dt=&lt;product&gt;, cmd=&lt;action&gt;, ua=&lt;user_agent&gt;, ip=&lt;saddr&gt;,"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',hmonth,hday,htime)&gt;"
+	content="group=&lt;group&gt;, user=&lt;username&gt;, did=&lt;serial_number&gt;, dt=&lt;product&gt;, cmd=&lt;action&gt;, ua=&lt;user_agent&gt;, ip=&lt;saddr&gt;," />
 <MESSAGE
-	level="6"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="deny"
 	id2="deny"
 	eventcategory="1803000000"
 	tagval="true"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',hmonth,hday,htime)&gt;group=&lt;group&gt;, user=&lt;username&gt;, did=&lt;serial_number&gt;, dt=&lt;product&gt;, cmd=&lt;action&gt;, ua=&lt;user_agent&gt;, ip=&lt;saddr&gt;,"/>
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',hmonth,hday,htime)&gt;"
+	content="group=&lt;group&gt;, user=&lt;username&gt;, did=&lt;serial_number&gt;, dt=&lt;product&gt;, cmd=&lt;action&gt;, ua=&lt;user_agent&gt;, ip=&lt;saddr&gt;," />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:01" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Initialising &lt;fld5&gt; services for: &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Initialising &lt;fld5&gt; services for: &lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:02" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Successfully loaded &lt;service&gt; for iOS &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Successfully loaded &lt;service&gt; for iOS &lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:11" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld5&gt; - &lt;info&gt;: &lt;username&gt; device ID:&lt;id&gt;" />		
-
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; &lt;fld4&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld5&gt; - &lt;info&gt;: &lt;username&gt; device ID:&lt;id&gt;" />
 <MESSAGE
-	level="3"
-	parse="1"
-	parsedefvalue="1"
-	tableid="86"
 	id1="INFO:12"
 	id2="INFO"
 	eventcategory="1605000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;action&gt;: &lt;fld8&gt;, id=&lt;fld9&gt;, status=&lt;disposition&gt;, username=&apos;&lt;username&gt;&apos;, &lt;info&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;action&gt;: &lt;fld8&gt;, id=&lt;fld9&gt;, status=&lt;disposition&gt;, username=&apos;&lt;username&gt;&apos;, &lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:03" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;action&gt;: {ID: &lt;id&gt;. Returned: &lt;info&gt;. DeleteStatus: &lt;result&gt; | &lt;disposition&gt;.}" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;action&gt;: {ID: &lt;id&gt;. Returned: &lt;info&gt;. DeleteStatus: &lt;result&gt; | &lt;disposition&gt;.}" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:04" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - user=&lt;username&gt; deviceid=&lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - user=&lt;username&gt; deviceid=&lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:05" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Client disconnect" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Client disconnect" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:06" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;application&gt; finished loading." />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;application&gt; finished loading." />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:07" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Confirmation for next device connection time received for &lt;fld5&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Confirmation for next device connection time received for &lt;fld5&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:09" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;application&gt; version &lt;version&gt; Revision &lt;fld5&gt; initialized on Apache Tomcat" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;application&gt; version &lt;version&gt; Revision &lt;fld5&gt; initialized on Apache Tomcat" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="DEBUG:01" 
 	id2="DEBUG"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - User role resolved for &apos;&lt;username&gt;&apos; &lt;fld5&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - User role resolved for &apos;&lt;username&gt;&apos; &lt;fld5&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="WARN:01" 
 	id2="WARN"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Authentication of MDM connection from &lt;hostip&gt; failed (&lt;info&gt;). Denying access with &lt;sport&gt;." />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Authentication of MDM connection from &lt;hostip&gt; failed (&lt;info&gt;). Denying access with &lt;sport&gt;." />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ERROR:01" 
 	id2="ERROR"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Referral failed: &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - Referral failed: &lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO:10" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; { &lt;fld4&gt; [UID=&lt;id&gt;,usr=&lt;fld5&gt;,dev=&lt;fld6&gt;] | &lt;fld4&gt; } - &lt;info&gt; for user &lt;username&gt;([])" />		
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; { &lt;fld4&gt; [UID=&lt;id&gt;,usr=&lt;fld5&gt;,dev=&lt;fld6&gt;] | &lt;fld4&gt; } - &lt;info&gt; for user &lt;username&gt;([])" />
 	
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="INFO" 
 	id2="INFO"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />		
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
 	
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="ERROR" 
 	id2="ERROR"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
 	
 	
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="WARN" 
 	id2="WARN"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
 	
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="DEBUG" 
 	id2="DEBUG"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="TRACE" 
 	id2="TRACE"
 	eventcategory="1605000000" 
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%T:%S',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;process&gt;] &lt;severity&gt; &lt;fld4&gt;  - &lt;info&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="xenmobile:01" 
 	id2="xenmobile"
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_id:*STRCAT(event_type,_,disposition)&gt;&lt;@event_cat:*getEventLegacyCategory(event_id)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:*RMQ(event_description)&gt;"
 	content="&quot;&lt;fld1&gt;&quot; &quot;&lt;saddr&gt;&quot; &quot;&lt;event_type&gt;&quot; &quot;&lt;disposition&gt;&quot; &quot;&lt;obj_name&gt;&quot; &quot;&lt;fld2&gt;&quot; &quot;&lt;user_agent&gt;&quot; &lt;event_description&gt;" />
-
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="86" 
 	id1="xenmobile" 
 	id2="xenmobile"
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_id:*STRCAT(event_type,_,disposition)&gt;&lt;@event_cat:*getEventLegacyCategory(event_id)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:*RMQ(event_description)&gt;"
 	content="&quot;&lt;saddr&gt;&quot; &quot;&lt;event_type&gt;&quot; &quot;&lt;disposition&gt;&quot; &quot;&lt;obj_name&gt;&quot; &quot;&lt;user_agent&gt;&quot; &lt;event_description&gt;" />
-
 <MESSAGE
-	 id1="Audit"
-	 id2="Audit"
-	 eventcategory="1401000000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060{app.name=&quot;&lt;application&gt;&quot; app.userid=&quot;&lt;c_username&gt;&quot; client.ip=&quot;&lt;saddr&gt;&quot; device.id=&quot;&lt;node&gt;&quot;|app.name=&quot;&lt;application&gt;&quot; client.ip=&quot;&lt;saddr&gt;&quot; device.id=&quot;&lt;node&gt;&quot;|client.ip=&quot;&lt;saddr&gt;&quot;}event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; http.user-agent=&quot;&lt;user_agent&gt;&quot;{session.id=&quot;&lt;sessionid&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;|session.id=&quot;&lt;sessionid&gt;&quot;}]&lt;event_description&gt;"/>
-
+	id1="Audit"
+	id2="Audit"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
+	content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060{app.name=&quot;&lt;application&gt;&quot; app.userid=&quot;&lt;c_username&gt;&quot; client.ip=&quot;&lt;saddr&gt;&quot; device.id=&quot;&lt;node&gt;&quot;|app.name=&quot;&lt;application&gt;&quot; client.ip=&quot;&lt;saddr&gt;&quot; device.id=&quot;&lt;node&gt;&quot;|client.ip=&quot;&lt;saddr&gt;&quot;}event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; http.user-agent=&quot;&lt;user_agent&gt;&quot;{session.id=&quot;&lt;sessionid&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;|session.id=&quot;&lt;sessionid&gt;&quot;}]&lt;event_description&gt;" />
 <MESSAGE
-	 id1="Audit:01"
-	 id2="Audit"
-	 eventcategory="1401000000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; device.id=&quot;&lt;node&gt;&quot; device.imei=&quot;&lt;fld2&gt;&quot; device.ownerName=&quot;&lt;owner&gt;&quot; device.serial=&quot;&lt;serial_number&gt;&quot; device.userDefined.id=&quot;&lt;fld3&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; ew.session.id=&quot;&lt;sessionid&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld4&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,{&quot;deviceIMEI&quot;:&quot;&lt;fld5&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld6&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld7&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld5&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld6&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld5&gt;&quot;}}"/>
-
+	id1="Audit:01"
+	id2="Audit"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
+	content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; device.id=&quot;&lt;node&gt;&quot; device.imei=&quot;&lt;fld2&gt;&quot; device.ownerName=&quot;&lt;owner&gt;&quot; device.serial=&quot;&lt;serial_number&gt;&quot; device.userDefined.id=&quot;&lt;fld3&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; ew.session.id=&quot;&lt;sessionid&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld4&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,{&quot;deviceIMEI&quot;:&quot;&lt;fld5&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld6&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld7&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld5&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld6&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld5&gt;&quot;}}" />
 <MESSAGE
-	 id1="Audit:03"
-	 id2="Audit"
-	 eventcategory="1401000000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 device.id=&quot;&lt;node&gt;&quot; event.action=&quot;&lt;action&gt;&quot; {event.status=&quot;&lt;event_state&gt;&quot; session.id=&quot;&lt;sessionid&gt;&quot;| event.status=&quot;&lt;event_state&gt;&quot;} user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld2&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,{&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld5&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;}}"/>
-
+	id1="Audit:03"
+	id2="Audit"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
+	content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 device.id=&quot;&lt;node&gt;&quot; event.action=&quot;&lt;action&gt;&quot; {event.status=&quot;&lt;event_state&gt;&quot; session.id=&quot;&lt;sessionid&gt;&quot;| event.status=&quot;&lt;event_state&gt;&quot;} user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld2&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,{&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld5&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld4&gt;&quot;|&quot;deviceIMEI&quot;:&quot;&lt;fld3&gt;&quot;}}" />
 <MESSAGE
-	 id1="Audit:04"
-	 id2="Audit"
-	 eventcategory="1401000000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; device.id=&quot;&lt;node&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; push.device=&quot;&lt;fld7&gt;&quot; push.id=&quot;&lt;fld8&gt;&quot; push.info=&quot;&lt;fld9&gt;&quot; push.target=&quot;&lt;fld10&gt;[os=&lt;os&gt;, device=&lt;device&gt;, user=&lt;fld12&gt;, type=&lt;fld13&gt;]&quot; push.user=&quot;&lt;fld11&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld3&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,&quot;deviceIMEI&quot;:&quot;&lt;fld4&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld5&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld6&gt;&quot;}"/>
-
+	id1="Audit:04"
+	id2="Audit"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
+	content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; device.id=&quot;&lt;node&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; push.device=&quot;&lt;fld7&gt;&quot; push.id=&quot;&lt;fld8&gt;&quot; push.info=&quot;&lt;fld9&gt;&quot; push.target=&quot;&lt;fld10&gt;[os=&lt;os&gt;, device=&lt;device&gt;, user=&lt;fld12&gt;, type=&lt;fld13&gt;]&quot; push.user=&quot;&lt;fld11&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;] {{&quot;source&quot;:&quot;&lt;fld3&gt;&quot;,&quot;deviceUser&quot;:&quot;&lt;username&gt;&quot;,&quot;deviceIMEI&quot;:&quot;&lt;fld4&gt;&quot;,&quot;arg1&quot;:&quot;&lt;fld5&gt;&quot;,&quot;arg2&quot;:&quot;&lt;fld6&gt;&quot;}" />
 <MESSAGE
-	 id1="Audit:02"
-	 id2="Audit"
-	 eventcategory="1401000000"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
-	 content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;]{&lt;event_description&gt;. Device Details - Device Serial : &lt;serial_number&gt;, Device OS: &lt;os&gt;|&lt;event_description&gt;}"/>
-
+	id1="Audit:02"
+	id2="Audit"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%T:%S',hdate,hfld2)&gt;"
+	content="&lt;hostname&gt;XMS -&lt;audit_class&gt;[@18060 app.name=&quot;&lt;application&gt;&quot; event.action=&quot;&lt;action&gt;&quot; event.status=&quot;&lt;event_state&gt;&quot; user.id=&quot;&lt;uid&gt;&quot;]{&lt;event_description&gt;. Device Details - Device Serial : &lt;serial_number&gt;, Device OS: &lt;os&gt;|&lt;event_description&gt;}" />
 </DEVICEMESSAGES>

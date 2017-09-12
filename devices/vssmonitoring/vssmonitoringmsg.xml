@@ -1,69 +1,51 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="vssmonitoring"
+	displayname="VSS Monitoring"
+	group="System">
 <VERSION
-	xml="4"
-	checksum="56e393562c0ddd5e36109e18cefcbf32"
+	xml="5"
+	checksum="154d981d9cfb212fd3439a4193f88ff4"
 	revision="0"
-	enVision="33050000"
 	device="2.0"/>
-
 <HEADER 
-		id1="0001"
-		id2="0001"
-		content="%VSSMONITORING &lt;messageid&gt;^&lt;!payload&gt;" />
+	id1="0001"
+	id2="0001"
+	content="%VSSMONITORING &lt;messageid&gt;^&lt;!payload&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="CONFIG_CHANGE"
-		id2="CONFIG_CHANGE"
-		eventcategory="1701020000"
-		content="&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;duration_string&gt;^&lt;fld2&gt;"/>
+	id1="CONFIG_CHANGE"
+	id2="CONFIG_CHANGE"
+	eventcategory="1701020000"
+	functions="&lt;@ec_subject:Configuration&gt;&lt;@ec_activity:Modify&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;duration_string&gt;^&lt;fld2&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="LOGON_SUCCESS"
-		id2="LOGON_SUCCESS"
-		eventcategory="1401060000"
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;duration_string&gt;^&lt;username&gt;^&lt;saddr&gt;^&lt;fld4&gt;"/>
+	id1="LOGON_SUCCESS"
+	id2="LOGON_SUCCESS"
+	eventcategory="1401060000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;duration_string&gt;^&lt;username&gt;^&lt;saddr&gt;^&lt;fld4&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="LOGOUT"
-		id2="LOGOUT"
-		eventcategory="1401070000"
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;duration_string&gt;^&lt;username&gt;^&lt;saddr&gt;^&lt;fld4&gt;"/>
+	id1="LOGOUT"
+	id2="LOGOUT"
+	eventcategory="1401070000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;duration_string&gt;^&lt;username&gt;^&lt;saddr&gt;^&lt;fld4&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="AUTH_FAIL"
-		id2="AUTH_FAIL"
-		eventcategory="1301000000"
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;duration_string&gt;^&lt;username&gt;^&lt;saddr&gt;^&lt;fld4&gt;"/>
+	id1="AUTH_FAIL"
+	id2="AUTH_FAIL"
+	eventcategory="1301000000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;duration_string&gt;^&lt;username&gt;^&lt;saddr&gt;^&lt;fld4&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="LINKUP"
-		id2="LINKUP"
-		eventcategory="1609000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;duration_string&gt;^&lt;network_port&gt;^&lt;fld3&gt;"/>
+	id1="LINKUP"
+	id2="LINKUP"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;duration_string&gt;^&lt;network_port&gt;^&lt;fld3&gt;" />
 <MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="LINKDOWN"
-		id2="LINKDOWN"
-		eventcategory="1609000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;duration_string&gt;^&lt;network_port&gt;^&lt;fld3&gt;"/>
-
+	id1="LINKDOWN"
+	id2="LINKDOWN"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;duration_string&gt;^&lt;network_port&gt;^&lt;fld3&gt;" />
 </DEVICEMESSAGES>

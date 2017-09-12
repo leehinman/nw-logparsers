@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="microdasys_xsg"
+	displayname="Microdasys XML Security Gateway"
+	group="Application Firewall">
 <VERSION
-	xml="2"
-	checksum="0e684d5184bf6e29c5ad8652d57a4d52"
+	xml="3"
+	checksum="acdbfd08a0bd5f8f4b7658bd172d2408"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
@@ -15,54 +17,33 @@
 
 
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Web-Feed:Blocked" 
 	id2="Web-Feed" 
 	eventcategory="1204020000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Blocked by XSG&gt;%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Blocked by XSG, Web-Feed &lt;url&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Blocked by XSG&gt;"
+	content="%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Blocked by XSG, Web-Feed &lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Web-Feed:Passed" 
 	id2="Web-Feed" 
 	eventcategory="1204010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Passed by XSG&gt;%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Passed by XSG, Web-Feed &lt;url&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Passed by XSG&gt;"
+	content="%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Passed by XSG, Web-Feed &lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Web-Feed:Not_Scanned" 
 	id2="Web-Feed" 
 	eventcategory="1204000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Not scanned&gt;%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Not scanned, Web-Feed &lt;url&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Not scanned&gt;"
+	content="%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Not scanned, Web-Feed &lt;url&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Web-Service:Blocked" 
 	id2="Web-Service" 
 	eventcategory="1204020000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Blocked by XSG&gt;%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Blocked by XSG, Web-Service &lt;url&gt;, Method &lt;fld4&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Blocked by XSG&gt;"
+	content="%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Blocked by XSG, Web-Service &lt;url&gt;, Method &lt;fld4&gt;" />
 <MESSAGE 
-	level="6" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="75" 
 	id1="Web-Service:Scanned_OK" 
 	id2="Web-Service" 
 	eventcategory="1204010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Scanned OK&gt;%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Scanned OK, Web-Service &lt;url&gt;, Method &lt;fld4&gt;"/>
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:ALM&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%W.%G.%F %N:%U:%O&apos;,fld2,fld3)&gt;&lt;@result:Scanned OK&gt;"
+	content="%MicrodasysXSG-&lt;fld1&gt;: [&lt;fld2&gt; &lt;fld3&gt;]IP: &lt;saddr&gt;: Result:Scanned OK, Web-Service &lt;url&gt;, Method &lt;fld4&gt;" />
 </DEVICEMESSAGES>
-

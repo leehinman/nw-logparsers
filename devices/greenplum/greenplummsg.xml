@@ -1,97 +1,67 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<DEVICEMESSAGES>
-
-	<VERSION
-		xml="4"
-		checksum="6cac349978ab2a02d9b8b044e73ca988"
+<DEVICEMESSAGES
+	name="greenplum"
+	displayname="EMC Greenplum Database"
+	group="Database">
+<VERSION
+		xml="5"
+		checksum="78b7ec40d97ebcf95a65144ff0ca8181"
 		revision="0"
-		enVision="35010000"
 		device="2.0"/>
 
 
-
-	<HEADER
-		id1="0001"
-		id2="0001"
-		content="%GreenPlum-&lt;hlevel&gt;: 20&lt;hdate&gt; &lt;htime&gt;.&lt;fld6&gt;,&lt;husername&gt;,&lt;hdb_name&gt;,&lt;hprocess_id&gt;,&lt;fld1&gt;,&lt;hhostname&gt;,&lt;hnetwork_port&gt;,&lt;hstarttime&gt;,&lt;htrans_id&gt;,&lt;hsessionid&gt;,&lt;hdclass_counter1_string&gt;,&lt;hinstance&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&quot;&lt;messageid&gt;&quot;, &lt;!payload:hdate&gt;"/>
+<HEADER
+	id1="0001"
+	id2="0001"
+	content="%GreenPlum-&lt;hlevel&gt;: 20&lt;hdate&gt; &lt;htime&gt;.&lt;fld6&gt;,&lt;husername&gt;,&lt;hdb_name&gt;,&lt;hprocess_id&gt;,&lt;fld1&gt;,&lt;hhostname&gt;,&lt;hnetwork_port&gt;,&lt;hstarttime&gt;,&lt;htrans_id&gt;,&lt;hsessionid&gt;,&lt;hdclass_counter1_string&gt;,&lt;hinstance&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&quot;&lt;messageid&gt;&quot;, &lt;!payload:hdate&gt;"/>
 	
-	<HEADER
-		id1="0002"
-		id2="0002"
-		content="%GreenPlum-&lt;hlevel&gt;: &lt;hdate&gt; &lt;htime&gt;.&lt;fld6&gt;,&lt;husername&gt;,&lt;hdb_name&gt;,&lt;hprocess_id&gt;,&lt;fld1&gt;,&lt;hhostname&gt;,&lt;hnetwork_port&gt;,&lt;hstarttime&gt;,&lt;htrans_id&gt;,&lt;hsessionid&gt;,&lt;hdclass_counter1_string&gt;,&lt;hinstance&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&quot;&lt;messageid&gt;&quot;, &lt;!payload:hdate&gt;"/>
-
+<HEADER
+	id1="0002"
+	id2="0002"
+	content="%GreenPlum-&lt;hlevel&gt;: &lt;hdate&gt; &lt;htime&gt;.&lt;fld6&gt;,&lt;husername&gt;,&lt;hdb_name&gt;,&lt;hprocess_id&gt;,&lt;fld1&gt;,&lt;hhostname&gt;,&lt;hnetwork_port&gt;,&lt;hstarttime&gt;,&lt;htrans_id&gt;,&lt;hsessionid&gt;,&lt;hdclass_counter1_string&gt;,&lt;hinstance&gt;,&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&quot;&lt;messageid&gt;&quot;, &lt;!payload:hdate&gt;"/>
 	
 	
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="LOG"
-		id2="LOG"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
+<MESSAGE
+	id1="LOG"
+	id2="LOG"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
 	
-	<MESSAGE
-		level="4"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="WARNING"
-		id2="WARNING"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
-	<MESSAGE
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="ERROR"
-		id2="ERROR"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
-	<MESSAGE
-		level="2"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="FATAL"
-		id2="FATAL"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
-	<MESSAGE
-		level="1"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="PANIC"
-		id2="PANIC"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="DEBUG1"
-		id2="DEBUG1"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
-	<MESSAGE
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="92"
-		id1="DEBUG2"
-		id2="DEBUG2"
-		eventcategory="1605000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld61:*PARMVAL(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;"/>
-
+<MESSAGE
+	id1="WARNING"
+	id2="WARNING"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
+<MESSAGE
+	id1="ERROR"
+	id2="ERROR"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
+<MESSAGE
+	id1="FATAL"
+	id2="FATAL"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
+<MESSAGE
+	id1="PANIC"
+	id2="PANIC"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
+<MESSAGE
+	id1="DEBUG1"
+	id2="DEBUG1"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
+<MESSAGE
+	id1="DEBUG2"
+	id2="DEBUG2"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%Y-%G-%F %N:%U:%O',fld12,fld13)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%W-%M-%D %Z&apos;,starttime)&gt;"
+	content="&lt;fld12&gt; &lt;fld13&gt;.&lt;fld1&gt;,&lt;username&gt;,&lt;db_name&gt;,&lt;process_id&gt;,&lt;fld2&gt;,&lt;hostname&gt;,&lt;network_port&gt;,&lt;starttime&gt;,&lt;trans_id&gt;,&lt;sessionid&gt;,&lt;dclass_counter1_string&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;severity&gt;,&lt;resultcode&gt;,{ &quot;&lt;event_description&gt;&quot;, | &lt;event_description&gt;, }{ &quot;&lt;info&gt;&quot;, | &lt;info&gt;, } &lt;result&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;context&gt;,{ &quot;&lt;action&gt;&quot;, | &lt;action&gt;, } &lt;fld9&gt;,&lt;fld10&gt;,&lt;filename&gt;,&lt;fld11&gt;" />
 </DEVICEMESSAGES>

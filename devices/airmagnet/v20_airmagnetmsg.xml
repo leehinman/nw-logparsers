@@ -1,1013 +1,672 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="airmagnet"
+	displayname="Airmagnet Enterprise"
+	group="Wireless Devices">
 <VERSION
-	xml="13"
-	checksum="eaac04d0cbe53d617cd2770bbde5ffb7"
+	xml="14"
+	checksum="cccd097c1e74068e504e57103ec03269"
 	revision="0"
-        enVision="33000065"
         device="2.0" />
 
  
 
 
+<HEADER 
+	id1="0001" 
+	id2="0001"  
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt; &lt;hfld2&gt; &lt;hcategory&gt;: &lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
 
 <HEADER 
-id1="0001" 
-id2="0001"  
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt; &lt;hfld2&gt; &lt;hcategory&gt;: &lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
-
-
-<HEADER 
-id1="0002" 
-id2="0002"  
-content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt; &lt;hfld2&gt; &lt;hcategory&gt;: &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
-
+	id1="0002" 
+	id2="0002"  
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hfld1&gt; &lt;hfld2&gt; &lt;hcategory&gt;: &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
 <REGX
     name="rmExtraSpace"
     parms="parm1"
     default="$NONE"
     expr="&lt;parm1&gt;(\s+) ? &apos; &apos;" />
-
-
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000030" 
 	id2="802.11g" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.111g with short slot time&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.11g AP with short slot time from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.111g with short slot time&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.11g AP with short slot time from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000031" 
 	id2="802.11g" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g AP beacons wrong protection&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.11g AP beacons wrong protection from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g AP beacons wrong protection&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.11g AP beacons wrong protection from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000032" 
 	id2="802.11g" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g pre-standard device&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.11g pre-standard device from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g pre-standard device&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.11g pre-standard device from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000035" 
 	id2="802.11g" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g protection mechanism not implemented&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.11g protection mechanism not implemented from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) violated the advisory from its AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g protection mechanism not implemented&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.11g protection mechanism not implemented from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) violated the advisory from its AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000061" 
 	id2="802.11g" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g protection mechanism not overhead&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.11g protection mechanism overhead from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g AP &lt;access_point&gt; (Name: &lt;node&gt; ) (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11g protection mechanism not overhead&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.11g protection mechanism overhead from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: 802.11g AP &lt;access_point&gt; (Name: &lt;node&gt; ) (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000001" 
 	id2="802.1x" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1x rekey timeout too long&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;802.1x rekey timeout too long &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: By monitoring the &lt;fld6&gt; authentication and encryption transaction, the system detected that AP &lt;access_point&gt; (Name: &lt;node&gt; ; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1x rekey timeout too long&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content="802.1x rekey timeout too long &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: By monitoring the &lt;fld6&gt; authentication and encryption transaction, the system detected that AP &lt;access_point&gt; (Name: &lt;node&gt; ; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000067" 
 	id2="802.1x" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1x unencrypted broadcast or multicast from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.1x unencrypted broadcast or multicast from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP: &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1x unencrypted broadcast or multicast from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.1x unencrypted broadcast or multicast from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP: &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000089" 
 	id2="802.1x" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1x unencrypted broadcast or multicast from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; 802.1x unencrypted broadcast or multicast from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1x unencrypted broadcast or multicast from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" 802.1x unencrypted broadcast or multicast from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000059" 
 	id2="Access" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Access Point down&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Access Point down from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; of SSID &lt;ssid&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Access Point down&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Access Point down from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; of SSID &lt;ssid&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000002" 
 	id2="Ad-hoc" 
 	eventcategory="1609000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ad-hoc node using AP&apos;s SSID&gt;&lt;@severity:*HDR(hcategory)&gt; Ad-hoc node using AP&apos;s SSID &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Under the same SSID (&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ad-hoc node using AP&apos;s SSID&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Ad-hoc node using AP&apos;s SSID &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Under the same SSID (&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000003" 
 	id2="Ad-hoc" 
 	eventcategory="1609000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ad-hoc station detected&gt;&lt;@severity:*HDR(hcategory)&gt; Ad-hoc station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Station &lt;macaddr&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ad-hoc station detected&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Ad-hoc station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Station &lt;macaddr&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000101" 
 	id2="Ad-hoc" 
 	eventcategory="1609000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ad-hoc station broadcasting Free Public WiFi SSID from sensor&gt;&lt;@fld61:*PARMVAL(context)&gt;&lt;@severity:*HDR(hcategory)&gt; Ad-hoc station broadcasting Free Public WiFi SSID from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ad-hoc station broadcasting Free Public WiFi SSID from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Ad-hoc station broadcasting Free Public WiFi SSID from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000004" 
 	id2="AP" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP broadcasting SSID&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP broadcasting SSID &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP broadcasting SSID&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP broadcasting SSID &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000005" 
 	id2="AP" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP overloaded by stations&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP overloaded by stations &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP overloaded by stations&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP overloaded by stations &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000006" 
 	id2="AP" 
 	eventcategory="1701070000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP with encryption disabled&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP with encryption disabled &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP with encryption disabled&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP with encryption disabled &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000040" 
 	id2="AP" 
 	eventcategory="1701070000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP operating in bridged mode detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP operating in bridged mode detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP operating in bridged mode detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP operating in bridged mode detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000055" 
 	id2="AP" 
 	eventcategory="1701070000"
-	content="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:OS&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP system or firmware reset&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP system or firmware reset from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: { AP &lt;access_point&gt; (SSID : &lt;ssid&gt;) | AP &lt;access_point&gt;} &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:OS&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP system or firmware reset&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP system or firmware reset from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: { AP &lt;access_point&gt; (SSID : &lt;ssid&gt;) | AP &lt;access_point&gt;} &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000057" 
 	id2="AP" 
 	eventcategory="1701070000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP overloaded by utilization&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP overloaded by utilization from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP overloaded by utilization&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP overloaded by utilization from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000075" 
 	id2="AP" 
 	eventcategory="1701070000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP configuration changed (Channel) from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; AP configuration changed (Channel) from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | (SSID : &lt;ssid&gt;) }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP configuration changed (Channel) from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" AP configuration changed (Channel) from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | (SSID : &lt;ssid&gt;) }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000034" 
 	id2="Channel" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Channel with overloaded APs&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Channel with overloaded APs from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Channel with overloaded APs&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Channel with overloaded APs from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000036" 
 	id2="Channel" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Channel with hign noise level&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Channel with high noise level from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Channel with hign noise level&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Channel with high noise level from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000007" 
 	id2="Client" 
 	eventcategory="1701070000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client with encryption disabled&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Client with encryption disabled &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; ; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client with encryption disabled&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Client with encryption disabled &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; ; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000044" 
 	id2="Conflicting" 
 	eventcategory="1701070000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client with encryption disabled&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Conflicting AP configuration from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client with encryption disabled&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Conflicting AP configuration from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000008" 
 	id2="Crackable" 
 	eventcategory="1613040200"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Crackable WEP IV key used&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Crackable WEP IV key used &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (Name: &lt;node&gt; ; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Crackable WEP IV key used&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Crackable WEP IV key used &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (Name: &lt;node&gt; ; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000009" 
 	id2="Day-Zero" 
 	eventcategory="1001020300"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by WLAN security anomaly&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Day-Zero attack by WLAN security anomaly &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by WLAN security anomaly&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Day-Zero attack by WLAN security anomaly &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000052" 
 	id2="Day-Zero" 
 	eventcategory="1001020300"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by device security anomaly&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Day-Zero attack by device security anomaly from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected that device &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by device security anomaly&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Day-Zero attack by device security anomaly from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected that device &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000058" 
 	id2="Day-Zero" 
 	eventcategory="1001020300"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by device performance anomaly&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Day-Zero attack by device performance anomaly from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected that device &lt;macaddr&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | (SSID : &lt;ssid&gt;) }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by device performance anomaly&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Day-Zero attack by device performance anomaly from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected that device &lt;macaddr&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | (SSID : &lt;ssid&gt;) }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000085" 
 	id2="Day-Zero" 
 	eventcategory="1001020300"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by WLAN performance anomaly from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Day-Zero attack by WLAN performance anomaly from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Day-Zero attack by WLAN performance anomaly from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Day-Zero attack by WLAN performance anomaly from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000010" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device Probing for APs&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device Probing for APs &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Wireless client station &lt;macaddr&gt; ( { Name: &lt;node&gt; SSID : &lt;ssid&gt;| SSID : &lt;ssid&gt; }) &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device Probing for APs&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device Probing for APs &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Wireless client station &lt;macaddr&gt; ( { Name: &lt;node&gt; SSID : &lt;ssid&gt;| SSID : &lt;ssid&gt; }) &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000106" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device Probing for APs with probe-request packets containing wildcard SSID (null string)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device Probing for APs &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Wireless client station &lt;macaddr&gt; is currently probing the WLAN with probe-request packets containing wildcard SSID (null string). &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device Probing for APs with probe-request packets containing wildcard SSID (null string)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device Probing for APs &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Wireless client station &lt;macaddr&gt; is currently probing the WLAN with probe-request packets containing wildcard SSID (null string). &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000011" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by TKIP&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device unprotected by TKIP &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by TKIP&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device unprotected by TKIP &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000029" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by VPN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device unprotected by VPN &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by VPN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device unprotected by VPN &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000038" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by Fortress encryption&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device unprotected by Fortress encryption from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by Fortress encryption&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device unprotected by Fortress encryption from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000039" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by other encryption&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device unprotected by other encryption from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by other encryption&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device unprotected by other encryption from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000043" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device using shared key authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device using shared key authentication from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The flawed shared-key authentication is used by AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device using shared key authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device using shared key authentication from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The flawed shared-key authentication is used by AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000056" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device using open authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device using open authentication from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device using open authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device using open authentication from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000063" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by PEAP from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device unprotected by PEAP from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by PEAP from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device unprotected by PEAP from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000065" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device vulnerable to Hotspot attack tools from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device vulnerable to Hotspot attack tools from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device vulnerable to Hotspot attack tools from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device vulnerable to Hotspot attack tools from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000088" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device vulnerable to Hotspot attack tools from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device vulnerable to Hotspot attack tools from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device vulnerable to Hotspot attack tools from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device vulnerable to Hotspot attack tools from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000081" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device not using EAP-TLS from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device not using EAP-TLS from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device not using EAP-TLS from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device not using EAP-TLS from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000084" 
 	id2="Device" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by 802.11i/AES from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Device unprotected by &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Device unprotected by 802.11i/AES from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Device unprotected by &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000069" 
 	id2="Dictionary" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Dictionary attack on EAP methods from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Dictionary attack on EAP methods from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: A dictionary attack on 802.1x EAP authentication may be under way against AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;) from client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Dictionary attack on EAP methods from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Dictionary attack on EAP methods from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: A dictionary attack on 802.1x EAP authentication may be under way against AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;) from client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000091" 
 	id2="Dictionary" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Dictionary attack on EAP methods from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Dictionary attack on EAP methods from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Dictionary attack on EAP methods from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Dictionary attack on EAP methods from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000012" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: CTS Flood&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;DoS: CTS Flood &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: CTS Flood&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content="DoS: CTS Flood &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000013" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: De-Auth broadcast attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: De-Auth broadcast attack &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway against the AP or client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: De-Auth broadcast attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: De-Auth broadcast attack &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway against the AP or client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000014" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Dis-Assoc broadcast attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Dis-Assoc broadcast attack &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway against the AP or client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Dis-Assoc broadcast attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Dis-Assoc broadcast attack &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway against the AP or client station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000037" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: RF jamming attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: RF jamming attack from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: RF jamming attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: RF jamming attack from sensor &lt;sensor&gt;, &lt;fld2&gt;Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000045" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Unauthenticated association&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Unauthenticated association from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | (SSID : &lt;ssid&gt;) }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Unauthenticated association&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Unauthenticated association from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | (SSID : &lt;ssid&gt;) }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000049" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Authentication-failure attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Authentication-failure attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Authentication-failure attack&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Authentication-failure attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000051" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: De-Auth flood attack from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@fld61:*PARMVAL(context)&gt; DoS: De-Auth flood attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}). &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: De-Auth flood attack from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: De-Auth flood attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}). &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000076" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Probe req flooding from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Probe req flooding from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway from the Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Probe req flooding from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Probe req flooding from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway from the Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000077" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Authentication flood from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Authentication flood from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; ({Name: &lt;node&gt; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;})&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Authentication flood from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Authentication flood from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Access Point &lt;access_point&gt; ({Name: &lt;node&gt; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;})&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000078" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Probe resp flooding from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Probe resp flooding from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway to the Station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Probe resp flooding from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Probe resp flooding from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: There may have been a Denial-of-Service attack underway to the Station &lt;macaddr&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000093" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Improper broadcast packet from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Improper broadcast packet from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected wireless device &lt;macaddr&gt; is broadcasting&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Improper broadcast packet from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Improper broadcast packet from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected wireless device &lt;macaddr&gt; is broadcasting&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000097" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: RTS Flood from sensor&gt;&lt;@fld61:*PARMVAL(context)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: RTS Flood from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;, RTS (Receive-To-Send) attack. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: RTS Flood from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: RTS Flood from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;, RTS (Receive-To-Send) attack. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000098" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Premature EAP-Failure attack from sensor&gt;&lt;@fld61:*PARMVAL(context)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: Premature EAP-Failure attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}). &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: Premature EAP-Failure attack from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: Premature EAP-Failure attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}). &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000099" 
 	id2="DoS" 
 	eventcategory="1002000000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: PS-Poll Flood from sensor&gt;&lt;@fld61:*PARMVAL(context)&gt;&lt;@severity:*HDR(hcategory)&gt; DoS: PS-Poll Flood from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}). &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DoS: PS-Poll Flood from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" DoS: PS-Poll Flood from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;context&gt;({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}). &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000015" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive Bandwidth usage&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive Bandwidth usage &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive Bandwidth usage&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive Bandwidth usage &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000016" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive frame retries&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive frame retries &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive frame retries&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive frame retries &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000017" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive low speed transmission&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive low speed transmission &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive low speed transmission&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive low speed transmission &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000018" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive Packet errors&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive Packet errors &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive Packet errors&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive Packet errors &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000047" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive multicast/broadcast&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive multicast/broadcast from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive multicast/broadcast&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive multicast/broadcast from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000048" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive missed AP beacons&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive missed AP beacons from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The beacon miss rate from AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive missed AP beacons&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive missed AP beacons from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The beacon miss rate from AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000074" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive roaming or re-associations from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive roaming or re-associations from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: { Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) | Client station &lt;macaddr&gt;} has been excessively switching connections&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive roaming or re-associations from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive roaming or re-associations from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: { Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) | Client station &lt;macaddr&gt;} has been excessively switching connections&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000094" 
 	id2="Excessive" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive Packet errors on channel from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Excessive Packet errors on channel from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive Packet errors on channel from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Excessive Packet errors on channel from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000019" 
 	id2="Exposed" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Exposed Wireless Station detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Exposed Wireless Station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: { Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) | Client station &lt;macaddr&gt;} &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Exposed Wireless Station detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Exposed Wireless Station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: { Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) | Client station &lt;macaddr&gt;} &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000070" 
 	id2="Fake" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Fake APs detected from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Fake APs detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Fake APs detected from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Fake APs detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000020" 
 	id2="Hidden" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hidden station detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Hidden station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Hidden station detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Hidden station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000021" 
 	id2="High" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:High management traffic overhead&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; High management traffic overhead &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:High management traffic overhead&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" High management traffic overhead &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000053" 
 	id2="Higher" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Higher speed not supported&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Higher speed not supported from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Higher speed not supported&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Higher speed not supported from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000071" 
 	id2="Interfering" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interfering APs detected from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Interfering APs detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interfering APs detected from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Interfering APs detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000062" 
 	id2="Missing" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Missing performance options&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Missing performance options from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Missing performance options&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Missing performance options from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000087" 
 	id2="Missing" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Missing performance options&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Missing performance options from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Missing performance options&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Missing performance options from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000022" 
 	id2="NetStumbler" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:NetStumbler detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; NetStumbler detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Wireless client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:NetStumbler detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" NetStumbler detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Wireless client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000092" 
 	id2="NetStumbler" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:NetStumbler detected from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; NetStumbler detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AirMagnet has determined that (&lt;macaddr&gt; (SSID : &lt;ssid&gt;); Channel: &lt;fld7&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:NetStumbler detected from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" NetStumbler detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AirMagnet has determined that (&lt;macaddr&gt; (SSID : &lt;ssid&gt;); Channel: &lt;fld7&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000042" 
 	id2="Potential" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Potential Honey pot AP detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Potential Honey pot AP detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Potential Honey pot AP detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Potential Honey pot AP detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000079" 
 	id2="Potential" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Potential Sky Jack attack from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Potential Sky Jack attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected a potential Sky Jack attack against &lt;fld11&gt; from the AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Potential Sky Jack attack from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Potential Sky Jack attack from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected a potential Sky Jack attack against &lt;fld11&gt; from the AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000023" 
 	id2="PSPF" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:PSPF violation&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; PSPF violation &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:PSPF violation&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" PSPF violation &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000082" 
 	id2="Reserved" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Reserved MGMT/CTRL frames sub type from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Reserved MGMT/CTRL frames sub type from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Reserved MGMT/CTRL frames sub type from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Reserved MGMT/CTRL frames sub type from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000083" 
 	id2="RF" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:RF regulatory rule violation from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; RF regulatory rule violation from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:RF regulatory rule violation from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" RF regulatory rule violation from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000095" 
 	id2="RF" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:RF regulatory rule violation from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; RF regulatory rule violation from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) is detected&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
-	<MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:RF regulatory rule violation from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" RF regulatory rule violation from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;) is detected&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+<MESSAGE 
 	id1="000103" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;)  is detected | (SSID : &lt;ssid&gt;)  is detected | is detected }, its signal strength is &lt;dclass_ratio1&gt; dBm, and total frame count is &lt;dclass_counter1&gt;.  &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;)  is detected | (SSID : &lt;ssid&gt;)  is detected | is detected }, its signal strength is &lt;dclass_ratio1&gt; dBm, and total frame count is &lt;dclass_counter1&gt;.  &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000024" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;)  is detected | (SSID : &lt;ssid&gt;)  is detected | is detected }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;)  is detected | (SSID : &lt;ssid&gt;)  is detected | is detected }&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000104" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: , &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: , &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000025" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue station by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; { Description: Rogue Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, | Source MAC: &lt;smacaddr&gt;, } &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by MAC address (ACL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue station by MAC address (ACL) &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; { Description: Rogue Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, | Source MAC: &lt;smacaddr&gt;, } &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000046" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP detected inside&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP detected inside from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP detected inside&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP detected inside from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000054" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by wireless media type&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by wireless media type from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by wireless media type&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by wireless media type from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000060" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP traced on Enterprise wired network&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP traced on Enterprise wired network from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP traced on Enterprise wired network&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP traced on Enterprise wired network from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt;&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000064" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by SSID from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue station by SSID from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by SSID from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue station by SSID from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000066" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by SSID from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by SSID from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by SSID from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by SSID from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000072" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by channel from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by channel from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by channel from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by channel from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000073" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by channel from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue station by channel from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by channel from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue station by channel from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000086" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by IEEE ID (OUI) from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue station by IEEE ID (OUI) from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue Client Station &lt;macaddr&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue station by IEEE ID (OUI) from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue station by IEEE ID (OUI) from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue Client Station &lt;macaddr&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 	
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000203" 
 	id2="Rogue" 
 	eventcategory="1501000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by IEEE ID (OUI)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Rogue AP by IEEE ID (OUI) from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;)  is detected | (SSID : &lt;ssid&gt;)  is detected | is detected }.  &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue AP by IEEE ID (OUI)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Rogue AP by IEEE ID (OUI) from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue AP &lt;access_point&gt; { (Name: &lt;node&gt; SSID : &lt;ssid&gt;)  is detected | (SSID : &lt;ssid&gt;)  is detected | is detected }.  &lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000102" 
 	id2="SmartEdge" 
 	eventcategory="1801010000"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SmartEdge Sensor down from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:SmartEdge Sensor has been missing its heart-beat messages&gt;&lt;@fld61:*PARMVAL(event_description)&gt; SmartEdge Sensor down from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: SmartEdge Sensor &lt;fld1&gt; (MAC Address &lt;macaddr&gt;) at &lt;hostip&gt; has been missing its heart-beat messages. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SmartEdge Sensor down from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:SmartEdge Sensor has been missing its heart-beat messages&gt;"
+	content=" SmartEdge Sensor down from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: SmartEdge Sensor &lt;fld1&gt; (MAC Address &lt;macaddr&gt;) at &lt;hostip&gt; has been missing its heart-beat messages. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000100" 
 	id2="Soft" 
 	eventcategory="1001030200"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Soft AP or Host AP detected from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:The system has detected Client Station and AP switching mode&gt;&lt;@fld61:*PARMVAL(event_description)&gt; Soft AP or Host AP detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected { Client Station | AP } &lt;access_point&gt; ({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}) switching mode between AP and Station. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Soft AP or Host AP detected from sensor&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:The system has detected Client Station and AP switching mode&gt;"
+	content=" Soft AP or Host AP detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected { Client Station | AP } &lt;access_point&gt; ({ Name: &lt;node&gt;; SSID : &lt;ssid&gt; | SSID : &lt;ssid&gt;}) switching mode between AP and Station. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000096" 
 	id2="Spoofed" 
 	eventcategory="1003010900"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Spoofed MAC address detected&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:A device spoofing the MAC address of Access Point or client station was detected&gt;&lt;@fld61:*PARMVAL(event_description)&gt; Spoofed MAC address detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: A device spoofing the MAC address of { Access Point &lt;access_point&gt; | client station &lt;access_point&gt; } was detected. &lt;result&gt;. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Spoofed MAC address detected&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:A device spoofing the MAC address of Access Point or client station was detected&gt;"
+	content=" Spoofed MAC address detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: A device spoofing the MAC address of { Access Point &lt;access_point&gt; | client station &lt;access_point&gt; } was detected. &lt;result&gt;. &lt;info&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000050" 
 	id2="Spoofed" 
 	eventcategory="1003010900"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Spoofed MAC address detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Spoofed MAC address detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: A device spoofing the MAC address of { AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | AP &lt;access_point&gt; (SSID : &lt;ssid&gt;) | AP &lt;access_point&gt;} was detected&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Spoofed MAC address detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Spoofed MAC address detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: A device spoofing the MAC address of { AP &lt;access_point&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;) | AP &lt;access_point&gt; (SSID : &lt;ssid&gt;) | AP &lt;access_point&gt;} was detected&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000105" 
 	id2="Spoofed" 
 	eventcategory="1003010900"
-	content="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@event_description:Spoofed MAC address detected&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:A device spoofing the MAC address of Access Point or client station was detected&gt;&lt;@fld61:*PARMVAL(event_description)&gt; Spoofed MAC address detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;space&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
-
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@event_description:Spoofed MAC address detected&gt;&lt;@severity:*HDR(hcategory)&gt;&lt;@context:A device spoofing the MAC address of Access Point or client station was detected&gt;"
+	content=" Spoofed MAC address detected from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: &lt;space&gt; Source MAC: &lt;smacaddr&gt;, Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000080" 
 	id2="Streaming" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Streaming traffic from wireless device from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Streaming traffic from wireless device from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client device &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Streaming traffic from wireless device from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Streaming traffic from wireless device from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client device &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000026" 
 	id2="Suspicious" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Suspicious after-hours traffic detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Suspicious after-hours traffic detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Suspicious after-hours traffic detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Suspicious after-hours traffic detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (Name: &lt;node&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000027" 
 	id2="Unassociated" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unassociated station detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Unassociated station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unassociated station detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Unassociated station detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000041" 
 	id2="Unauthorized" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unauthorized association detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Unauthorized association detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue client station  &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unauthorized association detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Unauthorized association detected &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Rogue client station  &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000068" 
 	id2="Unauthorized" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unauthorized association by vendor list from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Unauthorized association by vendor list from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Unapproved (Out of Authorized Vendor List) client station &lt;macaddr&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unauthorized association by vendor list from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Unauthorized association by vendor list from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Unapproved (Out of Authorized Vendor List) client station &lt;macaddr&gt; SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="3" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000090" 
 	id2="Unauthorized" 
 	eventcategory="1609000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unauthorized association by vendor list from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; Unauthorized association by vendor list from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unauthorized association by vendor list from sensor&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" Unauthorized association by vendor list from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description:&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000028" 
 	id2="WEP" 
 	eventcategory="1613040200"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WEP IV key reused&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; WEP IV key reused &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WEP IV key reused&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" WEP IV key reused &lt;fld1&gt; from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: Client Station &lt;macaddr&gt; (SSID : &lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 <MESSAGE 
-	level="5" 
-	parse="1" 
-	parsedefvalue="1" 
-	tableid="78"
 	id1="000033" 
 	id2="WPA" 
 	eventcategory="1603000000"
-	content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WPA or 802.11i pre-shared key used&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt; WPA or 802.11i pre-shared key used from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />		
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WPA or 802.11i pre-shared key used&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hcategory)&gt;"
+	content=" WPA or 802.11i pre-shared key used from sensor &lt;sensor&gt;, &lt;fld2&gt; Location: &lt;location_desc&gt;, &lt;fld3&gt; Description: The system has detected AP &lt;access_point&gt; (SSID:&lt;ssid&gt;)&lt;info&gt;, &lt;fld4&gt; Source MAC: &lt;smacaddr&gt;, &lt;fld5&gt; Channel: &lt;wifi_channel&gt;" />
 </DEVICEMESSAGES>

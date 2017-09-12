@@ -1,107 +1,79 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="artifactory"
+	displayname="Artifactory"
+	group="Content Management System">
 <VERSION
-	xml="3"
-	checksum="0bab9d83680446f73978106862e55100"
+	xml="4"
+	checksum="86a1af6907d97fd00e9bb1da0b516a22"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
  
-
   
 <HEADER 
-id1="0001" 
-id2="0001"
-messageid="*STRCAT('ART','_','ACCESS','_','LOG')"  
-content="%Artifactory_ACCESS_LOG-&lt;hlevel&gt;: &lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; [&lt;!payload&gt;" /> 
-
+	id1="0001" 
+	id2="0001"
+	messageid="*STRCAT('ART','_','ACCESS','_','LOG')"  
+	content="%Artifactory_ACCESS_LOG-&lt;hlevel&gt;: &lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; [&lt;!payload&gt;" /> 
 <HEADER 
-id1="0002" 
-id2="0002"
-messageid="*STRCAT('ART','_','REQ','_','LOG')"  
-content="%Artifactory_REQ_LOG-&lt;hlevel&gt;: &lt;hdate&gt;|&lt;!payload&gt;" />
-
+	id1="0002" 
+	id2="0002"
+	messageid="*STRCAT('ART','_','REQ','_','LOG')"  
+	content="%Artifactory_REQ_LOG-&lt;hlevel&gt;: &lt;hdate&gt;|&lt;!payload&gt;" />
 <HEADER 
-id1="0003" 
-id2="0003"
-messageid="*STRCAT('ART','_','IE','_','LOG')"  
-content="%Artifactory_IE_LOG-&lt;hlevel&gt;: &lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; [&lt;!payload&gt;" />
-
+	id1="0003" 
+	id2="0003"
+	messageid="*STRCAT('ART','_','IE','_','LOG')"  
+	content="%Artifactory_IE_LOG-&lt;hlevel&gt;: &lt;hdate&gt; &lt;htime&gt;,&lt;hfld1&gt; [&lt;!payload&gt;" />
 <HEADER 
-id1="0004" 
-id2="0004"
-messageid="*STRCAT('ART','_','ART','_','LOG')"  
-content="%Artifactory_ART_LOG-&lt;hlevel&gt;: &lt;!payload&gt;" />  
+	id1="0004" 
+	id2="0004"
+	messageid="*STRCAT('ART','_','ART','_','LOG')"  
+	content="%Artifactory_ART_LOG-&lt;hlevel&gt;: &lt;!payload&gt;" />  
  
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_IE_LOG"
-id2="ART_IE_LOG"
-eventcategory="1605020000"
-content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;severity&gt; ] (&lt;fld3&gt;) &lt;info&gt;"/>
-
+	id1="ART_IE_LOG"
+	id2="ART_IE_LOG"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+	content="&lt;severity&gt; ] (&lt;fld3&gt;) &lt;info&gt;" />
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_ACCESS_LOG"
-id2="ART_ACCESS_LOG"
-eventcategory="1401060000"
-content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@action:LOGIN&gt;ACCEPTED LOGIN]  for &lt;username&gt;/&lt;saddr&gt;."/>
-
+	id1="ART_ACCESS_LOG"
+	id2="ART_ACCESS_LOG"
+	eventcategory="1401060000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@action:LOGIN&gt;"
+	content="ACCEPTED LOGIN]  for &lt;username&gt;/&lt;saddr&gt;." />
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_ACCESS_LOG:01"
-id2="ART_ACCESS_LOG"
-eventcategory="1401030000"
-content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@action:LOGIN&gt;DENIED LOGIN]  for &lt;info&gt;."/>
-
+	id1="ART_ACCESS_LOG:01"
+	id2="ART_ACCESS_LOG"
+	eventcategory="1401030000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@action:LOGIN&gt;"
+	content="DENIED LOGIN]  for &lt;info&gt;." />
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_ACCESS_LOG:02"
-id2="ART_ACCESS_LOG"
-eventcategory="1701000000"
-content="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@action:CONFIGURATION_CHANGE&gt;&lt;disposition&gt; CONFIGURATION_CHANGE]  for &lt;info&gt;."/>
-
+	id1="ART_ACCESS_LOG:02"
+	id2="ART_ACCESS_LOG"
+	eventcategory="1701000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@action:CONFIGURATION_CHANGE&gt;"
+	content="&lt;disposition&gt; CONFIGURATION_CHANGE]  for &lt;info&gt;." />
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_ACCESS_LOG:03"
-id2="ART_ACCESS_LOG"
-eventcategory="1605020000"
-content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;disposition&gt; &lt;action&gt;] &lt;event_description&gt;"/>
+	id1="ART_ACCESS_LOG:03"
+	id2="ART_ACCESS_LOG"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+	content="&lt;disposition&gt; &lt;action&gt;] &lt;event_description&gt;" />
  
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_REQ_LOG"
-id2="ART_REQ_LOG"
-eventcategory="1204000000"
-content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;fld8&gt;|&lt;event_type&gt;|&lt;saddr&gt;|&lt;username&gt;|&lt;web_method&gt;|&lt;url&gt;|&lt;protocol&gt;/&lt;version&gt;|&lt;resultcode&gt;|&lt;bytes&gt;"/>
-
+	id1="ART_REQ_LOG"
+	id2="ART_REQ_LOG"
+	eventcategory="1204000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld8&gt;|&lt;event_type&gt;|&lt;saddr&gt;|&lt;username&gt;|&lt;web_method&gt;|&lt;url&gt;|&lt;protocol&gt;/&lt;version&gt;|&lt;resultcode&gt;|&lt;bytes&gt;" />
 <MESSAGE
-level="6"
-parse="1"
-parsedefvalue="1"
-tableid="90"
-id1="ART_ART_LOG"
-id2="ART_ART_LOG"
-eventcategory="1605010000"
-content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;info&gt;"/>
+	id1="ART_ART_LOG"
+	id2="ART_ART_LOG"
+	eventcategory="1605010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;info&gt;" />
  
 </DEVICEMESSAGES>

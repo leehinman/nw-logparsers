@@ -1,245 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DEVICEMESSAGES>
+<DEVICEMESSAGES
+	name="hpprocurvesw"
+	displayname="HP ProCurve Switch"
+	group="Switch">
 <VERSION
-	xml="7"
-	checksum="8decb6a41752f923eb0a3a46dbffbe14"
+	xml="8"
+	checksum="e39d3309b48d36f8d9ea4b48da0b51ad"
 	revision="0"
-	enVision="35010000"
 	device="2.0" />
 
+<HEADER 
+	id1="0001"
+	id2="0001"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostip&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
 
-  <HEADER 
-		id1="0001"
-		id2="0001"
-		devts="MDTS(month,day,time)"
-		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostip&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
-
-  <HEADER 
-		id1="0002"
-		id2="0002"
-		devts="MDTS(month,day,time)"
-		content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostip&gt; &lt;hfld1&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+<HEADER 
+	id1="0002"
+	id2="0002"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostip&gt; &lt;hfld1&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
   
   
   
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000001"
-		id2="auth"
-		eventcategory="1301020000"
-		content="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Invalid user name/password&gt; auth:  Invalid user name/password on &lt;network_service&gt; session" />
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000002"
-		id2="FFI"
-		eventcategory="1603030000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive CRC/alignment errors.&gt; FFI:  port &lt;interface&gt;-Excessive CRC/alignment errors. &lt;info&gt;." />
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000003"
-		id2="FFI"
-		eventcategory="1603030000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive undersized/giant packets.&gt; FFI:  port &lt;interface&gt;-Excessive undersized/giant packets. &lt;info&gt;." />
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000004"
-		id2="FFI"
-		eventcategory="1603030000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive Broadcasts.&gt; FFI:  port &lt;interface&gt;-Excessive Broadcasts. &lt;info&gt;." />
-  <MESSAGE 
-  		level="3"
-  		parse="1"
-  		parsedefvalue="1"
-  		tableid="74"
-  		id1="000005"
-  		id2="FFI"
-  		eventcategory="1603030000"
-  		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Duplex Mismatch.&gt; FFI:  port &lt;interface&gt; Duplex Mismatch. &lt;info&gt;." />
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000006"
-		id2="FFI"
-		eventcategory="1603030000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive late collisions.&gt; FFI:  port &lt;interface&gt;-Excessive late collisions." />
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000007"
-		id2="FFI"
-		eventcategory="1603030000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:High collision or drop rate.&gt; FFI:  port &lt;interface&gt;-High collision or drop rate. &lt;info&gt;." />
-  <MESSAGE 
-		level="2"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000008"
-		id2="ip"
-		eventcategory="1001020309"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Unsolicited Echo Reply&gt; ip:  &lt;protocol&gt;: Unsolicited Echo Reply from &lt;saddr&gt;" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000009"
-		id2="lacp"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Port is in Half Duplex&gt; lacp:  Port &lt;interface&gt; is in Half Duplex - &lt;info&gt;" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000010"
-		id2="mgr"
-		eventcategory="1701020000"
-		content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:changing time&gt; mgr:  changing time" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000011"
-		id2="mgr"
-		eventcategory="1701020000"
-		content="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:new time set&gt; mgr:  new time set" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000012"
-		id2="mgr"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt; mgr:  SME &lt;network_service&gt; from &lt;saddr&gt; - &lt;logon_type&gt; Mode" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000013"
-		id2="mgr"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt; mgr:  SME &lt;network_service&gt; Session - &lt;logon_type&gt; Mode &lt;result&gt;" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000014"
-		id2="ports"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt; ports:  port &lt;interface&gt; is now off-line" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000015"
-		id2="ports"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt; ports:  port &lt;interface&gt; is now on-line" />
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000016"
-		id2="ports"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@fld61:*PARMVAL(service)&gt;&lt;@event_description:port is Blocked&gt; ports:  port &lt;interface&gt; is Blocked by &lt;service&gt;" />
-  <MESSAGE 
-		level="2"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000017"
-		id2="snmp"
-		eventcategory="1001030300"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:SNMP Security access violation&gt; snmp:  SNMP Security access violation from &lt;saddr&gt;" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000018"
-		id2="SNTP"
-		eventcategory="1605020000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:updated time&gt; SNTP:  { updated | Updated } time by &lt;fld1&gt; seconds" />
+<MESSAGE 
+	id1="000001"
+	id2="auth"
+	eventcategory="1301020000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Invalid user name/password&gt;"
+	content=" auth:  Invalid user name/password on &lt;network_service&gt; session" />
+<MESSAGE 
+	id1="000002"
+	id2="FFI"
+	eventcategory="1603030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive CRC/alignment errors.&gt;"
+	content=" FFI:  port &lt;interface&gt;-Excessive CRC/alignment errors. &lt;info&gt;." />
+<MESSAGE 
+	id1="000003"
+	id2="FFI"
+	eventcategory="1603030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive undersized/giant packets.&gt;"
+	content=" FFI:  port &lt;interface&gt;-Excessive undersized/giant packets. &lt;info&gt;." />
+<MESSAGE 
+	id1="000004"
+	id2="FFI"
+	eventcategory="1603030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive Broadcasts.&gt;"
+	content=" FFI:  port &lt;interface&gt;-Excessive Broadcasts. &lt;info&gt;." />
+<MESSAGE 
+	id1="000005"
+	id2="FFI"
+	eventcategory="1603030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Duplex Mismatch.&gt;"
+	content=" FFI:  port &lt;interface&gt; Duplex Mismatch. &lt;info&gt;." />
+<MESSAGE 
+	id1="000006"
+	id2="FFI"
+	eventcategory="1603030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Excessive late collisions.&gt;"
+	content=" FFI:  port &lt;interface&gt;-Excessive late collisions." />
+<MESSAGE 
+	id1="000007"
+	id2="FFI"
+	eventcategory="1603030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:High collision or drop rate.&gt;"
+	content=" FFI:  port &lt;interface&gt;-High collision or drop rate. &lt;info&gt;." />
+<MESSAGE 
+	id1="000008"
+	id2="ip"
+	eventcategory="1001020309"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Unsolicited Echo Reply&gt;"
+	content=" ip:  &lt;protocol&gt;: Unsolicited Echo Reply from &lt;saddr&gt;" />
+<MESSAGE 
+	id1="000009"
+	id2="lacp"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Port is in Half Duplex&gt;"
+	content=" lacp:  Port &lt;interface&gt; is in Half Duplex - &lt;info&gt;" />
+<MESSAGE 
+	id1="000010"
+	id2="mgr"
+	eventcategory="1701020000"
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:changing time&gt;"
+	content=" mgr:  changing time" />
+<MESSAGE 
+	id1="000011"
+	id2="mgr"
+	eventcategory="1701020000"
+	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:new time set&gt;"
+	content=" mgr:  new time set" />
+<MESSAGE 
+	id1="000012"
+	id2="mgr"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
+	content=" mgr:  SME &lt;network_service&gt; from &lt;saddr&gt; - &lt;logon_type&gt; Mode" />
+<MESSAGE 
+	id1="000013"
+	id2="mgr"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
+	content=" mgr:  SME &lt;network_service&gt; Session - &lt;logon_type&gt; Mode &lt;result&gt;" />
+<MESSAGE 
+	id1="000014"
+	id2="ports"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
+	content=" ports:  port &lt;interface&gt; is now off-line" />
+<MESSAGE 
+	id1="000015"
+	id2="ports"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
+	content=" ports:  port &lt;interface&gt; is now on-line" />
+<MESSAGE 
+	id1="000016"
+	id2="ports"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:port is Blocked&gt;"
+	content=" ports:  port &lt;interface&gt; is Blocked by &lt;service&gt;" />
+<MESSAGE 
+	id1="000017"
+	id2="snmp"
+	eventcategory="1001030300"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:SNMP Security access violation&gt;"
+	content=" snmp:  SNMP Security access violation from &lt;saddr&gt;" />
+<MESSAGE 
+	id1="000018"
+	id2="SNTP"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:updated time&gt;"
+	content=" SNTP:  { updated | Updated } time by &lt;fld1&gt; seconds" />
 		
 <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000022"
-		id2="SNTP"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Server not found&gt; SNTP:  Server not found at &lt;saddr&gt;" />
-
-  <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000019"
-		id2="tftp"
-		eventcategory="1603090000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt; tftp:  SENT error:&lt;resultcode&gt;, msg: &lt;result&gt;" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000020"
-		id2="vlan"
-		eventcategory="1701070000"
-		content="&lt;@ec_activity:Disable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:virtual LAN disabled&gt; vlan:  &lt;vlan&gt; virtual LAN disabled" />
-  <MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000021"
-		id2="vlan"
-		eventcategory="1701060000"
-		content="&lt;@ec_activity:Enable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:virtual LAN enabled&gt; vlan:  &lt;vlan&gt; virtual LAN enabled" />
-		
-		<MESSAGE 
-		level="6"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="000023"
-		id2="SNTP"
-		eventcategory="1603000000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Unable to reach configured SNTP servers&gt; SNTP:  Unable to reach configured SNTP servers" />
+	id1="000022"
+	id2="SNTP"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Server not found&gt;"
+	content=" SNTP:  Server not found at &lt;saddr&gt;" />
 <MESSAGE 
-		level="3"
-		parse="1"
-		parsedefvalue="1"
-		tableid="74"
-		id1="ssh"
-		id2="ssh"
-		eventcategory="1603090000"
-		content="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt; ssh:  read error &lt;result&gt;" />
-
+	id1="000019"
+	id2="tftp"
+	eventcategory="1603090000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
+	content=" tftp:  SENT error:&lt;resultcode&gt;, msg: &lt;result&gt;" />
+<MESSAGE 
+	id1="000020"
+	id2="vlan"
+	eventcategory="1701070000"
+	functions="&lt;@ec_activity:Disable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:virtual LAN disabled&gt;"
+	content=" vlan:  &lt;vlan&gt; virtual LAN disabled" />
+<MESSAGE 
+	id1="000021"
+	id2="vlan"
+	eventcategory="1701060000"
+	functions="&lt;@ec_activity:Enable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:virtual LAN enabled&gt;"
+	content=" vlan:  &lt;vlan&gt; virtual LAN enabled" />
+		
+<MESSAGE 
+	id1="000023"
+	id2="SNTP"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;&lt;@event_description:Unable to reach configured SNTP servers&gt;"
+	content=" SNTP:  Unable to reach configured SNTP servers" />
+<MESSAGE 
+	id1="ssh"
+	id2="ssh"
+	eventcategory="1603090000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
+	content=" ssh:  read error &lt;result&gt;" />
 </DEVICEMESSAGES>
