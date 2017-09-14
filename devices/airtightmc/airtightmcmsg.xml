@@ -4,12 +4,14 @@
 	displayname="Airtight Management Console"
 	group="Intrusion">
 <VERSION
-	xml="7"
-	checksum="44af0072b107e05462530c42e2d4059e"
-	revision="100"
+	xml="8"
+	checksum="f4619375fc1b5aa36b3bcffc339bfbe7"
+	revision="110"
 	device="2.0" />
 
- 
+<TAGVALMAP
+    delimiter=" "/>
+
 <HEADER 
 	id1="0001" 
 	id2="0001" 
@@ -17,7 +19,12 @@
 <HEADER 
 	id1="0002" 
 	id2="0002" 
-	content="&lt;hfld1&gt;AirTight Management Console &lt;hversion&gt; : &lt;messageid&gt; &lt;!payload:hversion&gt;" /> 
+	content="&lt;hfld1&gt;AirTight Management Console &lt;hversion&gt; : &lt;messageid&gt; &lt;!payload:hversion&gt;" />
+<HEADER 
+	id1="0003" 
+	id2="0003" 
+	content="&lt;fld1&gt; &lt;event_time_string&gt; wifi-security-server - - EVT - &lt;messageid&gt;:&lt;fld2&gt;|AirTight|&lt;product&gt;|&lt;version&gt;|&lt;fld4&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;" />
+
 <MESSAGE
 	id1="High"
 	id2="High"
@@ -132,40 +139,56 @@
 	eventcategory="1401030000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : Login failed for user on server. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;fld25&gt; : &lt;privilege&gt; : &lt;fld27&gt; : Login failed for [&lt;username&gt;] user on server with IP [&lt;saddr&gt;]." />
+
 <MESSAGE
 	id1="Spoofing"
 	id2="Spoofing"
 	eventcategory="1603060000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : Start: Spoofing of MAC address [&lt;smacaddr&gt;] of Authorized AP [&lt;fld1&gt;] is in progress. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;fld25&gt; : Start: &lt;info&gt;" />
+
 <MESSAGE
 	id1="[Rogue]"
 	id2="[Rogue]"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : Start: [Rogue] &lt;fld1&gt;. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: Closest Sensor [&lt;sensor&gt;] :&lt;fld25&gt; MAC address [&lt;dmacaddr&gt;], user name [&lt;username&gt;], vendor [&lt;fld41&gt;], RSSI [&lt;fld42&gt;] dBm." />
+
 <MESSAGE
 	id1="[Rogue]:01"
 	id2="[Rogue]"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : Stop: [Rogue] &lt;fld1&gt;. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: Stop: &lt;info&gt;. The Client's details are: MAC address [&lt;dmacaddr&gt;], user name [&lt;username&gt;], vendor [&lt;fld41&gt;], RSSI [&lt;fld42&gt;] dBm." />
+
 <MESSAGE
 	id1="User:01"
 	id2="User"
 	eventcategory="1402020100"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : User deleted. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;fld25&gt; : &lt;privilege&gt; : &lt;fld27&gt; : User [&lt;username&gt;] has been deleted." />
+
 <MESSAGE
 	id1="[Authorized]"
 	id2="[Authorized]"
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : &lt;info&gt;. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;fld25&gt; : MAC address [&lt;dmacaddr&gt;], user name [&lt;username&gt;], vendor [&lt;fld41&gt;], RSSI [&lt;fld42&gt;] dBm." />
+
 <MESSAGE
 	id1="Location"
 	id2="Location"
 	eventcategory="1701000000"
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : &lt;event_description&gt; : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;username&gt; : &lt;privilege&gt; : &lt;fld27&gt; : &lt;info&gt;" />
+
+<MESSAGE
+	id1="CEF:01"
+	id2="CEF"
+    eventcategory="1901000000"
+    tagval="true"
+    missField="true"
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%B %D %W %H:%U:%O',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="msg=&lt;msg&gt; cat=&lt;category&gt; rt=&lt;fld1&gt; dvc=&lt;hostip&gt; externalId=&lt;hardware_id&gt; dmac=&lt;smacaddr&gt; cs1Label=&lt;cs_fld&gt; cs1=&lt;cs_fld&gt; cs2Label=&lt;cs_fld&gt; cs2=&lt;ssid&gt; cs3Label=&lt;cs_fld&gt; cs3=&lt;cs_fld&gt; cn1Label=&lt;cs_fld&gt; cn1=&lt;cs_fld&gt; cn2Label=&lt;cs_fld&gt; cn2=&lt;wifi_channel&gt; cs4Label=&lt;cs_fld&gt; cs4=&lt;location_desc&gt; cs5Label=&lt;cs_fld&gt; cs5=&lt;sensor&gt;" />
+
 </DEVICEMESSAGES>
