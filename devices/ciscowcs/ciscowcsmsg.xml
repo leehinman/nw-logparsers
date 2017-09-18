@@ -4,9 +4,9 @@
 	displayname="Cisco WCS"
 	group="Configuration Management">
 <VERSION
-		xml="25"
-		checksum="34a9936c0a3c9816b69aa5b18963c68d"
-		revision="107"
+		xml="27"
+		checksum="013b92e92211ffd653c73d6a5ca57b7c"
+		revision="110"
 		device="2.0"/>
 
 <HEADER
@@ -336,7 +336,13 @@
 	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;id&gt;|&lt;hostip&gt;|Coverage threshold violated on &apos;&lt;interface&gt;&apos; interface  of AP &apos;&lt;access_point&gt;&apos;, connected to Controller &apos;&lt;saddr&gt;&apos;." />
 	
-	
+<MESSAGE
+	 id1="Rogue:15"
+	 id2="Rogue"
+	 eventcategory="1605000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="Rogue&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' on Controller '&lt;saddr&gt;' was advertising our SSID and has been auto contained as per WPS policy."/>
+
 <MESSAGE
 	id1="Interferer"
 	id2="Interferer"
@@ -685,9 +691,51 @@
 	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@data_type:RSSI&gt;&lt;@dclass_ratio1_string:SNR&gt;"
 	content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;." />
 <MESSAGE
+	 id1="Friendly:02"
+	 id2="Friendly"
+	 eventcategory="1605000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' with SSID '&lt;ssid&gt;' { is reported by controller | is detected by AP } '&lt;fld2&gt;' with RSSI '&lt;data&gt;'. Rogue AP classified as Known AP."/>
+
+<MESSAGE
 	id1="User:01"
 	id2="User"
 	eventcategory="1301000000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;"
 	content="User authentication failure|&lt;fld1&gt;|&apos;Network User&apos; &apos;&lt;username&gt;&apos; failed authentication on Controller &apos;&lt;daddr&gt;&apos;." />
+<MESSAGE
+	 id1="Wired"
+	 id2="Wired"
+	 eventcategory="1301000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|&lt;fld2&gt;:Authentication failed for client (&lt;saddr&gt;) on{Interface&lt;interface&gt;AuditSessionID&lt;sessionid&gt;|Interface&lt;interface&gt;}"/>
+
+<MESSAGE
+	 id1="Wired:01"
+	 id2="Wired"
+	 eventcategory="1302000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|&lt;fld2&gt;:Authentication successful for client (&lt;saddr&gt;) on{Interface&lt;interface&gt;AuditSessionID&lt;sessionid&gt;|Interface&lt;interface&gt;}"/>
+
+<MESSAGE
+	 id1="Wired:02"
+	 id2="Wired"
+	 eventcategory="1301000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Authorization { failed or unapplied | failed } for client (&lt;saddr&gt;) on {Interface&lt;interface&gt;AuditSessionID&lt;sessionid&gt;|Interface&lt;interface&gt;}"/>
+
+<MESSAGE
+	 id1="Wired:03"
+	 id2="Wired"
+	 eventcategory="1302000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Authorization succeeded for client (&lt;saddr&gt;) on {Interface&lt;interface&gt;AuditSessionID&lt;sessionid&gt;|Interface&lt;interface&gt;}"/>
+
+<MESSAGE
+	 id1="Malicious"
+	 id2="Malicious"
+	 eventcategory="1605000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' with SSID '&lt;ssid&gt;' and channel number '&lt;wifi_channel&gt;' is detected by AP '&lt;access_point&gt;' Radio type '&lt;protocol&gt;' with RSSI '&lt;data&gt;' and SNR '&lt;dclass_ratio1&gt;'."/>
+
 </DEVICEMESSAGES>
