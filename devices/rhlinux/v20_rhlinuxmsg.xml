@@ -4,9 +4,9 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="298"
-	checksum="3daceaec9087720d896a4c52787e9ba4"
-	revision="109"
+	xml="303"
+	checksum="015339b7c44b4cafbede299cce86ca10"
+	revision="110"
 	device="2.0" />
 
 
@@ -307,7 +307,12 @@
 <HEADER
 	id1="1122"
 	id2="1122"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;severity&gt; &lt;messageid&gt;[&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />		
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;severity&gt; &lt;messageid&gt;[&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />	
+<HEADER
+	id1="0081"
+	id2="0081"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hfld1&gt;: {Exit|Start} &lt;messageid&gt;[&lt;hfld2&gt;] &lt;!payload:messageid&gt;" />
+
 <HEADER
 	id1="0022"
 	id2="0022"
@@ -24976,5 +24981,124 @@
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: pam_tally2(&lt;service&gt;): &lt;fld1&gt; no such user" />
+
+<MESSAGE
+	id1="ipsrd:01"
+	id2="ipsrd"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;service&gt;: {discarded packet from &lt;hostip&gt; attempting to take over interface &lt;interface&gt;, VRID &lt;fld1&gt; while local router is master | interface &lt;interface&gt;, VRID &lt;fld2&gt;: state=&lt;fld3&gt;}" />
+
+<MESSAGE
+	id1="ipsrd:02"
+	id2="ipsrd"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;service&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="ipsrd:03"
+	id2="ipsrd"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: {task_reconfigure re-initializing from &lt;filename&gt;|&lt;info&gt;}" />
+
+<MESSAGE
+	id1="ipsrd:04"
+	id2="ipsrd"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;] &lt;info&gt;" />
+
+<MESSAGE
+	id1="sshd-x:01"
+	id2="sshd-x"
+	eventcategory="1401060000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Accepted keyboard-interactive/pam for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt;" />
+
+<MESSAGE
+	id1="sshd-x:02"
+	id2="sshd-x"
+	eventcategory="1401060000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: in &lt;fld1&gt;: (&lt;process&gt;) session {opened|closed} for {user &lt;username&gt; by &lt;c_username&gt;(uid=&lt;uid&gt;)|user &lt;username&gt;}" />
+
+<MESSAGE
+	id1="ipstcl:01"
+	id2="ipstcl"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;: User &lt;username&gt; pressed button {apply|save} on page &lt;fld2&gt; " />
+
+<MESSAGE
+	id1="hourly:02"
+	id2="hourly"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld3:*PARMVAL(process)&gt;"
+	content="&lt;fld1&gt;: &lt;process&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="httpauth:03"
+	id2="httpauth"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="clusterd:01"
+	id2="clusterd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Member(&lt;hostip&gt;) member id(&lt;fld1&gt;) left cluster(&lt;fld2&gt;):" />
+
+<MESSAGE
+	id1="clusterd:02"
+	id2="clusterd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: New member(&lt;hostip&gt;) joined cluster(&lt;fld1&gt;) with member id(&lt;fld2&gt;)." />
+
+<MESSAGE
+	id1="date:02"
+	id2="date"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;event_description&gt;" />
+
+<MESSAGE
+	id1="PAM-tacplus:05"
+	id2="PAM-tacplus"
+	eventcategory="1303000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="instance_xlate:01"
+	id2="instance_xlate"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;fld2&gt;" />
+
+<MESSAGE
+	id1="routed:01"
+	id2="routed"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="diagMain:01"
+	id2="diagMain"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="rconfd:01"
+	id2="rconfd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
 
 </DEVICEMESSAGES>
