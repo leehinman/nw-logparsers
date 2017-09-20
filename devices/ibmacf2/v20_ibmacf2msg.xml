@@ -4,14 +4,23 @@
 	displayname="CA ACF2"
 	group="Mainframe">
 <VERSION 
-	xml="6"
-	checksum="0d10475149a3b40dc628cbb4f6d9609f"
-	revision="83"
+	xml="8"
+	checksum="4b49164728325b33031936fb25b85833"
+	revision="110"
 	device="2.0" />
 	
 
 <TAGVALMAP
 		delimiter="| &quot;"/>
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="ALOGACCESS=&apos;1206000000&apos;|ALOGALLOW=&apos;1206000000&apos;|RLOGACCESS=&apos;1206000000&apos;|RLOGNORULE=&apos;1206000000&apos;|Dataset=&apos;1206000000&apos;|AccessRule=&apos;1206000000&apos;|LogonID=&apos;1206000000&apos;|RLogonID=&apos;1206000000&apos;|InfoStorage=&apos;1206000000&apos;|General=&apos;1206000000&apos;|Commands=&apos;1206000000&apos;|OpenEdition=&apos;1206000000&apos;|AVIONO-MODE=&apos;1301000000&apos;|RVIONORULE=&apos;1301000000&apos;|RVIORULE=&apos;1301000000&apos;|SVIO76=&apos;1401030000&apos;|SVIOLID=&apos;1401030000&apos;|SVIOPASSWORD=&apos;1401030000&apos;|Password=&apos;1401030000&apos;|SLOGID=&apos;1401060000&apos;|SWRNID=&apos;1401060000&apos;" />
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1206000000=&apos;Content.Object&apos;|1301000000=&apos;Auth.Failures&apos;|1401030000=&apos;User.Activity.Failed Logins&apos;|1401060000=&apos;User.Activity.Successful Logins&apos;" />
+
 <HEADER 
 	id1="0001" 
 	id2="0001" 
@@ -164,8 +173,9 @@
 <MESSAGE 
 	id1="ACF2_TVM"
 	id2="ACF2_TVM"
-	eventcategory="1206000000"
+	eventcategory="1901000000"
 	tagval="true"
-	functions="&lt;@event_time:*EVNTTIME($MSG,'%M%D%Y %H%T',fld39,fld38)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	missField="true"
+	functions="&lt;@msg_id:*PARMVAL(event_type)&gt;&lt;@vid:*PARMVAL(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%M%D%Y %H%T',fld39,fld38)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="ENTRY_TYPE=&lt;event_type&gt;|RECORD_TYPE=&lt;event_id&gt;|ACFLTFLT=&lt;fld15&gt;|ACFLTTYP=&lt;fld20&gt;|ACFLTSEQ=&lt;fld21&gt;|ACFLTSYS=&lt;fld16&gt;|ACFLTTIM=&lt;fld38&gt;|ACFLTDAT=&lt;fld39&gt;|ACFLTFNC=&lt;fld0&gt;|ACFLTUIF=&lt;fld22&gt;|ACFLTMOD=&lt;process&gt;|ACFLTLID=&lt;uid&gt;|ACFLTUID=&lt;group&gt;|ACFLTSRC=&lt;category&gt;|ACFLTCPU=&lt;fld2&gt;|ACFLTSID=&lt;hostname&gt;|ACFLTIDE=&lt;fld&gt;|ACFLTIDL=&lt;fld23&gt;|ACFLTIDU=&lt;fld24&gt;|ACFLTJOB=&lt;fld44&gt;|ACFLTRTM=&lt;fld7&gt;|ACFLTRDT=&lt;fld8&gt;|ACFLTSUB=&lt;action&gt;|ACFLTTOD=&lt;fld25&gt;|ACFLTVER=&lt;fld17&gt;|ACFLTRSV=&lt;fld18&gt;|ACFLTUSR=&lt;fld26&gt;|ACDFJES=&lt;fld9&gt;|ACDFNAME=&lt;fld10&gt;|ACDFUPFX=&lt;fld27&gt;|ACDFFLG1=&lt;fld1&gt;|ACDFHNDX=&lt;fld4&gt;|ACDFADSN=&lt;fld5&gt;|ACDFAMEM=&lt;fld12&gt;|ACDFADS=&lt;resource&gt;|ACDFAVOL=&lt;fld48&gt;|ACDFADDN=&lt;fld3&gt;|ACDFMAJR=&lt;fld49&gt;|ACDFMINR=&lt;action&gt;|ACDFRMRC=&lt;fld13&gt;|ACDFPATH=&lt;fld19&gt;|ACDFRTYP=&lt;fld51&gt;|ACDFSTYP=&lt;fld46&gt;|ACDFTAPE=&lt;fld28&gt;|ACDFINST=&lt;fld6&gt;|ACDFRKEY=&lt;fld29&gt;|ACDFSTEP=&lt;fld30&gt;|ACDFLVOL=&lt;fld11&gt;|ACDFLPGM=&lt;fld45&gt;|ACDFLLIB=&lt;fld76&gt;|ACDFUCBN=&lt;fld77&gt;|ACDFPUCB=&lt;fld78&gt;|ACDFEXEC=&lt;fld79&gt;|ACDFOWNR=&lt;fld80&gt;|ACDFUCOM=&lt;fld81&gt;|ACDFODSN=&lt;fld82&gt;|ACDFOVOL=&lt;fld83&gt;|ACDFOCDE=&lt;fld84&gt;|ACDFSCTP=&lt;fld85&gt;|ACDFPID1=&lt;fld86&gt;|ACDFPAC1=&lt;fld87&gt;|ACDFMISC=&lt;fld151&gt;|ACDFLAPL=&lt;fld88&gt;|ACDFLPLB=&lt;fld89&gt;|ACDFLPTH=&lt;fld90&gt;|ACDFPPCD=&lt;fld91&gt;|ACDFLCD4=&lt;fld92&gt;|ACDFTFLG=&lt;fld93&gt;|ACDFMFLG=&lt;fld94&gt;|ACDFLCN1=&lt;fld95&gt;|ACDFLCN2=&lt;fld96&gt;|ACDFLCD2=&lt;fld97&gt;|ACDFLCD1=&lt;fld98&gt;|ACDFL0PL=&lt;fld99&gt;|ACDFMSC2=&lt;fld100&gt;|ACDFCNTL=&lt;fld101&gt;|ACDFLCD3=&lt;fld102&gt;|ACDFLRS1=&lt;fld103&gt;|ACDFNKTC=&lt;fld104&gt;|ACDFNKTB=&lt;fld105&gt;|ACEFLKEY=&lt;fld52&gt;|ACEFLFNC=&lt;command&gt;|ACEFLMDL=&lt;fld106&gt;|ACEFLANM=&lt;change_new&gt;|ACEFOAUM=&lt;fld108&gt;|ACEFOLEN=&lt;fld109&gt;|ACEFOFL1=&lt;info&gt;|ACEFOFL2=&lt;info&gt;|ACEFLOLV=&lt;fld112&gt;|ACEFNAUM=&lt;fld113&gt;|ACEFNLEN=&lt;fld114&gt;|ACEFNFL1=&lt;info&gt;|ACEFNFL2=&lt;info&gt;|ACEFLNEV=&lt;fld117&gt;|ACEFLRS1=&lt;fld118&gt;|ACLFLKEY=&lt;fld53&gt;|ACLFLFNC=&lt;fld52&gt;|ACLFLMDL=&lt;fld4&gt;|ACLFLANM=&lt;fld54&gt;|ACLFOAUM=&lt;fld27&gt;|ACLFOLEN=&lt;fld28&gt;|ACLFOFL1=&lt;fld29&gt;|ACLFOFL2=&lt;fld30&gt;|ACLFLOLV=&lt;fld55&gt;|ACLFNAUM=&lt;fld31&gt;|ACLFNLEN=&lt;fld32&gt;|ACLFNFL1=&lt;fld33&gt;|ACLFNFL2=&lt;fld34&gt;|ACLFLNEV=&lt;fld56&gt;|ACLFLRS1=&lt;username&gt;|ACJFLPGM=&lt;application&gt;|ACJFLPTH=&lt;fld51&gt;|ACJFLSID=&lt;fld119&gt;|ACJFLSTC=&lt;fld120&gt;|ACJFLAPF=&lt;fld121&gt;|ACJFLCTL=&lt;fld122&gt;|ACJFLFLG=&lt;fld123&gt;|ACPFLAPF=&lt;fld1&gt;|ACPFLPRG=&lt;fld45&gt;|ACPFLWHY=&lt;result&gt;|ACPFLLOG=&lt;fld46&gt;|ACPFLRSX=&lt;fld124&gt;|ACPFLAUT=&lt;fld125&gt;|ACPFLFLG=&lt;fld126&gt;|ACPFLSID=&lt;fld127&gt;|ACPFLCTL=&lt;fld128&gt;|ACPFSUBP=&lt;fld129&gt;|ACPFLRS1=&lt;fld130&gt;|ACRFLKEY=&lt;fld1&gt;|ACRFLRS1=&lt;fld131&gt;|ACVFRCRM=&lt;fld3&gt;|ACVFRCPR=&lt;fld4&gt;|ACVFRCIN=&lt;fld5&gt;|ACVFRCPO=&lt;fld6&gt;|ACVFRCFI=&lt;fld57&gt;|ACVFSERV=&lt;fld52&gt;|ACVFDISP=&lt;fld19&gt;|ACVFDSPM=&lt;fld9&gt;|ACVFKMOD=&lt;fld10&gt;|ACVFLTF=&lt;fld11&gt;|ACVFMODC=&lt;fld12&gt;|ACVFMODE=&lt;resource&gt;|ACVFLKEY=&lt;username&gt;|ACVFLRSC=&lt;fld13&gt;|ACVFLNAM=&lt;fld132&gt;|ACVFLLRT=&lt;fld133&gt;|ACVFRCID=&lt;fld134&gt;|ACVFEXNM=&lt;fld135&gt;|ACVFLTRT=&lt;fld136&gt;|ACVFLTRS=&lt;fld137&gt;|ACVFLSFN=&lt;fld138&gt;|ACVFLFLG=&lt;fld139&gt;|ACVFLMF=&lt;fld140&gt;|ACVFLRS1=&lt;fld141&gt;|ACVFDB2C=&lt;fld142&gt;|ACVFDB2N=&lt;fld143&gt;|ACVFNXTC=&lt;fld144&gt;|ACVFRSRC=&lt;fld145&gt;|ACVFNXTB=&lt;fld146&gt;|ACVFDB2P=&lt;fld147&gt;|ACVFDB2O=&lt;fld148&gt;|ACVFDB2S=&lt;fld149&gt;|reserve1=&lt;fld150&gt;|" />
 </DEVICEMESSAGES>
