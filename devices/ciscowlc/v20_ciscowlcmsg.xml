@@ -4,9 +4,9 @@
 	displayname="Cisco Wireless LAN Controller"
 	group="Wireless Devices">
 <VERSION 
-	xml="20"
-	checksum="18ae6a9ce09e1f94015bc83d6e2d5ba1"
-	revision="107"
+	xml="21"
+	checksum="80e8150d38cd2a1757266a9f5ab68d16"
+	revision="110"
 	device="2.0" />
 <TAGVALMAP
 	pairdelimiter="," encapsulator="&quot;" />
@@ -1063,7 +1063,7 @@
 	id2="APF-6-MOBILE_EXCLUDED" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="Excluded the mobile &lt;smacaddr&gt;." />
+	content="Excluded the mobile {&lt;smacaddr&gt; Reason: &quot;&lt;result&gt;&quot;|&lt;smacaddr&gt;.}" />
 <MESSAGE 
 	id1="APF-6-MOBILE_NOT_EXCLUDED" 
 	id2="APF-6-MOBILE_NOT_EXCLUDED" 
@@ -1081,7 +1081,8 @@
 	id2="APF-6-USER_NAME_CREATED" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Username entry created for mobile&gt;"
-	content=" Username entry (&lt;username&gt;) with length (&lt;number&gt;) created for mobile &lt;smacaddr&gt;" />
+	content=" Username entry (&lt;username&gt;) with length (&lt;number&gt;) created for mobile {&lt;smacaddr&gt;[&lt;info&gt;]|&lt;smacaddr&gt;}" />
+
 <MESSAGE 
 	id1="CCX-4-MSGTAG012" 
 	id2="CCX-4-MSGTAG012" 
@@ -2269,7 +2270,7 @@
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Username entry created for mobile&gt;"
-	content=" Username entry (&lt;username&gt;) with length (&lt;fld1&gt;) created for mobile &lt;smacaddr&gt;" />
+	content=" Username entry (&lt;username&gt;) with length (&lt;fld1&gt;) created for mobile {&lt;smacaddr&gt; [&lt;info&gt;]|&lt;smacaddr&gt;}" />
 <MESSAGE 
 	id1="LOG-6-Q_IND:04" 
 	id2="LOG-6-Q_IND" 
@@ -5462,6 +5463,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:TFTP Timeout&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: TFTP Timeout &lt;reason&gt;" />
 <MESSAGE 
+	id1="SECURITY:42" 
+	id2="SECURITY" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:STA ARP received with invalid SPA&gt;"
+	content="&lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: STA &lt;space&gt; [&lt;macaddr&gt;, &lt;fld2&gt;] ARP (op &lt;fld3&gt;) received with invalid SPA &lt;saddr&gt;/TPA &lt;daddr&gt;"/>
+
+<MESSAGE 
 	id1="SECURITY:41" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
@@ -5484,7 +5492,7 @@
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Big Nav attack detected on AP&gt;"
-	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Big Nav attack detected on AP &lt;smacaddr&gt; slot = &lt;portname&gt; chan = &lt;event_source&gt;, errors = &lt;number&gt;" />
+	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Big Nav attack detected on AP &lt;device&gt; slot = &lt;portname&gt; chan = &lt;event_source&gt;, errors = &lt;number&gt;" />
 <MESSAGE 
 	id1="SECURITY:37" 
 	id2="SECURITY" 
