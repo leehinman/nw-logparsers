@@ -4,9 +4,9 @@
 	displayname="McAfee Integrity Control"
 	group="Configuration Management">
 <VERSION
-	xml="14"
-	checksum="46cb4111edf3e6562cd9acc276b8212f"
-	revision="109"
+	xml="15"
+	checksum="20febe5d9f6970f571761061dc1197fc"
+	revision="110"
 	device="2.0" />
 
  
@@ -176,6 +176,14 @@
 	eventcategory="1605030000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1)&gt;"
 	content="&lt;hostname&gt;^^&lt;obj_name&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;id&gt;^^&lt;fld7&gt;^^&lt;action&gt;^^&lt;resultcode&gt;^^&lt;data_type&gt;^^&lt;data&gt;" />
+
+<MESSAGE 	
+	id1="END_OBSERVE" 
+	id2="END_OBSERVE" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
+	content="&lt;hostname&gt;^^&lt;obj_name&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;id&gt;^^&lt;filename&gt;^^&lt;action&gt;^^&lt;resultcode&gt;^^&lt;data_type&gt;^^&lt;data&gt;^^&lt;process_src&gt;^^&lt;dhost&gt;^^&lt;shost&gt;^^&lt;application&gt;^^&lt;fld4&gt;" />
+
 
 <MESSAGE 
 	id1="END_UPDATE:01" 
