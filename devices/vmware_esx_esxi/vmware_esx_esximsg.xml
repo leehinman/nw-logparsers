@@ -4,9 +4,9 @@
 	displayname="VMware ESX / ESXi"
 	group="Virtualization">
 <VERSION
-	xml="34"
-	checksum="917d1a144b26eca56016bf21f41ffcaf"
-	revision="106"
+	xml="36"
+	checksum="5b88412a56140f80a1516b86d67c6a50"
+	revision="110"
 	device="2.0" />
 
  
@@ -2215,6 +2215,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;agent&gt;: &lt;event_description&gt;" />
+<MESSAGE
+	 id1="vsanSoapServer"
+	 id2="vsanSoapServer"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld3)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	 content="&lt;agent&gt;:&lt;fld1&gt;T&lt;fld3&gt;Z&lt;fld4&gt;: {&lt;fld5&gt;:Serve client ::ffff:&lt;saddr&gt; done|&lt;fld5&gt;:Serve client ::ffff:&lt;saddr&gt;|getXMLDataFile:733:xmlDataFile: &lt;filename&gt;|&lt;fld6&gt;}"/>
+
 <MESSAGE 
 	id1="watchdog-openwsmand" 
 	id2="watchdog-openwsmand" 
@@ -2262,6 +2269,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;&lt;&lt;fld2&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;saddr&gt;&gt;&lt;space&gt;MAC=&lt;fld3&gt;&lt;event_description&gt; " />
 	
+<MESSAGE
+	 id1="marvinUtils"
+	 id2="marvinUtils"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld3)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	 content="&lt;agent&gt;:&lt;fld1&gt;&lt;fld3&gt;Z -&lt;fld7&gt;"/>
+
 <MESSAGE 
 	id1="mdns" 
 	id2="mdns" 
@@ -2287,6 +2301,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;agent&gt;:&lt;event_description&gt; " />
+<MESSAGE
+	 id1="osfsd"
+	 id2="osfsd"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld3)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	 content="&lt;agent&gt;:&lt;fld1&gt;T&lt;fld3&gt;Z{&lt;fld4&gt;:&lt;fld7&gt;|&lt;fld7&gt;}"/>
+
 <MESSAGE 
 	id1="vmkwarning" 
 	id2="vmkwarning" 
