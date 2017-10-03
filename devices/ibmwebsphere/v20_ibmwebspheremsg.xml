@@ -4,9 +4,9 @@
 	displayname="IBM WebSphere"
 	group="Application Servers">
 <VERSION
-		xml="40"
-		checksum="a6798439902e400d4a6bd73877f39b8e"
-		revision="104"
+		xml="42"
+		checksum="7ff7145c3b411511dc7cb8ba3f96cfa6"
+		revision="110"
 		device="2.0"/>
 
 <TAGVALMAP
@@ -1179,7 +1179,7 @@
 	id2="J2CA0086W"
 	eventcategory="1605010000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@event_description:Shareable connection&gt;"
-	content="Shareable connection MCWrapper id &lt;id&gt;  Managed connection &lt;fld1&gt;  State:&lt;result&gt;" />
+	content="Shareable connection { MCWrapper id | [STALE]  MCWrapper id} &lt;id&gt;  Managed connection &lt;fld1&gt;  State:&lt;result&gt;" />
 <MESSAGE
 	id1="J2CA0107I"
 	id2="J2CA0107I"
@@ -2986,6 +2986,12 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Firing Event&gt;"
 	content="WSRdbManagedC &lt;fld1&gt; Firing &lt;fld2&gt; event for:&lt;agent&gt;" />
 <MESSAGE
+	id1="WSRdbManagedC:10"
+	id2="WSRdbManagedC"
+	eventcategory="1801030000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Closed Connection&gt;"
+	content="WSRdbManagedC&lt;fld1&gt;&lt;id&gt;:&lt;fld2&gt;The exception is:&lt;fld3&gt; &lt;result&gt;.&lt;fld4&gt;"/>
+<MESSAGE
 	id1="WSVR0059I"
 	id2="WSVR0059I"
 	eventcategory="1605030000"
@@ -3963,7 +3969,7 @@
 	id2="VSyncAlgo1"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DCS Stack DefaultCoreGroup at Member&gt;"
-	content="&lt;application&gt; &lt;space&gt;I &lt;id&gt;:&lt;fld1&gt; at Member &lt;filename&gt;: &lt;action&gt;.&lt;info&gt;" />
+	content="&lt;msg_id&gt; &lt;space&gt;{W|I} &lt;id&gt;:&lt;fld1&gt; at Member &lt;filename&gt;: {&lt;action&gt;.&lt;info&gt;| &lt;info&gt;}" />
 <MESSAGE
 	id1="CoreGroupMemb"
 	id2="CoreGroupMemb"
@@ -3993,7 +3999,7 @@
 	id2="SQLErrorCodes"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SQL Error Codes Factory&gt;"
-	content="&lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;&lt;&lt;action&gt;&gt; &lt;info&gt;" />
+	content="&lt;msg_id&gt; &lt;fld1&gt; &lt;fld2&gt; {&lt;action&gt;&gt; | getErrorCodes } &lt;info&gt;" /> 
 <MESSAGE
 	id1="InitListener"
 	id2="InitListener"
