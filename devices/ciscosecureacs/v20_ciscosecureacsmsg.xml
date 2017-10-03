@@ -4,8 +4,8 @@
 	displayname="Cisco Secure ACS Appliance"
 	group="Access Control">
 <VERSION
-	xml="107"
-	checksum="78646bd5259ce8c3102afe63f8fe8e15"
+	xml="109"
+	checksum="64647b2b608aa28cb8cc0c4805095714"
 	revision="110"
 	device="2.0" />
 	
@@ -36,6 +36,11 @@
 	id1="0003" 
 	id2="0003"  
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hsaddr&gt; CisACS_&lt;messageid&gt; &lt;hinfo&gt; 1 0 &lt;!payload&gt;" /> 
+<HEADER 
+	id1="0018" 
+	id2="0018"
+	messageid="STRCAT('Profiler')"
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hnode&gt; CISE_Profiler &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;hyear&gt;-&lt;hmonth&gt;-&lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt;.&lt;hfld7&gt; &lt;hfld8&gt; &lt;hfld9&gt; &lt;hfld10&gt; &lt;hseverity&gt; &lt;hfld11&gt;: &lt;hevent_description&gt;, &lt;!payload&gt;" />      
 <HEADER 
 	id1="0006" 
 	id2="0006"  
@@ -730,6 +735,12 @@
 	missField="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H%U%O',hyear,hmonth,hday,hhour,hmin,hsec)&gt;&lt;@timezone:*HDR(hfld8)&gt;&lt;@hostname:*HDR(hnode)&gt;&lt;@id:*HDR(hfld4)&gt;&lt;@id1:*HDR(hfld5)&gt;&lt;@id2:*HDR(hfld6)&gt;&lt;@operation_id:*HDR(hfld10)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@category:*HDR(hfld11)&gt;&lt;@event_description:*HDR(hevent_description)&gt;"
 	content="Issuer - Common Name=&lt;br&gt;, Issuer - Domain Component=&lt;id&gt;, Key Usage=&lt;ku&gt;, Extended Key Usage - Name=&lt;ek&gt;, Extended Key Usage - OID=&lt;eu&gt;, Template Name=&lt;tm&gt;,Days to Expiry=&lt;de&gt;,Is Expired=&lt;ie&gt;,DC=&lt;dc&gt;,OpenSSLErrorMessage=&lt;result&gt;,OpenSSLErrorStack=&lt;cert_error&gt;,CPMSessionID=&lt;sessionid&gt;,C=&lt;za&gt;,Subject Alternative Name - DNS=&lt;zb&gt;,Issuer=&lt;zc&gt;,OU=&lt;zd&gt;,O=&lt;ze&gt;,C=&lt;zf&gt;,Issuer - Organization=&lt;zg&gt;,Issuer - Organization Unit=&lt;zh&gt;,Issuer - Country=&lt;zi&gt;,EapAuthentication=&lt;zj&gt;,O=&lt;zk&gt;,AcsSessionID=&lt;fld59&gt;,SelectedAccessService=&lt;fld4&gt;,cisco-av-pair=&lt;context&gt;,Service-Type=&lt;service&gt;,TotalFailedTime=&lt;ya&gt;,TotalFailedAttempts=&lt;yb&gt;,Subject - Common Name=&lt;yn&gt;,Subject Alternative Name=&lt;ym&gt;,Subject - Organization=&lt;ya&gt;,Subject - Organization Unit=&lt;ys&gt;,Subject - Country=&lt;yd&gt;,Subject=&lt;yf&gt;,Response=&lt;fld51&gt;" />
+<MESSAGE 
+	id1="CISE_RADIUS_Diagnostics:01" 
+	id2="CISE_RADIUS_Diagnostics" 
+	eventcategory="1304000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;fld1&gt;" />
 <MESSAGE 
 	id1="MONITORING_DATA_PURGE_AUDIT" 
 	id2="MONITORING_DATA_PURGE_AUDIT" 
