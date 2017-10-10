@@ -4,9 +4,9 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="303"
-	checksum="015339b7c44b4cafbede299cce86ca10"
-	revision="110"
+	xml="309"
+	checksum="ed609f464e1f2df57b3247f46c4aed79"
+	revision="111"
 	device="2.0" />
 
 
@@ -258,6 +258,12 @@
 	id2="0018"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;/&lt;hfld1&gt;[&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />
 <HEADER
+	id1="0082"
+	id2="0082"
+	messageid="STRCAT('%IPPHONE')"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;hfld1&gt;: &lt;hfld2&gt;: &lt;hfld3&gt;: %IPPHONE &lt;!payload&gt;" />
+
+<HEADER
 	id1="00119"
 	id2="00119"
 	content="&lt;date&gt;T&lt;time&gt;Z &lt;hhost&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
@@ -358,6 +364,11 @@
 	id1="0053"
 	id2="0053"
 	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hhost&gt; &lt;messageid&gt;[&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />
+
+<HEADER
+	id1="0083"
+	id2="0083" 
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; {&lt;hhost&gt; [&lt;process_id&gt;]| &lt;hhost&gt;}: &lt;messageid&gt;(&lt;hfld1&gt;): &lt;!payload:messageid&gt;" /> 
 
 <HEADER
 	id1="0072"
@@ -4745,6 +4756,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): session closed for user &lt;username&gt;" />
 		
 <MESSAGE
+	id1="crontab:04"
+	id2="crontab"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;event_description&gt;" />
+
+<MESSAGE
 	id1="001158"
 	id2="crswrapexece.pl"
 	eventcategory="1605000000"
@@ -5721,6 +5739,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="dsmcad:03"
+	id2="dsmcad"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="00951"
@@ -15436,6 +15461,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: authenticated {mount|unmount} request from &lt;shost&gt;:&lt;sport&gt; for &lt;directory&gt; (&lt;fld1&gt;)" />
 
 <MESSAGE
+	id1="rpc.mountd:02"
+	id2="rpc.mountd"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;event_description&gt;" />
+
+<MESSAGE
 	id1="00256"
 	id2="rpc.rquotad"
 	eventcategory="1602000000"
@@ -23266,6 +23298,13 @@
 	content="&lt;agent&gt;: [&lt;severity&gt;][&lt;fld1&gt;] &lt;username&gt;:&lt;fld2&gt; - &lt;disposition&gt;" />
 
 <MESSAGE
+	id1="goferd:03"
+	id2="goferd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
 	id1="002435"
 	id2="docker-current"
 	eventcategory="1603000000"
@@ -23450,13 +23489,20 @@
 	id2="nails-ods"
 	eventcategory="1401030000"
 	functions="&lt;@event_description:No such file or directory&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;result&gt; - &lt;fld1&gt; No such file or directory" />
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;result&gt; - &lt;fld2&gt; No such file or directory" />
 <MESSAGE
 	id1="002464"
 	id2="nails-ods"
 	eventcategory="1401030000"
 	functions="&lt;@event_description:Stale file handle&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;result&gt; - &lt;fld1&gt; Stale file handle" />
+
+<MESSAGE
+	id1="nails-ods:01"
+	id2="nails-ods"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;info&gt;" />
 
 <MESSAGE
 	id1="002462"
@@ -24216,6 +24262,13 @@
 	functions="&lt;@event_description:VMCore dir not accessible&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: VMCore dir &apos;&lt;directory&gt;&apos; not accessible." />
 <MESSAGE
+	id1="abrt-harvest-vmcore:01"
+	id2="abrt-harvest-vmcore"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: VMCore dir &apos;&lt;directory&gt;&apos; doesn't contain 'vmcore' file." />
+
+<MESSAGE
 	id1="002591"
 	id2="iscsiadm"
 	eventcategory="1605000000"
@@ -24367,6 +24420,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: imfile warning: directory &apos;&lt;directory&gt;&apos;: No such file or directory [&lt;fld1&gt;]" />
 <MESSAGE
+	id1="002617"
+	id2="systemd-timedated"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;info&gt;" />
+
+<MESSAGE
 	id1="rsyslogd-3000:01"
 	id2="rsyslogd-3000"
 	eventcategory="1605000000"
@@ -24424,6 +24484,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: tid&lt;fld2&gt;: [&lt;severity&gt;]: [&lt;fld1&gt;]unexpected condition, exiting:[&lt;fld3&gt;] mgmtd has re-launched since last time. previous id:&lt;fld4&gt;current id:&lt;fld5&gt;" />
+
+<MESSAGE
+	id1="notifyd:03"
+	id2="notifyd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: tid &lt;fld2&gt;: [&lt;severity&gt;]: &lt;info&gt;" />
 
 <MESSAGE
 	id1="rgp"
@@ -24955,6 +25022,13 @@
 	content="{FAIL_GATE|MasterObjectServer} running as &lt;fld1&gt; has been restored on &lt;hostname&gt;" />
 
 <MESSAGE
+	id1="RESTORE_MSG:02"
+	id2="RESTORE_MSG"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="{&lt;fld1&gt; running as &lt;fld2&gt; has been restored on &lt;hostname&gt;|&lt;fld3&gt;}" />
+
+<MESSAGE
 	id1="PRD_MNR_PA"
 	id2="PRD_MNR_PA"
 	eventcategory="1605000000"
@@ -25100,5 +25174,61 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="post_os_config:01"
+	id2="post_os_config"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="%IPPHONE"
+	id2="%IPPHONE"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="{-&lt;fld1&gt;-&lt;agent&gt;|&lt;agent&gt;}: &lt;fld1&gt; IP:&lt;saddr&gt; Socket:&lt;fld2&gt; DeviceType:&lt;info&gt;" />
+
+<MESSAGE
+	id1="udevd-work:01"
+	id2="udevd-work"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;info&gt;" />
+
+<MESSAGE
+	id1="0-PPE-0:01"
+	id2="0-PPE-0"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;info&gt;" />
+
+<MESSAGE
+	id1="automount"
+	id2="automount"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;info&gt;" />
+
+<MESSAGE
+	id1="%s:01"
+	id2="%s"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;: &lt;info&gt;" />
+
+<MESSAGE
+	id1="hp-asrd.sh"
+	id2="hp-asrd.sh"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;info&gt;" />
+
+<MESSAGE
+	id1="pam_faillock"
+	id2="pam_faillock"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;(&lt;service&gt;): &lt;fld1&gt;" />
 
 </DEVICEMESSAGES>
