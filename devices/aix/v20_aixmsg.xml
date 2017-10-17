@@ -4,8 +4,8 @@
 	displayname="UNIX AIX"
 	group="Unix">
 <VERSION
-	xml="122"
-	checksum="e4e7d3906bca7f38beeec24b6ed45685"
+	xml="123"
+	checksum="b6e4b947f008375d2a3f24e36a2aa013"
 	revision="111"
 	device="2.0" />
 
@@ -6513,6 +6513,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content=" &lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="01068:07"
+	id2="root"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F %B %W %H:%U:%O',fld20,fld21,fld22,fld23)&gt;&lt;@result:OK&gt;"
+	content=" &lt;agent&gt;: &lt;event_description&gt;    &lt;action&gt;   &lt;c_username&gt;  &lt;username&gt;   OK   &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt;.&lt;fld26&gt;  No associated roles" />
 
 <MESSAGE
 	id1="01068:05"
