@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="309"
-	checksum="ed609f464e1f2df57b3247f46c4aed79"
+	xml="311"
+	checksum="0a893b89d6393083eaedc72b60a69101"
 	revision="111"
 	device="2.0" />
 
@@ -1275,7 +1275,7 @@
 	id2="adclient"
 	eventcategory="1302000000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:user OK or granted access&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt; &lt;info&gt;|&lt;product&gt;|&lt;application&gt;|&lt;version&gt;|&lt;fld1&gt;|&lt;result&gt;|5|user=&lt;username&gt;pid=&lt;fld2&gt; utc=&lt;fld3&gt; centrifyEventID=&lt;operation_id&gt; status=&lt;disposition&gt; server=&lt;obj_server&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt; &lt;info&gt;|&lt;product&gt;|&lt;application&gt;|&lt;version&gt;|&lt;fld1&gt;|&lt;result&gt;|5|{user=&lt;username&gt;(&lt;fld5&gt;)|user=&lt;username&gt;}pid=&lt;fld2&gt; utc=&lt;fld3&gt; centrifyEventID=&lt;operation_id&gt; status=&lt;disposition&gt; {service=&lt;service&gt; tty=&lt;terminal&gt; client=&lt;fld4&gt;|server=&lt;obj_server&gt;}" />
 
 <MESSAGE
 	id1="002270"
@@ -14496,7 +14496,8 @@
 	id2="ptymonitor"
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cannot determine display-device&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;application&gt;(&lt;action&gt;): cannot determine display-device" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;}: &lt;application&gt;(&lt;action&gt;): cannot determine display-device" />
+
 
 <MESSAGE
 	id1="ptymonitor:04"
@@ -24934,8 +24935,8 @@
 	id1="dscs:02"
 	id2="dscs"
 	eventcategory="1401060000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_vas: Authentication &lt;&lt;succeeded&gt; for &lt;&lt;&lt;event_type&gt;&gt; user: &lt;&lt;&lt;username&gt;&gt; account: &lt;&lt;&lt;c_username&gt;&gt; service: &lt;&lt;&lt;service&gt;&gt; reason: &lt;result&gt;" />
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_vas: Authentication &lt;&lt;succeeded&gt; for &lt;&lt;&lt;event_type&gt;&gt; user: &lt;&lt;&lt;username&gt;&gt; account: {&lt;&lt;&lt;domain&gt;\&lt;c_username&gt;&gt;|&lt;&lt;&lt;c_username&gt;&gt;} service: &lt;&lt;&lt;service&gt;&gt; reason: &lt;result&gt;" />
 
 <MESSAGE
 	id1="certmonger:01"
