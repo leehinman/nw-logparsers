@@ -4,9 +4,9 @@
 	displayname="CylanceProtect"
 	group="Anti Virus">
 <VERSION
-	xml="7"
-	checksum="3e3788b708937bcef781b3f7982dad27"
-	revision="109"
+	xml="11"
+	checksum="77c30461e054709f4073b1a34b61a6e3"
+	revision="111"
 	device="2.0" />
 
  
@@ -24,87 +24,133 @@
 <VALUEMAP
 		name="getEventLegacyCategoryName"
 		default="Other.Default"
-		keyvaluepairs="1609000000=&apos;System.Alerts&apos;|1804020000=&apos;Network.Devices.Removals&apos;|1502030000=&apos;Policies.Rules.Added&apos;|1701000000=&apos;Config.Changes&apos;|1401060000=&apos;User.Activity.Successful Logins&apos;|1804000000=&apos;Network.Devices&apos;|1003010000=&apos;Attacks.Malicious Code.Virus&apos;" />
+		keyvaluepairs="1609000000=&apos;System.Alerts&apos;|1804020000=&apos;Network.Devices.Removals&apos;|1502030000=&apos;Policies.Rules.Added&apos;|1701000000=&apos;Config.Changes&apos;|1401060000=&apos;User.Activity.Successful Logins&apos;|1804000000=&apos;Network.Devices&apos;|1003010000=&apos;Attacks.Malicious Code.Virus&apos;|1600000000=&apos;System&apos;|1502000000=&apos;Policies.Rules&apos;" />
  
 <VALUEMAP
 		name="getEventLegacyCategory"
 		default="1901000000"
-		keyvaluepairs="Alert=&apos;1609000000&apos;|DeviceRemove=&apos;1804020000&apos;|PolicyAdd=&apos;1502030000&apos;|ZoneAdd=&apos;1701000000&apos;|SyslogSettingsSave=&apos;1701000000&apos;|LoginSuccess=&apos;1401060000&apos;|ZoneAddDevice=&apos;1701000000&apos;|pechange=&apos;1701000000&apos;|Registration=&apos;1804000000&apos;|threat_found=&apos;1003010000&apos;" />	 
+		keyvaluepairs="Alert=&apos;1609000000&apos;|DeviceRemove=&apos;1804020000&apos;|PolicyAdd=&apos;1502030000&apos;|ZoneAdd=&apos;1701000000&apos;|SyslogSettingsSave=&apos;1701000000&apos;|LoginSuccess=&apos;1401060000&apos;|ZoneAddDevice=&apos;1701000000&apos;|pechange=&apos;1701000000&apos;|Registration=&apos;1804000000&apos;|threat_found=&apos;1003010000&apos;|threat_changed=&apos;1003010000&apos;|threat_quarantined=&apos;1003010000&apos;|SystemSecurity=&apos;1600000000&apos;|DeviceEdit=&apos;1701000000&apos;|Device Policy Assigned=&apos;1502000000&apos;|ThreatUpdated=&apos;1003010000&apos;" />	 
 <MESSAGE
 	id1="CylancePROTECT:01"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AuditLog&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Source: &lt;product&gt;; SHA256: &lt;checksum&gt;|SHA256: &lt;checksum&gt;}; {Category: &lt;category&gt;; Reason: &lt;result&gt;|Reason: &lt;result&gt;}, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Source: &lt;product&gt;; SHA256: &lt;checksum&gt;|SHA256: &lt;checksum&gt;}; {Category: &lt;category&gt;; Reason: &lt;result&gt;|Reason: &lt;result&gt;}, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+
 <MESSAGE
 	id1="CylancePROTECT:02"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AuditLog&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Device: &lt;node&gt;|Policy: &lt;policyname&gt;}; SHA256: &lt;checksum&gt;{; Category: &lt;category&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)|, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)} " />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Device: &lt;node&gt;|Policy: &lt;policyname&gt;}; SHA256: &lt;checksum&gt;{; Category: &lt;category&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)|, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)} " />
+
 <MESSAGE
 	id1="CylancePROTECT:03"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AuditLog&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Devices: &lt;node&gt;,|Device: &lt;node&gt;;|Policy: &lt;policyname&gt;,} User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Devices: &lt;node&gt;,|Device: &lt;node&gt;;|Policy: &lt;policyname&gt;,} User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+
 	 
 <MESSAGE
 	id1="CylancePROTECT:04"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AuditLog&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: Zone: &lt;info&gt;; Policy: &lt;policyname&gt;; Value: &lt;fld3&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: Zone: &lt;info&gt;; Policy: &lt;policyname&gt;; Value: &lt;fld3&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+
 	
 <MESSAGE
 	id1="CylancePROTECT:05"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AuditLog&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Provider: &lt;product&gt;, Source IP: &lt;saddr&gt;|&lt;info&gt;}, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: {Policy Assigned:&lt;signame&gt;; Devices: &lt;node&gt; | Provider: &lt;product&gt;, Source IP: &lt;saddr&gt;|&lt;info&gt;}, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+
 <MESSAGE
 	id1="CylancePROTECT:06"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AuditLog&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: The Device: &lt;node&gt; was auto assigned to the Zone: IP Address: {Fake Devices|&lt;saddr&gt;}, {User:   (&lt;mail_id&gt;)|User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)}" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AuditLog, Event Name: &lt;event_type&gt;, Message: The Device: &lt;node&gt; was auto assigned to the Zone: IP Address: {Fake Devices|&lt;saddr&gt;}, {User:   (&lt;mail_id&gt;)|User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)}" />
+
  
 <MESSAGE
 	id1="CylancePROTECT:07"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: ExploitAttempt&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: ExploitAttempt, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, IP Address: (&lt;saddr&gt;), Action: &lt;action&gt;, Process ID: &lt;process_id&gt;, Process Name: &lt;process&gt;, User Name: &lt;username&gt;, Violation Type: &lt;signame&gt;, Zone Names: &lt;info&gt;" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: ExploitAttempt, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, IP Address: (&lt;saddr&gt;), Action: &lt;action&gt;, Process ID: &lt;process_id&gt;, Process Name: &lt;process&gt;, User Name: &lt;username&gt;, Violation Type: &lt;signame&gt;, Zone Names: &lt;info&gt;" />
+
 <MESSAGE
 	id1="CylancePROTECT:08"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: DeviceControl&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: DeviceControl, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, External Device Type: &lt;fld3&gt;, External Device Vendor ID: &lt;fld18&gt;, External Device Name: &lt;fld4&gt;, External Device Product ID: &lt;fld17&gt;, External Device Serial Number: &lt;serial_number&gt;, Zone Names: &lt;info&gt;" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: DeviceControl, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, External Device Type: &lt;fld3&gt;, External Device Vendor ID: &lt;fld18&gt;, External Device Name: &lt;fld4&gt;, External Device Product ID: &lt;fld17&gt;, External Device Serial Number: &lt;serial_number&gt;, Zone Names: &lt;info&gt;" />
+
 <MESSAGE
 	id1="CylancePROTECT:09"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: ScriptControl&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: ScriptControl, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, File Path: &lt;directory&gt;, Interpreter: &lt;application&gt;, Interpreter Version: &lt;version&gt; (&lt;fld3&gt;), Zone Names: &lt;info&gt;" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: ScriptControl, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, File Path: &lt;directory&gt;, Interpreter: &lt;application&gt;, Interpreter Version: &lt;version&gt; (&lt;fld3&gt;), Zone Names: &lt;info&gt;" />
+
 <MESSAGE
 	id1="CylancePROTECT:10"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: Threat&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: Threat, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, IP Address: (&lt;saddr&gt;), File Name: &lt;filename&gt;, Path: &lt;directory&gt;, Drive Type: &lt;fld1&gt;, SHA256: &lt;checksum&gt;, MD5: &lt;fld3&gt;, Status: &lt;event_state&gt;, Cylance Score: &lt;reputation_num&gt;, Found Date: &lt;fld5&gt;, File Type: &lt;filetype&gt;, Is Running: &lt;fld6&gt;, Auto Run: &lt;fld7&gt;, Detected By: &lt;fld8&gt;, Zone Names: &lt;info&gt;, Is Malware: &lt;fld10&gt;, Is Unique To Cylance: &lt;fld11&gt;, Threat Classification: &lt;sigtype&gt; " />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: Threat, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, IP Address: (&lt;saddr&gt;), File Name: &lt;filename&gt;, Path: &lt;directory&gt;, Drive Type: &lt;fld1&gt;, SHA256: &lt;checksum&gt;, MD5: &lt;fld3&gt;, Status: &lt;event_state&gt;, Cylance Score: &lt;reputation_num&gt;, Found Date: &lt;fld5&gt;, File Type: &lt;filetype&gt;, Is Running: &lt;fld6&gt;, Auto Run: &lt;fld7&gt;, Detected By: &lt;fld8&gt;, Zone Names: &lt;info&gt;, Is Malware: &lt;fld10&gt;, Is Unique To Cylance: &lt;fld11&gt;, Threat Classification: &lt;sigtype&gt; " />
+
 <MESSAGE
 	id1="CylancePROTECT:11"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vendor_event_cat: AppControl&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: AppControl, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, IP Address: (&lt;saddr&gt;), Action: &lt;action&gt;, Action Type: &lt;fld3&gt;, File Path: &lt;directory&gt;, SHA256: &lt;checksum&gt;, Zone Names: &lt;info&gt;" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: AppControl, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, IP Address: (&lt;saddr&gt;), Action: &lt;action&gt;, Action Type: &lt;fld3&gt;, File Path: &lt;directory&gt;, SHA256: &lt;checksum&gt;, Zone Names: &lt;info&gt;" />
+
+<MESSAGE
+	id1="CylancePROTECT:15"
+	id2="CylancePROTECT"
+	eventcategory="1901000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, Threat Class: &lt;sigtype&gt;, Threat Subclass: &lt;fld7&gt;, SHA256: &lt;checksum&gt;, MD5: &lt;fld8&gt;" />
+	 
+
+<MESSAGE
+	id1="CylancePROTECT:14"
+	id2="CylancePROTECT"
+	eventcategory="1901000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, Device Names: (&lt;node&gt;), Policy Name: &lt;policyname&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;)" />
+	 
+
+	
+<MESSAGE
+	id1="CylancePROTECT:13"
+	id2="CylancePROTECT"
+	eventcategory="1901000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, Agent Version: &lt;fld6&gt;, IP Address: (&lt;saddr&gt;, &lt;fld15&gt;), MAC Address: (&lt;macaddr&gt;, &lt;fld16&gt;), Logged On Users: (&lt;username&gt;), OS: &lt;os&gt;" />
+	 
+
+	
+<MESSAGE
+	id1="CylancePROTECT:16"
+	id2="CylancePROTECT"
+	eventcategory="1901000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, Device Name: &lt;node&gt;, Agent Version: &lt;fld1&gt;, IP Address: (&lt;saddr&gt;), MAC Address: (&lt;macaddr&gt;), Logged On Users: (&lt;username&gt;), OS: &lt;os&gt;" />
+	 
+
+	
 <MESSAGE
 	id1="CylancePROTECT:12"
 	id2="CylancePROTECT"
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="&lt;fld13&gt; &lt;fld14&gt; [&lt;fld2&gt;] Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, {Device Name: &lt;node&gt;|&lt;fld1&gt;}" />
+	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, {Device Name: &lt;node&gt;|&lt;fld1&gt;}" />
 	 
 
 	 
