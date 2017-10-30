@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="311"
-	checksum="0a893b89d6393083eaedc72b60a69101"
+	xml="314"
+	checksum="ef482cc9151d1d396e61ff5422d2c6d6"
 	revision="111"
 	device="2.0" />
 
@@ -180,7 +180,7 @@
 <HEADER
 	id1="0007"
 	id2="0007"
-	content="&lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+	content="{&quot;&lt;messageid&gt;|&lt;messageid&gt;}:&lt;!payload:messageid&gt;"/>
 
 <HEADER
 	id1="0008"
@@ -15368,6 +15368,14 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;process&gt;: &lt;event_description&gt;" />
 <MESSAGE
+	 id1="002299:02"
+	 id2="routed"
+	 eventcategory="1605000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	 content="&lt;agent&gt;[&lt;process_id&gt;]:&lt;event_description&gt;from&lt;filename&gt;"/>
+
+ 
+<MESSAGE
 	id1="009199"
 	id2="routed"
 	eventcategory="1605000000"
@@ -23958,7 +23966,14 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt; : default SNMP TRAP_SENT &lt;fld1&gt; :  haNoHeartbeats (partition id = default, haNicsMonitorFailed = &lt;fld2&gt;, haLastNicMonitorFailed = &lt;fld3&gt;, sysIpAddress = &lt;saddr&gt;)" />
-				
+<MESSAGE
+	id1="002542:01"
+	id2="0-PPE-2"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@change_attribute:Entity Name&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt; : default SNMP TRAP_SENT &lt;fld1&gt; :  entityNameChanged (partition id = &lt;fld30&gt;, entityName = &quot;&lt;obj_name&gt;&quot;, entityOldName = &quot;&lt;change_old&gt;&quot;, entityNewName = &quot;&lt;change_new&gt;&quot;, svcServiceFullName.&lt;fld4&gt; = &quot;&lt;service&gt;&quot;, sysIpAddress =&lt;saddr&gt;)" />
+
+					
 <MESSAGE
 	id1="002543"
 	id2="discovery_gm_sorter"
@@ -25037,6 +25052,13 @@
 	content="&lt;agent&gt;[&lt;fld4&gt;]: {[&lt;fld2&gt;]: ping_probe running as &lt;fld1&gt; has been restored on &lt;hostip&gt;|[&lt;fld2&gt;]: &lt;fld5&gt;|&lt;event_description&gt;}" />
 
 <MESSAGE
+	id1="CIC05_PA"
+	id2="CIC05_PA"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;[&lt;fld4&gt;]:&lt;event_description&gt;" />
+
+<MESSAGE
 	id1="mptsas1:01"
 	id2="mptsas1"
 	eventcategory="1605000000"
@@ -25232,4 +25254,27 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;(&lt;service&gt;): &lt;fld1&gt;" />
 
+<MESSAGE
+	id1="docker"
+	id2="docker"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;: time=&quot;&lt;fld1&gt;&quot; level=&lt;severity&gt; msg=&quot;&lt;info&gt;&quot;" />
+	
+<MESSAGE
+	id1="rainit"
+	id2="rainit"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;:&lt;event_description&gt;" />	
+
+	
+<MESSAGE
+	id1="OSBCompStart"
+	id2="OSBCompStart"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;" />
+
+	
 </DEVICEMESSAGES>
