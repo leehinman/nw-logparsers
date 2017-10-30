@@ -4,8 +4,8 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="76"
-		checksum="d65f57c09f4567e988605ab374503bda"
+		xml="77"
+		checksum="b75b87e8b19f66d828327dc2a5def554"
 		revision="111"
 		device="2.0"/>
 
@@ -543,7 +543,7 @@
 	id2="httpd"
 	eventcategory="1401030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld2,fld3,fld5,fld4)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld7,fld8,fld10,fld9)&gt;&lt;@dclass_counter1_string:Number of Logon Attempts&gt;"
-	content="&lt;hostname&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: User=&lt;username&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; failed to login after &lt;dclass_counter1&gt; attempts (start=&lt;fld1&gt; &lt;fld2&gt;  &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; end=&lt;fld6&gt; &lt;fld7&gt;  &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt;)." />
+	content="&lt;hostname&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: User=&lt;username&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; failed to login after &lt;dclass_counter1&gt; attempts (start={&quot;&lt;fld1&gt;|&lt;fld1&gt;} &lt;fld2&gt;  &lt;fld3&gt; &lt;fld4&gt; {&lt;fld5&gt;&quot;|&lt;fld5&gt;} end={&quot;&lt;fld6&gt;|&lt;fld6&gt;} &lt;fld7&gt;  &lt;fld8&gt; &lt;fld9&gt; {&lt;fld10&gt;&quot;|&lt;fld10&gt;})." />
 	
 	
 <MESSAGE
@@ -1228,15 +1228,15 @@
 	id1="000229"
 	id2="sshd"
 	eventcategory="1605000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld2,fld3,fld5,fld4)&gt;&lt;@dclass_counter1_string:Number of Attempts&gt;"
-	content=" { &lt;hostname&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: user | &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: user } =&lt;username&gt;(&lt;fld11&gt;) partition=&lt;fld6&gt; level=&lt;fld7&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; attempts=&lt;dclass_counter1&gt; start=&quot;&lt;fld1&gt; &lt;fld2&gt;  &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;." />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld17,fld18,fld20,fld19)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld22,fld23,fld25,fld24)&gt;&lt;@dclass_counter1_string:Number of Attempts&gt;"
+	content=" { &lt;hostname&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: user | &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: user } =&lt;username&gt;(&lt;fld11&gt;) partition=&lt;fld6&gt; level=&lt;fld7&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; attempts=&lt;dclass_counter1&gt; start=&quot;&lt;fld16&gt; &lt;fld17&gt; &lt;fld18&gt; &lt;fld19&gt; {&lt;fld20&gt;&quot; end=&quot;&lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld24&gt; &lt;fld25&gt;&quot;.|&lt;fld20&gt;&quot;.}" />
 	
 <MESSAGE
 	id1="000230"
 	id2="sshd"
 	eventcategory="1605000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld7,fld8,fld10,fld9)&gt;&lt;@dclass_counter1_string:Number of Attempts&gt;"
-	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: AUDIT | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: AUDIT } - user &lt;fld3&gt; - RAW: sshd(&lt;service&gt;): user=&lt;username&gt; partition=[&lt;fld4&gt;] level=&lt;fld5&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; attempts=&lt;dclass_counter1&gt; start=&quot;&lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt;&quot;." />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld7,fld8,fld10,fld9)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld12,fld13,fld15,fld14)&gt;&lt;@dclass_counter1_string:Number of Attempts&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: AUDIT | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: AUDIT } - user &lt;fld3&gt; - RAW: sshd(&lt;service&gt;): user=&lt;username&gt; partition=[&lt;fld4&gt;] level=&lt;fld5&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; attempts=&lt;dclass_counter1&gt; start=&quot;&lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; {&lt;fld10&gt;&quot; end=&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt;&quot;.|&lt;fld10&gt;&quot;.}" />
 	
 <MESSAGE
 	id1="000173"
