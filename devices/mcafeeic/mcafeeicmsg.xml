@@ -4,8 +4,8 @@
 	displayname="McAfee Integrity Control"
 	group="Configuration Management">
 <VERSION
-	xml="16"
-	checksum="7ea23931ab6b9f47013d1b6c2fc097bd"
+	xml="19"
+	checksum="024926a0d671e536d3ce31a7736a14fa"
 	revision="112"
 	device="2.0" />
 
@@ -70,6 +70,13 @@
 	eventcategory="1605030000" 
 	functions="&lt;@ec_activity:Start&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1)&gt;"
 	content="&lt;hostname&gt;^^&lt;obj_name&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;id&gt;^^&lt;fld7&gt;^^&lt;action&gt;^^&lt;resultcode&gt;^^&lt;data_type&gt;^^&lt;data&gt;" />
+
+<MESSAGE 
+	id1="BEGIN_OBSERVE" 
+	id2="BEGIN_OBSERVE" 
+	eventcategory="1605020000" 
+	functions="&lt;@ec_activity:Start&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld1)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
+	content="&lt;hostname&gt;^^&lt;obj_name&gt;^^&lt;username&gt;^^&lt;severity&gt;^^&lt;id&gt;^^&lt;filename&gt;^^&lt;action&gt;^^&lt;resultcode&gt;^^&lt;data_type&gt;^^&lt;data&gt;^^&lt;process_src&gt;^^&lt;dhost&gt;^^&lt;shost&gt;^^&lt;application&gt;^^&lt;fld4&gt;" />
 
 <MESSAGE 
 	id1="BOOTING_DISABLED:01" 
