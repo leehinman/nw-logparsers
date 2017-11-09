@@ -4,9 +4,9 @@
 	displayname="Big-IP Access Policy Manager"
 	group="Access Control">
 <VERSION
-	xml="25"
-	checksum="576c0e2a2c0338a794986050d81501a7"
-	revision="107"
+	xml="26"
+	checksum="516908dc9fb89926bb43f0139a8a16fb"
+	revision="112"
 	device="2.0" />
 
  
@@ -521,4 +521,32 @@
 	eventcategory="1801010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;&lt;severity&gt;&lt;fld5&gt;[&lt;process_id&gt;]:&lt;fld7&gt;:&lt;fld6&gt;: Connection error:&lt;event_description&gt;" />
+<MESSAGE
+	 id1="apmd:04"
+	 id2="apmd"
+	 eventcategory="1605000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B%F %N:%U:%O',fld1,fld2,fld3)&gt;"
+	 content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld4&gt; /Common/home_agent_tca:Common:&lt;fld5&gt;: &lt;fld6&gt; - Hostname: &lt;shost&gt; Type: &lt;fld7&gt; Version: &lt;version&gt; Platform: &lt;os&gt; CPU: &lt;fld8&gt; Mode:&lt;fld9&gt;"/>
+
+<MESSAGE
+	 id1="apmd:03"
+	 id2="apmd"
+	 eventcategory="1803000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B%F %N:%U:%O',fld1,fld2,fld3)&gt;"
+	 content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld4&gt; /Common/home_agent_tca:Common:&lt;fld5&gt;: RADIUS module: parseResponse(): Access-Reject packet from host &lt;saddr&gt;:&lt;sport&gt; &lt;fld7&gt;"/>
+
+<MESSAGE
+	 id1="apmd:02"
+	 id2="apmd"
+	 eventcategory="1803000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B%F %N:%U:%O',fld1,fld2,fld3)&gt;"
+	 content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld4&gt; /Common/home_agent_tca:Common:&lt;fld5&gt;: RADIUS module: authentication with '&lt;username&gt;' failed: {&lt;fld6&gt; from host &lt;saddr&gt;:&lt;sport&gt; &lt;fld7&gt;| &lt;fld8&gt;}"/>
+
+<MESSAGE
+	 id1="apmd"
+	 id2="apmd"
+	 eventcategory="1605000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B%F %N:%U:%O',fld1,fld2,fld3)&gt;"
+	 content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;info&gt;"/>
+
 </DEVICEMESSAGES>
