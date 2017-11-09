@@ -4,9 +4,9 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="314"
-	checksum="ef482cc9151d1d396e61ff5422d2c6d6"
-	revision="111"
+	xml="321"
+	checksum="26ab99d75cc8fa4991848b66bec813b6"
+	revision="112"
 	device="2.0" />
 
 
@@ -3470,6 +3470,20 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;] &lt;username&gt;: [&lt;fld2&gt;] &lt;event_description&gt;" />
 
 <MESSAGE
+	id1="001504:01"
+	id2="Changing"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@change_attribute:Server&gt;"
+	content="&lt;event_description&gt;:[&lt;change_old&gt;] to:[&lt;change_new&gt;] &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;" />
+
+<MESSAGE
+	id1="001504:02"
+	id2="Changing"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@change_attribute:Server&gt;"
+	content="&lt;event_description&gt;:[&lt;change_old&gt;] to:[&lt;change_new&gt;]&lt;fld1&gt;" />
+ 
+<MESSAGE
 	id1="00320"
 	id2="chat"
 	eventcategory="1605010000"
@@ -5634,6 +5648,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="002129:01"
+	id2="Server"
+	eventcategory="1401030000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;agent&gt;[&lt;process_id&gt;]: Login failed for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />" />
 
 <MESSAGE
 	id1="001208"
@@ -16995,6 +17016,29 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Server Administrator: &lt;event_description&gt;" />
 <MESSAGE
+	id1="00337:01"
+	id2="Server"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" &lt;fld1&gt; connected to SpectraGuard Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld2&gt;, protocol &lt;protocol&gt;, proxied &lt;fld3&gt;" />
+
+	
+<MESSAGE
+	id1="00337:02"
+	id2="Server"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; with ip address[&lt;hostip&gt;] upgrading from SpectraGuard Server [&lt;daddr&gt;]" />
+
+	
+<MESSAGE
+	id1="00337:03"
+	id2="Server"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt;, posting PMAC reinit for Spectraguard Sensor [&lt;smacaddr&gt;]" />
+
+<MESSAGE
 	id1="01004"
 	id2="ServeRAID"
 	eventcategory="1603000000"
@@ -23475,6 +23519,14 @@
 	eventcategory="1401030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:Starting up&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: Starting up" />
+	
+<MESSAGE
+	id1="sssd_be"
+	id2="sssd_be"
+	eventcategory="1401030000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:Starting up&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;"/>
+
 <MESSAGE
 	id1="002450"
 	id2="hourly"
@@ -23987,6 +24039,28 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: SpectraGuard Sensor[&lt;smacaddr&gt;] connected to SpectraGuard Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;" />
+<MESSAGE
+	id1="002544:01"
+	id2="sensord"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: SpectraGuard Sensor[&lt;smacaddr&gt;] disconnected from SpectraGuard Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;" />
+
+	
+<MESSAGE
+	id1="002544:02"
+	id2="sensord"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: SpectraGuard Sensor[&lt;smacaddr&gt;] with ip address[&lt;hostip&gt;] upgrading from SpectraGuard Server {[&lt;daddr&gt;] &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;daddr&gt;] &lt;dhost&gt;,protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;daddr&gt;] ,protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;daddr&gt;]}" />
+
+<MESSAGE
+	id1="002544:03"
+	id2="sensord"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt; {[&lt;smacaddr&gt;] &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;smacaddr&gt;] &lt;fld2&gt; [&lt;daddr&gt;]|[&lt;smacaddr&gt;] &lt;fld2&gt;}" /> 
+
 						
 <MESSAGE
 	id1="002545"
