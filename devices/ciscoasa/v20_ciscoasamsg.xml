@@ -4,9 +4,9 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="234"
-	checksum="31ec8ab192363827daa7b8e8649d9ff9"
-	revision="111"
+	xml="235"
+	checksum="eb122be815a556d048d3a9c776a6d3da"
+	revision="112"
 	device="2.0" />
 
 
@@ -2025,23 +2025,30 @@
 	id2="302020"
 	eventcategory="1801020000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;"	
-	content="Built inbound ICMP connection for faddr {&lt;saddr&gt;(&lt;fld11&gt;)|&lt;saddr&gt;} gaddr &lt;hostip&gt; laddr {&lt;daddr&gt;(&lt;fld10&gt;)|&lt;daddr&gt;}" />
+	content="Built inbound ICMP connection for faddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld11&gt;)|&lt;saddr&gt;(&lt;fld11&gt;)|&lt;saddr&gt;} gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;}" />
 <MESSAGE
 	id1="302020:04"
 	id2="302020"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:*PARMVAL(fld1)&gt;"
-	content="Built &lt;fld1&gt; ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt;(&lt;fld51&gt;) gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;}" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
+	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt;(&lt;fld51&gt;) gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld10&gt;)|&lt;saddr&gt;/&lt;sport&gt;}" />
 
 	
 <MESSAGE
 	id1="302020:03"
 	id2="302020"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:*PARMVAL(fld1)&gt;"
-	content="Built &lt;fld1&gt; ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;}" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
+	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld10&gt;)|&lt;saddr&gt;/&lt;sport&gt;}" />
 
 	
+<MESSAGE
+	id1="302020:05"
+	id2="302020"
+	eventcategory="1801020000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;"
+	content="Built inbound ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;}" />
+
 <MESSAGE
 	id1="302020:01"
 	id2="302020"
