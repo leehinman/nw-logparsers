@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="321"
-	checksum="26ab99d75cc8fa4991848b66bec813b6"
+	xml="325"
+	checksum="3b58509412ee1babb7af97e8bf3d1276"
 	revision="112"
 	device="2.0" />
 
@@ -41,6 +41,12 @@
 	id2="2222"
 	messageid="STRCAT(&apos;User&apos;, &apos;_&apos;, &apos;LoggedIn&apos;)"
 	content="&lt;hfld2&gt;: User &lt;hfld1&gt; has logged in &lt;!payload:$START&gt;" />
+<HEADER
+	id1="2223"
+	id2="2223"
+	messageid="STRCAT('Mobile','_','Safari')"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; %APACHE: &lt;hfld1&gt; Safari/&lt;!payload:hfld1&gt;" />
+
 
 <HEADER
 	id1="1100"
@@ -322,7 +328,7 @@
 <HEADER
 	id1="0022"
 	id2="0022"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
 <HEADER
 	id1="0040"
 	id2="0040"
@@ -11441,7 +11447,7 @@
 	id2="named"
 	eventcategory="1605010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%F-%B-%W %N:%U:%O&apos;,fld1)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;"
-	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;.&lt;fld2&gt; client &lt;saddr&gt;#&lt;fld3&gt;: query: &lt;hostname&gt; IN &lt;terminal&gt; + (&lt;fld4&gt;)" />
+	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;.&lt;fld2&gt; {client &lt;obj_id&gt; &lt;saddr&gt;#&lt;sport&gt; &lt;fld3&gt;|client &lt;saddr&gt;#&lt;sport&gt;}: query: &lt;hostname&gt; IN &lt;terminal&gt; +&lt;fld5&gt; (&lt;fld4&gt;)" />
 <MESSAGE
 	id1="00103"
 	id2="named"
@@ -17039,6 +17045,13 @@
 	content="&lt;fld1&gt;, posting PMAC reinit for Spectraguard Sensor [&lt;smacaddr&gt;]" />
 
 <MESSAGE
+	id1="00337:04"
+	id2="Server"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt;: &lt;result&gt;" />
+
+<MESSAGE
 	id1="01004"
 	id2="ServeRAID"
 	eventcategory="1603000000"
@@ -18110,6 +18123,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;event_description&gt;" />
+<MESSAGE
+	id1="00892"
+	id2="clsecho"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@process:init.ohasd&gt;&lt;@event_description:Writing to oracle-ohasd tasks&gt;"
+	content="clsecho: &lt;filename&gt;: Writing &lt;fld1&gt; to oracle-ohasd tasks" />
+
 <MESSAGE
 	id1="002408"
 	id2="spsetup.sh"
@@ -23860,6 +23880,20 @@
 	eventcategory="1401030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="{&lt;agent&gt;[&lt;process_id&gt;] | &lt;agent&gt;}: &lt;info&gt;" />
+<MESSAGE
+	id1="002572:01"
+	id2="systemd-udevd"
+	eventcategory="1603110000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_state:terminated&gt;"
+	content="&lt;agent&gt;: &lt;process&gt; [&lt;process_id&gt;] terminated by &lt;info&gt;" />
+
+<MESSAGE
+	id1="002572:02"
+	id2="systemd-udevd"
+	eventcategory="1603090000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;process&gt; [&lt;process_id&gt;] &lt;device&gt; &lt;info&gt;" />
+
 			
 			
 <MESSAGE
@@ -24515,6 +24549,57 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: &lt;info&gt;" />
+
+<MESSAGE
+	id1="002618"
+	id2="sflow_agent"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AgentX subagent connected&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;product&gt; version &lt;version&gt; AgentX subagent connected" />
+
+<MESSAGE
+	id1="002619:02"
+	id2="discagent"
+	eventcategory="1303000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSL auth error&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: error: &lt;resultcode&gt;:SSL routines:&lt;info&gt;&quot;" />
+
+
+
+<MESSAGE
+	id1="002619:03"
+	id2="discagent"
+	eventcategory="1301000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSL_accept() failed in soap_ssl_accept()&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Detail: SSL_accept() failed in soap_ssl_accept()" />
+
+<MESSAGE
+	id1="002619:04"
+	id2="discagent"
+	eventcategory="1301000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSL request failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: SSL request failed, &lt;info&gt;" />
+
+<MESSAGE
+	id1="002619:05"
+	id2="discagent"
+	eventcategory="1303000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SSL error&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &quot;SSL_ERROR_SSL" />
+
+<MESSAGE
+	id1="002619:06"
+	id2="discagent"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SOAP 1.1 fault&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: SOAP 1.1 fault: SOAP-ENV:&lt;fld1&gt; [&lt;fld2&gt;]" />
+
+<MESSAGE
+	id1="002619:07"
+	id2="discagent"
+	eventcategory="1603000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:Error observed by underlying BIO&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &quot;Error observed by underlying BIO: &lt;event_state&gt;&quot;" />
 
 <MESSAGE
 	id1="rsyslogd-3000:01"
@@ -25336,6 +25421,14 @@
 	content="&lt;agent&gt;: time=&quot;&lt;fld1&gt;&quot; level=&lt;severity&gt; msg=&quot;&lt;info&gt;&quot;" />
 	
 <MESSAGE
+	id1="dockerd"
+	id2="dockerd"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;: time=&quot;&lt;fld1&gt;&quot; level=&lt;severity&gt; msg=&quot;&lt;info&gt;&quot;" />
+
+
+<MESSAGE
 	id1="rainit"
 	id2="rainit"
 	eventcategory="1605000000"
@@ -25349,6 +25442,14 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;:&lt;fld1&gt;" />
+
+	
+<MESSAGE
+	id1="Mobile_Safari"
+	id2="Mobile_Safari"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@application:Mobile Safari&gt;"
+	content="{&lt;fld1&gt;/&lt;fld2&gt; Mobile|&lt;fld2&gt; Mobile} Safari/&lt;version&gt;&quot; &quot;&lt;fld3&gt;&quot;" />
 
 	
 </DEVICEMESSAGES>
