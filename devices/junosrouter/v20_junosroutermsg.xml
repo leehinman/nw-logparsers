@@ -4,8 +4,8 @@
 	displayname="Juniper JUNOS"
 	group="Router">
 <VERSION
-	xml="45"
-	checksum="5687e2fa7bc719ff81b63a34ad9f1c68"
+	xml="49"
+	checksum="e3fdff45fa307375edc1c7078fd64130"
 	revision="111"
         device="2.0" />
 
@@ -191,7 +191,13 @@
 	messageid="STRCAT('node')"
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hhost&gt; { node&lt;hfld1&gt;.fpc&lt;hfld2&gt;.pic&lt;hfld3&gt; | node&lt;hfld1&gt;.fpc&lt;hfld2&gt; } &lt;!payload:hhost&gt;" />
 
-<HEADER
+<HEADER 
+	id1="9997" 
+	id2="9997" 
+	messageid="STRCAT('JUNOSROUTER','_','GENERIC')"
+	content="{mgd[|rpd[|dcd[}&lt;process_id&gt;]:&lt;!payload&gt;" />
+
+  <HEADER
 	id1="9999"
 	id2="9999"
 	messageid="STRCAT('JUNOSROUTER','_','GENERIC')"
@@ -5556,6 +5562,55 @@
 	eventcategory="1803000000" 
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld32)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;event_type&gt;[junos@&lt;fld32&gt; category=&quot;&lt;fld1&gt;&quot; sub-category=&quot;&lt;fld2&gt;&quot; action=&quot;&lt;action&gt;&quot; action-detail=&quot;&lt;fld4&gt;&quot; http-host=&quot;&lt;fld17&gt;&quot; threat-severity=&quot;&lt;severity&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; destination-port=&quot;&lt;dport&gt;&quot; protocol-id=&quot;&lt;protocol&gt;&quot; application=&quot;&lt;fld5&gt;&quot; nested-application=&quot;&lt;fld6&gt;&quot; feed-name=&quot;&lt;fld18&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; profile-name=&quot;&lt;rulename&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;user_role&gt;&quot; session-id-32=&quot;&lt;sessionid&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot;]&lt;fld10&gt;"/>
+
+<MESSAGE 
+	id1="JUNOSROUTER_GENERIC:03" 
+	id2="JUNOSROUTER_GENERIC" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:UI CMDLINE READ LINE&gt;"
+	content=" &lt;event_type&gt;: User &apos;&lt;username&gt;&apos;, command &apos;&lt;action&gt;&apos;" />
+
+<MESSAGE 
+	id1="JUNOSROUTER_GENERIC:04" 
+	id2="JUNOSROUTER_GENERIC" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LOGOUT&gt;"
+	content=" &lt;event_type&gt;: User &apos;&lt;username&gt;&apos; &lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="JUNOSROUTER_GENERIC:05" 
+	id2="JUNOSROUTER_GENERIC" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:TACACS+ failure&gt;"
+	content="&lt;event_type&gt;: TACACS+ failure: &lt;result&gt;" />
+
+<MESSAGE  
+	id1="JUNOSROUTER_GENERIC:06" 
+	id2="JUNOSROUTER_GENERIC" 
+	eventcategory="1603000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:peer NLRI mismatch&gt;"
+	content="&lt;event_type&gt;: mismatch NLRI with &lt;hostip&gt; (&lt;hostname&gt;): peer: &lt;daddr&gt; us: &lt;saddr&gt;" />
+
+<MESSAGE 
+	id1="JUNOSROUTER_GENERIC:07" 
+	id2="JUNOSROUTER_GENERIC" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:rpd proceeding&gt;"
+	content=" &lt;event_type&gt;: NOTIFICATION sent to &lt;daddr&gt; (&lt;dhost&gt;): code &lt;resultcode&gt; (&lt;action&gt;), Reason: &lt;result&gt; " />
+
+<MESSAGE 
+	id1="JUNOSROUTER_GENERIC:08" 
+	id2="JUNOSROUTER_GENERIC" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:rpd proceeding&gt;"
+	content=" &lt;event_type&gt;: NOTIFICATION received from {&lt;daddr&gt; (&lt;dhost&gt;): code &lt;resultcode&gt; (&lt;action&gt;), socket buffer sndcc: &lt;fld1&gt; rcvcc: &lt;fld2&gt; TCP state: &lt;event_state&gt;, snd_una: &lt;fld3&gt; snd_nxt: &lt;fld4&gt; snd_wnd: &lt;fld5&gt; rcv_nxt: &lt;fld6&gt; rcv_adv: &lt;fld7&gt;, hold timer &lt;fld8&gt;|&lt;daddr&gt; (&lt;dhost&gt;): code &lt;resultcode&gt; (&lt;action&gt;)} " />
+
+<MESSAGE
+	 id1="JUNOSROUTER_GENERIC:09"
+	 id2="JUNOSROUTER_GENERIC"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	 content="&lt;event_type&gt;: [edit interfaces&lt;interface&gt;unit&lt;fld1&gt;family inet address&lt;hostip&gt;/&lt;network_port&gt;] :&lt;event_description&gt;:&lt;info&gt;"/>
 
  <MESSAGE
 	id1="JUNOSROUTER_GENERIC:01"
