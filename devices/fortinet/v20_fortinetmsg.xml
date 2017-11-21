@@ -4,8 +4,8 @@
 	displayname="Fortinet FortiGate"
 	group="Firewall">
 <VERSION
-		xml="121"
-		checksum="ad1a58339e6d740bff7a06820328f1e5"
+		xml="123"
+		checksum="72ee7ed8e454c5fac62f63df89f45e90"
 		revision="112"
 		device="2.0"/>
  
@@ -6919,6 +6919,16 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
 	content="vd=&quot;&lt;vsys&gt;&quot; { policyid=&lt;policy_id&gt; intf_policyid=&lt;fld10&gt; | policyid=&lt;policy_id&gt; } identidx=&lt;fld33&gt; {sessionid|serial}=&lt;fld1&gt; {user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; src=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; srcip=&lt;saddr&gt;|user=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;|srcip=&lt;saddr&gt;} {sport=&lt;sport&gt; src_port=&lt;fld2&gt;|srcport=&lt;fld2&gt;} {src_int|srcintf}=&quot;&lt;sinterface&gt;&quot; {dstip|dst}=&lt;daddr&gt; {dport=&lt;dport&gt; dst_port=&lt;fld3&gt;|dstport=&lt;fld3&gt;} {dst_int|dstintf}=&quot;&lt;dinterface&gt;&quot; service=&quot;&lt;network_service&gt;&quot; hostname=&quot;&lt;hostname&gt;&quot; {carrier_ep=&lt;fld4&gt; profiletype=&quot;&lt;rule_template&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot;|profiletype=&quot;&lt;rule_template&gt;&quot; profilegroup=&quot;&lt;rule_group&gt;&quot;|profiletype=&quot;&lt;rule_template&gt;&quot;} profile=&quot;&lt;rulename&gt;&quot; status=&quot;&lt;fld16&gt;&quot; {req_type|reqtype}=&lt;fld8&gt; url=&quot;&lt;url&gt;&quot; {sentbyte|sent}=&lt;sbytes&gt; {rcvdbyte|rcvd}=&lt;rbytes&gt; msg=&quot;&lt;event_description&gt;&quot; method=&lt;fld5&gt; {class=&lt;fld6&gt; class_desc=&lt;fld7&gt;|class=&lt;fld6&gt;} {cat=&lt;fcatnum&gt; cat_desc=&quot;&lt;filter&gt;&quot;|cat=&lt;fcatnum&gt;}" />
 <MESSAGE
+	id1="0315013317:01"
+	id2="0315013317"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+    content="vd=&lt;vsys&gt;  policyid=&lt;policy_id&gt; sessionid=&lt;sessionid&gt; user=&lt;username&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; proto=&lt;protocol&gt; servCLI=&lt;network_service&gt; hostname=&lt;hostname&gt; profile=&lt;rulename&gt; action=&lt;action&gt; reqtype=&lt;fld9&gt; url=&lt;url&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; direction=&lt;direction&gt; msg=&lt;event_description&gt; method=&lt;fld10&gt; cat=&lt;fcatnum&gt;" />
+
+	
+<MESSAGE
 	id1="0104032141"
 	id2="0104032141"
 	eventcategory="1401040000"
@@ -6995,7 +7005,7 @@
 	id2="0001000014"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
-	content="vd=&lt;vsys&gt; {srcip=&lt;saddr&gt; srcport=&lt;sport&gt;|srcip=&lt;saddr&gt;} srcintf={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} {dstip=&lt;daddr&gt; dstport=&lt;dport&gt;|dstip=&lt;daddr&gt;} dstintf={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} sessionid=&lt;fld1&gt; status=&lt;event_state&gt; policyid=&lt;policy_id&gt; {dstcountry=&quot;&lt;location_dst&gt;&quot; srccountry=&quot;&lt;location_src&gt;&quot; trandisp=&lt;context&gt;|trandisp=&lt;context&gt;} service=&lt;network_service&gt; proto=&lt;fld70&gt; app=&lt;obj_name&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; {rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld10&gt; rcvdpkt=&lt;fld11&gt;|sentpkt=&lt;fld10&gt; rcvdpkt=&lt;fld11&gt; rcvdbyte=&lt;rbytes&gt;|rcvdbyte=&lt;rbytes&gt;}" />
+	content="vd=&lt;vsys&gt; {srcip=&lt;saddr&gt; srcport=&lt;sport&gt;|srcip=&lt;saddr&gt;} srcintf={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} {dstip=&lt;daddr&gt; dstport=&lt;dport&gt;|dstip=&lt;daddr&gt;} dstintf={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} sessionid=&lt;fld1&gt; status=&lt;event_state&gt; policyid=&lt;policy_id&gt; {dstcountry=&quot;&lt;location_dst&gt;&quot; srccountry=&quot;&lt;location_src&gt;&quot; trandisp=&lt;context&gt;|trandisp=&lt;context&gt;} service=&lt;network_service&gt; proto=&lt;fld70&gt; app=&lt;obj_name&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; {rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld10&gt; rcvdpkt=&lt;fld11&gt;|sentpkt=&lt;fld10&gt; rcvdpkt=&lt;fld11&gt; rcvdbyte=&lt;rbytes&gt;|rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld10&gt;|rcvdbyte=&lt;rbytes&gt;}" />
 		
 <MESSAGE
 	id1="0001000014:02"
