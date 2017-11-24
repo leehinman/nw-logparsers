@@ -4,9 +4,9 @@
 	displayname="Blue Coat ELFF"
 	group="Web Logs">
 <VERSION
-	xml="88"
-	checksum="a89a36a20c2c3688b9ce4f6bd9f8bca8"
-	revision="105"
+	xml="89"
+	checksum="adecf02480676de20f634939f03c05bc"
+	revision="112"
     device="2.0" />
 <TAGVALMAP 
 		delimiter=", &quot;" />
@@ -68,12 +68,15 @@
 	id1="0008" 
 	id2="0008"  
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;messageid&gt;: &lt;!payload&gt;" />
-		
+<HEADER
+	id1="0012"
+	id2="0012"
+	content="%CACHEFLOWELFF_&lt;messageid&gt;:&lt;!payload&gt;"/>
 <HEADER
 	id1="0011"
 	id2="0011"
 	content="%CACHEFLOWELFF_syslog:&lt;hfld1&gt;,cs-method=&quot;&lt;messageid&gt;&quot;,&lt;!payload:hfld1&gt;"/>
-       		
+
 
 <MESSAGE
 	id1="IM_aol-im"
@@ -93,6 +96,7 @@
 	eventcategory="1204000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;"
 	content=" &lt;fld20&gt; &lt;fld21&gt; &lt;saddr&gt; &lt;username&gt; &lt;group&gt; &lt;network_service&gt; &lt;action&gt; &lt;im_userid&gt; &lt;im_username&gt; &lt;fld1&gt; {&quot;&lt;im_client&gt;&quot; | &lt;im_client&gt;} &lt;im_buddyid&gt; &lt;im_buddyname&gt; &lt;fld2&gt; &lt;im_croomid&gt; &lt;im_croomtype&gt; &lt;im_members&gt; {&quot;&lt;message_body&gt;&quot; | &lt;message_body&gt;} &lt;bytes&gt; &lt;fld3&gt; &lt;content_type&gt; &lt;filename&gt; &lt;filename_size&gt; &lt;disposition&gt;" />
+
 <MESSAGE  
 	id1="0" 
 	id2="0" 
@@ -105,6 +109,7 @@
 	eventcategory="1401040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Starting a test access log upload per user request for log.&gt;"
 	content="Config &lt;fld82&gt; at &lt;saddr&gt;  &apos;&lt;username&gt;&apos;, starting a test access log upload per user request for log &lt;event_log&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="160002:01" 
@@ -112,6 +117,7 @@
 	eventcategory="1701000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Config &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;, &lt;filter&gt;: &lt;info&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="160002:02" 
@@ -119,6 +125,7 @@
 	eventcategory="1701000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="{Config|SSH} &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;, &lt;info&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
     
 <MESSAGE  
 	id1="160002:03" 
@@ -126,6 +133,7 @@
 	eventcategory="1701030000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Deleted ca-certificate.&gt;"
 	content="Deleted ca-certificate &apos;&lt;cert_subject&gt;&apos; as part of restore-defaults(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
     
 <MESSAGE  
 	id1="260001" 
@@ -152,6 +160,7 @@
 	eventcategory="1301000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
 	content=" Enable password authentication from &lt;daddr&gt; failed for user { \&apos;&lt;username&gt;\&apos; | &apos;&lt;username&gt;&apos; } (&lt;fld83&gt;)&lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="260017:02" 
 	id2="260017" 
@@ -164,6 +173,7 @@
 	eventcategory="1401060000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_description:Administrator login.&gt;"
 	content="Administrator login from &lt;saddr&gt;, user { &apos;&lt;username&gt;&apos; | \&apos;&lt;username&gt;\&apos; } (&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="25001E" 
@@ -177,6 +187,7 @@
 	eventcategory="1401040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Read/write mode entered.&gt;"
 	content="Read/write mode entered from &lt;saddr&gt; for user { &apos;&lt;username&gt;&apos; | \&apos;&lt;username&gt;\&apos; }(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="25001F" 
@@ -208,12 +219,14 @@
 	eventcategory="1703000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content=" &lt;event_description&gt;: &quot;&lt;result&gt;&quot; &quot;&lt;fld80&gt;&quot;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="2D0006" 
 	id2="2D0006" 
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Snapshot has fetched.&gt;"
 	content="Snapshot &lt;fld1&gt; has fetched &lt;info&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="2D0006:01" 
@@ -239,6 +252,7 @@
 	eventcategory="1703000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="&lt;event_description&gt;{:(|(}&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="3B0003" 
@@ -288,6 +302,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Test Description.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="3C0002:02" 
@@ -295,6 +310,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="&lt;info&gt;" />
+
 <MESSAGE  
 	id1="3C0003" 
 	id2="3C0003" 
@@ -344,6 +360,7 @@
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:record on disk modify queue for 1too long&gt;"
 	content=" &lt;obj_type&gt; on disk\&apos;s &lt;obj_name&gt; modify queue for &lt;result&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="430000" 
 	id2="430000" 
@@ -374,12 +391,14 @@
 	eventcategory="1801020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="{The connection was closed|Successfully connected} to primary authentication agent for realm &lt;group_object&gt; at &lt;daddr&gt;:&lt;dport&gt;(&lt;fld82&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="420001:02" 
 	id2="420001" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="{Could not send request data to agent|Could not send request to agent} for realm &lt;group_object&gt;, result=&lt;result&gt; error=&lt;resultcode&gt;(&lt;fld82&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="80207" 
 	id2="80207" 
@@ -578,6 +597,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Initiating auto-update of license-key&gt;"
 	content=" Licensing: Initiating auto-update of license-key(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="550000:02" 
 	id2="550000" 
@@ -602,6 +622,7 @@
 	eventcategory="1401040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Management Console &lt;fld82&gt; at &lt;saddr&gt; { &apos;&lt;username&gt;&apos; | &lt;username&gt; }, &lt;info&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 
 	
@@ -686,6 +707,7 @@
 	eventcategory="1609000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Health Monitor (&lt;severity&gt;): Power supply &lt;fld83&gt; status is { \&apos;&lt;fld82&gt;\&apos; | &apos;&lt;fld82&gt;&apos; } (&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="70000" 
 	id2="70000" 
@@ -704,6 +726,7 @@
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:DNS error looking up address of NTP server.&gt;"
 	content="NTP: DNS error looking up address of NTP server: &lt;dhost&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 		
 <MESSAGE  
@@ -712,6 +735,7 @@
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Tried all configured servers. Unable to obtain NTP update due to NTP server errors&gt;"
 	content="NTP: Tried all configured servers. Unable to obtain NTP update due to NTP server errors.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="90000:02" 
@@ -719,6 +743,7 @@
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Periodic query of server &gt;"
 	content=" NTP: Periodic query of server &lt;hostip&gt;, time within acceptable variance, &lt;resultcode&gt; seconds, &lt;fld3&gt; ms { fast | slow } compared to NTP time.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="90000:04" 
 	id2="90000" 
@@ -737,12 +762,14 @@
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Periodic query of server &gt;&lt;@result:time matches system clock.&gt;"
 	content=" NTP: Periodic query of server &lt;hostip&gt;, time matches system clock.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="90000:03" 
 	id2="90000" 
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Receive timeout, retrying NTP Server&gt;"
 	content="NTP: Receive timeout, retrying NTP Server: &lt;fld1&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="A0000" 
 	id2="A0000" 
@@ -767,6 +794,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Licensing: Initiating auto-update of license-key(&lt;fld25&gt;) &lt;event_type&gt; {../&lt;filename&gt; | &lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="540000:01" 
 	id2="540000" 
@@ -779,6 +807,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): USER &lt;username&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:01" 
@@ -786,6 +815,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): { TYPE I | QUIT | PASV | PASS &lt;fld85&gt; }(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:02" 
@@ -793,6 +823,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): STOR &lt;filename&gt;(&lt;fld81&gt;) &lt;event_type&gt; &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:03" 
@@ -800,6 +831,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Creating data socket.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): Creating data socket to &lt;daddr&gt;:&lt;dport&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:04" 
@@ -807,6 +839,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Connecting to primary host.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): Connecting to primary &lt;daddr&gt; server &lt;dhost&gt;:&lt;dport&gt;.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:05" 
@@ -814,6 +847,7 @@
 	eventcategory="1401060000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@event_description:User logged in.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): &lt;resultcode&gt; User &lt;username&gt; logged in.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:06" 
@@ -821,6 +855,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Upload request failed.There is an upload in progress.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;):Test Upload: &lt;info&gt; upload request failed. There is an upload in progress.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:07" 
@@ -828,6 +863,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log (&lt;event_log&gt;):Test Upload: &lt;event_description&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
     
 <MESSAGE  
 	id1="E0000:08" 
@@ -835,6 +871,7 @@
 	eventcategory="1603110000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:The system cannot find the file specified.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): &lt;resultcode&gt; &lt;info&gt;: The system cannot find the file specified. (&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:09" 
@@ -842,6 +879,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Data connection already open; Transfer starting.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): &lt;fld84&gt; Data connection already open; Transfer starting.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:10" 
@@ -849,6 +887,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): &lt;event_description&gt;(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0000:11" 
@@ -862,12 +901,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Connections for &lt;saddr&gt; have dropped to &lt;fld81&gt; connections. &lt;fld82&gt; connections were denied due to connection limit being exceeded(0) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="E0008" 
 	id2="E0008" 
 	eventcategory="1803000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Unable to connect to remote server for log uploading.&gt;"
 	content="Access Log (&lt;event_log&gt;): Unable to connect to remote server for log uploading(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0008:01" 
@@ -875,12 +916,14 @@
 	eventcategory="1803000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Log uploading failed&gt;"
 	content=" Access log (&lt;event_log&gt;): Log uploading failed.  Remote filename: &lt;filename&gt; size: &lt;fld1&gt;.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="E0008:02" 
 	id2="E0008" 
 	eventcategory="1803000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Upload retries have been canceled.&gt;"
 	content="Access Log (&lt;event_log&gt;): Upload retries have been canceled.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0007" 
@@ -888,6 +931,7 @@
 	eventcategory="1803000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Nothing to upload.&gt;"
 	content="Access Log (&lt;event_log&gt;): Nothing to upload.Try again later.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="45000C" 
@@ -907,36 +951,42 @@
 	eventcategory="1803000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Connection closed&gt;"
 	content="Connection closed by &lt;saddr&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="250017" 
 	id2="250017" 
 	eventcategory="1401030000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Console user password authentication&gt;"
 	content="Console user password authentication from &lt;saddr&gt; failed for user &apos;&lt;username&gt;&apos;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="250046" 
 	id2="250046" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Administrator login&gt;"
 	content="Administrator login, user &apos;&lt;username&gt;&apos;, from &lt;saddr&gt;, &lt;privilege&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="250046:01" 
 	id2="250046" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Administrator login&gt;"
 	content="Administrator login, session_id &lt;sessionid&gt;, user &apos;&lt;username&gt;&apos;, from &lt;saddr&gt;, &lt;privilege&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="250042" 
 	id2="250042" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Administrator logout&gt;"
 	content="Administrator logout, user &apos;&lt;username&gt;&apos;, from &lt;saddr&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="E0009" 
 	id2="E0009" 
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Last Remote filename&gt;"
 	content="Access log (&lt;event_log&gt;): Last remote filename: &lt;filename&gt; size: &lt;filename_size&gt;(&lt;fld81&gt;) &lt;event_type&gt; &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0009:01" 
@@ -944,6 +994,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Upload completed successfully.&gt;"
 	content="Access { log | Log } (&lt;event_log&gt;): Upload completed successfully.  Maximum bandwidth used was &lt;fld68&gt;.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E0009:02" 
@@ -951,6 +1002,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access { log | Log } (&lt;event_log&gt;): Upload request completed. &lt;event_description&gt;.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="E0009:03" 
 	id2="E0009" 
@@ -969,6 +1021,7 @@
 	eventcategory="1603110000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Error Sending.Closing connections.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;):Test Upload: Error sending &lt;info&gt;.  Client received &lt;resultcode&gt; response. Closing connections.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
  	
 	
 <MESSAGE  
@@ -977,6 +1030,7 @@
 	eventcategory="1603110000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Error Sending.Closing connections.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): Error sending &lt;info&gt;.  Client received &lt;resultcode&gt; response. Closing connections.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
  	
 <MESSAGE  
 	id1="E000A:01" 
@@ -984,6 +1038,7 @@
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Couldn't connect control socket to primary server.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): { Couldn't | Couldn\'t } connect control socket { to primary  server at &lt;dport&gt;. | to primary server &lt;daddr&gt; | to primary &lt;daddr&gt; server at &lt;dport&gt;.} (&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E000A:02" 
@@ -991,6 +1046,7 @@
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Couldn't connect to primary server.&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): { Couldn't | Couldn\'t } connect to primary server(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E000A:03" 
@@ -998,6 +1054,7 @@
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log FTP (&lt;event_log&gt;): Error sending &lt;fld1&gt;.  Client received &lt;fld2&gt; response.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="E000A:04" 
 	id2="E000A" 
@@ -1043,6 +1100,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Global early upload threshold reached.&gt;"
 	content="Access Log (&lt;event_log&gt;): Global early upload threshold reached. Total Current size &lt;filename_size&gt;, Upload threshold &lt;fld12&gt;.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E000B:01" 
@@ -1050,6 +1108,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Early upload threshold reached.&gt;"
 	content="Access Log (&lt;event_log&gt;): Early upload threshold reached. Current size &lt;filename_size&gt;, Upload threshold &lt;fld12&gt;.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+
 	
 
 <MESSAGE
@@ -1088,6 +1147,7 @@
 	eventcategory="1802000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="client_address=&quot;&lt;saddr&gt;&quot;,client_transport=&quot;&lt;protocol&gt;&quot;,request_address=&quot;&lt;hostip&gt;&quot;,request_class=&quot;&lt;fld86&gt;&quot;,request_name=&quot;&lt;hostname&gt;&quot;,request_opcode=&quot;&lt;dns_opcode&gt;&quot;,request_type=&quot;&lt;event_type&gt;&quot;,response_a=&quot;&lt;dns_a_record&gt;&quot;,response_cname=&quot;&lt;dns_cname_record&gt;&quot;,response_code=&quot;&lt;resultcode&gt;&quot;,response_ptr=&quot;&lt;dns_ptr_record&gt;&quot;(&lt;fld81&gt;) &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="BlueCoat-DNS:01" 
@@ -1095,6 +1155,7 @@
 	eventcategory="1802000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="client_ address=&quot;&lt;saddr&gt;&quot;,client_transport=&quot;&lt;protocol&gt;&quot;,request_address=&quot;&lt;hostip&gt;&quot;,request_class=&quot;&lt;fld86&gt;&quot;,request_name=&quot;&lt;hostname&gt;&quot;,request_opcode=&quot;&lt;dns_opcode&gt;&quot;,request_type=&quot;&lt;event_type&gt;&quot;,response_a=&quot;&lt;dns_a_record&gt;&quot;,response_cname=&quot;&lt;dns_cname_record&gt;&quot;,response_code=&quot;&lt;resultcode&gt;&quot;,response_ptr=&quot;&lt;dns_ptr_record&gt;&quot;(&lt;fld81&gt;) &lt;fld80&gt;" />
+
 	
 <MESSAGE
 	id1="BlueCoat-SSL"
@@ -1102,6 +1163,7 @@
 	eventcategory="1204000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
 	content="&lt;fld1&gt;,&lt;fld2&gt;,&lt;processing_time&gt;,c_ip=&quot;&lt;saddr&gt;&quot;,action=&quot;&lt;action&gt;&quot;,s_cert_status=&quot;&lt;cert_status&gt;&quot;,s_cert_errors=&quot;&lt;cert_error&gt;&quot;,c_ocsp_error=&quot;&lt;fld83&gt;&quot;,s_http_version=&quot;&lt;version&gt;&quot;,host=&quot;&lt;dhost&gt;&quot;,hierarchy=&quot;&lt;h_code&gt;&quot;,supplier_name=&quot;&lt;fld67&gt;&quot;,s_ssl_version=&quot;&lt;d_sslver&gt;&quot;,s_cipher=&quot;&lt;d_cipher&gt;&quot;,s_cipher_size=&quot;&lt;d_ciphersize&gt;&quot;,s_cert_host=&quot;&lt;cert_hostname&gt;&quot;,s_cert_host_category=&quot;&lt;cert_hostname_cat&gt;&quot;,c_ssl_version=&quot;&lt;s_sslver&gt;&quot;,c_cipher=&quot;&lt;s_cipher&gt;&quot;,c_cipher_size=&quot;&lt;s_ciphersize&gt;&quot;,c_cert_subject=&quot;&lt;cert_subject&gt;&quot;,s_ip=&quot;&lt;daddr&gt;&quot;,s_sitename=&quot;&lt;service&gt;&quot;(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
 	
 <MESSAGE
 	id1="CACHE_MISS:03"
@@ -1194,6 +1256,7 @@
 	eventcategory="1801030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Management_Console HTTPS: TLS connection closed, no HTTP request data:  from &lt;saddr&gt; (&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE
 	id1="BlueCoat-Allowed_Sites"
 	id2="BlueCoat-Allowed_Sites"
@@ -1952,6 +2015,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="BITS_POST"
 	id2="BITS_POST"
@@ -1960,6 +2024,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="BMOVE"
 	id2="BMOVE"
@@ -1968,6 +2033,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="BPROPPATCH"
 	id2="BPROPPATCH"
@@ -1976,6 +2042,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="CCM_POST"
 	id2="CCM_POST"
@@ -1984,6 +2051,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="CONNECT"
 	id2="CONNECT"
@@ -2000,6 +2068,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="CWD"
 	id2="CWD"
@@ -2008,6 +2077,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="DELETE"
 	id2="DELETE"
@@ -2024,6 +2094,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="GET"
 	id2="GET"
@@ -2040,6 +2111,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="HEAD"
 	id2="HEAD"
@@ -2073,6 +2145,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="JUNK"
 	id2="JUNK"
@@ -2081,6 +2154,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="LIST"
 	id2="LIST"
@@ -2089,6 +2163,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="LOCK"
 	id2="LOCK"
@@ -2097,6 +2172,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="MKCOL"
 	id2="MKCOL"
@@ -2105,6 +2181,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="MOVE"
 	id2="MOVE"
@@ -2141,6 +2218,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="nCircleIP360Test"
 	id2="nCircleIP360Test"
@@ -2149,6 +2227,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="NOTIFY"
 	id2="NOTIFY"
@@ -2157,6 +2236,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="OPEN"
 	id2="OPEN"
@@ -2165,6 +2245,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="OPTIONS"
 	id2="OPTIONS"
@@ -2181,6 +2262,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="PASV"
 	id2="PASV"
@@ -2189,6 +2271,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="POLL"
 	id2="POLL"
@@ -2205,6 +2288,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="POST"
 	id2="POST"
@@ -2245,6 +2329,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="QUIT"
 	id2="QUIT"
@@ -2253,6 +2338,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="REGISTER"
 	id2="REGISTER"
@@ -2261,6 +2347,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content="date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="REPORT"
 	id2="REPORT"
@@ -2269,6 +2356,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="RETR"
 	id2="RETR"
@@ -2301,6 +2389,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="STOR"
 	id2="STOR"
@@ -2309,6 +2398,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="SUBSCRIBE"
 	id2="SUBSCRIBE"
@@ -2317,6 +2407,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="SYST"
 	id2="SYST"
@@ -2325,6 +2416,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="TRACE"
 	id2="TRACE"
@@ -2341,6 +2433,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="TYPE"
 	id2="TYPE"
@@ -2349,6 +2442,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="unknown"
 	id2="unknown"
@@ -2373,6 +2467,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="UNSUBSCRIBE"
 	id2="UNSUBSCRIBE"
@@ -2381,6 +2476,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="USER"
 	id2="USER"
@@ -2389,6 +2485,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="X-Dropbox-Locale:"
 	id2="X-Dropbox-Locale:"
@@ -2397,6 +2494,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE  
 	id1="46000B" 
 	id2="46000B" 
@@ -2542,12 +2640,14 @@
 	eventcategory="1401030000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Administrator login Failure&gt;"
 	content="Administrator login from &lt;saddr&gt;, user &apos;&lt;username&gt;&apos;, denied: &lt;result&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="250017:03" 
 	id2="250017" 
 	eventcategory="1401030000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Authentication failed&gt;"
 	content="Authentication failed with&lt;resultcode&gt;(&lt;fld&gt;) (symbol: '&lt;result&gt;'): user '&lt;username&gt;' (domain&lt;domain&gt;) -&lt;info&gt;(&lt;fld&gt;)&lt;event_type&gt;&lt;filename&gt;&lt;fld&gt;" />
+
 <MESSAGE  
 	id1="140002:01" 
 	id2="140002" 
@@ -2665,6 +2765,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 		
 <MESSAGE  
 	id1="250001" 
@@ -2672,6 +2773,7 @@
 	eventcategory="1301000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
 	content="Local: Authentication failed from &lt;daddr&gt;: no such user in realm &apos;&lt;username&gt;&apos;(&lt;fld82&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="E000D" 
@@ -2679,6 +2781,7 @@
 	eventcategory="1609000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Maximum log size reached.Logging disabled as per overflow policy. &gt;"
 	content="Access Log (&lt;event_log&gt;): Maximum log size reached.Logging disabled as per overflow policy.(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 	
 <MESSAGE  
 	id1="3020A" 
@@ -2686,6 +2789,7 @@
 	eventcategory="1609000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="link { up | down} event for interface &lt;fld31&gt; (&lt;fld32&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE
 	id1="PATCH"
 	id2="PATCH"
@@ -2694,6 +2798,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="SET_STATE"
 	id2="SET_STATE"
@@ -2702,6 +2807,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="LOGOUT"
 	id2="LOGOUT"
@@ -2710,6 +2816,7 @@
 	tagval="true"
 	functions="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="SIZE"
 	id2="SIZE"
@@ -2718,6 +2825,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;,cs-uri-extension=&lt;web_extension&gt;" />
+
 <MESSAGE
 	id1="RNTO"
 	id2="RNTO"
@@ -2726,6 +2834,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="MDTM"
 	id2="MDTM"
@@ -2734,6 +2843,7 @@
 	tagval="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 <MESSAGE
 	id1="U"
 	id2="U"
@@ -2743,10 +2853,21 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
 	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
 
+
 <MESSAGE 
 	id1="CACHEFLOWELFF_GENERIC" 
 	id2="CACHEFLOWELFF_GENERIC" 
 	eventcategory="1901000000"
 	functions="&lt;@msg_id:*HDR(p_msgid)&gt;&lt;@vid:*HDR(p_msgid)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
-	content="&lt;fld&gt;" />
+	content="&lt;fld1&gt;" />
+
+<MESSAGE
+	id1="syslog"
+	id2="syslog"
+	eventcategory="1204000000"
+	missField="true"
+	tagval="true"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dhost:*PARMVAL(web_host)&gt;"
+	content=" date=&lt;fld1&gt;,time=&lt;fld2&gt;,time-taken=&lt;processing_time&gt;,c-ip=&lt;saddr&gt;,s-action=&lt;action&gt;,sc-status=&lt;resultcode&gt;,sc-bytes=&lt;sbytes&gt;,cs-bytes=&lt;rbytes&gt;,cs-method=&lt;web_method&gt;,cs-user=&lt;username&gt;,cs-username=&lt;username&gt;,cs-uri-username=&lt;username&gt;,s-hierarchy=&lt;h_code&gt;,cs-host=&lt;web_host&gt;,rs(Content-Type)=&lt;content_type&gt;,cs-uri-port=&lt;dport&gt;,s-ip=&lt;hostip&gt;,r-ip=&lt;dtransaddr&gt;,r-supplier-ip=&lt;fld37&gt;,r-dns=&lt;fld38&gt;,c-port=&lt;sport&gt;,cs-category=&lt;category&gt;,cs-uri-scheme=&lt;network_service&gt;,duration=&lt;duration&gt;,s-supplier-ip=&lt;daddr&gt;,cs-auth-group=&lt;group_object&gt;,s-supplier-name=&lt;fld68&gt;,sc-filter-result=&lt;disposition&gt;,sc-filter-category=&lt;filter&gt;,cs(User-Agent)=&lt;user_agent&gt;,x-virus-id=&lt;virusname&gt;,s-sitename=&lt;service&gt;,cs-uri=&lt;url&gt;,cs-uri-path=&lt;webpage&gt;,x-exception-id=&lt;result&gt;,cs-categories=&lt;category&gt;,cs(Referer)=&lt;web_referer&gt;,cs-uri-query=&lt;web_query&gt;,cs-uri-extension=&lt;web_extension&gt;,cs(Cookie)=&lt;web_cookie&gt;,s-computername=&lt;hostname&gt;,s-port=&lt;network_port&gt;,cs-version=&lt;version&gt;,cs-auth-groups=&lt;group_object&gt;,cs-uri-stem=&lt;fld3&gt;" />
+
 </DEVICEMESSAGES>
