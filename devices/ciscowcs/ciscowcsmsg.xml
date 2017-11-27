@@ -4,9 +4,9 @@
 	displayname="Cisco WCS"
 	group="Configuration Management">
 <VERSION
-		xml="29"
-		checksum="9c0b5120a8ed35223a8050c4a0f508d4"
-		revision="111"
+		xml="34"
+		checksum="0581035efde6976a14724d00cfdf5d73"
+		revision="112"
 		device="2.0"/>
 
 <HEADER
@@ -351,7 +351,7 @@
 	 id2="Rogue"
 	 eventcategory="1605000000"
 	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
-	 content="Rogue&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' on Controller '&lt;saddr&gt;' was advertising our SSID and has been auto contained as per WPS policy."/>
+	 content="Rogue&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' on Controller '&lt;saddr&gt;' was advertising our SSID and &lt;fld2&gt;"/>
 
 <MESSAGE
 	id1="Interferer"
@@ -728,15 +728,21 @@
 	 id2="Friendly"
 	 eventcategory="1605000000"
 	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
-	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' with SSID '&lt;ssid&gt;' {is reported by controller|is detected by AP} '&lt;fld2&gt;' with RSSI {'&lt;data&gt;'. Rogue AP classified as Known AP.|'&lt;data&gt;'.}"/>
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' with SSID '&lt;ssid&gt;' is {reported by controller|detected by AP} '&lt;fld2&gt;' with RSSI {'&lt;data&gt;'. Rogue AP classified as Known AP.|'&lt;data&gt;'.}"/>
 
 <MESSAGE
 	 id1="Friendly:03"
 	 id2="Friendly"
 	 eventcategory="1605000000"
 	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
-	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP classified as Known AP."/>
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP classified as &lt;fld2&gt; AP."/>
 
+<MESSAGE
+	 id1="Friendly:04"
+	 id2="Friendly"
+	 eventcategory="1605000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|&lt;fld2&gt;"/>
 <MESSAGE
 	id1="User:01"
 	id2="User"
@@ -778,5 +784,19 @@
 	 eventcategory="1605000000"
 	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
 	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP '&lt;smacaddr&gt;' with SSID '&lt;ssid&gt;' and channel number '&lt;wifi_channel&gt;' is detected by AP '&lt;access_point&gt;' Radio type '&lt;protocol&gt;' with RSSI '&lt;data&gt;' and SNR '&lt;dclass_ratio1&gt;'."/>
+
+<MESSAGE
+	 id1="Malicious:01"
+	 id2="Malicious"
+	 eventcategory="1605000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID '&lt;ssid&gt;' is {reported by controller|detected by AP} '&lt;access_point&gt;' Radio type '&lt;protocol&gt;' with RSSI '&lt;data&gt;'."/>
+
+<MESSAGE
+	 id1="POE"
+	 id2="POE"
+	 eventcategory="1601000000"
+	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="POE status|&lt;fld1&gt;|Access point &apos;&lt;access_point&gt;&apos; associated with controller&lt;fld2&gt;. Failure reason: &apos;&lt;result&gt;&apos;."/>
 
 </DEVICEMESSAGES>
