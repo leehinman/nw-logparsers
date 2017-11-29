@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="325"
-	checksum="3b58509412ee1babb7af97e8bf3d1276"
+	xml="326"
+	checksum="2fdfb754352373f16fe5665ce7c0e9d3"
 	revision="112"
 	device="2.0" />
 
@@ -2011,7 +2011,7 @@
 <MESSAGE
 	id1="002059"
 	id2="audispd"
-	eventcategory="1605000000"
+	eventcategory="1401070000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER END&gt;&lt;@result:success&gt;"
 	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_END msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
 
@@ -18584,7 +18584,7 @@
 <MESSAGE
 	id1="00020:18"
 	id2="sshd"
-	eventcategory="1401060000"
+	eventcategory="1302010200"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Accepted keyboard-interactive/pam&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: Accepted keyboard-interactive/pam for &lt;username&gt; from { ::ffff:&lt;saddr&gt; | &lt;saddr&gt; }  port &lt;sport&gt; &lt;protocol&gt;" />
 <MESSAGE
@@ -18602,9 +18602,16 @@
 <MESSAGE
 	id1="00020:16"
 	id2="sshd"
-	eventcategory="1401070000"
+	eventcategory="1801030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_description:Received disconnect&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: Received disconnect from &lt;shost&gt;: &lt;fld1&gt;: &lt;action&gt;" />
+<MESSAGE
+	id1="00020:38"
+	id2="sshd"
+	eventcategory="1401070000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session closed for user&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;(&lt;info&gt;): session closed for user &lt;username&gt;" />
+
 <MESSAGE
 	id1="00020:17"
 	id2="sshd"
@@ -18656,13 +18663,6 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:subsystem request for sftp&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: subsystem request for sftp" />
 
-
-<MESSAGE
-	id1="00020:38"
-	id2="sshd"
-	eventcategory="1401070000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session closed for user&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;(&lt;info&gt;): session closed for user &lt;username&gt;" />
 
 <MESSAGE
 	id1="00020:30"
