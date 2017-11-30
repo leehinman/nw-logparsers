@@ -4,15 +4,15 @@
 	displayname="UNIX AIX"
 	group="Unix">
 <VERSION
-	xml="126"
-	checksum="64f53ea79f8e2736fee8ba338c252c62"
+	xml="128"
+	checksum="8f8f0bf79fe517be901ebaaef34bca43"
 	revision="112"
 	device="2.0" />
 
 <VALUEMAP
 	name="getEventLegacyCategory"
 	default="1803000000"
-	keyvaluepairs="11=&apos;1401070000&apos;|7=&apos;1603110000&apos;|5=&apos;1801010000&apos;|6=&apos;1801010000&apos;|10=&apos;1801030000&apos;|2=&apos;1803020000&apos;|8=&apos;1803020000&apos;" />
+	keyvaluepairs="11=&apos;1801030000&apos;|7=&apos;1603110000&apos;|5=&apos;1801010000&apos;|6=&apos;1801010000&apos;|10=&apos;1801030000&apos;|2=&apos;1803020000&apos;|8=&apos;1803020000&apos;" />
 <VALUEMAP
 	name="getEventLegacyCategoryName"
 	default="Network.Denied Connections"
@@ -8778,6 +8778,20 @@
 
 
 <MESSAGE
+	id1="00003:111"
+	id2="sshd"
+	eventcategory="1801020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:session opened for user&gt;"
+	content="{ &lt;agent&gt;(pam_unix)[&lt;process_id&gt;]: | &lt;agent&gt;[&lt;process_id&gt;]: } { pam_unix(&lt;service&gt;): session | session } opened for user &lt;username&gt; by &lt;c_username&gt;(uid=&lt;uid&gt;)" />
+
+<MESSAGE
+	id1="00003:112"
+	id2="sshd"
+	eventcategory="1401070000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:session closed for user&gt;"
+	content="{ &lt;agent&gt;(pam_unix)[&lt;process_id&gt;]: | &lt;agent&gt;[&lt;process_id&gt;]: } { pam_unix(&lt;service&gt;): session | session } closed for user &lt;username&gt;" />
+
+<MESSAGE
 	id1="00003:94"
 	id2="sshd"
 	eventcategory="1603000000"
@@ -8830,7 +8844,7 @@
 <MESSAGE
 	id1="00095:05"
 	id2="sshd(pam_unix)"
-	eventcategory="1605000000"
+	eventcategory="1401070000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: session closed for user &lt;username&gt;" />
 
