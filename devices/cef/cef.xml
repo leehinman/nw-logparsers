@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="110"
+	revision="112"
     device="2.0" />
 	
 
@@ -113,7 +113,10 @@
 		<ExtensionKey cefName="act" metaName="action"/>
 		<ExtensionKey cefName="app" metaName="application"/>
 		<ExtensionKey cefName="cat" metaName="category"/>
-		<ExtensionKey cefName="cnt" metaName="event_counter"/>
+		<ExtensionKey cefName="cnt" metaName="event_counter">
+			<device2meta device="trendmicrodsa" metaName="dclass_counter1"/>
+		</ExtensionKey>
+		<ExtensionKey cefName="Culture" metaName="cs_fld"/>
 		<ExtensionKey cefName="destinationDnsDomain" metaName="ddomain"/>
 		<ExtensionKey cefName="destinationServiceName" metaName="service"/>
 		<ExtensionKey cefName="destinationTranslatedAddress" metaName="dtransaddr"/>
@@ -140,29 +143,39 @@
 		<ExtensionKey cefName="dpt" metaName="dport"/>
 		<ExtensionKey cefName="dst" metaName="daddr"/>
 		<ExtensionKey cefName="duid" metaName="uid"/>
-		<ExtensionKey cefName="duser" metaName="username"/>
+		<ExtensionKey cefName="duser" metaName="username">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="dvc" metaName="hostip"/>
 		<ExtensionKey cefName="dvcpid" metaName="process_id"/>
-		<ExtensionKey cefName="dvchost" metaName="hostname"/>
+		<ExtensionKey cefName="dvchost" metaName="hostname"/>	
 		<ExtensionKey cefName="end" metaName="param_endtime"/>
 		<ExtensionKey cefName="externalId" metaName="hardware_id"/>
 		<ExtensionKey cefName="fileCreateTime" metaName="cs_filectime"/>
 		<ExtensionKey cefName="fileHash" metaName="checksum"/>
 		<ExtensionKey cefName="fileId" metaName="cs_fileid"/>
 		<ExtensionKey cefName="fileModificationTime" metaName="cs_filemtime"/>
-		<ExtensionKey cefName="filePath" metaName="directory"/>
+		<ExtensionKey cefName="filePath" metaName="directory">
+			<device2meta device="trendmicrodsa" metaName="filename"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="filePermission" metaName="cs_fileperm"/>
 		<ExtensionKey cefName="fileType" metaName="filetype"/>
-		<ExtensionKey cefName="fname" metaName="filename"/>
+		<ExtensionKey cefName="fname" metaName="filename">
+			<device2meta device="trendmicrodsa" metaName="obj_name"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="fsize" metaName="filename_size"/>
 		<ExtensionKey cefName="in" metaName="rbytes"/>
-		<ExtensionKey cefName="msg" metaName="msg"/>
+		<ExtensionKey cefName="msg" metaName="msg">
+			<device2meta device="trendmicrodsa" metaName="info"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
 		<ExtensionKey cefName="oldFileId" metaName="cn_oldfileid"/>
 		<ExtensionKey cefName="oldFileModificationTime" metaName="cs_oldfilemtime"/>
 		<ExtensionKey cefName="oldFileName" metaName="cs_oldfilename"/>
-		<ExtensionKey cefName="oldFilePath" metaName="cs_oldfilepath"/>
+		<ExtensionKey cefName="oldFilePath" metaName="cs_oldfilepath">
+			<device2meta device="trendmicrodsa" metaName="change_old"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="oldFilePermission" metaName="cs_oldfileperm"/>
 		<ExtensionKey cefName="oldFileSize" metaName="cn_oldfilesize"/>
 		<ExtensionKey cefName="oldFileType" metaName="cs_oldfiletype"/>
@@ -171,6 +184,7 @@
 		<ExtensionKey cefName="proto" metaName="protocol">
 			<device2meta device="rsaflow" metaName="ip_proto"/>
 		</ExtensionKey>
+		<ExtensionKey cefName="PublicKeyToken" metaName="cs_fld"/>
 		<ExtensionKey cefName="request" metaName="url"/>
 		<ExtensionKey cefName="requestClientApplication" metaName="user_agent"/>
 		<ExtensionKey cefName="requestCookies" metaName="cs_reqcookies"/>
@@ -190,7 +204,9 @@
 		<ExtensionKey cefName="src" metaName="saddr"/>
 		<ExtensionKey cefName="start" metaName="param_starttime"/>
 		<ExtensionKey cefName="suid" metaName="uid"/>
-		<ExtensionKey cefName="suser" metaName="c_username"/>
+		<ExtensionKey cefName="suser" metaName="c_username">
+		<device2meta device="trendmicrodsa" metaName="username"/>
+		</ExtensionKey>
 	
 
 		<ExtensionKey cefName="deviceService" metaName="cs_devservice"/>
@@ -422,14 +438,26 @@
 		<ExtensionKey cefName="USER" metaName="cs_user"/>
 	
 	
-		<ExtensionKey cefName="TrendMicroDsFrameType" metaName="cs_frametype"/>
-		<ExtensionKey cefName="TrendMicroDsPacketData" metaName="cs_packettype"/>
-		<ExtensionKey cefName="TrendMicroDsTenant" metaName="cs_tenant"/>
-		<ExtensionKey cefName="TrendMicroDsTenantId" metaName="cs_tenantid"/>
+		<ExtensionKey cefName="TrendMicroDsFrameType" metaName="cs_frametype">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
+		<ExtensionKey cefName="TrendMicroDsPacketData" metaName="cs_packettype">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
+		<ExtensionKey cefName="TrendMicroDsTenant" metaName="cs_tenant">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
+		<ExtensionKey cefName="TrendMicroDsTags" metaName="cs_fld"/>
+		<ExtensionKey cefName="TrendMicroDsTenantId" metaName="cs_tenantid">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
 		
 	
 	
-		<ExtensionKey cefName="target" metaName="daddr"/>
+		<ExtensionKey cefName="target" metaName="daddr">
+			<device2meta device="trendmicrodsa" metaName="hostname"/>
+		</ExtensionKey>
+			
 		
 	
 	
@@ -454,10 +482,14 @@
 		<ExtensionKey cefName="properties.requestbody" metaName="cs_properties.requestbody"/>
 		<ExtensionKey cefName="resourceGroupName.group" metaName="group"/>
 		<ExtensionKey cefName="resourceProviderName.localizedValue" metaName="cs_resourceProviderName.localizedValue"/>
-		<ExtensionKey cefName="status" metaName="event_state"/>
+		<ExtensionKey cefName="status" metaName="event_state">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
 		
 	
-		<ExtensionKey cefName="id" metaName="operation_id"/>
+		<ExtensionKey cefName="id" metaName="operation_id">
+			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="signinDateTimeInMillis" metaName="event_time_string"/>
 		<ExtensionKey cefName="userPrincipalName" metaName="username"/>
 		<ExtensionKey cefName="appId" metaName="cs_fld"/>
@@ -625,6 +657,7 @@
 		<ExtensionKey cefName="cn1Label" metaName="cs_fld"/>
 		
 		<ExtensionKey cefName="cn2" metaName="cn_fld">
+			<device2meta device="trendmicrodsa" metaName="result" label="Host ID"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cn2Label" metaName="cs_fld"/>
 		
