@@ -4,17 +4,33 @@
 	displayname="Trend Micro Deep Security Agent"
 	group="Application Firewall">
 <VERSION
-	xml="17"
-	checksum="0348a5b4f954ae9f9bab9df6e0acdb84"
-	revision="112"
+	xml="18"
+	checksum="e6da61bf70164739414f36136e0046f8"
+	revision="113"
 	device="2.0" />
  
-<TAGVALMAP delimiter=" " /> 
-  
+<TAGVALMAP delimiter=" " />
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="1006298=&apos;1605000000&apos;|200=&apos;1605000000&apos;|1008643=&apos;1002020000&apos;" />
+
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1605000000=&apos;System.Normal Conditions&apos;|1002020000=&apos;Attacks.Denial of Service.Generic attacks&apos;" />	
+ 
 <HEADER 
 	id1="0001" 
 	id2="0001"  
-	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; CEF:0|Trend Micro|Deep Security Agent|&lt;hversion&gt;|&lt;messageid&gt;|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;" /> 
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; CEF:0|Trend Micro|Deep Security Agent|&lt;hversion&gt;|&lt;messageid&gt;|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;" />
+
+<HEADER
+	id1="0002"
+	id2="0002"
+	messageid="*STRCAT('trendmicrodsa','_','TVM')"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; CEF:0|Trend Micro|&lt;product&gt;|&lt;hversion&gt;|&lt;id&gt;|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;"/>
+
 <MESSAGE
 	id1="2002773"
 	id2="2002773"
@@ -309,6 +325,14 @@
 	eventcategory="1002020000"
 	tagval="true"
 	functions="&lt;@event_description:*HDR(hevent_description)&gt;&lt;@change_new:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="act=&lt;action&gt; cn1=&lt;hostid&gt; cn1Label=&lt;fld1&gt; cn2=&lt;result&gt; cn2Label=&lt;fld2&gt; cn3=&lt;fld3&gt; cn3Label=&lt;fld4&gt; cnt=&lt;dclass_counter1&gt; cs1=&lt;context&gt; cs1Label=&lt;fld5&gt; cs2=&lt;fld6&gt; cs2Label=&lt;fld7&gt; cs3=&lt;fld8&gt; cs3Label=&lt;fld9&gt; cs4=&lt;fld10&gt; cs4Label=&lt;fld11&gt; cs5=&lt;fld12&gt; cs5Label=&lt;fld13&gt; cs6=&lt;fld14&gt; cs6Label=&lt;fld15&gt; dmac=&lt;dmacaddr&gt; dpt=&lt;dport&gt; dst=&lt;daddr&gt; in=&lt;rbytes&gt; out=&lt;sbytes&gt; proto=&lt;protocol&gt; suser=&lt;username&gt; smac=&lt;smacaddr&gt; spt=&lt;sport&gt; src=&lt;saddr&gt; TrendMicroDsFrameType=&lt;fld16&gt; TrendMicroDsPacketData=&lt;fld17&gt; filePath=&lt;filename&gt; msg=&lt;info&gt; oldfilePath=&lt;change_old&gt; duser=&lt;fld18&gt; fname=&lt;obj_name&gt; target=&lt;hostname&gt; dvchost=&lt;shost&gt; TrendMicroDsTags=&lt;fld20&gt; Id\=&lt;fld21&gt; Status\=&lt;fld22&gt; TrendMicroDsTenant=&lt;fld23&gt; TrendMicroDsTenantId=&lt;fld24&gt; &quot;http://go.microsoft.com/fwlink/?LinkID\=&lt;fld25&gt; Version\=&lt;version&gt; Culture\=&lt;fld26&gt; PublicKeyToken\=&lt;fld27&gt;" />
+
+<MESSAGE
+	id1="trendmicrodsa_TVM"
+	id2="trendmicrodsa_TVM"
+	tagval="true"
+	missField="true"
+	functions="&lt;@msg_id:*HDR(id)&gt;&lt;@vid:*HDR(id)&gt;&lt;@event_cat:*getEventLegacyCategory(msg_id)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:*HDR(hevent_description)&gt;"
 	content="act=&lt;action&gt; cn1=&lt;hostid&gt; cn1Label=&lt;fld1&gt; cn2=&lt;result&gt; cn2Label=&lt;fld2&gt; cn3=&lt;fld3&gt; cn3Label=&lt;fld4&gt; cnt=&lt;dclass_counter1&gt; cs1=&lt;context&gt; cs1Label=&lt;fld5&gt; cs2=&lt;fld6&gt; cs2Label=&lt;fld7&gt; cs3=&lt;fld8&gt; cs3Label=&lt;fld9&gt; cs4=&lt;fld10&gt; cs4Label=&lt;fld11&gt; cs5=&lt;fld12&gt; cs5Label=&lt;fld13&gt; cs6=&lt;fld14&gt; cs6Label=&lt;fld15&gt; dmac=&lt;dmacaddr&gt; dpt=&lt;dport&gt; dst=&lt;daddr&gt; in=&lt;rbytes&gt; out=&lt;sbytes&gt; proto=&lt;protocol&gt; suser=&lt;username&gt; smac=&lt;smacaddr&gt; spt=&lt;sport&gt; src=&lt;saddr&gt; TrendMicroDsFrameType=&lt;fld16&gt; TrendMicroDsPacketData=&lt;fld17&gt; filePath=&lt;filename&gt; msg=&lt;info&gt; oldfilePath=&lt;change_old&gt; duser=&lt;fld18&gt; fname=&lt;obj_name&gt; target=&lt;hostname&gt; dvchost=&lt;shost&gt; TrendMicroDsTags=&lt;fld20&gt; Id\=&lt;fld21&gt; Status\=&lt;fld22&gt; TrendMicroDsTenant=&lt;fld23&gt; TrendMicroDsTenantId=&lt;fld24&gt; &quot;http://go.microsoft.com/fwlink/?LinkID\=&lt;fld25&gt; Version\=&lt;version&gt; Culture\=&lt;fld26&gt; PublicKeyToken\=&lt;fld27&gt;" />
 
 </DEVICEMESSAGES>
