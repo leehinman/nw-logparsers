@@ -4,8 +4,8 @@
 	displayname="Blue Coat ELFF"
 	group="Web Logs">
 <VERSION
-	xml="89"
-	checksum="adecf02480676de20f634939f03c05bc"
+	xml="92"
+	checksum="d39157add0515390513f16f456ca1362"
 	revision="112"
     device="2.0" />
 <TAGVALMAP 
@@ -896,6 +896,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Access Log: Socket error sending tail buffer. &lt;result&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
 <MESSAGE  
+	id1="E0000:12" 
+	id2="E0000" 
+	eventcategory="1801000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Connecting to primary server.&gt;"
+	content="Access Log Custom (&lt;event_log&gt;): Connecting to primary server &lt;daddr&gt;:&lt;dport&gt;.(&lt;fld1&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld2&gt;" />
+
+<MESSAGE  
 	id1="1F0000" 
 	id2="1F0000" 
 	eventcategory="1603000000" 
@@ -1093,7 +1100,13 @@
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="primary Error initiating service to Access Log FTP (&lt;event_log&gt;): server.  Client received &lt;resultcode&gt; response.(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
-	
+<MESSAGE  
+	id1="E000A:14" 
+	id2="E000A" 
+	eventcategory="1801010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Couldn't connect to server.&gt;"
+	content="Access Log Custom (&lt;event_log&gt;): Couldn't connect { to server(&lt;fld1&gt;) | socket to server &lt;daddr&gt;(&lt;fld1&gt;) } &lt;event_type&gt; &lt;filename&gt; &lt;fld2&gt;" />
+
 <MESSAGE  
 	id1="E000B" 
 	id2="E000B" 
@@ -1256,6 +1269,13 @@
 	eventcategory="1801030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Management_Console HTTPS: TLS connection closed, no HTTP request data:  from &lt;saddr&gt; (&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
+<MESSAGE
+	id1="60020:01"
+	id2="60020"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Management_Console HTTPS connection not established&gt;"
+	content="Management_Console HTTPS connection not established: { from | BIO lib:  from } &lt;saddr&gt;(&lt;fld1&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld2&gt;" />
 
 <MESSAGE
 	id1="BlueCoat-Allowed_Sites"
@@ -2660,6 +2680,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="CFSSL: Trust package installation done - response: &lt;fld41&gt;, CA added: &lt;fld42&gt;, deleted: &lt;fld43&gt;, updated: &lt;fld44&gt;(&lt;fld82&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+<MESSAGE  
+	id1="140002:03" 
+	id2="140002" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Cached intermediate certificate&gt;"
+	content="Cached intermediate certificate &apos;&lt;cert_subject&gt;(&lt;cert_checksum&gt;)&apos;(&lt;fld1&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld2&gt;" />
+
 <MESSAGE
 	id1="APPE"
 	id2="APPE"
