@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="326"
-	checksum="2fdfb754352373f16fe5665ce7c0e9d3"
+	xml="331"
+	checksum="5b216160af4436079e7fd857dbf66f7c"
 	revision="112"
 	device="2.0" />
 
@@ -5660,7 +5660,7 @@
 	id2="Server"
 	eventcategory="1401030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;agent&gt;[&lt;process_id&gt;]: Login failed for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />" />
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;agent&gt;[&lt;process_id&gt;]: Login failed for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />
 
 <MESSAGE
 	id1="001208"
@@ -6098,7 +6098,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The SSL certificate failed verification&gt;"
 	content="&lt;action&gt;: The SSL certificate &lt;filename&gt; failed verification." />
-" 
+ 
 
 <MESSAGE
 	id1="002250"
@@ -13183,7 +13183,7 @@
 	eventcategory="1402040100"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Password&gt;&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:password for user changed&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: password for (&lt;username&gt;/&lt;uid&gt;) changed by (&lt;administrator&gt;)" />
-" 
+
 
 <MESSAGE
 	id1="00062:05"
@@ -13402,7 +13402,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:Password&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: [module:pam_lsass]&lt;event_description&gt; { [login:patrol][error code: &lt;resultcode&gt;] |  [error code: &lt;resultcode&gt;] }" />
-" 
+ 
 
 <MESSAGE
 	id1="00044"
@@ -14229,10 +14229,8 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } &lt;fld1&gt;" />
 
-  
-    THESE NEXT 2 MESSAGES ARE SUPPORTED BY THE ACTUAL POSTGRES
-    DEVICE WE SUPPORT OOTB                 SMC-1387 12/2011
--->
+ 
+
 
 <MESSAGE
 	id1="01020"
@@ -20984,7 +20982,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Proxy LDAP error&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: Proxy &quot;&lt;policyname&gt;&quot; LDAP error. &lt;result&gt;. &lt;info&gt;." />
-" 
+ 
 
 <MESSAGE
 	id1="001621"
@@ -22316,6 +22314,22 @@
 	eventcategory="1603050000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
+<MESSAGE
+	id1="server:01"
+	id2="server"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U:%O',fld1,fld2,fld3,fld4)&gt;"
+	content="server: &lt;fld1&gt; &lt;fld2&gt;, &lt;fld3&gt; &lt;fld4&gt; { AM | PM} &lt;event_description&gt;" />
+
+	
+	
+<MESSAGE
+	id1="server"
+	id2="server"
+	eventcategory="1603050000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;"
+	content="server: &lt;severity&gt;: &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="02313"
 	id2="yum-updatesd-helper"

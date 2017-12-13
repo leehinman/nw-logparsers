@@ -4,9 +4,9 @@
 	displayname="Big-IP Access Policy Manager"
 	group="Access Control">
 <VERSION
-	xml="26"
-	checksum="516908dc9fb89926bb43f0139a8a16fb"
-	revision="112"
+	xml="28"
+	checksum="3ef7e1ac266e6518374638a1f2e675ac"
+	revision="113"
 	device="2.0" />
 
  
@@ -104,7 +104,7 @@
 	id2="01490010"
 	eventcategory="1401000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="  &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;severity&gt; &lt;fld5&gt;[&lt;process_id&gt;]: &lt;fld7&gt;:&lt;fld6&gt;: &lt;sessionid&gt;: Username '&lt;username&gt;'" />
+	content="  &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;severity&gt; &lt;fld5&gt;[&lt;process_id&gt;]: &lt;fld7&gt;:&lt;fld6&gt;: {&lt;fld10&gt;:&lt;fld11&gt;:&lt;sessionid&gt;|&lt;sessionid&gt;}: Username '&lt;username&gt;'" />
 <MESSAGE
 	id1="01490009"
 	id2="01490009"
@@ -152,7 +152,7 @@
 	id2="01490500"
 	eventcategory="1801020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="  &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;severity&gt; &lt;fld5&gt;[&lt;process_id&gt;]: &lt;fld7&gt;:&lt;fld6&gt;: &lt;sessionid&gt;: New session from client IP &lt;saddr&gt; (ST=&lt;location_state&gt;/CC=&lt;location_country&gt;/C=&lt;location_city&gt;) at VIP {&lt;daddr&gt; Listener &lt;fld8&gt; (Reputation=&lt;category&gt;)|&lt;daddr&gt; Listener &lt;fld8&gt;|&lt;daddr&gt;}" />
+	content="  &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;severity&gt; &lt;fld5&gt;[&lt;process_id&gt;]: &lt;fld7&gt;:&lt;fld6&gt;: {&lt;fld10&gt;:&lt;fld11&gt;:&lt;sessionid&gt;|&lt;sessionid&gt;}: New session from client IP &lt;saddr&gt; (ST=&lt;location_state&gt;/CC=&lt;location_country&gt;/C=&lt;location_city&gt;) at VIP {&lt;daddr&gt; Listener &lt;fld8&gt; (Reputation=&lt;category&gt;)|&lt;daddr&gt; Listener &lt;fld8&gt;|&lt;daddr&gt;}" />
 <MESSAGE
 	id1="01490005"
 	id2="01490005"
@@ -515,12 +515,14 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]: (&lt;username&gt;) CMD (&lt;action&gt;)" />
+
 <MESSAGE 
 	id1="01260009" 
 	id2="01260009" 
 	eventcategory="1801010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;&lt;severity&gt;&lt;fld5&gt;[&lt;process_id&gt;]:&lt;fld7&gt;:&lt;fld6&gt;: Connection error:&lt;event_description&gt;" />
+
 <MESSAGE
 	 id1="apmd:04"
 	 id2="apmd"
