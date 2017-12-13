@@ -4,9 +4,9 @@
 	displayname="McAfee Web Gateway"
 	group="Web Logs">
 <VERSION
-		xml="66"
-		checksum="c18d033dafb2ea4fb0c8763c6cf1cc44"
-		revision="107"
+		xml="68"
+		checksum="8d47203904eb162251f24cb55a0769c1"
+		revision="112"
 		device="2.0"/>
 
  
@@ -272,7 +272,7 @@
 	id2="POLL" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld20&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ 0 | - }" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld20&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ &quot;&lt;filter&gt;&quot; 0 | &quot;&lt;filter&gt;&quot; - | 0 | - }" />
                                                                                                                                                                                                                          
 <MESSAGE 
 	id1="POLL" 
@@ -303,7 +303,7 @@
 	id2="GET" 
 	eventcategory="1204010000" 		
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;hostname&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ 0 | - }" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;hostname&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ &quot;&lt;filter&gt;&quot; 0 | &quot;&lt;filter&gt;&quot; - | 0 | -}" />
 <MESSAGE
 	id1="GET:04"
 	id2="GET"
@@ -315,7 +315,7 @@
 	id2="GET" 
 	eventcategory="1204010000" 
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; &lt;fld17&gt;" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; { &quot;&lt;filter&gt;&quot; &lt;fld17&gt; | &lt;fld17&gt; }" />
 <MESSAGE 
 	id1="GET:03" 
 	id2="GET" 
@@ -327,7 +327,7 @@
 	id2="HEAD" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld20&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ 0 | - }" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld20&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ &quot;&lt;filter&gt;&quot; 0 | &quot;&lt;filter&gt;&quot; - | 0 | -}" />
 
 <MESSAGE
 	id1="HEAD:04"
@@ -340,7 +340,7 @@
 	id2="HEAD" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; &lt;fld10&gt;" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; { &quot;&lt;filter&gt;&quot; &lt;fld10&gt; | &lt;fld10&gt; }" />
 <MESSAGE 
 	id1="DELETE" 
 	id2="DELETE" 
@@ -353,7 +353,7 @@
 	id2="PUT" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;fld1&gt; &lt;hostname&gt; &lt;fld20&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ 0 | - }" />
+	content="&lt;saddr&gt; &lt;fld1&gt; &lt;hostname&gt; &lt;fld20&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ &quot;&lt;filter&gt;&quot; 0 | &quot;&lt;filter&gt;&quot; - | 0 | -}" />
 <MESSAGE 
 	id1="CONNECT:04" 
 	id2="CONNECT" 
@@ -377,13 +377,13 @@
 	id2="CONNECT" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; { 0 | - }" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; { &quot;&lt;filter&gt;&quot; 0 | &quot;&lt;filter&gt;&quot; - | 0 | - }" />
 <MESSAGE 
 	id1="CONNECT:02" 
 	id2="CONNECT" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;&lt;fld10&gt;" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; { &quot;&lt;filter&gt;&quot; &lt;fld10&gt; | &lt;fld10&gt; }" />
 		
 <MESSAGE 
 	id1="POST" 
@@ -396,7 +396,7 @@
 	id2="POST" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ 0 | - }" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot;{ &quot;&lt;filter&gt;&quot; 0 | &quot;&lt;filter&gt;&quot; - | 0 | -}" />
 <MESSAGE
 	id1="POST:04"
 	id2="POST"
@@ -408,7 +408,7 @@
 	id2="POST" 
 	eventcategory="1204010000" 		
 	functions="&lt;@hostname:*RMQ(fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@fld25:*PARMVAL(saddr)&gt;&lt;@web_method:*PARMVAL(web_method)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F/%B/%W:%H:%U:%O',hdatetime)&gt;&lt;@web_ref_host:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;"
-	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; &lt;fresult&gt;" />
+	content="&lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;resultcode&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;operation_id&gt; &lt;network_service&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; { &quot;&lt;filter&gt;&quot; &lt;fresult&gt; | &lt;fresult&gt; }" />
 		
 <MESSAGE 
 	id1="POST:03" 
@@ -665,13 +665,13 @@
 	id2="mwg" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%F/%B/%W:%H:%U:%O&apos;,hdatetime)&gt;"
-	content="&lt;hostname&gt; mwg: [&lt;fld22&gt; &lt;fld3&gt;] &lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;resultcode&gt; &lt;protocol&gt; &lt;sbytes&gt; &lt;rbytes&gt; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_referer&gt;&quot; &quot;&lt;fld10&gt;&quot;" />
+	content="&lt;hostname&gt; mwg: [&lt;fld22&gt; &lt;fld3&gt;] &lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;resultcode&gt; &lt;protocol&gt; &lt;sbytes&gt; &lt;rbytes&gt; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_referer&gt;&quot; { &quot;&lt;filter&gt;&quot; &quot;&lt;fld10&gt;&quot; | &quot;&lt;fld10&gt;&quot; }" />
 <MESSAGE 
 	id1="mwg:12" 
 	id2="mwg" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%F/%B/%W:%H:%U:%O&apos;,hdatetime)&gt;"
-	content="&lt;hostname&gt; mwg: [&lt;fld22&gt; &lt;fld3&gt;] &lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;resultcode&gt; &lt;protocol&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; &lt;fld10&gt;" />
+	content="&lt;hostname&gt; mwg: [&lt;fld22&gt; &lt;fld3&gt;] &lt;saddr&gt; &lt;username&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;daddr&gt; &lt;dport&gt; &quot;&lt;web_method&gt;&quot; &quot;&lt;url&gt;&quot; &lt;resultcode&gt; &lt;protocol&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;user_agent&gt; &quot;&lt;web_referer&gt;&quot; {&quot;&lt;filter&gt;&quot; &lt;fld10&gt; | &lt;fld10&gt; }" />
 <MESSAGE 
 	id1="ntpd" 
 	id2="ntpd" 
