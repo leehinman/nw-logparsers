@@ -4,9 +4,9 @@
 	displayname="UNIX AIX"
 	group="Unix">
 <VERSION
-	xml="128"
-	checksum="8f8f0bf79fe517be901ebaaef34bca43"
-	revision="112"
+	xml="129"
+	checksum="6372bdf226b66c0918f6b9f00705f4d4"
+	revision="113"
 	device="2.0" />
 
 <VALUEMAP
@@ -7372,7 +7372,13 @@
 	content=" Server &lt;hostname&gt; &lt;network_service&gt; Port Published Addresses: &lt;fld1&gt;:&lt;fld2&gt;. Listening on port(s):&lt;saddr&gt;:&lt;sport&gt;." />
 	
       
- 
+<MESSAGE
+	id1="00446:12"
+	id2="Server"
+	eventcategory="1801010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:HTTP port Failed to listen&gt;"
+	content=" Server &lt;hostname&gt; &lt;network_service&gt; Port Failed to listen on port(s): &lt;saddr&gt;:&lt;sport&gt;, &lt;shost&gt;:&lt;fld1&gt;." />
+
 <MESSAGE
 	id1="01355"
 	id2="serevu"
@@ -10209,6 +10215,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content=" &lt;agent&gt;[&lt;process_id&gt;]: &lt;process&gt;: EGO env directory: &lt;directory&gt;" />
+
+<MESSAGE
+	id1="01098:02"
+	id2="vemkd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:Default value will be used.&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: &lt;process&gt;: &lt;info&gt;. Default value &lt;&lt;&lt;fld1&gt;&gt; will be used." />
 
 <MESSAGE
 	id1="00442"
