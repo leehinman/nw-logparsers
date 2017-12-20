@@ -4,9 +4,9 @@
 	displayname="Entrust Identity Guard"
 	group="Access Control">
 <VERSION
-	xml="19"
-	checksum="4b75a900da4f3ccd1423d499b22661e2"
-	revision="112"
+	xml="20"
+	checksum="d6eda6130b2408caba8753e89361b3df"
+	revision="113"
 	device="2.0" />
 
  
@@ -227,6 +227,13 @@
 	
 	
 <MESSAGE 
+	id1="AUD1002:03" 
+	id2="AUD1002" 
+	eventcategory="1402020300"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:User updated&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;"
+	content="&lt;fld1&gt;] [&lt;severity&gt; ] [&lt;fld2&gt;] [&lt;id&gt;] User &lt;username&gt; updated.&lt;fld5&gt;" />
+
+<MESSAGE 
 	id1="AUD2302:01" 
 	id2="AUD2302" 
 	eventcategory="1401000000"
@@ -245,7 +252,7 @@
 	id2="AUD2302" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;&lt;@event_description:user has been updated&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_subject:User&gt;"
-	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token entrust &lt;fld3&gt; for user &lt;c_username&gt; has been updated. State: &lt;disposition&gt;" />
+	content="&lt;fld1&gt;] [&lt;severity&gt;] [&lt;fld2&gt;] [&lt;id&gt;] [&lt;group&gt;/&lt;username&gt;] Token entrust &lt;fld3&gt; for user &lt;c_username&gt; has been updated. { State: &lt;disposition&gt; | Token Set: &lt;fld4&gt; }" />
 	
 <MESSAGE 
 	id1="AUD2302:04" 
