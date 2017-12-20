@@ -4,9 +4,9 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="118"
-	checksum="0ea0719b321e7e177ce5642b56b00861"
-	revision="108"
+	xml="122"
+	checksum="c85d260e734326ef84b7e255063f3b96"
+	revision="113"
     device="2.0" />
 
 
@@ -478,6 +478,13 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic has been blocked from application.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content=" &lt;fld28&gt; detected.  Traffic has been blocked from this application: &lt;fld1&gt;,Local:  &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,Remote: &lt;fld51&gt;,&lt;fld17&gt;,&lt;fld18&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,{ &quot;Location: | Location: } &lt;fld2&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
 <MESSAGE 
+	id1="blocked:06" 
+	id2="SHA-256:" 
+	eventcategory="1001020305" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic has been blocked from application.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt;,[SID: &lt;fld26&gt;] &lt;category&gt;: &lt;event_description&gt; Traffic has been blocked for this application:&lt;fld27&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld33&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
+	<MESSAGE 
 	id1="blocked" 
 	id2="blocked" 
 	eventcategory="1001020305" 
@@ -1212,11 +1219,25 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The latest SONAR Definitions update failed to load.&gt;"
 	content="Category: &lt;fld11&gt;,LiveUpdate Manager,The latest Endpoint Detection and Response update failed to load. The component has no valid content and will not function correctly until it is updated.,Event time: &lt;event_time_string&gt;" />
 <MESSAGE 
+	id1="LiveUpdate:44" 
+	id2="LiveUpdate" 
+	eventcategory="1603000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Submitting information to Symantec failed.&gt;"
+	content="Category: &lt;fld22&gt;,LiveUpdate Manager,&quot;[LiveUpdate error submission] Submitting information to Symantec failed. Network error : &apos;&lt;result&gt;&apos;&lt;fld23&gt;&quot;,Event time: &lt;event_time_string&gt;" />
+
+<MESSAGE 
 	id1="Local::01" 
 	id2="Local:" 
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Active Response&gt;&lt;@dclass_counter1_string:Occurrences&gt;"
-	content="Local: &lt;saddr&gt;,Local: &lt;sport&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Rule: &lt;rulename&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action: &lt;action&gt;" />
+	content="{&lt;fld4&gt;,MD-5:&lt;fld5&gt;,Local:|Local:} &lt;saddr&gt;,Local: &lt;sport&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Rule: &lt;rulename&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action: &lt;action&gt;" />
+<MESSAGE 
+	id1="Local::11" 
+	id2="SHA-256:" 
+	eventcategory="1605000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Active Response&gt;&lt;@dclass_counter1_string:Occurrences&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt;,Local: &lt;saddr&gt;,Local: &lt;sport&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Rule: &lt;rulename&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action: &lt;action&gt;" />
+
 <MESSAGE 
 	id1="Local:" 
 	id2="Local:" 
@@ -1518,6 +1539,13 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Audit Client Remote Pushing Install Finished Abnormally in Pusing Stage&gt;"
 	content="Network Audit Client Remote Pushing Install Finished Abnormally in Pusing Stage" />
 <MESSAGE 
+	id1="Network:32" 
+	id2="Memory" 
+	eventcategory="1605020000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;event_description&gt;,Event time: &lt;event_time_string&gt;" />
+
+<MESSAGE 
 	id1="New" 
 	id2="New" 
 	eventcategory="1702010000" 
@@ -1704,6 +1732,13 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Number of Group Update Providers&gt;&lt;@dclass_counter1_string:Number of physical files swept&gt;"
 	content="Number of physical files swept: &lt;dclass_counter1&gt;" />
+<MESSAGE
+	id1="Number:13"
+	id2="Number"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hhostid)&gt;&lt;@event_description:*STRCAT(Number of ,fld1,&#009;,swept.)&gt;&lt;@dclass_counter1_string:*STRCAT(fld1,&#009;,swept)&gt;"
+	content="Number of &lt;fld1&gt; swept: &lt;dclass_counter1&gt;" />
+
 <MESSAGE 
 	id1="password" 
 	id2="password" 
@@ -1794,6 +1829,13 @@
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hclient)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="&quot;Application has changed since the last time you opened it, process id: &lt;process_id&gt;  Filename: &lt;filename&gt;  The change was allowed by profile.&quot;,Local: &lt;saddr&gt;,Local: &lt;fld1&gt;,Remote: &lt;fld25&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld3&gt;,&lt;direction&gt;,&lt;fld5&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;fld21&gt;,CIDS Signature string: &lt;fld22&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;fld24&gt;,Intrusion Payload URL:&lt;fld12&gt;" />
+<MESSAGE 
+	id1="process:02" 
+	id2="SHA-256:" 
+	eventcategory="1605000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt;,{&quot;&quot;|&quot;}&lt;event_description&gt;, process id: &lt;process_id&gt;  Filename: &lt;filename&gt;  The change was allowed by profile&lt;fld6&gt;{&quot;&quot;|&quot;},Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,{Intrusion ID: &lt;fld33&gt;|&lt;fld33&gt;},Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
 <MESSAGE 
 	id1="properties" 
 	id2="properties" 
@@ -1987,6 +2029,13 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Scan Start&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Infected Count.&gt;&lt;@dclass_counter2_string:Total File Count.&gt;&lt;@dclass_counter3_string:Threat Count.&gt;"
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End:&lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;uid&gt;,User2:&lt;fld3&gt;,&apos;&lt;info&gt;&apos;,{&apos;&lt;context&gt;&apos;,|,}Command: Full Scan,Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
+<MESSAGE 
+	id1="Scan:14" 
+	id2="Scan" 
+	eventcategory="1605020000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:*PARMVAL(fld10)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Infected Count.&gt;&lt;@dclass_counter2_string:Total File Count.&gt;&lt;@dclass_counter3_string:Threat Count.&gt;"
+	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;username&gt;,User2: &lt;fld3&gt;{,&quot;|,}&lt;info&gt;{&quot;,&quot;|,}&lt;context&gt;{&quot;,|,}Command: &lt;fld10&gt;,Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;,Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Security:03" 
 	id2="Security" 
@@ -2350,8 +2399,8 @@
 	id1="Symantec:43"
 	id2="Suspicious"
 	eventcategory="1605020000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Suspicious Behavior Detection has been enabled&gt;"
-	content="Suspicious Behavior Detection has been enabled,Event time: &lt;event_time_string&gt;" />
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:*STRCAT(Suspicious Behavior Detection has been ,fld2)&gt;"
+	content="Suspicious Behavior Detection has been &lt;fld2&gt;,Event time: &lt;event_time_string&gt;" />
 <MESSAGE
 	id1="Symantec:44"
 	id2="Symantec"
@@ -2399,9 +2448,9 @@
 <MESSAGE
 	id1="Terminated"
 	id2="Terminated"
-	eventcategory="1605000000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@ec_activity:Deny&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content=" - Caller MD5=&lt;fld6&gt;,Create Process,Begin:&lt;fld50&gt;&lt;fld52&gt;,End:&lt;fld51&gt;&lt;fld53&gt;,Rule:&lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User:&lt;username&gt;,Domain:&lt;domain&gt;,Action Type:&lt;fld45&gt;,File size (bytes):&lt;filename_size&gt;,Device ID:&lt;device&gt;" />
+	eventcategory="1607000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@ec_activity:Deny&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_state:Terminated&gt;"
+	content="{ - Caller MD5=&lt;fld6&gt;,|,}&lt;action&gt;,Begin:&lt;fld50&gt;&lt;fld52&gt;,End:&lt;fld51&gt;&lt;fld53&gt;,Rule:&lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User:&lt;username&gt;,Domain:&lt;domain&gt;,Action Type:&lt;fld45&gt;,File size (bytes):&lt;filename_size&gt;,Device ID:&lt;device&gt;" />
 <MESSAGE 
 	id1="Compliance" 
 	id2="Compliance" 
@@ -2647,19 +2696,20 @@
 	id1="Allowed:02"
 	id2="Allowed"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:File Read&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:File Read&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Read&gt;"
 	content="&lt;fld1&gt;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,No Module Name,&lt;directory&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="Allowed:03"
 	id2="Allowed"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Write&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Write&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="&lt;fld1&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,No Module Name,&lt;directory&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;" />
 <MESSAGE
 	id1="Allowed:04"
 	id2="Allowed"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:File Delete&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:File Delete&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Delete&gt;"
 	content="&lt;fld1&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,No Module Name,&lt;directory&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;" />
 <MESSAGE
 	id1="Allowed:07"
@@ -2673,6 +2723,20 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Audit logs have been swept.&gt;"
 	content="Audit logs have been swept." />
+<MESSAGE 
+	id1="Audit:01" 
+	id2="SHA-256:" 
+	eventcategory="1001030000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Traffic has not been blocked from application.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt;,[SID: &lt;fld26&gt;] &lt;category&gt;: &lt;event_description&gt;attack detected but not blocked. Application path:&lt;fld27&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld33&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
+<MESSAGE 
+	id1="Audit:02" 
+	id2="SHA-256:" 
+	eventcategory="1001030000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Traffic has been blocked from application.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt;,[SID: &lt;fld26&gt;] &lt;category&gt;: &lt;event_description&gt;. Traffic has been blocked for this application:&lt;fld27&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,&lt;fld33&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
 <MESSAGE
 	id1="Category"
 	id2="Category"
@@ -2736,49 +2800,50 @@
 	id1="FileWrite:02"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="&lt;fld5&gt; - Caller MD5=&lt;fld6&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
 <MESSAGE
 	id1="FileWrite:01"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="[AC5-1.1] Log files written to Removable Media,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
 <MESSAGE
 	id1="FileWrite:03"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="&lt;fld5&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
 <MESSAGE
 	id1="FileWrite"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content=",File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="FileDelete"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
 	content="[AC5-1.1] Log files written to Removable Media,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
 <MESSAGE
 	id1="Continue"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
 	content="&lt;info&gt; - Caller MD5=&lt;fld6&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 <MESSAGE
 	id1="FileDelete:01"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
 	content="&lt;fld5&gt; - Caller MD5=&lt;fld6&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
 <MESSAGE
 	id1="FileDelete:02"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
 	content="&lt;fld5&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
 <MESSAGE
 	id1="System:06"
@@ -2790,37 +2855,41 @@
 	id1="File:01"
 	id2="Blocked"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read Begin.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Read&gt;"
 	content="&quot;&lt;fld23&gt;,&quot;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="File:11"
 	id2="Blocked"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:Create Process.&gt;"
 	content="&quot;&lt;info&gt;&quot;,Create Process,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld1&gt;,&lt;process&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;application&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld6&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
 <MESSAGE
 	id1="File:02"
 	id2="Blocked"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:Create Process.&gt;"
 	content="&quot;&lt;info&gt;&quot;,Create Process,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld1&gt;,&lt;process&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;application&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="File:03"
 	id2="Blocked"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Write.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Write.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="&lt;fld1&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="Blocked:04"
 	id2="Blocked"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read.&gt;&lt;@ec_subject:File&gt;&lt;@action:Read&gt;"
 	content="&lt;info&gt;.&lt;fld1&gt;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 <MESSAGE
 	id1="File:05"
 	id2="Blocked"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read.&gt;&lt;@ec_subject:File&gt;&lt;@action:Read&gt;"
 	content="&lt;fld1&gt;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;" />
 <MESSAGE
 	id1="File:04"
@@ -2832,7 +2901,7 @@
 	id1="File:06"
 	id2="Blocked"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Write.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Write.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="&lt;fld1&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,&quot;Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
 <MESSAGE
 	id1="File:07"
@@ -2850,14 +2919,16 @@
 	id1="File:09"
 	id2="Blocked"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Delete.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Delete.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
 	content="&lt;fld1&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld6&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
 <MESSAGE
 	id1="File:10"
 	id2="Continue"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@event_description:File Read.&gt;&lt;@ec_subject:File&gt;&lt;@action:Read&gt;"
 	content="&lt;fld1&gt;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld6&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
 <MESSAGE
 	id1="Blocked"
 	id2="Blocked"
@@ -2901,11 +2972,26 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;"
 	content="[&lt;id&gt;] &lt;event_description&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 <MESSAGE
+	id1="Blocked:08" 
+	id2="Continue" 
+	eventcategory="1401010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;"
+	content="{&lt;fld11&gt; - Caller MD5=&lt;fld6&gt;,|,}&lt;action&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
+<MESSAGE
 	id1="Ping"
 	id2="Ping"
 	eventcategory="1001030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="{ &quot;&quot;&lt;action&gt; | &lt;action&gt; }. Description:  &lt;event_description&gt;&quot;,Local: &lt;saddr&gt;,Local: &lt;fld1&gt;,Remote: &lt;fld9&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld3&gt;,&lt;direction&gt;,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld6&gt;,User: &lt;username&gt;,Domain: &lt;fld7&gt;" />
+	
+<MESSAGE
+	id1="attack"
+	id2="SHA-256:"
+	eventcategory="1002000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt;,&lt;action&gt;. Description:  &lt;event_description&gt;,Local: &lt;saddr&gt;,Local: &lt;fld1&gt;,Remote: &lt;fld9&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld3&gt;,&lt;direction&gt;,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld6&gt;,User: &lt;username&gt;,Domain: &lt;fld7&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
+
 	
 <MESSAGE
 	id1="Server"
@@ -4115,6 +4201,14 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;"
 	content="{ &lt;event_description&gt;. File : &lt;filename&gt;,  Size (bytes): &lt;filename_size&gt;.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;. File : &lt;filename&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;.,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;Operating System: &lt;os&gt;Network  info:&lt;info&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;.}" />
+<MESSAGE
+	id1="Symantec:45"
+	id2="Symantec"
+	eventcategory="1605020000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;"
+	content="Category: &lt;fld22&gt;,Symantec Endpoint Protection,&lt;event_description&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;" />
+
+ 
 <MESSAGE 
 	id1="SYLINK" 
 	id2="Using" 
