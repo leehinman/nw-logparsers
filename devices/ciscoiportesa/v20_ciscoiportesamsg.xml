@@ -4,15 +4,20 @@
 	displayname="Cisco Ironport ESA"
 	group="Application Firewall">
 <VERSION
-	xml="45"
-	checksum="898dea6496c1e2ac95b55b8adc78fc00"
-	revision="112"
+	xml="47"
+	checksum="94dca109e51e5cabe77d4777204c84fa"
+	revision="113"
 	device="2.0" />
  
 <HEADER 
 	id1="0001" 
 	id2="0001"  
 	content="%CISCOIPORTESA-4: &lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
+
+<HEADER
+	id1="0003"
+	id2="0003"
+	content="&lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt;:&lt;hfld9&gt;:&lt;hfld10&gt; &lt;hhost&gt; &lt;process&gt;[&lt;process_id&gt;]: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
 
 <HEADER
 	id1="0002"
@@ -882,6 +887,13 @@
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System limit reached&gt;"
 	content=" Warning: &lt;fld3&gt; : total inbound connections ICID: &lt;id1&gt; max: &lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="Warning:15" 
+	id2="Warning" 
+	eventcategory="1801010000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hfld6,hfld7,hfld8,hfld9,hfld10)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Warning: &lt;event_description&gt;" />
 
 
 <MESSAGE 
