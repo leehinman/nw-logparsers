@@ -4,9 +4,9 @@
 	displayname="Netapp"
 	group="Storage">
 <VERSION
-		xml="30"
-		checksum="88f2a54ba90662a0adc94dcb0469652c"
-		revision="108"
+		xml="33"
+		checksum="b741444997a27358b3e4bb0ea97373a4"
+		revision="113"
 		device="2.0"/>
 
 
@@ -1962,12 +1962,14 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Error for Server&gt;"
 	content="&lt;service&gt;: Error for server &lt;hostname&gt;: Error in session setup response &lt;result&gt;" />
+
 <MESSAGE
 	id1="040716:02"
 	id2="cifs.server.errorMsg:error"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Error for Server&gt;"
 	content="&lt;service&gt;: Error for server &lt;hostname&gt;: CIFS Session Setup Error &lt;result&gt;" />
+
 <MESSAGE
 	id1="040716"
 	id2="cifs.server.errorMsg:error"
@@ -11255,6 +11257,7 @@
 	eventcategory="1401030000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %F %N:%U:%O %W&apos;,datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt; {NetApp: | NetApp} &lt;fld50&gt; [&lt;event_type&gt;] &lt;fld11&gt; &lt;datetime&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt;: &lt;sid&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;&lt;space&gt;Reason: &lt;result&gt; User Name: &lt;username&gt; Domain: &lt;domain&gt; Logon Type: &lt;data_type&gt; Logon Process: &lt;process&gt; Authentication Package: &lt;rulename&gt; Workstation Name: &lt;hostname&gt; Status code: &lt;disposition&gt;Substatus code: &lt;resultcode&gt; { &lt;info&gt; Source Network Address: &lt;saddr&gt; Source Port: &lt;sport&gt; &lt;fld15&gt;|&lt;info&gt;}" />
+
 <MESSAGE
 	id1="Security_538_Security"
 	id2="Security_538_Security"
@@ -11484,30 +11487,35 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" deviceName=&quot;&lt;fld1&gt;&quot;, ETime=&quot;&lt;fld2&gt;&quot;, cdb=&quot;&lt;fld3&gt;&quot;, victimRetryCount=&quot;&lt;fld4&gt;&quot;, retryCount=&quot;&lt;fld5&gt;&quot;, timeoutRetryCount=&quot;&lt;fld6&gt;&quot;, pathRetryCount=&quot;&lt;fld7&gt;&quot;, adapterStatus=&quot;&lt;fld8&gt;&quot;, targetStatus=&quot;&lt;fld9&gt;&quot;, sSenseKey=&quot;&lt;fld10&gt;&quot;, sSenseCode=&quot;&lt;fld11&gt;&quot;, iSenseKey=&quot;&lt;fld12&gt;&quot;, iASC=&quot;&lt;fld13&gt;&quot;, iASCQ=&quot;&lt;fld14&gt;&quot;, pathsTried=&quot;&lt;fld15&gt;&quot;, basicTimeout=&quot;&lt;fld16&gt;&quot;, returnCode=&quot;&lt;resultcode&gt;&quot;, disk_information=&quot;&lt;info&gt;&quot; " />
+
 <MESSAGE
 	id1="031336"
 	id2="cf.hwassist.notifyCfgSuccess:debug"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" hwtype=&quot;&lt;fld1&gt;&quot;" />
+
 <MESSAGE
 	id1="031337"
 	id2="wafl.scan.ownblocks.done:info"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;info&gt;" />
+
 <MESSAGE
 	id1="031338"
 	id2="hamsg.connectSucceeded:debug"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" remoteID=&quot;&lt;id&gt;&quot;" />
+
 <MESSAGE
 	id1="NetApp-Security-Auditing_4624_NetApp-Security-Auditing"
 	id2="NetApp-Security-Auditing_4624_NetApp-Security-Auditing"
 	eventcategory="1401060000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;Subject: Security ID:&lt;sid&gt;Account Name:&lt;group&gt;Account Domain:&lt;domain&gt;Logon ID:&lt;logon_id&gt;Logon Type:&lt;data_type&gt;New Logon: Security ID:&lt;fld15&gt;Account Name:&lt;fld16&gt;Account Domain:&lt;fld28&gt;Logon ID:&lt;fld17&gt;Logon GUID:&lt;groupid&gt;Process Information: Process ID:&lt;process_id&gt;Process Name:&lt;process&gt;Network Information: Workstation Name:&lt;hostname&gt;Source Network Address:&lt;saddr&gt;Source Port:&lt;sport&gt;Detailed Authentication Information: Logon Process:&lt;fld18&gt;Authentication Package:&lt;rulename&gt;Transited Services: Package Name (NTLM only):&lt;fld20&gt;Key Length: &lt;info&gt;&quot;" />
+
 	 
 <MESSAGE
 	id1="NetApp-Security-Auditing_4634_NetApp-Security-Auditing"
@@ -11515,12 +11523,14 @@
 	eventcategory="1401070000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;Subject: Security ID:&lt;sid&gt;Account Name:&lt;group&gt;Account Domain:&lt;domain&gt;Logon ID:&lt;logon_id&gt;Logon Type:&lt;data_type&gt;&lt;info&gt;&quot;" />
+
 <MESSAGE
 	id1="NetApp-Security-Auditing_4656_NetApp-Security-Auditing"
 	id2="NetApp-Security-Auditing_4656_NetApp-Security-Auditing"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;Subject: Security ID:&lt;sid&gt;Account Name:&lt;group&gt;Account Domain:&lt;domain&gt;Logon ID:&lt;logon_id&gt;Object: Object Server:&lt;obj_server&gt;Object Type:&lt;obj_type&gt;Object Name:&lt;obj_name&gt;Handle ID:&lt;id1&gt;Process Information: Process ID:&lt;process_id&gt;Process Name:&lt;process&gt;Access Request Information: Transaction ID:&lt;trans_id&gt;Accesses:&lt;accesses&gt;Access Mask:&lt;mask&gt;Privileges Used for Access Check:&lt;fld52&gt;&quot;" />
+
 	 
 <MESSAGE
 	id1="NetApp-Security-Auditing_4663_NetApp-Security-Auditing"
@@ -11528,12 +11538,14 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;Subject: Security ID:&lt;sid&gt;Account Name:&lt;group&gt;Account Domain:&lt;domain&gt;Logon ID:&lt;logon_id&gt;Object: Object Server:&lt;obj_server&gt;Object Type:&lt;obj_type&gt;Object Name:&lt;obj_name&gt;Handle ID:&lt;id1&gt;Process Information: Process ID:&lt;process_id&gt;Process Name:&lt;process&gt;Access Request Information: Accesses:&lt;accesses&gt;Access Mask:&lt;mask&gt;&quot;" />
+
 <MESSAGE
 	id1="NetApp-Security-Auditing_4625_NetApp-Security-Auditing"
 	id2="NetApp-Security-Auditing_4625_NetApp-Security-Auditing"
 	eventcategory="1401030000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;Subject: Security ID:&lt;sid&gt;Account Name:&lt;group&gt;Account Domain:&lt;domain&gt;Logon ID:&lt;logon_id&gt;Logon Type:&lt;data_type&gt;Account For Which Logon Failed: Security ID:&lt;fld31&gt;Account Name:&lt;fld32&gt;Account Domain:&lt;fld33&gt;Failure Information: Failure Reason:&lt;result&gt;Status:&lt;event_state&gt;Sub Status:&lt;resultcode&gt;Process Information: Caller Process ID:&lt;process_id&gt;Caller Process Name:&lt;process&gt;Network Information: Workstation Name:&lt;hostname&gt;Source Network Address:&lt;saddr&gt;Source Port:&lt;sport&gt;Detailed Authentication Information: Logon Process:&lt;fld34&gt;Authentication Package:&lt;rulename&gt;Transited Services: Package Name (NTLM only):&lt;fld36&gt;Key Length: &lt;info&gt;&quot;" />
+
 	 
 <MESSAGE
 	id1="NetApp-Security-Auditing_4659_NetApp-Security-Auditing"
@@ -11541,6 +11553,7 @@
 	eventcategory="1206020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt;Subject: Security ID:&lt;sid&gt;Account Name:&lt;group&gt;Account Domain:&lt;domain&gt;Logon ID:&lt;logon_id&gt;Object: Object Server: &lt;obj_server&gt;  Object Type: &lt;obj_type&gt;  Object Name: &lt;obj_name&gt;  Handle ID: &lt;id1&gt;  Process Information: Process ID: &lt;process_id&gt;  Access Request Information: Transaction ID: &lt;trans_id&gt;  Accesses: &lt;accesses&gt;  Access Mask: &lt;fld52&gt;  Privileges Used for Access Check: &lt;privilege&gt;&quot;" />
+
 	
 <MESSAGE
 	id1="NetApp-Security-Auditing_4660_NetApp-Security-Auditing"
@@ -11548,5 +11561,41 @@
 	eventcategory="1206020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(event_computer)&gt;&lt;@event_type:*eventType(event_type)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime,fld12,fld13,fld14)&gt;"
 	content="&lt;fld1&gt;{NetApp:|NetApp}&lt;fld50&gt;[&lt;event_type&gt;]&lt;fld11&gt;&lt;datetime&gt;&lt;fld12&gt;&lt;fld13&gt;&lt;fld14&gt;:&lt;fld51&gt;/&lt;event_log&gt;/&lt;event_computer&gt;/&lt;event_source&gt;(&lt;id&gt;) - &quot;&lt;event_description&gt; Subject: Security ID:  &lt;sid&gt;  Account Name:  &lt;username&gt;    Account Domain:  &lt;domain&gt;  Logon ID:  &lt;sessionid&gt;  Object: Object Server: &lt;obj_server&gt;  Handle ID:  &lt;id1&gt;  Process Information: Process ID:  &lt;process_id&gt;  Process Name:  &lt;process&gt; Transaction ID: &lt;trans_id&gt;&quot;" />
+
 	 
+<MESSAGE
+	id1="secd.ldap.query.timed.out:error"
+	id2="secd.ldap.query.timed.out:error"
+	eventcategory="1603040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LDAP server did not respond to query within timeout&gt;"
+	content="Vserver &apos;&lt;vsys&gt;&apos;: LDAP server &lt;daddr&gt; did not respond to query within timeout (&lt;fld1&gt; seconds) interval." />
+
+<MESSAGE
+	id1="secd.conn.auth.failure:error"
+	id2="secd.conn.auth.failure:error"
+	eventcategory="1301000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Vserver  could not make a connection over the network to server&gt;"
+	content="Vserver (&lt;vsys&gt;) could not make a connection over the network to server (ip &lt;daddr&gt;, port &lt;dport&gt;) via interface &lt;sinterface&gt;. Error: &lt;result&gt;" />
+
+<MESSAGE
+	id1="secd.lsa.noServers:EMERGENCY"
+	id2="secd.lsa.noServers:EMERGENCY"
+	eventcategory="1603040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LSA servers are not accessible&gt;"
+	content="None of the LSA servers configured for Vserver (&lt;vsys&gt;) are currently accessible via the network." />
+
+<MESSAGE
+	id1="mgmtgwd.configbr.uploadFailed:error"
+	id2="mgmtgwd.configbr.uploadFailed:error"
+	eventcategory="1603040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Configuration backup file cannot be uploaded to the destination url&gt;"
+	content="Configuration backup file &lt;filename&gt; cannot be uploaded to the destination URL &lt;url&gt;. Error:&lt;result&gt;" />
+
+<MESSAGE
+	id1="vifmgr.lifs.noredundancy:ALERT"
+	id2="vifmgr.lifs.noredundancy:ALERT"
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="No redundancy in the failover configuration for 1 LIFs assigned to node &quot;&lt;node&gt;&quot;. LIFs: &lt;fld1&gt;" />
+
 </DEVICEMESSAGES>
