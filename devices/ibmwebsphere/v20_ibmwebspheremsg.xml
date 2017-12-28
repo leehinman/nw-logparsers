@@ -4,9 +4,9 @@
 	displayname="IBM WebSphere"
 	group="Application Servers">
 <VERSION
-		xml="43"
-		checksum="33ecf343cd327c749d7e5259a7096beb"
-		revision="111"
+		xml="45"
+		checksum="c42cb4c026b1bcfd83d8e3ad3be71d2b"
+		revision="113"
 		device="2.0"/>
 
 <TAGVALMAP
@@ -442,6 +442,20 @@
 	eventcategory="1603110000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Configuration Timeout&gt;"
 	content="Configuration &lt;fld1&gt; &lt;agent&gt;Timeout" />
+<MESSAGE
+	id1="Configuration:03"
+	id2="Configuration"
+	eventcategory="1801010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to connect to the DataSource&gt;"
+	content="&lt;fld2&gt;: Failed to connect to the DataSource &lt;fld3&gt;. &lt;info&gt;" />
+
+<MESSAGE
+	id1="Configuration:04"
+	id2="Configuration"
+	eventcategory="1605020000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:*STRCAT(The property ,fld3, does not exist on the DataSource)&gt;"
+	content="&lt;fld2&gt;: Warning: The property &apos;&lt;fld3&gt;&apos; does not exist on the DataSource class &lt;agent&gt;" />
+
 <MESSAGE
 	id1="ConnectionEve"
 	id2="ConnectionEve"
@@ -2289,6 +2303,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U:%O&apos;,fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;fld1&gt;] &lt;fld2&gt; SystemOut &lt;info&gt;" />
+
 		
 <MESSAGE
 	id1="startup:02"
@@ -2296,6 +2311,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%Y %N:%U:%O&apos;,fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;fld1&gt;] &lt;fld2&gt; GenericWebApp &lt;info&gt;" />
+
 			
 		
 <MESSAGE
@@ -3887,7 +3903,13 @@
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%Y %N:%U:%O',hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WebApp initializeStaticFileHandler&gt;"
 	content=" webapp &lt;fld3&gt;WebApp initializeStaticFileHandler &lt;fld4&gt;: &lt;result&gt;" />
-		
+<MESSAGE
+	id1="webapp:04"
+	id2="webapp"
+	eventcategory="1605020000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%Y %N:%U:%O',hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WebApp notifyServletContextCreated&gt;"
+	content=" webapp &lt;fld3&gt;WebApp notifyServletContextCreated &lt;fld4&gt;: &lt;info&gt;:&lt;fld5&gt;" />	
+
 <MESSAGE
 	id1="Authenticatio"
 	id2="Authenticatio"
@@ -4098,6 +4120,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%G/%F/%Y %N:%U:%O&apos;,hdatetime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="HttpMethodDir &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="IBMWEBSPHERE_GENERIC"
 	id2="IBMWEBSPHERE_GENERIC"
@@ -4106,11 +4129,13 @@
 	content="&lt;fld&gt;" />
 
 
+
 <MESSAGE
 	id1="IBMWEBSPHERE_GENERIC:01"
 	id2="IBMWEBSPHERE_GENERIC"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld&gt;" />
+
 		
 </DEVICEMESSAGES>
