@@ -4,8 +4,8 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="122"
-	checksum="c85d260e734326ef84b7e255063f3b96"
+	xml="124"
+	checksum="a58afe6f99b7b530a263f4736218ddd4"
 	revision="113"
     device="2.0" />
 
@@ -368,42 +368,49 @@
 	eventcategory="1001020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_description:Traffic from IP address blocked.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Active Response that started at &lt;fld1&gt; is disengaged. The traffic from IP address &lt;hostip&gt; was blocked for &lt;fld2&gt; second(s).,Local:  &lt;saddr&gt;,Local: &lt;fld7&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="Active:01" 
 	id2="Active" 
 	eventcategory="1001020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_description:Traffic from IP address blocked.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Active Response that started at &lt;fld1&gt; is disengaged. The traffic from IP address &lt;hostip&gt; was blocked for &lt;fld2&gt; second(s).  ,Local:  &lt;saddr&gt;,Local: &lt;fld7&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="Administrator" 
 	id2="Administrator" 
 	eventcategory="1401070000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Administrator logout.&gt;"
 	content="Administrator logout" />
+
 <MESSAGE 
 	id1="Administrator:01" 
 	id2="Administrator" 
 	eventcategory="1401030000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Administrator log on failed.&gt;"
 	content="Administrator&lt;space&gt;log on failed" />
+
 <MESSAGE 
 	id1="Administrator:02" 
 	id2="Administrator" 
 	eventcategory="1401060000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Administrator log on succeeded.&gt;"
 	content="Administrator&lt;space&gt;log on succeeded" />
+
 <MESSAGE 
 	id1="Administrator:03" 
 	id2="password" 
 	eventcategory="1402040100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Password of System administrator has been changed.&gt;"
 	content="password of System administrator '&lt;username&gt;' has been changed." />
+
 <MESSAGE 
 	id1="allowed" 
 	id2="allowed" 
 	eventcategory="1001020305" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_description:Traffic has been allowed from this process.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="&lt;fld6&gt; detected.  Traffic has been allowed from this application: &lt;fld1&gt;,Local:  &lt;saddr&gt;,Local: &lt;fld7&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID:&lt;fld23&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="Malicious" 
 	id2="Malicious" 
@@ -416,12 +423,14 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Product definition failed to update.&gt;"
 	content="&lt;product&gt; definitions &lt;info&gt; failed to update." />
+
 <MESSAGE 
 	id1="Antivirus:01" 
 	id2="Antivirus" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Product definitions are up-to-date.&gt;"
 	content="&lt;product&gt; definitions &lt;info&gt; is up-to-date." />
+
 <MESSAGE 
 	id1="Antivirus:02" 
 	id2="Antivirus" 
@@ -434,6 +443,7 @@
 	eventcategory="1103000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences&gt;"
 	content="&lt;event_description&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,{ Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;| Domain: &lt;domain&gt;}" />
+
 	
 <MESSAGE 
 	id1="Application" 
@@ -441,12 +451,14 @@
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Application and Device Control is ready.&gt;"
 	content="&lt;fld44&gt;,Application and Device Control is ready,&lt;fld8&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="Application:01"
 	id2="Application"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Application and Device Control engine is not verified.&gt;"
 	content="&lt;fld44&gt;,Application and Device Control engine is not verified,&lt;fld1&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="Application:02"
 	id2="Application"
@@ -459,12 +471,14 @@
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Applied new policy successfully.&gt;"
 	content="Applied new policy with &lt;info&gt;{successfully.,Event time:&lt;fld17&gt;&lt;fld18&gt;|successfully.}" />
+
 <MESSAGE 
 	id1="Add" 
 	id2="Add" 
 	eventcategory="1701010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Add shared policy upon system install,LiveUpdate Settings policy.&gt;"
 	content="Add shared policy upon system install,LiveUpdate Settings policy" />
+
 <MESSAGE 
 	id1="blocked:01" 
 	id2="blocked" 
@@ -477,6 +491,7 @@
 	eventcategory="1001020305" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic has been blocked from application.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content=" &lt;fld28&gt; detected.  Traffic has been blocked from this application: &lt;fld1&gt;,Local:  &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,Remote: &lt;fld51&gt;,&lt;fld17&gt;,&lt;fld18&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,{ &quot;Location: | Location: } &lt;fld2&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
+
 <MESSAGE 
 	id1="blocked:06" 
 	id2="SHA-256:" 
@@ -490,48 +505,56 @@
 	eventcategory="1001020305" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic has been blocked from application.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content=" &lt;fld28&gt; detected.  Traffic has been blocked from this application: &lt;fld1&gt;,Local:  &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,Remote: &lt;fld51&gt;,&lt;fld17&gt;,&lt;fld18&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,{ &quot;Location: | Location: } &lt;fld2&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="Changed" 
 	id2="Changed" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@event_description:Changed value&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;"
 	content=" Changed value &apos;&lt;change_attribute&gt;&apos; from &apos;&lt;change_old&gt;&apos; to { &apos;&lt;change_new&gt;&apos;,Event time:&lt;fld17&gt;&lt;fld18&gt; | &apos;&lt;change_new&gt;&apos;}" />
+
 <MESSAGE 
 	id1="Cleaned" 
 	id2="Cleaned" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Cleaned up downloaded content.&gt;&lt;@dclass_counter1_string:Number of Virus Cleaned.&gt;"
 	content="Cleaned up &lt;dclass_counter1&gt; LiveUpdate downloaded content" />
+
 <MESSAGE 
 	id1="Client" 
 	id2="Client" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client has downloaded the issued command.&gt;"
 	content=" Client has downloaded the issued Command,&lt;username&gt;" />
+
 <MESSAGE 
 	id1="Client:01" 
 	id2="Client" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;"
 	content="{&lt;event_description&gt;, type SymDelta version&lt;version&gt; filesize&lt;filename_size&gt;.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;, type full version&lt;version&gt; filesize&lt;filename_size&gt;.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;| &lt;event_description&gt;}" />
+
 <MESSAGE 
 	id1="client" 
 	id2="client" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has downloaded the policy successfully.&gt;"
 	content="client has downloaded the {content package|policy|Intrusion Prevention policy} successfully,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
+
 <MESSAGE 
 	id1="client:01" 
 	id2="client" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has reconnected with the management server.&gt;"
 	content="client has reconnected with the management server,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
+
 <MESSAGE 
 	id1="client:02" 
 	id2="client" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has downloaded file successfully.&gt;"
 	content="client has downloaded &lt;filename&gt; successfully,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
+
 <MESSAGE 
 	id1="client:03" 
 	id2="client" 
@@ -556,12 +579,14 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client computer has been added to the group.&gt;"
 	content="client computer has been added to the group,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
+
 <MESSAGE 
 	id1="client:07" 
 	id2="client" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client computer has been renamed&gt;"
 	content="client computer has been renamed,&lt;shost&gt;,&lt;username&gt;,&lt;sdomain&gt;" />
+
 <MESSAGE 
 	id1="client:08" 
 	id2="client" 
@@ -575,6 +600,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld19)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@event_description:Commercial application detected&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Commercial application detected,{Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;|Computer name: &lt;shost&gt;},Detection type: &lt;severity&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version:&lt;version&gt;,Hash type:&lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld11&gt;,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld6&gt;,Detection score:&lt;fld7&gt;,Submission recommendation: &lt;fld8&gt;,Permitted application reason: &lt;fld9&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;fld1&gt;,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld17&gt; &lt;fld18&gt;,Inserted: &lt;fld19&gt;,End: &lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="Commercial:02" 
 	id2="Commercial" 
@@ -593,12 +619,14 @@
 	eventcategory="1701030000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Computer has been deleted.&gt;"
 	content="Computer has been deleted" />
+
 <MESSAGE 
 	id1="Computer:moved" 
 	id2="Computer" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Computer has been moved.&gt;"
 	content="Computer has been moved" />
+
 <MESSAGE 
 	id1="Computer:propertieschanged" 
 	id2="Computer" 
@@ -630,36 +658,42 @@
 	eventcategory="1701000000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Configuration Change..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Time: &lt;fld6&gt;..Description: &lt;event_description&gt; ..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Configuration:01" 
 	id2="Configuration" 
 	eventcategory="1701000000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Configuration Change&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Configuration Change..&lt;shost&gt;..&lt;fld5&gt;........&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt; &lt;fld7&gt;.." />
+
 <MESSAGE 
 	id1="Configuration:02" 
 	id2="Configuration" 
 	eventcategory="1701000000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Configuration Change..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Description: &lt;event_description&gt;..Time: &lt;fld6&gt; &lt;fld7&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Connected" 
 	id2="Connected" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connected to Symantec Endpoint Protection Manager&gt;"
 	content="Connected to Symantec Endpoint Protection Manager {&lt;fld11&gt; ,Event time: &lt;fld17&gt;&lt;fld18&gt;| &lt;fld11&gt; }" />
+
 <MESSAGE 
 	id1="Connection" 
 	id2="Connection" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connection reset.&gt;"
 	content="Connection reset" />
+
 <MESSAGE 
 	id1="Could" 
 	id2="Could" 
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not start service engine.&gt;"
 	content=" Could &lt;space&gt;not start Service Engine err=&lt;resultcode&gt;" />
+
 <MESSAGE 
 	id1="Could:01" 
 	id2="Could" 
@@ -672,18 +706,21 @@
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Create trident engine failed.&gt;"
 	content="Create trident engine failed." />
+
 <MESSAGE 
 	id1="Database" 
 	id2="Database" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Database Maintenance Finished Successfully&gt;"
 	content="Database Maintenance Finished Successfully" />
+
 <MESSAGE 
 	id1="Database:01" 
 	id2="Database" 
 	eventcategory="1605020000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Database maintenance started.&gt;"
 	content="Database maintenance started." />
+
 <MESSAGE 
 	id1="Database:02" 
 	id2="Database" 
@@ -702,78 +739,91 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Disconnected from Symantec Endpoint Protection Manager.&gt;"
 	content="Disconnected from Symantec Endpoint Protection Manager.   --- server address : &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Disconnected:01" 
 	id2="Disconnected" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Disconnected from Symantec Endpoint Protection Manager.&gt;"
 	content=" Disconnected from Symantec Endpoint Protection Manager { (&lt;hostip&gt;),Event time:&lt;fld17&gt;&lt;fld18&gt;| (&lt;hostip&gt;) }" />
+
 <MESSAGE 
 	id1="Decomposer" 
 	id2="Decomposer" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="Domain:added" 
 	id2="Domain" 
 	eventcategory="1701010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Domain was added.&gt;"
 	content="Domain &quot;&lt;domain&gt;&quot; was added" />
+
 <MESSAGE 
 	id1="Domain:renamed" 
 	id2="Domain" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Domain was renamed.&gt;&lt;@change_attribute:domain name&gt;"
 	content="Domain &quot;&lt;change_old&gt;&quot; was renamed to &quot;&lt;change_new&gt;&quot;" />
+
 <MESSAGE 
 	id1="Domain:deleted" 
 	id2="Domain" 
 	eventcategory="1701030000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Domain was deleted.&gt;"
 	content="Domain &quot;&lt;domain&gt;&quot; was deleted!" />
+
 <MESSAGE 
 	id1="Domain:administratoradded" 
 	id2="Domain" 
 	eventcategory="1402020200" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@administrator:*HDR(husername)&gt;&lt;@event_description:Domain administrator was added.&gt;"
 	content="Domain administrator &quot;&lt;username&gt;&quot; was added" />
+
 <MESSAGE 
 	id1="Domain:administratordeleted" 
 	id2="Domain" 
 	eventcategory="1402020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@administrator:*HDR(husername)&gt;&lt;@event_description:Domain administrator deleted.&gt;"
 	content="Domain administrator &quot;&lt;username&gt;&quot; was deleted" />
+
 <MESSAGE 
 	id1="Domain:disabled" 
 	id2="Domain" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Disable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Domain disabled&gt;"
 	content="Domain &quot;&lt;domain&gt;&quot; was disabled" />
+
 <MESSAGE 
 	id1="Domain:enabled" 
 	id2="Domain" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Enable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Domain enabled&gt;"
 	content="Domain &quot;&lt;domain&gt;&quot; was enabled" />
+
 <MESSAGE 
 	id1="Failed" 
 	id2="Failed" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to connect to the server.&gt;"
 	content="Failed to connect to the server. &lt;action&gt;. ErrorCode: &lt;resultcode&gt;" />
+
 <MESSAGE 
 	id1="Failed:01" 
 	id2="Failed" 
 	eventcategory="1603110000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Failed to connect to the server.&gt;"
 	content="Failed to contact server for more than { &lt;fld1&gt; times.,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;fld1&gt; times.}" />
+
 <MESSAGE 
 	id1="Failed:02" 
 	id2="Failed" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to disable Windows firewall.&gt;"
 	content="Failed to disable Windows firewall" />
+
 <MESSAGE 
 	id1="Failed:03" 
 	id2="Failed" 
@@ -828,6 +878,7 @@
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Firewall driver failed.&gt;"
 	content=" Firewall driver failed to &lt;info&gt;" />
+
 <MESSAGE 
 	id1="Firewall:01" 
 	id2="Firewall" 
@@ -840,12 +891,14 @@
 	eventcategory="1701010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:Group&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Group has been created&gt;"
 	content="Group has been created" />
+
 <MESSAGE 
 	id1="Group:deleted" 
 	id2="Group" 
 	eventcategory="1701030000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:Group&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Group has been deleted&gt;"
 	content="Group has been deleted" />
+
 <MESSAGE 
 	id1="Group:deleted_01" 
 	id2="Group" 
@@ -858,30 +911,35 @@
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:Group&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Group has been moved&gt;"
 	content="Group has been moved" />
+
 <MESSAGE 
 	id1="Group:renamed" 
 	id2="Group" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:Group&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Group has been renamed&gt;"
 	content="Group has been renamed" />
+
 <MESSAGE 
 	id1="Group:added" 
 	id2="Group" 
 	eventcategory="1701010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:Group&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:UserGroup&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Group was added&gt;"
 	content="Group '&lt;group&gt;' was added" />
+
 <MESSAGE 
 	id1="Host" 
 	id2="Host" 
 	eventcategory="1701070000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Disable&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Host Integrity check is disabled.&gt;"
 	content=" Host Integrity check is disabled. &lt;info&gt; by the &lt;username&gt;" />
+
 <MESSAGE 
 	id1="Host:01" 
 	id2="Host" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Component is up-to-date&gt;"
 	content=" &lt;info&gt; up-to-date" />
+
 <MESSAGE 
 	id1="Host:02" 
 	id2="Host" 
@@ -925,12 +983,14 @@
 	eventcategory="1701070000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Host Integrity check passed&gt;"
 	content=" Host Integrity check passed&lt;space&gt;Requirement: &apos;&lt;fld11&gt;&apos; passed &lt;fld12&gt;,Local: &lt;saddr&gt;,Local: &lt;fld3&gt;,Remote: &lt;fld4&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld5&gt;,Unknown,OTHERS,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld6&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;fld21&gt;,CIDS Signature string: &lt;fld22&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL:&lt;fld24&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
+
 <MESSAGE 
 	id1="Intrusion" 
 	id2="Intrusion" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Intrusion Prevention signatures is up-to-date.&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;info&gt; { is | was } &lt;action&gt;" />
+
 <MESSAGE 
 	id1="Intrusion:01" 
 	id2="Intrusion" 
@@ -943,12 +1003,14 @@
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Invalid log record&gt;"
 	content="Invalid log record:&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Limited" 
 	id2="Limited" 
 	eventcategory="1402020300" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Limited Administrator renamed&gt;&lt;@username:*HDR(husername)&gt;&lt;@change_attribute:limited administrator username.&gt;"
 	content="Limited Administrator administrator &quot;&lt;change_old&gt;&quot; was renamed to &quot;&lt;change_new&gt;&quot;" />
+
 <MESSAGE 
 	id1="LiveUpdate:08" 
 	id2="LiveUpdate" 
@@ -961,24 +1023,28 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LiveUpdate&gt;"
 	content="LiveUpdate &lt;info&gt; on &lt;product&gt;&quot;" />
+
 <MESSAGE 
 	id1="LiveUpdate" 
 	id2="LiveUpdate" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LiveUpdate failed.&gt;"
 	content="LiveUpdate failed." />
+
 <MESSAGE 
 	id1="LiveUpdate:04" 
 	id2="LiveUpdate" 
 	eventcategory="1603040000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LiveUpdate encountered one or more errors&gt;"
 	content="LiveUpdate encountered one or more errors. Return code = &lt;resultcode&gt;" />
+
 <MESSAGE 
 	id1="LiveUpdate:02" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LiveUpdate succeeded&gt;"
 	content="LiveUpdate succeeded" />
+
 <MESSAGE 
 	id1="LiveUpdate:09" 
 	id2="LiveUpdate" 
@@ -1131,6 +1197,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LiveUpdate a rencontr� une erreur&gt;"
 	content="&lt;fld11&gt;: Impossible de se connecter au serveur LiveUpdate &lt;fld12&gt;." />
+
 	
 	
 <MESSAGE 
@@ -1139,18 +1206,21 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostid:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:An update from LiveUpdate Manager installed successfully&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,An update for &lt;application&gt; was successfully installed.&lt;space&gt;The new sequence number is &lt;fld23&gt;{.&lt;space&gt;Content was downloaded from &lt;url&gt; (&lt;sport&gt;).,Event time:&lt;fld17&gt;&lt;fld18&gt;|.&lt;space&gt;Content was downloaded from &lt;url&gt; (&lt;sport&gt;).|.,Event time:&lt;fld17&gt;&lt;fld18&gt;|.}" />
+
 <MESSAGE 
 	id1="LiveUpdate:31" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostid:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:The latest update from LiveUpdate Manager failed to load.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,The latest &lt;application&gt; update failed to load. The component will continue to use its previous {content.,Event time:&lt;fld17&gt;&lt;fld18&gt;| content.}" />
+
 <MESSAGE 
 	id1="LiveUpdate:32" 
 	id2="LiveUpdate" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scheduled LiveUpdate interval switched.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,Scheduled LiveUpdate switched to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="LiveUpdate:33" 
 	id2="LiveUpdate" 
@@ -1164,54 +1234,63 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:An update from Intelligent Updater already installed.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,An update for &lt;application&gt; from Intelligent Updater was already installed." />
+
 <MESSAGE 
 	id1="LiveUpdate:35" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:A LiveUpdate session from LiveUpdate Manager was cancelled.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,{A | The} LiveUpdate session {is | was} cancelled." />
+
 <MESSAGE 
 	id1="LiveUpdate:36" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:A LiveUpdate session from LiveUpdate Manager is running, LiveUpdate skipped.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,&quot;A LiveUpdate session is already running, so the scheduled LiveUpdate was { skipped.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|skipped.&quot;}" />
+
 <MESSAGE 
 	id1="LiveUpdate:37" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:LiveUpdate is trying to connect to Server.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,Scheduled LiveUpdate keep trying to connect to Server for &lt;fld23&gt; times." />
+
 <MESSAGE 
 	id1="LiveUpdate:38" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:A LiveUpdate session from LiveUpdate Manager ran successfully.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,A LiveUpdate session ran successfully. { &lt;fld23&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;fld23&gt;}" />
+
 <MESSAGE 
 	id1="LiveUpdate:39" 
 	id2="LiveUpdate" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:LiveUpdate error submission to Symantec.&gt;"
 	content="Category: &lt;fld22&gt;,LiveUpdate Manager,[LiveUpdate error submission] Information submitted to { Symantec.,Event time:&lt;fld17&gt;&lt;fld18&gt;|Symantec.}" />
+
 <MESSAGE 
 	id1="LiveUpdate:40" 
 	id2="Virus" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:The scheduled LiveUpdate from LiveUpdate Manager was skipped.&gt;"
 	content="Virus and Spyware Definitions were updated recently, so the scheduled LiveUpdate was {skipped.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|skipped.}" />
+
 <MESSAGE 
 	id1="LiveUpdate:41" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The latest Submission Control Thresholds update failed to load.&gt;"
 	content="Category: &lt;fld11&gt;,LiveUpdate Manager,The latest Submission Control Thresholds update failed to load. The component has no valid content and will not function correctly until it is updated." />
+
 <MESSAGE 
 	id1="LiveUpdate:42" 
 	id2="LiveUpdate" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The latest SONAR Definitions update failed to load.&gt;"
 	content="Category: &lt;fld11&gt;,LiveUpdate Manager,The latest SONAR Definitions update failed to load. The component has no valid content and will not function correctly until it is updated." />
+
 <MESSAGE 
 	id1="LiveUpdate:43" 
 	id2="LiveUpdate" 
@@ -1231,6 +1310,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Active Response&gt;&lt;@dclass_counter1_string:Occurrences&gt;"
 	content="{&lt;fld4&gt;,MD-5:&lt;fld5&gt;,Local:|Local:} &lt;saddr&gt;,Local: &lt;sport&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Rule: &lt;rulename&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action: &lt;action&gt;" />
+
 <MESSAGE 
 	id1="Local::11" 
 	id2="SHA-256:" 
@@ -1244,6 +1324,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Active Response&gt;&lt;@dclass_counter1_string:Occurrences&gt;"
 	content="Local: &lt;saddr&gt;,Local: &lt;sport&gt;,Local: &lt;fld12&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,Remote: &lt;fld15&gt;,&lt;protocol&gt;,&lt;direction&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,{Rule: &lt;rulename&gt;| &quot;Rule: &lt;rulename&gt;&quot;},Location: &lt;fld11&gt;,User: &lt;username&gt;,{Domain: &lt;domain&gt;,Action: &lt;action&gt; | Domain: &lt;domain&gt;}" />
+
 		 
 <MESSAGE 
 	id1="Local::09" 
@@ -1258,6 +1339,7 @@
 	eventcategory="1003010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@dclass_counter1_string:Occurrences&gt;"
 	content="[SID: &lt;fld26&gt;] &lt;category&gt;: &lt;event_description&gt; Traffic has been blocked for this application:&lt;fld27&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld33&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
+
 		 
 <MESSAGE 
 	id1="Local::04" 
@@ -1283,6 +1365,7 @@
 	eventcategory="1003010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@dclass_counter1_string:Occurrences&gt;"
 	content="&lt;event_description&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;network_service&gt;,,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,{ &quot;Location: | Location: } &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;category&gt;: &lt;fld22&gt; CVE-&lt;cve&gt; &lt;fld26&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
+
 	
 	
 <MESSAGE 
@@ -1303,6 +1386,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Active Response&gt;"
 	content="Local: &lt;saddr&gt;,Local: &lt;sport&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,&lt;direction&gt;,Application: &lt;application&gt;,Action: &lt;action&gt;" />
+
 <MESSAGE 
 	id1="Location" 
 	id2="Location" 
@@ -1310,18 +1394,21 @@
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Location has been changed or switched&gt;"
 	content=" Location has been {changed | switched} to { &lt;info&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;info&gt;}" />
 
+
 <MESSAGE 
 	id1="LUALL" 
 	id2="LUALL" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="Management" 
 	id2="Management" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Management server started up successfully.&gt;"
 	content=" Management server started up successfully" />
+
 <MESSAGE 
 	id1="Management:01" 
 	id2="Management" 
@@ -1340,6 +1427,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The management server received the client log successfully.&gt;"
 	content="management server received the client log successfully,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
+
 <MESSAGE 
 	id1="management:01" 
 	id2="management" 
@@ -1352,42 +1440,49 @@
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Threat Protection information.&gt;"
 	content="Network Threat Protection {---- Engine  version|-- Engine version} : &lt;version&gt;  Windows Version info:  Operating System: &lt;os&gt; Network  info:&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Network:01" 
 	id2="Network" 
 	eventcategory="1701060000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Threat Protection has been activated&gt;"
 	content="Network Threat Protection has been activated" />
+
 <MESSAGE 
 	id1="Network:02" 
 	id2="Network" 
 	eventcategory="1003010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Threat Protection applied a new IPS Library.&gt;"
 	content="Network Threat Protection applied a new IPS {Library|library} ." />
+
 <MESSAGE 
 	id1="Network:03" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The Network Threat Protection already has the newest policy.&gt;"
 	content="The Network Threat Protection already has the newest policy." />
+
 <MESSAGE 
 	id1="Network:04" 
 	id2="Network" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The Network Threat Protection is unable to download the newest policy from the Symantec Endpoint Protection Manager.&gt;"
 	content="The Network Threat Protection is unable to download the newest policy from the Symantec Endpoint Protection Manager." />
+
 <MESSAGE 
 	id1="Network:05" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Threat Protection's firewall and Intrusion Prevention features are disabled&gt;"
 	content="Network Threat Protection's firewall and Intrusion Prevention features are disabled" />
+
 <MESSAGE 
 	id1="Network:06" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The Network Threat Protection is unable to communicate with the Symantec Endpoint Protection Manager.&gt;"
 	content="The Network Threat Protection is unable to communicate with the Symantec Endpoint Protection Manager." />
+
 <MESSAGE 
 	id1="Network:07" 
 	id2="Network" 
@@ -1466,60 +1561,70 @@
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Threat Protection's firewall is disabled&gt;"
 	content="Network Threat Protection's firewall is disabled by policy" />
+
 <MESSAGE 
 	id1="Network:20" 
 	id2="Firefox" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Firefox Browser Intrusion Prevention disabled&gt;"
 	content="Firefox Browser Intrusion Prevention {disabled | disabled by policy}" />
+
 <MESSAGE 
 	id1="Network:21" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Intrusion Prevention has been restored&gt;"
 	content="&lt;service&gt; has been restored and &lt;result&gt;" />
+
 <MESSAGE 
 	id1="Network:22" 
 	id2="Internet" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Internet Explorer Browser Intrusion Prevention enabled&gt;"
 	content="Internet Explorer Browser Intrusion Prevention { enabled,Event time:&lt;fld17&gt;&lt;fld18&gt;| enabled}" />
+
 <MESSAGE 
 	id1="Network:23" 
 	id2="Internet" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Internet Explorer Browser Intrusion Prevention disabled&gt;"
 	content="Internet Explorer Browser Intrusion Prevention {disabled | disabled by policy}" />
+
 <MESSAGE 
 	id1="Network:24" 
 	id2="Failed" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to set a custom action for IPS signature&gt;"
 	content="Failed to set a custom action for IPS signature &lt;sigid&gt; (errcode=0x&lt;resultcode&gt;). Most probably, this IPS signature was removed from the IPS {content.&quot;|content.}" />
+
 <MESSAGE 
 	id1="Network:25" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Network Threat Protection's firewall is enabled&gt;"
 	content=" Network Threat Protection's firewall is { enabled,Event time:&lt;fld17&gt;&lt;fld18&gt;| enabled }" />
+
 <MESSAGE 
 	id1="Network:26" 
 	id2="Firefox" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Firefox Browser Intrusion Prevention enabled&gt;"
 	content="Firefox Browser Intrusion Prevention { enabled,Event time:&lt;fld17&gt;&lt;fld18&gt;| enabled }" />
+
 <MESSAGE 
 	id1="Network:27" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Network Intrusion Prevention disabled&gt;"
 	content="Network Intrusion Prevention {disabled | disabled by policy}" />
+
 <MESSAGE 
 	id1="Network:28" 
 	id2="Network" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Network Intrusion Prevention enabled&gt;"
 	content="Network Intrusion Prevention {enabled,Event time:&lt;fld17&gt;&lt;fld18&gt;| enabled}" />
+
 <MESSAGE 
 	id1="Network:29" 
 	id2="Generic" 
@@ -1551,6 +1656,7 @@
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:New virus definition file loaded.&gt;"
 	content="New virus definition file loaded. { Version: &lt;version&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt; |Version: &lt;version&gt;}" />
+
 <MESSAGE 
 	id1="New:01" 
 	id2="New" 
@@ -1578,18 +1684,21 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New content update failed to download from the management server&gt;"
 	content="New content update failed to download from the management server.     Remote file path: { &lt;url&gt;,Event time: &lt;event_time_string&gt; | &lt;url&gt; }" />
+
 <MESSAGE 
 	id1="New:05" 
 	id2="New" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:New content update failed to download from Group Update Provider&gt;"
 	content="New content update failed to download from Group Update Provider.     Remote file path: &lt;url&gt;" />
+
 <MESSAGE 
 	id1="No" 
 	id2="No" 
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No virus found events got swept.&gt;"
 	content="No &lt;virusname&gt; virus found events got swept." />
+
 <MESSAGE
 	id1="No:01"
 	id2="No"
@@ -1659,12 +1768,14 @@
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Organization importing started.&gt;"
 	content=" Organization importing started" />
+
 <MESSAGE 
 	id1="Number:01" 
 	id2="Number" 
 	eventcategory="1605020000"
 	functions="&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Number of virus found events swept.&gt;&lt;@dclass_counter1_string:Virus found events swept count.&gt;"
 	content="Number of &lt;virusname&gt; virus found events swept: &lt;dclass_counter1&gt;" />
+
 <MESSAGE 
 	id1="Number" 
 	id2="Number" 
@@ -1677,6 +1788,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Number of scan events swept.&gt;&lt;@dclass_counter1_string:scan events swept&gt;"
 	content="Number of scan events swept: &lt;dclass_counter1&gt;" />
+
 <MESSAGE
 	id1="Number:04"
 	id2="Number"
@@ -1745,6 +1857,7 @@
 	eventcategory="1402040100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Password&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Password of administrator changed.&gt;&lt;@username:*HDR(husername)&gt;"
 	content="password of  administrator &quot;&lt;c_username&gt;&quot; was changed" />
+
 <MESSAGE 
 	id1="password:01" 
 	id2="password" 
@@ -1757,30 +1870,35 @@
 	eventcategory="1701010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Policy has been added&gt;"
 	content="Policy has been added,&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Policy:added_01" 
 	id2="Policy" 
 	eventcategory="1701010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Policy has been added&gt;"
 	content="Policy has been added:&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Policy:edited" 
 	id2="Policy" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Policy has been edited&gt;"
 	content="Policy has been edited,&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Policy:edited_01" 
 	id2="Policy" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Policy has been edited&gt;"
 	content="Policy has been edited:&lt;info&gt;,&lt;fld1&gt;" />
+
 <MESSAGE 
 	id1="Policy:deleted" 
 	id2="Policy" 
 	eventcategory="1701030000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Policy&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Policy has been deleted&gt;"
 	content="Policy has been deleted{,|:}&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Potential:02" 
 	id2="Potential" 
@@ -1793,6 +1911,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Potential risk found&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Potential risk found,{Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;|Computer name: &lt;shost&gt;},Detection type: &lt;fld23&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version:&lt;version&gt;,Hash type:&lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld11&gt;,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld6&gt;,Detection score:&lt;fld7&gt;,Submission recommendation: &lt;fld8&gt;,Permitted application reason: &lt;fld9&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;fld1&gt;,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld17&gt; &lt;fld18&gt;,Inserted: &lt;fld20&gt;,End: &lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="Potential:01" 
 	id2="Potential" 
@@ -1805,24 +1924,28 @@
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Previous virus definition file loaded.&gt;"
 	content=" Previous virus definition file loaded. Version: &lt;version&gt;" />
+
 <MESSAGE 
 	id1="Proactive" 
 	id2="Proactive" 
 	eventcategory="1703020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Proactive Threat Scan failed to update.&gt;"
 	content="Proactive Threat Scan &lt;info&gt; failed to update." />
+
 <MESSAGE 
 	id1="Proactive:01" 
 	id2="Proactive" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Proactive Threat Scan whitelist is up-to-date.&gt;"
 	content="Proactive Threat Scan whitelist &lt;info&gt; is up-to-date." />
+
 <MESSAGE 
 	id1="process" 
 	id2="process" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Cannot lock process status table since it has been locked by server.&gt;"
 	content="process &lt;process&gt; can not lock the process status table. The process status has been locked by the server &lt;info&gt; since &lt;fld50&gt;. " />
+
 <MESSAGE 
 	id1="process:01" 
 	id2="process" 
@@ -1842,48 +1965,56 @@
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The properties of domain were changed&gt;"
 	content=" properties of domain {&quot;&lt;domain&gt;&quot;|&apos;&lt;domain&gt;&apos;} were changed" />
+
 <MESSAGE 
 	id1="properties:01" 
 	id2="properties" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The properties of system administrator have been changed&gt;"
 	content=" properties for system administrator {&quot;&lt;c_username&gt;&quot;|&apos;&lt;c_username&gt;&apos;} have been changed" />
+
 <MESSAGE 
 	id1="PTS" 
 	id2="PTS" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:PTS has generated an error&gt;"
 	content="PTS has generated an error: code &lt;resultcode&gt;: description: &lt;info&gt;" />
+
 <MESSAGE 
 	id1="Received" 
 	id2="Received" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Received a new policy.&gt;"
 	content="Received a new policy with { &lt;info&gt;,Event time: &lt;fld17&gt;&lt;fld18&gt; | &lt;info&gt; }" />
+
 <MESSAGE 
 	id1="Reconfiguring" 
 	id2="Reconfiguring" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Reconfiguring Symantec Management Client.&gt;"
 	content="Reconfiguring Symantec Management Client...." />
+
 <MESSAGE 
 	id1="Reconnected" 
 	id2="Reconnected" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Reconnected to server after server was unreachable.&gt;"
 	content="Reconnected to server after server was {unreacheable.,Event time:&lt;fld17&gt;&lt;fld18&gt;|unreacheable.}" />
+
 <MESSAGE 
 	id1="restart" 
 	id2="restart" 
 	eventcategory="1606000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Please restart your computer to enable changes.&gt;"
 	content=" Please restart your computer to enable &lt;info&gt; { changes.,Event time:&lt;fld17&gt;&lt;fld18&gt;|changes.}" />
+
 <MESSAGE 
 	id1="Retry" 
 	id2="Retry" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Retry.&gt;"
 	content="Retry &lt;info&gt;&quot;" />
+
 <MESSAGE 
 	id1="Retry:01" 
 	id2="Retry" 
@@ -1920,48 +2051,56 @@
 	eventcategory="1003010000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Risk Repair Failed&gt;"
 	content=" Risk Repair Failed..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Time: &lt;fld6&gt; &lt;fld7&gt; ..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Risk:02"  
 	id2="Risk" 
 	eventcategory="1003010000"
 	functions="&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Risk Repair Failed&gt;"
 	content=" Risk Repair Failed..&lt;shost&gt;..&lt;fld5&gt;..&lt;filename&gt;..&lt;info&gt;..&lt;action&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt; &lt;fld7&gt;..&lt;username&gt;..&lt;virusname&gt;" />
+
 <MESSAGE 
 	id1="Risk:03"  
 	id2="Risk" 
 	eventcategory="1003010000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Risk Repaired&gt;"
 	content=" Risk Repaired..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Time: &lt;fld6&gt; &lt;fld7&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Risk:04"  
 	id2="Risk" 
 	eventcategory="1003010000"
 	functions="&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Risk Repaired&gt;"
 	content=" Risk Repaired..&lt;shost&gt;..&lt;fld5&gt;..&lt;filename&gt;..&lt;info&gt;..&lt;action&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt; &lt;fld7&gt;..&lt;username&gt;..&lt;virusname&gt;" />
+
 <MESSAGE 
 	id1="Risk:05" 
 	id2="Risk" 
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld17)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;&lt;@event_description:Risk sample submitted to Symantec.&gt;"
 	content="Risk sample submitted to Symantec,{Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;|Computer name: &lt;shost&gt;},Detection type: &lt;event_type&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version:&lt;version&gt;,Hash type:&lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld11&gt;,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld6&gt;,Detection score:&lt;fld7&gt;,Submission recommendation: &lt;fld8&gt;,Permitted application reason: &lt;fld9&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;fld1&gt;,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld16&gt; &lt;fld17&gt;,Inserted: &lt;fld20&gt;,End: &lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="Scan" 
 	id2="Scan" 
 	eventcategory="1605020000"
 	functions="&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scan Start/Stop&gt;"
 	content=" Scan Start/Stop..&lt;shost&gt;..&lt;fld5&gt;..&lt;filename&gt;..&lt;info&gt;..&lt;fld22&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;..&lt;username&gt;..&lt;virusname&gt;" />
+
 <MESSAGE 
 	id1="Scan:01" 
 	id2="Scan" 
 	eventcategory="1605020000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scan Start/Stop&gt;"
 	content=" Scan Start/Stop..&lt;shost&gt;..&lt;fld5&gt;..&lt;info&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;..&lt;username&gt;" />
+
 <MESSAGE 
 	id1="Scan:02" 
 	id2="Scan" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Scan Start&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Infected Count.&gt;&lt;@dclass_counter2_string:Total File Count.&gt;&lt;@dclass_counter3_string:Threat Count.&gt;"
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;username&gt;,User2: &lt;fld3&gt;,&quot;&lt;info&gt;&quot;,&quot;&lt;context&gt;&quot;,Command: Not a command scan (),Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;Domain: &lt;domain&gt;Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Scan:09" 
 	id2="Scan" 
@@ -1974,36 +2113,42 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scan&gt;&lt;@dclass_counter1_string:Infected Count&gt;&lt;@dclass_counter2_string:Total File Count&gt;&lt;@dclass_counter3_string:Total Threat Count&gt;"
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;username&gt;,User2: &lt;fld22&gt;,&lt;info&gt;,Command: Not a command scan (),Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld21&gt;Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,{&quot;Group: &lt;group&gt;&quot;|Group: &lt;group&gt;},Server: &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Scan:08"
 	id2="Scan"
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scan&gt;&lt;@dclass_counter1_string:Infected&gt;&lt;@dclass_counter2_string:Files scanned&gt;&lt;@dclass_counter3_string:Threats&gt;"
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld1&gt;,End: &lt;fld2&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;username&gt;,User2: &lt;fld3&gt;,Files scanned: &lt;dclass_counter2&gt;,,Command: &lt;fld4&gt;,Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;fld5&gt;,Omitted: &lt;fld21&gt;,Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Scan:04" 
 	id2="Scan" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scan Delayed.&gt;&lt;@dclass_counter1_string:Risk Count.&gt;&lt;@dclass_counter2_string:Scan Count.&gt;&lt;@dclass_counter3_string:Omitted Count.&gt;"
 	content="Scan Delayed:  Risks: &lt;dclass_counter1&gt;   Scanned: &lt;dclass_counter2&gt;   { Files/Folders/Drives Omitted: &lt;dclass_counter3&gt; Trusted Files Skipped: &lt;fld1&gt; | Files/Folders/Drives Omitted: &lt;dclass_counter3&gt; }" />
+
 <MESSAGE
 	id1="Scan:05"
 	id2="Scan"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Risk Count.&gt;&lt;@dclass_counter2_string:Scan Count.&gt;&lt;@dclass_counter3_string:Ommitted count.&gt;"
 	content="&lt;action&gt;..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Description: &lt;event_description&gt;:  Risks: &lt;dclass_counter1&gt;   Scanned: &lt;dclass_counter2&gt;   Files/Folders/Drives Omitted: &lt;dclass_counter3&gt;..Time: &lt;fld6&gt; &lt;fld4&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE
 	id1="Scan:06"
 	id2="Scan"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;action&gt;..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Description: &lt;event_description&gt;...Time: &lt;fld6&gt; &lt;fld4&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE
 	id1="Scan:07"
 	id2="Scan"
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Scan started on all drives and all extensions.&gt;"
 	content="Scan started on all drives and all extensions." />
+
 	
 <MESSAGE
 	id1="Scan:11"
@@ -2023,12 +2168,14 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Scan Start&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Infected Count.&gt;&lt;@dclass_counter2_string:Total File Count.&gt;&lt;@dclass_counter3_string:Threat Count.&gt;"
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;uid&gt;,User2: &lt;fld3&gt;,&apos;&lt;info&gt;&apos;,{&apos;&lt;context&gt;&apos;,|,}Command: Update Content and Scan Active,Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Scan:13" 
 	id2="Scan" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Scan Start&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Infected Count.&gt;&lt;@dclass_counter2_string:Total File Count.&gt;&lt;@dclass_counter3_string:Threat Count.&gt;"
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End:&lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;uid&gt;,User2:&lt;fld3&gt;,&apos;&lt;info&gt;&apos;,{&apos;&lt;context&gt;&apos;,|,}Command: Full Scan,Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
+
 <MESSAGE 
 	id1="Scan:14" 
 	id2="Scan" 
@@ -2054,6 +2201,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Security risk found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,Cookie:&lt;filename&gt;,&lt;fld22&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,Inserted:&lt;fld12&gt;,End:&lt;fld51&gt;,Last update time: &lt;fld57&gt;,Domain: &lt;domain&gt;{ ,&quot; | , }Group: &lt;group&gt;{ &quot;, | , }Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;fld31&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld44&gt;,Web domain: &lt;fld45&gt;,Downloaded by: &lt;fld46&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld49&gt;,,First Seen: &lt;fld50&gt;,Sensitivity: &lt;fld52&gt;,&lt;fld56&gt;,Application hash: &lt;checksum&gt;,Hash type: &lt;encryption_type&gt;,Company name: &lt;fld54&gt;,Application name: &lt;application&gt;,Application version: &lt;version&gt;,Application type: &lt;obj_type&gt;,{ File size (bytes): &lt;filename_size&gt;,Category set: &lt;category&gt;,Category type: &lt;vendor_event_cat&gt; | File size (bytes): &lt;filename_size&gt; }" />
+
 	
 <MESSAGE 
 	id1="Security:04" 
@@ -2073,6 +2221,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld19,fld20)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld21)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld22)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Security risk found,Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Detection type: &lt;severity&gt;,First Seen: &lt;fld1&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version:&lt;version&gt; ,Hash type: &lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld3&gt; ,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld4&gt;,Detection score: &lt;fld5&gt;,COH Engine Version: &lt;fld6&gt;,&lt;fld7&gt;,Permitted application reason: &lt;fld8&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld10&gt;,Web domain:&lt;fld11&gt; ,Downloaded by: &lt;fld12&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld15&gt;,Risk Level: &lt;fld16&gt;,Risk type: &lt;fld17&gt;,Source: &lt;event_source&gt;,Risk name:&lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&lt;fld18&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld19&gt; &lt;fld20&gt;,Inserted: &lt;fld21&gt;,End: &lt;fld22&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld23&gt;,Source IP: &lt;fld24&gt; " />
+
 	
 <MESSAGE 
 	id1="Security" 
@@ -2080,6 +2229,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Security risk found&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Security risk found,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&lt;info&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,Inserted:&lt;fld12&gt;,End:&lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="Security:01" 
 	id2="Security" 
@@ -2116,6 +2266,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Stop serving as the Group Update Provider (proxy server).&gt;"
 	content="Stop serving as the Group Update Provider (proxy server)" />
+
 <MESSAGE 
 	id1="Stop:01" 
 	id2="Stop" 
@@ -2134,24 +2285,28 @@
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Stopping Symantec Management Client&gt;"
 	content=" {Stopping Symantec Management Client....,Event time:&lt;fld17&gt;&lt;fld18&gt;|Stopping Symantec Management Client....}" />
+
 <MESSAGE 
 	id1="Submission" 
 	id2="Submission" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Submission Control signatures is up to date&gt;"
 	content=" Submission Control signatures &lt;version&gt; is up-to-date." />
+
 <MESSAGE 
 	id1="Switched" 
 	id2="Switched" 
 	eventcategory="1701020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Switched to server control.&gt;"
 	content="Switched to server control." />
+
 <MESSAGE 
 	id1="Symantec:18" 
 	id2="Symantec" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec Endpoint Protection Manager Content Catalog is up to date.&gt;"
 	content="Symantec Endpoint Protection Manager Content Catalog &lt;version&gt; is up-to-date." />
+
 <MESSAGE 
 	id1="Symantec:33" 
 	id2="Symantec" 
@@ -2164,6 +2319,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec Endpoint Protection is up to date.&gt;"
 	content="Symantec Endpoint Protection &lt;application&gt; &lt;version&gt; (&lt;info&gt;) is up-to-date." />
+
 <MESSAGE 
 	id1="Symantec:20" 
 	id2="Symantec" 
@@ -2176,102 +2332,119 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Symantec Endpoint Protection Microsoft Exchange E-mail Auto-Protect Disabled&gt;"
 	content="Symantec Endpoint Protection Microsoft Exchange E-mail Auto-Protect { Disabled,Event time:&lt;fld17&gt;&lt;fld18&gt;| Disabled}" />
+
 <MESSAGE 
 	id1="Symantec:15" 
 	id2="Symantec" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Symantec Network Access Control client started.&gt;"
 	content="Symantec Network Access Control client started." />
+
 <MESSAGE 
 	id1="Symantec:11" 
 	id2="Symantec" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Tamper Protection disabled&gt;"
 	content=" Symantec Endpoint Protection Tamper Protection Disabled" />
+
 <MESSAGE 
 	id1="Symantec" 
 	id2="Symantec" 
 	eventcategory="1605020000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec AntiVirus Startup/Shutdown&gt;"
 	content=" Symantec AntiVirus Startup/Shutdown..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Time: &lt;fld6&gt;..Description: &lt;info&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Symantec:01" 
 	id2="Symantec" 
 	eventcategory="1605020000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec AntiVirus Startup/Shutdown&gt;"
 	content=" Symantec AntiVirus Startup/Shutdown..&lt;shost&gt;..&lt;fld5&gt;........&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="Symantec:02" 
 	id2="Symantec" 
 	eventcategory="1605020000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec AntiVirus Startup/Shutdown&gt;"
 	content=" Symantec AntiVirus Startup/Shutdown..&lt;shost&gt;..&lt;fld5&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="Symantec:03" 
 	id2="Symantec" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec Endpoint Protection Manager Content Catalog is up to date or successfully updated.&gt;"
 	content="Symantec Endpoint Protection Manager Content Catalog &lt;version&gt; { is up-to-date | was successfully updated }." />
+
 <MESSAGE 
 	id1="Symantec:04" 
 	id2="Symantec" 
 	eventcategory="1611000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Symantec Endpoint Protection services shutdown was successful.&gt;"
 	content="Symantec Endpoint Protection services shutdown was {successful.,Event time:&lt;fld17&gt;&lt;fld18&gt;| successful.}" />
+
 <MESSAGE 
 	id1="Symantec:05" 
 	id2="Symantec" 
 	eventcategory="1610000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Symantec Endpoint Protection services startup was successful.&gt;"
 	content=" Symantec Endpoint Protection services startup was {successful.,Event time:&lt;fld17&gt;&lt;fld18&gt;| successful.}" />
+
 <MESSAGE 
 	id1="Symantec:06" 
 	id2="Symantec" 
 	eventcategory="1611000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Symantec Management Client is stopped.&gt;"
 	content=" Symantec Management Client is { stopped.,Event time:&lt;fld17&gt;&lt;fld18&gt;| stopped.}" />
+
 <MESSAGE 
 	id1="Symantec:07" 
 	id2="Symantec" 
 	eventcategory="1610000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Symantec Management Client has been started or activated.&gt;"
 	content="Symantec Management Client has been  {started|activated}{.,Event time:&lt;fld17&gt;&lt;fld18&gt;| .}" />
+
 <MESSAGE 
 	id1="Symantec:08" 
 	id2="Symantec" 
 	eventcategory="1610000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec Management Client has been activated.&gt;"
 	content="Symantec Management Client has been &lt;info&gt;" />
+
 <MESSAGE 
 	id1="Symantec:09" 
 	id2="Symantec" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec Endpoint Protection Auto-Protect failed to load.&gt;"
 	content=" Symantec Endpoint Protection Auto-Protect failed to load." />
+
 <MESSAGE 
 	id1="Symantec:10" 
 	id2="Symantec" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:virus definitions are missing on this computer&gt;"
 	content="Symantec Endpoint Protection has determined that the virus definitions are missing on this computer. { &lt;info&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;|&lt;info&gt; }" />
+
 <MESSAGE 
 	id1="Symantec:12" 
 	id2="Symantec" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:services startup was successful&gt;"
 	content=" Symantec AntiVirus services startup was successful" />
+
 <MESSAGE 
 	id1="Symantec:13" 
 	id2="Symantec" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:services shutdown was successful&gt;"
 	content=" Symantec AntiVirus services shutdown was successful" />
+
 <MESSAGE 
 	id1="Symantec:14" 
 	id2="Symantec" 
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:services failed to start&gt;"
 	content=" Symantec AntiVirus services failed to start. &lt;space&gt; (&lt;resultcode&gt;)" />
+
 <MESSAGE 
 	id1="Symantec:19" 
 	id2="Symantec" 
@@ -2320,12 +2493,14 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Information submitted to Symantec about file.&gt;"
 	content="Category: &lt;fld22&gt;,Symantec AntiVirus,{&quot;[Antivirus|[Antivirus} {detection|advanced heuristic detection} submission] Information submitted to Symantec about file. File : '&lt;filename&gt;'{,  Size (bytes): &lt;filename_size&gt;.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|,&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|,Event time:&lt;fld17&gt;&lt;fld18&gt;|,&quot;|,}" />
+
 <MESSAGE
 	id1="Symantec:40"
 	id2="Symantec"
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:File submitted to Symantec for analysis.&gt;"
 	content="Category: &lt;fld22&gt;,Symantec AntiVirus,{&quot;[Antivirus|[Antivirus} {detection|advanced heuristic detection} submission] File submitted to Symantec for analysis. File : '&lt;filename&gt;'{,  Size (bytes): &lt;filename_size&gt;.&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|,&quot;,Event time:&lt;fld17&gt;&lt;fld18&gt;|,Event time:&lt;fld17&gt;&lt;fld18&gt;|,&quot;|,}" />
+
 <MESSAGE
 	id1="Symantec:27"
 	id2="Symantec"
@@ -2368,6 +2543,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:SymELAM Protection has been enabled&gt;"
 	content="Category: 2,Symantec Endpoint Protection,SymELAM Protection has been { enabled,Event time:&lt;fld17&gt;&lt;fld18&gt; | enabled }" />
+
  
 <MESSAGE
 	id1="Symantec:37"
@@ -2375,6 +2551,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:SONAR has been enabled&gt;"
 	content="Category: 2,Symantec Endpoint Protection,SONAR has been {enabled,Event time:&lt;fld17&gt;&lt;fld18&gt;|enabled}" />
+
  
 <MESSAGE
 	id1="Symantec:38"
@@ -2382,6 +2559,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Proactive Threat Protection has been enabled&gt;"
 	content="Proactive Threat Protection has been {enabled,Event time:&lt;fld17&gt;&lt;fld18&gt;|enabled }" />
+
  
 <MESSAGE
 	id1="Symantec:42"
@@ -2401,6 +2579,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:*STRCAT(Suspicious Behavior Detection has been ,fld2)&gt;"
 	content="Suspicious Behavior Detection has been &lt;fld2&gt;,Event time: &lt;event_time_string&gt;" />
+
 <MESSAGE
 	id1="Symantec:44"
 	id2="Symantec"
@@ -2413,12 +2592,14 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System has been restarted&gt;"
 	content=" System has been restarted &lt;info&gt;." />
+
 <MESSAGE 
 	id1="System:01" 
 	id2="System" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System client-server activity logs have been swept.&gt;"
 	content="System client-server activity logs have been swept." />
+
 	
 <MESSAGE 
 	id1="System:02" 
@@ -2451,6 +2632,7 @@
 	eventcategory="1607000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@ec_activity:Deny&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_state:Terminated&gt;"
 	content="{ - Caller MD5=&lt;fld6&gt;,|,}&lt;action&gt;,Begin:&lt;fld50&gt;&lt;fld52&gt;,End:&lt;fld51&gt;&lt;fld53&gt;,Rule:&lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User:&lt;username&gt;,Domain:&lt;domain&gt;,Action Type:&lt;fld45&gt;,File size (bytes):&lt;filename_size&gt;,Device ID:&lt;device&gt;" />
+
 <MESSAGE 
 	id1="Compliance" 
 	id2="Compliance" 
@@ -2469,36 +2651,42 @@
 	eventcategory="1001020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic from IP address is blocked.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Traffic from IP address &lt;hostip&gt; is blocked from &lt;fld14&gt; to &lt;fld15&gt;.,Local: &lt;saddr&gt;,Local: &lt;fld16&gt;,Remote: &lt;fld17&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld18&gt;,&lt;direction&gt;,&lt;fld19&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld10&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="Traffic:01" 
 	id2="Traffic" 
 	eventcategory="1001020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic from IP address is blocked.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Traffic from IP address &lt;hostip&gt; is blocked from &lt;fld1&gt; to &lt;fld2&gt;.  ,Local: &lt;saddr&gt;,Local: &lt;fld3&gt;,Remote: &lt;fld4&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld5&gt;,1,OTHERS,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld6&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="Traffic:02" 
 	id2="Traffic" 
 	eventcategory="1001020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Traffic from IP address is blocked.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Traffic from IP address &lt;hostip&gt; is blocked from &lt;fld1&gt; to &lt;fld2&gt;.  ,Local: &lt;saddr&gt;,Local: &lt;fld3&gt;,Remote: &lt;fld4&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld5&gt;,&lt;direction&gt;,OTHERS,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,{ &quot;Location: | Location: } &lt;fld6&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="TruScan" 
 	id2="TruScan" 
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:TruScan has generated an error&gt;"
 	content="TruScan has generated an error: code &lt;resultcode&gt;: description: &lt;info&gt;" />
+
 <MESSAGE
 	id1="TruScan:01"
 	id2="TruScan"
 	eventcategory="1001030200"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld15)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description: TruScan proactive threat detected&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Forced TruScan proactive threat detected,{Computer name: &lt;shost&gt;,IP Address: &lt;saddr&gt;|Computer name: &lt;shost&gt;},Detection type: &lt;fld1&gt;,Application name: &lt;application&gt;,Application type: &lt;obj_type&gt;,Application version: &lt;version&gt;,Hash type: &lt;encryption_type&gt;,Application hash: &lt;checksum&gt;,Company name: &lt;fld13&gt;,File size (bytes): &lt;filename_size&gt;,Sensitivity: &lt;fld6&gt;,Detection score: &lt;fld7&gt;,Submission recommendation: &lt;fld8&gt;,Permitted application reason: &lt;fld9&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&quot;&lt;fld12&gt;&quot;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld17&gt; &lt;fld18&gt;,Inserted: &lt;fld15&gt;,End: &lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="TruScan:update" 
 	id2="TruScan" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Truscan was successfully updated or is up-to-date.&gt;"
 	content="TruScan &lt;info&gt; {was successfully updated|is up-to-date}" />
+
 <MESSAGE 
 	id1="TruScan:updatefailed" 
 	id2="TruScan" 
@@ -2511,6 +2699,7 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unexpected server error.&gt;"
 	content="Unexpected server error. ErrorCode: &lt;resultcode&gt;" />
+
 <MESSAGE 
 	id1="Unexpected:01" 
 	id2="Unexpected" 
@@ -2523,66 +2712,77 @@
 	eventcategory="1001020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unsolicited incoming ARP reply detected.&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="Unsolicited incoming ARP reply detected,&lt;info&gt;&quot;,Local:  &lt;saddr&gt;,Local: &lt;fld16&gt;,Remote: &lt;fld17&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld18&gt;,&lt;direction&gt;,&lt;fld19&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld20&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="User" 
 	id2="User" 
 	eventcategory="1401040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:User is attempting to terminate Symantec Management Client.&gt;"
 	content=" User is attempting to terminate Symantec Management { Client....,Event time:&lt;fld17&gt;&lt;fld18&gt;|Client }" />
+
 <MESSAGE 
 	id1="User:01" 
 	id2="User" 
 	eventcategory="1402020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description: User - Kernel Hook Error&gt;"
 	content="&lt;fld44&gt;,User - Kernel Hook Error,&lt;fld1&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="User:created" 
 	id2="User" 
 	eventcategory="1402020200" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:User has been created.&gt;"
 	content="User has been created" />
+
 <MESSAGE 
 	id1="User:deleted" 
 	id2="User" 
 	eventcategory="1402020100" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:AccessControl&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:User has been deleted.&gt;"
 	content="User has been deleted" />
+
 <MESSAGE 
 	id1="Virus" 
 	id2="Virus" 
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Virus Found&gt;"
 	content=" Virus Found..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Time: &lt;fld6&gt;..Virus Name: &lt;virusname&gt;..Path: &lt;filename&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Virus:01" 
 	id2="Virus" 
 	eventcategory="1003010000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Virus Found&gt;"
 	content=" Virus Found..Computer: &lt;shost&gt;..Date: &lt;fld5&gt;..Time: &lt;fld6&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE 
 	id1="Virus:02" 
 	id2="Virus" 
 	eventcategory="1605020000" 
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld8)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Virus Definition File Update&gt;"
 	content=" Virus Definition File Update..&lt;fld4&gt;..&lt;fld5&gt;..Update to computer &lt;shost&gt; of virus definition file &lt;fld6&gt; failed. Status &lt;fld7&gt;{ ... | .. } &lt;severity&gt;..&lt;product&gt;..&lt;fld8&gt;" />
+
 <MESSAGE 
 	id1="Virus:03" 
 	id2="Virus" 
 	eventcategory="1605020000" 
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:SignatureDB&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Virus Definition File Update&gt;"
 	content=" Virus Definition File Update..&lt;shost&gt;..&lt;fld5&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="Virus:09" 
 	id2="Virus" 
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:*HDR(hfld1)&gt;"
 	content=" Virus Found..&lt;shost&gt;..&lt;fld5&gt;..&lt;filename&gt;.....&lt;info&gt;..&lt;action&gt;....&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;..&lt;username&gt;..&lt;virusname&gt;" />
+
 <MESSAGE 
 	id1="Virus:04" 
 	id2="Virus" 
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:*HDR(hfld1)&gt;"
 	content=" Virus Found..&lt;fld12&gt;..&lt;fld5&gt;..&lt;filename&gt;..&lt;info&gt;..&lt;action&gt;..&lt;severity&gt;..&lt;product&gt;..&lt;fld6&gt;..&lt;username&gt;..&lt;virusname&gt;" />
+
 <MESSAGE 
 	id1="Virus:12" 
 	id2="Virus" 
@@ -2608,6 +2808,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld19)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences&gt;&lt;@event_description:Virus found&gt;"
 	content="Virus found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,{&quot;&lt;fld1&gt;&quot;|&lt;fld1&gt;},Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld17&gt; &lt;fld18&gt;,Inserted: &lt;fld19&gt;,End: &lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;fld31&gt;" />
+
 <MESSAGE 
 	id1="Virus:14" 
 	id2="Virus" 
@@ -2620,6 +2821,7 @@
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld19)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences&gt;&lt;@event_description:Virus found&gt;"
 	content="Virus found,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,{&quot;&lt;info&gt;&quot;|&lt;info&gt;},Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld17&gt; &lt;fld18&gt;,Inserted: &lt;fld19&gt;,End: &lt;fld51&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="Virus:11" 
 	id2="Virus" 
@@ -2632,24 +2834,28 @@
 	eventcategory="1003010000" 
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld5,fld6)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:*HDR(hfld1)&gt;"
 	content=" Virus Found..Computer: &lt;shost&gt;..&lt;fld5&gt;..File Path:&lt;filename&gt;..&lt;info&gt;..Requested Action:&lt;action&gt;..Severity:&lt;severity&gt;..Source:&lt;product&gt;..Time:&lt;fld6&gt;..User:&lt;username&gt;" />
+
 <MESSAGE 
 	id1="Virus:07" 
 	id2="Virus" 
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:*HDR(hfld1)&gt;"
 	content="&lt;fld1&gt;  Virus Found  &lt;shost&gt;  &lt;fld5&gt;  &lt;filename&gt;  Forward from &lt;info&gt;  &lt;action&gt;  &lt;severity&gt;  &lt;product&gt; Edition  &lt;version&gt;  &lt;virusname&gt;" />
+
 <MESSAGE 
 	id1="Virus:08" 
 	id2="Virus" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Product successfully updated.&gt;"
 	content="&lt;product&gt; definitions &lt;info&gt;" />
+
 <MESSAGE 
 	id1="Windows" 
 	id2="Windows" 
 	eventcategory="1702010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Windows Version info.&gt;"
 	content="Windows Version info:  Operating System: &lt;os&gt; { Network  info:&lt;info&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;|Network  info:&lt;info&gt;}" />
+
 <MESSAGE 
 	id1="Windows:01" 
 	id2="Windows" 
@@ -2662,24 +2868,28 @@
 	eventcategory="1603040000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&quot;=======EXCEPTION:&lt;event_description&gt;&quot;" />
+
 <MESSAGE
 	id1="Allowed:08"
 	id2="Allowed"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Sysfer exception: &lt;info&gt;,Sysfer exception,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,&lt;event_description&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld6&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
 <MESSAGE
 	id1="Allowed"
 	id2="Allowed"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Sysfer exception: &lt;info&gt;,Sysfer exception,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,&lt;event_description&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="Allowed:05"
 	id2="Allowed"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;"
 	content="&quot;&lt;filename&gt;&quot;,&lt;fld1&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld4&gt;,&lt;process&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;info&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld8&gt;" />
+
 <MESSAGE
 	id1="Allowed:06"
 	id2="Allowed"
@@ -2692,12 +2902,13 @@
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;"
 	content="&quot;&lt;filename&gt;&quot;,&lt;fld1&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld4&gt;,&lt;process&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;info&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+
 <MESSAGE
 	id1="Allowed:02"
 	id2="Allowed"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:File Read&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Read&gt;"
-	content="&lt;fld1&gt;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,No Module Name,&lt;directory&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+	content="&lt;fld1&gt;,File Read,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,No Module Name,&lt;directory&gt;,User: &lt;username&gt;,{Domain: &lt;domain&gt;,Action Type:&lt;fld45&gt;,File size (bytes):&lt;filename_size&gt;,Device ID:&lt;device&gt;|Domain: &lt;domain&gt;}" />
 
 <MESSAGE
 	id1="Allowed:03"
@@ -2723,6 +2934,7 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Audit logs have been swept.&gt;"
 	content="Audit logs have been swept." />
+
 <MESSAGE 
 	id1="Audit:01" 
 	id2="SHA-256:" 
@@ -2743,6 +2955,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld24&gt;,&lt;fld1&gt;,FATAL: &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="Category:03"
 	id2="Category"
@@ -2765,12 +2978,14 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld1&gt;,&lt;fld2&gt;,{&lt;event_description&gt;. File : '&lt;filename&gt;',&quot;,Event time: &lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;Size (bytes): &lt;filename_size&gt;.,Event time: &lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;,Event time: &lt;fld17&gt;&lt;fld18&gt;|&lt;event_description&gt;.  Size (bytes):&lt;filename_size&gt;.|&lt;event_description&gt;. &lt;space&gt; File : '&lt;filename&gt;',&quot;|&lt;event_description&gt;. &lt;space&gt; File : '&lt;filename&gt;'|&lt;event_description&gt;}" />
+
 <MESSAGE
 	id1="Default"
 	id2="Default"
 	eventcategory="1605020000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %P',fld2,fld3,fld1)&gt;&lt;@event_description:Default Alert&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Default &lt;info&gt;..Computer: &lt;shost&gt;..Date: &lt;fld2&gt;..Failed Alert Name: &lt;action&gt;..Time: &lt;fld3&gt; &lt;fld1&gt;..Severity: &lt;severity&gt;..Source: &lt;product&gt;" />
+
 <MESSAGE
 	id1="Default:01"
 	id2="Default"
@@ -2789,12 +3004,14 @@
 	eventcategory="1605020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hclient)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="&lt;action&gt;.   &lt;info&gt;,Local: &lt;saddr&gt;,Local: &lt;fld1&gt;,Remote: &lt;fld25&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld3&gt;,&lt;direction&gt;,&lt;fld5&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld8&gt;,{&quot;User:&lt;username&gt;&quot;,Domain:&lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld26&gt; | User: &lt;username&gt;,Domain: &lt;domain&gt;}" />
+
 <MESSAGE
 	id1="Email"
 	id2="Email"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Email sending failed&gt;"
 	content="Email sending failed" />
+
 		
 <MESSAGE
 	id1="FileWrite:02"
@@ -2959,18 +3176,21 @@
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;"
 	content="&lt;event_description&gt; - Caller MD5=&lt;checksum&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;sdomain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID:" />
+
 <MESSAGE
 	id1="Blocked:06" 
 	id2="Blocked" 
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;"
 	content="[&lt;id&gt;] &lt;event_description&gt; - &lt;fld11&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
 <MESSAGE
 	id1="Blocked:07" 
 	id2="Blocked" 
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld2,fld3)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4,fld5)&gt;"
 	content="[&lt;id&gt;] &lt;event_description&gt;,&lt;fld1&gt;,Begin: &lt;fld2&gt; &lt;fld3&gt;,End: &lt;fld4&gt; &lt;fld5&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type: &lt;fld9&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+
 <MESSAGE
 	id1="Blocked:08" 
 	id2="Continue" 
@@ -2984,6 +3204,7 @@
 	eventcategory="1001030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*HDR(hsource)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
 	content="{ &quot;&quot;&lt;action&gt; | &lt;action&gt; }. Description:  &lt;event_description&gt;&quot;,Local: &lt;saddr&gt;,Local: &lt;fld1&gt;,Remote: &lt;fld9&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld3&gt;,&lt;direction&gt;,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld6&gt;,User: &lt;username&gt;,Domain: &lt;fld7&gt;" />
+
 	
 <MESSAGE
 	id1="attack"
@@ -3000,78 +3221,98 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld1&gt;: Site: &lt;fld2&gt;,Server: &lt;hostid&gt;,&lt;directory&gt; &lt;event_description&gt;" />
 
+
 <MESSAGE
 	id1="Server:01"
 	id2="Server"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Server returned HTTP response code: &lt;resultcode&gt; for URL: &lt;url&gt;" />
+
 <MESSAGE
 	id1="Server:02"
 	id2="Symantec"
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hhostid)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Symantec Network Access Control is overdeployed" />
+
 <MESSAGE
 	id1="Server:03"
 	id2="Server"
 	eventcategory="1301000000"
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@saddr:*HDR(hhostid)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Server security validation failed." />
+
+<MESSAGE
+    id1="Server:04"
+    id2="Symantec"
+    eventcategory="1603000000"
+    functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hhostid)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Symantec Endpoint Protection is overdeployed&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+    content="Symantec Endpoint Protection is overdeployed" />
+
 <MESSAGE
 	id1="1"
 	id2="1"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Virus found&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="2"
 	id2="2"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Security risk found&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="3"
 	id2="3"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:FW Violation Event&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="4"
 	id2="4"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:IDS Event&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="5"
 	id2="5"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:CAL Event&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="6"
 	id2="6"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Forced Detection Event&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="7"
 	id2="7"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Detection Whitelisted&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="8"
 	id2="8"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Potential risk found&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="9"
 	id2="9"
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Risk submitted&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
     
 <MESSAGE
 	id1="10"
@@ -3079,24 +3320,28 @@
 	eventcategory="1003010000"
 	functions="&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@event_description:Compressed File&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Virus Count.&gt;"
 	content="&lt;hostip&gt;^^&lt;hostname&gt;^^&lt;domain&gt;^^&lt;username&gt;^^&lt;shost&gt;^^&lt;saddr&gt;^^&lt;event_source&gt;^^&lt;virusname&gt;^^&lt;info&gt;^^&lt;disposition&gt;^^&lt;action&gt;^^&lt;recorded_time&gt;^^&lt;fld33&gt;^^&lt;fld1&gt;^^&lt;dclass_counter1&gt;^^&lt;filename&gt;^^&lt;fld2&gt;" />
+
 <MESSAGE
 	id1="1281"
 	id2="1281"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="257"
 	id2="257"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="259"
 	id2="259"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="264" 
 	id2="264" 
@@ -3115,6 +3360,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="275" 
 	id2="275" 
@@ -3127,36 +3373,42 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="772"
 	id2="772"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="773"
 	id2="773"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="778"
 	id2="778"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="779"
 	id2="779"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="782"
 	id2="782"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 		
 <MESSAGE 
 	id1="1029" 
@@ -3188,6 +3440,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;id&gt;^^&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="4353"
 	id2="4353"
@@ -4159,18 +4412,21 @@
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %Z %W',fld5)&gt;"
 	content="Application,rn=&lt;fld1&gt; cid=&lt;fld2&gt; eid=&lt;fld3&gt;,&lt;fld4&gt; &lt;fld5&gt;,&lt;fld6&gt;,Symantec AntiVirus,SYSTEM,Information,&lt;shost&gt;,&lt;event_description&gt;. string-data=[    Scan type: &lt;event_type&gt; Event: &lt;result&gt; Security risk detected: &lt;directory&gt; File: &lt;filename&gt; Location: &lt;fld7&gt;  Computer: &lt;fld8&gt; User: &lt;username&gt; Action taken:&lt;action&gt; Date found: &lt;fld9&gt;]" />
+
 <MESSAGE
 	id1="Application:03"
 	id2="Application"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %Z %W',fld5)&gt;"
 	content="Application,rn=&lt;fld1&gt; cid=&lt;fld2&gt; eid=&lt;fld3&gt;,&lt;fld4&gt; &lt;fld5&gt;,&lt;fld6&gt;,Symantec AntiVirus,&lt;hostname&gt;,Classic,&lt;shost&gt;,&lt;event_description&gt;,, Scan Complete: Risks: &lt;fld7&gt; Scanned: &lt;fld8&gt; Omitted: &lt;fld9&gt; Trusted Files Skipped: &lt;fld10&gt;" />
+
 <MESSAGE
 	id1="Application:04"
 	id2="Application"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %Z %W',fld5)&gt;"
 	content="Application,rn=&lt;fld1&gt; cid=&lt;fld2&gt; eid=&lt;fld3&gt;,&lt;fld4&gt; &lt;fld5&gt;,&lt;fld6&gt;,Symantec AntiVirus,&lt;hostname&gt;,Classic,&lt;shost&gt;,&lt;event_description&gt;,, &lt;info&gt;." />
+
 <MESSAGE
 	id1="Application:05"
 	id2="Application"
@@ -4183,18 +4439,21 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connected to Management Server&gt;"
 	content="Connected to Management Server &lt;hostip&gt;. " />
+
 <MESSAGE 
 	id1="Disconnected:02" 
 	id2="Disconnected" 
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Disconnected to Management Server&gt;"
 	content="Disconnected to Management Server &lt;hostip&gt;." />
+
 <MESSAGE 
 	id1="Symantec:34" 
 	id2="Symantec" 
 	eventcategory="1605020000" 
 	functions="&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Symantec Endpoint Protection Manager could not update.&gt;"
 	content=" Symantec Endpoint Protection Manager could not update &lt;application&gt;." />
+
 <MESSAGE 
 	id1="Symantec:35" 
 	id2="Symantec" 
@@ -4209,42 +4468,55 @@
 	content="Category: &lt;fld22&gt;,Symantec Endpoint Protection,&lt;event_description&gt;,Event time:&lt;fld17&gt;&lt;fld18&gt;" />
 
  
+<MESSAGE
+    id1="Server:05"
+    id2="Symantec"
+    eventcategory="1605000000"
+    functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hhostid)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+    content="&lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="SYLINK" 
 	id2="Using" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:Using Group Update Provider.&gt;"
 	content=" Using Group Update Provider type: {Single Group Update Provider,Event time:&lt;fld17&gt;&lt;fld18&gt;|Multiple Group Update Providers,Event time:&lt;fld17&gt;&lt;fld18&gt;|Mapped Group Update Providers,Event time:&lt;fld17&gt;&lt;fld18&gt;|Single Group Update Provider|Multiple Group Update Providers|Mapped Group Update Providers}" />
+
 <MESSAGE 
 	id1="SYLINK:01" 
 	id2="client" 
 	eventcategory="1605020000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:The client opted to download a full definitions package for AV definitions from the management server or GUP&gt;"
 	content="The client opted to download a full definitions package for AV definitions from the management server or GUP {because LiveUpdate had no AV updates available|rather than download a large package from LiveUpdate}{.,Event time:&lt;fld17&gt;&lt;fld18&gt;|.}" />
+
 <MESSAGE 
 	id1="SYLINK:02" 
 	id2="client" 
 	eventcategory="1605020000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client opted to download an update for AV definitions from LiveUpdate&gt;"
 	content="The client opted to download an update for AV definitions from LiveUpdate rather than download a full definitions package from the management server or GUP." />
+
 <MESSAGE 
 	id1="SYLINK:03" 
 	id2="Failed" 
 	eventcategory="1603110000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to connect to all GUPs.&gt;"
 	content="Failed to connect to all GUPs, now trying to connect SEPM&quot;" />
+
 <MESSAGE 
 	id1="Smc" 
 	id2="client" 
 	eventcategory="1401010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has successfully downloaded a license file&gt;"
 	content="The client has successfully downloaded a license file (&lt;filename&gt;) from the server." />
+
 <MESSAGE 
 	id1="Smc:01" 
 	id2="client" 
 	eventcategory="1401010000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld17,fld18)&gt;&lt;@event_description:The client has successfully downloaded and applied a license file&gt;"
 	content=" The client has successfully downloaded and applied a license file (&lt;filename&gt;) from the { server.,Event time:&lt;fld17&gt;&lt;fld18&gt;| server.}" />
+
 
 	
 <MESSAGE 
@@ -4253,10 +4525,12 @@
 	eventcategory="1605000000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received a new profile from Symantec Endpoint Protection Manager.&gt;"
 	content="Received a new profile with serial number &lt;fld23&gt; from Symantec Endpoint Protection Manager." />
+
 <MESSAGE 
 	id1="Smc:04" 
 	id2="Applied" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostip:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Applied new profile successfully.&gt;"
 	content="Applied new profile with serial number &lt;fld23&gt; successfully." />
+
 </DEVICEMESSAGES>
