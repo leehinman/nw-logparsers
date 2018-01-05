@@ -4,9 +4,9 @@
 	displayname="Fortinet Manager/Analyzer"
 	group="Firewall">
 <VERSION
-	xml="7"
-	checksum="cc4e965dfffabca571fc85b60dd4131e"
-	revision="96"
+	xml="10"
+	checksum="77207d01d245f6b9fd1ef4ead5747373"
+	revision="113"
     device="2.0" />
     
 
@@ -15,27 +15,51 @@
 	id2="0001"
 	messageid="STRCAT(hfld2, '_fortinetmgr')"
 	content="date=&lt;hdate&gt; time=&lt;htime&gt; devname=&lt;hdevice&gt; device_id=&lt;hfld1&gt; log_id=&lt;id&gt; type=&lt;hfld2&gt; subtype=&lt;hfld3&gt; pri=&lt;hseverity&gt; &lt;!payload&gt;" />
-		
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1302000000=&apos;Auth.Successful&apos;|1301000000=&apos;Auth.Failures&apos;|1401070000=&apos;User.Activity.Logoff&apos;"/>
+
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="Accepted=&apos;1302000000&apos;|Failed=&apos;1301000000&apos;|login accepted=&apos;1302000000&apos;|timed out=&apos;1401070000&apos;" />  
+ 
+
 <MESSAGE
 	id1="fortinetmgr:01"
 	id2="event_fortinetmgr"
 	eventcategory="1803000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content=" user=&lt;fld1&gt; adom=&lt;domain&gt; user=&lt;username&gt; ui=&lt;fld2&gt; action=&lt;action&gt; status=&lt;event_state&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-		
-		
+	
+	
 <MESSAGE
 	id1="fortinetmgr"
 	id2="event_fortinetmgr"
 	eventcategory="1803000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content=" user=&lt;username&gt; adom=&lt;domain&gt; msg=&quot;&lt;event_description&gt;&quot;" />
-		
 	
+	
+<MESSAGE
+	id1="fortinetmgr:04"
+	id2="event_fortinetmgr"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(fld5)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content=" user=&quot;&lt;username&gt;&quot; userfrom=&lt;fld7&gt; msg=&quot;{User|user} '&lt;fld3&gt;' with profile '&lt;fld4&gt;' &lt;fld5&gt; from &lt;fld6&gt;(&lt;hostip&gt;){.&quot;|&quot;} { adminprof=&lt;fld2&gt; sid=&lt;sid&gt; user_type=&quot;&lt;profile&gt;&quot; | adminprof=&lt;fld2&gt;}" />
 <MESSAGE
 	id1="fortinetmgr:02"
 	id2="event_fortinetmgr"
 	eventcategory="1803000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content=" user=&lt;username&gt; userfrom=&lt;fld4&gt; msg=&quot;&lt;event_description&gt;&quot; adminprof=&lt;fld2&gt;" />
+
+<MESSAGE
+	id1="fortinetmgr:03"
+	id2="event_fortinetmgr"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content=" user=&quot;&lt;username&gt;&quot; msg=&quot;Login from ssh:&lt;fld1&gt; for &lt;fld2&gt; from &lt;saddr&gt; port &lt;sport&gt;&quot; remote_ip=&quot;&lt;daddr&gt;&quot; remote_port=&lt;dport&gt; valid=&lt;fld3&gt; authmsg=&quot;&lt;result&gt;&quot; extrainfo=&lt;fld5&gt;"/>
+
 </DEVICEMESSAGES>
