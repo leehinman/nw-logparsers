@@ -4,9 +4,9 @@
 	displayname="Fortinet Manager/Analyzer"
 	group="Firewall">
 <VERSION
-	xml="10"
-	checksum="77207d01d245f6b9fd1ef4ead5747373"
-	revision="113"
+	xml="11"
+	checksum="b694a1a69834665ec6583c20280a48af"
+	revision="114"
     device="2.0" />
     
 
@@ -61,5 +61,12 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content=" user=&quot;&lt;username&gt;&quot; msg=&quot;Login from ssh:&lt;fld1&gt; for &lt;fld2&gt; from &lt;saddr&gt; port &lt;sport&gt;&quot; remote_ip=&quot;&lt;daddr&gt;&quot; remote_port=&lt;dport&gt; valid=&lt;fld3&gt; authmsg=&quot;&lt;result&gt;&quot; extrainfo=&lt;fld5&gt;"/>
+
+<MESSAGE
+	 id1="fortinetmgr:05"
+	 id2="event_fortinetmgr"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	 content="user=&quot;&lt;username&gt;&quot; userfrom=&quot;&lt;fld1&gt;&quot;{msg=&quot;dev=&lt;fld2&gt;,vdom=&lt;fld3&gt;,type=&lt;fld4&gt;,key=&lt;fld5&gt;,act=&lt;action&gt;,pkgname=&lt;fld7&gt;,allowaccess=&lt;fld8&gt;&quot; adom=&quot;&lt;domain&gt;&quot;|msg=&quot;&lt;event_description&gt;&quot; adom=&quot;&lt;domain&gt;&quot;}"/>
 
 </DEVICEMESSAGES>
