@@ -4,9 +4,9 @@
 	displayname="UNIX AIX"
 	group="Unix">
 <VERSION
-	xml="129"
-	checksum="6372bdf226b66c0918f6b9f00705f4d4"
-	revision="113"
+	xml="130"
+	checksum="3a56d29618774ac2b8d7a0e59494442d"
+	revision="114"
 	device="2.0" />
 
 <VALUEMAP
@@ -9204,6 +9204,20 @@
 	eventcategory="1401050200"
 	functions="&lt;@ec_theme:AccessControl&gt;&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:failed su for user&gt;"
 	content=" &lt;agent&gt;: [ID &lt;id&gt; &lt;event_source&gt;.&lt;severity&gt;] &apos;su &lt;c_username&gt;&apos; failed for &lt;username&gt; &lt;fld1&gt;  &lt;terminal&gt;" />
+
+<MESSAGE
+	id1="00007:10"
+	id2="su"
+	eventcategory="1401050100"
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:session opened for user&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): session opened for user &lt;username&gt; by &lt;c_username&gt;(uid=&lt;uid&gt;)" />
+
+<MESSAGE
+	id1="00007:12"
+	id2="su"
+	eventcategory="1401070000"
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:session closed for user&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): session closed for user &lt;username&gt;" />
 
 <MESSAGE
 	id1="00007:09"
