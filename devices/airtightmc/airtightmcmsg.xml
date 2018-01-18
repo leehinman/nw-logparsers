@@ -4,13 +4,22 @@
 	displayname="Airtight Management Console"
 	group="Intrusion">
 <VERSION
-	xml="8"
-	checksum="f4619375fc1b5aa36b3bcffc339bfbe7"
-	revision="110"
+	xml="10"
+	checksum="9994542a987a7e7e260213f61db4b668"
+	revision="114"
 	device="2.0" />
 
 <TAGVALMAP
     delimiter=" "/>
+<HEADER 
+	id1="0005" 
+	id2="0005" 
+	content="&lt;&lt;&lt;hfld1&gt;&gt;&lt;&lt;&lt;hfld2&gt;&gt;&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;messageid&gt;[&lt;hfld3&gt;]: &lt;!payload&gt;" /> 
+	
+<HEADER 
+	id1="0004" 
+	id2="0004" 
+	content="&lt;&lt;&lt;hfld1&gt;&gt;&lt;&lt;&lt;hfld2&gt;&gt;&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;messageid&gt;: &lt;!payload&gt;" /> 
 
 <HEADER 
 	id1="0001" 
@@ -191,4 +200,47 @@
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%B %D %W %H:%U:%O',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="msg=&lt;msg&gt; cat=&lt;category&gt; rt=&lt;fld1&gt; dvc=&lt;hostip&gt; externalId=&lt;hardware_id&gt; dmac=&lt;smacaddr&gt; cs1Label=&lt;cs_fld&gt; cs1=&lt;cs_fld&gt; cs2Label=&lt;cs_fld&gt; cs2=&lt;ssid&gt; cs3Label=&lt;cs_fld&gt; cs3=&lt;cs_fld&gt; cn1Label=&lt;cs_fld&gt; cn1=&lt;cs_fld&gt; cn2Label=&lt;cs_fld&gt; cn2=&lt;wifi_channel&gt; cs4Label=&lt;cs_fld&gt; cs4=&lt;location_desc&gt; cs5Label=&lt;cs_fld&gt; cs5=&lt;sensor&gt;" />
 
+<MESSAGE
+	id1="sensord"
+	id2="sensord"
+	eventcategory="1801030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:SpectraGuard Sensor disconnected from SpectraGuard Server&gt;"
+	content="SpectraGuard Sensor[&lt;smacaddr&gt;] disconnected from SpectraGuard Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;" />
+
+<MESSAGE
+	id1="config"
+	id2="config"
+	eventcategory="1701020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@change_attribute:Server&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;event_description&gt;:[&lt;change_old&gt;] to:[&lt;change_new&gt;]&lt;fld1&gt;" />
+
+<MESSAGE
+	id1="config:01"
+	id2="config"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Server IP discovery selected is not a file or directory&gt;"
+	content="Server IP discovery selected &lt;fld1&gt; is not a file or directory!" />
+
+<MESSAGE
+	id1="config:02"
+	id2="config"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="Set: Primary Server IP/Hostname = [&lt;hostname&gt;] Server &lt;hostip&gt;, hostname &lt;fld1&gt;, real server &lt;fld2&gt;, protocol &lt;protocol&gt;, proxied &lt;fld3&gt;" />
+
+<MESSAGE
+	id1="dropbear"
+	id2="dropbear"
+	eventcategory="1401030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Login failed&gt;"
+	content="Login failed for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />
+
+<MESSAGE
+	id1="dropbear:01"
+	id2="dropbear"
+	eventcategory="1401060000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Login successful&gt;"
+	content="Login successful for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />
+
+ 
 </DEVICEMESSAGES>
