@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="339"
-	checksum="79bff8662d462b48f9578c5c1ae03387"
+	xml="340"
+	checksum="906a30ab792c7eb24a5af4389c0278b2"
 	revision="114"
 	device="2.0" />
 
@@ -2132,6 +2132,13 @@
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:UNKNOWN&gt;"
 	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type={UNKNOWN[&lt;fld1&gt;]|UNKNOWN} msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; proctitle=&lt;fld2&gt;" />
+
+<MESSAGE
+	id1="03812"
+	id2="audispd"
+	eventcategory="1612000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hfld1,hfld2,hfld3)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CRED_DISP&gt;"
+	content="&lt;agent&gt;: node=&lt;node&gt; type=CRED_DISP msg=audit(&lt;fld25&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; ses=&lt;sessionid&gt; subj=&lt;subject&gt; msg=&apos;op=&lt;fld38&gt; acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt; addr=&lt;saddr&gt; terminal=&lt;terminal&gt; res=&lt;result&gt;&apos;" />
 
 
 <MESSAGE
@@ -17413,7 +17420,7 @@
 	id2="setroubleshoot"
 	eventcategory="1502010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;event_description&gt;" />
+	content="{&lt;agent&gt;: &lt;event_description&gt; | &lt;event_description&gt;}" />
 <MESSAGE
 	id1="00403"
 	id2="setsebool"
