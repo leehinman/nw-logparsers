@@ -4,9 +4,9 @@
 	displayname="VMware ESX / ESXi"
 	group="Virtualization">
 <VERSION
-	xml="40"
-	checksum="5c24a40235a3cc28cc6a1ea922c65553"
-	revision="113"
+	xml="43"
+	checksum="86e8425f05fb5a3d030942431e03c775"
+	revision="114"
 	device="2.0" />
 
  
@@ -2816,5 +2816,12 @@
 	missField="true"	 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U:%O','%B %F %Y %N:%U:%O','%B %F %N:%U:%O',fld20)&gt;&lt;@msg_id:*PARMVAL(event_type)&gt;&lt;@vid:*PARMVAL(event_type)&gt;"
 	content="Time=&lt;fld20&gt;,DeviceType=&lt;product&gt;,Type=&lt;event_type&gt;,Key=&lt;operation_id&gt;,User=&lt;username&gt;,EventChain=&lt;id&gt;,DataCenter=&lt;group&gt;,Host=&lt;hostip&gt;,VirtualMachine=&lt;vsys&gt;,Description=&lt;event_description&gt;" />
+
+<MESSAGE
+	id1="storageRM"
+	id2="storageRM"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Error in opening and reading the slot file&gt;"
+	content="&lt;agent&gt;: &lt;&lt;&lt;fld1&gt;&gt;, &lt;fld2&gt; Error &lt;resultcode&gt; &lt;fld3&gt;" />
 
 </DEVICEMESSAGES>
