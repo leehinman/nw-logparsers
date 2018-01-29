@@ -4,14 +4,15 @@
 	displayname="Riverbed Steelhead"
 	group="Router">
 <VERSION
-	xml="4"
-	checksum="2ca1fafa99a5308e1e08f226a94c8a38"
-	revision="0"
+	xml="5"
+	checksum="a1c8aabf8d929763411b04346de6d2f3"
+	revision="114"
 	device="2.0" />
 <HEADER 
 	id1="0001" 
 	id2="0001"  
 	content="&lt;messageid&gt;(&lt;hfld1&gt;)[&lt;hfld2&gt;]: &lt;!payload:messageid&gt;" /> 
+
 <HEADER 
 	id1="0002" 
 	id2="0002"  
@@ -26,6 +27,11 @@
 	id1="0004" 
 	id2="0004"  
 	content="%STEELHEAD enterprises.17163.1.1.4.0.&lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
+<HEADER 
+	id1="0005" 
+	id2="0005"  
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; &lt;messageid&gt;[&lt;hfld2&gt;]: &lt;!payload:messageid&gt;" /> 
+
 <MESSAGE 
 	id1="1" 
 	id2="1" 
@@ -555,28 +561,49 @@
 	id2="sport" 
 	eventcategory="1401070000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; &lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt; Err while reading: Connection reset by peer" />
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; {{&lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt;} Err while reading: Connection reset by peer" />
 	
 <MESSAGE 
 	id1="sport:10" 
 	id2="sport" 
 	eventcategory="1401070000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;clnt: &lt;daddr&gt;:&lt;dport&gt; peer: &lt;hostip&gt;:&lt;network_port&gt; serv: &lt;saddr&gt;:&lt;sport&gt;&lt;fld6&gt; Error connecting to peer OOB" />
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; {{&lt;fld4&gt; &lt;fld5&gt;} (clnt: &lt;daddr&gt;:&lt;dport&gt; peer: &lt;hostip&gt;:&lt;network_port&gt; serv: &lt;saddr&gt;:&lt;sport&gt;) Error connecting to peer OOB" />
 	
 <MESSAGE 
 	id1="sport:11" 
 	id2="sport" 
 	eventcategory="1401070000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; &lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt; Dropconn, reason = &lt;resultcode&gt;" />
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; {{&lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt;} Dropconn, reason = &lt;resultcode&gt;" />
 	
 <MESSAGE 
 	id1="sport:12" 
 	id2="sport" 
 	eventcategory="1401070000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;clnt: &lt;daddr&gt;:&lt;dport&gt; peer: &lt;hostip&gt;:&lt;network_port&gt; serv: &lt;saddr&gt;:&lt;sport&gt;&lt;fld6&gt; No outer channel created for this splice" />
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; (clnt: &lt;daddr&gt;:&lt;dport&gt; peer: &lt;hostip&gt;:&lt;network_port&gt; serv: &lt;saddr&gt;:&lt;sport&gt;) No outer channel created for this splice" />
+	
+<MESSAGE 
+	id1="sport:13" 
+	id2="sport" 
+	eventcategory="1304000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:No replication credentials&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; {{&lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt;} No replication credentials for &lt;hostname&gt;" />
+	
+<MESSAGE 
+	id1="sport:14" 
+	id2="sport" 
+	eventcategory="1301000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Error getting key for server&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; {{&lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt;} Error getting key for server &lt;domain&gt;/&lt;hostname&gt;" />
+	
+<MESSAGE 
+	id1="sport:15" 
+	id2="sport" 
+	eventcategory="1301000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Unable to obtain usk: The replication credentials could not be found&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: [&lt;application&gt;.&lt;severity&gt;] &lt;fld3&gt; {{&lt;daddr&gt;:&lt;dport&gt; &lt;saddr&gt;:&lt;sport&gt;} Unable to obtain usk: The replication credentials could not be found. (&lt;result&gt;)" />
 	
 <MESSAGE 
 	id1="webasd:01" 
