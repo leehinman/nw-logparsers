@@ -4,11 +4,16 @@
 	displayname="PostgreSQL"
 	group="Database">
 <VERSION
-		xml="20"
-		checksum="b4bcb84821cbd70fd4081249a39f7e9f"
-		revision="112"
+		xml="23"
+		checksum="f840f3c0f9215f3f515b98cf78d1b0c4"
+		revision="114"
 		device="2.0"/>
-	
+
+<HEADER
+	id1="0004"
+	id2="0004"
+	content="&lt;hmonth&gt;&lt;hday&gt;&lt;htime&gt;&lt;hhost&gt;&lt;hfld1&gt;[&lt;hfld2&gt;]: [&lt;hfld3&gt;-&lt;hfld4&gt;] #PostGreSQL: &lt;messageid&gt;^^&lt;hfld5&gt; &lt;!payload:hfld1&gt;"/>
+
 <HEADER
 	id1="0001"
 	id2="0001"
@@ -32,7 +37,14 @@
 	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Unknown&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
 	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^&lt;severity&gt;:  statement: &lt;action&gt;" />
 		
-																																											     
+<MESSAGE
+	id1="idle:01"
+	id2="idle"
+	eventcategory="1609000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
+	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;severity&gt;:  disconnection: session time:&lt;fld10&gt; user=&lt;fld11&gt; database=&lt;fld12&gt; host=[&lt;shost&gt;]" />
+
+		
 <MESSAGE
 	id1="SELECT:01"
 	id2="SELECT"
