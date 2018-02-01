@@ -15,7 +15,12 @@
    name="getProtocol"
    default="$NONE"
    keyvaluepairs="0='HOPOPT'|1='ICMP'|2='IGMP'|3='GGP'|4='IP'|5='ST'|6='TCP'|7='CBT'|8='EGP'|9='IGP'|10='BBN-RCC-M'|11='NVP-II'|12='PUP'|13='ARGUS'|14='EMCON'|15='XNET'|16='CHAOS'|17='UDP'|18='MUX'|19='DCN-MEAS'|20='HMP'|21='PRM'|22='XNS-IDP'|23='TRUNK-1'|24='TRUNK-2'|25='LEAF-1'|26='LEAF-2'|27='RDP'|28='IRTP'|29='ISO-TP4'|30='NETBLT'|31='MFE-NSP'|32='MERIT-INP'|33='SEP'|34='3PC'|35='IDPR'|36='XTP'|37='DDP'|38='IDPR-CMTP'|39='TP++'|40='IL'|41='IPv6'|42='SDRP'|43='IPv6-Rout'|44='IPv6-Frag'|45='IDRP'|46='RSVP'|47='GRE'|48='MHRP'|49='BNA'|50='ESP'|51='AH'|52='I-NLSP'|53='SWIPE'|54='NARP'|55='MOBILE'|56='TLSP'|57='SKIP'|58='IPv6-ICMP'|59='IPv6-NoNx'|60='IPv6-Opts'|61='AnyHost'|62='CFTP'|63='AnyNetwork'|64='SAT-EXPAK'|65='KRYPTOLAN'|66='RVD'|67='IPPC'|68='AnyFile'|69='SAT-MON'|70='VISA'|71='IPCV'|72='CPNX'|73='CPHB'|74='WSN'|75='PVP'|76='BR-SAT-MO'|77='SUN-ND'|78='WB-MON'|79='WB-EXPAK'|80='ISO-IP'|81='VMTP'|82='SECURE-VM'|83='VINES'|84='TTP'|85='NSFNET-IG'|86='DGP'|87='TCF'|88='EIGRP'|89='OSPFIGP'|90='Sprite-RP'|91='LARP'|92='MTP'|93='AX.25'|94='IPIP'|95='MICP'|96='SCC-SP'|97='ETHERIP'|98='ENCAP'|99='AnyPrivate'|100='GMTP'|101='IFMP'|102='PNNI'|103='PIM'|104='ARIS'|105='SCPS'|106='QNX'|107='A/N'|108='IPComp'|109='SNP'|110='Compaq-Pe'|111='IPX-in-IP'|112='VRRP'|113='PGM'|114='AnyHop'|115='L2TP'|116='DDX'|117='IATP'|118='STP'|119='SRP'|120='UTI'|121='SMP'|122='SM'|123='PTP'|124='ISIS'|125='FIRE'|126='CRTP'|127='CRUDP'|128='SSCOPMCE'|129='IPLT'|130='SPS'|131='PIPE Pr'|132='SCTP St'|133='FC Fi'|134='RSVP-E2E-'|255='Reserved'"/>
- 
+ <HEADER
+	id1="0002"
+	id2="0002"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;hyear&gt;-&lt;hmonth&gt;-&lt;hdate&gt; &lt;htime&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
 <HEADER
 	id1="0001"
 	id2="0001"
@@ -90,6 +95,12 @@
     functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%O',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
+<MESSAGE 
+	id1="akamaikona" 
+	id2="akamaikona" 
+	eventcategory="1901000000"
+    functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;"
+	content="&lt;param_starttime&gt;&lt;msghold&gt;" />
 
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -114,6 +125,7 @@
     <Vendor2Device vendor="McAfee" product="iGuard" device="mcafeereconnex" group="DLP"/>
 	<Vendor2Device vendor="Microsoft" product="Office365" device="msoffice365" group="Cloud"/>
 	<Vendor2Device vendor="Trend Micro" product="Control Manager" device="trendmicrocm" group="Anti Virus"/>
+	<Vendor2Device vendor="Akamai" product="akamai_siem" device="akamaikona" group="Application Firewall"/>
 </VendorProducts>
 
 
@@ -142,6 +154,7 @@
 		<ExtensionKey cefName="deviceMacAddress" metaName="macaddr"/>
 		<ExtensionKey cefName="deviceNtDomain" metaName="domain"/>
 		<ExtensionKey cefName="deviceOutboundInterface" metaName="dinterface"/>
+		<ExtensionKey cefName="devicePayloadId" metaName="cs_fld"/>
 		<ExtensionKey cefName="deviceProcessName" metaName="process"/>
 		<ExtensionKey cefName="deviceTranslatedAddress" metaName="hostip"/>
 		<ExtensionKey cefName="dhost" metaName="dhost"/>
@@ -618,6 +631,33 @@
 		<ExtensionKey cefName="mailboxOwnerSid" metaName="cs_fld"/>
 		<ExtensionKey cefName="mailboxOwnerUPN" metaName="mail_id"/>
 		<ExtensionKey cefName="mailboxGuid" metaName="cs_fld"/>
+		<ExtensionKey cefName="SourceFileName" metaName="filename"/>
+        <ExtensionKey cefName="SourceFileExtension" metaName="extension"/>
+        <ExtensionKey cefName="DestinationFileName" metaName="filename"/>
+        <ExtensionKey cefName="DestinationFileExtension" metaName="extension"/>
+		<ExtensionKey cefName="DestFolder.Path" metaName="directory"/>
+		<ExtensionKey cefName="ClientMachineName" metaName="hostname"/>
+		<ExtensionKey cefName="ObjectType" metaName="obj_type"/>
+		<ExtensionKey cefName="Endpoint" metaName="os"/>
+		
+		
+		<ExtensionKey cefName="AkamaiSiemApiKey" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemASN" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemCity" metaName="location_city"/>
+		<ExtensionKey cefName="AkamaiSiemContinent" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemCountry" metaName="location_country"/>
+		<ExtensionKey cefName="AkamaiSiemCustomData" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemRegion" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemRequestHeaders" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemResponseHeaders" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemResponseStatus" metaName="resultcode"/>
+		<ExtensionKey cefName="AkamaiSiemRuleTags" metaName="category"/>
+		<ExtensionKey cefName="AkamaiSiemRuleVersions" metaName="version"/>
+		<ExtensionKey cefName="AkamaiSiemSlowPostAction" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemSlowPostRate" metaName="cs_fld"/>
+		<ExtensionKey cefName="AkamaiSiemTLSVersion" metaName="cs_fld"/>
+
+
 	
 		
 		<ExtensionKey cefName="cs1" metaName="cs_fld" >
@@ -627,6 +667,7 @@
 			<device2meta device="mcafeewg" metaName="virusname" label="Virus Name"/>
 			<device2meta device="bit9" metaName="checksum" label="File Hash"/>
 			<device2meta device="mcafeereconnex" metaName="policyname"/>
+			<device2meta device="akamaikona" metaName="rulename"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs1Label" metaName="cs_fld" />
 	
@@ -639,6 +680,7 @@
 			<device2meta device="websense" metaName="content_type" label="ContentType"/>
 			<device2meta device="bit9" metaName="policyname"/>
 			<device2meta device="mcafeereconnex" metaName="content_type"/>
+			<device2meta device="akamaikona" metaName="info"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs3Label" metaName="cs_fld"/>
 		
@@ -709,7 +751,9 @@
 		<ExtensionKey cefName="flexString1" metaName="cn_fld"/>
 		<ExtensionKey cefName="flexString1Label" metaName="cs_fld"/>
 		
-		<ExtensionKey cefName="flexString2" metaName="cn_fld"/>
+		<ExtensionKey cefName="flexString2" metaName="cn_fld">
+			<device2meta device="akamaikona" metaName="policy_id"/>		
+		</ExtensionKey>
 		<ExtensionKey cefName="flexString2Label" metaName="cs_fld"/>		
 </ExtensionKeys>
 </DEVICEMESSAGES>
