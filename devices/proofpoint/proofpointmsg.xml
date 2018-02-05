@@ -4,12 +4,13 @@
 	displayname="Proofpoint Email Security"
 	group="Application Firewall">
 <VERSION
-	xml="23"
-	checksum="8837661c29e3b2cbfdb83b0be59fd5d6"
-	revision="113"
+	xml="29"
+	checksum="f78b707f04758bb5cad6ab87ac5e3619"
+	revision="114"
 	device="2.0" />
 	
-	
+<TAGVALMAP 
+		delimiter="  &quot;" />
 <HEADER 
 	id1="0003" 
 	id2="0003" 
@@ -89,6 +90,21 @@
 	id2="0005"  
 	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hinstance&gt; &lt;hseverity&gt; pid=&lt;hfld5&gt; mod=&lt;msgIdPart1&gt; cmd=&lt;msgIdPart2&gt; &lt;!payload:hinstance&gt;" />
+ <HEADER 
+	id1="0024" 
+	id2="0024"
+	messageid="STRCAT(&apos;send&apos;)"	
+	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hfld2&gt; &lt;hinstance&gt;[&lt;hfld3&gt;]: {info|rprt|warn|err|note} s=&lt;hfld4&gt; cmd=send &lt;!payload:hinstance&gt;" />
+ 
+ <HEADER 
+	id1="0023" 
+	id2="0023" 
+	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hfld2&gt; &lt;messageid&gt;[&lt;hfld3&gt;]: {info|rprt|warn|err|note} &lt;!payload&gt;" />
+<HEADER 
+	id1="0025" 
+	id2="0025" 
+ 	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hinstance&gt; &lt;messageid&gt;[&lt;hfld2&gt;]: &lt;!payload:messageid&gt;" />
+
 <HEADER 
 	id1="0006" 
 	id2="0006"  
@@ -621,6 +637,7 @@
 	eventcategory="1207040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; action=&lt;action&gt; num_domains=&lt;fld53&gt; num_domains_to_lookup=&lt;fld40&gt;" />
+
 <MESSAGE 
 	id1="spam_refresh" 
 	id2="spam_refresh" 
@@ -791,6 +808,7 @@
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; pid=&lt;fld5&gt; mod=&lt;agent&gt; encrypted=&lt;fld6&gt;" />
+
 	
 
 
@@ -909,12 +927,27 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld0&gt;: &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; cmd=&lt;obj_type&gt; rcpt=&lt;to&gt; err=&lt;fld58&gt;" />
 
+
 <MESSAGE 
 	id1="queued-alert" 
 	id2="queued-alert" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld51&gt;: to=&lt;to&gt;, delay=&lt;fld53&gt;, xdelay=&lt;fld54&gt;, mailer=&lt;fld55&gt;, pri=&lt;fld23&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} dsn=&lt;resultcode&gt;, stat=&lt;info&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld51&gt;: to=&lt;to&gt;, delay=&lt;fld53&gt;, xdelay=&lt;fld54&gt;, {mailer=&lt;fld55&gt; tls_verify=&lt;fld70&gt;|mailer=&lt;fld55&gt;}, pri=&lt;fld23&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} dsn=&lt;resultcode&gt;, stat=&lt;info&gt;" />
+<MESSAGE 
+	id1="queued-alert:01" 
+	id2="queued-alert" 
+	eventcategory="1207000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: from=&lt;from&gt;, size=&lt;bytes&gt;, class=&lt;fld57&gt;, nrcpts=&lt;fld58&gt;, msgid=&lt;id&gt;, proto=&lt;protocol&gt;, daemon=&lt;fld69&gt;, tls_verify=&lt;fld70&gt;, auth=&lt;authmethod&gt;, {relay=[&lt;fld50&gt;] [&lt;daddr&gt;]|relay=[&lt;daddr&gt;]|relay=&lt;dhost&gt; [&lt;daddr&gt;]|relay=&lt;dhost&gt;}" />
+
+<MESSAGE 
+	id1="queued-alert:02" 
+	id2="queued-alert" 
+	eventcategory="1207000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: STARTTLS=&lt;fld1&gt;, {relay=[&lt;fld50&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} version=&lt;version&gt;, verify=&lt;fld57&gt;, cipher=&lt;s_cipher&gt;, bits=&lt;fld59&gt;" />
+
 <MESSAGE 
 	id1="queued-VoltageEncrypt" 
 	id2="queued-VoltageEncrypt" 
@@ -1003,36 +1036,42 @@
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: STARTTLS=&lt;fld1&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} version=&lt;version&gt;, verify=&lt;disposition&gt;, cipher=&lt;fld58&gt;, bits=&lt;fld59&gt;" />
+
 <MESSAGE 
 	id1="queued-eurort:01" 
 	id2="queued-eurort" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld51&gt;: to=&lt;to&gt;, delay=&lt;fld53&gt;, xdelay=&lt;fld54&gt;, mailer=&lt;fld55&gt;, pri=&lt;fld23&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} dsn=&lt;resultcode&gt;, stat=&lt;info&gt;" />
+
 <MESSAGE 
 	id1="queued-eurort:02" 
 	id2="queued-eurort" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: from=&lt;from&gt;, size=&lt;bytes&gt;, class=&lt;fld57&gt;, nrcpts=&lt;fld58&gt;, msgid=&lt;id&gt;, proto=&lt;protocol&gt;, daemon=&lt;fld69&gt;, tls_verify=&lt;fld70&gt;, auth=&lt;fld71&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;]|relay=[&lt;daddr&gt;]|relay=&lt;dhost&gt; [&lt;daddr&gt;]|relay=&lt;dhost&gt;}" />
+
 <MESSAGE 
 	id1="queued-eurort:03" 
 	id2="queued-eurort" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: timeout waiting for input from &lt;fld11&gt; during server cmd read" />
+
 <MESSAGE 
 	id1="queued-vdedc2v5" 
 	id2="queued-vdedc2v5" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld51&gt;: to=&lt;to&gt;, delay=&lt;fld53&gt;, xdelay=&lt;fld54&gt;, mailer=&lt;fld55&gt;, pri=&lt;fld23&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} dsn=&lt;resultcode&gt;, stat=&lt;info&gt;" />
+
 <MESSAGE 
 	id1="queued-vdedc2v5:01" 
 	id2="queued-vdedc2v5" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: from=&lt;from&gt;, size=&lt;bytes&gt;, class=&lt;fld57&gt;, nrcpts=&lt;fld58&gt;, msgid=&lt;id&gt;, proto=&lt;protocol&gt;, daemon=&lt;fld69&gt;, tls_verify=&lt;fld70&gt;, auth=&lt;fld71&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;]|relay=[&lt;daddr&gt;]|relay=&lt;dhost&gt; [&lt;daddr&gt;]|relay=&lt;dhost&gt;}" />
+
 	
 <MESSAGE 
 	id1="queued-VoltageEncrypt:01" 
@@ -1071,7 +1110,7 @@
 	id2="sendmail" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: from=&lt;from&gt;, size=&lt;bytes&gt;, class=&lt;fld54&gt;, nrcpts=&lt;fld55&gt;, msgid=&lt;id&gt;, proto=&lt;protocol&gt;, daemon=&lt;fld69&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;]|relay=[&lt;daddr&gt;]|relay=&lt;dhost&gt; [&lt;daddr&gt;]|relay=&lt;dhost&gt;}" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: from=&lt;from&gt;, size=&lt;bytes&gt;, class=&lt;fld54&gt;, nrcpts=&lt;fld55&gt;, msgid=&lt;id&gt;, proto=&lt;protocol&gt;, {daemon=&lt;fld69&gt;, tls_verify=&lt;fld70&gt;, auth=&lt;authmethod&gt;|daemon=&lt;fld69&gt;}, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;]|relay=[&lt;daddr&gt;]|relay=&lt;dhost&gt; [&lt;daddr&gt;]|relay=&lt;dhost&gt;}" />
 <MESSAGE 
 	id1="sendmail" 
 	id2="sendmail" 
@@ -1132,7 +1171,7 @@
 	id2="sendmail" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld10&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: SYSERR(&lt;fld2&gt;): &lt;action&gt;: &lt;event_description&gt; file &lt;filename&gt;: &lt;fld3&gt; " />
+	content="{&lt;fld10&gt; &lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;[&lt;process_id&gt;]}: &lt;fld1&gt;: SYSERR(&lt;fld2&gt;): &lt;action&gt;: &lt;event_description&gt; file &lt;filename&gt;: &lt;fld3&gt; " />
 	
 <MESSAGE 
 	id1="sendmail:04" 
@@ -1267,89 +1306,138 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; rule=&lt;rulename&gt; duration=&lt;duration_string&gt;" />
 
+
 <MESSAGE 
 	id1="pdr_ttl" 
 	id2="pdr_ttl" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; mod=&lt;agent&gt; ttl=&lt;fld1&gt; {reply=&quot;\&quot;&lt;fld2&gt; rscore=&lt;fld3&gt;\&quot;&quot;|reply=&quot;&lt;fld2&gt;&quot;}" />
+
 <MESSAGE 
 	id1="dkimv_run:signature" 
 	id2="dkimv_run" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; signature=&lt;fld1&gt; identity=&lt;sigid_string&gt; host=&lt;hostname&gt; result=&lt;result&gt; result_detail=&lt;fld2&gt;" />
+
 <MESSAGE 
 	id1="dkimv_run:status" 
 	id2="dkimv_run" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; status=&quot;&lt;info&gt;, &lt;event_state&gt;&quot;" />
+
 <MESSAGE 
 	id1="dkimv_type" 
 	id2="dkimv_type" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@result:unexpected response&gt;"
 	content="&lt;fld0&gt;: &lt;severity&gt; mod=&lt;agent&gt; unexpected response type=&lt;fld1&gt;" />
+
 <MESSAGE 
 	id1="dkimv_type:01" 
 	id2="dkimv_type" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt;: &lt;severity&gt; mod=&lt;agent&gt; type=&lt;fld1&gt; cmd=&lt;obj_type&gt; id=&lt;fld5&gt; publickey_cache_entries=&lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="dmarc_run:rule" 
 	id2="dmarc_run" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; rule=&lt;rulename&gt; duration=&lt;duration_string&gt;" />
+
 <MESSAGE 
 	id1="dmarc_run:result" 
 	id2="dmarc_run" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; result=&lt;result&gt; result_detail=&lt;fld2&gt;" />
+
 <MESSAGE 
 	id1="dmarc_type" 
 	id2="dmarc_type" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt;: &lt;severity&gt; mod=&lt;agent&gt; type=&lt;fld1&gt; cmd=&lt;obj_type&gt; id=&lt;fld5&gt; policy_cache_entries=&lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="spf_run:rule" 
 	id2="spf_run" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; rule=&lt;rulename&gt; duration=&lt;duration_string&gt;" />
+
 <MESSAGE 
 	id1="spf_run:cmd" 
 	id2="spf_run" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; cmd=&lt;obj_type&gt; result=&lt;result&gt;" />
+
 <MESSAGE 
 	id1="action_checksubmsg" 
 	id2="action_checksubmsg" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; action=&lt;action&gt; score=&lt;fld39&gt; submsgadjust=&lt;fld53&gt; spamscore=&lt;reputation_num&gt; suspectscore=&lt;fld41&gt; malwarescore=&lt;fld49&gt; phishscore=&lt;fld42&gt; adultscore=&lt;fld44&gt; bulkscore=&lt;fld43&gt; tests=&lt;fld52&gt;" />
+
 <MESSAGE 
 	id1="rest_oauth" 
 	id2="rest_oauth" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld0&gt; &lt;severity&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; authscope=&lt;fld5&gt; err=&lt;fld58&gt;" />
+
 <MESSAGE 
 	id1="sendmail:06" 
 	id2="sendmail" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: AUTH=&lt;authmethod&gt;, {relay=[&lt;daddr&gt;] [&lt;daddr&gt;],|relay=[&lt;daddr&gt;],|relay=&lt;dhost&gt; [&lt;daddr&gt;],|relay=&lt;dhost&gt;,} authid=&lt;uid&gt;, mech=&lt;scheme&gt;, bits=&lt;fld59&gt;" />
+
 <MESSAGE 
 	id1="sendmail:07" 
 	id2="sendmail" 
 	eventcategory="1207000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
-	
+
+<MESSAGE 
+	id1="filter_instance1:01" 
+	id2="filter_instance1" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt; &lt;@event_description:load smartid ccard&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="mod=&lt;agent&gt; type=&lt;fld1&gt; cmd=&lt;obj_type&gt; id=&lt;id&gt; load smartid ccard " />
+<MESSAGE 
+	id1="filter_instance1:02" 
+	id2="filter_instance1" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:load smartid jcb&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="mod=&lt;agent&gt; type=&lt;fld1&gt; cmd=&lt;obj_type&gt; id=&lt;id&gt; load smartid jcb " />
+<MESSAGE 
+	id1="filter_instance1:03" 
+	id2="filter_instance1" 
+	eventcategory="1207020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:No of attachments:&gt;&lt;@dclass_counter2_string:No of recipients:&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt; attachments=&lt;dclass_counter1&gt; rcpts=&lt;dclass_counter2&gt; routes=&lt;fld4&gt; size=&lt;bytes&gt; guid=&lt;fld14&gt; hdr_mid=&lt;id&gt; qid=&lt;fld15&gt; subject=&quot;&lt;subject&gt;&quot; {spamscore=&lt;reputation_num&gt; virusname=&lt;threat_name&gt; duration=&lt;duration_string&gt; elapsed=&lt;fld16&gt;|duration=&lt;duration_string&gt; elapsed=&lt;fld16&gt;} " />
+
+<MESSAGE 
+	id1="filter_instance1:04" 
+	id2="filter_instance1" 
+	eventcategory="1207000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter2_string:No of recipients:&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="s=&lt;sessionid&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt; helo=&lt;fld32&gt; msgs=&lt;fld33&gt; rcpts=&lt;dclass_counter2&gt; routes=&lt;fld4&gt; duration=&lt;duration_string&gt; elapsed=&lt;fld16&gt;" />
+
+<MESSAGE 
+	id1="filter_instance1" 
+	id2="filter_instance1" 
+	eventcategory="1207000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	tagval="true" 
+	missField="true"
+	content="mod=&lt;agent&gt; cmd=&lt;obj_type&gt; type=&lt;fld1&gt; id=&lt;id&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; method=&lt;fld37&gt; vendor=&lt;fld36&gt; engine=&lt;fld49&gt; definitions=&lt;fld50&gt; signatures=&lt;fld94&gt; result=&lt;result&gt; header.from=&lt;fld40&gt; smtp.mailfrom=&lt;fld44&gt; score=&lt;fld39&gt; submsgadjust=&lt;fld53&gt; dict=&lt;fld87&gt; file=&lt;filename&gt; sys=&lt;fld1&gt; evt=&lt;action&gt; active=&lt;fld2&gt; expires=&lt;fld3&gt; msg=&lt;msg&gt; user=&lt;username&gt; delegate-for=&lt;fld5&gt; ksurl=&lt;fld7&gt; duration=&lt;duration_string&gt; sig=&lt;fld60&gt; uid=&lt;uid&gt; pid=&lt;process_id&gt; realm=&lt;fld61&gt; server=&lt;saddr&gt; elapsed=&lt;duration_string&gt; avgtime=&lt;fld2&gt; qname=&lt;fld3&gt; qtype=&lt;fld4&gt; ip=&lt;hostip&gt; country=&lt;location_country&gt; lip=&lt;fld24&gt; prot=&lt;fld25&gt; hops_active=&lt;fld26&gt; routes=&lt;fld4&gt; notroutes=&lt;fld18&gt; perlwait=&lt;fld27&gt; host=&lt;hostname&gt; resolve=&lt;fld28&gt; reverse=&lt;fld13&gt; value=&lt;context&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt; attachments=&lt;fld80&gt; rcpts=&lt;fld59&gt; size=&lt;bytes&gt; guid=&lt;fld14&gt; hdr_mid=&lt;id&gt; qid=&lt;fld15&gt; subject=&lt;subject&gt; tls_version= &lt;fld84&gt; verify=&lt;fld57&gt; cipher=&lt;s_cipher&gt; cipher_bits=&lt;fld59&gt; tls=&lt;fld60&gt; r=&lt;event_counter&gt; verified=&lt;fld3&gt; lint=&lt;fld33&gt; mime=&lt;content_type&gt; omime=&lt;fld7&gt; oext=&lt;fld8&gt; corrupted=&lt;fld9&gt; protected=&lt;fld10&gt; threshold=&lt;fld11&gt; profile=&lt;fld52&gt; alert=&lt;fld53&gt; helo=&lt;fld32&gt; msgs=&lt;fld76&gt; install_dir=&lt;directory&gt; instance=&lt;fld90&gt; maxfd=&lt;fld91&gt; release=&lt;fld92&gt; publickey_cache_entries=&lt;fld6&gt; policy_cache_entries=&lt;fld6&gt; addr=&lt;saddr&gt; from=&lt;from&gt; rcpt=&lt;to&gt; suborg=&lt;fld22&gt; rcpt_routes=&lt;fld28&gt; rcpt_notroutes=&lt;fld29&gt; data_routes=&lt;fld31&gt; data_notroutes=&lt;fld32&gt; query=&lt;fld38&gt; record=&lt;fld39&gt; result_detail=&lt;fld74&gt; result_record=&lt;fld2&gt; virtual=&lt;fld11&gt; a=&lt;fld12&gt; version=&lt;version&gt; dkimresult=&lt;fld65&gt; spfresult=&lt;fld68&gt; num_domains=&lt;fld53&gt; num_domains_to_lookup=&lt;fld40&gt; policy=&lt;fld48&gt; suspectscore=&lt;fld41&gt; malwarescore=&lt;fld41&gt; phishscore=&lt;fld42&gt; bulkscore=&lt;fld43&gt; spamscore=&lt;reputation_num&gt; adjustscore=&lt;fld54&gt; adultscore=&lt;fld44&gt; classifier=&lt;fld45&gt; adjust=&lt;fld46&gt; mlxscore=&lt;fld94&gt; mlxlogscore=&lt;fld95&gt; reason=&lt;fld47&gt; scancount=&lt;fld18&gt; tests=&lt;fld52&gt; sha256=&lt;checksum&gt; rewritten=&lt;fld17&gt; X-Proofpoint-Spam-Details=&lt;fld71&gt; hops-ip=&lt;fld61&gt; virusname=&lt;threat_name&gt;"/>
+
 </DEVICEMESSAGES>
