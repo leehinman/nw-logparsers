@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="114"
+	revision="115"
     device="2.0" />
 	
 
@@ -15,7 +15,19 @@
    name="getProtocol"
    default="$NONE"
    keyvaluepairs="0='HOPOPT'|1='ICMP'|2='IGMP'|3='GGP'|4='IP'|5='ST'|6='TCP'|7='CBT'|8='EGP'|9='IGP'|10='BBN-RCC-M'|11='NVP-II'|12='PUP'|13='ARGUS'|14='EMCON'|15='XNET'|16='CHAOS'|17='UDP'|18='MUX'|19='DCN-MEAS'|20='HMP'|21='PRM'|22='XNS-IDP'|23='TRUNK-1'|24='TRUNK-2'|25='LEAF-1'|26='LEAF-2'|27='RDP'|28='IRTP'|29='ISO-TP4'|30='NETBLT'|31='MFE-NSP'|32='MERIT-INP'|33='SEP'|34='3PC'|35='IDPR'|36='XTP'|37='DDP'|38='IDPR-CMTP'|39='TP++'|40='IL'|41='IPv6'|42='SDRP'|43='IPv6-Rout'|44='IPv6-Frag'|45='IDRP'|46='RSVP'|47='GRE'|48='MHRP'|49='BNA'|50='ESP'|51='AH'|52='I-NLSP'|53='SWIPE'|54='NARP'|55='MOBILE'|56='TLSP'|57='SKIP'|58='IPv6-ICMP'|59='IPv6-NoNx'|60='IPv6-Opts'|61='AnyHost'|62='CFTP'|63='AnyNetwork'|64='SAT-EXPAK'|65='KRYPTOLAN'|66='RVD'|67='IPPC'|68='AnyFile'|69='SAT-MON'|70='VISA'|71='IPCV'|72='CPNX'|73='CPHB'|74='WSN'|75='PVP'|76='BR-SAT-MO'|77='SUN-ND'|78='WB-MON'|79='WB-EXPAK'|80='ISO-IP'|81='VMTP'|82='SECURE-VM'|83='VINES'|84='TTP'|85='NSFNET-IG'|86='DGP'|87='TCF'|88='EIGRP'|89='OSPFIGP'|90='Sprite-RP'|91='LARP'|92='MTP'|93='AX.25'|94='IPIP'|95='MICP'|96='SCC-SP'|97='ETHERIP'|98='ENCAP'|99='AnyPrivate'|100='GMTP'|101='IFMP'|102='PNNI'|103='PIM'|104='ARIS'|105='SCPS'|106='QNX'|107='A/N'|108='IPComp'|109='SNP'|110='Compaq-Pe'|111='IPX-in-IP'|112='VRRP'|113='PGM'|114='AnyHop'|115='L2TP'|116='DDX'|117='IATP'|118='STP'|119='SRP'|120='UTI'|121='SMP'|122='SM'|123='PTP'|124='ISIS'|125='FIRE'|126='CRTP'|127='CRUDP'|128='SSCOPMCE'|129='IPLT'|130='SPS'|131='PIPE Pr'|132='SCTP St'|133='FC Fi'|134='RSVP-E2E-'|255='Reserved'"/>
- <HEADER
+
+<HEADER
+	id1="0003"
+	id2="0003"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;process&gt; [&lt;process_id&gt;]: NOCEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+<HEADER
+	id1="0004"
+	id2="0004"
+	messageid="VENDORMAP(devvendor, product)"
+	content=" CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
 	id1="0002"
 	id2="0002"
 	messageid="VENDORMAP(devvendor, product)"
@@ -89,6 +101,12 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />  
 <MESSAGE 
+	id1="salesforce" 
+	id2="salesforce" 
+	eventcategory="1901000000"
+    functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+<MESSAGE 
 	id1="trendmicrocm" 
 	id2="trendmicrocm" 
 	eventcategory="1901000000"
@@ -102,8 +120,30 @@
     functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;"
 	content="&lt;param_starttime&gt;&lt;msghold&gt;" />
 
+<MESSAGE 
+	id1="impervawaf" 
+	id2="impervawaf" 
+	eventcategory="1901000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%O',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
+	id1="guardium" 
+	id2="guardium" 
+	eventcategory="1901000000"
+    functions="&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
+	id1="websense" 
+	id2="websense" 
+	eventcategory="1901000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
+	<Vendor2Device vendor="RSA" product="Netwitness NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="RSA ECAT" device="rsaecat" group="Anti Virus"/>
 	<Vendor2Device vendor="EMC" product="ECAT ConsoleServer" device="rsaecat" group="Anti Virus"/>
 	<Vendor2Device vendor="NetWitness" product="Spectrum" device="netwitnessspectrum" group="Anti Virus"/>
@@ -115,6 +155,7 @@
 	<Vendor2Device vendor="Bit9" product="Security Platform" device="bit9" group="Application Firewall"/>
 	<Vendor2Device vendor="BCN" product="Adonis" device="bluecat" group="System"/>
 	<Vendor2Device vendor="Websense" product="Security" device="websense" group="Web Logs"/>
+	<Vendor2Device vendor="Forcepoint" product="Security" device="websense" group="Web Logs"/>
 	<Vendor2Device vendor="Websense" product="Data Security" device="websenseds" group="DLP"/>
 	<Vendor2Device vendor="McAfee" product="Web Gateway" device="mcafeewg" group="Web Logs"/>
 	<Vendor2Device vendor="RSA" product="Security Analytics Audit" device="securityanalytics" group="Analysis"/>
@@ -124,8 +165,11 @@
     <Vendor2Device vendor="RSA" product="NetWitness Azure AD Audit Log Collector" device="azureaudit" group="Cloud"/> 
     <Vendor2Device vendor="McAfee" product="iGuard" device="mcafeereconnex" group="DLP"/>
 	<Vendor2Device vendor="Microsoft" product="Office365" device="msoffice365" group="Cloud"/>
+	<Vendor2Device vendor="Salesforce" product="CRM" device="salesforce" group="Cloud"/>
 	<Vendor2Device vendor="Trend Micro" product="Control Manager" device="trendmicrocm" group="Anti Virus"/>
 	<Vendor2Device vendor="Akamai" product="akamai_siem" device="akamaikona" group="Application Firewall"/>
+	<Vendor2Device vendor="Imperva Inc." product="SecureSphere" device="impervawaf" group="Application Firewall"/>
+	<Vendor2Device vendor="IBM" product="Guardium" device="guardium" group="Firewall"/>
 </VendorProducts>
 
 
@@ -152,6 +196,7 @@
 		<ExtensionKey cefName="deviceFacility" metaName="cs_devfacility"/>
 		<ExtensionKey cefName="deviceInboundInterface" metaName="sinterface"/>
 		<ExtensionKey cefName="deviceMacAddress" metaName="macaddr"/>
+		<ExtensionKey cefName="dvcmac" metaName="macaddr"/>
 		<ExtensionKey cefName="deviceNtDomain" metaName="domain"/>
 		<ExtensionKey cefName="deviceOutboundInterface" metaName="dinterface"/>
 		<ExtensionKey cefName="devicePayloadId" metaName="cs_fld"/>
@@ -227,8 +272,15 @@
 		<ExtensionKey cefName="start" metaName="param_starttime"/>
 		<ExtensionKey cefName="suid" metaName="uid"/>
 		<ExtensionKey cefName="suser" metaName="c_username">
-		<device2meta device="trendmicrodsa" metaName="username"/>
+			<device2meta device="trendmicrodsa" metaName="username"/>
 		</ExtensionKey>
+		<ExtensionKey cefName="requestContext" metaName="context"/>
+		<ExtensionKey cefName="type" metaName="cs_fld"/>
+
+		
+		<ExtensionKey cefName="SQLID" metaName="cs_fld"/>
+		<ExtensionKey cefName="PROG" metaName="info"/>
+		<ExtensionKey cefName="DB_NAME" metaName="db_name"/>
 	
 
 		<ExtensionKey cefName="deviceService" metaName="cs_devservice"/>
@@ -415,7 +467,6 @@
 		<ExtensionKey cefName="country.dst" metaName="location_dst"/>
 		<ExtensionKey cefName="country.src" metaName="location_src"/>
 		<ExtensionKey cefName="city.dst" metaName="location_city"/>
-		
 		<ExtensionKey cefName="ad.computer.dst" metaName="ad_computer_dst"/>
 		<ExtensionKey cefName="alert.id" metaName="alert_id"/>
 		<ExtensionKey cefName="attachment" metaName="attachment"/>				
@@ -641,6 +692,25 @@
 		<ExtensionKey cefName="Endpoint" metaName="os"/>
 		
 		
+		<ExtensionKey cefName="method_name" metaName="context"/>
+		<ExtensionKey cefName="Query" metaName="query"/>
+		<ExtensionKey cefName="request_size" metaName="sbytes"/>
+		<ExtensionKey cefName="response_size" metaName="rbytes"/>
+		<ExtensionKey cefName="run_time" metaName="duration"/>
+		<ExtensionKey cefName="cipher_suite" metaName="s_cipher"/>
+		<ExtensionKey cefName="session_type" metaName="info"/>
+		<ExtensionKey cefName="user_type" metaName="user_role"/>
+		<ExtensionKey cefName="status_code" metaName="resultcode"/>
+		<ExtensionKey cefName="requestid" metaName="trans_id"/>
+		<ExtensionKey cefName="request_status" metaName="result"/>
+		<ExtensionKey cefName="login_status" metaName="result"/>
+		<ExtensionKey cefName="referrer_uri" metaName="referrer"/>
+		<ExtensionKey cefName="api_version" metaName="version"/>
+		<ExtensionKey cefName="client_ip" metaName="hostip"/>
+		<ExtensionKey cefName="client_version" metaName="version"/>
+		
+		
+		
 		<ExtensionKey cefName="AkamaiSiemApiKey" metaName="cs_fld"/>
 		<ExtensionKey cefName="AkamaiSiemASN" metaName="cs_fld"/>
 		<ExtensionKey cefName="AkamaiSiemCity" metaName="location_city"/>
@@ -668,11 +738,13 @@
 			<device2meta device="bit9" metaName="checksum" label="File Hash"/>
 			<device2meta device="mcafeereconnex" metaName="policyname"/>
 			<device2meta device="akamaikona" metaName="rulename"/>
+			<device2meta device="guardium" metaName="severity"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs1Label" metaName="cs_fld" />
 	
 		<ExtensionKey cefName="cs2" metaName="cs_fld">
 			<device2meta device="bit9" metaName="v_instafname" label="installerFilename"/>
+			<device2meta device="guardium" metaName="obj_type"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs2Label" metaName="cs_fld"/>
 		
