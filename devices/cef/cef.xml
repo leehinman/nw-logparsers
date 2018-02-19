@@ -20,7 +20,14 @@
 	id1="0003"
 	id2="0003"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;process&gt; [&lt;process_id&gt;]: NOCEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;process&gt;[&lt;process_id&gt;]: NOCEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
+	id1="0005"
+	id2="0005"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;process&gt;[&lt;process_id&gt;]: CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
 <HEADER
 	id1="0004"
 	id2="0004"
@@ -143,7 +150,7 @@
 
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
-	<Vendor2Device vendor="RSA" product="Netwitness NetFlow Collector" device="rsaflow" group="Switch"/>
+	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="RSA ECAT" device="rsaecat" group="Anti Virus"/>
 	<Vendor2Device vendor="EMC" product="ECAT ConsoleServer" device="rsaecat" group="Anti Virus"/>
 	<Vendor2Device vendor="NetWitness" product="Spectrum" device="netwitnessspectrum" group="Anti Virus"/>
@@ -170,6 +177,7 @@
 	<Vendor2Device vendor="Akamai" product="akamai_siem" device="akamaikona" group="Application Firewall"/>
 	<Vendor2Device vendor="Imperva Inc." product="SecureSphere" device="impervawaf" group="Application Firewall"/>
 	<Vendor2Device vendor="IBM" product="Guardium" device="guardium" group="Firewall"/>
+
 </VendorProducts>
 
 
@@ -205,6 +213,7 @@
 		<ExtensionKey cefName="dhost" metaName="dhost"/>
 		<ExtensionKey cefName="dmac" metaName="dmacaddr"/>
 		<ExtensionKey cefName="dntdom" metaName="ddomain"/>
+		<ExtensionKey cefName="dpid" metaName="cs_fld"/>
 		<ExtensionKey cefName="dpriv" metaName="privilege"/>
 		<ExtensionKey cefName="dproc" metaName="process"/>
 		<ExtensionKey cefName="dpt" metaName="dport"/>
@@ -215,7 +224,8 @@
 		</ExtensionKey>
 		<ExtensionKey cefName="dvc" metaName="hostip"/>
 		<ExtensionKey cefName="dvcpid" metaName="process_id"/>
-		<ExtensionKey cefName="dvchost" metaName="hostname"/>	
+		<ExtensionKey cefName="dvchost" metaName="hostname"/>
+		<ExtensionKey cefName="dtz" metaName="cs_fld"/>		
 		<ExtensionKey cefName="end" metaName="param_endtime"/>
 		<ExtensionKey cefName="externalId" metaName="hardware_id"/>
 		<ExtensionKey cefName="fileCreateTime" metaName="cs_filectime"/>
@@ -276,6 +286,11 @@
 		</ExtensionKey>
 		<ExtensionKey cefName="requestContext" metaName="context"/>
 		<ExtensionKey cefName="type" metaName="cs_fld"/>
+		
+
+		
+		<ExtensionKey cefName="loginID" metaName="username"/>
+
 
 		
 		<ExtensionKey cefName="SQLID" metaName="cs_fld"/>
