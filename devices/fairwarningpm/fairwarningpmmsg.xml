@@ -4,9 +4,9 @@
 	displayname="FairWarning Privacy Monitoring"
 	group="Analysis">
 <VERSION
-		xml="9" 
-		checksum="bc01284ff1296373f1f0a03e603553c5"
-		revision="0"
+		xml="10" 
+		checksum="ae34e91dcf94b00a7f08d20ca9c49773"
+		revision="115"
 		device="2.0"/>
 <HEADER
 	id1="0001"
@@ -18,7 +18,11 @@
 	id2="0002"
 	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)"
 	content="%FAIRWARNING-4: &lt;hdatetime&gt;~&lt;hrule&gt;~&lt;hrulename&gt;~&lt;hsource&gt;~&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;~&lt;!payload:hdatetime&gt;"/>
- 
+<HEADER
+	id1="0003"
+	id2="0003"
+	messageid="STRCAT(&apos;FAIRWARNING&apos;)"	
+	content="%FAIRWARNING-4: &lt;hdatetime&gt;~&lt;hrule&gt;~&lt;hrulename&gt;~&lt;hsource&gt;~~~&lt;!payload:hdatetime&gt;"/>
 	
 <MESSAGE
 	id1="HIPAA_Best_Practice:01"
@@ -69,4 +73,11 @@
 	eventcategory="1001000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %N:%U:%O&apos;,event_time_string)&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%W-%G-%F %N:%U:%O&apos;,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@logon_id:*PARMVAL(username)&gt;"
 	content="&lt;event_time_string&gt;~&lt;operation_id&gt;~&lt;rulename&gt;~&lt;event_source&gt;~&lt;category&gt;~&lt;severity&gt;~&lt;fld2&gt;~&lt;fld1&gt;~&lt;username&gt;~&lt;user_fullname&gt;~&lt;user_fname&gt;~&lt;user_mname&gt;~&lt;user_lname&gt;~&lt;user_dept&gt;~&lt;patient_id&gt;~&lt;patient_fullname&gt;~&lt;patient_fname&gt;~&lt;patient_mname&gt;~&lt;patient_lname&gt;~&lt;application&gt;~&lt;event_type&gt;~&lt;event_description&gt;~&lt;hostname&gt;~&lt;hostip&gt;~{&lt;saddr&gt;~&lt;fld3&gt;|&lt;saddr&gt;}" />
+<MESSAGE
+	id1="FAIRWARNING"
+	id2="FAIRWARNING"
+	eventcategory="1901000000"
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %N:%U:%O&apos;,event_time_string)&gt;&lt;@recorded_time:*EVNTTIME($MSG,&apos;%W-%G-%F %N:%U:%O&apos;,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@logon_id:*PARMVAL(username)&gt;"
+	content="&lt;event_time_string&gt;~&lt;operation_id&gt;~&lt;rulename&gt;~&lt;event_source&gt;~&lt;category&gt;~&lt;severity&gt;~&lt;fld2&gt;~&lt;fld1&gt;~&lt;username&gt;~&lt;user_fullname&gt;~&lt;user_fname&gt;~&lt;user_mname&gt;~&lt;user_lname&gt;~&lt;user_dept&gt;~&lt;patient_id&gt;~&lt;patient_fullname&gt;~&lt;patient_fname&gt;~&lt;patient_mname&gt;~&lt;patient_lname&gt;~&lt;application&gt;~&lt;event_type&gt;~&lt;event_description&gt;~&lt;hostname&gt;~&lt;hostip&gt;~{&lt;saddr&gt;~&lt;fld3&gt;|&lt;saddr&gt;}" />
+
 </DEVICEMESSAGES>
