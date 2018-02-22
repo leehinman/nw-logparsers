@@ -4,8 +4,8 @@
 	displayname="IBM DB2 UDB"
 	group="Database">
 <VERSION
-		xml="35"
-		checksum="9dd68fb6aebabb4fe210f8f69e978e5a"
+		xml="36"
+		checksum="2f340625bc5c61fd17b7eddd90a25b5c"
 		revision="115"
 		device="2.0"/>
 
@@ -83,6 +83,15 @@
 	    name="getEventCategoryOutcome"
 		default="$NONE"
 		keyvaluepairs="DB2-102-140=&apos;Failure&apos;" />
+  <VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="System.Audit"
+		keyvaluepairs="1401060000=&apos;User.Activity.Successful Logins&apos;" />
+   		
+  <VALUEMAP
+		name="getEventLegacyCategory"
+		default="1612000000"
+		keyvaluepairs="0=&apos;1401060000&apos;" />			
 		
 	
 <MESSAGE
@@ -1850,14 +1859,14 @@
 	id1="VALIDATE:AUTHENTICATION:01"
 	id2="VALIDATE"
 	eventcategory="1612000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:AUTHENTICATION&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:AUTHENTICATION&gt;&lt;@event_cat:*getEventLegacyCategory(resultcode)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="&quot;&lt;event_time_string&gt;&quot;^&quot;&lt;vendor_event_cat&gt;&quot;^&quot;AUTHENTICATION&quot;^&lt;id&gt;^&lt;resultcode&gt;^&quot;&lt;db_name&gt;&quot;^&quot;&lt;username&gt;&quot;^&quot;&lt;fld7&gt;&quot;^&lt;fld9&gt;^&lt;fld27&gt;^&lt;fld10&gt;^&quot;&lt;fld11&gt;&quot;^&quot;&lt;application&gt;&quot;^&quot;&lt;fld13&gt;&quot;^&lt;fld14&gt;^&lt;fld15&gt;^&lt;fld16&gt;^&lt;fld17&gt;^&lt;fld18&gt;^&lt;fld19&gt;^&lt;fld20&gt;^&lt;fld21&gt;^&lt;fld22&gt;^&lt;fld23&gt;^&lt;fld24&gt;^&lt;fld25&gt;^&lt;fld26&gt;^&lt;fld28&gt;^&lt;fld29&gt;^&quot;&lt;fld30&gt;&quot;^&quot;&lt;fld31&gt;&quot;" />
 
 <MESSAGE
 	id1="VALIDATE:AUTHENTICATION"
 	id2="VALIDATE"
 	eventcategory="1612000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:AUTHENTICATION&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:AUTHENTICATION&gt;&lt;@event_cat:*getEventLegacyCategory(resultcode)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="!&lt;event_time_string&gt;!^!&lt;vendor_event_cat&gt;!^!AUTHENTICATION!^&lt;id&gt;^&lt;resultcode&gt;^!&lt;db_name&gt;!^!&lt;username&gt;!^!&lt;fld7&gt;!^&lt;fld9&gt;^&lt;fld27&gt;^&lt;fld10&gt;^!&lt;fld11&gt;!^!&lt;application&gt;!^!&lt;fld13&gt;!^&lt;fld14&gt;^&lt;fld15&gt;^&lt;fld16&gt;^&lt;fld17&gt;^&lt;fld18&gt;^&lt;fld19&gt;^&lt;fld20&gt;^&lt;fld21&gt;^&lt;fld22&gt;^&lt;fld23&gt;^&lt;fld24&gt;^&lt;fld25&gt;^&lt;fld26&gt;^&lt;fld28&gt;" />
 <MESSAGE
 	id1="VALIDATE:GET_USERMAPPING_FROM_PLUGIN"
@@ -1869,7 +1878,7 @@
 	id1="VALIDAT:AUTHENTICATION:01"
 	id2="VALIDAT"
 	eventcategory="1612000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:AUTHENTICATION&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:AUTHENTICATION&gt;&lt;@event_cat:*getEventLegacyCategory(resultcode)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="!&lt;event_time_string&gt;^^!&lt;vendor_event_cat&gt;^^!AUTHENTICATION!^^&lt;resultcode&gt;^^!&lt;db_name&gt;^^!&lt;fld13&gt;!^^!&lt;application&gt;!^^!&lt;username&gt;!^^!&lt;fld15&gt;!" />
 
 <MESSAGE
