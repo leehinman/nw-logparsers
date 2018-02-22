@@ -4,8 +4,8 @@
 	displayname="Linux"
 	group="Unix">
 <VERSION
-	xml="342"
-	checksum="62047e19fe1010614ca1acb3adfb8138"
+	xml="343"
+	checksum="693b8b108c7aab7559f6e8509d3f89d7"
 	revision="115"
 	device="2.0" />
 
@@ -14670,6 +14670,12 @@
 	eventcategory="1801020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: connect from &lt;saddr&gt; (&lt;fld1&gt;)" />
+<MESSAGE
+	id1="proftpd:01"
+	id2="proftpd"
+	eventcategory="1801020000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session opened for user&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;application&gt;(&lt;process&gt;): session opened for user &lt;username&gt; by (uid=&lt;uid&gt;)" />
 <MESSAGE
 	id1="00015"
 	id2="proftpd"
