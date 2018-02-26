@@ -4,9 +4,9 @@
 	displayname="Astaro Security Gateway"
 	group="Firewall">
 <VERSION
-		xml="16"
-		checksum="1610ab58cd0054d43075634e1d3bf8ec"
-		revision="113"
+		xml="19"
+		checksum="746caa4977f9afbd78ae6a861abde014"
+		revision="115"
 		device="2.0"/>
 
 
@@ -26,7 +26,6 @@
 	id1="0002"
 	id2="0002"
 	content="&lt;hfld1&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;process_id&gt;]: &lt;!payload&gt;"/>
-		
 	
 <HEADER
 	id1="0003"
@@ -34,10 +33,16 @@
 	messageid="STRCAT(&apos;reverseproxy&apos;)"
 	content="&lt;hfld1&gt; &lt;hostname&gt; reverseproxy: &lt;!payload&gt;"/>
 <HEADER
+	id1="0005"
+	id2="0005"
+	content="&lt;hfld1&gt; &lt;hostname&gt; &lt;messageid&gt;: &lt;!payload&gt;"/>
+
+<HEADER
 	id1="0004"
 	id2="0004"
 	messageid="*STRCAT('astarosg','_','TVM')"
 	content="&lt;hfld1&gt;  &lt;id&gt;[&lt;process_id&gt;]: &lt;!payload&gt;"/>
+
 	
 <VALUEMAP
 	name="getEventLegacyCategory"
@@ -1470,4 +1475,20 @@
 	missField="true"
 	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W:%G:%F-%H:%U:%O&apos;,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_cat:*getEventLegacyCategory(event_description)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="id=&lt;rule&gt; severity=&lt;severity&gt; sys=&lt;vsys&gt; sub=&lt;service&gt; name=&lt;event_description&gt;action=&lt;action&gt; method=&lt;web_method&gt; client=&lt;fld3&gt; facility=&lt;logon_type&gt; user=&lt;username&gt; srcip=&lt;saddr&gt; dstip=&lt;daddr&gt; version=&lt;version&gt; storage=&lt;directory&gt; ad_domain=&lt;fld5&gt; object=&lt;fld6&gt; class=&lt;group_object&gt; type=&lt;obj_type&gt; attributes=&lt;obj_name&gt;count=&lt;fld4&gt; node=&lt;node&gt; account=&lt;logon_id&gt;statuscode=&lt;resultcode&gt; cached=&lt;fld7&gt; profile=&lt;owner&gt; filteraction=&lt;policyname&gt; size=&lt;filename_size&gt; request=&lt;fld8&gt; url=&lt;url&gt; referer=&lt;web_referer&gt; error=&lt;comments&gt; authtime=&lt;fld9&gt; dnstime=&lt;fld10&gt; cattime=&lt;fld11&gt; avscantime=&lt;fld12&gt; fullreqtime=&lt;fld13&gt; device=&lt;fld14&gt; auth=&lt;fld15&gt; ua=&lt;fld16&gt; exceptions=&lt;fld17&gt; group=&lt;group&gt; category=&lt;policy_id&gt; categoryname=&lt;info&gt; content-type=&lt;content_type&gt; reputation=&lt;fld18&gt; application=&lt;fld19&gt; app-id=&lt;fld20&gt; reason=&lt;comments&gt; filename=&lt;filename&gt; file=&lt;filename&gt; extension=&lt;web_extension&gt; time=&lt;fld21&gt; function=&lt;action&gt; line=&lt;fld22&gt; message=&lt;context&gt; fwrule=&lt;policy_id&gt;  seq=&lt;fld23&gt; initf=&lt;sinterface&gt; outitf=&lt;dinterface&gt; dstmac=&lt;dmacaddr&gt; srcmac=&lt;smacaddr&gt; proto=&lt;fld24&gt; length=&lt;fld25&gt; tos=&lt;fld26&gt; prec=;&lt;fld27&gt; ttl=&lt;fld28&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; tcpflags=&lt;fld29&gt; info=&lt;context&gt; prec=&lt;fld30&gt; caller=&lt;fld30&gt; engine=&lt;fld31&gt; localip=&lt;fld31&gt; host=&lt;dhost&gt; extra=&lt;info&gt;  server=&lt;daddr&gt; cookie=&lt;web_cookie&gt; set-cookie=&lt;fld32&gt;"/>
+<MESSAGE
+	id1="httpd"
+	id2="httpd"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,&apos;%W:%G:%F-%H:%U:%O&apos;,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_cat:*getEventLegacyCategory(event_description)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="id=&lt;rule&gt; severity=&lt;severity&gt; sys=&lt;vsys&gt; sub=&lt;service&gt; name=&lt;event_description&gt;action=&lt;action&gt; method=&lt;web_method&gt; client=&lt;fld3&gt; facility=&lt;logon_type&gt; user=&lt;username&gt; srcip=&lt;saddr&gt; dstip=&lt;daddr&gt; version=&lt;version&gt; storage=&lt;directory&gt; ad_domain=&lt;fld5&gt; object=&lt;fld6&gt; class=&lt;group_object&gt; type=&lt;obj_type&gt; attributes=&lt;obj_name&gt;count=&lt;fld4&gt; node=&lt;node&gt; account=&lt;logon_id&gt;statuscode=&lt;resultcode&gt; cached=&lt;fld7&gt; profile=&lt;owner&gt; filteraction=&lt;policyname&gt; size=&lt;filename_size&gt; request=&lt;fld8&gt; url=&lt;url&gt; referer=&lt;web_referer&gt; error=&lt;comments&gt; authtime=&lt;fld9&gt; dnstime=&lt;fld10&gt; cattime=&lt;fld11&gt; avscantime=&lt;fld12&gt; fullreqtime=&lt;fld13&gt; device=&lt;fld14&gt; auth=&lt;fld15&gt; ua=&lt;fld16&gt; exceptions=&lt;fld17&gt; group=&lt;group&gt; category=&lt;policy_id&gt; categoryname=&lt;info&gt; content-type=&lt;content_type&gt; reputation=&lt;fld18&gt; application=&lt;fld19&gt; app-id=&lt;fld20&gt; reason=&lt;comments&gt; filename=&lt;filename&gt; file=&lt;filename&gt; extension=&lt;web_extension&gt; time=&lt;fld21&gt; function=&lt;action&gt; line=&lt;fld22&gt; message=&lt;context&gt; fwrule=&lt;policy_id&gt;  seq=&lt;fld23&gt; initf=&lt;sinterface&gt; outitf=&lt;dinterface&gt; dstmac=&lt;dmacaddr&gt; srcmac=&lt;smacaddr&gt; proto=&lt;fld24&gt; length=&lt;fld25&gt; tos=&lt;fld26&gt; prec=;&lt;fld27&gt; ttl=&lt;fld28&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; tcpflags=&lt;fld29&gt; info=&lt;context&gt; prec=&lt;fld30&gt; caller=&lt;fld30&gt; engine=&lt;fld31&gt; localip=&lt;fld31&gt; host=&lt;dhost&gt; extra=&lt;info&gt;  server=&lt;daddr&gt; cookie=&lt;web_cookie&gt; set-cookie=&lt;fld32&gt; port=&lt;network_port&gt; query=&lt;web_query&gt; uid=&lt;uid&gt;"/>
+
+<MESSAGE
+	id1="httpd:01"
+	id2="httpd"
+	eventcategory="1502000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W:%G:%F-%H:%U:%S&apos;,hfld1)&gt;"
+	content="[&lt;event_log&gt;:&lt;severity&gt;] [pid &lt;fld3&gt;:&lt;fld4&gt;] [client &lt;gateway&gt;] ModSecurity: Warning. &lt;rulename&gt; [file &quot;&lt;filename&gt;&quot;] [line &quot;&lt;fld5&gt;&quot;] [id &quot;&lt;rule&gt;&quot;] [rev &quot;&lt;fld2&gt;&quot;] [msg &quot;&lt;event_description&gt;&quot;] [severity &quot;&lt;result&gt;&quot;] [ver &quot;&lt;version&gt;&quot;] [maturity &quot;&lt;fld22&gt;&quot;] [accuracy &quot;&lt;fld23&gt;&quot;] [tag &quot;&lt;fld24&gt;&quot;] [hostname &quot;&lt;dhost&gt;&quot;] [uri &quot;&lt;web_root&gt;&quot;] [unique_id &quot;&lt;operation_id&gt;&quot;]&lt;fld25&gt;" />
+
 </DEVICEMESSAGES>
