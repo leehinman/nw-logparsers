@@ -4,9 +4,9 @@
 	displayname="Netapp"
 	group="Storage">
 <VERSION
-		xml="33"
-		checksum="b741444997a27358b3e4bb0ea97373a4"
-		revision="113"
+		xml="36"
+		checksum="482de4a9d277557f02a10993b5efb281"
+		revision="115"
 		device="2.0"/>
 
 
@@ -74,6 +74,14 @@
 		name="eventType"
 		default="$NONE"
 		keyvaluepairs="AUS=&apos;Success Audit&apos;|AUF=&apos;Failure Audit&apos;|ERR=&apos;Error&apos;|WRN=&apos;Warning&apos;|INF=&apos;Information&apos;"/>
+	<VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="Other.Default"
+		keyvaluepairs="1401060000=&apos;User.Activity.Successful Logins&apos;|1401070000=&apos;User.Activity.Logoff&apos;" />
+    <VALUEMAP
+		name="getEventLegacyCategory"
+		default="1901000000"
+		keyvaluepairs="IN=&apos;1401060000&apos;|END=&apos;1401070000&apos;" />	
 <MESSAGE
 	id1="040410"
 	id2="10/100/1000-V/e4a:ALERT"
@@ -5183,11 +5191,25 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:created mirror resynchronization snapshot mirror_resync&gt;"
 	content=" &lt;fld3&gt;: created mirror resynchronization snapshot mirror_resync. &lt;fld1&gt;(&lt;fld30&gt;)" />
 <MESSAGE
+	id1="012924"
+	id2="raid.mirror.resync.snapcrtok:info"
+	eventcategory="1602000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:created mirror resynchronization snapshot mirror_resync&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" Aggregate &lt;id&gt;: created mirror resynchronization snapshot mirror_resync. &lt;fld1&gt;(&lt;fld30&gt;)" />
+
+<MESSAGE
 	id1="012918"
 	id2="raid.mirror.resync.snapdelok:debug"
 	eventcategory="1602000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:deleted mirror resynchronization snapshot mirror_resync&gt;"
 	content=" &lt;fld3&gt;: deleted mirror resynchronization snapshot mirror_resync.&lt;fld1&gt;(&lt;fld30&gt;)" />
+<MESSAGE
+	id1="012931"
+	id2="raid.mirror.resync.snapdelok:info"
+	eventcategory="1602000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@result:deleted mirror resynchronization snapshot mirror_resync&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" Aggregate &lt;id&gt;: deleted mirror resynchronization snapshot mirror_resync.&lt;fld1&gt;(&lt;fld30&gt;" />
+
 <MESSAGE
 	id1="030290"
 	id2="raid.mirror.resync.start:notice"
@@ -5613,8 +5635,8 @@
 	id1="040677"
 	id2="rc:debug"
 	eventcategory="1605030000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:root input&gt;"
-	content=" root:IN:&lt;interface&gt;:&lt;disposition&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:root input&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content=" &lt;username&gt;:&lt;action&gt;:&lt;interface&gt;:&lt;disposition&gt;" />
 	
 <MESSAGE
 	id1="030077"
@@ -7928,8 +7950,8 @@
 	id1="040682"
 	id2="telnet_0:debug"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:shell command&gt;"
-	content=" &lt;username&gt;@[&lt;saddr&gt;]:&lt;action&gt;:&lt;service&gt;:&lt;disposition&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:shell command&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content=" &lt;username&gt;@[{&lt;saddr&gt;_&lt;sport&gt;|&lt;saddr&gt;}]:&lt;action&gt;:&lt;service&gt;:&lt;disposition&gt;" />
 	
 <MESSAGE
 	id1="019000"
@@ -11419,8 +11441,8 @@
 	id1="040779"
 	id2="rshd_0:debug"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ssh2 shell command&gt;"
-	content=" &lt;username&gt;:&lt;action&gt;:ssh2 shell: &lt;disposition&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:ssh2 shell command&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content=" &lt;username&gt;@[{&lt;saddr&gt;_&lt;sport&gt;|&lt;saddr&gt;}]:&lt;action&gt;:&lt;service&gt;:&lt;disposition&gt;" />
 <MESSAGE
 	id1="001013"
 	id2="asup.general.reminder:info"
