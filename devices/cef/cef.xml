@@ -148,6 +148,13 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
+<MESSAGE 
+	id1="msazurensg" 
+	id2="msazurensg" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -177,7 +184,7 @@
 	<Vendor2Device vendor="Akamai" product="akamai_siem" device="akamaikona" group="Application Firewall"/>
 	<Vendor2Device vendor="Imperva Inc." product="SecureSphere" device="impervawaf" group="Application Firewall"/>
 	<Vendor2Device vendor="IBM" product="Guardium" device="guardium" group="Firewall"/>
-
+	<Vendor2Device vendor="Microsoft" product="Azure NSG" device="msazurensg" group="Cloud"/>
 </VendorProducts>
 
 
@@ -742,6 +749,8 @@
 		<ExtensionKey cefName="AkamaiSiemSlowPostRate" metaName="cs_fld"/>
 		<ExtensionKey cefName="AkamaiSiemTLSVersion" metaName="cs_fld"/>
 
+		
+		<ExtensionKey cefName="rulename" metaName="rulename"/>
 
 	
 		
