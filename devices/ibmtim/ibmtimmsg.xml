@@ -4,9 +4,9 @@
 	displayname="IBM Tivoli Identity Manager"
 	group="Access Control">
 <VERSION
-	xml="7"
-	checksum="a3222dc3208b4daf894012b1cab27c38"
-	revision="0"
+	xml="8"
+	checksum="77966b1eb4039ee2ebf2e0a2c37f0224"
+	revision="115"
 	device="2.0" />
 
 <HEADER 
@@ -17,6 +17,16 @@
 	id1="0002" 
 	id2="0002"  
 	content="%ITIM-4-&lt;messageid&gt;: &lt;!payload&gt;" />
+<VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="User.Management"
+		keyvaluepairs="1402040100=&apos;User.Management.Password.Modification&apos;|1402010302=&apos;User.Management.Groups.Modifications.User Removed&apos;" />
+   		
+<VALUEMAP
+		name="getEventLegacyCategory"
+		default="1402000000"
+		keyvaluepairs="ChangePassword=&apos;1402040100&apos;|RemoveMember=&apos;1402010302&apos;" />	
+ 
 <MESSAGE 
 	id1="Authentication_SUCCESS" 
 	id2="Authentication" 
@@ -78,6 +88,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@action:Modify&gt;"
 	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^Modify^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
 <MESSAGE 
+	id1="PersonManagement" 
+	id2="PersonManagement" 
+	eventcategory="1402000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
+<MESSAGE 
 	id1="OrgRoleManagement_Add" 
 	id2="OrgRoleManagement" 
 	eventcategory="1701010000" 
@@ -89,6 +106,20 @@
 	eventcategory="1701010000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@action:AddMember&gt;"
 	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^AddMember^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+<MESSAGE 
+	id1="OrgRoleManagement_Modify" 
+	id2="OrgRoleManagement" 
+	eventcategory="1402010300" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@action:Modify&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^Modify^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="OrgRoleManagement" 
+	id2="OrgRoleManagement" 
+	eventcategory="1701000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
 <MESSAGE 
 	id1="ContainerManagement_Add" 
 	id2="ContainerManagement" 
@@ -125,10 +156,40 @@
 	eventcategory="1402000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@action:Run&gt;"
 	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^Run^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
 <MESSAGE 
 	id1="AccountManagement_Orphan" 
 	id2="AccountManagement" 
 	eventcategory="1402000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@action:Orphan&gt;"
 	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^Orphan^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="AccountManagement_Add" 
+	id2="AccountManagement" 
+	eventcategory="1402020200" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@action:Add&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^Add^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="AccountManagement" 
+	id2="AccountManagement" 
+	eventcategory="1402000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="RequestCancellation" 
+	id2="RequestCancellation" 
+	eventcategory="1402000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="ServicePolicyEnforcement" 
+	id2="ServicePolicyEnforcement" 
+	eventcategory="1502000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;"
+	content="&lt;operation_id&gt;^^&lt;category&gt;^^&lt;obj_name&gt;^^&lt;dst_dn&gt;^^&lt;obj_type&gt;^^&lt;action&gt;^^&lt;fld1&gt;^^&lt;administrator&gt;^^&lt;src_dn&gt;^^&lt;group_object&gt;^^&lt;dn&gt;^^&lt;disposition&gt;^^&lt;fld20&gt; &lt;fld21&gt; &lt;timezone&gt;^^&lt;info&gt;" />
+
 </DEVICEMESSAGES>
