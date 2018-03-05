@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="64"
-		checksum="1fb08eda4b69cc1915b2e7ba75daf021"
-		revision="110"
+		xml="65"
+		checksum="803811e29be025e154f5e353c107069f"
+		revision="115"
 		device="2.0" />
 	
 <HEADER
@@ -14,7 +14,6 @@
 	id2="006"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhostname&gt; {&lt;hhostip&gt;&lt;messageid&gt;[&lt;data&gt;]|&lt;hhostip&gt;&lt;messageid&gt;}: &lt;!payload&gt;"/>
 
-		
 <HEADER
 	id1="001"
 	id2="001"
@@ -35,6 +34,10 @@
 	id1="0004"
 	id2="0004"
 	content="&lt;messageid&gt;: &lt;!payload&gt;"		/>
+<HEADER
+	id1="0005"
+	id2="0005"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhostname&gt; &lt;fld1&gt; |&lt;messageid&gt; |&lt;!payload&gt;"		/>		
 <MESSAGE
 	id1="httpd"
 	id2="httpd"
@@ -1252,5 +1255,76 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@info:*HDR(hdata)&gt;"
 	content=" &lt;fld1&gt; " />
+
+<MESSAGE
+	 id1="netauto_discovery"
+	 id2="netauto_discovery"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	 content="&lt;agent&gt;: Processing path&lt;fld1&gt;, vnid [&lt;fld2&gt;]"/>
+
+<MESSAGE
+	 id1="netauto_discovery:01"
+	 id2="netauto_discovery"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;&lt;@event_description:device does not answer to lldpRem OID requests, skipping LLDP Neighbors poll&gt;"
+	 content="&lt;agent&gt;:&lt;fld1&gt;(&lt;fld2&gt;)&lt;hostip&gt;/&lt;fld3&gt;:&lt;product&gt;ver&lt;version&gt; device does not answer to lldpRem OID requests, skipping LLDP Neighbors poll"/>
+
+<MESSAGE
+	 id1="netauto_discovery:02"
+	 id2="netauto_discovery"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	 content="&lt;agent&gt;:&lt;space&gt;Static address already set with IP:&lt;hostip&gt;, Processing&lt;fld1&gt;"/>
+
+<MESSAGE
+	 id1="netauto_discovery:03"
+	 id2="netauto_discovery"
+	 eventcategory="1301000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;&lt;@ec_outcome:Failure&gt;"
+	 content="&lt;agent&gt;:&lt;fld1&gt;(&lt;fld2&gt;)&lt;hostip&gt;/&lt;fld3&gt;: SNMP Credentials: Failed to authenticate"/>
+
+<MESSAGE
+	 id1="netauto_core:01"
+	 id2="netauto_core"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	 content="&lt;agent&gt;: Attempting CLI on device&lt;device&gt;with interface not in table, ip&lt;hostip&gt;"/>
+
+<MESSAGE
+	 id1="netauto_core"
+	 id2="netauto_core"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	 content="netautoctl:&lt;event_description&gt;"/>
+
+<MESSAGE
+	 id1="captured_dns_uploader"
+	 id2="captured_dns_uploader"
+	 eventcategory="1801010000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;&lt;@ec_outcome:Failure&gt;"
+	 content="&lt;event_description&gt;"/>
+
+	 
+<MESSAGE
+	 id1="DIS"
+	 id2="DIS"
+	 eventcategory="1301000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;"
+	 content="&lt;fld1&gt;:&lt;fld2&gt;: Device&lt;device&gt;/&lt;hostip&gt;login failure&lt;result&gt;"/>
+
+<MESSAGE
+	 id1="DIS:01"
+	 id2="DIS"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+     content="&lt;fld2&gt;: &lt;fld3&gt;: Attempting discover-now for &lt;hostip&gt; on &lt;fld4&gt;, using session ID"/>
+
+<MESSAGE
+	 id1="ErrorMsg"
+	 id2="ErrorMsg"
+	 eventcategory="1303000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+     content="&lt;result&gt;"/>
 
 </DEVICEMESSAGES>
