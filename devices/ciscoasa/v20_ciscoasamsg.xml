@@ -4,9 +4,9 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="237"
-	checksum="e843aa8dbaceec595703ca064ff4ffe5"
-	revision="115"
+	xml="239"
+	checksum="c4181d9d38f472a1f85f078892fe0e1b"
+	revision="116"
 	device="2.0" />
 
 
@@ -689,8 +689,8 @@
 	id1="106023:04"
 	id2="106023"
 	eventcategory="1803000000"
-	functions="&lt;@ec_activity:Deny&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@event_description:denied by access-group&gt;"
-	content="Deny &lt;protocol&gt; src &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; dst &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; by access-group &lt;rule_group&gt;" />
+	functions="&lt;@ec_activity:Deny&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@event_description:denied by access-group&gt;"
+	content="Deny &lt;protocol&gt; src &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; dst &lt;dinterface&gt;:&lt;daddr&gt;/{&lt;dport&gt;(&lt;dhost&gt;)|&lt;dport&gt;} by access-group { &quot;&lt;rule_group&gt;&quot; &lt;fld1&gt;|&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;}" />
 <MESSAGE
 	id1="106023:02"
 	id2="106023"
@@ -2024,22 +2024,22 @@
 	id1="302020"
 	id2="302020"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;"	
-	content="Built inbound ICMP connection for faddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld11&gt;)|&lt;saddr&gt;(&lt;fld11&gt;)|&lt;saddr&gt;} gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;(&lt;fld10&gt;)|&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;}" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;"	
+	content="Built inbound ICMP connection for faddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld11&gt;)|&lt;saddr&gt;/&lt;sport&gt;|&lt;saddr&gt;(&lt;fld11&gt;)|&lt;saddr&gt;} gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;/&lt;dport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;(&lt;fld10&gt;)|&lt;daddr&gt;}" />
 <MESSAGE
 	id1="302020:04"
 	id2="302020"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
-	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt;(&lt;fld51&gt;) gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld10&gt;)|&lt;saddr&gt;/&lt;sport&gt;}" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
+	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt;(&lt;domain&gt;\&lt;username&gt;) gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr &lt;saddr&gt;/{&lt;sport&gt;(&lt;fld10&gt;)|&lt;sport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;sport&gt;}" />
 
 	
 <MESSAGE
 	id1="302020:03"
 	id2="302020"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
-	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;fld10&gt;)|&lt;saddr&gt;/&lt;sport&gt;}" />
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
+	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr &lt;saddr&gt;/{&lt;sport&gt;(&lt;fld10&gt;)|&lt;sport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;sport&gt;}" />
 
 	
 <MESSAGE
@@ -2398,8 +2398,8 @@
 	id1="305013"
 	id2="305013"
 	eventcategory="1204020000"
-	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@event_description:connection denied&gt;&lt;@result:due to NAT reverse path failure&gt;"
-	content="&lt;result&gt;; Connection for &lt;protocol&gt; src &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; dst &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; denied due to NAT reverse path failure" />
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@event_description:connection denied&gt;&lt;@result:due to NAT reverse path failure&gt;"
+	content="&lt;result&gt;; Connection for &lt;protocol&gt; src &lt;sinterface&gt;:&lt;saddr&gt;/{&lt;sport&gt;(&lt;domain&gt;\&lt;username&gt;)|&lt;sport&gt;} dst &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; denied due to NAT reverse path failure" />
 <MESSAGE
 	id1="305013:01"
 	id2="305013"
@@ -4419,13 +4419,13 @@
 	id1="602303"
 	id2="602303"
 	eventcategory="1801020100"
-	functions="&lt;@event_type:VPN&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+	functions="&lt;@event_type:VPN&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="&lt;service&gt;: An &lt;direction&gt; SA (SPI= &lt;fld1&gt;) between &lt;saddr&gt; and &lt;daddr&gt; { (user=&lt;username&gt;) | (&lt;username&gt;) | &apos;&lt;username&gt;&apos; | &lt;username&gt; } &lt;action&gt;" />
 <MESSAGE
 	id1="602304"
 	id2="602304"
 	eventcategory="1801030100"
-	functions="&lt;@event_type:VPN&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+	functions="&lt;@event_type:VPN&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="&lt;service&gt;: An &lt;direction&gt; SA (SPI= &lt;fld1&gt;) between &lt;saddr&gt; and &lt;daddr&gt; { (user=&lt;username&gt;) | (&lt;username&gt;) | &apos;&lt;username&gt;&apos; | &lt;username&gt; } &lt;action&gt;" />
 <MESSAGE
 	id1="603101"
@@ -4541,7 +4541,7 @@
 	id1="605005"
 	id2="605005"
 	eventcategory="1401050100"
-	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@result:Login permitted&gt;"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@result:Login permitted&gt;"
 	content="Login permitted from &lt;saddr&gt;/&lt;sport&gt; to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;service&gt; for user { &lt;&lt;&lt;username&gt;&gt; | &quot;&lt;username&gt;&quot; | &apos;&lt;username&gt;&apos; | &lt;username&gt; }" />
 <MESSAGE
 	id1="605005:01"
@@ -5182,7 +5182,7 @@
 	id1="710002"
 	id2="710002"
 	eventcategory="1801020000"
-	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@result:access permitted&gt;"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Permit&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@result:access permitted&gt;"
 	content="&lt;protocol&gt; access permitted from &lt;saddr&gt;/&lt;sport&gt; to {&lt;dinterface&gt;:&lt;fld1&gt;:&lt;daddr&gt;|&lt;dinterface&gt;:&lt;daddr&gt;}/&lt;service&gt;" />
 <MESSAGE
 	id1="710003"
