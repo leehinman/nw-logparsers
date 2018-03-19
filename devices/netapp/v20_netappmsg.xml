@@ -4,9 +4,9 @@
 	displayname="Netapp"
 	group="Storage">
 <VERSION
-		xml="36"
-		checksum="482de4a9d277557f02a10993b5efb281"
-		revision="115"
+		xml="37"
+		checksum="c7cf4bbc32fe05776769c442363cef40"
+		revision="116"
 		device="2.0"/>
 
 
@@ -8591,6 +8591,13 @@
 	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;message&gt; " />
 <MESSAGE
+	id1="019908"
+	id2="wafl.vol.runningOutOfInodes:error"
+	eventcategory="1603020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@info:*PARMVAL($MSG)&gt;"
+	content=" The file system on Volume &lt;id&gt; is using &lt;fld1&gt; percent or more of the files that can be contained on the volume." />
+
+<MESSAGE
 	id1="030298"
 	id2="worker_thread_03:error"
 	eventcategory="1603000000"
@@ -11619,5 +11626,12 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="No redundancy in the failover configuration for 1 LIFs assigned to node &quot;&lt;node&gt;&quot;. LIFs: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="vsdr.net.LifNotReachable:error"
+	id2="vsdr.net.LifNotReachable:error"
+	eventcategory="1603040000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@info:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" The LIF &lt;fld1&gt; in DR partner Vserver of Vserver &lt;vsys&gt; is not reachable from the local cluster." />
 
 </DEVICEMESSAGES>
