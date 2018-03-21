@@ -4,9 +4,9 @@
 	displayname="Huawei VRP"
 	group="Router">
 <VERSION
-	xml="5"
-	checksum="03c2efeb11760aeb47fb2416b8528e5d"
-	revision="103"
+	xml="9"
+	checksum="d99dc5ef3f9caed2b0f78ce829e9454e"
+	revision="116"
 	device="2.0" />
 	
 <HEADER 
@@ -32,9 +32,14 @@
 	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; %%&lt;hfld6&gt;/&lt;hfld7&gt;/&lt;messageid&gt;:&lt;!payload:hfld5&gt;" />
 
 <HEADER 
+	id1="0006" 
+	id2="0006" 
+	content="&lt;hdate&gt; &lt;htime&gt; &lt;hfld5&gt; %%&lt;hfld6&gt;/&lt;hfld7&gt;/&lt;messageid&gt;(&lt;hfld8&gt;):&lt;!payload:hfld5&gt;" />
+
+<HEADER 
 	id1="0004" 
 	id2="0004" 
-	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt;/&lt;hfld7&gt;/&lt;messageid&gt;:&lt;!payload:hfld5&gt;" />
+	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt;/&lt;hfld7&gt;/{&lt;messageid&gt; Module &lt;hfld8&gt; | &lt;messageid&gt;}:&lt;!payload:hfld5&gt;" />
 
 <MESSAGE 
 	id1="CMD:01" 
@@ -42,390 +47,476 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP={&lt;hostip&gt;;|&lt;hostip&gt;} task:&lt;fld2&gt; ip:&lt;saddr&gt; user:&lt;username&gt; command:&lt;action&gt;" />
+
 <MESSAGE 
 	id1="CMD:02" 
 	id2="CMD" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: task:&lt;fld1&gt; ip:&lt;saddr&gt; user:&lt;username&gt; command:&lt;action&gt;" />
+
+<MESSAGE 
+	id1="CMD:03" 
+	id2="CMD"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: -DevIP=&lt;hostip&gt;; task:&lt;fld2&gt; ip:&lt;saddr&gt; user:&lt;username&gt; vrf:&lt;fld3&gt; command:&lt;param&gt;"/>
+
 <MESSAGE 
 	id1="NTP_LOG:01" 
 	id2="NTP_LOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  System stratum changes from &lt;change_old&gt; to &lt;change_new&gt; after clock update." />
+
 <MESSAGE 
 	id1="NTP_LOG:02" 
 	id2="NTP_LOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:{-DevIP=&lt;hostip&gt;  System|  System} &lt;fld4&gt; changes from &lt;change_old&gt; to &lt;change_new&gt; after clock update." />
+
 <MESSAGE 
 	id1="NTP_LOG:03" 
 	id2="NTP_LOG" 
 	eventcategory="1801000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:{-DevIP=&lt;hostip&gt;  System|  System} synchronization source lost!" />
+
 <MESSAGE 
 	id1="LINK_STATE" 
 	id2="LINK_STATE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Line protocol on interface &lt;interface&gt; has turned into &lt;event_state&gt; state." />
+
 <MESSAGE 
 	id1="IFCHG" 
 	id2="IFCHG" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:OSPF TrapID&lt;fld1&gt;: Non-virtual interface &lt;interface&gt; &lt;fld3&gt; Router &lt;fld4&gt; state change to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="SOURCE_LOST" 
 	id2="SOURCE_LOST" 
 	eventcategory="1801000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: System synchronization source lost." />
+
 <MESSAGE 
 	id1="LEAP_CHANGE" 
 	id2="LEAP_CHANGE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: System leap changes from &lt;change_old&gt; to &lt;change_new&gt; after clock update." />
+
 <MESSAGE 
 	id1="OGNLSA" 
 	id2="OGNLSA" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:OSPF TrapID&lt;fld1&gt;: Originate new LSA AreaId &lt;fld2&gt; LsdbType &lt;fld3&gt; LsdbLsid &lt;fld4&gt; LsdbRouterId &lt;fld5&gt; Router &lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="NBRCHG" 
 	id2="NBRCHG" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:OSPF TrapID&lt;fld1&gt;: Non-virtual neighbor &lt;fld2&gt; &lt;fld3&gt; Router &lt;fld4&gt; NbrRouter &lt;fld5&gt; state change to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="IFRETX" 
 	id2="IFRETX" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:OSPF TrapID&lt;fld1&gt;: Interface &lt;interface&gt; &lt;fld3&gt; Retransmit to Nbr &lt;fld4&gt; &lt;fld5&gt; LsdbAreaId &lt;fld6&gt; LsdbType &lt;fld7&gt; LsdbLsid &lt;fld8&gt; LsdbRouterId &lt;fld9&gt; Router &lt;fld10&gt; Nbr RID &lt;fld11&gt; Type is &lt;fld12&gt;." />
+
 <MESSAGE 
 	id1="AGELSA" 
 	id2="AGELSA" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:OSPF TrapID&lt;fld1&gt;: Aged a LSA Area Id &lt;fld2&gt; LsdbType &lt;fld3&gt; LsdbLsid &lt;fld4&gt; LsdbRouterId &lt;fld5&gt; Router &lt;fld6&gt; ." />
+
 <MESSAGE 
 	id1="SYS_RESTART" 
 	id2="SYS_RESTART" 
 	eventcategory="1606000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: System restarted -- &lt;info&gt;" />
+
 <MESSAGE 
 	id1="CLKCHANGE:01" 
 	id2="CLKCHANGE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;;  &lt;fld2&gt; System clock changed  " />
+
 <MESSAGE 
 	id1="CLKCHANGE:02" 
 	id2="CLKCHANGE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:&lt;fld2&gt; System clock changed  " />
+
 <MESSAGE 
 	id1="UPDOWN" 
 	id2="UPDOWN" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;;   Line protocol on the interface &lt;interface&gt; is &lt;event_state&gt; " />
+
 <MESSAGE 
 	id1="RMLOG:01" 
 	id2="RMLOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;; OSPF-NBRCHANGE: Process &lt;process_id&gt;, Neighbor &lt;fld3&gt;(&lt;fld4&gt;) from &lt;change_old&gt; to &lt;change_new&gt;" />
+
 <MESSAGE 
 	id1="RMLOG:02" 
 	id2="RMLOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;; OSPF_CTM_Multicast_Address: Joining the multicastgroup:&lt;fld2&gt; Success, IfNetIndex: &lt;fld3&gt;, Phy Index: &lt;fld4&gt;" />
+
 <MESSAGE 
 	id1="DRVMSG" 
 	id2="DRVMSG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;;    &lt;fld2&gt;:  Channel is deactivated because of too many continuous input errors! &lt;info&gt;" />
+
 <MESSAGE 
 	id1="SOCK_TCPRETRANS" 
 	id2="SOCK_TCPRETRANS" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: The current tcp retransmitted at: &lt;fld1&gt;, Current delay: &lt;duration&gt;, Retransfer total: &lt;fld3&gt;." />
+
 <MESSAGE 
 	id1="IPIFATTACHOK" 
 	id2="IPIFATTACHOK" 
 	eventcategory="1801000000" 
 	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  Creating IPv4 control block for interface &lt;interface&gt; is successful." />
+
 <MESSAGE 
 	id1="IPADDMSGSEND" 
 	id2="IPADDMSGSEND" 
 	eventcategory="1801000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  The adding of the ip address is notified to RM, ip address is &lt;saddr&gt;, mask is &lt;mask&gt;, interface is &lt;interface&gt;, return value is &lt;resultcode&gt;." />
+
 <MESSAGE 
 	id1="SAVE" 
 	id2="SAVE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: When deciding whether to save configuration to the device, the user chose &lt;fld1&gt;." />
+
 <MESSAGE 
 	id1="ADD_PHY_IF" 
 	id2="ADD_PHY_IF" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Adding physical interface. (Interface name=&lt;interface&gt;, Interface index=&lt;fld2&gt;)" />
+
 <MESSAGE 
 	id1="BAKUP_IF" 
 	id2="BAKUP_IF" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Backup interface. (Interface name=&lt;interface&gt;, Interface configuration information= &lt;info&gt;)" />
+
 <MESSAGE 
 	id1="EXIT:01" 
 	id2="EXIT" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;;  exit from configure mode" />
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;{:-DevIP=&lt;hostip&gt;; | : -DevIP=&lt;hostip&gt;;}  exit from configure mode" />
+
 <MESSAGE 
 	id1="EXIT:02" 
 	id2="EXIT" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  Exit from configure mode." />
+
+<MESSAGE 
+	id1="LOGIN:01" 
+	id2="LOGIN" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: -DevIP=&lt;hostip&gt;; vrf:&lt;fld2&gt; user:&lt;username&gt; login from &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="LOGIN" 
 	id2="LOGIN" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  &lt;username&gt; login from &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="NEEDAUTHCMD" 
 	id2="NEEDAUTHCMD" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: 'User &lt;username&gt; needs command authorization. Line index=&lt;fld2&gt;, syncnum=&lt;fld3&gt;, userid=&lt;fld4&gt;, authflag =&lt;fld5&gt;.' from &lt;saddr&gt; by &lt;logon_type&gt;." />
+
+<MESSAGE 
+	id1="LOGOUT:01" 
+	id2="LOGOUT" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: -DevIP=&lt;hostip&gt;; vrf:&lt;fld2&gt; user:&lt;username&gt; logout from &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="LOGOUT" 
 	id2="LOGOUT" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  &lt;username&gt; logout from &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="CMDRECORD" 
 	id2="CMDRECORD" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: task: &lt;fld1&gt; ip: &lt;saddr&gt; user: &lt;username&gt; command: &lt;action&gt;." />
+
 <MESSAGE 
 	id1="CTRLLERCHANGEDOWN" 
 	id2="CTRLLERCHANGEDOWN" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: &lt;fld1&gt;: Controller change status to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="STACHANGEDOWN" 
 	id2="STACHANGEDOWN" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: &lt;fld1&gt;: change status to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="NBR_CHG_DOWN" 
 	id2="NBR_CHG_DOWN" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Neighbor event, neighbor state changed to &lt;change_new&gt;. (Process ID=&lt;process_id&gt;, Neighbor address=&lt;fld2&gt;, Neighbor event=&lt;fld3&gt;, Neighbor previous state=&lt;fld4&gt;, Neighbor current state=&lt;fld5&gt;)" />
+
 <MESSAGE 
 	id1="LEAVE_MULGRP_SECCESS" 
 	id2="LEAVE_MULGRP_SECCESS" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Leaving the multicast group succeed. (Multicast group address=&lt;fld1&gt;, Interface network index=&lt;fld2&gt;, Physical index=&lt;fld3&gt;)" />
+
 <MESSAGE 
 	id1="CTRLLERCHANGEUP" 
 	id2="CTRLLERCHANGEUP" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: &lt;fld1&gt;: Controller change status to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="STACHANGEUP" 
 	id2="STACHANGEUP" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: &lt;fld1&gt;: change status to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="SNMP_FAIL" 
 	id2="SNMP_FAIL" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Number of times&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Login through &lt;logon_type&gt; failed(ip=&lt;saddr&gt; times=&lt;dclass_counter1&gt;)." />
+
 <MESSAGE 
 	id1="ACCEPT" 
 	id2="ACCEPT" 
 	eventcategory="1801000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Received connection from &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="SNMP_SET" 
 	id2="SNMP_SET" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: MIB node set (source ip= &lt;saddr&gt; &lt;info&gt;)." />
+
 <MESSAGE 
 	id1="SOCK_CLOSESOCK" 
 	id2="SOCK_CLOSESOCK" 
 	eventcategory="1801000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Current socket was closed, Proto: &lt;protocol&gt;, Cause: &lt;result&gt;." />
+
 <MESSAGE 
 	id1="SOCK_SOCKDETAILLOG" 
 	id2="SOCK_SOCKDETAILLOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Detailed information on the current socket: &lt;info&gt;." />
+
 <MESSAGE 
 	id1="SOCK_TCPDETAILLOG" 
 	id2="SOCK_TCPDETAILLOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Detailed information on the current tcp socket: State: &lt;event_state&gt;, local-ip: &lt;daddr&gt;, local-port: &lt;dport&gt;, remote-ip: &lt;saddr&gt;, remote-port: &lt;sport&gt;." />
+
 <MESSAGE 
 	id1="TELNETFAILED" 
 	id2="TELNETFAILED" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Number of times&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Login through &lt;logon_type&gt; failed( ip=&lt;saddr&gt; times=&lt;dclass_counter1&gt;)." />
+
 <MESSAGE 
 	id1="AUTHCMDNONEED" 
 	id2="AUTHCMDNONEED" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: 'User  doesn't need command authorization.' from &lt;saddr&gt; by &lt;logon_type&gt;." />
+
 <MESSAGE 
 	id1="STRATUM_CHANGE" 
 	id2="STRATUM_CHANGE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: System stratum changes from &lt;change_old&gt; to &lt;change_new&gt; after clock update." />
+
 <MESSAGE 
 	id1="PEER_SELE" 
 	id2="PEER_SELE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: The peer selected by the system is &lt;fld1&gt;" />
+
 <MESSAGE 
 	id1="REFRESH_START" 
 	id2="REFRESH_START" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: FIB refreshing start, the refresh group map is &lt;fld1&gt;!" />
+
 <MESSAGE 
 	id1="REFRESH_END" 
 	id2="REFRESH_END" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: FIB refreshing end, the refresh group map is &lt;fld1&gt;!" />
+
 <MESSAGE 
 	id1="BDR_ACCESS_FAILED" 
 	id2="BDR_ACCESS_FAILED" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Failed to get interface : &lt;info&gt;." />
+
 <MESSAGE 
 	id1="JOIN_MULGRP_SECCESS" 
 	id2="JOIN_MULGRP_SECCESS" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Joining the multicast group succeed. (Multicast group address=&lt;fld1&gt;, Interface network index=&lt;fld2&gt;, Physical index=&lt;fld3&gt;)" />
+
 <MESSAGE 
 	id1="IF_CHG_E" 
 	id2="IF_CHG_E" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Interface &lt;fld1&gt; received event &lt;fld5&gt;, interface state changed from &lt;change_old&gt; to &lt;change_new&gt;. (Process ID=&lt;process_id&gt;)" />
+
 <MESSAGE 
 	id1="NBR_CHG_E" 
 	id2="NBR_CHG_E" 
 	eventcategory="1805000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Neighbor event, neighbor state was changed. (Process ID=&lt;process_id&gt;, Neighbor address=&lt;fld2&gt;, Neighbor event=&lt;fld3&gt;, Neighbor previous state=&lt;fld4&gt;, Neighbor current state=&lt;event_state&gt;)" />
+
 <MESSAGE 
 	id1="TRAP:01" 
 	id2="TRAP" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:    &lt;fld1&gt; configure changed:&lt;fld2&gt;     EventIndex=&lt;fld3&gt;,CommandSource=&lt;fld4&gt;,ConfigSource=&lt;fld5&gt;,ConfigDestination=&lt;fld6&gt;" />
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;{: -DevIP=&lt;hostip&gt;; | :}    &lt;fld1&gt; configure changed:&lt;fld2&gt;     EventIndex=&lt;fld3&gt;,CommandSource=&lt;fld4&gt;,ConfigSource=&lt;fld5&gt;,ConfigDestination=&lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="TRAP:02" 
 	id2="TRAP" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:&lt;fld1&gt; interface &lt;fld2&gt; turns into &lt;event_state&gt; state." />
+
 <MESSAGE 
 	id1="STATE_CHANGED" 
 	id2="STATE_CHANGED" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Peer &lt;fld1&gt; state was changed from &lt;change_old&gt; to &lt;change_new&gt;. (BGP address family=&lt;fld4&gt;)" />
+
 <MESSAGE 
 	id1="IFAUTFAIL" 
 	id2="IFAUTFAIL" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:OSPF TrapID&lt;fld1&gt;: Non-virtual interface &lt;interface&gt; &lt;fld3&gt; Router &lt;fld4&gt; PacekSrc &lt;fld5&gt; authentication fail &lt;fld6&gt; PacketType &lt;fld7&gt; ." />
+
 <MESSAGE 
 	id1="TIMEOUT:01" 
 	id2="TIMEOUT" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_activity:Logon&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  &lt;username&gt; login from &lt;saddr&gt; is time out." />
+
 <MESSAGE 
 	id1="TIMEOUT:02" 
 	id2="TIMEOUT" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_activity:Logon&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: On the interface &lt;interface&gt;, &lt;info&gt;" />
+
 <MESSAGE 
 	id1="LOGINFAIL" 
 	id2="LOGINFAIL" 
 	eventcategory="1605000000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;;  TELNET user failed to login from &lt;saddr&gt; on &lt;logon_type&gt;." />
+
 <MESSAGE 
 	id1="LINK_UPDOWN" 
 	id2="LINK_UPDOWN" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;;   &lt;interface&gt;: link status is &lt;event_state&gt; " />
+
 <MESSAGE 
 	id1="TRAPLOG:01" 
 	id2="TRAPLOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP={&lt;hostip&gt;;|&lt;hostip&gt;}    &lt;fld2&gt; configure changed: &lt;info&gt;" />
+
 <MESSAGE 
 	id1="TRAPLOG:02" 
 	id2="TRAPLOG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  &lt;fld1&gt; configure changed: &lt;info&gt;" />
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;{: -DevIP=&lt;hostip&gt;; | :}  &lt;fld1&gt; configure changed: &lt;info&gt;" />
+
 <MESSAGE 
 	id1="NEIGHBOR_STATE_CHANGE" 
 	id2="NEIGHBOR_STATE_CHANGE" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;; OSPF TrapID&lt;fld2&gt;: Non-virtual neighbor &lt;fld3&gt; index &lt;fld4&gt; Router &lt;fld5&gt; NbrRouter &lt;fld6&gt; state change to &lt;change_new&gt;." />
+
 <MESSAGE 
 	id1="INTERFACE_UPDOWN" 
 	id2="INTERFACE_UPDOWN" 
@@ -438,34 +529,111 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;; OSPF TrapID&lt;fld2&gt;: Originate new LSA AreaId &lt;fld3&gt; LsdbType &lt;fld4&gt; LsdbLsid &lt;fld5&gt; LsdbRouterId &lt;fld6&gt; Router &lt;fld7&gt;" />
+
 <MESSAGE 
 	id1="MAXAGE_LSA" 
 	id2="MAXAGE_LSA" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;; OSPF TrapID&lt;fld2&gt;: Aged a LSA Area Id &lt;fld3&gt; LsdbType &lt;fld4&gt; LsdbLsid &lt;fld5&gt; LsdbRouterId &lt;fld6&gt; Router &lt;fld7&gt; ." />
+
 <MESSAGE 
 	id1="Trap10" 
 	id2="Trap10" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:-DevIP=&lt;hostip&gt;    OSPF interface retransmitted packet &lt;fld2&gt;    IfIpAddress     = &lt;fld3&gt;    IfAddrLessIndex = &lt;fld4&gt;    NbrIpAddress     = &lt;fld5&gt;    NbrAddrLessIndex = &lt;fld6&gt;    LsdbAreaId   = &lt;fld7&gt;    LsdbType     = &lt;fld8&gt;    LsdbLsid     = &lt;fld9&gt;    LsdbRouterId = &lt;fld10&gt;    RouterId    = &lt;fld11&gt;    NbrRouterId = &lt;fld12&gt;    PacketType = &lt;fld13&gt;  " />
+
 <MESSAGE 
 	id1="DISPLAY_CMDRECORD" 
 	id2="DISPLAY_CMDRECORD" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: task: &lt;fld1&gt; ip: &lt;saddr&gt; user: &lt;username&gt; command: &lt;action&gt;" />
+
 <MESSAGE 
 	id1="TunnelStateSwitched" 
 	id2="TunnelStateSwitched" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:The IPSec tunnel state is switched UPDATE. (local-ip: &lt;saddr&gt;, remote-ip: &lt;daddr&gt;)" />
+
+ 
 <MESSAGE 
 	id1="IPV4_DEFT_RT_CHG" 
 	id2="IPV4_DEFT_RT_CHG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:IPV4 default Route is changed. (ChangeType=&lt;action&gt;, InstanceId=&lt;fld23&gt;, Protocol=&lt;protocol&gt;, ExitIf=&lt;interface&gt;, Nexthop=&lt;fld26&gt;, Neighbour=&lt;fld27&gt;, Preference=&lt;fld28&gt;, Label=&lt;fld29&gt;, Metric=&lt;fld30&gt;)" />
+
+<MESSAGE 
+	id1="ACLPERMIT:01" 
+	id2="ACLPERMIT" 
+	eventcategory="1501010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld2)&gt;"
+	content=" &lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: -DevIP=&lt;hostip&gt;; protocol=&lt;protocol&gt;; source-ip=&lt;saddr&gt;; source-port=&lt;sport&gt;; destination-ip=&lt;daddr&gt;; destination-port=&lt;dport&gt;; time=&lt;fld2&gt;; acl=&lt;fld3&gt;; rule=&lt;rule&gt;;" />
+
+<MESSAGE 
+	id1="USER_NOTEXIST:01" 
+	id2="USER_NOTEXIST" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: The user &lt;username&gt; does not exist." />
+
+<MESSAGE 
+	id1="REQUEST:01" 
+	id2="REQUEST" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: { User Admin | User guest | User test | User } (&lt;saddr&gt;) &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="LOGIN_FAIL:01" 
+	id2="LOGIN_FAIL" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: { User Admin | User guest | User test }(&lt;saddr&gt; ) &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="AUTHENTIMEOUT:01" 
+	id2="AUTHENTIMEOUT" 
+	eventcategory="1304000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;terminal&gt; &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="AUTHCMDNONEED:01" 
+	id2="AUTHCMDNONEED"
+	eventcategory="1304000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &apos;User &lt;username&gt; &lt;event_description&gt;&apos; from &lt;saddr&gt; by &lt;terminal&gt;"/>
+
+<MESSAGE 
+	id1="fsm_move:01" 
+	id2="fsm_move"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: -DevIP=&lt;hostip&gt;; &lt;fld2&gt;"/>
+
+<MESSAGE 
+	id1="PARSE_ERR:01" 
+	id2="PARSE_ERR"
+	eventcategory="1805010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;fld2&gt;"/>
+
+<MESSAGE 
+	id1="err_dissconnect:01" 
+	id2="err_dissconnect"
+	eventcategory="1801030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:connection is closed&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: -DevIP=&lt;hostip&gt;; The connection is closed &lt;fld2&gt;"/>
+
+<MESSAGE 
+	id1="ESFP:01" 
+	id2="ESFP"
+	eventcategory="1603010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;fld2&gt;"/>
+
 </DEVICEMESSAGES>
