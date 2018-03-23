@@ -4,9 +4,9 @@
 	displayname="Juniper JUNOS"
 	group="Router">
 <VERSION
-	xml="49"
-	checksum="e3fdff45fa307375edc1c7078fd64130"
-	revision="111"
+	xml="51"
+	checksum="1ef1141b6a10a27a94c22d738ea70862"
+	revision="116"
         device="2.0" />
 
 
@@ -3572,7 +3572,7 @@
 	id2="RT_FLOW_SESSION_CREATE"
 	eventcategory="1801020000"
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Create&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld32)&gt;"
-	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; destination-port=&quot;&lt;dport&gt;&quot; service-name=&quot;&lt;fld5&gt;&quot; nat-source-address=&quot;&lt;stransaddr&gt;&quot; nat-source-port=&quot;&lt;stransport&gt;&quot; nat-destination-address=&quot;&lt;dtransaddr&gt;&quot; nat-destination-port=&quot;&lt;dtransport&gt;&quot; src-nat-rule-name=&quot;&lt;fld10&gt;&quot; dst-nat-rule-name=&quot;&lt;fld11&gt;&quot; protocol-id=&quot;&lt;protocol&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot; session-id-32=&quot;&lt;fld13&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;fld15&gt;&quot; packet-incoming-interface=&quot;&lt;dinterface&gt;&quot;]" />
+	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; {destination-port=&quot;&lt;dport&gt;&quot; connection-tag=&lt;fld20&gt;|destination-port=&quot;&lt;dport&gt;&quot;} service-name=&quot;&lt;fld5&gt;&quot; nat-source-address=&quot;&lt;stransaddr&gt;&quot; nat-source-port=&quot;&lt;stransport&gt;&quot; nat-destination-address=&quot;&lt;dtransaddr&gt;&quot; {nat-destination-port=&quot;&lt;dtransport&gt;&quot; nat-connection-tag=&lt;fld6&gt; src-nat-rule-type=&lt;fld20&gt; |nat-destination-port=&quot;&lt;dtransport&gt;&quot;} src-nat-rule-name=&quot;&lt;fld10&gt;&quot; {dst-nat-rule-type=&lt;fld21&gt; dst-nat-rule-name=&quot;&lt;fld11&gt;&quot;|dst-nat-rule-name=&quot;&lt;fld11&gt;&quot;} protocol-id=&quot;&lt;protocol&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot; session-id-32=&quot;&lt;fld13&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;fld15&gt;&quot; {packet-incoming-interface=&quot;&lt;dinterface&gt;&quot; application=&quot;&lt;fld6&gt;&quot; nested-application=&quot;&lt;fld7&gt;&quot; encrypted=&lt;fld8&gt; |packet-incoming-interface=&quot;&lt;dinterface&gt;&quot;}]" />
 
 <MESSAGE 
 	id1="RT_FLOW_SESSION_CREATE"
@@ -3593,7 +3593,7 @@
 	id2="RT_FLOW_SESSION_DENY"
 	eventcategory="1803010000"
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Deny&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld32)&gt;"
-	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; destination-port=&quot;&lt;dport&gt;&quot; service-name=&quot;&lt;fld5&gt;&quot; protocol-id=&quot;&lt;protocol&gt;&quot; icmp-type=&quot;&lt;obj_type&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot; application=&quot;&lt;fld6&gt;&quot; nested-application=&quot;&lt;fld7&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;fld15&gt;&quot; packet-incoming-interface=&quot;&lt;dinterface&gt;&quot;]" />
+	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; {destination-port=&quot;&lt;dport&gt;&quot; connection-tag=&lt;fld20&gt;|destination-port=&quot;&lt;dport&gt;&quot;} service-name=&quot;&lt;fld5&gt;&quot; protocol-id=&quot;&lt;protocol&gt;&quot; icmp-type=&quot;&lt;obj_type&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot; application=&quot;&lt;fld6&gt;&quot; nested-application=&quot;&lt;fld7&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;fld15&gt;&quot; {packet-incoming-interface=&quot;&lt;dinterface&gt;&quot; encrypted=&lt;fld16&gt; reason=&quot;&lt;result&gt;&quot;|packet-incoming-interface=&quot;&lt;dinterface&gt;&quot;}]" />
 
 <MESSAGE 
 	id1="RT_FLOW_SESSION_DENY"
@@ -3620,8 +3620,8 @@
 	id1="RT_FLOW_SESSION_CLOSE:01"
 	id2="RT_FLOW_SESSION_CLOSE"
 	eventcategory="1801030000"
-	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld32)&gt;"
-	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; reason=&quot;&lt;result&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; destination-port=&quot;&lt;dport&gt;&quot; service-name=&quot;&lt;service&gt;&quot; nat-source-address=&quot;&lt;hostip&gt;&quot; nat-source-port=&quot;&lt;network_port&gt;&quot; nat-destination-address=&quot;&lt;dtransaddr&gt;&quot; nat-destination-port=&quot;&lt;dtransport&gt;&quot; src-nat-rule-name=&quot;&lt;rulename&gt;&quot; dst-nat-rule-name=&quot;&lt;rule_template&gt;&quot; protocol-id=&quot;&lt;protocol&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot; session-id-32=&quot;&lt;sessionid&gt;&quot; packets-from-client=&quot;&lt;packets&gt;&quot; bytes-from-client=&quot;&lt;rbytes&gt;&quot; packets-from-server=&quot;&lt;dclass_counter1&gt;&quot; bytes-from-server=&quot;&lt;sbytes&gt;&quot; elapsed-time=&quot;&lt;duration&gt;&quot;]" />
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Stop&gt;&lt;@dclass_counter1_string:No.of packets from client&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld32)&gt;"
+	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; reason=&quot;&lt;result&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; {destination-port=&quot;&lt;dport&gt;&quot; connection-tag=&lt;fld20&gt;|destination-port=&quot;&lt;dport&gt;&quot;} service-name=&quot;&lt;service&gt;&quot; nat-source-address=&quot;&lt;hostip&gt;&quot; nat-source-port=&quot;&lt;network_port&gt;&quot; nat-destination-address=&quot;&lt;dtransaddr&gt;&quot; {nat-destination-port=&quot;&lt;dtransport&gt;&quot; nat-connection-tag=&lt;fld6&gt; src-nat-rule-type=&lt;fld20&gt; |nat-destination-port=&quot;&lt;dtransport&gt;&quot;} src-nat-rule-name=&quot;&lt;rulename&gt;&quot; {dst-nat-rule-type=&lt;fld7&gt; dst-nat-rule-name=&quot;&lt;rule_template&gt;&quot;|dst-nat-rule-name=&quot;&lt;rule_template&gt;&quot;} protocol-id=&quot;&lt;protocol&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot; session-id-32=&quot;&lt;sessionid&gt;&quot; packets-from-client=&quot;&lt;packets&gt;&quot; bytes-from-client=&quot;&lt;rbytes&gt;&quot; packets-from-server=&quot;&lt;dclass_counter1&gt;&quot; bytes-from-server=&quot;&lt;sbytes&gt;&quot; {elapsed-time=&quot;&lt;duration&gt;&quot; application=&quot;&lt;fld6&gt;&quot; nested-application=&quot;&lt;fld7&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;fld15&gt;&quot; packet-incoming-interface=&quot;&lt;dinterface&gt;&quot; encrypted=&lt;fld16&gt; |elapsed-time=&quot;&lt;duration&gt;&quot;}]" />
 
 <MESSAGE 
 	id1="RT_FLOW_SESSION_CLOSE"
