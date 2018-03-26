@@ -4,8 +4,8 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="67"
-		checksum="359b150e77f48a779d42b48dd66e9df3"
+		xml="69"
+		checksum="a6006c98a0b7223fdba74196b832f0ae"
 		revision="116"
 		device="2.0" />
 	
@@ -525,6 +525,13 @@
 	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
 	content="REFUSED unexpected RCODE resolving &apos;&lt;saddr&gt;.in-addr.arpa/&lt;event_description&gt;/IN&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
 <MESSAGE
+	id1="named:49"
+	id2="named"
+	eventcategory="1901000000"
+	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
+	content="REFUSED unexpected RCODE resolving &apos;&lt;zone&gt;&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
+
+<MESSAGE
 	id1="named:24"
 	id2="named"
 	eventcategory="1605000000"
@@ -605,6 +612,50 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" &lt;fld1&gt; client &lt;saddr&gt;#&lt;sport&gt;: &lt;protocol&gt;: query: &lt;domain&gt; &lt;info&gt; response:&lt;result&gt;  &lt;fld10&gt;" />
+
+<MESSAGE
+	id1="named:47"
+	id2="named"
+	eventcategory="1502000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	content="client &lt;saddr&gt;#&lt;sport&gt;: updating zone '&lt;zone&gt;': update &lt;disposition&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="named:48"
+	id2="named"
+	eventcategory="1901000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	content="client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): query '&lt;zone&gt;' &lt;result&gt;" />
+
+<MESSAGE
+	id1="named:53"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	content="client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): transfer of '&lt;zone&gt;': &lt;info&gt;" />
+
+
+<MESSAGE
+	id1="named:52"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	content="client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): &lt;info&gt;" />
+
+
+<MESSAGE
+	id1="named:50"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	content="&lt;fld1&gt;: &lt;domain&gt; (&lt;saddr&gt;) &lt;info&gt;" />
+
+<MESSAGE
+	id1="named:51"
+	id2="named"
+	eventcategory="1901000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@action:Refused&gt;"
+	content="&lt;fld1&gt;: &lt;fld2&gt;: REFUSED" />
 
 <MESSAGE
 	id1="named:07"
