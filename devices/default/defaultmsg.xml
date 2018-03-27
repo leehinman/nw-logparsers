@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES name="default">
+<VERSION
+	xml="2"
+	checksum="754838dc884ed81d302e540ecc116881"
+	revision="116"
+    device="2.0" />
+
+
+<RULE name="Client Domain" >
+	
+	<LITERAL value="Caller Domain " />
+	<LITERAL value="Client Domain " />
+	<LITERAL value="Target Domain " />
+	<LITERAL value="Target User Domain " />
+	<LITERAL value="Caller Domain:" />
+	<LITERAL value="Client Domain:" />
+	<LITERAL value="Target Domain:" />
+	<LITERAL value="Target User Domain:" />
+	<LITERAL value="Caller Domain=" />
+	<LITERAL value="Client Domain=" />
+	<LITERAL value="Target Domain=" />
+	<LITERAL value="Target User Domain=" />
+	<LITERAL value="Caller Domain-" />
+	<LITERAL value="Client Domain-" />
+	<LITERAL value="Target Domain-" />
+	<LITERAL value="Target User Domain-" />
+	
+	<PATTERN format="Hostname">
+		<CAPTURE index="0" key="domain.src" format="Text" />
+	</PATTERN>
+</RULE>
+
+<RULE name="Destination Domain" >
+	
+	<LITERAL value="ad.domain.dst " />
+	<LITERAL value="destinationDnsDomain " />
+	<LITERAL value="domain.dst " />
+	<LITERAL value="dst_domainname " />
+	<LITERAL value="dstdomain " />
+	<LITERAL value="ad.domain.dst:" />
+	<LITERAL value="destinationDnsDomain:" />
+	<LITERAL value="domain.dst:" />
+	<LITERAL value="dst_domainname:" />
+	<LITERAL value="dstdomain:" />
+	<LITERAL value="ad.domain.dst=" />
+	<LITERAL value="destinationDnsDomain=" />
+	<LITERAL value="domain.dst=" />
+	<LITERAL value="dst_domainname=" />
+	<LITERAL value="dstdomain=" />
+	
+	<PATTERN format="Hostname">	
+		<CAPTURE index="0" key="domain.dst" format="Text" />	
+	</PATTERN>
+</RULE>
+
+<RULE name="Source Domain" >
+	
+	<LITERAL value="ad.domain.src:" />
+	<LITERAL value="src_domainname:" />
+	<LITERAL value="ad.domain.src=" />
+	<LITERAL value="src_domainname=" />
+
+	
+	<PATTERN format="Hostname">
+		<CAPTURE index="0" key="domain.src" format="Text" />
+	</PATTERN>
+</RULE>
+
+<RULE name="Any Domain" >
+	
+	<LITERAL value=" domain " />
+	<LITERAL value=" adom " />
+	<LITERAL value=" domain address " />
+	<LITERAL value=" domain invalid " />
+	<LITERAL value=" domain_name " />
+	<LITERAL value=" domainname " />
+	<LITERAL value=" deviceDnsDomain " />
+	<LITERAL value=" domain:" />
+	<LITERAL value=" adom:" />
+	<LITERAL value=" domain address:" />
+	<LITERAL value=" domain invalid:" />
+	<LITERAL value=" domain_name:" />
+	<LITERAL value=" domainname:" />
+	<LITERAL value=" deviceDnsDomain:" />
+	<LITERAL value=" domain address:" />
+	<LITERAL value=" domain invalid:" />
+	<LITERAL value=" domain name:" />
+	<LITERAL value=" domain ID:" />
+	<LITERAL value=" domain=" />
+	<LITERAL value=" adom=" />
+	<LITERAL value=" domain address=" />
+	<LITERAL value=" domain invalid=" />
+	<LITERAL value=" domain_name=" />
+	<LITERAL value=" domainname=" />
+	<LITERAL value=" deviceDnsDomain=" />
+	<LITERAL value=" domain address=" />
+	<LITERAL value=" domain invalid=" />
+	<LITERAL value=" domain name=" />
+	<LITERAL value=" domain ID=" />
+	<LITERAL value=",domain " />
+	<LITERAL value=",adom " />
+	<LITERAL value=",domain address " />
+	<LITERAL value=",domain invalid " />
+	<LITERAL value=",domain_name " />
+	<LITERAL value=",domainname " />
+	<LITERAL value=",deviceDnsDomain " />
+	<LITERAL value=",domain:" />
+	<LITERAL value=",adom:" />
+	<LITERAL value=",domain address:" />
+	<LITERAL value=",domain invalid:" />
+	<LITERAL value=",domain_name:" />
+	<LITERAL value=",domainname:" />
+	<LITERAL value=",deviceDnsDomain:" />
+	<LITERAL value=",domain address:" />
+	<LITERAL value=",domain invalid:" />
+	<LITERAL value=",domain name:" />
+	<LITERAL value=",domain ID:" />
+	<LITERAL value=",domain=" />
+	<LITERAL value=",adom=" />
+	<LITERAL value=",domain address=" />
+	<LITERAL value=",domain invalid=" />
+	<LITERAL value=",domain_name=" />
+	<LITERAL value=",domainname=" />
+	<LITERAL value=",deviceDnsDomain=" />
+	<LITERAL value=",domain address=" />
+	<LITERAL value=",domain invalid=" />
+	<LITERAL value=",domain name=" />
+	<LITERAL value=",domain ID=" />
+	<LITERAL value="^domain=" />
+	<LITERAL value="^domain_name=" />
+	<LITERAL value="^domainname=" />
+	<LITERAL value="Domain " />
+	<LITERAL value="Domain Name " />
+	<LITERAL value="ADMIN_DOMAIN " />
+	<LITERAL value="ADDomain " />
+	<LITERAL value="AUDIT_DOMAIN " />
+	<LITERAL value="ADMIN_DOMAIN:" />
+	<LITERAL value="Domain-" />
+	<LITERAL value="Domain Name-" />
+	<LITERAL value="Domain:" />
+	<LITERAL value="Domain Name:" />
+	<LITERAL value="AUDIT_DOMAIN:" />
+	<LITERAL value="DNS:" />
+	<LITERAL value="ADDomain:" />
+	<LITERAL value="DDNS server:" />
+	<LITERAL value="Domain set to:" />
+	<LITERAL value="FQDN:" />
+	<LITERAL value="LogonDomain:" />
+	<LITERAL value="Domain=" />
+	<LITERAL value="Domain Name=" />
+	<LITERAL value="ADMIN_DOMAIN=" />
+	<LITERAL value="AUDIT_DOMAIN=" />
+	<LITERAL value="DNS=" />
+	<LITERAL value="ADDomain=" />
+	<LITERAL value="DDNS server=" />
+	<LITERAL value="FQDN=" />
+	<LITERAL value="LogonDomain=" />
+
+		
+	<PATTERN format="Hostname">
+		<CAPTURE index="0" key="domain" format="Text" />
+	</PATTERN>
+</RULE>
+
+
+<RULE name="Client Username" >
+	
+	<LITERAL value=" ruser " />	
+	<LITERAL value=" ruser:" />
+	<LITERAL value=" ruser=" />
+	<LITERAL value=" ruser-" />
+	<LITERAL value=",ruser " />	
+	<LITERAL value=",ruser:" />
+	<LITERAL value=",ruser=" />
+	<LITERAL value=",ruser-" />
+	<LITERAL value=";ruser " />	
+	<LITERAL value=";ruser:" />
+	<LITERAL value=";ruser=" />
+	<LITERAL value=";ruser-" />
+	<LITERAL value="^ruser=" />
+	<LITERAL value="Client User Name " />
+	<LITERAL value="Client User Name:" />
+	<LITERAL value="Client User Name=" />	
+	
+	<PATTERN regex="\s*([\w_.@-]*)">
+		<CAPTURE index="1" key="user.src" format="Text" />
+	</PATTERN>
+</RULE>
+
+<RULE name="Username" >
+		
+	<LITERAL value=" username " />
+	<LITERAL value=" username:" />
+	<LITERAL value=" suser:" />
+	<LITERAL value=" user:" />
+	<LITERAL value=" duser:" />
+	<LITERAL value=" name=" />
+	<LITERAL value=" username=" />
+	<LITERAL value=" suser=" />
+	<LITERAL value=" user=" />
+	<LITERAL value=" duser=" />
+	<LITERAL value=",username " />
+	<LITERAL value=",user " /> 
+	<LITERAL value=",username:" />
+	<LITERAL value=",user:" />
+	<LITERAL value=",username=" />
+	<LITERAL value=",suser=" />
+	<LITERAL value=",user=" />
+	<LITERAL value=",duser=" />
+	<LITERAL value=";username " />
+	<LITERAL value=";username:" />
+	<LITERAL value=";username=" />
+	<LITERAL value="^username=" />
+	<LITERAL value="^user=" />
+	<LITERAL value="UserName " />
+	<LITERAL value="User " /> 	
+	<LITERAL value="AddedUser " />
+	<LITERAL value="DeletedUser " />
+	<LITERAL value="OriginalUserName " />
+	<LITERAL value="OS_User " />
+	<LITERAL value="CN:" />
+	<LITERAL value="Login:" />
+	<LITERAL value="UserName:" />
+	<LITERAL value="User:" />
+	<LITERAL value="New user added:" />
+	<LITERAL value="User has been deleted:" />
+	<LITERAL value="AddedUser:" />
+	<LITERAL value="DeletedUser:" />
+	<LITERAL value="OriginalUserName:" />
+	<LITERAL value="OS_User:" />
+	<LITERAL value="CN=" />
+	<LITERAL value="Login=" />
+	<LITERAL value="Name=" />
+	<LITERAL value="User=" />
+	<LITERAL value="New user added=" />
+	<LITERAL value="User has been deleted=" />
+	<LITERAL value="AddedUser=" />
+	<LITERAL value="DeletedUser=" />
+	<LITERAL value="OriginalUserName=" />
+	<LITERAL value="OS_User=" />
+	<LITERAL value="OSUSERID=" />
+
+	
+	<PATTERN regex="\s*([\w_.@-]*)">
+		<CAPTURE index="1" key="user.dst" format="Text"/>
+	</PATTERN>
+</RULE>
+
+
+
+<RULE name="Destination Port" >
+	
+	
+	<LITERAL value=" destinationPort " />
+	<LITERAL value=" dport " />
+	<LITERAL value=" dst_port " />
+	<LITERAL value=" dstPort " />
+	<LITERAL value=" destinationPort:" />
+	<LITERAL value=" dport:" />
+	<LITERAL value=" dst_port:" />
+	<LITERAL value=" dstPort:" />
+	<LITERAL value=" destinationPort=" />
+	<LITERAL value=" dport=" />
+	<LITERAL value=" dst_port=" />
+	<LITERAL value=" dstPort=" />
+	<LITERAL value=",destinationPort " />
+	<LITERAL value=",dport " />
+	<LITERAL value=",dst_port " />
+	<LITERAL value=",dstPort " />
+	<LITERAL value=",destinationPort:" />
+	<LITERAL value=",dport:" />
+	<LITERAL value=",dst_port:" />
+	<LITERAL value=",dstPort:" />
+	<LITERAL value=",destinationPort=" />
+	<LITERAL value=",dport=" />
+	<LITERAL value=",dst_port=" />
+	<LITERAL value=",dstPort=" />
+	<LITERAL value="^destinationPort=" />
+	<LITERAL value="^dport=" />
+	<LITERAL value="^dst_port=" />
+	<LITERAL value="^dstPort=" />
+	<LITERAL value="Destination Port " />
+	<LITERAL value="Remote Port " />
+	<LITERAL value="Destination Port:" />
+	<LITERAL value="Dst Port:" />
+	<LITERAL value="Remote Port:" />
+	<LITERAL value="Destination Port=" />
+	<LITERAL value="Dst Port=" />
+	<LITERAL value="Remote Port=" />
+
+	
+	<PATTERN format="UInt16">
+		<CAPTURE index="0" key="port.dst" format="UInt16"/>
+	</PATTERN>
+</RULE>
+
+<RULE name="Source Port" >
+	
+	<LITERAL value=" sport " />
+	<LITERAL value=" srcport " />
+	<LITERAL value=" src_port " />
+	<LITERAL value=" src port " />
+	<LITERAL value=" sourceport " />
+	<LITERAL value=" on port:" />
+	<LITERAL value=" sport:" />
+	<LITERAL value=" spt:" />
+	<LITERAL value=" srcport:" />
+	<LITERAL value=" src_port:" />
+	<LITERAL value=" src port:" />
+	<LITERAL value=" sourceport:" />
+	<LITERAL value=" sport=" />
+	<LITERAL value=" spt=" />
+	<LITERAL value=" srcport=" />
+	<LITERAL value=" src_port=" />
+	<LITERAL value=" src port=" />
+	<LITERAL value=" sourceport=" />
+	<LITERAL value=",sport:" />
+	<LITERAL value=",spt:" />
+	<LITERAL value=",srcport:" />
+	<LITERAL value=",src_port:" />
+	<LITERAL value=",src port:" />
+	<LITERAL value=",sourceport:" />
+	<LITERAL value=",sport=" />
+	<LITERAL value=",spt=" />
+	<LITERAL value=",srcport=" />
+	<LITERAL value=",src_port=" />
+	<LITERAL value=",sourceport=" />
+	<LITERAL value=";sourceport:" />
+	<LITERAL value=";sourceport=" />
+	<LITERAL value="Source Port " />
+	<LITERAL value="Source Port:" />
+	<LITERAL value="Source Port=" />
+	<LITERAL value="Source Port-" />
+
+	<PATTERN format="UInt16">
+		<CAPTURE index="0" key="port.src" format="UInt16"/>
+	</PATTERN>
+</RULE>
+
+<RULE name="Any Port" >
+	
+	<LITERAL value=" port " />
+	<LITERAL value=" port:" />
+	<LITERAL value=" port=" />
+	<LITERAL value=" port-" />
+	<LITERAL value=",port " />
+	<LITERAL value=",port:" />
+	<LITERAL value=",port=" />
+	<LITERAL value=";port " />
+	<LITERAL value=";port:" />
+	<LITERAL value=";port=" />
+	<LITERAL value="^port=" />
+	<LITERAL value="Port " />
+	<LITERAL value="Port:" />
+	<LITERAL value="Port=" />
+	<LITERAL value="Port-" />
+	
+	<PATTERN format="UInt16">
+		<CAPTURE index="0" key="port" format="UInt16"/>
+	</PATTERN>
+</RULE>
+
+
+
+<RULE name="Destination MacAddress" >
+
+	<LITERAL value=" dmac " />
+	<LITERAL value=" dstMAC " />
+	<LITERAL value=" eth.dst " />
+	<LITERAL value=" dmac:" />
+	<LITERAL value=" dstMAC:" />
+	<LITERAL value=" eth.dst:" />
+	<LITERAL value=" dmac=" />
+	<LITERAL value=" dstMAC=" />
+	<LITERAL value=" eth.dst=" />
+	<LITERAL value=",dmac:" />
+	<LITERAL value=",dstMAC:" />
+	<LITERAL value=",eth.dst:" />
+	<LITERAL value=",dmac=" />
+	<LITERAL value=",dstMAC=" />
+	<LITERAL value=";dmac=" />
+	<LITERAL value=";dstMAC=" />
+	<LITERAL value="^dmac=" />
+	<LITERAL value="^dstMAC=" />
+	<LITERAL value="EndPointMACAddress " />	
+	<LITERAL value="Destination MAC " />
+	<LITERAL value="MAC dest " />
+	<LITERAL value="EndPointMACAddress:" />	
+	<LITERAL value="Destination MAC:" />
+	<LITERAL value="MAC dest:" />
+	<LITERAL value="EndPointMACAddress=" />
+	<LITERAL value="Destination MAC=" />
+	<LITERAL value="MAC dest=" />
+			
+	<PATTERN format="MAC">	
+		<CAPTURE index="0" key="eth.dst" format="MAC"/>
+	</PATTERN>
+</RULE>
+
+<RULE name="Source MacAddress" >
+
+	<LITERAL value=" smac " />
+	<LITERAL value=" client_mac " />
+	<LITERAL value=" eth addr " />
+	<LITERAL value=" eth.src " />
+	<LITERAL value=" smac:" />
+	<LITERAL value=" client_mac:" />
+	<LITERAL value=" eth addr:" />
+	<LITERAL value=" eth.src:" />
+	<LITERAL value=" smac=" />
+	<LITERAL value=" client_mac=" />
+	<LITERAL value=" eth.src=" />
+	<LITERAL value=",smac:" />
+	<LITERAL value=",client_mac:" />
+	<LITERAL value=",smac=" />
+	<LITERAL value=",client_mac=" />
+	<LITERAL value=";smac:" />
+	<LITERAL value=";client_mac:" />
+	<LITERAL value=";smac=" />
+	<LITERAL value=";client_mac=" />
+	<LITERAL value="^smac=" />
+	<LITERAL value="^client_mac=" />
+	<LITERAL value="Source MAC " />
+	<LITERAL value="The attackers mac address is " />
+	<LITERAL value="Source MAC:" />
+	<LITERAL value="MAC source:" />
+	<LITERAL value="Source MAC=" />
+	<LITERAL value="The attackers mac address is=" />
+	<LITERAL value="MAC source=" />
+		
+	<PATTERN format="MAC">	
+		<CAPTURE index="0" key="eth.src" format="MAC"/>
+	</PATTERN>
+</RULE>
+
+<RULE name="Any MacAddress" >
+
+	<LITERAL value=" mac " />
+	<LITERAL value=" mac:" />
+	<LITERAL value=" mac=" />
+	<LITERAL value=",mac " />
+	<LITERAL value=",mac:" />
+	<LITERAL value=",mac=" />
+	<LITERAL value="^mac=" />
+	<LITERAL value="MAC " />
+	<LITERAL value="MAC address " />
+	<LITERAL value="MAC:" />
+	<LITERAL value="MAC address:" />
+	<LITERAL value="MAC=" />
+	<LITERAL value="MAC address=" />
+	
+	<PATTERN format="MAC">
+		<CAPTURE index="0" key="alias.mac" format="MAC"/>
+	</PATTERN>
+</RULE>
+
+
+
+<RULE name="Source IP or IP:Port" >
+
+	<LITERAL value=" from " />
+	<LITERAL value=" src " />
+	<LITERAL value=" host " />
+	<LITERAL value=" local " />
+	<LITERAL value=" srcip " />
+	<LITERAL value=" client_ip " />
+	<LITERAL value=" from:" />
+	<LITERAL value=" src:" />
+	<LITERAL value=" host:" />
+	<LITERAL value=" local:" />
+	<LITERAL value=" srcip:" />
+	<LITERAL value=" client_ip:" />
+	<LITERAL value=" from="/>
+	<LITERAL value=" src="/>
+	<LITERAL value=" host="/>
+	<LITERAL value=" local="/>
+	<LITERAL value=" srcip="/>
+	<LITERAL value=" client_ip="/>
+	<LITERAL value=",from " />
+	<LITERAL value=",src " />
+	<LITERAL value=",host " />
+	<LITERAL value=",local " />
+	<LITERAL value=",srcip " />
+	<LITERAL value=",client_ip " />
+	<LITERAL value=",from:" />
+	<LITERAL value=",src:" />
+	<LITERAL value=",host:" />
+	<LITERAL value=",local:" />
+	<LITERAL value=",srcip:" />
+	<LITERAL value=",client_ip:" />
+	<LITERAL value=",from="/>
+	<LITERAL value=",src="/>
+	<LITERAL value=",host="/>
+	<LITERAL value=",local="/>
+	<LITERAL value=",srcip="/>
+	<LITERAL value=",client_ip="/>
+	<LITERAL value="^from="/>
+	<LITERAL value="^src="/>
+	<LITERAL value="^host="/>
+	<LITERAL value="^local="/>
+	<LITERAL value="^srcip="/>
+	<LITERAL value="^client_ip="/>
+	<LITERAL value="Source " />
+	<LITERAL value="Source Address " />
+	<LITERAL value="Source IP " />
+	<LITERAL value="Source Network Address " />
+	<LITERAL value="Client Address " />
+	<LITERAL value="Client IP " />
+	<LITERAL value="Client IP Address " />
+	<LITERAL value="Source:" />
+	<LITERAL value="Source Address:" />
+	<LITERAL value="Source IP:" />
+	<LITERAL value="Source Network Address:" />
+	<LITERAL value="ClientIP:" />
+	<LITERAL value="Client:" />
+	<LITERAL value="Client Address:" />
+	<LITERAL value="Client IP:" />
+	<LITERAL value="Client IP Address:" />
+	<LITERAL value="Source="/>
+	<LITERAL value="Source Address="/>
+	<LITERAL value="Source IP="/>
+	<LITERAL value="Source Network Address="/>
+	<LITERAL value="ClientIP="/>
+	<LITERAL value="Client="/>
+	<LITERAL value="Client Address="/>
+	<LITERAL value="Client IP="/>
+	<LITERAL value="Client IP Address="/>
+
+	<PATTERN regex="\s*(\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b):?(\d*)">
+		<CAPTURE index="1" key="ip.src" format="IPv4"/>
+		<CAPTURE index="2" key="port.src" format="UInt16"/>
+	</PATTERN>
+</RULE>
+
+<RULE name="Destination IP or IP:Port" >
+
+	<LITERAL value=" dst " />
+	<LITERAL value=" destination IP " />
+	<LITERAL value=" dstIP " />
+	<LITERAL value=" dstAddr " />
+	<LITERAL value=" dst:" />
+	<LITERAL value=" destination IP:" />
+	<LITERAL value=" dstIP:" />
+	<LITERAL value=" dstAddr:" />
+	<LITERAL value=" dst=" />
+	<LITERAL value=" destination IP=" />
+	<LITERAL value=" dstIP=" />
+	<LITERAL value=" dstAddr=" />
+	<LITERAL value=",destination IP " />
+	<LITERAL value=",dst:" />
+	<LITERAL value=",destination IP:" />
+	<LITERAL value=",dstIP:" />
+	<LITERAL value=",dstAddr:" />
+	<LITERAL value=",dst=" />
+	<LITERAL value=",destination IP=" />
+	<LITERAL value=",dstIP=" />
+	<LITERAL value=",dstAddr=" />
+	<LITERAL value=";destination IP:" />
+	<LITERAL value=";dstIP:" />
+	<LITERAL value=";dstAddr:" />
+	<LITERAL value=";dst=" />
+	<LITERAL value=";destination IP=" />
+	<LITERAL value=";dstIP=" />
+	<LITERAL value=";dstAddr=" />
+	<LITERAL value="^dst=" />
+	<LITERAL value="^destination IP=" />
+	<LITERAL value="^dstIP=" />
+	<LITERAL value="^dstAddr=" />
+	<LITERAL value="DEST " />
+	<LITERAL value="Destination " />
+	<LITERAL value="Destination Address " />
+	<LITERAL value="DST " />
+	<LITERAL value="Dst IP " />
+	<LITERAL value="DST_IP " />
+	<LITERAL value="ServerIP " />
+	<LITERAL value="DEST:" />
+	<LITERAL value="Destination:" />
+	<LITERAL value="Destination Address:" />
+	<LITERAL value="DST:" />
+	<LITERAL value="Dst IP:" />
+	<LITERAL value="DST_IP:" />
+	<LITERAL value="ServerIP:" />
+	<LITERAL value="DEST=" />
+	<LITERAL value="Destination=" />
+	<LITERAL value="Destination Address=" />
+	<LITERAL value="DST=" />
+	<LITERAL value="Dst IP=" />
+	<LITERAL value="DST_IP=" />
+	<LITERAL value="ServerIP=" />
+
+
+		
+	<PATTERN regex="\s*(\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b):?(\d*)">
+		<CAPTURE index="1" key="ip.dst" format="IPv4"/>
+		<CAPTURE index="2" key="port.dst" format="UInt16"/>
+	</PATTERN>
+</RULE>
+
+<RULE name="Any IP or IP:Port" >
+
+	<LITERAL value=" addr " />
+	<LITERAL value=" address " />
+	<LITERAL value=" addr=" />
+	<LITERAL value=" address=" />
+	<LITERAL value=";addr:" />
+	<LITERAL value=";address:" />
+	<LITERAL value=";addr=" />
+	<LITERAL value=";address=" />
+	<LITERAL value=",addr " />
+	<LITERAL value=",address " />
+	<LITERAL value=",addr:" />
+	<LITERAL value=",address:" />
+	<LITERAL value=",addr=" />
+	<LITERAL value=",address=" />
+	<LITERAL value="^addr=" />
+	<LITERAL value="^address=" />
+	<LITERAL value="IP " />
+	<LITERAL value="Address " />
+	<LITERAL value="IP:" />
+	<LITERAL value="Address:" />
+	<LITERAL value="IP=" />
+	<LITERAL value="Address=" />
+	
+	<PATTERN regex="\s*(\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b):?(\d*)">
+		<CAPTURE index="1" key="alias.ip" format="IPv4" />
+		<CAPTURE index="2" key="port" format="UInt16"/>
+	</PATTERN>
+</RULE>
+
+
+
+<RULE name="Source Email Address" >
+
+	<LITERAL value=" from:" />
+	<LITERAL value=" sender:" />
+	<LITERAL value=" from=" />
+	<LITERAL value=" sender=" />
+	<LITERAL value=" from &lt;" />
+	<LITERAL value=" sender &lt;" />
+	<LITERAL value=",from:" />
+	<LITERAL value=",sender:" />
+	<LITERAL value=",from=" />
+	<LITERAL value=",sender=" />
+	<LITERAL value=",from &lt;" />
+	<LITERAL value=",sender &lt;" />
+	<LITERAL value=";from:" />
+	<LITERAL value=";sender:" />
+	<LITERAL value=";from=" />
+	<LITERAL value=";sender=" />
+	<LITERAL value=";from &lt;" />
+	<LITERAL value=";sender &lt;" />
+	<LITERAL value="^from=" />
+	<LITERAL value="^sender=" />
+	<LITERAL value="From:" />
+	<LITERAL value="Sender:" />
+	<LITERAL value="From=" />
+	<LITERAL value="Sender=" />
+	<LITERAL value="From &lt;" />
+	<LITERAL value="Sender &lt;" />
+
+	<PATTERN format="EMail">
+		<CAPTURE index="0" key="email.src" format="Text" />
+	</PATTERN>
+</RULE>
+	
+
+<RULE name="Destination Email Address" >
+
+	<LITERAL value=" to " />
+	<LITERAL value=" to=" />
+	<LITERAL value=" to:" />
+	<LITERAL value=" to &lt;" />
+	<LITERAL value=",to " />
+	<LITERAL value=",to=" />
+	<LITERAL value=",to:" />
+	<LITERAL value=",to &lt;" />
+	<LITERAL value=";to " />
+	<LITERAL value=";to=" />
+	<LITERAL value=";to:" />
+	<LITERAL value=";to &lt;" />
+	<LITERAL value="^to=" />
+	<LITERAL value="To " />
+	<LITERAL value="To=" />
+	<LITERAL value="To:" />
+	<LITERAL value="To &lt;" />
+
+	<PATTERN format="EMail">
+		<CAPTURE index="0" key="email.dst" format="Text" />
+	</PATTERN>
+</RULE>	
+
+
+<RULE name="URL" >
+
+	<LITERAL value=" url " />
+	<LITERAL value=" uri " />
+	<LITERAL value=" url:" />
+	<LITERAL value=" uri:" />
+	<LITERAL value=" url=" />
+	<LITERAL value=" uri=" />
+	<LITERAL value=",url " />
+	<LITERAL value=",uri " />
+	<LITERAL value=",url:" />
+	<LITERAL value=",uri:" />
+	<LITERAL value=",url=" />
+	<LITERAL value=",uri=" />
+	<LITERAL value=";url " />
+	<LITERAL value=";uri " />
+	<LITERAL value=";uri:" />
+	<LITERAL value=";url:" />
+	<LITERAL value=";url=" />
+	<LITERAL value=";uri=" />
+	<LITERAL value="^url=" />
+	<LITERAL value="^uri=" />
+	<LITERAL value="URL " />
+	<LITERAL value="URL:" />
+	<LITERAL value="URL=" />
+	
+	<PATTERN format="URI">
+		<CAPTURE index="0" key="url" format="Text" />
+	</PATTERN>
+</RULE>
+
+</DEVICEMESSAGES>
