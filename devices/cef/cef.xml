@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="115"
+	revision="116"
     device="2.0" />
 	
 
@@ -51,6 +51,12 @@
 	id2="0006"
 	messageid="VENDORMAP(devvendor, product)"
 	content="&lt;event_time_string&gt; &lt;hostname&gt; mwg: CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
+	id1="0008"
+	id2="0008"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0007"
@@ -579,19 +585,21 @@
    
 		<ExtensionKey cefName="authorization.role" metaName="user_role"/>
 		<ExtensionKey cefName="authorization.scope" metaName="cs_authorization.scope"/>
-		<ExtensionKey cefName="correlationId" metaName="cs_correlationId"/>
-		<ExtensionKey cefName="event.description" metaName="cs_description"/>
-		<ExtensionKey cefName="eventDataId" metaName="cs_eventDataId"/>
+		<ExtensionKey cefName="correlationId" metaName="id2"/>
+		<ExtensionKey cefName="event.description" metaName="event_description"/>
+		<ExtensionKey cefName="eventDataId" metaName="id"/>
 		<ExtensionKey cefName="eventName.localizedValue" metaName="event_state"/>
 		<ExtensionKey cefName="level" metaName="severity"/>
-		<ExtensionKey cefName="operationId" metaName="cs_operationId"/>
+		<ExtensionKey cefName="operationId" metaName="operation_id"/>
 		<ExtensionKey cefName="operationName.localizedValue" metaName="action"/>
 		<ExtensionKey cefName="properties.requestbody" metaName="cs_properties.requestbody"/>
 		<ExtensionKey cefName="resourceGroupName.group" metaName="group"/>
 		<ExtensionKey cefName="resourceProviderName.localizedValue" metaName="cs_resourceProviderName.localizedValue"/>
-		<ExtensionKey cefName="status" metaName="event_state">
+		<ExtensionKey cefName="status" metaName="disposition">
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
 		</ExtensionKey>
+		<ExtensionKey cefName="subscriptionId" metaName="id1"/>
+		<ExtensionKey cefName="uid" metaName="user.id"/>
 		
 	
 		<ExtensionKey cefName="id" metaName="operation_id">
@@ -763,6 +771,37 @@
 
 		
 		<ExtensionKey cefName="rulename" metaName="rulename"/>
+		
+		
+		<ExtensionKey cefName="district" metaName="domain"/>
+        <ExtensionKey cefName="error" metaName="result"/>
+		<ExtensionKey cefName="component" metaName="obj_name"/>
+		<ExtensionKey cefName="host" metaName="hostname"/>
+	    <ExtensionKey cefName="error_message" metaName="result"/>
+        <ExtensionKey cefName="authMethodName" metaName="authmethod"/>
+		<ExtensionKey cefName="AuthenticationMethod" metaName="authmethod"/>
+		<ExtensionKey cefName="User" metaName="username"/>
+		<ExtensionKey cefName="timeMillis" metaName="cs_fld"/>
+		<ExtensionKey cefName="cvProduct" metaName="cs_fld"/>
+		<ExtensionKey cefName="authType" metaName="cs_fld"/>
+		<ExtensionKey cefName="proxyConnectionIp" metaName="cs_fld"/>
+		<ExtensionKey cefName="identity" metaName="cs_fld"/>
+		<ExtensionKey cefName="algorithm" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestTimeMillis" metaName="cs_fld"/>
+		<ExtensionKey cefName="cvapi" metaName="cs_fld"/>
+		<ExtensionKey cefName="CachedAuthentication" metaName="cs_fld"/>
+		<ExtensionKey cefName="masked" metaName="cs_fld"/>
+		<ExtensionKey cefName="fullIdentity" metaName="cs_fld"/>
+		<ExtensionKey cefName="format" metaName="cs_fld"/>
+		<ExtensionKey cefName="cvtoolkit" metaName="cs_fld"/>
+		<ExtensionKey cefName="authTimeMillis" metaName="cs_fld"/>
+		<ExtensionKey cefName="hsmEnabled" metaName="cs_fld"/>
+		<ExtensionKey cefName="proxyType" metaName="cs_fld"/>
+		<ExtensionKey cefName="returnEncryptedKeyOption" metaName="cs_fld"/>
+		<ExtensionKey cefName="rollover" metaName="cs_fld"/>
+		<ExtensionKey cefName="isUserPassSet" metaName="cs_fld"/>
+		<ExtensionKey cefName="authTokens" metaName="cs_fld"/>
+		<ExtensionKey cefName="length" metaName="dclass_counter1"/>
 
 	
 		
