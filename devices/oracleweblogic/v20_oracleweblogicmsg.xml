@@ -32,6 +32,16 @@
 	id1="0004" 
 	id2="0004"  
 	content="%OracleWebLogicAR-4: #### Audit Record Begin &lt;&lt;&lt;hfld1&gt; &lt;hfld2&gt;, &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt;&gt;  &lt;&lt;Severity =&lt;hfld6&gt;&gt;  &lt;&lt;&lt;&lt;&lt;&lt;Event Type = &lt;messageid&gt; &lt;hfld7&gt;&gt; &lt;!payload:hfld1&gt;" /> 
+<HEADER 
+	id1="0007" 
+	id2="0007"  
+	content="%OracleWebLogic-&lt;hfld6&gt;: &lt;&lt;&lt;hfld1&gt; &lt;hfld2&gt;, &lt;hfld3&gt;, &lt;hfld4&gt;, &lt;hfld5&gt; &lt;hfld8&gt; &lt;htimezone&gt;&gt; &lt;&lt;&lt;hseverity&gt;&gt; &lt;&lt;&lt;hevent_source&gt;&gt; &lt;&lt;&lt;hos&gt;&gt; &lt;&lt;&lt;hhostname&gt;&gt; &lt;&lt;[&lt;hevent_state&gt;] &lt;haction&gt;&gt; &lt;&lt;&lt;&lt;&lt;happlication&gt;&gt;&gt; &lt;&lt;&gt; &lt;&lt;&lt;hinfo&gt;&gt; &lt;&lt;&lt;hoperation_id&gt;&gt; &lt;&lt;&lt;fld22&gt;&gt; &lt;&lt;&lt;messageid&gt;&gt; &lt;!payload:hseverity&gt;" />
+
+<HEADER 
+	id1="0006" 
+	id2="0006"  
+	content="%OracleWebLogic-&lt;hfld6&gt;: &lt;&lt;&lt;hfld1&gt; &lt;hfld2&gt;, &lt;hfld3&gt;, &lt;hfld4&gt;, &lt;hfld5&gt; &lt;hfld8&gt; &lt;htimezone&gt;&gt; &lt;&lt;&lt;hseverity&gt;&gt; &lt;&lt;&lt;hevent_source&gt;&gt; &lt;&lt;&lt;hos&gt;&gt; &lt;&lt;&lt;hhostname&gt;&gt; &lt;&lt;&lt;haction&gt;&gt; &lt;&lt;&lt;happlication&gt;&gt; &lt;&lt;&gt; &lt;&lt;&lt;hinfo&gt;&gt; &lt;&lt;&lt;hoperation_id&gt;&gt; &lt;&lt;&lt;fld22&gt;&gt; &lt;&lt;&lt;messageid&gt;&gt; &lt;!payload:hseverity&gt;" /> 
+
 <MESSAGE 
 	id1="BEA-090082" 
 	id2="BEA-090082" 
@@ -1327,6 +1337,20 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N:%U:%O %P',hfld1,hfld2,hfld3,hfld4)&gt;"
 	content="&lt;severity&gt;&gt; &lt;&lt;&lt;event_source&gt;&gt; &lt;&lt;&lt;os&gt;&gt; &lt;&lt;&lt;hostname&gt;&gt; &lt;&lt;&lt;action&gt;&gt; &lt;&lt;&lt;application&gt;&gt; &lt;&lt;&gt; &lt;&lt;&gt; &lt;&lt;&lt;operation_id&gt;&gt; &lt;&lt;&lt;fld21&gt;&gt; &lt;&lt;&lt;event_description&gt;  " />
     
+<MESSAGE
+	 id1="BEA-149535"
+	 id2="BEA-149535"
+	 eventcategory="1605000000" 
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %Z %P',hfld1,hfld2,hfld3,hfld4,hfld8)&gt;&lt;@timezone:*HDR(htimezone)&gt;"
+	 content="&lt;severity&gt;&gt; &lt;&lt;&lt;event_source&gt;&gt; &lt;&lt;&lt;os&gt;&gt; &lt;&lt;&lt;hostname&gt;&gt; &lt;&lt;[&lt;event_state&gt;] &lt;action&gt;&gt; {&lt;&lt;&lt;&lt;&lt;application&gt;&gt;&gt;|&lt;&lt;&lt;application&gt;&gt;} &lt;&lt;&gt; &lt;&lt;&lt;info&gt;&gt; &lt;&lt;&lt;operation_id&gt;&gt; &lt;&lt;&lt;fld99&gt;&gt; &lt;&lt;&lt;fld23&gt;&gt; &lt;&lt;&lt;event_description&gt;&gt;"/>
+
+<MESSAGE
+	 id1="BEA-149504"
+	 id2="BEA-149504"
+	 eventcategory="1603000000" 
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %Z %P',hfld1,hfld2,hfld3,hfld4,hfld8)&gt;&lt;@timezone:*HDR(htimezone)&gt;"
+	 content="&lt;severity&gt;&gt; &lt;&lt;&lt;event_source&gt;&gt; &lt;&lt;&lt;os&gt;&gt; &lt;&lt;&lt;hostname&gt;&gt; &lt;&lt;[&lt;event_state&gt;] &lt;action&gt;&gt; &lt;&lt;&lt;application&gt;&gt; &lt;&lt;&gt; &lt;&lt;&lt;info&gt;&gt; &lt;&lt;&lt;operation_id&gt;&gt; &lt;&lt;&lt;fld99&gt;&gt; &lt;&lt;&lt;fld22&gt;&gt; &lt;&lt;&lt;event_description&gt;&gt;"/>
+
 
 
 <MESSAGE 
