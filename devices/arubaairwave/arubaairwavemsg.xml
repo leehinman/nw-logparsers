@@ -4,9 +4,9 @@
 	displayname="Aruba Networks AirWave"
 	group="Configuration Management">
 <VERSION
-	xml="5"
-	checksum="657b53046eaab77faf726e9b73e5ed2d"
-	revision="103"
+	xml="10"
+	checksum="389c6213bfc3a7ba0ed97a993ba92d52"
+	revision="116"
 	device="2.0" />
 	
 	
@@ -84,7 +84,7 @@
 	id2="Trigger" 
 	eventcategory="1502030000" 
 	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="Trigger &quot;&lt;trigger_desc&gt;&quot; added &lt;event_user&gt; &lt;event_type&gt;" />
+	content="Trigger &quot;&lt;trigger_desc&gt;&quot; { added &lt;event_user&gt; &lt;event_type&gt; | modified &lt;event_user&gt; &lt;event_type&gt; }" />
 <MESSAGE 
 	id1="Configuration_Mismatch" 
 	id2="Configuration_Mismatch" 
@@ -102,7 +102,7 @@
 	id2="Restarting_service" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="Restarting service { Client Monitor Worker | Performance Monitor } &lt;event_user&gt; &lt;event_type&gt;" />
+	content="Restarting service { Client Monitor Worker | Performance Monitor | Rest API Server } &lt;event_user&gt; &lt;event_type&gt;" />
 <MESSAGE 
 	id1="Updated" 
 	id2="Updated" 
@@ -180,7 +180,14 @@
 	id2="Discovered_System" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld21&gt; LWAPP &lt;fld22&gt; Discovered System Device ID: &lt;id&gt; &lt;fld15&gt;" />
+	content="&lt;fld21&gt; { LWAPP | IOS } &lt;fld22&gt; Discovered System Device ID: &lt;id&gt; &lt;fld15&gt;" />
+<MESSAGE 
+	id1="Discovered_System:01" 
+	id2="Discovered_System" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Discovered System Device ID: &lt;id&gt; &lt;fld15&gt;" />
+
 <MESSAGE 
 	id1="No_data" 
 	id2="No_data" 
@@ -219,17 +226,66 @@
 	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content=" Device IDS Events: Device:&lt;device&gt;: Count >= &lt;fld3&gt; for &lt;fld4&gt; minutes (Warning)	System	 &lt;event_type&gt;" />
 <MESSAGE
+	id1="Device:03"
+	id2="Device"
+	eventcategory="1609000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" Device Down: Device:&lt;device&gt; { - &lt;fld3&gt;: Device Type | : Device Type } is &lt;fld4&gt; and Minutes Down Threshold >= &lt;fld5&gt; minutes (Warning) System &lt;event_type&gt;" />
+
+<MESSAGE
+	id1="Device:04"
+	id2="Device"
+	eventcategory="1609000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" Device Up: Device:&lt;device&gt;: All device types (Normal) System &lt;event_type&gt;" />
+
+<MESSAGE
 	id1="Aruba:01"
 	id2="Aruba"
 	eventcategory="1701000000"
 	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" Configuration verification { : &lt;fld10&gt; | &lt;fld10&gt; configuration is good &lt;space&gt; } System	Device	ID: &lt;id&gt; Top &lt;fld5&gt; " />
+	content="{&lt;fld1&gt; Configuration|&lt;fld15&gt; &lt;fld6&gt; &lt;fld7&gt; Configuration|Configuration} verification { : &lt;fld10&gt; | &lt;fld10&gt; configuration is good &lt;space&gt; } {System	Device	ID: | System Device ID: } &lt;id&gt; Top &lt;fld5&gt; " />
 <MESSAGE
 	id1="Aruba:02"
 	id2="Aruba"
 	eventcategory="1701000000"
 	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" Status changed to &apos;&lt;event_state&gt;&apos;&lt;space&gt; System	Device	ID: &lt;id&gt;  Top &lt;fld4&gt; " />
+	content="{&lt;fld1&gt; Status|&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; Status|Status} changed to &apos;&lt;event_state&gt;&apos;&lt;space&gt;{ System	Device	ID: &lt;id&gt;| System Device ID: &lt;id&gt;}  Top &lt;fld4&gt; " />
+<MESSAGE
+	id1="Aruba:03"
+	id2="Aruba"
+	eventcategory="1701000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="{Aruba &lt;fldq5&gt; &lt;fld25&gt; | &lt;fld5&gt; } Updated upstream device to { &lt;fld2&gt;, &lt;fld1&gt; | &lt;fld2&gt; } System Device ID:&lt;id&gt; Top &lt;fld4&gt;"/>
+
+<MESSAGE
+	id1="Aruba:04"
+	id2="Aruba"
+	eventcategory="1701000000"
+	functions="&lt;@ec_subject:Configuration&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="{ &lt;fld15&gt; &lt;fld6&gt; &lt;fld7&gt; | &lt;fld1&gt; } Configuration status changed to &apos;&lt;event_state&gt;&apos; System Device ID: &lt;id&gt; Top &lt;fld5&gt;" />
+
+<MESSAGE
+	id1="Aruba:05"
+	id2="Aruba"
+	eventcategory="1701000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld1&gt; { Device has rebooted: Device uptime value changed &lt;fld2&gt; | Up | Down | Un-setting upstream device } System Device ID: &lt;id&gt; Top &lt;fld5&gt;" />
+
+<MESSAGE
+	id1="Aruba:06"
+	id2="Aruba"
+	eventcategory="1603000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@a:Error: pattern match timed-out&gt;&lt;@event_description:*STRCAT(network_service,a)&gt;"
+	content="&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;network_service&gt; Error: pattern match timed-out System Device ID:&lt;id&gt; Top &lt;fld4&gt;"/>
+
+<MESSAGE
+	id1="Aruba:07"
+	id2="Aruba"
+	eventcategory="1401030000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Backup Operation Failed, Failed to establish connection to device.&gt;"
+	content="&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; Backup Operation Failed, Failed to establish connection to device.Device is down or &lt;network_service&gt; credentials are incorrect System Device ID:&lt;id&gt; Top &lt;fld4&gt;"/>
+
 <MESSAGE
 	id1="Configuration_verification:01"
 	id2="Configuration_verification"
