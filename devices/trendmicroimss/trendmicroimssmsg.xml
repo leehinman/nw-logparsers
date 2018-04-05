@@ -4,9 +4,9 @@
 	displayname="Trend Micro IMSS"
 	group="Application Firewall">
 <VERSION
-	xml="9"
-	checksum="404be9805502627f63be007027920875"
-	revision="115"
+	xml="10"
+	checksum="2091cc99306935a76b6dcb377f98c977"
+	revision="116"
 	device="2.0" />
 
  
@@ -350,6 +350,14 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Accept connection from client&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;	[&lt;fld4&gt;] &lt;severity&gt;: Accept connection from client [&lt;saddr&gt;]." />
 
+<MESSAGE  
+	id1="imss:02" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; &lt;to&gt; &lt;saddr&gt; &lt;subject&gt; #null# &lt;fld1&gt;" />
+
+	
 
 <MESSAGE  
 	id1="imss" 
