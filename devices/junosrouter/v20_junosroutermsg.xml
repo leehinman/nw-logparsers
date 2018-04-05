@@ -4,8 +4,8 @@
 	displayname="Juniper JUNOS"
 	group="Router">
 <VERSION
-	xml="51"
-	checksum="1ef1141b6a10a27a94c22d738ea70862"
+	xml="52"
+	checksum="970024f78c4432de8edf3eb7bbeddcbe"
 	revision="116"
         device="2.0" />
 
@@ -1025,6 +1025,13 @@
 	eventcategory="1801020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld32)&gt;"
 	content=" &lt;event_type&gt; [junos@&lt;obj_name&gt; timestamp=&quot;&lt;result&gt;&quot; message-type=&quot;&lt;info&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; destination-port=&quot;&lt;dport&gt;&quot; protocol-name=&quot;&lt;protocol&gt;&quot; application-name=&quot;&lt;application&gt;&quot; rule-set-name=&quot;&lt;rule_group&gt;&quot; rule-name=&quot;&lt;rulename&gt;&quot; action=&quot;&lt;action&gt;&quot; argument=&quot;&lt;fld2&gt;&quot; argument1=&quot;&lt;fld3&gt;&quot;]" />
+
+<MESSAGE 
+	id1="APPTRACK_SESSION_CREATE"
+	id2="APPTRACK_SESSION_CREATE"
+	eventcategory="1801020000"
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Create&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@result:AppTrack session created&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	 content="&lt;event_type&gt;: AppTrack session created &lt;saddr&gt;/&lt;sport&gt;->&lt;daddr&gt;/&lt;dport&gt; &lt;service&gt; &lt;protocol&gt; &lt;fld11&gt; &lt;hostip&gt;/&lt;network_port&gt;->&lt;dtransaddr&gt;/&lt;dtransport&gt; &lt;rulename&gt; &lt;rule_template&gt; &lt;fld12&gt; &lt;policyname&gt; &lt;src_zone&gt; &lt;dst_zone&gt; &lt;sessionid&gt; &lt;username&gt; &lt;fld10&gt;"/>
 
 <MESSAGE 
 	id1="APPTRACK_SESSION_CLOSE"
@@ -3585,8 +3592,8 @@
 	id1="RT_FLOW_SESSION_CREATE:01"
 	id2="RT_FLOW_SESSION_CREATE"
 	eventcategory="1801020000"
-	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Create&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session created&gt;"
-	content=" {&lt;process&gt;: &lt;event_type&gt;: session created | &lt;event_type&gt;: session created} &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt; &lt;fld20&gt; &lt;hostip&gt;/&lt;network_port&gt;-&gt;&lt;dtransaddr&gt;/&lt;dtransport&gt; &lt;info&gt;" />
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Create&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session created&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	content=" {&lt;process&gt;: &lt;event_type&gt;: session created | &lt;event_type&gt;: session created} &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;daddr&gt;/&lt;dport&gt; &lt;fld20&gt; &lt;hostip&gt;/&lt;network_port&gt;-&gt;&lt;dtransaddr&gt;/&lt;dtransport&gt; { &lt;rulename&gt; &lt;rule_template&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;policyname&gt; &lt;src_zone&gt; &lt;dst_zone&gt; &lt;sessionid&gt; &lt;username&gt;(&lt;fld10&gt;) &lt;interface&gt; &lt;protocol&gt; &lt;fld15&gt; UNKNOWN UNKNOWN | &lt;rulename&gt; &lt;rule_template&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;policyname&gt; &lt;src_zone&gt; &lt;dst_zone&gt; &lt;sessionid&gt; &lt;username&gt;(&lt;fld10&gt;) &lt;interface&gt; &lt;fld15&gt; | &lt;info&gt; }" />
 
 <MESSAGE 
 	id1="RT_FLOW_SESSION_DENY:02"
