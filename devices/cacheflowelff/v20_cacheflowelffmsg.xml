@@ -4,9 +4,9 @@
 	displayname="Blue Coat ELFF"
 	group="Web Logs">
 <VERSION
-	xml="92"
-	checksum="d39157add0515390513f16f456ca1362"
-	revision="112"
+	xml="94"
+	checksum="318bd275fbcf2ccdf5ee5da38b4e299a"
+	revision="117"
     device="2.0" />
 <TAGVALMAP 
 		delimiter=", &quot;" />
@@ -585,6 +585,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Admin logged in. &lt;space&gt; User.Cred_name: &lt;username&gt;(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="550000" 
 	id2="550000" 
@@ -991,10 +992,9 @@
 	id1="E0009" 
 	id2="E0009" 
 	eventcategory="1605020000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Last Remote filename&gt;"
-	content="Access log (&lt;event_log&gt;): Last remote filename: &lt;filename&gt; size: &lt;filename_size&gt;(&lt;fld81&gt;) &lt;event_type&gt; &lt;fld80&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Last Remote filename&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="Access { log | Log } (&lt;event_log&gt;): Last remote filename: &lt;filename&gt; size: &lt;filename_size&gt; bytes(&lt;fld81&gt;) &lt;event_type&gt; &lt;fld80&gt;" />
 
-	
 <MESSAGE  
 	id1="E0009:01" 
 	id2="E0009" 
@@ -2529,6 +2529,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Dynamic categorization error: unexpected response code &lt;resultcode&gt; from service(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
 <MESSAGE  
+	id1="500000:01" 
+	id2="500000" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="Dynamic categorization error: Entity not currently in use.(&lt;fld1&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt; " />
+
+<MESSAGE  
 	id1="E000A:10" 
 	id2="E000A" 
 	eventcategory="1603000000" 
@@ -2648,6 +2655,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="ERROR &lt;result&gt;: &lt;fld31&gt; from &lt;saddr&gt; and as user &lt;username&gt; in realm  &lt;group_object&gt; going to &lt;url&gt; &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+<MESSAGE  
+	id1="3B0002:02" 
+	id2="3B0002" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="Reinitialized default container.(&lt;fld1&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
 <MESSAGE  
 	id1="250017:01" 
 	id2="250017" 
