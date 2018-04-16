@@ -56,7 +56,7 @@
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0007"
@@ -117,7 +117,7 @@
 	id1="azureaudit" 
 	id2="azureaudit" 
 	eventcategory="1612000000" 
-	functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
+	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 <MESSAGE 
 	id1="msoffice365" 
@@ -173,6 +173,26 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
+ <MESSAGE 
+	id1="vmwareappdefense" 
+	id2="vmwareappdefense" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%X',param_recorded_time)&gt;&lt;@dclass_counter1_string:Alarm Count&gt;"
+	content="&lt;param_event_time&gt;&lt;param_recorded_time&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
+	id1="dropbox" 
+	id2="dropbox" 
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+<MESSAGE 
+	id1="amazonguardduty" 
+	id2="amazonguardduty" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_endtime)&gt;&lt;@dclass_counter1_string:Alert Count&gt;"
+	content="&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -203,6 +223,9 @@
 	<Vendor2Device vendor="Imperva Inc." product="SecureSphere" device="impervawaf" group="Application Firewall"/>
 	<Vendor2Device vendor="IBM" product="Guardium" device="guardium" group="Firewall"/>
 	<Vendor2Device vendor="Microsoft" product="Azure NSG" device="msazurensg" group="Cloud"/>
+    <Vendor2Device vendor="VMware" product="App Defense" device="vmwareappdefense" group="Cloud"/>
+	<Vendor2Device vendor="Dropbox" product="Dropbox Business" device="dropbox" group="Cloud"/>
+	<Vendor2Device vendor="Amazon" product="GuardDuty" device="amazonguardduty" group="Cloud"/>
 </VendorProducts>
 
 
@@ -805,6 +828,22 @@
 		<ExtensionKey cefName="authTokens" metaName="cs_fld"/>
 		<ExtensionKey cefName="length" metaName="dclass_counter1"/>
 
+		
+		<ExtensionKey cefName="origin.geo_location.city" metaName="location_city"/>
+		<ExtensionKey cefName="origin.geo_location.region" metaName="location_state"/>
+		<ExtensionKey cefName="origin.geo_location.ip_address" metaName="saddr"/>
+		<ExtensionKey cefName="origin.geo_location.country" metaName="location_country"/>
+		<ExtensionKey cefName="timestamp" metaName="param_event_time"/>
+		<ExtensionKey cefName="actor.user.display_name" metaName="username"/>
+		<ExtensionKey cefName="actor.user.account_id" metaName="service_account"/>
+		<ExtensionKey cefName="actor.user.email" metaName="user_address"/>
+		<ExtensionKey cefName="details.user_agent" metaName="user_agent"/>
+		<ExtensionKey cefName="actor.app.display_name" metaName="application"/>
+		<ExtensionKey cefName="origin.access_method.end_user.session_id" metaName="sessionid"/>
+		<ExtensionKey cefName="actor.admin.display_name" metaName="username"/>
+		<ExtensionKey cefName="actor.admin.account_id" metaName="service_account"/>
+		<ExtensionKey cefName="actor.admin.email" metaName="user_address"/>
+
 	
 		
 		<ExtensionKey cefName="cs1" metaName="cs_fld" >
@@ -904,5 +943,70 @@
 			<device2meta device="akamaikona" metaName="policy_id"/>		
 		</ExtensionKey>
 		<ExtensionKey cefName="flexString2Label" metaName="cs_fld"/>		
+        
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.peHeaderMetadata.description" metaName="event_description"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.peHeaderMetadata.productName" metaName="product"/>
+		<ExtensionKey cefName="violationDetails.ipProtocol" metaName="protocol"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.certificate.certificateexinfo.serialNumber" metaName="cert.serial"/>
+		<ExtensionKey cefName="violatingProcess.cliArguments" metaName="param"/>
+		<ExtensionKey cefName="severity" metaName="severity"/>
+		<ExtensionKey cefName="violatingVirtualMachine.name" metaName="service"/>
+		<ExtensionKey cefName="violationDetails.processHash" metaName="checksum"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.processFileInfo.fileSizeBytes" metaName="filename_size"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.threat" metaName="threat_val"/>
+		<ExtensionKey cefName="violationDetails.remotePort" metaName="dport"/>
+		<ExtensionKey cefName="violatingVirtualMachine.hostName" metaName="hostname"/>
+		<ExtensionKey cefName="createdAt" metaName="param_recorded_time"/>
+		<ExtensionKey cefName="violatingVirtualMachine.osType" metaName="os"/>
+		<ExtensionKey cefName="count" metaName="dclass_counter1"/>
+		<ExtensionKey cefName="violatingProcess.fullPathName" metaName="filename"/>
+		<ExtensionKey cefName="lastReceivedAt" metaName="param_event_time"/>
+		<ExtensionKey cefName="id" metaName="id"/>
+		<ExtensionKey cefName="violationDetails.remoteAddress" metaName="daddr"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.peHeaderMetadata.companyName" metaName="user_org"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.peHeaderMetadata.productVersion" metaName="version"/>
+		<ExtensionKey cefName="violationDetails.localAddress" metaName="saddr"/>
+		<ExtensionKey cefName="violationDetails.alert" metaName="alert"/>
+		<ExtensionKey cefName="ruleViolated" metaName="rulename"/>
+		<ExtensionKey cefName="violatingVirtualMachine.ipAddress" metaName="hostip"/>
+		<ExtensionKey cefName="violatingVirtualMachine.macAddress" metaName="macaddr"/>
+		<ExtensionKey cefName="status" metaName="event_state"/> 
+		<ExtensionKey cefName="violationDetails.processPath" metaName="process"/>
+		<ExtensionKey cefName="processPath" metaName="process"/>
+		<ExtensionKey cefName="remediation.id" metaName="id1"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.certificate.commonName" metaName="cert_subject"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.certificate.certificateexinfo.publisher" metaName="cert_ca"/>
+		<ExtensionKey cefName="violatingProcess.processReputationProfile.certificate.certificateexinfo.issuerThumbprint" metaName="cert_checksum"/>
+		
+		
+		<ExtensionKey cefName="availabilityZone" metaName="zone"/>
+		<ExtensionKey cefName="instanceId" metaName="instance"/>
+		<ExtensionKey cefName="groupId" metaName="groupid"/>
+		<ExtensionKey cefName="groupName" metaName="group"/>
+		<ExtensionKey cefName="instanceState" metaName="event_state"/>
+		<ExtensionKey cefName="userName" metaName="username"/>
+		<ExtensionKey cefName="createdAt" metaName="param_starttime"/>
+		<ExtensionKey cefName="protocol" metaName="protocol"/>
+		<ExtensionKey cefName="connectionDirection" metaName="direction"/>
+		<ExtensionKey cefName="actionType" metaName="action"/>
+		<ExtensionKey cefName="additionalInfo" metaName="info"/>
+		<ExtensionKey cefName="count" metaName="dclass_counter1"/>
+		<ExtensionKey cefName="updatedAt" metaName="param_endtime"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemotePortDetails.Port" metaName="dport"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.LocalPortDetails.Port" metaName="sport"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.Country.CountryName" metaName="location_country"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.City.CityName" metaName="location_city"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.GeoLocation.Lat" metaName="latdec_dst"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.GeoLocation.Lon" metaName="longdec_src"/>
+		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.Country.CountryName" metaName="location_country"/>
+		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.City.CityName" metaName="location_city"/>
+		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.GeoLocation.Lat" metaName="latdec_dst"/>
+		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.GeoLocation.Lon" metaName="longdec_src"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.IpAddressV4" metaName="daddr"/>
+		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.IpAddressV4" metaName="daddr"/>
+		<ExtensionKey cefName="serviceName" metaName="service"/>
+		<ExtensionKey cefName="resourceType" metaName="resource"/>
+		<ExtensionKey cefName="PrivateIpAddress" metaName="saddr"/>
+		<ExtensionKey cefName="accountId" metaName="id1"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
