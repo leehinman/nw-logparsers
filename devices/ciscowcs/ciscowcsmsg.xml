@@ -4,9 +4,9 @@
 	displayname="Cisco WCS"
 	group="Configuration Management">
 <VERSION
-		xml="34"
-		checksum="0581035efde6976a14724d00cfdf5d73"
-		revision="112"
+		xml="36"
+		checksum="8fb0f10f40e1846b3e0d5e5192f87e72"
+		revision="117"
 		device="2.0"/>
 
 <HEADER
@@ -366,6 +366,13 @@
 	functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;id&gt;|&lt;hostip&gt;|Security-risk Interferer &apos;&lt;fld1&gt;&apos; {  is no longer detected by &apos;&lt;fld11&gt;&apos;. | is no longer detected. }" />
 <MESSAGE
+	id1="Interferer:02"
+	id2="Interferer"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_type&gt;|&lt;fld1&gt;|&lt;info&gt;" />
+
+<MESSAGE
 	id1="AP:01"
 	id2="AP"
 	eventcategory="1605000000"
@@ -434,6 +441,13 @@
 	eventcategory="1607000000"
 	functions="&lt;@ec_activity:Detect&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;id&gt;|&lt;hostip&gt;|AP Impersonation of MAC &apos;&lt;dmacaddr&gt;&apos; using source MAC &apos;&lt;smacaddr&gt;&apos; is detected by authenticated AP &apos;&lt;access_point&gt;&apos; on &apos;&lt;interface&gt;&apos; radio and Slot ID &lt;fld11&gt;." />
+
+<MESSAGE
+	id1="AP:11"
+	id2="AP"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:AP disassociated from controller&gt;"
+	content="AP disassociated from controller|&lt;fld1&gt;|Access Point &apos;&lt;access_point&gt;&apos; associated to controller &apos;&lt;saddr&gt;&apos;. Reason for association &apos;&lt;result&gt;&apos;" />
 
 <MESSAGE
 	id1="Signature"
@@ -717,6 +731,20 @@
 	content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID &apos;&lt;ssid&gt;&apos; and channel number &apos;&lt;wifi_channel&gt;&apos; is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos; and SNR &apos;&lt;dclass_ratio1&gt;&apos;. - Device Name: &lt;device&gt; - Reporting Address: &lt;saddr&gt;" />
 
 <MESSAGE
+	id1="Unclassified:02"
+	id2="Unclassified"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|{Rogue AP|Adhoc Rogue} '&lt;smacaddr&gt;' with SSID '&lt;ssid&gt;' is detected by AP &apos;&lt;access_point&gt;&apos; Radio type &apos;&lt;protocol&gt;&apos; with RSSI &apos;&lt;data&gt;&apos;"/>
+
+<MESSAGE
+	id1="Unclassified:03"
+	id2="Unclassified"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;|&lt;fld1&gt;|{Rogue AP|Adhoc Rogue} &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network. " />
+
+<MESSAGE
 	id1="Friendly:01"
 	id2="Friendly"
 	eventcategory="1605000000"
@@ -749,6 +777,12 @@
 	eventcategory="1301000000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;"
 	content="User authentication failure|&lt;fld1&gt;|&apos;Network User&apos; &apos;&lt;username&gt;&apos; failed authentication on Controller &apos;&lt;daddr&gt;&apos;." />
+<MESSAGE
+	id1="User:02"
+	id2="User"
+	eventcategory="1301000000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@id:Network User&gt;"
+	content="User authentication failure|&lt;fld1&gt;|&lt;fld2&gt;" />
 
 <MESSAGE
 	 id1="Wired"
@@ -779,6 +813,13 @@
 	 content="&lt;event_description&gt;|&lt;fld1&gt;|Authorization succeeded for client (&lt;saddr&gt;) on {Interface&lt;interface&gt;AuditSessionID&lt;sessionid&gt;|Interface&lt;interface&gt;}"/>
 
 <MESSAGE
+	 id1="Wired:04"
+	 id2="Wired"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	 content="&lt;event_description&gt;|&lt;fld1&gt;|Critical VLAN &lt;vlan&gt; is assigned to Client &apos;&lt;smacaddr&gt;&apos; on Interface  {&gt;&gt; &lt;interface&gt; &lt;&lt;&lt;&lt;|&lt;interface&gt;}."/>
+
+<MESSAGE
 	 id1="Malicious"
 	 id2="Malicious"
 	 eventcategory="1605000000"
@@ -793,10 +834,31 @@
 	 content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; with SSID '&lt;ssid&gt;' is {reported by controller|detected by AP} '&lt;access_point&gt;' Radio type '&lt;protocol&gt;' with RSSI '&lt;data&gt;'."/>
 
 <MESSAGE
+	id1="Malicious:02"
+	id2="Malicious"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;|&lt;fld1&gt;|Rogue AP &apos;&lt;smacaddr&gt;&apos; is no longer detected on the network. " />
+
+<MESSAGE
 	 id1="POE"
 	 id2="POE"
 	 eventcategory="1601000000"
 	 functions="&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
 	 content="POE status|&lt;fld1&gt;|Access point &apos;&lt;access_point&gt;&apos; associated with controller&lt;fld2&gt;. Failure reason: &apos;&lt;result&gt;&apos;."/>
+
+<MESSAGE
+	id1="Appliance"
+	id2="Appliance"
+	eventcategory="1601010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;||Component: &lt;event_source&gt;, Server: &lt;fld1&gt;, Type: &lt;fld2&gt;, Message: &lt;info&gt;" />
+
+<MESSAGE
+	id1="WLAN"
+	id2="WLAN"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;|&lt;fld1&gt;|Wlan &apos;&lt;wlan&gt;&apos; successfully shutdown on controller &apos;&lt;saddr&gt;&apos;." />
 
 </DEVICEMESSAGES>
