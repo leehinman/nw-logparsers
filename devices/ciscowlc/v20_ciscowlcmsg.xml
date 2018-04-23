@@ -4,9 +4,9 @@
 	displayname="Cisco Wireless LAN Controller"
 	group="Wireless Devices">
 <VERSION 
-	xml="21"
-	checksum="80e8150d38cd2a1757266a9f5ab68d16"
-	revision="110"
+	xml="25"
+	checksum="0b8b2fd6f3b7f051f7efaabf81640df1"
+	revision="117"
 	device="2.0" />
 <TAGVALMAP
 	pairdelimiter="," encapsulator="&quot;" />
@@ -29,6 +29,11 @@
 	id1="0006" 
 	id2="0006"
 	content="&lt;Hfld4&gt;: *&lt;Hfld1&gt;: &lt;month&gt; &lt;day&gt; &lt;time&gt; %&lt;messageid&gt;: &lt;Hfld2&gt;.c:&lt;Hfld3&gt; &lt;!payload&gt;" />	
+
+<HEADER 
+	id1="0066" 
+	id2="0066"
+	content="&lt;application&gt;: *&lt;Hfld1&gt;: &lt;month&gt; &lt;day&gt; &lt;time&gt;: %&lt;Hfld5&gt;-&lt;Hfld6&gt;-&lt;messageid&gt;: &lt;Hfld2&gt;.c:&lt;Hfld3&gt; &lt;!payload&gt;" />	
 
 <HEADER 
 	id1="0001" 
@@ -415,7 +420,8 @@
 	id2="AAA-6-RADIUS_IN_GLOBAL_LIST" 
 	eventcategory="1303000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="RADIUS server &lt;saddr&gt; &lt;shost&gt; in global list" />
+	content="RADIUS {AUTH Server|ACCT Server|server} {&lt;saddr&gt;:&lt;sport&gt; deactivated|&lt;saddr&gt;:&lt;sport&gt; activated|&lt;saddr&gt; &lt;shost&gt;} in global list"/>
+
 <MESSAGE 
 	id1="AAA-4-RADIUS_ON_WLAN"
 	id2="AAA-4-RADIUS_ON_WLAN" 
@@ -589,7 +595,8 @@
 	id2="AAA-4-TPLUS_SWITCHOVER_FAILED"
 	eventcategory="1703000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="TACACS+ server switchover failed. Current server is &lt;saddr&gt;." />
+	content="TACACS+ server switchover {failed as there is no other server active|failed}. Current server is {&lt;saddr&gt; (port:&lt;sport&gt;)|&lt;saddr&gt;}" />
+
 <MESSAGE 
 	id1="AAA-5-TPLUS_SWITCHOVER_SUCCESS"
 	id2="AAA-5-TPLUS_SWITCHOVER_SUCCESS" 
@@ -656,6 +663,7 @@
 	eventcategory="1301020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Guest user session validation failed for user&gt;"
 	content=" Guest user session validation failed for &lt;username&gt;. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="AAA-3-VALIDATE_MSCHAP2_CRED_FAILED"
 	id2="AAA-3-VALIDATE_MSCHAP2_CRED_FAILED"
@@ -788,12 +796,14 @@
 	eventcategory="1501050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Failed to get ACE from ACL&gt;"
 	content=" Failed to get ACE from ACL. &lt;fld10&gt;" />
+
 <MESSAGE 
 	id1="ACL-7-ENTRY_DONOT_EXIST" 
 	id2="ACL-7-ENTRY_DONOT_EXIST" 
 	eventcategory="1501050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Unable to find an ACL by name&gt;"
 	content=" Unable to find an ACL by name &quot;&lt;fld10&gt;&quot;." />
+
 <MESSAGE 
 	id1="APF-1-ADDMOBILE_SEND_FAILED" 
 	id2="APF-1-ADDMOBILE_SEND_FAILED" 
@@ -842,12 +852,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Handoff end received in wrong role&gt;"
 	content=" Handoff end received in wrong role (peer Ip: &lt;daddr&gt;, sender:&lt;saddr&gt;, Role:&lt;user_role&gt;) for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="APF-1-HANDOFF_END_RCVD:01"
 	id2="APF-1-HANDOFF_END_RCVD" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Handoff end received from mismatched peer&gt;"
 	content=" Handoff end received from mismatched peer (peer Ip: &lt;daddr&gt;, sender:&lt;saddr&gt;, Role:&lt;user_role&gt;) for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="APF-1-INVALID_AUTH_SEQ_NUM" 
 	id2="APF-1-INVALID_AUTH_SEQ_NUM" 
@@ -866,6 +878,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Moved adHoc client to auto-contained state&gt;"
 	content=" Moved adHoc client &lt;smacaddr&gt; to auto-contained state." />
+
 <MESSAGE 
 	id1="APF-1-NOT_ADV_SSID_ON_AP" 
 	id2="APF-1-NOT_ADV_SSID_ON_AP" 
@@ -884,12 +897,13 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not process MM response&gt;"
 	content=" Could not process MM response. &lt;reason&gt;.Mobile:&lt;smacaddr&gt;." />
+
 <MESSAGE 
 	id1="APF-1-PROC_RSN_WARP_IE_FAILED" 
 	id2="APF-1-PROC_RSN_WARP_IE_FAILED" 
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Could not process the RSN and WARP IE's&gt;"
-	content=" Could not process the RSN and WARP { IE&apos;s | IEs }. &lt;reason&gt;.MobileStation: &lt;saddr&gt;, SSID:&lt;fld7&gt;." />
+	content=" Could not process the RSN and WARP { IE&apos;s | IEs }. &lt;reason&gt;.MobileStation: &lt;saddr&gt;, SSID:&lt;ssid&gt;." />
 <MESSAGE 
 	id1="APF-1-QUARANTINE_VLAN" 
 	id2="APF-1-QUARANTINE_VLAN" 
@@ -926,6 +940,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Could not send a Client Association request&gt;"
 	content=" Could not send a Client Association request. &lt;reason&gt;. " />
+
 <MESSAGE 
 	id1="APF-1-SEND_ASSOC_RESP_FAILED" 
 	id2="APF-1-SEND_ASSOC_RESP_FAILED" 
@@ -938,18 +953,21 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to contain rogue&gt;"
 	content=" Unable to contain rogue &lt;macaddr&gt; - &lt;reason&gt;. &lt;info&gt;" />
+
 <MESSAGE 
 	id1="APF-1-UNABLE_TO_CONTAIN_ROGUE_AP" 
 	id2="APF-1-UNABLE_TO_CONTAIN_ROGUE_AP" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to contain rogue AP&gt;"
 	content=" Unable to contain rogue AP &lt;macaddr&gt;." />
+
 <MESSAGE 
 	id1="APF-1-UNABLE_TO_VALIDATE_ROGUE_AP_POL" 
 	id2="APF-1-UNABLE_TO_VALIDATE_ROGUE_AP_POL" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to validate rogue AP policy for AP&gt;"
 	content=" Unable to validate rogue AP policy for &lt;smacaddr&gt;." />
+
 <MESSAGE 
 	id1="APF-1-USER_DEL_FAILED" 
 	id2="APF-1-USER_DEL_FAILED" 
@@ -962,6 +980,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not check extended supported rates&gt;"
 	content=" Could not check extended supported rates. &lt;reason&gt;. Length :&lt;number&gt;. Mobile MAC: &lt;smacaddr&gt;." />
+
 <MESSAGE 
 	id1="APF-3-CHECK_SUPP_RATES_FAILED" 
 	id2="APF-3-CHECK_SUPP_RATES_FAILED" 
@@ -992,18 +1011,21 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Changing orphan packet IP address for station&gt;"
 	content=" Changing orphan packet IP address for station&lt;macaddr&gt; from &lt;saddr&gt; ---&gt; &lt;daddr&gt;" />
+
 <MESSAGE 
 	id1="APF-4-INVALID_ACTION_CATEGORY" 
 	id2="APF-4-INVALID_ACTION_CATEGORY" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not process 802.11 Action&gt;"
 	content=" Could not process 802.11 Action. &lt;reason&gt;(&lt;info&gt;) from client. Mobile:&lt;smacaddr&gt;, Category:&lt;sigcat&gt;." />
+
 <MESSAGE 
 	id1="APF-4-MOBILESTATION_NOT_FOUND" 
 	id2="APF-4-MOBILESTATION_NOT_FOUND" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not find the mobile in internal database&gt;"
 	content=" Could not find the mobile &lt;smacaddr&gt; in internal database" />
+
 <MESSAGE 
 	id1="APF-4-PROC_DOT11_MAC_MGMT_DATA_FAILED" 
 	id2="APF-4-PROC_DOT11_MAC_MGMT_DATA_FAILED" 
@@ -1016,12 +1038,14 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Action frame with code 0 from mobile station&gt;"
 	content=" Received Action frame with code &lt;code&gt; from mobile station &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="APF-4-RCV_INVALID_SUPP_RATE" 
 	id2="APF-4-RCV_INVALID_SUPP_RATE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:received a message with an invalid supported rate&gt;"
 	content=" &lt;agent&gt;: received a message with an invalid supported rate." />
+
 <MESSAGE 
 	id1="APF-4-RCV_UNSUPP_MGMT_MSG" 
 	id2="APF-4-RCV_UNSUPP_MGMT_MSG" 
@@ -1034,6 +1058,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Cannot find apgroup none or standard for AP&gt;"
 	content=" Cannot find apgroup &lt;group&gt; for AP &lt;macaddr&gt;. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="APF-6-CONFIG_FILE_SAVED" 
 	id2="APF-6-CONFIG_FILE_SAVED" 
@@ -1046,6 +1071,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Disconnecting mobile&gt;"
 	content=" Disconnecting mobile &lt;smacaddr&gt; due to &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="APF-6-DOT1X_REQ_REJECT"
 	id2="APF-6-DOT1X_REQ_REJECT" 
@@ -1089,6 +1115,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Mobile has unsupported CCXversion&gt;"
 	content=" Mobile &lt;smacaddr&gt; has unsupported CCXversion &lt;version&gt;" />
+
 <MESSAGE 
 	id1="CIDS-3-ADD_RULE_FAILED" 
 	id2="CIDS-3-ADD_RULE_FAILED" 
@@ -1287,6 +1314,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Unhandled debug module&gt;"
 	content=" Unhandled debug module &lt;fld10&gt;." />
+
 <MESSAGE 
 	id1="DEBUG-6-CLT_TBL_EMPTY" 
 	id2="DEBUG-6-CLT_TBL_EMPTY" 
@@ -1317,30 +1345,35 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Dropping foreign client for dhcp retries&gt;"
 	content=" Dropping foreign client for dhcp retries, mac:&lt;dmacaddr&gt; ip: &lt;daddr&gt;" />
+
 <MESSAGE 
 	id1="DHCP-4-DHCP_PKT_OVRSIZE" 
 	id2="DHCP-4-DHCP_PKT_OVRSIZE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Oversized DHCP packet&gt;"
 	content=" Oversized DHCP packet" />
+
 <MESSAGE 
 	id1="DHCP-4-DHCP_PKT_WRONGSIZE" 
 	id2="DHCP-4-DHCP_PKT_WRONGSIZE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DHCP options incorrect length&gt;"
 	content=" DHCP options incorrect length" />
+
 <MESSAGE 
 	id1="DHCP-4-ENCAPSULATE_FAIL" 
 	id2="DHCP-4-ENCAPSULATE_FAIL" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to encapsulate header&gt;"
 	content=" Unable to encapsulate header." />
+
 <MESSAGE 
 	id1="DHCP-4-LEASE_NOT_MATCH"
 	id2="DHCP-4-LEASE_NOT_MATCH" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Lease does not belong to client&gt;"
 	content=" Lease for &lt;saddr&gt; does not belong to &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="DHCP-4-LEASE_NOT_OBTAINED"
 	id2="DHCP-4-LEASE_NOT_OBTAINED" 
@@ -1353,6 +1386,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to get the dhcp relay server's ip address&gt;"
 	content=" Unable to get the dhcp relay server&apos;s ip address" />
+
 <MESSAGE 
 	id1="DHCP-4-REQIP_NOT_PRESENT" 
 	id2="DHCP-4-REQIP_NOT_PRESENT" 
@@ -1443,6 +1477,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to send authentication message to AAA server for client&gt;"
 	content=" Unable to send { authentication message to AAA server | AAA message } for client &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="DOT1X-3-AAA_SEND_ERR" 
 	id2="DOT1X-3-AAA_SEND_ERR" 
@@ -1461,6 +1496,7 @@
 	eventcategory="1303000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Authentication aborted&gt;"
 	content="  Authentication {&lt;action&gt; for client &lt;smacaddr&gt;|&lt;action&gt;}" />
+
 <MESSAGE 
 	id1="DOT1X-3-ADD_KEYMAP_KEY_ERR" 
 	id2="DOT1X-3-ADD_KEYMAP_KEY_ERR" 
@@ -1491,6 +1527,7 @@
 	eventcategory="1303000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Max EAPOL-key retransmissions exceeded for client&gt;"
 	content="Max EAPOL-key &lt;fld1&gt; retransmissions exceeded for client &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="DOT1X-6-CCKM_UPDATE" 
 	id2="DOT1X-6-CCKM_UPDATE" 
@@ -1659,18 +1696,21 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received msg has invalid information when mobile is in START  state&gt;"
 	content=" Received &lt;event_type&gt; msg has invalid information when mobile is in START  state - &lt;reason&gt;; &lt;info&gt;, client &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="DOT1X-3-INVALID_WPA_KEY_MSG_STATE:01" 
 	id2="DOT1X-3-INVALID_WPA_KEY_MSG_STATE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received invalid information  msg in START  state &gt;"
 	content=" Received invalid &lt;event_type&gt; msg in START  state - &lt;result&gt;; &lt;info&gt;, client &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="APF-3-NO_FRAMED_IP_ADDRESS" 
 	id2="APF-3-NO_FRAMED_IP_ADDRESS" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&apos;&lt;fld21&gt;&apos; clt MAC: &lt;smacaddr&gt;  AP MAC: &lt;macaddr&gt; Role &apos;&lt;user_role&gt;&apos; PemState &apos;&lt;event_state&gt;&apos; SSID &apos;&lt;ssid&gt;&apos; Connected for &apos;&lt;duration&gt;&apos; secs" />
+
 <MESSAGE 
 	id1="DOT1X-3-KEY_LEN_NOT_FOUND" 
 	id2="DOT1X-3-KEY_LEN_NOT_FOUND" 
@@ -1803,6 +1843,7 @@
 	eventcategory="1301000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to send EAPOL-key msg&gt;"
 	content=" Unable to send EAPOL-key msg { to client  - | - } &lt;reason&gt; (&lt;code&gt;) { for client | - client } &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="DTL-1-ARP_POISON_DETECTED" 
 	id2="DTL-1-ARP_POISON_DETECTED" 
@@ -1821,6 +1862,7 @@
 	eventcategory="1402020100" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:MAC entry received for timeout is INVALID&gt;"
 	content=" MAC entry (&lt;saddr&gt;) received for timeout is INVALID. &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="EAP-3-MSGQUEUEFAILED" 
 	id2="EAP-3-MSGQUEUEFAILED" 
@@ -1953,6 +1995,7 @@
 	eventcategory="1401030000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Login Failure&gt;"
 	content=" { Login failed for the user:&lt;username&gt;. | Login failed. User:&lt;username&gt;. } &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="EMWEB-3-RECV_FAILED" 
 	id2="EMWEB-3-RECV_FAILED" 
@@ -1965,36 +2008,42 @@
 	eventcategory="1203000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:http request should begin with a character&gt;"
 	content="http request should begin with a character" />
+
 <MESSAGE 
 	id1="EMWEB-6-PARSE_ERROR" 
 	id2="EMWEB-6-PARSE_ERROR" 
 	eventcategory="1203000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:parser exited&gt;"
 	content="parser exited. client mac=&lt;smacaddr&gt; bytes parsed = &lt;fld1&gt; and bytes read = &lt;rbytes&gt;" />
+
 <MESSAGE 
 	id1="EMWEB-6-UNKNOWN_HTTP_METHOD_ERR" 
 	id2="EMWEB-6-UNKNOWN_HTTP_METHOD_ERR" 
 	eventcategory="1203000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:unknown http method encountered&gt;"
 	content="unknown http method encountered" />
+
 <MESSAGE 
 	id1="EMWEB-6-REQ_NOT_GET_ERR" 
 	id2="EMWEB-6-REQ_NOT_GET_ERR" 
 	eventcategory="1203000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:http request is not GET&gt;"
 	content="http request is not GET" />
+
 <MESSAGE 
 	id1="ENVMON-0-KEEPALIVE" 
 	id2="ENVMON-0-KEEPALIVE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System is rebooting in 5 seconds&gt;"
 	content=" System is rebooting in 5 seconds: &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="ETHOIP-3-INVALID_PKT_RECVD" 
 	id2="ETHOIP-3-INVALID_PKT_RECVD" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ethernet over IP pkt too short&gt;"
 	content=" Ethernet over IP pkt too short; &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="ETHOIP-3-PING_RESPONSE_TX_FAILED" 
 	id2="ETHOIP-3-PING_RESPONSE_TX_FAILED" 
@@ -2013,6 +2062,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Ethernet over IP ping from address that was not a mobility peer&gt;"
 	content=" Recv Ethernet over IP ping from &lt;saddr&gt;, not from a mobility peer" />
+
 <MESSAGE 
 	id1="FIPS-4-DUPLICATE_NDRNG_OUTPUT" 
 	id2="FIPS-4-DUPLICATE_NDRNG_OUTPUT" 
@@ -2073,6 +2123,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Invalid ipv6 address failed to do data gleaning&gt;"
 	content="Invalid ipv6 address &lt;fld1&gt;, failed to do data gleaning." />
+
 <MESSAGE 
 	id1="IOS-3-INV_CERT_LEN" 
 	id2="IOS-3-INV_CERT_LEN" 
@@ -2115,12 +2166,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to create username&gt;"
 	content=" Unable to create username &lt;username&gt; for mobile&lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="LOG-1-Q_IND:02" 
 	id2="LOG-1-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received EAPOL-key message while in invalid state&gt;"
 	content=" Received EAPOL-key message while in invalid state (&lt;code&gt;) - version &lt;version&gt;, type &lt;ntype&gt;, descriptor &lt;fld1&gt;, client &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="LOG-1-Q_IND" 
 	id2="LOG-1-Q_IND" 
@@ -2169,84 +2222,98 @@
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to add the rogue AP&gt;"
 	content=" Failed to add the rogue AP &lt;macaddr&gt;. &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:10" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not update rogue AP with rogue client information&gt;"
 	content=" Could not update rogue AP &lt;macaddr&gt; with rogue client &lt;smacaddr&gt; information. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:09" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to get the dhcp relay server's ip address&gt;"
 	content=" Unable to get the dhcp relay server&apos;s ip address" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:08" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP received with invalid SPA IP Address&gt;"
 	content=" STA(Target MAC Address) [&lt;macaddr&gt;, &lt;hostip&gt;] ARP (&lt;action&gt;) received with invalid SPA(Source IP Address) &lt;saddr&gt;/TPA(Destination IP Address) &lt;daddr&gt;" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:07" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to send a message to the message queue object&gt;"
 	content=" Failed to send a message to the message queue object: &lt;obj_name&gt;.&lt;reason&gt;" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:06" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to delete PMK cache entry for station with request from controller&gt;"
 	content=" Failed to delete PMK cache entry for station &lt;macaddr&gt; with request from controller &lt;hostip&gt;" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:05" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not process 802.11 Action&gt;"
 	content=" Could not process 802.11 Action. &lt;reason&gt;(&lt;info&gt;) from client. Mobile:&lt;smacaddr&gt;, Category:&lt;sigcat&gt;." />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:04" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:sysnet unable to process packet&gt;"
 	content=" sysnet unable to process packet with encap type &lt;protocol_detail&gt; { [&lt;info&gt;] | &lt;info&gt; }" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:03" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not Register IP Add on MSCB&gt;"
 	content=" Could not Register IP Add on MSCB. &lt;reason&gt;. Address:&lt;macaddr&gt; { [&lt;info&gt;] | &lt;info&gt; }" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:02" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to process an association request&gt;"
 	content=" Failed to process an association request from &lt;macaddr&gt;. WLAN:&lt;wlan&gt;, SSID:&lt;ssid&gt;. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:01" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unhandled debug module&gt;"
 	content=" Unhandled debug module &lt;obj_name&gt;." />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received a packet without a requested ip&gt;"
 	content=" Received a packet without a requested ip" />
+
 <MESSAGE 
 	id1="LOG-4-Q_IND:11" 
 	id2="LOG-4-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Cannot find apgroup none or standard for AP&gt;"
 	content=" Cannot find apgroup &lt;group&gt; for AP &lt;macaddr&gt;. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="LOG-5-Q_IND:01"
 	id2="LOG-5-Q_IND"
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:mutex unlock failed&gt;"
 	content=" Failed to release a mutual exclusion object. { mutex unlock failed, &lt;reason&gt;. | &lt;reason&gt;. }" />
+
 <MESSAGE 
 	id1="LOG-5-Q_IND" 
 	id2="LOG-5-Q_IND" 
@@ -2258,55 +2325,64 @@
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Record ignored&gt;"
-	content=" Record ignored - &lt;reason&gt;. [&lt;info&gt;]" />
+	content=" Record ignored - {&lt;reason&gt;. [&lt;info&gt;]|&lt;reason&gt;.}" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:06" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Duplicate record received&gt;"
 	content=" Duplicate record received - &lt;reason&gt;. [&lt;info&gt;]" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:05" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Username entry created for mobile&gt;"
 	content=" Username entry (&lt;username&gt;) with length (&lt;fld1&gt;) created for mobile {&lt;smacaddr&gt; [&lt;info&gt;]|&lt;smacaddr&gt;}" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:04" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Information not added to the debugging database, Maximum number of AP join information entry supported already exists.&gt;"
 	content=" Information not added to the debugging database for &lt;smacaddr&gt;, Maximum number of AP join information entry supported already exists.[&lt;reason&gt;]" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:03" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Discarding discovery request in LWAPP from AP supporting CAPWAP&gt;"
 	content=" Discarding &lt;event_type&gt; discovery request in LWAPP from AP &lt;macaddr&gt; supporting CAPWAP" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:02" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Radius overrides disabled&gt;"
 	content=" Radius overrides disabled, { &lt;reason&gt;[&lt;info&gt;] | &lt;reason&gt; }" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:01" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:There are no clients in the database&gt;"
 	content=" There are no clients in the database.[&lt;info&gt;]" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:09" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Entry changed&gt;"
 	content="Entry changed A=&lt;fld20&gt; V=&lt;fld21&gt; I=&lt;fld22&gt; P=&lt;fld23&gt; M=&lt;fld24&gt;" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND:10" 
 	id2="LOG-6-Q_IND" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Unable to find Mobile&gt;"
 	content="Unable to find Mobile &lt;smacaddr&gt; entry in the database, &lt;info&gt;" />
+
 <MESSAGE 
 	id1="LOG-6-Q_IND" 
 	id2="LOG-6-Q_IND" 
@@ -2319,12 +2395,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Unable to find an ACL by name&gt;"
 	content=" Unable to find an ACL by name &quot;&lt;domain&gt;&quot;. { [&lt;info&gt;] | &lt;info&gt; }" />
+
 <MESSAGE 
 	id1="LOG-7-Q_IND:01" 
 	id2="LOG-7-Q_IND" 
 	eventcategory="1501050000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Failed to get ACE from ACL&gt;"
 	content=" Failed to get ACE from ACL. &lt;domain&gt;" />
+
 <MESSAGE 
 	id1="LWAPP-3-AAA_ERR" 
 	id2="LWAPP-3-AAA_ERR" 
@@ -2547,6 +2625,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Discarding discovery request in LWAPP from AP supporting CAPWAP&gt;"
 	content=" Discarding &lt;event_type&gt; discovery request in LWAPP from AP &lt;macaddr&gt; supporting CAPWAP" />
+
 <MESSAGE 
 	id1="LWAPP-6-CONSOLE_LOGIN" 
 	id2="LWAPP-6-CONSOLE_LOGIN" 
@@ -2612,7 +2691,8 @@
 	id2="LWAPP-3-DECRYPT_ERR" 
 	eventcategory="1613060200" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Unable to decrypt packet&gt;"
-	content=" Unable to decrypt { LWAPP packet; | aireware director data; | image data message; } AP &lt;saddr&gt;" />
+	content="{The system is unable|Unable} to decrypt{LWAPP packet;|aireware director data;|image data message;}AP&lt;macaddr&gt;"/>	 
+
 <MESSAGE 
 	id1="LWAPP-3-DECRYPT_ERR1" 
 	id2="LWAPP-3-DECRYPT_ERR1" 
@@ -3110,7 +3190,8 @@
 	id2="LWAPP-3-JOIN_UNSUPP_AP" 
 	eventcategory="1603010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="Received a join request from an unsupported AP &lt;macaddr&gt; &lt;info&gt;, dropping the packet" />
+	content="{The system has received|Received} a join request from an unsupported AP &lt;macaddr&gt; &lt;info&gt;, dropping the packet" />
+
 <MESSAGE 
 	id1="LWAPP-3-KEY_ERR1" 
 	id2="LWAPP-3-KEY_ERR1" 
@@ -3128,7 +3209,8 @@
 	id2="LWAPP-3-KEY_ERR3" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="Unable to free public key for AP &lt;macaddr&gt;" />
+	content="{The system is unable|Unable} to free public key for AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="LWAPP-4-L3_PACK_ERR" 
 	id2="LWAPP-4-L3_PACK_ERR" 
@@ -4143,6 +4225,7 @@
 	eventcategory="1703000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid country code for AP&gt;"
 	content=" { The system detects an invalid | Invalid } country code (&lt;event_source&gt;) for AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="LWAPP-3-RD_ERR8" 
 	id2="LWAPP-3-RD_ERR8" 
@@ -4161,6 +4244,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP joined to the controller currently experienced a reboot or reset earlier&gt;"
 	content="  AP &lt;macaddr&gt; joined to the controller currently experienced a { reboot | reset } earlier - &lt;info&gt;" />
+
 <MESSAGE 
 	id1="LWAPP-6-REBOOT_INFO1" 
 	id2="LWAPP-6-REBOOT_INFO1" 
@@ -4184,7 +4268,8 @@
 	id2="LWAPP-3-REPLAY_ERR" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="Received replay error on slot &lt;portname&gt;, WLAN ID &lt;wlan&gt;, &lt;info&gt; from AP &lt;macaddr&gt;" />
+	content="{The system has received|Received} replay error on slot&lt;portname&gt;, WLAN ID&lt;wlan&gt;,&lt;info&gt;from AP&lt;macaddr&gt;"/>
+
 <MESSAGE 
 	id1="LWAPP-3-ROGUE_ERR" 
 	id2="LWAPP-3-ROGUE_ERR" 
@@ -4569,6 +4654,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Control path to mobility member is DOWN&gt;"
 	content=" Control path to mobility member &lt;saddr&gt; is DOWN." />
+
 <MESSAGE 
 	id1="MM-4-PMKCACHE_DEL_FAILED" 
 	id2="MM-4-PMKCACHE_DEL_FAILED" 
@@ -4593,6 +4679,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to send a message to the message queue object&gt;"
 	content=" Failed to send a message to the message queue object: &lt;obj_name&gt;.&lt;reason&gt;" />
+
 <MESSAGE 
 	id1="OSAPI-4-MUTEX_LOCK_FAILED"
 	id2="OSAPI-4-MUTEX_LOCK_FAILED" 
@@ -4629,6 +4716,7 @@
 	eventcategory="1401030000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Web authentication failure for station&gt;"
 	content=" { Web authentication failure for station | &lt;result&gt;, web authentication failed for the station } &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="POE-3-PORT_RESYNC" 
 	id2="POE-3-PORT_RESYNC" 
@@ -4647,6 +4735,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to find AP entry in the database&gt;"
 	content=" Unable to find AP &lt;macaddr&gt; entry in the database, &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="RRM-3-MSGTAG007" 
 	id2="RRM-3-MSGTAG007" 
@@ -4671,12 +4760,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received a packet without a requested ip&gt;"
 	content=" Received a packet without a requested ip!." />
+
 <MESSAGE 
 	id1="SIM-3-DHCP_SERVER_NO_REPLY" 
 	id2="SIM-3-DHCP_SERVER_NO_REPLY" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Failed to get DHCP response on interface&gt;"
 	content=" Failed to get DHCP response on interface &apos;&lt;interface&gt;&apos;. &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="SIM-3-INTFGET_GIG_ETH_FAIL" 
 	id2="SIM-3-INTFGET_GIG_ETH_FAIL" 
@@ -4689,6 +4780,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface source MAC address not found&gt;"
 	content=" Interface &lt;interface&gt; source MAC address is not found." />
+
 <MESSAGE 
 	id1="SIM-3-MSGTAG014" 
 	id2="SIM-3-MSGTAG014" 
@@ -4737,18 +4829,21 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Encoding IDRs message failed&gt;"
 	content=" SPECTRUM LOG: Encoding IDRs message failed" />
+
 <MESSAGE 
 	id1="SPECTRUM-3-CA_LOGMSG:01" 
 	id2="SPECTRUM-3-CA_LOGMSG" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:NMSP Transmit Failure&gt;"
 	content=" SPECTRUM LOG:  &lt;action&gt; NMSP Transmit Failure" />
+
 <MESSAGE 
 	id1="SPECTRUM-3-CA_LOGMSG" 
 	id2="SPECTRUM-3-CA_LOGMSG" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:unable to retrieve channel list&gt;"
 	content=" &lt;event_source&gt;: &lt;event_type&gt;: unable to retrieve channel list" />
+
 <MESSAGE 
 	id1="TFTP-3-MSGTAG026" 
 	id2="TFTP-3-MSGTAG026" 
@@ -4773,6 +4868,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:TFTP Timeout&gt;"
 	content=" TFTP Timeout &lt;reason&gt;.&lt;info&gt;." />
+
 <MESSAGE 
 	id1="TFTP-3-TFTP_SVR_ERR" 
 	id2="TFTP-3-TFTP_SVR_ERR" 
@@ -4839,12 +4935,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to properly enter state&gt;"
 	content=" Unable to properly enter state &lt;code&gt; AP &lt;macaddr&gt;." />
+
 <MESSAGE 
 	id1="APF-3-UNABLE_TO_EXIT_STATE_AP"
 	id2="APF-3-UNABLE_TO_EXIT_STATE_AP"
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to properly exit state&gt;"
 	content=" Unable to properly exit state &lt;code&gt; AP &lt;macaddr&gt;." />
+
 <MESSAGE 
 	id1="APF-3-UNKNOWN_RADIO_TYPE" 
 	id2="APF-3-UNKNOWN_RADIO_TYPE" 
@@ -4863,6 +4961,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to create wired guest client entry for AP&gt;"
 	content=" Unable to create wired guest client entry for &lt;smacaddr&gt;." />
+
 <MESSAGE 
 	id1="OSAPI-3-INTF_IOCTL_FAILED" 
 	id2="OSAPI-3-INTF_IOCTL_FAILED" 
@@ -4875,6 +4974,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP entry overwrite&gt;"
 	content=" ARP entry overwrite, &lt;reason&gt; with MAC-ID  &lt;smacaddr&gt; and IP Address &lt;saddr&gt;, &lt;info&gt;" />
+
 <MESSAGE 
 	id1="DTL-3-ARP_SEND_FAILED" 
 	id2="DTL-3-ARP_SEND_FAILED" 
@@ -4905,12 +5005,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP received with invalid SPA IP Address&gt;"
 	content=" STA(Target MAC Address) [&lt;macaddr&gt;, &lt;hostip&gt;] ARP (&lt;action&gt;) received with invalid SPA(Source IP Address) &lt;saddr&gt;/TPA(Destination IP Address) &lt;daddr&gt;" />
+
 <MESSAGE 
 	id1="DTL-4-ARPMAP_DEL_FAILED" 
 	id2="DTL-4-ARPMAP_DEL_FAILED" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to delete ARP mappingIP&gt;"
 	content=" &lt;smacaddr&gt; &lt;saddr&gt; Unable to delete ARP mappingIP belongs to &lt;dmacaddr&gt;" />
+
 <MESSAGE 
 	id1="DTLS-3-HANDSHAKE_FAILURE" 
 	id2="DTLS-3-HANDSHAKE_FAILURE" 
@@ -4929,18 +5031,21 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DTLS peer has closed connection&gt;"
 	content=" DTLS peer &lt;daddr&gt; has closed connection." />
+
 <MESSAGE 
 	id1="DTLS-6-RECORD_IGNORED" 
 	id2="DTLS-6-RECORD_IGNORED" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Record ignored&gt;"
 	content=" Record ignored - &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="DTLS-6-DUPLICATE_RECORD" 
 	id2="DTLS-6-DUPLICATE_RECORD" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Duplicate record received&gt;"
 	content=" Duplicate record received - &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="USMDB-3-MSGTAG030" 
 	id2="USMDB-3-MSGTAG030" 
@@ -4959,6 +5064,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:All Export-Anchors are down on Guest LAN&gt;"
 	content=" All Export-Anchors are down on Guest LAN &lt;wlan&gt;" />
+
 <MESSAGE 
 	id1="MM-1-SSHRULE_CREATE_FAILED" 
 	id2="MM-1-SSHRULE_CREATE_FAILED" 
@@ -4977,6 +5083,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Port Admin Mode Disable&gt;"
 	content=" Port &lt;sport&gt; Admin Mode is Disable!" />
+
 <MESSAGE 
 	id1="NIM-3-CANT_DISABLE_MCAST" 
 	id2="NIM-3-CANT_DISABLE_MCAST" 
@@ -5007,6 +5114,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Form submission failed for file&gt;"
 	content=" Form submission failed for file: &lt;filename&gt;" />
+
 <MESSAGE 
 	id1="WEB-3-INVALID_TFTP_DNLDCODE" 
 	id2="WEB-3-INVALID_TFTP_DNLDCODE" 
@@ -5044,6 +5152,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:WGB and wired client have same MAC in IAPP in IAPP Delete wired client message&gt;"
 	content=" WGB and wired client have same MAC &lt;macaddr&gt; in IAPP Delete wired client message, &lt;reason&gt;." />
+
 <MESSAGE 
 	id1="APF-4-ASSOCREQ_PROC_FAILED"
 	id2="APF-4-ASSOCREQ_PROC_FAILED" 
@@ -5062,6 +5171,7 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Could not Register IP Add on MSCB. { &lt;reason&gt; Address:&lt;macaddr&gt; | &lt;reason&gt;address:&lt;macaddr&gt; }" />
+
 <MESSAGE 
 	id1="APF-4-ROGUE_AP_ADD_FAILED"
 	id2="APF-4-ROGUE_AP_ADD_FAILED" 
@@ -5074,24 +5184,28 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not update rogue AP with rogue client information&gt;"
 	content=" Could not update rogue AP &lt;macaddr&gt; with rogue client &lt;smacaddr&gt; information. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="APF-3-AID_UPDATE_FAILED"
 	id2="APF-3-AID_UPDATE_FAILED" 
 	eventcategory="1601000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Error updating Association ID&gt;"
 	content=" Error updating Association ID for REAP AP Client&lt;smacaddr&gt; - &lt;info&gt;" />
+
 <MESSAGE 
 	id1="APF-1-USER_ADD_FAILED"
 	id2="APF-1-USER_ADD_FAILED" 
 	eventcategory="1601000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to create username&gt;"
 	content=" Unable to create username &lt;username&gt; for mobile&lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="CAPWAP-3-DTLS_CONN_ERR" 
 	id2="CAPWAP-3-DTLS_CONN_ERR" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DTLS connection not found forAP&gt;"
 	content=" &lt;fld1&gt;:  DTLS connection not found forAP &lt;access_point&gt;, Controller: &lt;fld2&gt; send packet" />
+
 <MESSAGE 
 	id1="CAPWAP-3-DUP_AP_NAME" 
 	id2="CAPWAP-3-DUP_AP_NAME" 
@@ -5111,24 +5225,28 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid AP event and state combination&gt;"
 	content=" { The system detects an invalid AP event | Invalid AP event } (&lt;event_type&gt;) and state (&lt;event_state&gt;) combination" />
+
 <MESSAGE 
 	id1="CAPWAP-3-IP_PROT_ERR" 
 	id2="CAPWAP-3-IP_PROT_ERR" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:IP protocol in received packet from AP is not UDP&gt;"
 	content=" IP protocol (1) in the received packet - from AP &lt;smacaddr&gt; is not UDP, { &lt;info&gt;, &lt;reason&gt; | &lt;reason&gt; }" />
+
 <MESSAGE 
 	id1="CAPWAP-3-REASSEM_SPACE" 
 	id2="CAPWAP-3-REASSEM_SPACE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to store capwap fragment from AP&gt;"
 	content=" Unable to store capwap fragment from &lt;smacaddr&gt;." />
+
 <MESSAGE 
 	id1="CAPWAP-3-SEM_RELEASE_ERR"
 	id2="CAPWAP-3-SEM_RELEASE_ERR" 
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:system could not release exclusive access of AP entry for mac in databasei&gt;"
 	content=" The system could not release exclusive access of AP entry for &lt;macaddr&gt; in the database" />
+
 <MESSAGE 
 	id1="DTL-3-NPUARP_ADD_FAILED"
 	id2="DTL-3-NPUARP_ADD_FAILED" 
@@ -5153,12 +5271,14 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;fld1&gt; TryLock - &lt;fld2&gt; - TaskID &lt;operation_id&gt; (&apos;&lt;process&gt;&apos;) &lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="OSAPI-3-TASK_SET_TICKLE" 
 	id2="OSAPI-3-TASK_SET_TICKLE" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Task osapi_ping_rx requesting 3 second timer&gt;"
 	content=" Task osapi_ping_rx requesting 3 second timer. &lt;info&gt;.&lt;reason&gt;." />
+
  
 <MESSAGE 
 	id1="OSAPI-5-CLEAN_TASK"
@@ -5172,6 +5292,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:mutex unlock failed&gt;"
 	content=" Failed to release a mutual exclusion object. { mutex unlock failed, &lt;reason&gt;. | &lt;reason&gt;. }" />
+
 <MESSAGE 
 	id1="OSAPI-6-FILE_DOES_NOT_EXIST" 
 	id2="OSAPI-6-FILE_DOES_NOT_EXIST"
@@ -5184,24 +5305,28 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Internal error&gt;"
 	content=" Internal error, &lt;info&gt;" />
+
 <MESSAGE 
 	id1="SISF-6-ENTRY_CHANGED" 
 	id2="SISF-6-ENTRY_CHANGED" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entry changed&gt;"
 	content=" Entry changed &lt;info&gt;" />
+
 <MESSAGE 
 	id1="SISF-6-ENTRY_CREATED" 
 	id2="SISF-6-ENTRY_CREATED" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entry created&gt;"
 	content=" Entry created &lt;info&gt;" />
+
 <MESSAGE 
 	id1="SISF-6-ENTRY_DELETED" 
 	id2="SISF-6-ENTRY_DELETED" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Entry deleted&gt;"
 	content=" Entry deleted &lt;info&gt;" />
+
 <MESSAGE 
 	id1="SOCKET_TASK-6-DATA_PROCESSING_FAILED"
 	id2="SOCKET_TASK-6-DATA_PROCESSING_FAILED" 
@@ -5214,6 +5339,7 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The rule is not in the active configuration&gt;"
 	content=" &lt;severity&gt; (&lt;process&gt;): The rule is not in the active configuration. &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="SSHPM-6-DELETE_INVALID_RULE"
 	id2="SSHPM-6-DELETE_INVALID_RULE" 
@@ -5226,6 +5352,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Setting up application gateway on port&gt;"
 	content=" Setting up application gateway &lt;gateway&gt; on port &lt;network_port&gt;" />
+
 <MESSAGE 
 	id1="SYSNET-4-ENCAPTYPE_NOT_PROCESSED"
 	id2="SYSNET-4-ENCAPTYPE_NOT_PROCESSED" 
@@ -5238,12 +5365,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Msg of Airespace Tables failed&gt;"
 	content="  System Error :  Msg &apos;&lt;disposition&gt;&apos; of Airespace Tables failed, Id = &lt;id&gt; error value = &lt;fld1&gt;" />
+
 <MESSAGE 
 	id1="SYSTEM-3-SYSAPI_ERR:01"
 	id2="SYSTEM-3-SYSAPI_ERR"
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:System Error&gt;"
 	content=" System Error :  &lt;info&gt;" />
+
 <MESSAGE 
 	id1="WPS-4-SIG_ALARM_OFF"
 	id2="WPS-4-SIG_ALARM_OFF" 
@@ -5269,6 +5398,7 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Error on call to sysapiRegistryGet routine&gt;"
 	content=" Error on call to sysapiRegistryGet routine with key &lt;param&gt;." />
+
 <MESSAGE 
 	id1="USMDB-6-MSGTAG008"
 	id2="USMDB-6-MSGTAG008" 
@@ -5287,12 +5417,14 @@
 	eventcategory="1401060000" 
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Guest user logged int&gt;"
 	content="  Guest user logged in with user account (&lt;username&gt;) MAC address &lt;smacaddr&gt;, IP address &lt;hostip&gt;" />
+
 <MESSAGE 
 	id1="PEM-6-GUESTOUT"
 	id2="PEM-6-GUESTOUT" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Guest user logged out&gt;"
 	content=" Guest user logged out with user account (&lt;username&gt;) MAC address &lt;smacaddr&gt;, IP address &lt;hostip&gt;" />
+
 		
 <MESSAGE 
 	id1="APF-3-VALIDATE_DOT11i_AUTH_FAILED"
@@ -5306,12 +5438,14 @@
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not Process 802.11 MAC mgmt Data&gt;"
 	content=" { Could not Process 802.11 MAC mgmt Data from &lt;smacaddr&gt; to &lt;dmacaddr&gt; - | Could not Process 802.11 MAC mgmt Data. } &lt;reason&gt; - &lt;info&gt;." />
+
 <MESSAGE 
 	id1="MM-3-MEMORY_READ_ERROR:01" 
 	id2="MM-3-MEMORY_READ_ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Mobility mip memory corrupted&gt;"
 	content=" Mobility mip memory corrupted, &lt;reason&gt;. &lt;info&gt;" />
+
 <MESSAGE 
 	id1="MM-3-MEMORY_READ_ERROR" 
 	id2="MM-3-MEMORY_READ_ERROR" 
@@ -5330,138 +5464,161 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="L2TP session open terminated for &lt;saddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:22" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface source MAC address is not found&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Intf &lt;interface&gt; source MAC address is not found" />
+
 <MESSAGE 
 	id1="ERROR:21"
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Multicast Rx queue is full&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Multicast Rx queue is full" />
+
 <MESSAGE 
 	id1="ERROR:20" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:rldpStartAssociation returned failure&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: rldpStartAssociation returned failure" />
+
 <MESSAGE 
 	id1="ERROR:19" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@application:powerSupply.c&gt;"
 	content=" &lt;severity&gt;] powerSupply.c { 240 | 246 }: &lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="ERROR:18" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@application:sntp_main.c&gt;&lt;@process_id:268&gt;"
 	content=" &lt;severity&gt;] sntp_main.c 268: : &lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="ERROR:17" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Echo Request from unknown AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received Echo Request from unknown AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:16" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Decreasing the sendNonce before resending&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Decreasing the sendNonce before resending &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:15" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Regulatory Domain check Completely FAILED&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: AP &lt;macaddr&gt;: Regulatory Domain check Completely FAILED &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="ERROR:14" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP Regulatory Domain does not match with country&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: AP &lt;macaddr&gt; &lt;obj_name&gt; (&lt;obj_type&gt;) does not match with country (&lt;reason&gt;)  &lt;info&gt;" />
+
 <MESSAGE 
 	id1="ERROR:13" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Security processing of Airewave Director Data failed from AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Security processing of Airewave Director Data failed from AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:12" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Mobility Group member not known&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Mobility Group member not known: &lt;hostip&gt;" />
+
 <MESSAGE 
 	id1="ERROR:11" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Airewave Director Data from unknown AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received Airewave Director Data from unknown AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:10" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:mscb not found for STA&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: mscb not found for STA &lt;macaddr&gt; - &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="ERROR:09" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unsupported tx power level selected on AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;service&gt;: Unsupported tx power level selected on AP &lt;macaddr&gt;(&lt;fld1&gt;) to (&lt;info&gt;) " />
+
 <MESSAGE 
 	id1="ERROR:08" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Security processing Statistics Info failed from AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Security processing Statistics Info failed from AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:07" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:servPort dhcpstate failed&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;service&gt;(): servPort dhcpstate failed " />
+
 <MESSAGE 
 	id1="ERROR:06" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to send Delete-Mobile request to unknown AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to send Delete-Mobile request to unknown AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:05" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Did not receive hearbeat reply from AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Did not receive hearbeat reply from AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:04" 
 	id2="ERROR" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP associated&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: AP &lt;macaddr&gt; associated. { &lt;info&gt;, reason: &lt;reason&gt; | &lt;info&gt; }" />
+
 <MESSAGE 
 	id1="ERROR:03" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Max retransmissions reached on AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Max retransmissions reached on AP  &lt;macaddr&gt; (&lt;info&gt;)" />
+
 <MESSAGE 
 	id1="ERROR:02" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received replay error from AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received replay error(&lt;info&gt;) from AP  &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="ERROR:01" 
 	id2="ERROR" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:TFTP Timeout&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: TFTP Timeout &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:42" 
 	id2="SECURITY" 
@@ -5475,384 +5632,448 @@
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DHCP_REQD (7) MSCB still in init state&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;smacaddr&gt; &lt;saddr&gt; DHCP_REQD (7) MSCB still in init state -  &lt;reason&gt;, &lt;info&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:40" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not update rogue AP with rogue client informationstation&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Could not update rogue AP &lt;macaddr&gt; with rogue client &lt;smacaddr&gt; information" />
+
 <MESSAGE 
 	id1="SECURITY:39" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:station not using RSN on WLAN requiring RSN&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: station &lt;smacaddr&gt; not using RSN (&lt;obj_type&gt;) on WLAN (&lt;wlan&gt;) requiring RSN " />
+
 <MESSAGE 
 	id1="SECURITY:38" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Big Nav attack detected on AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Big Nav attack detected on AP &lt;device&gt; slot = &lt;portname&gt; chan = &lt;event_source&gt;, errors = &lt;number&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:37" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AAA Response Received with invalid proxy state&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: AAA Response Received with invalid proxy state &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:36" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:EAPOL Key message with invalid authenticator replay counter from mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: EAPOL Key message with invalid authenticator replay counter (&lt;change_new&gt;, &lt;change_old&gt;) from mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:35" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to find mobile station control block&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to find mobile station control block." />
+
 <MESSAGE 
 	id1="SECURITY:34" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Invalid authentication sequence number&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Invalid authentication sequence number" />
+
 <MESSAGE 
 	id1="SECURITY:33" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to find rogue AP client&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to find rogue AP client &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:32" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received an invalid Information Element&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received an invalid Information Element " />
+
 <MESSAGE 
 	id1="SECURITY:31" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Mobility response for mobile as anchor while in the wrong state&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received Mobility response for mobile &lt;smacaddr&gt; as anchor while in the wrong state.  " />
+
 <MESSAGE 
 	id1="SECURITY:30" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Can not associate with Rogue AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;action&gt; Can not associate with &lt;macaddr&gt; Rogue AP " />
+
 <MESSAGE 
 	id1="SECURITY:29" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Local Anchor failed for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Local Anchor failed for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:28" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Error processing 802.11i IE from station&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Error processing 802.11i IE from station &lt;macaddr&gt; (error=&lt;code&gt;)" />
+
 <MESSAGE 
 	id1="SECURITY:27" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Adding mobile to exclusion list&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Adding &lt;macaddr&gt; to exclusion list &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:26" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed transmission of Accounting-Start to host for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Failed transmission of Accounting-Start to &lt;saddr&gt;/&lt;sport&gt; for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:25" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Disconnecting mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Disconnecting mobile &lt;smacaddr&gt; &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:24" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to find a valid PMK for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to find a valid PMK for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:23" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to create AAA message for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to create AAA message for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:22" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received an empty EAP message from mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received an empty EAP message from mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:21" 
 	id2="SECURITY" 
 	eventcategory="1301000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Web authentication failure for station&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Web authentication failure for station &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:20" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.1X control block NULL for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: 802.1X control block NULL for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:19" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received EAPOL-key with invalid MIC from mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received EAPOL-key &lt;obj_type&gt; with invalid MIC from mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:18" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to keep rogue in contained state&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to keep rogue &lt;macaddr&gt; in contained state - &lt;reason&gt;. " />
+
 <MESSAGE 
 	id1="SECURITY:17" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:EAPOL-key M2 with invalid secure bit (set) received from mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: EAPOL-key &lt;obj_type&gt; with invalid secure bit (set) received from mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:16" 
 	id2="SECURITY" 
 	eventcategory="1301020000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Authentication Aborted&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;reason&gt; Authentication Aborted" />
+
 <MESSAGE 
 	id1="SECURITY:15" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to delete username for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to delete username &lt;username&gt; for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:14" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Max AAA failure on mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Max AAA failure on mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:13" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to add AP info to rogue AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to add AP info &lt;info&gt; to rogue AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:12" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to add Rogue AP Lrad entry&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to add Rogue AP Lrad entry" />
+
 <MESSAGE 
 	id1="SECURITY:11" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to update dynamic broadcast key to mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to update dynamic broadcast key to mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:10" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to send WPA key to mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to send WPA key to mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:09" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failure sending WPA EAPOL-Key to mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Failure sending WPA EAPOL-Key due to &lt;reason&gt; to mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:08" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:MSCB still in init state&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: MSCB(&lt;macaddr&gt;) still in init state" />
+
 <MESSAGE 
 	id1="SECURITY:07" 
 	id2="SECURITY" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Changing orphan packet IP address for station&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Changing orphan packet IP address for station &lt;macaddr&gt; from &lt;change_old&gt; ---&gt; &lt;change_new&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:06" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Reached Max EAP-Identity Request retries for STA&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Reached Max EAP-Identity Request retries (&lt;number&gt;) for STA &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:05" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:MAX retransmissions reached for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: MAX &lt;obj_type&gt; retransmissions reached for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="SECURITY:04" 
 	id2="SECURITY" 
 	eventcategory="1401060000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Authentication succeeded for user&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Authentication succeeded for &lt;obj_type&gt; user &apos;&lt;username&gt;&apos;" />
+
 <MESSAGE 
 	id1="SECURITY:03" 
 	id2="SECURITY" 
 	eventcategory="1401030000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Authentication failed for user&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Authentication failed for &lt;obj_type&gt; user &apos;&lt;username&gt;&apos;" />
+
 <MESSAGE 
 	id1="SECURITY:02" 
 	id2="SECURITY" 
 	eventcategory="1401030000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Excessive failed login attempts from the network&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Excessive failed login attempts from the network." />
+
 <MESSAGE 
 	id1="SECURITY:01" 
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: STA [&lt;macaddr&gt;] &lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="VERBOSE:06" 
 	id2="VERBOSE" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Radius overrides disabled&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Radius overrides disabled, &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="VERBOSE:05" 
 	id2="VERBOSE" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:sending response to host&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;service&gt;: sending &lt;obj_type&gt; to &lt;hostname&gt;" />
+
 <MESSAGE 
 	id1="VERBOSE:04" 
 	id2="VERBOSE" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Dropping packet from host&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Dropping packet from &lt;hostip&gt; (&lt;reason&gt;)" />
+
 <MESSAGE 
 	id1="VERBOSE:03" 
 	id2="VERBOSE" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received an invalid Multicast or Unicast OUI type for mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received an invalid Multicast or Unicast OUI type for mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="VERBOSE:02" 
 	id2="VERBOSE" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received an unsupported Multicast 802.11i code from mobile&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received an unsupported Multicast 802.11i OUI code from mobile &lt;smacaddr&gt;" />
+
 <MESSAGE 
 	id1="VERBOSE:01" 
 	id2="VERBOSE" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:nimMcastApplianceGetPortMap return error for interface&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: nimMcastApplianceGetPortMap return error for interface &lt;interface&gt; -- &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="WARNING:17" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to match response with request using id from server&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to match response with request using id &lt;id&gt; from server &lt;hostip&gt;" />
+
 <MESSAGE 
 	id1="WARNING:16" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Requested address outside of scope&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;service&gt; Requested address (&lt;saddr&gt;) outside of scope" />
+
 <MESSAGE 
 	id1="WARNING:15" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Recieved a REQUEST w/o a lease&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;service&gt;: &lt;obj_type&gt;: Recieved a REQUEST w/o a lease" />
+
 <MESSAGE 
 	id1="WARNING:14" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received a packet without a requested ip&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received a packet without a requested ip" />
+
 <MESSAGE 
 	id1="WARNING:13" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:802.11 MAC mgmt msg from an unknown LRAD&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: 802.11 MAC mgmt msg from an unknown LRAD: &lt;bssid&gt;(bssid)" />
+
 <MESSAGE 
 	id1="WARNING:12" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:service received a message with an invalid supported rate&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;service&gt;: received a message with an invalid supported rate" />
+
 <MESSAGE 
 	id1="WARNING:11" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No DHCP response (or error) for rogue on AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: No DHCP response (or error) for rogue &lt;smacaddr&gt; on AP &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="WARNING:10" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to delete ARP mappingIP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;smacaddr&gt; &lt;saddr&gt; Unable to delete ARP mappingIP &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="WARNING:09" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to update foreign AP location&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Unable to update foreign AP location." />
+
 <MESSAGE 
 	id1="WARNING:08" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DHCP server check failure&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: DHCP server check failure, &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="WARNING:07" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received a association for an unknown SSID from AP&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received a association for an unknown SSID &apos;&lt;ssid&gt;&apos;(&lt;info&gt;) from &lt;macaddr&gt;" />
+
 <MESSAGE 
 	id1="WARNING:06" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Invalid toDs/fromDs bit set&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Invalid toDs/fromDs bit set - &lt;reason&gt;" />
+
 <MESSAGE 
 	id1="WARNING:05" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:RADIUS server deactivated in global list&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: RADIUS server &lt;hostip&gt;:&lt;network_port&gt; deactivated in global list" />
+
 <MESSAGE 
 	id1="WARNING:04" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:RADIUS server failed to respond to request for STA&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: RADIUS server &lt;hostip&gt;:&lt;network_port&gt; failed to respond to request (ID &lt;id&gt;) for STA &lt;macaddr&gt;/ user &apos;&lt;username&gt;&apos;" />
+
 <MESSAGE 
 	id1="WARNING:03" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Non-Doberman platform&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;fld9&gt;(): Non-Doberman platform " />
+
 <MESSAGE 
 	id1="WARNING:02" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AP Alarm status&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: AP &lt;macaddr&gt; : Alarm &lt;event_state&gt;, &lt;info&gt;" />
+
 <MESSAGE 
 	id1="WARNING:01" 
 	id2="WARNING" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:there is a loop in the network&gt;"
 	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: &lt;reason&gt;, there is a loop in the network" />
+
 
 <MESSAGE 
 	id1="APASSOCIATED" 
@@ -6087,8 +6308,8 @@
 	id2="LOG-6-Q_IND" 
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:server deactivated in global list&gt;"
-	content=" RADIUS server &lt;saddr&gt;:&lt;sport&gt; &lt;action&gt; in global list" />
-		
+	content="RADIUS {AUTH Server|ACCT Server|server} {&lt;saddr&gt;:&lt;sport&gt; deactivated|&lt;saddr&gt;:&lt;sport&gt; activated|&lt;saddr&gt; &lt;shost&gt;} in global list"/>
+	
 <MESSAGE 
 	id1="SNTP-7-SET_HW_TIME"
 	id2="SNTP-7-SET_HW_TIME" 
@@ -6137,6 +6358,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Recv ARP Request with source IP as &lt;saddr&gt;. &lt;info&gt;" />
+
 	
 <MESSAGE
 	id1="MM-5-PMKCACHE_DEL_FAILED"
@@ -6144,6 +6366,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Failed to delete PMK cache entry for station &lt;macaddr&gt; with request from controller &lt;saddr&gt;" />
+
 	
 <MESSAGE
 	id1="DOT1X-4-MAX_EAP_RETRIES"
@@ -6151,12 +6374,14 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Max EAP identity request retries (&lt;fld11&gt;) exceeded for client &lt;smacaddr&gt;" />
+
 <MESSAGE
 	id1="DOT1X-4-MAX_EAP_RETRANS"
 	id2="DOT1X-4-MAX_EAP_RETRANS"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Max EAP retransmissions exceeded for client &lt;smacaddr&gt;" />
+
 		
 <MESSAGE
 	id1="EMWEB-6-REQUEST_IS_NOT_GET_ERROR"
@@ -6164,6 +6389,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Invalid request not GET on client socket &lt;info&gt;" />
+
 <MESSAGE
 	id1="LOG-3-WATER_MARK"
 	id2="LOG-3-WATER_MARK"
@@ -6206,6 +6432,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Ping response from &lt;saddr&gt; is invalid. Incorrect checksum. " />
+
 <MESSAGE
 	id1="EMWEB-3-READ_ERROR"
 	id2="EMWEB-3-READ_ERROR"
@@ -6220,6 +6447,434 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="RogueAPDot11MacAddress=&quot;&lt;macaddr&gt;&quot;,RogueAPAirespaceAPMacAddress=&quot;&lt;smacaddr&gt;&quot;,RogueAPAirespaceAPSlotId=&lt;connectionid&gt;,RogueAPRadioType=&lt;ntype&gt;,RogueAPAirespaceAPName=&quot;&lt;group&gt;&quot; " />
 	
+<MESSAGE
+	id1="INVALID_STATE_EVENT"
+	id2="INVALID_STATE_EVENT"
+	eventcategory="1603040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid AP event and state combination&gt;"
+	content="The system detects an invalid AP(&lt;macaddr&gt;) event (&lt;event_type&gt;) and state (&lt;event_state&gt;) combination" />
+
+	
+<MESSAGE
+	id1="RECVD_PKT_WITH_INVALID_GROUP"
+	id2="RECVD_PKT_WITH_INVALID_GROUP"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Ethernet over IP ping from address that was not in a different group&gt;"
+	content="Recv Ethernet over IP ping from&lt;saddr&gt;in different Group" />
+
+	
+<MESSAGE
+	id1="PKT_RECV_ERROR"
+	id2="PKT_RECV_ERROR"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;info&gt;" />
+
+<MESSAGE
+	id1="OSARP_ADD_FAILED"
+	id2="OSARP_ADD_FAILED"
+	eventcategory="1805010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to add an ARP entry for IP to the operating system.&gt;"
+	content="Unable to add an ARP entry for&lt;saddr&gt;to the operating system.&lt;result&gt;" />
+
+<MESSAGE
+	id1="OSARP_DEL_FAILED"
+	id2="OSARP_DEL_FAILED"
+	eventcategory="1401010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to delete an ARP entry for IP from the operating system.&gt;"
+	content="Unable to delete an ARP entry for&lt;saddr&gt;from the operating system.&lt;result&gt;" />
+
+<MESSAGE
+	id1="MAC_NOT_IN_MOBILITYDB"
+	id2="MAC_NOT_IN_MOBILITYDB"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No Entry in Mobility DB for MAC&gt;"
+	content="No Entry in Mobility DB for MAC:{&lt;macaddr&gt;[&lt;info&gt;]|&lt;macaddr&gt;}" />
+
+<MESSAGE
+	id1="USER_NAME_DELETED"
+	id2="USER_NAME_DELETED"
+	eventcategory="1402020100" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Username entry is deleted for mobile&gt;"
+	content="Username entry (&lt;username&gt;) is deleted for mobile&lt;dmacaddr&gt;" />
+
+	
+<MESSAGE
+	id1="PROC_RSN_WARP_IE_FAILED"
+	id2="PROC_RSN_WARP_IE_FAILED"
+	eventcategory="1801010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Could not process the RSN and WARP IE's&gt;"
+	content="Could not process the RSN and WARP IEs.&lt;result&gt;:&lt;smacaddr&gt;, SSID:&lt;ssid&gt;,AP:&lt;macaddr&gt;." />
+
+<MESSAGE
+	id1="UNABLE_TO_CONTAIN_ROGUE"
+	id2="UNABLE_TO_CONTAIN_ROGUE"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to contain rogue&gt;"
+	content="Unable to contain rogue&lt;macaddr&gt;-&lt;result&gt;.&lt;info&gt;" />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:15"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to contain rogue&gt;"
+	content="Unable to contain rogue&lt;macaddr&gt;-&lt;result&gt;.&lt;info&gt;" />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:16"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not Register IP Add on MSCB.&gt;"
+	content="Could not Register IP Add on MSCB.&lt;result&gt;. mobility state, &lt;fld1&gt; and client state, APF_MS_STATE_ASSOCIATEDaddress:{&lt;macaddr&gt;[&lt;info&gt;]|&lt;macaddr&gt;[&lt;info&gt;|&lt;macaddr&gt;}" />
+
+<MESSAGE
+	id1="RETRIES_FAILED"
+	id2="RETRIES_FAILED"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:All retries for packet Export Anchor Request to IP failed&gt;"
+	content="All retries for packet Export Anchor Request to&lt;saddr&gt;failed." />
+
+ 
+<MESSAGE
+	id1="DTLS_DB_ERR"
+	id2="DTLS_DB_ERR"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to create DTLS connection&gt;"
+	content="&lt;macaddr&gt;: Failed to create DTLS connection for AP&lt;saddr&gt;(&lt;sport&gt;)." />
+
+<MESSAGE
+	id1="ACL_ENTRY_DONOT_EXIST"
+	id2="ACL_ENTRY_DONOT_EXIST"
+	eventcategory="1501050000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Unable to find an ACL by name&gt;"
+	content="Unable to find an ACL by name &quot;&lt;fld7&gt;&quot;." />
+
+	
+<MESSAGE
+	id1="SELECT_FAILED"
+	id2="SELECT_FAILED"
+	eventcategory="1601010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The select system call failed.&gt;"
+	content="The select system call failed.Error Code:&lt;resultcode&gt;" />
+
+<MESSAGE
+	id1="TOO_MANY_BAD_PKTS"
+	id2="TOO_MANY_BAD_PKTS"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Too many bad or lost packets.&gt;"
+	content="Too many bad or lost packets." />
+
+ 
+<MESSAGE
+	id1="NO_ACCEPTABLE_PKTS"
+	id2="NO_ACCEPTABLE_PKTS"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No acceptable packets received.&gt;"
+	content="No acceptable packets received." />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:17"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:No Entry in Mobility DB for MAC&gt;"
+	content="No Entry in Mobility DB for MAC:{&lt;macaddr&gt;[&lt;info&gt;]|&lt;macaddr&gt;}" />
+
+<MESSAGE
+	id1="WEBAUTHFAIL"
+	id2="WEBAUTHFAIL"
+	eventcategory="1301000000"
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Invalid credentials entered, web authentication failed for the station&gt;"
+	content="Invalid credentials entered, web authentication failed for the station&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="IP_CONFLICT_DETECTED"
+	id2="IP_CONFLICT_DETECTED"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:IP conflict detected&gt;"
+	content="Network device with mac addr&lt;macaddr&gt;using IP address of local interface '&lt;interface&gt;'.&lt;saddr&gt;- Received ARP Request on interface&lt;fld1&gt;with vlan ID&lt;vlan&gt;. &lt;result&gt;" />
+
+<MESSAGE
+	id1="DISC_INTF_ERR1"
+	id2="DISC_INTF_ERR1"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ignoring Primary discovery request received on non-management interface&gt;"
+	content="Ignoring Primary discovery request received on non-management interface (&lt;interface&gt;) from AP&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:18"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ignoring Primary discovery request received on non-management interface&gt;"
+	content="Ignoring Primary discovery request received on non-management interface (&lt;interface&gt;) from AP&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:19"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:All retries for packet Export Anchor Request to IP failed&gt;"
+	content="All retries for packet Export Anchor Request to&lt;saddr&gt;failed." />
+
+ 
+<MESSAGE
+	id1="LOG-4-Q_IND:20"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid AP event and state combination&gt;"
+	content="The system detects an invalid AP(&lt;macaddr&gt;) event (&lt;event_type&gt;) and state (&lt;event_state&gt;) combination" />
+
+<MESSAGE
+	id1="LOG-6-Q_IND:21"
+	id2="LOG-6-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Remapping interface ID for STA&gt;"
+	content="Remapping interface ID for STA &lt;smacaddr&gt; from &lt;fld1&gt; to &lt;fld2&gt; (&lt;fld3&gt;)" />
+
+	
+<MESSAGE
+	id1="LOG-4-Q_IND:22"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ignoring discovery request received on a wrong VLAN&gt;"
+	content="Ignoring discovery request received on a wrong VLAN (&lt;vlan&gt;) on interface (&lt;interface&gt;) from AP&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="GRAT_ARP_NOTSENT"
+	id2="GRAT_ARP_NOTSENT"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Did not send Gratuitous ARP to defend IP address&gt;"
+	content="Did not send Gratuitous ARP to defend IP address (&lt;saddr&gt;) of local interface '&lt;interface&gt;'." />
+
+<MESSAGE
+	id1="LOG-6-Q_IND:12"
+	id2="LOG-6-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to add an ARP entry&gt;"
+	content="Unable to add an ARP entry for&lt;saddr&gt;to the operating system.&lt;result&gt;" />
+
+	
+<MESSAGE
+	id1="LOG-1-Q_IND:04"
+	id2="LOG-1-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:IP conflict detected&gt;"
+	content="Network device with mac addr&lt;macaddr&gt;using IP address of local interface '&lt;interface&gt;'.&lt;saddr&gt;- Received ARP Request on interface&lt;fld1&gt;with vlan ID&lt;vlan&gt;. &lt;result&gt;" />
+
+	 
+<MESSAGE
+	id1="ROGUE_CLIENT_TO_ROGUEAP"
+	id2="ROGUE_CLIENT_TO_ROGUEAP"
+	eventcategory="1603040000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue client MAC address connected to Rogue AP is is auto contained&gt;"
+	content="Rogue client MAC address:&lt;smacaddr&gt;connected to Rogue AP&lt;macaddr&gt;is &lt;action&gt;"/>
+
+	
+<MESSAGE
+	id1="SUBNET_MISMATCH_IP_ADD_ON_MSCB"
+	id2="SUBNET_MISMATCH_IP_ADD_ON_MSCB"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Subnet mismatches while registering IP address&gt;"
+	content="Subnet mismatches while registering IP address&lt;saddr&gt;with netmask&lt;smask&gt;for client&lt;smacaddr&gt;" />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:23"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Subnet mismatches while registering IP address&gt;"
+	content="Subnet mismatches while registering IP address&lt;saddr&gt;with netmask&lt;smask&gt;for client&lt;smacaddr&gt;" />
+
+<MESSAGE 
+	id1="LOG-4-Q_IND:25"
+	id2="LOG-4-Q_IND"
+	eventcategory="1703000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:server switchover failed&gt;"
+	content="TACACS+ server switchover {failed as there is no other server active|failed}. Current server is &lt;saddr&gt; (port:&lt;sport&gt;)[&lt;info&gt;] " />
+
+<MESSAGE
+	id1="LOG-4-Q_IND:24"
+	id2="LOG-4-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;event_description&gt;" />
+
+<MESSAGE
+	id1="LOG-6-Q_IND:11"
+	id2="LOG-6-Q_IND"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;event_description&gt;" />
+
+  
+<MESSAGE
+	id1="BAD_CERT"
+	id2="BAD_CERT"
+	eventcategory="1601000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Certificate verification failed.&gt;"
+	content="Certificate verification failed. Peer IP:&lt;saddr&gt;" />
+
+<MESSAGE
+	id1="READ_ERROR"
+	id2="READ_ERROR"
+	eventcategory="1801030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Remote client closed connection&gt;"
+	content="Remote client closed connection (bytes read=&lt;bytes&gt;, errno=&lt;resultcode&gt;)." />
+
+<MESSAGE
+	id1="DATAPLANE-4-DP_MSG:01"
+	id2="DATAPLANE-4-DP_MSG"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to add IPv6 address&gt;"
+	content="&lt;version&gt;[&lt;fld1&gt;]Failed to add IPv6 address&lt;saddr_v6&gt;, scbdb not found vlan&lt;vlan&gt;" />
+
+<MESSAGE
+	id1="SIM_INTF_ID_INCORRECT"
+	id2="SIM_INTF_ID_INCORRECT"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface Identifier incorrectly populated for interface&gt;"
+	content="Interface Identifier incorrectly populated for interface {&lt;interface&gt;.[&lt;info&gt;]|&lt;interface&gt;.}" />
+
+<MESSAGE
+	id1="IMAGE_DOWNLOAD_ERR3"
+	id2="IMAGE_DOWNLOAD_ERR3"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Refusing image download request from Unsupported AP&gt;"
+	content="Refusing image download request from Unsupported AP&lt;macaddr&gt;- unable to open image file&lt;filename&gt;" />
+
+<MESSAGE
+	id1="ENCODE_ERR"
+	id2="ENCODE_ERR"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The system has failed to encode Image data request&gt;"
+	content="The system has failed to encode Image data request (&lt;result&gt;) to AP&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="DISC_INTF_ERR2"
+	id2="DISC_INTF_ERR2"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Ignoring discovery request received on a wrong VLAN&gt;"
+	content="Ignoring discovery request received on a wrong VLAN (&lt;vlan&gt;) on interface (&lt;interface&gt;) from AP&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="CLIENT_ACL_ENTRY_NOT_EXIST"
+	id2="CLIENT_ACL_ENTRY_NOT_EXIST"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client could not join AP&gt;"
+	content="The client&lt;sinterface&gt;could not join AP :&lt;macaddr&gt;for slot&lt;portname&gt;, Reason:&lt;result&gt;" />
+
+<MESSAGE
+	id1="IPRGSTR_MSCB_FAIL"
+	id2="IPRGSTR_MSCB_FAIL"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Registering IP on mscb failed for station&gt;"
+	content="Registering IP on mscb failed for station&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="PKT_DROPPED"
+	id2="PKT_DROPPED"
+	eventcategory="1801010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Mobility packet dropped.&gt;"
+	content="Mobility packet dropped. packet sent to or received from self." />
+
+<MESSAGE
+	id1="INVALID_VLANID_ARP"
+	id2="INVALID_VLANID_ARP"
+	eventcategory="1603040000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP table stores invalid vlan id for an IP Addr&gt;"
+	content="ARP table stores invalid vlan id&lt;vlan&gt;, for the IP Addr&lt;saddr&gt;. Expected vlan id for this ip address is&lt;fld2&gt;" />
+
+<MESSAGE
+	id1="ROGUE_VALID_CLIENT"
+	id2="ROGUE_VALID_CLIENT"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Rogue client MAC address has been deteted as valid client by MSE&gt;"
+	content="Rogue client MAC address:&lt;macaddr&gt;has been deteted as valid client by MSE" />
+
+<MESSAGE
+	id1="HANDOFF_RETRIES_FAILED"
+	id2="HANDOFF_RETRIES_FAILED"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:client is again in (export) anchor/foreign relation with peer.No more retires for HandoffEnd.&gt;"
+	content="{client is again in (export) anchor/foreign relation with peer :&lt;saddr&gt;|All retries for Handoff End is done. peer :&lt;saddr&gt;}. Mobilty Role :&lt;user_role&gt;. No more retires for HandoffEnd. Client :&lt;smacaddr&gt;Last Wait time&lt;fld1&gt;." />
+
+	
+<MESSAGE
+	id1="ORPHAN_ADDR_LEARNING_FAILED"
+	id2="ORPHAN_ADDR_LEARNING_FAILED"
+	eventcategory="1601000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:failed to learn address.&gt;"
+	content="client mac =&lt;smacaddr&gt;, ipv6 address&lt;saddr_v6&gt;,vlan=&lt;vlan&gt;numIpv6Addr =&lt;fld1&gt;, orphan=&lt;fld2&gt;failed to learn address." />
+
+<MESSAGE 
+	id1="MOBILE_ANNOUNCE_CLSN" 
+	id2="MOBILE_ANNOUNCE_CLSN" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Announce collision for mobile  ,deleting.&gt;"
+	content="Announce collision for mobile &lt;smacaddr&gt;, deleting." />
+
+	
+<MESSAGE
+	id1="ARPDATA_QUEUE_OVERLOAD"
+	id2="ARPDATA_QUEUE_OVERLOAD"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ARP input q exceeds limit.&gt;"
+	content="ARP input q exceeds limit. Current val =&lt;fld1&gt;" />
+
+<MESSAGE
+	id1="HANDOFF_END_RCVD"
+	id2="HANDOFF_END_RCVD"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Handoff end received from mismatched peer&gt;"
+	content="Handoff end received from mismatched peer (peer Ip:&lt;daddr&gt;, anchor Ip:&lt;saddr&gt;, Role:&lt;user_role&gt;) for mobile&lt;smacaddr&gt;" />
+
+<MESSAGE
+	id1="TX_ERR"
+	id2="TX_ERR"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The system has failed to transmit image data request to AP&gt;"
+	content="The system has failed to transmit image data request to AP&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="USE_DEFAULT_CIPHER_SUITE"
+	id2="USE_DEFAULT_CIPHER_SUITE"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Using default settings for Cipher Suite for mobile&gt;"
+	content="Using default settings for{Pairwise|Authentication}Cipher Suite for mobile&lt;macaddr&gt;" />
+
+<MESSAGE
+	id1="RCVD_MOB_RESP_IN_WRONG_CLIENT_S"
+	id2="RCVD_MOB_RESP_IN_WRONG_CLIENT_S"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received Mobility response for mobile&gt;"
+	content="Received Mobility response for mobile&lt;macaddr&gt;as anchor while in the wrong state." />
+
+<MESSAGE
+	id1="MOVED_AP_TO_AUTOCONTAIN"
+	id2="MOVED_AP_TO_AUTOCONTAIN"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Moved AP to auto-contained state.&gt;"
+	content="Moved AP&lt;macaddr&gt;to auto-contained state." />
+
+<MESSAGE
+	id1="INET_SEND_FAILED"
+	id2="INET_SEND_FAILED"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to send handoff End send&gt;"
+	content="Unable to send handoff End send  to&lt;saddr&gt;" />
+
+<MESSAGE
+	id1="SXP_SGT_NO_AAA_OVERRIDE"
+	id2="SXP_SGT_NO_AAA_OVERRIDE"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:AAA override not enabled for WLAN&gt;"
+	content="AAA override not enabled for WLAN&lt;wlan&gt;hence dropping&lt;fld1&gt;for Client&lt;smacaddr&gt;" />
+
+<MESSAGE
+	id1="RECV_TIME_OUT"
+	id2="RECV_TIME_OUT"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to receive data on the socket.&gt;"
+	content="Failed to receive data on the socket after &lt;fld1&gt; seconds." />
+
+	 	 
 <MESSAGE 
 	id1="CISCOWLC_GENERIC" 
 	id2="CISCOWLC_GENERIC"
@@ -6228,4 +6883,5 @@
 	missField="true"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@msg_id:*HDR(event_type)&gt;&lt;@vid:*HDR(event_type)&gt;"
 	content="APAdminStatus=&lt;ntype&gt;,APAirespaceAPSlotId=&lt;connectionid&gt;,APChannelNumberTrapVariable=&lt;fld8&gt;,APCoverageFailedClients=&lt;fld1&gt;,APCoverageThresholdTrapVariable=&lt;ntype&gt;,APCoverageTotalClients=&lt;duration&gt;,APDot11MacAddress=&lt;smacaddr&gt;,APDot3MacAddress=&lt;macaddr&gt;,APIfAdminStatus=&lt;inout&gt;,APIfPhyChannelNumber=&lt;fld8&gt;,APIfPhyTxPowerLevel=&lt;fld5&gt;,APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;,APMacAddrTrapVariable=&lt;macaddr&gt;,APName=&lt;group&gt;,APNameTrapVariable=&lt;group&gt;,APPortNumberTrapVariable=&lt;fport&gt;,APSlotIdTrapVariable=&lt;connectionid&gt;,AuthFailUserName=&lt;username&gt;,AuthFailUserType=&lt;ntype&gt;,BlacklistingReasonCode=&lt;action&gt;,ClearTrapVariable=&lt;service&gt;,ClientMacAddr=&lt;macaddr&gt;,ClientRssi=&lt;fld5&gt;,ClientSnr=&lt;vlan&gt;,DuplicateIpReportedByAP=&lt;fld8&gt;,DuplicateIpTrapClear=&lt;ntype&gt;,DuplicateIpTrapVariable=&lt;saddr&gt;,ImpersonatedAPMacAddr=&lt;smacaddr&gt;,InterferenceEnergyAfterChannelUpdate=&lt;fld5&gt;,InterferenceEnergyBeforeChannelUpdate=&lt;rulename&gt;,MaxRogueCount=&lt;connectionid&gt;,RogueAPAirespaceAPMacAddress=&lt;smacaddr&gt;,RogueAPAirespaceAPName=&lt;group&gt;,RogueAPAirespaceAPRSSI=&lt;duration&gt;,RogueAPAirespaceAPSNR=&lt;inout&gt;,RogueAPAirespaceAPSlotId=&lt;connectionid&gt;,RogueAPChannelNumber=&lt;fld8&gt;,RogueAPDot11MacAddress=&lt;macaddr&gt;,RogueAPOnWiredNetwork=&lt;vlan&gt;,RogueAPRadioType=&lt;ntype&gt;,RogueAPSsid=&lt;fld7&gt;,RogueAdhocMode=&lt;rulename&gt;,SignatureAttackChannel=&lt;vlan&gt;,SignatureAttackFrequency=&lt;duration&gt;,SignatureAttackPreced=&lt;fld8&gt;,SignatureAttackerMacAddress=&lt;smacaddr&gt;,SignatureDescription=&lt;fld5&gt;,SignatureName=&lt;rulename&gt;,SignatureType=&lt;ntype&gt;,StationAPIfSlotId=&lt;connectionid&gt;,StationAPMacAddr=&lt;macaddr&gt;,StationMacAddress=&lt;smacaddr&gt;,StationReasonCode=&lt;action&gt;,UserIpAddress=&lt;saddr&gt;,UserName=&lt;c_user_name&gt;,message=&lt;msg&gt;" />
+
 </DEVICEMESSAGES>
