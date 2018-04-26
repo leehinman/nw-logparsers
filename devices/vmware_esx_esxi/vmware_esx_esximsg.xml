@@ -4,9 +4,9 @@
 	displayname="VMware ESX / ESXi"
 	group="Virtualization">
 <VERSION
-	xml="43"
-	checksum="86e8425f05fb5a3d030942431e03c775"
-	revision="114"
+	xml="47"
+	checksum="9781fb1941b604b08bc034dc5b6988b8"
+	revision="117"
 	device="2.0" />
 
  
@@ -2358,6 +2358,27 @@
 	content="&lt;agent&gt;: [&lt;fld2&gt; &lt;severity&gt; &lt;fld3&gt;] &lt;event_description&gt; " />
 
 <MESSAGE 
+	id1="hostd-probe:05" 
+	id2="hostd-probe" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; hostd-probe[&lt;fld1&gt;] [&lt;fld2&gt; &lt;fld3&gt;] Current working directory: &lt;directory&gt;" />
+
+<MESSAGE 
+	id1="hostd-probe:04" 
+	id2="hostd-probe" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; hostd-probe[&lt;fld1&gt;] [&lt;fld2&gt; &lt;fld3&gt;] &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="hostd-probe:03" 
+	id2="hostd-probe" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: Section for VMware ESX, pid=&lt;process_id&gt;, version=&lt;version&gt;, build=&lt;fld3&gt;, option=&lt;fld4&gt;" />
+
+<MESSAGE 
 	id1="hostd-probe:02" 
 	id2="hostd-probe" 
 	eventcategory="1605000000" 
@@ -2392,6 +2413,41 @@
 	 eventcategory="1605000000" 
      functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	 content="&lt;agent&gt;: [&lt;fld1&gt;&lt;severity&gt;&apos;&lt;fld2&gt;&apos;] Connected to &lt;shost&gt; :&lt;network_port&gt;"/>
+
+<MESSAGE 
+	id1="Rhttpproxy:04" 
+	id2="Rhttpproxy" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld1&gt;] [&lt;fld2&gt; &lt;fld3&gt;] New proxy client {&lt;&lt;SSL(&lt;&lt;io_obj p:|&lt;&lt;io_obj p:}&lt;fld5&gt;,&lt;fld4&gt;, &lt;&lt;&lt;protocol&gt;&apos;&lt;saddr&gt;:&lt;sport&gt;&apos;&gt;,{&lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt;)&gt;|&lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt;)|&lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt;}" />
+
+<MESSAGE 
+	id1="Rhttpproxy:05" 
+	id2="Rhttpproxy" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld1&gt;] [&lt;fld2&gt; &lt;fld3&gt;] Connected to &lt;shost&gt;: &lt;fld4&gt; over &lt;&lt;io_obj p:&lt;fld5&gt;, &lt;fld6&gt;, &lt;&lt;&lt;protocol&gt;&apos;&lt;saddr&gt;:&lt;sport&gt;&apos;&gt;, &lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt; " />
+
+<MESSAGE 
+	id1="Rhttpproxy:06" 
+	id2="Rhttpproxy" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld7&gt;] [&lt;fld2&gt; &lt;fld3&gt;] Resolved endpoint : [&lt;fld4&gt;] _serverNamespace = &lt;fld5&gt; _isRedirect = &lt;fld6&gt; _port = &lt;network_port&gt;" />
+
+<MESSAGE 
+	id1="Rhttpproxy:08" 
+	id2="Rhttpproxy" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld4&gt;] [&lt;fld2&gt; &lt;fld3&gt;] SSL Handshake failed for stream &lt;&lt;SSL(&lt;&lt;io_obj p:&lt;fld5&gt;,&lt;fld7&gt;, &lt;&lt;&lt;protocol&gt;&apos;&lt;saddr&gt;:&lt;sport&gt;&apos;&gt;, &lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt;)&gt;: &lt;fld6&gt;" />
+
+<MESSAGE 
+	id1="Rhttpproxy:07" 
+	id2="Rhttpproxy" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld4&gt;] [&lt;fld2&gt; &lt;fld3&gt;] &lt;event_description&gt;" />
 
 <MESSAGE 
 	id1="Rhttpproxy" 
@@ -2448,6 +2504,41 @@
 	 eventcategory="1801030000" 
 	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_description:Connection removed&gt;"
 	 content="&lt;agent&gt;: [&lt;fld1&gt;&lt;severity&gt;&apos;&lt;fld2&gt;&apos;] [&lt;fld3&gt;] Connection removed; cnx: &lt;&lt;io_obj p:&lt;fld4&gt;,&lt;fld5&gt;, &lt;&lt;&lt;protocol&gt;&apos;&lt;saddr&gt;:&lt;sport&gt;&apos;&gt;, &lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt;;&lt;fld8&gt;"/>
+
+<MESSAGE
+	 id1="Vpxa:12"
+	 id2="Vpxa"
+	 eventcategory="1801030000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_description:Connection removed&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	 content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] [&lt;fld9&gt;] Connection removed; cnx: &lt;&lt;io_obj p:&lt;fld4&gt;,&lt;fld5&gt;, &lt;&lt;&lt;protocol&gt;&apos;&lt;saddr&gt;:&lt;sport&gt;&apos;&gt;, &lt;&lt;TCP &apos;&lt;daddr&gt;:&lt;dport&gt;&apos;&gt;&gt;;&lt;fld8&gt;"/>
+
+<MESSAGE
+	 id1="Vpxa:13"
+	 id2="Vpxa"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_description:Resolved localPath&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	 content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] [Url] Resolved localPath&lt;filename&gt;to URL&lt;url&gt;"/>
+
+<MESSAGE
+	 id1="Vpxa:14"
+	 id2="Vpxa"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@change_attribute:filename&gt;"
+	 content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] [&lt;fld4&gt;] DsPathToLocalPath conversion: [&lt;fld5&gt;] &lt;change_old&gt; -&gt; &lt;change_new&gt;"/>
+
+<MESSAGE
+	 id1="Vpxa:15"
+	 id2="Vpxa"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_description:Refreshing datastore with url&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@change_attribute:filename&gt;"
+	 content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] [&lt;fld4&gt;] Refreshing datastore with url &lt;url&gt;"/>
+
+<MESSAGE
+	 id1="Vpxa:16"
+	 id2="Vpxa"
+	 eventcategory="1605000000" 
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	 content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] [UrlHelper::{SetNonDatastores|SetDatastores}]&lt;fld4&gt;"/>
 
 <MESSAGE 
 	id1="Vpxa:04" 
@@ -2583,6 +2674,48 @@
 	content=" &lt;agent&gt;: &lt;event_description&gt;" />
 
 <MESSAGE 
+	id1="vmauthd:06" 
+	id2="vmauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]:&lt;fld3&gt;: Connected to &lt;fld4&gt;, remote end sent pid: &lt;process_id&gt; " />
+
+<MESSAGE 
+	id1="vmauthd:05" 
+	id2="vmauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:PREF Optional preferences file not found&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: PREF Optional preferences file not found at &lt;directory&gt; &lt;info&gt; " />
+
+<MESSAGE 
+	id1="vmauthd:04" 
+	id2="vmauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: &lt;fld3&gt;: Cannot open file &quot;&lt;directory&gt;&quot;: &lt;info&gt; " />
+
+<MESSAGE 
+	id1="vmauthd:03" 
+	id2="vmauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: &lt;event_description&gt;, session = &lt;fld3&gt; " />
+
+<MESSAGE 
+	id1="vmauthd:02" 
+	id2="vmauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_description:Connect from remote socket&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: Connect from remote socket (&lt;saddr&gt;:&lt;sport&gt;)." />
+
+<MESSAGE 
+	id1="vmauthd:01" 
+	id2="vmauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: Connect from &lt;saddr&gt;" />
+
+<MESSAGE 
 	id1="vmauthd" 
 	id2="vmauthd" 
 	eventcategory="1605000000" 
@@ -2645,7 +2778,83 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;agent&gt;:&lt;event_description&gt;" />
 	
-	
+<MESSAGE 
+	id1="Hostd:33" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] Upgrade is required for virtual machine, version: &lt;version&gt;" />
+
+<MESSAGE 
+	id1="Hostd:32" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Valid license detected&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] ha-license-manager:Validate -&gt; Valid license detected for &quot;&lt;product&gt;&quot; (&lt;fld5&gt;)" />
+
+<MESSAGE 
+	id1="Hostd:31" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Loading existing file&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] Load: Loading existing file: &lt;filename&gt;" />
+
+<MESSAGE 
+	id1="Hostd:30" 
+	id2="Hostd" 
+	eventcategory="1401070000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] &lt;fld5&gt; : User &lt;fld8&gt;@&lt;saddr&gt; logged out (&lt;fld6&gt;, user agent: &lt;user_agent&gt;)" />
+
+<MESSAGE 
+	id1="Hostd:29" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Failed to find file size&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] UpdateFileInfo: Failed to find file size for &lt;filename&gt;: &lt;info&gt;" />
+
+<MESSAGE 
+	id1="Hostd:28" 
+	id2="Hostd" 
+	eventcategory="1401060000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] &lt;fld5&gt; : User &lt;fld6&gt;@&lt;saddr&gt; logged in as &lt;user_agent&gt;" />
+
+<MESSAGE 
+	id1="Hostd:27" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;fld5&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] [Auth]: User &lt;username&gt;" />
+
+<MESSAGE 
+	id1="Hostd:26" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;fld5&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] Task Completed : &lt;fld6&gt; Status &lt;result&gt;" />
+
+<MESSAGE 
+	id1="Hostd:25" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Ticket issued for CIMOM version&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;fld5&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] Ticket issued for CIMOM version &lt;version&gt;, user &lt;username&gt;" />
+
+<MESSAGE 
+	id1="Hostd:24" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] &lt;fld8&gt;, prevTime = &lt;fld5&gt; curTime = &lt;fld6&gt; previIOTime = &lt;fld7&gt;" />
+
+<MESSAGE 
+	id1="Hostd:23" 
+	id2="Hostd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; hostd[&lt;fld1&gt;] [{&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt; user=&lt;username&gt;|&lt;fld2&gt; sub=&lt;fld3&gt;}] &lt;event_description&gt;" />
+
 <MESSAGE 
 	id1="Hostd:16" 
 	id2="Hostd" 
@@ -2748,11 +2957,39 @@
 	content="&lt;agent&gt;:&lt;fld1&gt;)&lt;severity&gt;:&lt;event_description&gt; " />
 
 <MESSAGE 
+	id1="Vpxa:19" 
+	id2="Vpxa" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] [HostChanged] &lt;fld4&gt;:&lt;hostname&gt;" />
+
+<MESSAGE 
+	id1="Vpxa:17" 
+	id2="Vpxa" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt;] [&lt;fld5&gt;] &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Vpxa:18" 
+	id2="Vpxa" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; vpxa[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt;] &lt;event_description&gt;" />
+
+<MESSAGE 
 	id1="Vpxa:06" 
 	id2="Vpxa" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;agent&gt;:&lt;event_description&gt; " />
+
+<MESSAGE 
+	id1="sfcb-vmware_raw:01" 
+	id2="sfcb-vmware_raw" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: IpmiIfcRhFruInv: return &lt;resultcode&gt; due to bad FRU header version &lt;version&gt;" />
 
 <MESSAGE 
 	id1="sfcb-vmware_raw" 
@@ -2789,6 +3026,13 @@
 	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;agent&gt;[&lt;fld1&gt;]:&lt;event_description&gt;" />
 	
+<MESSAGE
+	id1="cimslp:02"
+	id2="cimslp"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;:&lt;fld2&gt;(service:&lt;fld3&gt;:&lt;url&gt;) rc = &lt;fld4&gt;" />
+
 <MESSAGE
 	id1="cimslp:01"
 	id2="cimslp"
