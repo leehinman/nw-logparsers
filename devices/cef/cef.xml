@@ -120,6 +120,18 @@
 	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 <MESSAGE 
+	id1="azure_ad_audit" 
+	id2="azure_ad_audit" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+<MESSAGE 
+	id1="azure_ad_signin" 
+	id2="azure_ad_signin" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+<MESSAGE 
 	id1="msoffice365" 
 	id2="msoffice365" 
 	eventcategory="1612000000"
@@ -213,8 +225,8 @@
 	<Vendor2Device vendor="RSA" product="Security Analytics Audit" device="securityanalytics" group="Analysis"/>
 	<Vendor2Device vendor="RSA" product="NetWitness CloudTrail Log Collector" device="awscloudtrail" group="Cloud"/>
 	<Vendor2Device vendor="RSA" product="NetWitness Azure Audit Log Collector" device="azureaudit" group="Cloud"/> 
-	<Vendor2Device vendor="RSA" product="NetWitness Azure AD Signin Log Collector" device="azureaudit" group="Cloud"/> 
-    <Vendor2Device vendor="RSA" product="NetWitness Azure AD Audit Log Collector" device="azureaudit" group="Cloud"/> 
+	<Vendor2Device vendor="RSA" product="NetWitness Azure AD Signin Log Collector" device="azure_ad_signin" group="Cloud"/> 
+    <Vendor2Device vendor="RSA" product="NetWitness Azure AD Audit Log Collector" device="azure_ad_audit" group="Cloud"/> 
     <Vendor2Device vendor="McAfee" product="iGuard" device="mcafeereconnex" group="DLP"/>
 	<Vendor2Device vendor="Microsoft" product="Office365" device="msoffice365" group="Cloud"/>
 	<Vendor2Device vendor="Salesforce" product="CRM" device="salesforce" group="Cloud"/>
@@ -625,8 +637,10 @@
 		<ExtensionKey cefName="uid" metaName="user.id"/>
 		
 	
-		<ExtensionKey cefName="id" metaName="operation_id">
+		<ExtensionKey cefName="id" metaName="cs_fld">
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+			<device2meta device="vmwareappdefense" metaName="id"/>
+			<device2meta device="office365audit" metaName="id"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="signinDateTimeInMillis" metaName="event_time_string"/>
 		<ExtensionKey cefName="userPrincipalName" metaName="username"/>
@@ -961,7 +975,6 @@
 		<ExtensionKey cefName="count" metaName="dclass_counter1"/>
 		<ExtensionKey cefName="violatingProcess.fullPathName" metaName="filename"/>
 		<ExtensionKey cefName="lastReceivedAt" metaName="param_event_time"/>
-		<ExtensionKey cefName="id" metaName="id"/>
 		<ExtensionKey cefName="violationDetails.remoteAddress" metaName="daddr"/>
 		<ExtensionKey cefName="violatingProcess.processReputationProfile.peHeaderMetadata.companyName" metaName="user_org"/>
 		<ExtensionKey cefName="violatingProcess.processReputationProfile.peHeaderMetadata.productVersion" metaName="version"/>
