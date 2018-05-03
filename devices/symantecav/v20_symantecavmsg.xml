@@ -4,8 +4,8 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="145"
-	checksum="e20b4442e373e3c7ea48dd0d1c4c57c4"
+	xml="147"
+	checksum="2b7d641b7b58449c26cd69c9cbe7d6f8"
 	revision="117"
     device="2.0" />
 
@@ -281,6 +281,16 @@
 
 
 <HEADER
+	id1="00243"
+	id2="00243"
+	content="&lt;htime&gt; &lt;hhost&gt; SymantecServer: &lt;hshost&gt;,&lt;hsaddr&gt;,&lt;hfld1&gt;,&lt;messageid&gt; &lt;!payload:hfld1&gt;"/>
+
+<HEADER
+	id1="00244"
+	id2="00244"
+	content="&lt;htime&gt; &lt;hhost&gt; SymantecServer: &lt;hshost&gt;,&lt;hsaddr&gt;,&lt;messageid&gt;,&lt;!payload&gt;"/>
+
+<HEADER
 	id1="0031"
 	id2="0031"
 	content="%SymantecEP: &lt;messageid&gt;^^&lt;hhost&gt;^^&lt;!payload:hhost&gt;"/>
@@ -451,7 +461,7 @@
 	id2="Application" 
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Application and Device Control is ready.&gt;"
-	content="&lt;fld44&gt;,Application and Device Control is ready,&lt;fld8&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;" />
+	content="&lt;fld44&gt;,Application and Device Control is ready,&lt;fld8&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,User: &lt;username&gt;,{Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;|Domain: &lt;domain&gt;}" />
 
 <MESSAGE
 	id1="Application:01"
@@ -527,6 +537,34 @@
 	eventcategory="1401000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;&lt;@event_description:Somebody is scanning your computer.&gt;"
 	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt; ,&quot;Somebody is scanning your computer.  Your computer's TCP ports:   &lt;fld60&gt;, &lt;fld61&gt;, &lt;fld62&gt;, &lt;fld63&gt; and &lt;fld64&gt; have been scanned from &lt;fld65&gt;.&quot;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
+<MESSAGE 
+	id1="Informational" 
+	id2="SHA-256:" 
+	eventcategory="1605000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;&lt;@event_description:Informational: File Download Hash.&gt;"
+	content="&lt;fld4&gt;,MD-5:&lt;fld5&gt; ,Informational: File Download Hash,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
+<MESSAGE 
+	id1="Web_Attack" 
+	id2="SHA-256:" 
+	eventcategory="1001030000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;&lt;@event_description:Web Attack : Malvertisement Website Redirect&gt;"
+	content="&lt;fld3&gt;,&lt;fld4&gt;,MD-5:&lt;fld5&gt; ,Web Attack : Malvertisement Website Redirect &lt;fld1&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
+<MESSAGE 
+	id1="Web_Attack:01" 
+	id2="SHA-256:" 
+	eventcategory="1001030000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;&lt;@event_description:Web Attack: Mass Injection Website.&gt;"
+	content="&lt;fld3&gt;,&lt;fld4&gt;,MD-5:&lt;fld5&gt; ,Web Attack: Mass Injection Website &lt;fld1&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
+
+<MESSAGE 
+	id1="App_Attack" 
+	id2="SHA-256:" 
+	eventcategory="1001030000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;&lt;@event_description:Fake App Attack: Misleading Application Website.&gt;"
+	content="&lt;fld3&gt;,&lt;fld4&gt;,MD-5:&lt;fld5&gt; ,Fake App Attack: Misleading Application Website&lt;fld1&gt;,Local: &lt;saddr&gt;,Local: &lt;fld12&gt;,Remote: &lt;fld13&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld15&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID: &lt;fld52&gt;,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld11&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;|Intrusion URL: &lt;url&gt;}" />
 
 <MESSAGE 
 	id1="blocked" 
@@ -3012,7 +3050,7 @@
 	id1="Allowed:09"
 	id2="Allowed"
 	eventcategory="1401010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Write&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Write&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="{ - Caller MD5=&lt;checksum&gt;|&lt;fld1&gt;},File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 
 <MESSAGE
@@ -3021,6 +3059,14 @@
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Write&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
 	content="&lt;fld1&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;filename&gt;,&lt;fld4&gt;,No Module Name,&lt;directory&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;" />
+
+<MESSAGE
+	id1="Allowed:10"
+	id2="Allowed"
+	eventcategory="1401010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@ec_subject:File&gt;&lt;@ec_activity:Delete&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Delete&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Delete&gt;"
+	content=" - Caller MD5=&lt;checksum&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,{Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;|Action Type:&lt;fld46&gt;}" />
+
 <MESSAGE
 	id1="Allowed:04"
 	id2="Allowed"
@@ -3123,7 +3169,7 @@
 	id2="Continue"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
-	content="&lt;fld5&gt; - Caller MD5=&lt;fld6&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;" />
+	content="&lt;fld5&gt; - Caller MD5=&lt;checksum&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,{Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;|Action Type:&lt;fld44&gt;}" />
 <MESSAGE
 	id1="FileWrite:01"
 	id2="Continue"
@@ -3154,7 +3200,7 @@
 	id2="Continue"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
-	content="&lt;info&gt; - Caller MD5=&lt;fld6&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+	content="&lt;info&gt; - Caller MD5=&lt;checksum&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 <MESSAGE
 	id1="FileDelete:01"
 	id2="Continue"
@@ -3315,7 +3361,7 @@
 	id2="Blocked"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="{&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;/service'&lt;fld33&gt; |&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;chrome-extension:&lt;fld99&gt;'&lt;fld33&gt; |&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;-ServerName:&lt;hostid&gt;'&lt;fld33&gt; |- Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;-ServerName:&lt;hostid&gt;' | - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt; | - Target MD5=&lt;fld6&gt;},Create Process,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt; ,File size (&lt;fld10&gt;):&lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+	content="{&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;/service'&lt;fld33&gt; |&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;chrome-extension:&lt;fld99&gt;'&lt;fld33&gt; |&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;-ServerName:&lt;hostid&gt;'&lt;fld33&gt; |- Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt;-ServerName:&lt;hostid&gt;' |&lt;fld11&gt; - Target MD5=&lt;fld6&gt; - Target Arguments=&lt;fld7&gt; | - Target MD5=&lt;fld6&gt;},Create Process,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt; ,File size (&lt;fld10&gt;):&lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 
 <MESSAGE
 	id1="Ping"
