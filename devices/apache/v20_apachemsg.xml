@@ -4,9 +4,9 @@
 	displayname="Apache Web Server"
 	group="Web Logs">
 <VERSION
-	xml="17"
-	checksum="9475cbddc257ad25a2cbcc81d69ca511"
-	revision="107"
+	xml="21"
+	checksum="aea463b330ea720650cfd5a15aa3d14f"
+	revision="118"
     device="2.0" />
 
 <HEADER 
@@ -205,6 +205,14 @@
 	functions="&lt;@web_ref_domain:*URL($DOMAIN,web_referer)&gt;&lt;@web_domain:*URL($DOMAIN,web_host)&gt;&lt;@fqdn:*PARMVAL(web_host)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content=" &lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &quot;&lt;web_host&gt;&quot; &quot;&lt;webpage&gt;&quot; &quot;&lt;web_query&gt;&quot; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &quot;&lt;web_referer&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_cookie&gt;&quot;  " />
 <MESSAGE 
+	id1="00408:01" 
+	id2="-" 
+	eventcategory="1204000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content=" &lt;fld9&gt; &lt;fld5&gt; &lt;fld10&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &lt;process_id&gt; &lt;fld8&gt; &lt;duration&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />	
+
+	
+<MESSAGE 
 	id1="00408" 
 	id2="-" 
 	eventcategory="1801010000" 
@@ -271,11 +279,20 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt;  " />
 <MESSAGE 
+	id1="00100:03" 
+	id2="GET" 
+	eventcategory="1204000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &lt;process_id&gt; &lt;fld8&gt; &lt;duration&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />
+
+		
+<MESSAGE 
 	id1="00100:02" 
 	id2="GET" 
 	eventcategory="1204000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />
+
 		
 <MESSAGE 
 	eventcategory="1204000000"
@@ -295,6 +312,14 @@
 	id2="get" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &quot; &lt;resultcode&gt; &lt;sbytes&gt;  " />
+<MESSAGE 
+	id1="00110:02" 
+	id2="HEAD" 
+	eventcategory="1204000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &lt;process_id&gt; &lt;fld8&gt; &lt;duration&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />
+
+	
 <MESSAGE 
 	eventcategory="1204000000"
 	id1="00110" 
@@ -332,6 +357,14 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt; &lt;resultcode&gt; &lt;sbytes&gt;  " />
 <MESSAGE 
+	id1="00200:02" 
+	id2="OPTIONS" 
+	eventcategory="1204000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &lt;process_id&gt; &lt;fld8&gt; &lt;duration&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />
+
+	
+<MESSAGE 
 	eventcategory="1204000000"
 	id1="00200" 
 	id2="OPTIONS" 
@@ -343,6 +376,14 @@
 	id2="OPTIONS" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt; &lt;resultcode&gt; &lt;sbytes&gt;  " />
+<MESSAGE 
+	id1="00300:02" 
+	id2="POST" 
+	eventcategory="1204000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &lt;process_id&gt; &lt;fld8&gt; &lt;duration&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />	
+
+	
 <MESSAGE 
 	eventcategory="1204000000"
 	id1="00300" 
@@ -361,6 +402,14 @@
 	id2="PRONECT" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt;  " />
+<MESSAGE 
+	id1="00400:02" 
+	id2="PROPFIND"
+	eventcategory="1204000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content="&lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;webpage&gt; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &lt;process_id&gt; &lt;fld8&gt; &lt;duration&gt; &quot;&lt;url&gt;&quot; &quot;&lt;user_agent&gt;&quot;" />
+
+	
 <MESSAGE 
 	eventcategory="1204000000"
 	id1="00400" 
