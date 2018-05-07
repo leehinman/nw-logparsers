@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="64"
-	checksum="0f7dbb2773964215ba976632e48aaae0"
-	revision="114"
+	xml="67"
+	checksum="a6eb48c928d7dea22cbe5de585beeab1"
+	revision="118"
 	device="2.0" />
 
  
@@ -84,7 +84,7 @@
 	id2="APPFW_APPFW_COOKIE" 
 	eventcategory="1603000000" 
 	functions="&lt;@event_description:AppFw Cookie violation&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="  &lt;saddr&gt; {&lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; Cookie|&lt;rule_group&gt; &lt;url&gt; Cookie} validation failed for &lt;fld3&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
+	content="  &lt;saddr&gt; {&lt;fld2&gt; &lt;fld3&gt; &lt;rule_group&gt; &lt;url&gt; Cookie|&lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; Cookie|&lt;rule_group&gt; &lt;url&gt; Cookie} validation failed for &lt;fld3&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
 
 <MESSAGE 
 	id1="APPFW_APPFW_DENYURL" 
@@ -138,9 +138,9 @@
 <MESSAGE 
 	id1="APPFW_APPFW_STARTURL" 
 	id2="APPFW_APPFW_STARTURL" 
-	eventcategory="1605000000" 
+	eventcategory="1201000000" 
 	functions="&lt;@event_description:AppFw StartURL violation&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="  &lt;saddr&gt; {&lt;fld2&gt; &lt;rule_group&gt; Disallow|&lt;rule_group&gt; Disallow} Illegal URL: &lt;url&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
+	content="  &lt;saddr&gt; {&lt;fld2&gt; &lt;fld3&gt; &lt;rule_group&gt; Disallow|&lt;fld2&gt; &lt;rule_group&gt; Disallow|&lt;rule_group&gt; Disallow} Illegal URL: &lt;url&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
 
 <MESSAGE 
 	id1="APPFW_APPFW_XSS" 
@@ -893,6 +893,14 @@
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content="&lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;url&gt; &lt;event_description&gt;" />
 
+<MESSAGE
+	id1="APPFW_APPFW_REFERER_HEADER"
+	id2="APPFW_APPFW_REFERER_HEADER"
+	eventcategory="1605000000"
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@event_description:referer header URL not in Start URL or closure list&gt;"
+	content="&lt;saddr&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;rule_group&gt; &lt;url&gt; Referer header check failed: referer header URL '&lt;web_referer&gt;' not in Start URL or closure list &lt;&lt;&lt;disposition&gt;&gt;"/>
+
+	 
 <MESSAGE 
 	id1="APPFW_APPFW_CSRF_TAG:01" 
 	id2="APPFW_APPFW_CSRF_TAG" 
@@ -905,7 +913,7 @@
 	id2="SNMP_TRAP_SENT" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="&lt;obj_type&gt; (appfwLogMsg = &quot;&lt;obj_name&gt; &lt;info&gt;&quot;, sysIpAddress = &lt;hostip&gt;)" />
+	content="&lt;obj_type&gt; (appfwLogMsg = &quot;&lt;obj_name&gt; &lt;info&gt;&quot;,{sysIpAddress = &lt;hostip&gt;|nsPartitionName =&lt;fld1&gt;}" />
 
 <MESSAGE 
 	id1="APPFW_APPFW_BUFFEROVERFLOW_URL:01" 
