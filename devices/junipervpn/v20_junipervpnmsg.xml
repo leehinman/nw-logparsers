@@ -4,9 +4,9 @@
 	displayname="Pulse Secure"
 	group="VPN">
 <VERSION 
-	xml="107"
-	checksum="3a77b86b8341d6b23c1cd5702ebeedbd"
-	revision="117"
+	xml="110"
+	checksum="bf312168d41a9b0297bfafc3eb377f09"
+	revision="118"
 	device="2.0" />
 
  
@@ -145,9 +145,13 @@
 
  		
 <HEADER
+	id1="3337"
+	id2="3337"
+	content="&lt;hfld1&gt;T&lt;hfld2&gt;Z  PulseSecure: &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;fld3&gt; - [&lt;fld4&gt;] System()[] - &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+<HEADER
 	id1="3333"
 	id2="3333"
-	content="&lt;hfld1&gt;T&lt;hfld2&gt;Z  PulseSecure: &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;fld3&gt; - [&lt;fld4&gt;] {Root::System()[]|Root::&lt;husername&gt;(&lt;hfld11&gt;)[&lt;hgroup&gt;]} - &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+	content="&lt;hfld1&gt;T&lt;hfld2&gt;Z  PulseSecure: &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;fld3&gt; - [&lt;fld4&gt;] {Root::System()[]|System()[]|Root::&lt;husername&gt;(&lt;hfld11&gt;)[&lt;hgroup&gt;]} - &lt;messageid&gt; &lt;!payload:messageid&gt;" />
 
 <HEADER
 	id1="3334"
@@ -159,6 +163,10 @@
 	id1="3335"
 	id2="3335"
 	content="&lt;hfld1&gt;T&lt;hfld2&gt;Z  PulseSecure: &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;hfld3&gt; - [&lt;hfld4&gt;] Root::&lt;husername&gt;(&lt;hfld11&gt;)[&lt;hgroup&gt;] - {&lt;husername1&gt; - &lt;hfld7&gt; &lt;messageid&gt;|&lt;husername1&gt; &lt;messageid&gt;} &lt;!payload:messageid&gt;" />
+<HEADER
+	id1="3336"
+	id2="3336"
+	content="&lt;hfld1&gt;T&lt;hfld2&gt;Z  PulseSecure: &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;hfld3&gt; - [&lt;hfld4&gt;] &lt;husername&gt;(&lt;hfld11&gt;)[&lt;hgroup&gt;] - &lt;messageid&gt; &lt;!payload:messageid&gt;" />
 
 <MESSAGE 
 	id1="000001"
@@ -808,7 +816,7 @@
 	id2="Downloaded"
 	eventcategory="1605030000"
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Downloaded new CRL&gt;"
-	content="Downloaded new CRL (&lt;fld1&gt; bytes) from &apos;&lt;filename&gt;&apos;" />
+	content="Downloaded new CRL (&lt;bytes&gt; bytes) from &apos;&lt;url&gt;&apos;" />
 <MESSAGE 
 	id1="000487"
 	id2="Downloaded"
@@ -820,7 +828,7 @@
 	id2="Downloaded"
 	eventcategory="1605030000"
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Downloaded Identical CRL&gt;"
-	content="Downloaded Identical CRL (&lt;fld1&gt; bytes) from &apos;&lt;info&gt;&apos;" />
+	content="Downloaded Identical CRL (&lt;bytes&gt; bytes) from &apos;&lt;url&gt;&apos;" />
  
 <MESSAGE 
 	id1="000088"
@@ -1873,8 +1881,8 @@
 	id1="000488"
 	id2="Number"
 	eventcategory="1605030000"
-	functions="&lt;@saddr:*HDR(hfld0)&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Number of connections&gt;"
-	content="Number of &lt;fld5&gt; connections: &lt;fld6&gt;" />
+	functions="&lt;@saddr:*HDR(hfld0)&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Number of connections&gt;&lt;@a:Number of &gt;&lt;@b: connections&gt;&lt;@dclass_counter1_string:*STRCAT(a,fld5,b)&gt;"
+	content="Number of &lt;fld5&gt; connections: &lt;dclass_counter1&gt;" />
 <MESSAGE 
 	id1="001488"
 	id2="Number"
@@ -2489,7 +2497,7 @@
 	id2="Session"
 	eventcategory="1801010100"
 	functions="&lt;@saddr:*HDR(hfld0)&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@result:inactivity&gt;&lt;@action:session timed out&gt;"
-	content="Session timed out for {&lt;c_username&gt;/&lt;fld23&gt;(session:&lt;sessionid&gt;)|&lt;c_username&gt;} due to inactivity &lt;info&gt;. Idle session identified" />
+	content="Session timed out for {&lt;c_username&gt;/&lt;fld23&gt;(session:&lt;sessionid&gt;)|&lt;c_username&gt;/&lt;fld23&gt;|&lt;c_username&gt;} due to inactivity &lt;info&gt;. Idle session identified" />
 <MESSAGE 
 	id1="000474"
 	id2="Session"
@@ -3886,5 +3894,18 @@
 	eventcategory="1401070000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:user logged out&gt;"
 	content="&lt;c_username&gt; SharePoint logged out from IP (&lt;daddr&gt;) because &lt;result&gt; from IP (&lt;saddr&gt;)." />
- 
+<MESSAGE 
+	id1="Error:01"
+	id2="Error"
+	eventcategory="1603000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@event_description:Error downloading CRL&gt;"
+	content="Error downloading CRL from &apos;&lt;url&gt;&apos;: &lt;info&gt;" />
+
+<MESSAGE 
+	id1="Port"
+	id2="Port"
+	eventcategory="1605000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;"
+	content="Port Probe &lt;hostip&gt;:&lt;network_port&gt;" />
+
 </DEVICEMESSAGES>
