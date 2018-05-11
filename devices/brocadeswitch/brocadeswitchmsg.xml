@@ -4,9 +4,9 @@
 	displayname="Brocade FastIron Switch"
 	group="Switch">
 <VERSION
-	xml="8"
-	checksum="3857aecaddf9daf6a0d81d92d70e9bd5"
-	revision="117"
+	xml="9"
+	checksum="860f25fca3cad79c296d5d2b3c333a09"
+	revision="118"
 	device="2.0" />
 
  
@@ -53,7 +53,15 @@
 	id1="0006" 
 	id2="0006"
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;haddr&gt; &lt;messageid&gt; &lt;!payload:haddr&gt;"/>
-
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1401060000=&apos;User.Activity.Successful Logins&apos;|1401070000=&apos;User.Activity.Logoff&apos;" />
+	
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="telnet login=&apos;1401060000&apos;|telnet logout=&apos;1401070000&apos;" />	
 <MESSAGE
 	id1="Stack" 
 	id2="Stack" 
@@ -165,6 +173,14 @@
 	eventcategory="1401060000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@c_username:*PARMVAL(username)&gt;&lt;@user_address:*PARMVAL(saddr)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;&lt;@event_description:Successful Web login for the user.&gt;"
 	content="&lt;logip&gt; Security: Web login by &lt;username&gt; from src IP &lt;saddr&gt; src MAC &lt;smacaddr&gt;" />
+
+<MESSAGE
+	id1="Security:01" 
+	id2="Security" 
+	eventcategory="1401000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_description)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;event_source&gt; Security: &lt;event_description&gt; by un-authenticated telnet user from src IP &lt;saddr&gt; from src MAC &lt;smacaddr&gt; {from|to} &lt;info&gt;" />
+
 <MESSAGE
 	id1="Security" 
 	id2="Security" 
@@ -256,6 +272,7 @@
 	eventcategory="1401030000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Security violation: Login failure attempt&gt;"
 	content=" &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [SEC-1193], &lt;serial_number&gt;, &lt;fld3&gt;, &lt;severity&gt;, &lt;hostname&gt;, Security violation: &lt;action&gt; failure attempt via &lt;network_service&gt;. IP Addr: &lt;saddr&gt;" />
+
 	
 <MESSAGE
 	id1="raslogd:01" 
@@ -263,6 +280,7 @@
 	eventcategory="1401030000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Failed login attempt.&gt;"
 	content=" &lt;event_source&gt;raslogd: AUDIT,&lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt; &lt;fld55&gt;, [SEC-3021], &lt;severity&gt;, SECURITY, &lt;fld31&gt;, &lt;location_desc&gt;, &lt;fld11&gt;, , , , , , , Event:&lt;fld12&gt;, Status: &lt;disposition&gt;, &lt;fld13&gt;: Failed login attempt via REMOTE, IP Addr: &lt;saddr&gt;" />
+
 	
 <MESSAGE
 	id1="raslogd:02" 
@@ -270,6 +288,7 @@
 	eventcategory="1610000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Frame timeout detected.&gt;"
 	content=" &lt;event_source&gt;raslogd: AUDIT, &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt; &lt;fld55&gt;, [AN-1014], &lt;severity&gt;, FABRIC, &lt;fld20&gt;, &lt;location_desc&gt;, &lt;fld11&gt;, , , , , , , Frame timeout detected, tx port &lt;sport&gt; rx port &lt;dport&gt;, sid &lt;fld23&gt;, did &lt;fld24&gt;, timestamp &lt;fld25&gt;" />
+
 	
 <MESSAGE
 	id1="raslogd:03" 
@@ -277,6 +296,7 @@
 	eventcategory="1610000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Log message AN-1014 flooding detected and blocked.&gt;"
 	content=" &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [LOG-1004], &lt;serial_number&gt;, &lt;fld1&gt;, &lt;severity&gt;, &lt;hostname&gt;, Log message AN-1014 flooding detected and blocked." />
+
 	
 <MESSAGE
 	id1="raslogd:04" 
@@ -284,4 +304,18 @@
 	eventcategory="1610000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W%G%F %H:%U:%O',fld51,fld52,fld53,fld54)&gt;&lt;@event_description:Link Reset on Port.&gt;"
 	content=" &lt;event_source&gt;raslogd: &lt;fld51&gt;/&lt;fld52&gt;/&lt;fld53&gt;-&lt;fld54&gt;, [C2-1014], &lt;serial_number&gt;, &lt;fld1&gt;, &lt;severity&gt;, &lt;hostname&gt;, Link Reset on Port &lt;fld2&gt;,P&lt;sport&gt;(&lt;fld3&gt;) vc_no=&lt;fld4&gt; crd(s)lost=&lt;fld5&gt; auto trigger." />
+
+<MESSAGE
+	id1="System:01" 
+	id2="System" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; System: {Interface &lt;interface&gt;, &lt;event_description&gt;|&lt;info&gt;}" />
+<MESSAGE
+	id1="raslogd:05" 
+	id2="raslogd" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt;raslogd: [&lt;fld5&gt;][&lt;fld6&gt;][&lt;fld7&gt;][&lt;fld8&gt; value=&quot;&lt;serial_number&gt;&quot;][&lt;fld9&gt;][&lt;fld10&gt; value=&quot;&lt;severity&gt;&quot;][&lt;fld11&gt;] &lt;event_description&gt;" />
+
 </DEVICEMESSAGES>
