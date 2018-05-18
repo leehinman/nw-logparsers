@@ -4,9 +4,9 @@
 	displayname="Barracuda Spam Firewall"
 	group="Anti Virus">
 <VERSION 
-	xml="9"
-	checksum="4771f027e1d8023fd0c3b902c60b0abd"
-	revision="103"
+	xml="10"
+	checksum="c8f8172a3b07209241a8078b62652c22"
+	revision="118"
 	device="2.0" />
 
  
@@ -34,6 +34,14 @@
 	eventcategory="1207010201" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;domain&gt; &lt;info&gt;" />
+<MESSAGE
+	id1="inbound/pass1:01"
+	id2="inbound/pass1"
+	eventcategory="1207010201"
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;"
+	content="inbound/pass1:&lt;web_domain&gt;[&lt;saddr&gt;]&lt;fld1&gt;&lt;fld3&gt;&lt;fld2&gt;&lt;action&gt;&lt;from&gt;&lt;to&gt;&lt;info&gt;"/>
+
+	
 <MESSAGE 
 	id1="000002"
 	id2="outbound/smtp" 
