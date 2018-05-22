@@ -29,6 +29,12 @@
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; &lt;process&gt;[&lt;process_id&gt;]: CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
+	id1="0009"
+	id2="0009"
+	messageid="VENDORMAP(devvendor, product)"
+	content=" CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|Check Point|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
 	id1="0004"
 	id2="0004"
 	messageid="VENDORMAP(devvendor, product)"
@@ -185,7 +191,7 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
- <MESSAGE 
+<MESSAGE 
 	id1="vmwareappdefense" 
 	id2="vmwareappdefense" 
 	eventcategory="1612000000"
@@ -204,6 +210,13 @@
 	eventcategory="1612000000"
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_endtime)&gt;&lt;@dclass_counter1_string:Alert Count&gt;"
 	content="&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
+	id1="checkpointfw1" 
+	id2="checkpointfw1" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@protocol:*getProtocol(ip_proto)&gt;"
+	content="&lt;param_event_time&gt;&lt;ip_proto&gt;&lt;msghold&gt;" />
 
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -238,6 +251,12 @@
     <Vendor2Device vendor="VMware" product="App Defense" device="vmwareappdefense" group="Cloud"/>
 	<Vendor2Device vendor="Dropbox" product="Dropbox Business" device="dropbox" group="Cloud"/>
 	<Vendor2Device vendor="Amazon" product="GuardDuty" device="amazonguardduty" group="Cloud"/>
+	<Vendor2Device vendor="Check Point" product="SmartDefense" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="Anti Malware" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="URL Filtering" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="New Anti Virus" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="Application Control" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="VPN-1 &amp; FireWall-1" device="checkpointfw1" group="Firewall"/>
 </VendorProducts>
 
 
@@ -320,6 +339,7 @@
 		<ExtensionKey cefName="outcome" metaName="result"/>
 		<ExtensionKey cefName="proto" metaName="protocol">
 			<device2meta device="rsaflow" metaName="ip_proto"/>
+			<device2meta device="checkpointfw1" metaName="ip_proto"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="PublicKeyToken" metaName="cs_fld"/>
 		<ExtensionKey cefName="request" metaName="url"/>
@@ -350,6 +370,30 @@
 
 		
 		<ExtensionKey cefName="loginID" metaName="username"/>
+		
+
+		<ExtensionKey cefName="ifname" metaName="interface"/>
+		<ExtensionKey cefName="loguid" metaName="cs_fld"/>
+		<ExtensionKey cefName="origin" metaName="orig_ip"/>
+		<ExtensionKey cefName="chassis_bladed_system" metaName="cs_fld"/>
+		<ExtensionKey cefName="version" metaName="version"/>
+		<ExtensionKey cefName="inzone" metaName="src_zone"/>
+		<ExtensionKey cefName="outzone" metaName="dst_zone"/>
+		<ExtensionKey cefName="rule" metaName="rule"/>
+		<ExtensionKey cefName="rule_uid" metaName="rule_uid"/>
+		<ExtensionKey cefName="cp_severity" metaName="severity"/>
+		<ExtensionKey cefName="session_id" metaName="sessionid"/>
+		<ExtensionKey cefName="bytes" metaName="bytes"/>
+		<ExtensionKey cefName="referrer_self_uid" metaName="cs_fld"/>
+		<ExtensionKey cefName="app_id" metaName="cs_fld"/>
+		<ExtensionKey cefName="app_desc" metaName="info"/>
+		<ExtensionKey cefName="browse_time" metaName="cs_fld"/>
+		<ExtensionKey cefName="log_id" metaName="id"/>
+		<ExtensionKey cefName="flexNumber1" metaName="reputation_num"/>
+		<ExtensionKey cefName="flexNumber1Label" metaName="cs_fld"/>
+		<ExtensionKey cefName="flexNumber2" metaName="cn_fld"/>
+		<ExtensionKey cefName="flexNumber2Label" metaName="cs_fld"/>
+		
 
 
 		
@@ -887,7 +931,8 @@
 		<ExtensionKey cefName="cs3Label" metaName="cs_fld"/>
 		
 		<ExtensionKey cefName="cs4" metaName="cs_fld">
-		<device2meta device="mcafeewg" metaName="info" label="URL Categories"/>			
+			<device2meta device="mcafeewg" metaName="info" label="URL Categories"/>
+			<device2meta device="checkpointfw1" metaName="threat_name" label="Protection Name"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs4Label" metaName="cs_fld"/>
 		
@@ -898,7 +943,7 @@
 		<ExtensionKey cefName="cs5Label" metaName="cs_fld"/>
 		
 		<ExtensionKey cefName="cs6" metaName="cs_fld">
-		<device2meta device="mcafeewg" metaName="risk" label="Reputation"/>			
+			<device2meta device="mcafeewg" metaName="risk" label="Reputation"/>			
 		</ExtensionKey>
 		<ExtensionKey cefName="cs6Label" metaName="cs_fld"/>
 		
@@ -954,7 +999,9 @@
 		<ExtensionKey cefName="flexString1Label" metaName="cs_fld"/>
 		
 		<ExtensionKey cefName="flexString2" metaName="cn_fld">
-			<device2meta device="akamaikona" metaName="policy_id"/>		
+			<device2meta device="akamaikona" metaName="policy_id"/>
+			<device2meta device="checkpointfw1" metaName="threat_val" label="Attack Information"/>
+			<device2meta device="checkpointfw1" metaName="action" label="Malware Action"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="flexString2Label" metaName="cs_fld"/>		
         
