@@ -4,10 +4,10 @@
 	displayname="Juniper JUNOS"
 	group="Router">
 <VERSION
-	xml="56"
-	checksum="1d57b5fdb15fbd9d6be85b82bf1d3c6a"
+	xml="58"
+	checksum="fa2a3abbf577949a0dcecfe0a6faffe2"
 	revision="118"
-        device="2.0" />
+    device="2.0" />
 
 
 <HEADER 
@@ -180,6 +180,10 @@
 	id2="3337"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;: &lt;!payload&gt;" />
 
+<HEADER
+	id1="3341"
+	id2="3341"
+	content="&lt;hfld1&gt; &lt;hfld6&gt; &lt;hhostname&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;messageid&gt; &lt;!payload:hfld2&gt;" />
 <HEADER
 	id1="3338"
 	id2="3338"
@@ -1648,6 +1652,13 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	eventcategory="1603010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Chassisd Version mismatch&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content=" &lt;process&gt;[&lt;process_id&gt;]: &lt;event_type&gt;: Version mismatch: &lt;info&gt;" />
+
+<MESSAGE 
+	id1="CHASSISD_HIGH_TEMP_CONDITION" 
+	id2="CHASSISD_HIGH_TEMP_CONDITION" 
+	eventcategory="1603010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:CHASSISD HIGH TEMP CONDITION&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld6)&gt;"
+	content="&lt;process&gt; &lt;process_id&gt; &lt;event_type&gt; [junos@&lt;obj_name&gt; temperature=&quot;&lt;fld2&gt;&quot; message=&quot;&lt;info&gt;&quot;]"/>
 
 <MESSAGE 
 	id1="clean_process" 
@@ -4345,11 +4356,39 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	content=" &lt;process&gt;[&lt;process_id&gt;]: &lt;event_type&gt;: traceRouteCtlOwnerIndex = &lt;dclass_counter1&gt;, traceRouteCtlTestName = &lt;obj_name&gt;" />
 
 <MESSAGE 
+	id1="SNMPD_AUTH_FAILURE:03" 
+	id2="SNMPD_AUTH_FAILURE" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SNMPD AUTH FAILURE&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld6)&gt;"
+	content="&lt;process&gt; &lt;process_id&gt; &lt;event_type&gt; [junos@&lt;obj_name&gt; function-name=&quot;&lt;fld1&gt;&quot; message=&quot;&lt;info&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; index1=&quot;&lt;fld4&gt;&quot;]"/>
+
+<MESSAGE 
+	id1="SNMP_TRAP_LINK_DOWN:01" 
+	id2="SNMP_TRAP_LINK_DOWN" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SNMP TRAP LINK DOWN&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld6)&gt;"
+	 content="&lt;process&gt; &lt;process_id&gt; &lt;event_type&gt; [junos@&lt;obj_name&gt; snmp-interface-index=&quot;&lt;fld1&gt;&quot; admin-status=&quot;&lt;fld3&gt;&quot; operational-status=&quot;&lt;fld2&gt;&quot; interface-name=&quot;&lt;interface&gt;&quot;]"/>
+
+<MESSAGE 
+	id1="SNMP_TRAP_LINK_UP:01" 
+	id2="SNMP_TRAP_LINK_UP" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:SNMP TRAP LINK UP&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld6)&gt;"
+	content="&lt;process&gt; &lt;process_id&gt; &lt;event_type&gt; [junos@&lt;obj_name&gt; snmp-interface-index=&quot;&lt;fld1&gt;&quot; admin-status=&quot;&lt;fld3&gt;&quot; operational-status=&quot;&lt;event_state&gt;&quot; interface-name=&quot;&lt;interface&gt;&quot;]"/>
+
+<MESSAGE 
 	id1="SSHD_LOGIN_FAILED"
 	id2="SSHD_LOGIN_FAILED"
 	eventcategory="1401030000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Login Failure&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content=" &lt;process&gt;: &lt;event_type&gt;: Login failed for user &apos;&lt;username&gt;&apos; from host &apos;&lt;saddr&gt;&apos;" />
+
+<MESSAGE
+	id1="SSHD_LOGIN_FAILED:01"
+	id2="SSHD_LOGIN_FAILED"
+	eventcategory="1401030000"
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Login Failure&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%FT%N:%U:%O&apos;,hfld32)&gt;&lt;@process:*HDR(hfld33)&gt;"
+	content="&lt;event_type&gt; [junos@&lt;obj_name&gt; username=&quot;&lt;username&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot;]"/>
 
 <MESSAGE 
 	id1="task_connect"
