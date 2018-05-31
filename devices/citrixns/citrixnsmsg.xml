@@ -4,8 +4,8 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="67"
-	checksum="a6eb48c928d7dea22cbe5de585beeab1"
+	xml="69"
+	checksum="eba0123859a3bf15891a9d092997ab11"
 	revision="118"
 	device="2.0" />
 
@@ -98,7 +98,7 @@
 	id2="APPFW_APPFW_FIELDCONSISTENCY" 
 	eventcategory="1603000000" 
 	functions="&lt;@event_description:AppFw Field Consistency violation&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content="  &lt;saddr&gt; {&lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; Field consistency|&lt;rule_group&gt; &lt;url&gt; Field consistency} &lt;info&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
+	content="  &lt;saddr&gt; {&lt;fld1&gt; &lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; Field consistency|&lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; Field consistency|&lt;rule_group&gt; &lt;url&gt; Field consistency} &lt;info&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
 
 <MESSAGE 
 	id1="APPFW_APPFW_FIELDFORMAT" 
@@ -893,6 +893,20 @@
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content="&lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;url&gt; &lt;event_description&gt;" />
 
+<MESSAGE 
+	id1="APPFW_APPFW_CONTENT_TYPE" 
+	id2="APPFW_APPFW_CONTENT_TYPE" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt;  Unknown content-type header value=&lt;fld4&gt; &lt;info&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
+
+<MESSAGE 
+	id1="APPFW_RESP_APPFW_XML_WSI_ERR_BODY_ENV_NAMESPACE" 
+	id2="APPFW_RESP_APPFW_XML_WSI_ERR_BODY_ENV_NAMESPACE" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; WSI check failed: &lt;fld4&gt;: &lt;info&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
+
 <MESSAGE
 	id1="APPFW_APPFW_REFERER_HEADER"
 	id2="APPFW_APPFW_REFERER_HEADER"
@@ -935,7 +949,7 @@
 	id2="SSLVPN_ICAEND_CONNSTAT" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_description:ICA connection related information for a connection belonging to a SSLVPN session&gt;&lt;@dclass_ratio1_string: Compression_ratio_send&gt;&lt;@dclass_ratio2_string: Compression_ratio_recv&gt;&lt;@severity:Informational&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld11)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld10)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
-	content=" Source &lt;saddr&gt;:&lt;sport&gt; - Destination &lt;dtransaddr&gt;:&lt;dtransport&gt; - username:domainname &lt;username&gt;:&lt;ddomain&gt; - startTime {&quot; &lt;fld10&gt; GMT&quot;|&quot; &lt;fld10&gt;&quot;| &lt;fld10&gt;} - endTime {&quot; &lt;fld11&gt; GMT&quot;|&quot; &lt;fld11&gt;&quot;| &lt;fld11&gt;} - Duration &lt;duration_string&gt; - Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt; - Total_compressedbytes_send &lt;comp_sbytes&gt; - Total_compressedbytes_recv &lt;comp_rbytes&gt; - Compression_ratio_send &lt;dclass_ratio1&gt; - Compression_ratio_recv &lt;dclass_ratio2&gt;&lt;fld2&gt;" />
+	content=" Source &lt;saddr&gt;:&lt;sport&gt; - Destination &lt;dtransaddr&gt;:&lt;dtransport&gt; - username:domainname &lt;username&gt;:&lt;ddomain&gt; - startTime {&quot; &lt;fld10&gt; GMT&quot;|&quot; &lt;fld10&gt;&quot;| &lt;fld10&gt;} - endTime {&quot; &lt;fld11&gt; GMT&quot;|&quot; &lt;fld11&gt;&quot;| &lt;fld11&gt;} - Duration &lt;duration_string&gt; - Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt; - Total_compressedbytes_send &lt;comp_sbytes&gt; - Total_compressedbytes_recv &lt;comp_rbytes&gt; - Compression_ratio_send &lt;dclass_ratio1&gt; - Compression_ratio_recv &lt;dclass_ratio2&gt;{- connectionId &lt;connectionid&gt;|&lt;fld2&gt;}" />
 
 	
 <MESSAGE 
@@ -987,6 +1001,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@filename:*PARMVAL(webpage)&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content=" &lt;saddr&gt; &lt;fld1&gt; - &lt;fld2&gt; - &lt;rule_group&gt; &lt;url&gt; &lt;event_description&gt; rule ID &lt;rule_uid&gt;: &lt;info&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
+
+<MESSAGE 
+	id1="APPFW_APPFW_SIGNATURE_MATCH:01" 
+	id2="APPFW_APPFW_SIGNATURE_MATCH" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@event_description:Signature violation&gt;"
+	content=" &lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;rule_group&gt; &lt;url&gt; Signature violation rule ID &lt;rule_uid&gt;: &lt;info&gt; &lt;&lt;&lt;disposition&gt;&gt;" />
 
 
 <MESSAGE 
