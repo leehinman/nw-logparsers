@@ -4,8 +4,8 @@
 	displayname="Pulse Secure"
 	group="VPN">
 <VERSION 
-	xml="110"
-	checksum="bf312168d41a9b0297bfafc3eb377f09"
+	xml="114"
+	checksum="9293c18033addb101fb5ba9a36be8ede"
 	revision="118"
 	device="2.0" />
 
@@ -294,7 +294,7 @@
 	id2="Agent"
 	eventcategory="1401060000"
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@saddr:*HDR(hfld0)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Agent login succeeded&gt;"
-	content="Agent login succeeded for &lt;c_username&gt;/&lt;fld1&gt; from {&lt;fld3&gt; with &lt;fld2&gt;|&lt;smacaddr&gt;.}" />
+	content="Agent login succeeded for &lt;c_username&gt;/&lt;fld1&gt; from { endpoint using RADIUS authentication |&lt;fld3&gt; with &lt;fld2&gt;|&lt;smacaddr&gt;.}" />
 <MESSAGE 
 	id1="000020"
 	id2="All"
@@ -403,9 +403,9 @@
 	id1="000498"
 	id2="Attributes"
 	eventcategory="1605000000"
-	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Attributes not supported by NAS&gt;"
-	content="Attributes not supported by NAS &lt;daddr&gt;: SSID = &lt;ssid&gt;" />
-  
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Attributes not supported by NAS&gt;&lt;@saddr:*HDR(hfld0)&gt;"
+	content="Attributes not supported by NAS &lt;daddr&gt;: {Administrators = &lt;administrator&gt;, Analysts = &lt;fld1&gt;|SSID = &lt;ssid&gt;}" />
+   
 <MESSAGE 
 	id1="000036"
 	id2="authen"
@@ -2118,7 +2118,29 @@
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Radius authentication rejected&gt;"
 	content="Radius authentication rejected for &lt;username&gt; (realm &apos;&lt;realm&gt;&apos;) from location-group &apos;&lt;group&gt;&apos; and attributes are: NAS-IP-Address = &lt;daddr&gt;,NAS-Port = &lt;dport&gt;,NAS-Port-Type = &lt;fld2&gt;" />
   
-  
+ 
+<MESSAGE 
+	id1="RADIUS"
+	id2="RADIUS"
+	eventcategory="1605000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Radius authentication rejected&gt;&lt;@saddr:*HDR(hfld0)&gt;"
+	content="RADIUS authentication rejected for &lt;username&gt; (realm &apos;&lt;realm&gt;&apos;) from location-group &apos;&lt;group&gt;&apos; and attributes are: {NAS-IP-Address = &lt;daddr&gt;,NAS-Port = &lt;dport&gt;,NAS-Port-Type = &lt;fld2&gt;|NAS-IP-Address = &lt;daddr&gt;,NAS-Port = &lt;dport&gt;|NAS-Port = &lt;dport&gt;,NAS-Port-Type = &lt;fld2&gt;|NAS-IP-Address = &lt;daddr&gt;}" />
+
+<MESSAGE 
+	id1="RADIUS:01"
+	id2="RADIUS"
+	eventcategory="1605000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@saddr:*HDR(hfld0)&gt;"
+	content="RADIUS {&lt;action&gt; Rates per &lt;fld1&gt; second(s): Current Rate = &lt;fld2&gt; Average Rate =  &lt;fld3&gt; Peak rate = &lt;fld4&gt;|Retry Statistics: Total Transactions Retried: &lt;fld1&gt;, Total Retry Packets: &lt;fld2&gt;}" />
+
+<MESSAGE 
+	id1="RADIUS:02"
+	id2="RADIUS"
+	eventcategory="1302010100"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Radius authentication resumed/accepted&gt;&lt;@saddr:*HDR(hfld0)&gt;"
+	content="RADIUS authentication { was resumed | accepted} for &lt;fld1&gt; (realm &apos;&lt;realm&gt;&apos;) from location-group &apos;&lt;group&gt;&apos; and attributes are: {NAS-IP-Address = &lt;daddr&gt;,NAS-Port = &lt;dport&gt;,NAS-Port-Type = &lt;fld2&gt;|NAS-Port = &lt;dport&gt;,NAS-Port-Type = &lt;fld2&gt;|NAS-IP-Address = &lt;daddr&gt;|NAS-Port = &lt;dport&gt;|NAS-Port-Type = &lt;fld2&gt;}" />
+
+ 
 <MESSAGE 
 	id1="000241"
 	id2="Raid"
@@ -3163,6 +3185,14 @@
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:User account state is changed to Enabled&gt;"
 	content="User account state of &lt;c_username&gt; is changed to Enabled" />
 <MESSAGE 
+	id1="User:01"
+	id2="User"
+	eventcategory="1401000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@saddr:*HDR(hfld0)&gt;"
+	content="User assigned RADIUS attribute(s) ({Administrators='&lt;administrator&gt;' Analysts='&lt;fld1&gt;'|Fortinet-Access-Profile='&lt;profile&gt;' Fortinet-Group-Name='&lt;group&gt;'|Juniper-Local-User-Name='&lt;username&gt;' Juniper-Junosspace-Profiles='&lt;profile&gt;'|Fortinet-Group-Name='&lt;group&gt;'})" />
+
+ 	
+<MESSAGE 
 	id1="User"
 	id2="User"
 	eventcategory="1402000000"
@@ -3269,6 +3299,7 @@
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;"
 	content="Users will be shown the last login time" />
   
+ 
 <MESSAGE 
 	id1="000485"
 	id2="Validation"
@@ -3778,7 +3809,7 @@
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@action:Authentication Successful - Web SSO&gt;"
 	content="Web SSO: Authentication successful. Credential Used: Username: &lt;c_username&gt;, NTLMHash: &lt;fld2&gt;, HashLength: &lt;fld3&gt; Realm: &lt;fld1&gt;, Auth Type: (&lt;authmethod&gt;) &lt;fld4&gt;, Cred Type: (&lt;fld3&gt;) &lt;fld4&gt;, Target: &lt;hostname&gt;, Workstation: &lt;fld5&gt;, Policy Auth: &lt;fld6&gt;, Server Realm: &lt;fld7&gt;" />
 
-<MESSAGE 
+<MESSAGE
 	id1="000600"
 	id2="VPN"
 	eventcategory="1801020100"
@@ -3908,4 +3939,12 @@
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;"
 	content="Port Probe &lt;hostip&gt;:&lt;network_port&gt;" />
 
+<MESSAGE 
+	id1="Requested"
+	id2="Requested"
+	eventcategory="1605000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@event_description:Requested authentication protocol may not be available&gt;&lt;@saddr:*HDR(hfld0)&gt;"
+	content="Requested authentication protocol may not be available" />
+
+	
 </DEVICEMESSAGES>
