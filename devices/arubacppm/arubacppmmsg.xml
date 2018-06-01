@@ -4,8 +4,8 @@
 	displayname="Aruba ClearPass Policy Manager"
 	group="Access Control">
 <VERSION
-	xml="13"
-	checksum="8141a50d7f14e488c62fd8cc656acf34"
+	xml="16"
+	checksum="4c9a755f5cea448d52644838e80d39a7"
 	revision="118"
 	device="2.0" />
 
@@ -61,6 +61,18 @@
 	messageid="*STRCAT('SESSION','_','LOG')"  
 	content="&lt;hfld5&gt; &lt;hfld6&gt;, &lt;hfld1&gt; &lt;hhostname&gt; Aruba-ClearPass Session Logs-WebAuth &lt;hfld8&gt; &lt;hfld9&gt; &lt;hfld7&gt;&lt;!payload&gt;" /> 
 <HEADER 
+	id1="1004" 
+	id2="1004"
+	messageid="*STRCAT('SYSTEM_EVENT')"
+	content="&lt;hfld5&gt; &lt;hfld6&gt;, &lt;hfld1&gt; &lt;hhostname&gt; Aruba-ClearPass system event &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; Timestamp=&lt;hmonth&gt; &lt;hday&gt; &lt;hyear&gt; &lt;htime&gt; &lt;timezone&gt;,&lt;!payload&gt;" /> 
+
+<HEADER 
+	id1="1005" 
+	id2="1005"
+	messageid="*STRCAT('AUDIT_EVENT')"
+	content="&lt;hfld5&gt; &lt;hfld6&gt;, &lt;hfld1&gt; &lt;hhostname&gt; Aruba-ClearPass audit event &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; Timestamp=&lt;hmonth&gt; &lt;hday&gt; &lt;hyear&gt; &lt;htime&gt; &lt;timezone&gt;,&lt;!payload&gt;" /> 
+
+<HEADER 
 	id1="0007" 
 	id2="0007"
 	content="&lt;hfld5&gt; &lt;hfld6&gt;, &lt;hfld1&gt; &lt;hhostname&gt; Aruba-ClearPass &lt;messageid&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;!payload&gt;" /> 
@@ -68,7 +80,10 @@
 	id1="0008" 
 	id2="0008"
 	content="&lt;hfld5&gt; &lt;hfld6&gt;, &lt;hfld1&gt; &lt;hhostname&gt; Aruba-ClearPass &lt;messageid&gt;-&lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld7&gt; &lt;!payload&gt;" />
- 
+<VALUEMAP
+	    name="getEventCategoryTheme"
+		default="$NONE"
+		keyvaluepairs="Authentication=&apos;Authentication&apos;|Add License=&apos;Configuration&apos;|configuration=&apos;Configuration&apos;|Fingerprints_Updates=&apos;Configuration&apos;|Hotfixes_Updates=&apos;Configuration&apos;|Logged in=&apos;Authentication&apos;|Logged out=&apos;Authentication&apos;|Logged failed=&apos;Authentication&apos;|Setup=&apos;Configuration&apos;|Start=&apos;Configuration&apos;|Stop=&apos;Configuration&apos;|System=&apos;Configuration&apos;|AV/AS Updates=&apos;Configuration&apos;|External Syslog Server=&apos;Configuration&apos;|Enforcement Policy=&apos;Configuration&apos;|Network Device=&apos;Configuration&apos;|Policy_Simulation=&apos;Configuration&apos;|Radius Enforcement Service=&apos;Configuration&apos;|Role Mapping Policy=&apos;Configuration&apos;|Syslog Export Data=&apos;Configuration&apos;|Web-based Authentication Service=&apos;Authentication&apos;|ClearPass Onboard=&apos;Configuration&apos;|Guest User=&apos;Configuration&apos;|Endpoint=&apos;Configuration&apos;|WebService Error=&apos;Configuration&apos;|Certificate=&apos;Configuration&apos;|Licensing=&apos;Configuration&apos;" />
 <MESSAGE
 	id1="Session_Logs"
 	id2="Session_Logs"
@@ -252,6 +267,23 @@
 	eventcategory="1605020000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N:%U:%O',hmonth,hday,hyear,htime)&gt;"
 	content=" &lt;saddr&gt;,Category=&lt;event_type&gt;,Action=&lt;action&gt;,User=&lt;username&gt;" />
+<MESSAGE
+	id1="AUDIT_EVENT"
+	id2="AUDIT_EVENT"
+	eventcategory="1605020000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@hostname:*HDR(hhostname)&gt;&lt;@ec_theme:*getEventCategoryTheme(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N:%U:%O',hmonth,hday,hyear,htime)&gt;"
+	content="EntityName=&lt;fld8&gt;,Category=&lt;event_type&gt;,Action=&lt;action&gt;,User=&lt;username&gt;" />
+
+<MESSAGE
+	id1="SYSTEM_EVENT"
+	id2="SYSTEM_EVENT"
+	eventcategory="1605020000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@ec_theme:*getEventCategoryTheme(event_type)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N:%U:%O',hmonth,hday,hyear,htime)&gt;"
+	content="Component=&lt;event_source&gt;,Level=&lt;severity&gt;,Category=&lt;event_type&gt;,Action=&lt;action&gt;,Description=&lt;event_description&gt;" />
 <MESSAGE
 	id1="SESSION_LOG"
 	id2="SESSION_LOG"
