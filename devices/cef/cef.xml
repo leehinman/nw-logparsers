@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="117"
+	revision="119"
     device="2.0" />
 	
 
@@ -218,6 +218,13 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@protocol:*getProtocol(ip_proto)&gt;"
 	content="&lt;param_event_time&gt;&lt;ip_proto&gt;&lt;msghold&gt;" />
 
+<MESSAGE 
+	id1="googlecloud" 
+	id2="googlecloud" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -257,6 +264,7 @@
 	<Vendor2Device vendor="Check Point" product="New Anti Virus" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="Application Control" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="VPN-1 &amp; FireWall-1" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Google" product="Cloud Platform" device="googlecloud" group="Cloud"/>
 </VendorProducts>
 
 
@@ -676,6 +684,7 @@
 		<ExtensionKey cefName="resourceProviderName.localizedValue" metaName="cs_resourceProviderName.localizedValue"/>
 		<ExtensionKey cefName="status" metaName="disposition">
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
+			<device2meta device="vmwareappdefense" metaName="event_state"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="subscriptionId" metaName="id1"/>
 		<ExtensionKey cefName="uid" metaName="user.id"/>
@@ -813,7 +822,9 @@
 		<ExtensionKey cefName="ClientMachineName" metaName="hostname"/>
 		<ExtensionKey cefName="ObjectType" metaName="obj_type"/>
 		<ExtensionKey cefName="Endpoint" metaName="os"/>
-		
+		<ExtensionKey cefName="PolicyDetails.PolicyName" metaName="policyname"/>
+		<ExtensionKey cefName="PolicyDetails.PolicyId" metaName="policy_id"/>
+		<ExtensionKey cefName="ExchangeMetaData.From" metaName="from"/>
 		
 		<ExtensionKey cefName="method_name" metaName="context"/>
 		<ExtensionKey cefName="Query" metaName="query"/>
@@ -1030,7 +1041,6 @@
 		<ExtensionKey cefName="ruleViolated" metaName="rulename"/>
 		<ExtensionKey cefName="violatingVirtualMachine.ipAddress" metaName="hostip"/>
 		<ExtensionKey cefName="violatingVirtualMachine.macAddress" metaName="macaddr"/>
-		<ExtensionKey cefName="status" metaName="event_state"/> 
 		<ExtensionKey cefName="violationDetails.processPath" metaName="process"/>
 		<ExtensionKey cefName="processPath" metaName="process"/>
 		<ExtensionKey cefName="remediation.id" metaName="id1"/>
@@ -1068,5 +1078,22 @@
 		<ExtensionKey cefName="resourceType" metaName="resource"/>
 		<ExtensionKey cefName="PrivateIpAddress" metaName="saddr"/>
 		<ExtensionKey cefName="accountId" metaName="id1"/>
+		 
+		<ExtensionKey cefName="resource.type" metaName="obj_type"/>
+		<ExtensionKey cefName="jsonPayload.resource.zone" metaName="cs_fld"/>
+		<ExtensionKey cefName="jsonPayload.resource.id" metaName="cs_fld"/>
+		<ExtensionKey cefName="jsonPayload.actor.user" metaName="c_username"/>
+		<ExtensionKey cefName="jsonPayload.operation.id" metaName="operation_id"/>
+		<ExtensionKey cefName="protoPayload.authorizationInfo.permission" metaName="permissions"/>
+		<ExtensionKey cefName="protoPayload.response.status" metaName="disposition"/>
+		<ExtensionKey cefName="protoPayload.serviceName" metaName="service.name"/>
+		<ExtensionKey cefName="protoPayload.response.operationType" metaName="cs_fld"/>
+		<ExtensionKey cefName="protoPayload.response.user" metaName="user"/>
+		<ExtensionKey cefName="protoPayload.requestMetadata.callerIp" metaName="saddr"/>
+		<ExtensionKey cefName="protoPayload.requestMetadata.callerSuppliedUserAgent" metaName="user_agent"/>
+		<ExtensionKey cefName="protoPayload.authenticationInfo.principalEmail" metaName="email"/>
+		<ExtensionKey cefName="protoPayload.methodName" metaName="action"/>
+		<ExtensionKey cefName="resource.labels.instance_id" metaName="id1"/>
+		<ExtensionKey cefName="resource.labels.zone" metaName="zone"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
