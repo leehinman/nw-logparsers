@@ -4,9 +4,9 @@
 	displayname="Cisco Meraki"
 	group="Configuration Management">
 <VERSION
-	xml="20"
-	checksum="b5cc9ab980de50ad6d8d88712c075813"
-	revision="113"
+	xml="24"
+	checksum="e072161e86fd84faebb5517d519b81a9"
+	revision="118"
 	device="2.0" />
 
  
@@ -43,89 +43,96 @@
 	id1="flows"
 	id2="flows"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:*actionType(fld21)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:*actionType(fld21)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="{ &lt;node&gt;_appliance | &lt;node&gt; } flows src=&lt;saddr&gt; { dst=&lt;daddr&gt; mac=&lt;dmacaddr&gt; | dst=&lt;daddr&gt; } { protocol=&lt;protocol&gt; sport=&lt;sport&gt; dport=&lt;dport&gt; |  protocol=&lt;protocol&gt; type=&lt;event_type&gt; | protocol=&lt;protocol&gt; } pattern: &lt;fld21&gt; &lt;info&gt;" />
 <MESSAGE
 	id1="flows:01"
 	id2="flows"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="&lt;node&gt; flows &lt;action&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; mac=&lt;smacaddr&gt; { protocol=&lt;protocol&gt; sport=&lt;sport&gt; dport=&lt;dport&gt; | protocol=&lt;protocol&gt; type=&lt;event_type&gt; | protocol=&lt;protocol&gt; } " />
 
 <MESSAGE
 	id1="flows:02"
 	id2="flows"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="&lt;node&gt; flows &lt;action&gt;" />
 
 <MESSAGE
 	id1="urls"
 	id2="urls"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="{&lt;node&gt;_appliance urls src=&lt;saddr&gt;:&lt;sport&gt;|&lt;node&gt; urls src=&lt;saddr&gt;:&lt;sport&gt;|src=&lt;saddr&gt;:&lt;sport&gt;} dst=&lt;daddr&gt;:&lt;dport&gt; mac=&lt;macaddr&gt; { agent=&lt;user_agent&gt; request: &lt;web_method&gt; | request: &lt;web_method&gt; } &lt;url&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
+	content="{&lt;node&gt;_appliance urls src=&lt;saddr&gt;:&lt;sport&gt;|&lt;node&gt; urls src=&lt;saddr&gt;:&lt;sport&gt;|src=&lt;saddr&gt;:&lt;sport&gt;} dst=&lt;daddr&gt;:&lt;dport&gt; mac=&lt;macaddr&gt; { agent=&apos;&lt;user_agent&gt;&apos; request: &lt;web_method&gt; | agent=&lt;user_agent&gt; request: &lt;web_method&gt; | request: &lt;web_method&gt; } &lt;url&gt;" />
 
 <MESSAGE
 	id1="events"
 	id2="events"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*HDR(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*HDR(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="dhcp lease of ip &lt;saddr&gt; from server mac &lt;smacaddr&gt; {for client mac &lt;dmacaddr&gt; with hostname &lt;hostname&gt;|for client mac &lt;dmacaddr&gt;} from router &lt;hostip&gt; on subnet &lt;mask&gt; with dns &lt;dns_a_record&gt;" />
+<MESSAGE
+	id1="events:02"
+	id2="events"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:content_filtering_block&gt;&lt;@sensor:*HDR(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
+	content="content_filtering_block url=&apos;&lt;url&gt;&apos; category0=&apos;&lt;category&gt;&apos; { server=&apos;&lt;daddr&gt;:&lt;dport&gt;&apos; client_mac=&apos;&lt;dmacaddr&gt;&apos; | server=&apos;&lt;daddr&gt;:&lt;dport&gt;&apos; }" />
+
 <MESSAGE
 	id1="events:01"
 	id2="events"
 	eventcategory="1605020000"
 	tagval="true"
 	missField="true"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*HDR(node)&gt;"
-	content="aid=&lt;fld1&gt; arp_resp=&lt;fld2&gt; arp_src=&lt;fld3&gt; auth_neg_dur=&lt;fld4&gt; auth_neg_failed=&lt;fld5&gt; channel=&lt;fld6&gt; dns_req_rtt=&lt;fld7&gt; dns_resp=&lt;fld8&gt; dns_server=&lt;fld9&gt; duration=&lt;duration&gt; full_conn=&lt;fld11&gt; identity=&lt;fld12&gt; ip_resp=&lt;fld13&gt; ip_src=&lt;saddr&gt; is_8021x=&lt;fld15&gt; is_wpa=&lt;fld16&gt; last_auth_ago=&lt;fld17&gt; radio=&lt;fld18&gt; reason=&lt;fld19&gt; rssi=&lt;dclass_ratio1&gt; type=&lt;event_type&gt; vap=&lt;fld22&gt; client_mac=&lt;dmacaddr&gt; client_ip=&lt;daddr&gt; instigator=&lt;fld20&gt; http_resp=&lt;fld21&gt; dhcp_lease_completed=&lt;fld22&gt; dhcp_ip=&lt;fld23&gt; dhcp_server=&lt;fld24&gt; dhcp_server_mac=&lt;fld25&gt; dhcp_resp=&lt;fld26&gt;" />
-<MESSAGE
-	id1="events:02"
-	id2="events"
-	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:content_filtering_block&gt;&lt;@sensor:*HDR(node)&gt;"
-	content="content_filtering_block url=&apos;&lt;url&gt;&apos; category0=&apos;&lt;category&gt;&apos; server=&apos;&lt;daddr&gt;:&lt;dport&gt;&apos;" />
-
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:appliance&gt;&lt;@sensor:*HDR(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
+	content="aid=&lt;fld1&gt; arp_resp=&lt;fld2&gt; arp_src=&lt;fld3&gt; auth_neg_dur=&lt;fld4&gt; auth_neg_failed=&lt;fld5&gt; channel=&lt;fld6&gt; dns_req_rtt=&lt;fld7&gt; dns_resp=&lt;fld8&gt; dns_server=&lt;fld9&gt; duration=&lt;duration&gt; full_conn=&lt;fld11&gt; identity=&lt;fld12&gt; ip_resp=&lt;fld13&gt; ip_src=&lt;saddr&gt; is_8021x=&lt;fld15&gt; is_wpa=&lt;fld16&gt; last_auth_ago=&lt;fld17&gt; radio=&lt;fld18&gt; reason=&lt;fld19&gt; rssi=&lt;dclass_ratio1&gt; type=&lt;event_type&gt; vap=&lt;fld22&gt; client_mac=&lt;dmacaddr&gt; client_ip=&lt;daddr&gt; instigator=&lt;fld20&gt; http_resp=&lt;fld21&gt; dhcp_lease_completed=&lt;fld22&gt; dhcp_ip=&lt;fld23&gt; dhcp_server=&lt;fld24&gt; dhcp_server_mac=&lt;fld25&gt; dhcp_resp=&lt;fld26&gt; url=&lt;url&gt; category0=&lt;category&gt; server=&lt;daddr&gt; vpn_type=&lt;fld27&gt; connectivity=&lt;fld28&gt;" />
 <MESSAGE
 	id1="events:03"
 	id2="events"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events IDS&gt;&lt;@sensor:*HDR(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events IDS&gt;&lt;@sensor:*HDR(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="IDS: &lt;info&gt;" />
 
 <MESSAGE
 	id1="events:04"
 	id2="events"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events DHCP&gt;&lt;@sensor:*HDR(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:events DHCP&gt;&lt;@sensor:*HDR(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="dhcp {no offers|release} for mac &lt;macaddr&gt;" />
   
 <MESSAGE
 	id1="events:05"
 	id2="events"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: events MAC&gt;&lt;@sensor:*HDR(node)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: events MAC&gt;&lt;@sensor:*HDR(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"
 	content="MAC &lt;macaddr&gt; and MAC &lt;macaddr&gt; both claim IP: &lt;saddr&gt;" />
 
 <MESSAGE
 	id1="ids-alerts:01"
 	id2="ids-alerts"
 	eventcategory="1607000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:ids-alerts&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt; {dhost=&lt;dmacaddr&gt;|shost=&lt;smacaddr&gt;} direction=&lt;direction&gt; protocol=&lt;protocol&gt; {src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt;|src=&lt;saddr&gt; dst=&lt;daddr&gt;} message: &lt;signame&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:ids-alerts&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;"
+	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt;.&lt;fld4&gt; {dhost=&lt;dmacaddr&gt;|shost=&lt;smacaddr&gt;} direction=&lt;direction&gt; protocol=&lt;protocol&gt; {src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt;|src=&lt;saddr&gt; dst=&lt;daddr&gt;} message: &lt;signame&gt;" />
+
+<MESSAGE
+	id1="ids-alerts:03"
+	id2="ids-alerts"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:ids-alerts&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;"
+	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt;.&lt;fld4&gt;direction=&lt;direction&gt; protocol=&lt;protocol&gt; src=&lt;saddr&gt;:&lt;sport&gt;" />
 
 <MESSAGE
 	id1="ids-alerts:02"
 	id2="ids-alerts"
 	eventcategory="1607000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:ids-alerts&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt;protocol=&lt;protocol&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt;message: &lt;signame&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:ids-alerts&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;"
+	content="&lt;node&gt; ids-alerts signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt;.&lt;fld4&gt;protocol=&lt;protocol&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt;message: &lt;signame&gt;" />
 <MESSAGE
 	id1="security_event"
 	id2="security_event"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:security_event&gt;&lt;@sensor:*PARMVAL(node)&gt;"	
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:security_event&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($HDR,'%X',hfld2)&gt;"	
 	content="&lt;node&gt;security_event &lt;event_description&gt; url=&lt;url&gt; src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt; mac=&lt;smacaddr&gt; name=&lt;fld10&gt; sha256=&lt;fld11&gt; disposition=&lt;disposition&gt; action=&lt;action&gt;"/>
 
 	
@@ -133,8 +140,8 @@
 	id1="security_event:01"
 	id2="security_event"
 	eventcategory="1607000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:security_event&gt;&lt;@sensor:*PARMVAL(node)&gt;"
-	content="&lt;node&gt; security_event &lt;event_description&gt; signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt; {dhost=&lt;dmacaddr&gt;|shost=&lt;smacaddr&gt;} direction=&lt;direction&gt; protocol=&lt;protocol&gt; {src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt;|src=&lt;saddr&gt; dst=&lt;daddr&gt;} message:&lt;signame&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:security_event&gt;&lt;@sensor:*PARMVAL(node)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld3)&gt;"
+	content="&lt;node&gt; security_event &lt;event_description&gt; signature=&lt;fld1&gt; priority=&lt;fld2&gt; timestamp=&lt;fld3&gt;.&lt;fld4&gt; {dhost=&lt;dmacaddr&gt;|shost=&lt;smacaddr&gt;} direction=&lt;direction&gt; protocol=&lt;protocol&gt; {src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt;|src=&lt;saddr&gt; dst=&lt;daddr&gt;} message:&lt;signame&gt;"/>
 
 	
 </DEVICEMESSAGES>
