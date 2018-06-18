@@ -4,9 +4,9 @@
 	displayname="Palo Alto Networks Firewall"
 	group="Firewall">
 <VERSION
-	xml="68"
-	checksum="7eb81c70ba4e9e91cf3a3f782932672f"
-	revision="118"
+	xml="70"
+	checksum="f46c88e03a34df043bdbce117d991667"
+	revision="119"
 	device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -272,7 +272,7 @@
 	id2="SYSTEM" 
 	eventcategory="1401070000"
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@shost:*PARMVAL(saddr)&gt;&lt;@event_description:User logged out&gt;&lt;@action:general-logout&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;"
-	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,general,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;vsys&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;severity&gt;,User &lt;username&gt; logged out via &lt;network_service&gt; from &lt;saddr&gt;,&lt;fld9&gt;,&lt;fld10&gt;  " />
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,general,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;vsys&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;severity&gt;{,&quot;User|,User} &lt;username&gt; logged out via &lt;network_service&gt; from &lt;saddr&gt;{&quot;,|,}&lt;fld9&gt;,&lt;fld10&gt;  " />
 
 <MESSAGE 
 	id1="SYSTEM:general_logout:02" 
@@ -324,6 +324,20 @@
 	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;fld2&gt;,SYSTEM,general,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;vsys&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;{User &apos;&lt;username&gt;&apos; failed authentication.  Reason: &lt;result&gt; From: &lt;saddr&gt;.&quot;, &lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld17&gt;,,|User &apos;&lt;username&gt;&apos; failed authentication. &lt;space&gt;  Reason: &lt;result&gt;&quot;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld17&gt;,,|User &lt;username&gt; failed authentication&quot;, &lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld17&gt;,,}" />
 
 <MESSAGE
+	id1="SYSTEM:general_Commit" 
+	id2="SYSTEM" 
+	eventcategory="1401040000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:general&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,general,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;vsys&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld11&gt;,&lt;severity&gt;,&quot;&lt;event_description&gt; Dequeue time=&lt;fld12&gt; JobId=&lt;fld13&gt; User: &lt;username&gt; &quot;,&lt;fld9&gt;,&lt;fld10&gt;" />
+
+<MESSAGE
+	id1="SYSTEM:general_Access" 
+	id2="SYSTEM" 
+	eventcategory="1401040000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:general&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;&lt;@event_description:User accessed Monitor tab&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,general,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;vsys&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld11&gt;,&lt;severity&gt;,&quot;User &lt;username&gt; accessed Monitor tab&quot;,&lt;fld9&gt;,&lt;fld10&gt;" />
+
+<MESSAGE
 	id1="SYSTEM:general:01" 
 	id2="SYSTEM" 
 	eventcategory="1401040000" 
@@ -351,6 +365,7 @@
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;"
 	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;fld2&gt;,SYSTEM,general,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;vsys&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,User &apos;&lt;username&gt;&apos; authenticated.   From: &lt;saddr&gt;.,&lt;fld10&gt;,&lt;fld11&gt;" />
 
+	
 <MESSAGE
 	id1="SYSTEM:general:05" 
 	id2="SYSTEM" 
