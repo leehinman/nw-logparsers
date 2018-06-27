@@ -62,7 +62,7 @@
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |SecurID}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0007"
@@ -212,6 +212,13 @@
 	content="&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
 
 <MESSAGE 
+	id1="netskope" 
+	id2="netskope" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%X',cs_recorded_time)&gt;&lt;@dclass_counter1_string:Event Count&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',cs_page_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',cs_page_endtime)&gt;"
+	content="&lt;param_event_time&gt;&lt;cs_page_starttime&gt;&lt;cs_page_endtime&gt;&lt;cs_recorded_time&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
 	id1="checkpointfw1" 
 	id2="checkpointfw1" 
 	eventcategory="1612000000"
@@ -222,8 +229,8 @@
 	id1="googlecloud" 
 	id2="googlecloud" 
 	eventcategory="1612000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
-	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_endtime)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
 
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -265,6 +272,7 @@
 	<Vendor2Device vendor="Check Point" product="Application Control" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="VPN-1 &amp; FireWall-1" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Google" product="Cloud Platform" device="googlecloud" group="Cloud"/>
+	<Vendor2Device vendor="netskope" product="netskope" device="netskope" group="Cloud"/>
 </VendorProducts>
 
 
@@ -378,6 +386,10 @@
 
 		
 		<ExtensionKey cefName="loginID" metaName="username"/>
+		
+
+		
+		<ExtensionKey cefName="spfResult" metaName="event_state"/>
 		
 
 		<ExtensionKey cefName="ifname" metaName="interface"/>
@@ -1084,6 +1096,9 @@
 		<ExtensionKey cefName="jsonPayload.resource.id" metaName="cs_fld"/>
 		<ExtensionKey cefName="jsonPayload.actor.user" metaName="c_username"/>
 		<ExtensionKey cefName="jsonPayload.operation.id" metaName="operation_id"/>
+		<ExtensionKey cefName="jsonPayload.request.url" metaName="url"/>
+		<ExtensionKey cefName="jsonPayload.trace_id" metaName="id2"/>
+		<ExtensionKey cefName="jsonPayload.user_agent" metaName="user_agent"/>
 		<ExtensionKey cefName="protoPayload.authorizationInfo.permission" metaName="permissions"/>
 		<ExtensionKey cefName="protoPayload.response.status" metaName="disposition"/>
 		<ExtensionKey cefName="protoPayload.serviceName" metaName="service.name"/>
@@ -1093,7 +1108,82 @@
 		<ExtensionKey cefName="protoPayload.requestMetadata.callerSuppliedUserAgent" metaName="user_agent"/>
 		<ExtensionKey cefName="protoPayload.authenticationInfo.principalEmail" metaName="email"/>
 		<ExtensionKey cefName="protoPayload.methodName" metaName="action"/>
+		<ExtensionKey cefName="protoPayload.status.message" metaName="info"/>
+		<ExtensionKey cefName="protoPayload.method" metaName="action"/>
+		<ExtensionKey cefName="protoPayload.startTime" metaName="param_starttime"/>
+		<ExtensionKey cefName="protoPayload.endTime" metaName="param_endtime"/>
+		<ExtensionKey cefName="protoPayload.request.resource.instanceName.instanceId" metaName="instance"/>
 		<ExtensionKey cefName="resource.labels.instance_id" metaName="id1"/>
 		<ExtensionKey cefName="resource.labels.zone" metaName="zone"/>
+		<ExtensionKey cefName="resource.labels.database_id" metaName="db_id"/>
+		<ExtensionKey cefName="resource.labels.region" metaName="zone"/>
+		<ExtensionKey cefName="logName" metaName="event_log"/>
+		<ExtensionKey cefName="insertId" metaName="id"/>
+		
+		<ExtensionKey cefName="dstip" metaName="daddr"/>
+		<ExtensionKey cefName="event_type" metaName="event_type"/>
+		<ExtensionKey cefName="app" metaName="application"/>
+		<ExtensionKey cefName="dsthost" metaName="dhost"/>
+		<ExtensionKey cefName="site" metaName="site"/>
+		<ExtensionKey cefName="Field Name" metaName="Sample value"/>
+		<ExtensionKey cefName="srcip" metaName="saddr"/>
+		<ExtensionKey cefName="alert_type" metaName="alert"/>
+		<ExtensionKey cefName="organization_unit" metaName="org.src"/>
+		<ExtensionKey cefName="id" metaName="id"/>
+		<ExtensionKey cefName="_id" metaName="id1"/>
+		<ExtensionKey cefName="app_session_id" metaName="sessionid"/>
+		<ExtensionKey cefName="dst_location" metaName="location_dst"/>
+		<ExtensionKey cefName="category" metaName="category"/>
+		<ExtensionKey cefName="severity" metaName="severity"/>
+		<ExtensionKey cefName="src_longitude" metaName="longdec_src"/>
+		<ExtensionKey cefName="dst_country" metaName="location_dst"/>
+		<ExtensionKey cefName="device" metaName="device"/>
+		<ExtensionKey cefName="access_method" metaName="authmethod"/>
+		<ExtensionKey cefName="policy" metaName="policyname"/>
+		<ExtensionKey cefName="object_type" metaName="obj_type"/>
+		<ExtensionKey cefName="dst_latitude" metaName="latdec_dst"/>
+		<ExtensionKey cefName="timestamp" metaName="param_event_time"/>
+		<ExtensionKey cefName="dst_longitude" metaName="longdec_dst"/>
+		<ExtensionKey cefName="to_user" metaName="username"/>
+		<ExtensionKey cefName="from_user" metaName="c_username"/>
+		<ExtensionKey cefName="src_location" metaName="location_src"/>
+		<ExtensionKey cefName="org" metaName="user_org"/>
+		<ExtensionKey cefName="src_country" metaName="location_src"/>
+		<ExtensionKey cefName="src_latitude" metaName="latdec_src"/>
+		<ExtensionKey cefName="count" metaName="dclass_counter1"/>
+		<ExtensionKey cefName="url" metaName="url"/>
+		<ExtensionKey cefName="risk_level_id" metaName="risk_num"/>
+		<ExtensionKey cefName="object" metaName="filename"/>
+		<ExtensionKey cefName="alert_name" metaName="alert"/>
+		<ExtensionKey cefName="activity" metaName="action"/>
+		<ExtensionKey cefName="os" metaName="os"/>
+		<ExtensionKey cefName="browser" metaName="user_agent"/>
+		<ExtensionKey cefName="audit_log_event" metaName="event_description"/>
+		<ExtensionKey cefName="_insertion_epoch_timestamp" metaName="cs_recorded_time"/>
+		<ExtensionKey cefName="severity_level" metaName="level"/>
+		<ExtensionKey cefName="supporting_data" metaName="data"/>
+		<ExtensionKey cefName="device_name" metaName="device"/>
+		<ExtensionKey cefName="alarm_description" metaName="event_description"/>
+		<ExtensionKey cefName="serial" metaName="serial_number"/>
+		<ExtensionKey cefName="alarm_name" metaName="alert"/>
+		<ExtensionKey cefName="supporting_data.severity" metaName="severity"/>
+        <ExtensionKey cefName="numbytes" metaName="bytes"/>
+		<ExtensionKey cefName="server_bytes" metaName="rbytes"/>
+		<ExtensionKey cefName="client_bytes" metaName="sbytes"/>
+		<ExtensionKey cefName="type" metaName="event_type"/>
+		<ExtensionKey cefName="page_duration" metaName="duration"/>
+		<ExtensionKey cefName="page_starttime" metaName="cs_page_starttime"/>
+		<ExtensionKey cefName="page_endtime" metaName="cs_page_endtime"/>
+		<ExtensionKey cefName="severity" metaName="severity"/>
+		<ExtensionKey cefName="userip" metaName="hostip"/>
+		<ExtensionKey cefName="userkey" metaName="c_username"/>
+        <ExtensionKey cefName="transaction_id" metaName="trans_id"/>
+		<ExtensionKey cefName="action" metaName="action"/>
+		<ExtensionKey cefName="object_id" metaName="obj_id"/>
+		<ExtensionKey cefName="activity" metaName="activity"/>
+		<ExtensionKey cefName="referer" metaName="referer"/>
+        <ExtensionKey cefName="instance_type" metaName="obj_type"/>
+        <ExtensionKey cefName="policy" metaName="policyname"/>
+        <ExtensionKey cefName="user" metaName="username"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
