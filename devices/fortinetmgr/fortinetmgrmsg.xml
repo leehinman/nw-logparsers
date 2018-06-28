@@ -4,17 +4,35 @@
 	displayname="Fortinet Manager/Analyzer"
 	group="Firewall">
 <VERSION
-	xml="11"
-	checksum="b694a1a69834665ec6583c20280a48af"
-	revision="114"
+	xml="15"
+	checksum="65f61610d30ba1aa24c4811402babfea"
+	revision="119"
     device="2.0" />
     
 
+<TAGVALMAP
+    delimiter="  &quot;"/>
 <HEADER
 	id1="0001"
 	id2="0001"
 	messageid="STRCAT(hfld2, '_fortinetmgr')"
 	content="date=&lt;hdate&gt; time=&lt;htime&gt; devname=&lt;hdevice&gt; device_id=&lt;hfld1&gt; log_id=&lt;id&gt; type=&lt;hfld2&gt; subtype=&lt;hfld3&gt; pri=&lt;hseverity&gt; &lt;!payload&gt;" />
+<HEADER
+	id1="0002"
+	id2="0002"
+	messageid="STRCAT('generic_fortinetmgr')"
+	content="logver=&lt;hfld1&gt; date=&lt;hdate&gt; time=&lt;htime&gt; log_id=&lt;id&gt; &lt;!payload&gt;" />
+<HEADER
+	id1="0003"
+	id2="0003"
+	messageid="STRCAT('generic_fortinetmgr')"
+	content="date=&lt;hdate&gt; time=&lt;htime&gt; logver=&lt;fld1&gt; &lt;!payload&gt;" />
+<HEADER
+	id1="0004"
+	id2="0004"
+	messageid="STRCAT('generic_fortinetmgr_1')"
+	content="logver=&lt;hfld1&gt; dtime=&lt;hdatetime&gt; devid=&lt;hfld2&gt; devname=&lt;hdevice&gt; &lt;!payload&gt;" />
+
 <VALUEMAP
 	name="getEventLegacyCategoryName"
 	default="Other.Default"
@@ -24,7 +42,11 @@
 	name="getEventLegacyCategory"
 	default="1901000000"
 	keyvaluepairs="Accepted=&apos;1302000000&apos;|Failed=&apos;1301000000&apos;|login accepted=&apos;1302000000&apos;|timed out=&apos;1401070000&apos;" />  
- 
+
+<VALUEMAP
+		name="getProtocolName"
+		default="$NONE"
+		keyvaluepairs="3=&apos;GGP&apos;|0=&apos;HOPOPT&apos;|1=&apos;ICMP&apos;|6=&apos;TCP&apos;|17=&apos;UDP&apos;|21=&apos;PRM&apos;|HOPOPT=&apos;HOPOPT&apos;|icmp=&apos;ICMP&apos;|tcp=&apos;TCP&apos;|udp=&apos;UDP&apos;|prm=&apos;PRM&apos;" />
 
 <MESSAGE
 	id1="fortinetmgr:01"
@@ -68,5 +90,23 @@
 	 eventcategory="1801000000"
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	 content="user=&quot;&lt;username&gt;&quot; userfrom=&quot;&lt;fld1&gt;&quot;{msg=&quot;dev=&lt;fld2&gt;,vdom=&lt;fld3&gt;,type=&lt;fld4&gt;,key=&lt;fld5&gt;,act=&lt;action&gt;,pkgname=&lt;fld7&gt;,allowaccess=&lt;fld8&gt;&quot; adom=&quot;&lt;domain&gt;&quot;|msg=&quot;&lt;event_description&gt;&quot; adom=&quot;&lt;domain&gt;&quot;}"/>
+
+<MESSAGE
+	 id1="generic_fortinetmgr"
+	 id2="generic_fortinetmgr"
+	 eventcategory="1801000000"
+	 tagval="true"
+	 missField="true"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@protocol:*getProtocolName(fld6)&gt;"
+	 content="devid=&lt;hardware_id&gt; devname=&lt;event_source&gt; logid=&lt;id&gt; type=&lt;event_type&gt; subtype=&lt;category&gt; level=&lt;severity&gt; vd=&lt;vsys&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; poluuid=&lt;fld5&gt; sessionid=&lt;sessionid&gt; proto=&lt;fld6&gt; action=&lt;action&gt; policyid=&lt;policy_id&gt; trandisp=&lt;context&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; devtype=&lt;fld7&gt; osname=&lt;os&gt; osversion=&lt;version&gt; mastersrcmac=&lt;fld8&gt; srcmac=&lt;smacaddr&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld9&gt; crlevel=&lt;fld10&gt; eventtype=&lt;vendor_event_cat&gt; user=&lt;username&gt; service=&lt;network_service&gt; hostname=&lt;hostname&gt; profile=&lt;rulename&gt; reqtype=&lt;fld11&gt; url=&lt;url&gt; direction=&lt;direction&gt; msg=&lt;event_description&gt; method=&lt;fld12&gt; cat=&lt;fcatnum&gt; catdesc=&lt;filter&gt; device_id=&lt;hardware_id&gt; log_id=&lt;id&gt; pri=&lt;severity&gt; userfrom=&lt;fld30&gt; adminprof=&lt;fld13&gt; timezone=&lt;timezone&gt; main_type=&lt;fld37&gt; trigger_policy=&lt;fld39&gt; sub_type=&lt;category&gt; severity_level=&lt;fld101&gt; policy=&lt;policyname&gt; src=&lt;saddr&gt; src_port=&lt;sport&gt; dst=&lt;daddr&gt; dst_port=&lt;dport&gt; http_method=&lt;web_method&gt; http_url=&lt;web_query&gt; http_host=&lt;web_ref_domain&gt; http_agent=&lt;agent&gt; http_session_id=&lt;sessionid&gt; signature_subclass=&lt;fld14&gt; signature_id=&lt;sigid&gt; srccountry=&lt;location_src&gt; content_switch_name=&lt;fld15&gt; server_pool_name=&lt;fld16&gt; false_positive_mitigation=&lt;fld17&gt; user_name=&lt;username&gt; monitor_status=&lt;fld18&gt; http_refer=&lt;web_referer&gt; http_version=&lt;fld19&gt; dev_id=&lt;fld100&gt; threat_weight=&lt;fld20&gt; history_threat_weight=&lt;fld21&gt; threat_level=&lt;threat_val&gt; ftp_mode=&lt;fld22&gt; ftp_cmd=&lt;fld23&gt; cipher_suite=&lt;fld24&gt; msg_id=&lt;fld25&gt;"/>
+
+<MESSAGE
+	 id1="generic_fortinetmgr_1"
+	 id2="generic_fortinetmgr_1"
+	 eventcategory="1801000000"
+	 tagval="true"
+	 missField="true"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld2)&gt;"
+	 content="vd=&lt;vsys&gt; date=&lt;fld1&gt; time=&lt;fld2&gt; logid=&lt;id&gt; type=&lt;event_type&gt; subtype=&lt;category&gt; level=&lt;severity&gt; logtime=&lt;fld35&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; srcintfrole=&lt;fld30&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; dstintfrole=&lt;fld31&gt; poluuid=&lt;fld5&gt; sessionid=&lt;sessionid&gt; proto=&lt;fld6&gt; action=&lt;action&gt; policyid=&lt;policy_id&gt; policytype=&lt;fld34&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld9&gt; crlevel=&lt;fld10&gt; appcat=&lt;fld33&gt; service=&lt;network_service&gt;"/>
 
 </DEVICEMESSAGES>
