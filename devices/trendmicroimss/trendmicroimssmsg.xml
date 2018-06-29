@@ -4,9 +4,9 @@
 	displayname="Trend Micro IMSS"
 	group="Application Firewall">
 <VERSION
-	xml="10"
-	checksum="2091cc99306935a76b6dcb377f98c977"
-	revision="116"
+	xml="12"
+	checksum="dc43776a6f34b44ac43c9e1b2e9fe9d7"
+	revision="119"
 	device="2.0" />
 
  
@@ -34,7 +34,7 @@
 <HEADER 
 	id1="0005"
 	id2="0005"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;shost&gt; &lt;hfld1&gt;.&lt;messageid&gt;[&lt;hfld2&gt;] &lt;!payload:messageid&gt;" />
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;shost&gt; &lt;event_type&gt;.&lt;messageid&gt;[&lt;hfld2&gt;] &lt;!payload:messageid&gt;" />
 
 <HEADER 
 	id1="0006"
@@ -344,20 +344,145 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;sessionid&gt;: &lt;fld1&gt;" />
 
 <MESSAGE  
-	id1="imss:01" 
+	id1="imss:20" 
 	id2="imss" 
 	eventcategory="1207000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Accept connection from client&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;	[&lt;fld4&gt;] &lt;severity&gt;: Accept connection from client [&lt;saddr&gt;]." />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; Delivery Status &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:19" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; {Returned mail|DELIVERY FAILURE}: &lt;info&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:18" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@subject:Undeliverable&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; Undeliverable:&lt;fld11&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:17" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@subject:Delivery Notification: Delivery has failed&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; Delivery Notification: Delivery has failed &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:16" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@subject:Undelivered Mail Returned to Sender&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; Undelivered Mail Returned to Sender &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:15" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; {Mail Delivery|Delivery} Failure &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:14" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@subject:Mail delivery failed: returning message to sender&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; Mail delivery failed: returning message to sender &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:13" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; &lt;to&gt; FW: [&lt;subject&gt;] &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:12" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld11&gt; &lt;from&gt; &lt;to&gt; &lt;fld9&gt; {Re:|RE:}&lt;info&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:11" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@subject:Undeliverable Message&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; Undeliverable Message &lt;saddr&gt; #null# &lt;fld1&gt;" />
+
+<MESSAGE  
+	id1="imss:10" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@subject:failure notice&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; {failure notice|Failure Notice} &lt;saddr&gt; #null# &lt;fld1&gt;" />
 
 <MESSAGE  
 	id1="imss:02" 
 	id2="imss" 
 	eventcategory="1207000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; &lt;to&gt; &lt;saddr&gt; &lt;subject&gt; #null# &lt;fld1&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: QuarantineTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld10&gt; #null# &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;from&gt; &lt;to&gt; &lt;info&gt; #null# &lt;fld1&gt;" />
 
-	
+<MESSAGE  
+	id1="imss:09" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Transac_Redelivery #null# #null# &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; #null# #null# &lt;fld7&gt;" />
+
+<MESSAGE  
+	id1="imss:08" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld7,fld8)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: DeleteTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt;" />
+
+<MESSAGE  
+	id1="imss:07" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld7,fld8)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: BouncedBackTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt;" />
+
+<MESSAGE  
+	id1="imss:06" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld7,fld8)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: HandoffTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt;" />
+
+<MESSAGE  
+	id1="imss:05" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W %B %F %N:%U:%O',fld2,fld3,fld4,fld5)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld7,fld8)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: NormalTransac &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;fld10&gt;" />
+
+<MESSAGE  
+	id1="imss:04" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Daemon Service: SMTP client connection closed.&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; [&lt;fld4&gt;] Daemon Service: SMTP client connection closed." />
+
+<MESSAGE  
+	id1="imss:03" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; [&lt;fld4&gt;] &lt;severity&gt;: Quarantine to this folder: &lt;directory&gt; for msg: &lt;fld5&gt;" />
+
+<MESSAGE  
+	id1="imss:01" 
+	id2="imss" 
+	eventcategory="1207000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Accept connection from client&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;&lt;fld5&gt;[&lt;fld4&gt;] &lt;severity&gt;: Accept connection from client [&lt;saddr&gt;]." />
+
 
 <MESSAGE  
 	id1="imss" 
