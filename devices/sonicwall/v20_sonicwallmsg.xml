@@ -4,9 +4,9 @@
 	displayname="Sonicwall-FW"
 	group="Firewall">
 <VERSION
-	xml="40"
-	checksum="b264aa676c785afcbff499de8ddf4cb1"
-	revision="118"
+	xml="42"
+	checksum="88c2867fbe8bbb099183b78efe23867c"
+	revision="119"
     device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -2492,5 +2492,89 @@
 	id2="1080" 
 	eventcategory="1605000000" 
 	content="msg=&quot;&lt;msg&gt;&quot; sess=&lt;fld1&gt; n=&lt;fld2&gt; usr=&quot;&lt;username&gt;&quot; src= {&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;:&lt;shost&gt; dst=| &lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=} {&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;:&lt;dhost&gt; proto=| &lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto=} &lt;protocol&gt;"/>
+
+<MESSAGE
+	id1="580"
+	id2="580"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt; srcMac=&lt;smacaddr&gt; dstMac=&lt;dmacaddr&gt; proto=&lt;protocol&gt; note=&quot;&lt;info&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="1391"
+	id2="1391"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="pktdatId=&lt;fld1&gt;pktdatNum=&quot;&lt;fld2&gt;&quot; pktdatEnc=&quot;&lt;fld3&gt;&quot; n=&lt;fld4&gt;src={&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;dst=|&lt;saddr&gt;:&lt;sport&gt;dst=}{&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;:&lt;dhost&gt;|&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;|&lt;daddr&gt;:&lt;dport&gt;}"/>
+
+<MESSAGE
+	id1="1253"
+	id2="1253"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; app=&lt;fld1&gt;appName=&quot;&lt;application&gt;&quot; n=&lt;fld2&gt;src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;srcMac=&lt;smacaddr&gt;dstMac=&lt;dmacaddr&gt;proto=&lt;protocol&gt;fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="1009"
+	id2="1009"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld2&gt;note=&quot;&lt;info&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="910"
+	id2="910"
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; app=&lt;fld2&gt;appName=&quot;&lt;application&gt;&quot; n=&lt;fld3&gt;src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;dst={&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;:&lt;dhost&gt;srcMac=|&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;srcMac=}&lt;smacaddr&gt;dstMac=&lt;dmacaddr&gt;proto=&lt;protocol&gt;fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="m:01"
+	id2="m"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="m=&lt;id1&gt;msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld2&gt;if=&lt;interface&gt;ucastRx=&lt;fld3&gt;bcastRx=&lt;fld4&gt;bytesRx=&lt;rbytes&gt;ucastTx=&lt;fld5&gt;bcastTx=&lt;fld6&gt;bytesTx=&lt;sbytes&gt;"/>
+
+<MESSAGE
+	id1="1011"
+	id2="1011"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt;note=&quot;&lt;info&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="609"
+	id2="609"
+	eventcategory="1204000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; sid=&lt;sid&gt; ipscat=&quot;&lt;fld3&gt;&quot; ipspri=&lt;fld4&gt;  pktdatId=&lt;fld5&gt; n=&lt;fld6&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto=&lt;protocol&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="796"
+	id2="796"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="880"
+	id2="880"
+	eventcategory="1801000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; note=&quot;&lt;info&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="1310"
+	id2="1310"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+    id1="1232"
+    id2="1232"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; {dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;:&lt;dhost&gt;|dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;} note=&quot;&lt;info&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
 
 </DEVICEMESSAGES>
