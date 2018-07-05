@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="69"
-		checksum="a6006c98a0b7223fdba74196b832f0ae"
-		revision="116"
+		xml="72"
+		checksum="f116bef190c4ba113c5c399dbbf7ac64"
+		revision="119"
 		device="2.0" />
 	
 <HEADER
@@ -249,8 +249,8 @@
 	id1="dhcpd:32"
 	id2="dhcpd"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:BOOTREQUEST&gt;"
-	content="  BOOTREQUEST from &lt;smacaddr&gt; via &lt;saddr&gt;: BOOTP from dynamic client and no dynamic leases" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:BOOTREQUEST&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="  BOOTREQUEST from &lt;smacaddr&gt; via &lt;saddr&gt;: &lt;event_description&gt;" />
 <MESSAGE
 	id1="dhcpd:33"
 	id2="dhcpd"
@@ -261,8 +261,8 @@
 	id1="dhcpd:34"
 	id2="dhcpd"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
-	content="  balanced pool &lt;fld1&gt; &lt;saddr&gt;/&lt;sport&gt;  total &lt;fld2&gt;  free &lt;fld3&gt; backup &lt;fld4&gt; lts &lt;fld5&gt; &lt;fld6&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="  {balanced|balancing} pool &lt;fld1&gt; &lt;saddr&gt;/&lt;sport&gt;  total &lt;fld2&gt;  free &lt;fld3&gt; backup &lt;fld4&gt; lts &lt;fld5&gt; max-&lt;fld6&gt; {(+/-)&lt;fld7&gt;(&lt;info&gt;)|(+/-)&lt;fld7&gt;|&lt;fld7&gt;}" />
 <MESSAGE
 	id1="dhcpd:35"
 	id2="dhcpd"
@@ -658,10 +658,60 @@
 	content="&lt;fld1&gt;: &lt;fld2&gt;: REFUSED" />
 
 <MESSAGE
+	id1="named:54"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="&lt;hostip&gt;#&lt;network_port&gt;: GSS-TSIG authentication failed:&lt;event_description&gt;"/>
+
+																																		
+<MESSAGE
+	id1="named:55"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@zone:*PARMVAL(domain)&gt;"
+	content="success resolving '&lt;domain&gt;' (in '&lt;fld1&gt;'?) after disabling EDNS"/>
+
+<MESSAGE
+	id1="named:56"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@zone:*PARMVAL(domain)&gt;"
+	content="SERVFAIL unexpected RCODE resolving '&lt;domain&gt;':&lt;hostip&gt;#&lt;network_port&gt;"/>
+
+<MESSAGE
+	id1="named:57"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@ec_outcome:Error&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@zone:*PARMVAL(domain)&gt;"
+	content="FORMERR resolving '&lt;domain&gt;':&lt;hostip&gt;#&lt;network_port&gt;"/>
+
+<MESSAGE
+	id1="named:58"
+	id2="named"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@zone:*PARMVAL(domain)&gt;"
+	content="lame server resolving '&lt;domain&gt;' (in '&lt;fld2&gt;'?):&lt;hostip&gt;#&lt;network_port&gt;"/>
+
+<MESSAGE
+	id1="named:59"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@zone:*PARMVAL(domain)&gt;"
+	content="exceeded max queries resolving '&lt;domain&gt;'"/>
+
+<MESSAGE
+	id1="named:60"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@zone:*PARMVAL(domain)&gt;"
+	content="skipping nameserver '&lt;hostname&gt;' because it is a CNAME, while resolving '&lt;domain&gt;'"/>
+
+<MESSAGE
 	id1="named:07"
 	id2="named"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content=" {client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): view &lt;fld2&gt;: query: &lt;web_query&gt;|&lt;event_description&gt;}" />
 <MESSAGE
 	id1="pidof:01"
@@ -1156,10 +1206,101 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:User group identification&gt;"
 	content=" User group = &lt;group&gt;" />
 <MESSAGE
+	id1="dhcpd:39"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="NOT FREE/BACKUP lease&lt;hostip&gt;End Time&lt;fld1&gt; Bind-State &lt;change_old&gt; Next-Bind-State &lt;change_new&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:41"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="RELEASE on&lt;saddr&gt;to&lt;dmacaddr&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:42"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="r-l-e:&lt;hostip&gt;,&lt;result&gt;,&lt;fld1&gt;,&lt;macaddr&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;info&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:43"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@dclass_counter1_string:count of leases&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="failover peer&lt;fld1&gt;:&lt;dclass_counter1&gt;leases added to send queue from pool&lt;fld3&gt;&lt;hostip&gt;/&lt;network_port&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:44"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:unknown network segment&gt;"
+	content="DHCPDECLINE from&lt;macaddr&gt;via&lt;hostip&gt;: unknown network segment"/>
+
+<MESSAGE
+	id1="dhcpd:45"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="Reverse map update for&lt;hostip&gt;abandoned because of non-retryable failure:&lt;disposition&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:46"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Reclaiming REQUESTed abandoned IP address&gt;"
+	content="Reclaiming REQUESTed abandoned IP address&lt;saddr&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:47"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="&lt;hostip&gt;: removing client association (&lt;action&gt;){uid=&lt;fld1&gt;hw=&lt;macaddr&gt;|hw=&lt;macaddr&gt;}"/>
+
+<MESSAGE
+	id1="dhcpd:48"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="Lease conflict at &lt;hostip&gt;"/>
+
+<MESSAGE
+	id1="dhcpd:49"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@protocol:ICMP&gt;"
+	content="ICMP Echo reply while lease &lt;hostip&gt; valid."/>
+
+<MESSAGE
+	id1="dhcpd:50"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="Lease state &lt;result&gt;. Not abandoning &lt;hostip&gt;"/>
+
+<MESSAGE
+    id1="dhcpd:51"
+	id2="dhcpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@disposition:deferred&gt;"
+	content="{Addition|Removal} of {forward|reverse} map for &lt;hostip&gt; deferred"/>
+
+<MESSAGE
+	id1="dhcpd:52"
+	id2="dhcpd"   
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="Hostname&lt;change_old&gt;replaced by&lt;hostname&gt;"/>
+
+<MESSAGE
 	id1="dhcpd:37"
 	id2="dhcpd"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="  &lt;event_description&gt;" />
 <MESSAGE
 	id1="serial_console:05"
