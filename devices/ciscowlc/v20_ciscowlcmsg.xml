@@ -4,9 +4,9 @@
 	displayname="Cisco Wireless LAN Controller"
 	group="Wireless Devices">
 <VERSION 
-	xml="25"
-	checksum="0b8b2fd6f3b7f051f7efaabf81640df1"
-	revision="117"
+	xml="27"
+	checksum="09cd9f8816660fcd0d92316768aed4a2"
+	revision="120"
 	device="2.0" />
 <TAGVALMAP
 	pairdelimiter="," encapsulator="&quot;" />
@@ -2517,6 +2517,13 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Unable to set system logging host configuration for AP:&lt;macaddr&gt;" />
+<MESSAGE 
+	id1="LWAPP-4-DATA_PLANE_ECHO" 
+	id2="LWAPP-4-DATA_PLANE_ECHO" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',event_time_string)&gt;&lt;@event_description:AP reported timeout communicating to controller on data plane.&gt;"
+	content="AP &lt;hostname&gt; reported timeout communicating to controller on data plane." />
+
 <MESSAGE 
 	id1="LWAPP-6-AP_MODEL" 
 	id2="LWAPP-6-AP_MODEL" 
