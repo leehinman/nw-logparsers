@@ -4,9 +4,9 @@
 	displayname="Check Point FW-1"
 	group="Firewall">
 <VERSION
-	xml="104"
-	checksum="abcbc0d9ad9e14b9588aeeecbc34f65a"
-	revision="118"
+	xml="106"
+	checksum="115716481d3bd62e44a038c18f73959d"
+	revision="120"
     device="2.0" />
 
 <HEADER
@@ -1497,6 +1497,15 @@
 	eventcategory="1401030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Operation=&quot;&lt;operation&gt;&quot;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Audit Status=&lt;status&gt;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
+<MESSAGE
+	id1="080080:03"
+	id2="080080"
+	eventcategory="1401030000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@shost:*PARMVAL(fld52)&gt;&lt;@action:*PARMVAL(fld51)&gt;"
+	content="time=&lt;fld27&gt;,origin_sic_name=&lt;fld40&gt;,Application=&lt;application&gt;,Operation=&lt;fld51&gt;,Administrator=&lt;administrator&gt;,Client=&lt;fld52&gt;,Subject=&lt;subject&gt;,Audit Status=&lt;result&gt;,Info=&lt;info&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,o=&lt;fld10&gt;,Origin=&lt;hostname&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;" />
+
 <MESSAGE
 	id1="080080"
 	id2="080080"
