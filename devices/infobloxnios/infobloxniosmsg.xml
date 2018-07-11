@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="72"
-		checksum="f116bef190c4ba113c5c399dbbf7ac64"
-		revision="119"
+		xml="73"
+		checksum="6ac4c337bf53bece0a52b01fe3e1067a"
+		revision="120"
 		device="2.0" />
 	
 <HEADER
@@ -25,7 +25,7 @@
 <HEADER
 	id1="002"
 	id2="002"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhostname&gt; &lt;messageid&gt;: &lt;!payload&gt;"		/>
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; {&lt;hhostname&gt; -&lt;messageid&gt;:|&lt;hhostname&gt; &lt;messageid&gt;:} &lt;!payload&gt;"		/>
 <HEADER
 	id1="0003"
 	id2="0003"
@@ -101,222 +101,259 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:RRQ from remote host&gt;"
 	content=" RRQ from &lt;saddr&gt; filename &lt;filename&gt;" />
+
 <MESSAGE
 	id1="in.tftpd:02"
 	id2="in.tftpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:sending NAK to remote host&gt;"
 	content=" sending NAK (&lt;resultcode&gt;, &lt;result&gt;) to &lt;daddr&gt;" />
+
 <MESSAGE
 	id1="in.tftpd"
 	id2="in.tftpd"
 	eventcategory="1801030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" connection refused from &lt;saddr&gt;" />
+
 <MESSAGE
 	id1="dhcpd:12"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:received a REQUEST DHCP packet from relay-agent&gt;"
 	content="&lt;event_type&gt;: received a REQUEST DHCP packet from relay-agent &lt;interface&gt; with a circuit-id of &quot;&lt;id&gt;&quot; and remote-id of &quot;&lt;smacaddr&gt;&quot; for &lt;hostip&gt; (&lt;dmacaddr&gt;) lease time is { undefined | &lt;duration&gt; } seconds" />
+
 <MESSAGE
 	id1="dhcpd:21"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:bind update rejected&gt;"
 	content=" bind update on &lt;hostip&gt; from &lt;hostname&gt;(&lt;fld1&gt;) rejected: &lt;result&gt;" />
+
 <MESSAGE
 	id1="dhcpd:10"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Unable to add forward map&gt;"
 	content=" Unable to add forward map from &lt;shost&gt; to &lt;daddr&gt;: &lt;result&gt;" />
+
 <MESSAGE
 	id1="dhcpd:13"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Average dynamic DNS update latency&gt;"
 	content=" Average &lt;fld1&gt; dynamic DNS update latency: &lt;result&gt; micro seconds" />
+
 <MESSAGE
 	id1="dhcpd:15"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Dynamic DNS update timeout count&gt;"
 	content=" Dynamic DNS update timeout count in last &lt;info&gt; minutes: &lt;result&gt;" />
+
 <MESSAGE
 	id1="dhcpd:22"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Removed forward map&gt;"
 	content=" Removed forward map from &lt;shost&gt; to &lt;daddr&gt;" />
+
 <MESSAGE
 	id1="dhcpd:25"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Removed reverse map&gt;"
 	content=" Removed reverse map on &lt;hostname&gt;" />
+
 <MESSAGE
 	id1="dhcpd:06"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:received shutdown&gt;"
 	content=" received shutdown -/-/ &lt;result&gt;" />
+
 <MESSAGE
 	id1="dhcpd:18"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Added new forward map&gt;"
 	content=" { Added | added } new forward map from &lt;hostname&gt; &lt;space&gt; &lt;daddr&gt;" />
+
 <MESSAGE
 	id1="dhcpd:19"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:added reverse map&gt;"
 	content=" { Added | added } reverse map from &lt;hostname&gt; &lt;space&gt; &lt;daddr&gt;" />
+
 <MESSAGE
 	id1="dhcpd"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Abandoning IP declined&gt;"
 	content=" Abandoning IP address &lt;hostip&gt;: declined" />
+
 <MESSAGE
 	id1="dhcpd:30"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Abandoning IP pinged before offer&gt;"
 	content=" Abandoning IP address &lt;hostip&gt;: pinged before offer" />
+
 <MESSAGE
 	id1="dhcpd:01"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPDECLINE&gt;"
 	content=" DHCPDECLINE of &lt;saddr&gt; from &lt;smacaddr&gt; (&lt;shost&gt;) via &lt;interface&gt;: &lt;info&gt;" />
+
 <MESSAGE
 	id1="dhcpd:02"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPDECLINE&gt;"
 	content=" DHCPDECLINE of &lt;saddr&gt; from &lt;smacaddr&gt; via &lt;interface&gt;: &lt;info&gt;" />
+
 <MESSAGE
 	id1="dhcpd:03"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPRELEASE&gt;"
 	content=" DHCPRELEASE of &lt;saddr&gt; { from &lt;dmacaddr&gt; (&lt;dhost&gt;) via | from &lt;dmacaddr&gt; via } &lt;interface&gt; (&lt;info&gt;)" />
+
 <MESSAGE
 	id1="dhcpd:04"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPDISCOVER&gt;"
 	content="  DHCPDISCOVER from &lt;smacaddr&gt; via &lt;interface&gt;: network &lt;mask&gt;: &lt;info&gt;" />
+
 <MESSAGE
 	id1="dhcpd:07"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPREQUEST ignored&gt;"
 	content="  DHCPREQUEST for &lt;saddr&gt; { (&lt;shost&gt;) from | from } &lt;smacaddr&gt; (&lt;hostname&gt;) via &lt;interface&gt;: ignored (&lt;result&gt;)" />
+
 <MESSAGE
 	id1="dhcpd:09"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPREQUEST&gt;&lt;@result:wrong network&gt;"
 	content="  DHCPREQUEST for &lt;saddr&gt; { from &lt;smacaddr&gt; (&lt;shost&gt;) via | from &lt;smacaddr&gt; via } &lt;interface&gt;: wrong network" />
+
 <MESSAGE
 	id1="dhcpd:26"
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPREQUEST&gt;&lt;@result:lease unavailable&gt;"
 	content="  DHCPREQUEST for &lt;saddr&gt; { from &lt;smacaddr&gt; (&lt;shost&gt;) via | from &lt;smacaddr&gt; via } &lt;interface&gt;: lease &lt;hostip&gt; unavailable" />
+
 <MESSAGE
 	id1="dhcpd:08"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPREQUEST&gt;"
 	content="  DHCPREQUEST for &lt;saddr&gt; (&lt;shost&gt;) from &lt;smacaddr&gt; (&lt;hostname&gt;) via &lt;interface&gt;" />
+
 <MESSAGE
 	id1="dhcpd:11"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPREQUEST&gt;"
 	content="  DHCPREQUEST for &lt;saddr&gt; { from &lt;smacaddr&gt; (&lt;shost&gt;) via | from &lt;smacaddr&gt; via } &lt;interface&gt;" />
+
 <MESSAGE
 	id1="dhcpd:31"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPRELEASE&gt;&lt;@event_description:unknown network segment&gt;"
 	content="  DHCPRELEASE from &lt;smacaddr&gt; via &lt;saddr&gt;: unknown network segment" />
+
 <MESSAGE
 	id1="dhcpd:32"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:BOOTREQUEST&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="  BOOTREQUEST from &lt;smacaddr&gt; via &lt;saddr&gt;: &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="dhcpd:33"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Reclaiming abandoned lease&gt;"
 	content="  Reclaiming abandoned lease &lt;saddr&gt;." />
+
 <MESSAGE
 	id1="dhcpd:34"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="  {balanced|balancing} pool &lt;fld1&gt; &lt;saddr&gt;/&lt;sport&gt;  total &lt;fld2&gt;  free &lt;fld3&gt; backup &lt;fld4&gt; lts &lt;fld5&gt; max-&lt;fld6&gt; {(+/-)&lt;fld7&gt;(&lt;info&gt;)|(+/-)&lt;fld7&gt;|&lt;fld7&gt;}" />
+
 <MESSAGE
 	id1="dhcpd:35"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description: Unable to add reverse map&gt;"
 	content="  Unable to add reverse map from &lt;shost&gt; to &lt;dhost&gt;: REFUSED" />
+
 <MESSAGE
 	id1="dhcpd:36"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description: Forward map failed&gt;"
 	content="  Forward map from &lt;shost&gt; to &lt;daddr&gt; FAILED: &lt;fld1&gt;" />
+
 <MESSAGE
 	id1="dhcpd:14"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPACK&gt;"
 	content=" DHCPACK on &lt;saddr&gt; { to &lt;dmacaddr&gt; (&lt;dhost&gt;) via | to &lt;dmacaddr&gt; via } &lt;interface&gt; relay &lt;fld1&gt; lease-duration &lt;duration&gt;" />
+
 <MESSAGE
 	id1="dhcpd:24"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPOFFER&gt;"
 	content=" DHCPOFFER on &lt;saddr&gt; { to &quot;&lt;dmacaddr&gt;&quot; (&lt;dhost&gt;) via | to &lt;dmacaddr&gt; (&lt;dhost&gt;) via | to &lt;dmacaddr&gt; via } &lt;interface&gt; relay &lt;fld1&gt; lease-duration &lt;duration&gt;" />
+
 <MESSAGE
 	id1="dhcpd:17"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPNAK&gt;"
 	content=" DHCPNAK on &lt;saddr&gt; to &lt;dmacaddr&gt; via &lt;interface&gt;" />
+
 <MESSAGE
 	id1="dhcpd:05"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPDISCOVER&gt;"
 	content="  DHCPDISCOVER { from &lt;smacaddr&gt; (&lt;shost&gt;) via | from &lt;smacaddr&gt; via } &lt;interface&gt;" />
+
 <MESSAGE
 	id1="dhcpd:16"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPACK&gt;"
 	content=" DHCPACK to &lt;daddr&gt; (&lt;dmacaddr&gt;) via &lt;interface&gt;" />
+
 <MESSAGE
 	id1="dhcpd:20"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPINFORM&gt;"
 	content=" DHCPINFORM from &lt;saddr&gt; via &lt;interface&gt;" />
+
 <MESSAGE
 	id1="dhcpd:23"
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:DHCPEXPIRE&gt;"
 	content=" DHCPEXPIRE on &lt;saddr&gt; to &lt;dmacaddr&gt;" />
+
 <MESSAGE
 	id1="dhcpd:28"
 	id2="dhcpd"
@@ -335,42 +372,49 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:system event status&gt;"
 	content=" system event &apos;&lt;event_type&gt;&apos; (&lt;fld1&gt;) status &apos;&lt;result&gt;&apos; (&lt;fld2&gt;)" />
+
 <MESSAGE
 	id1="ntpd:04"
 	id2="ntpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:frequency initialized from file&gt;"
 	content=" frequency initialized &lt;result&gt; from &lt;filename&gt;" />
+
 <MESSAGE
 	id1="ntpd:03"
 	id2="ntpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:ntpd exiting on signal&gt;"
 	content=" ntpd exiting on signal &lt;dclass_counter1&gt;" />
+
 <MESSAGE
 	id1="ntpd"
 	id2="ntpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:time slew duraion&gt;"
 	content=" time slew &lt;result&gt;" />
+
 <MESSAGE
 	id1="ntpd:01"
 	id2="ntpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:signal had flags&gt;"
 	content=" &lt;process&gt;: signal &lt;dclass_counter1&gt; had flags &lt;result&gt;" />
+
 <MESSAGE
 	id1="ntpd:02"
 	id2="ntpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" &lt;event_description&gt; " />
+
 <MESSAGE
 	id1="named:16"
 	id2="named"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  client &lt;saddr&gt;#&lt;sport&gt;:&lt;fld1&gt;: update '&lt;zone&gt;' {approved | denied}" />
+
 <MESSAGE
 	id1="named"
 	id2="named"
@@ -409,6 +453,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  client &lt;saddr&gt;#&lt;sport&gt;:&lt;fld1&gt;: updating zone '&lt;zone&gt;': { adding | deleting} &lt;info&gt; at '&lt;hostname&gt;'" />
+
 		
 		
 	
@@ -426,6 +471,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  client &lt;saddr&gt;#&lt;sport&gt;/&lt;fld1&gt;: updating zone '&lt;zone&gt;': update &lt;disposition&gt;: &lt;hostname&gt;: &lt;event_description&gt;" />
+
 	
 <MESSAGE
 	id1="named:03"
@@ -440,6 +486,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:notify zone is up to date&gt;"
 	content=" zone &lt;zone&gt;: notify from &lt;saddr&gt;#&lt;sport&gt;: zone is up to date" />
+
 <MESSAGE
 	id1="named:13"
 	id2="named"
@@ -467,18 +514,20 @@
 	eventcategory="1605000000"
 	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:DNS format error&gt;"
 	content="DNS format error from &lt;saddr&gt;#&lt;sport&gt; resolving &lt;domain&gt; for client &lt;daddr&gt;#&lt;dport&gt;: &lt;result&gt;" />
+
 <MESSAGE
 	id1="named:28"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  &lt;action&gt; (&lt;saddr&gt;#&lt;sport&gt;) &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="named:04"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
-	content="  &lt;action&gt; on &lt;saddr&gt;#&lt;sport&gt;" />
+	content="  &lt;action&gt; on {IPv4 interface &lt;sinterface&gt;, &lt;saddr&gt;|&lt;saddr&gt;}#&lt;sport&gt;" />
 	
 <MESSAGE
 	id1="named:05"
@@ -493,24 +542,28 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:dns query&gt;"
 	content=" client &lt;saddr&gt;#{&lt;sport&gt;/&lt;fld21&gt;:|&lt;sport&gt; (&lt;fld21&gt;): |&lt;sport&gt;:} query: &lt;domain&gt; &lt;info&gt; (&lt;daddr&gt;)" />
+
 <MESSAGE
 	id1="named:29"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:received notify for zone&gt;"
 	content=" client &lt;saddr&gt;#&lt;sport&gt;: &lt;fld1&gt;: received notify for zone &apos;&lt;zone&gt;&apos; " />
+
 <MESSAGE
 	id1="named:08"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:client received notify for zone&gt;"
 	content=" client &lt;saddr&gt;#&lt;sport&gt;: received notify for zone &apos;&lt;zone&gt;&apos; " />
+
 <MESSAGE
 	id1="named:09"
 	id2="named"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:client update forwarding for zone denied&gt;"
 	content=" client &lt;saddr&gt;#&lt;sport&gt;: update forwarding &apos;&lt;zone&gt;&apos; denied" />
+
 <MESSAGE
 	id1="named:06"
 	id2="named"
@@ -524,6 +577,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
 	content="REFUSED unexpected RCODE resolving &apos;&lt;saddr&gt;.in-addr.arpa/&lt;event_description&gt;/IN&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
+
 <MESSAGE
 	id1="named:49"
 	id2="named"
@@ -537,30 +591,35 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Denied&gt;"
 	content="client &lt;saddr&gt;#&lt;sport&gt; {(&lt;domain&gt;): &lt;fld2&gt;: zone transfer|(&lt;domain&gt;): zone transfer} &apos;&lt;zone&gt;&apos; &lt;action&gt;" />
+
 <MESSAGE
 	id1="named:26"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="client &lt;saddr&gt;#&lt;sport&gt; {(&lt;domain&gt;): &lt;fld2&gt;: no more recursive clients |(&lt;domain&gt;): no more recursive clients} (&lt;fld3&gt;) &lt;info&gt;" />
+
 <MESSAGE
 	id1="named:27"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="client &lt;saddr&gt;#&lt;sport&gt; {(&lt;domain&gt;): &lt;fld2&gt; : &lt;fld3&gt;|(&lt;domain&gt;): &lt;fld3&gt;} response from Internet for &lt;fld4&gt; " />
+
 <MESSAGE
 	id1="named:38"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;: &lt;severity&gt;: client {&lt;fld9&gt; &lt;saddr&gt;#| &lt;saddr&gt;#}{&lt;sport&gt;#&lt;fld5&gt; (&lt;fld6&gt;):|&lt;sport&gt; (&lt;fld5&gt;):|&lt;sport&gt;:} {query (&lt;fld7&gt;) &apos;&lt;domain&gt;/&lt;fld4&gt;&apos; &lt;result&gt;|query: &lt;domain&gt;  &lt;fld4&gt; (&lt;daddr&gt;)} " />
+
 <MESSAGE
 	id1="named:39"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
 	content=" &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;: &lt;severity&gt;: error (&lt;result&gt;) resolving &apos;&lt;saddr&gt;.in-addr.arpa/&lt;event_description&gt;/IN&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
+
 <MESSAGE
 	id1="named:46"
 	id2="named"
@@ -708,29 +767,40 @@
 	content="skipping nameserver '&lt;hostname&gt;' because it is a CNAME, while resolving '&lt;domain&gt;'"/>
 
 <MESSAGE
+	id1="named:61"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content=" loading configuration from &apos;&lt;filename&gt;&apos;" />
+
+<MESSAGE
 	id1="named:07"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content=" {client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): view &lt;fld2&gt;: query: &lt;web_query&gt;|&lt;event_description&gt;}" />
+
 <MESSAGE
 	id1="pidof:01"
 	id2="pidof"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:can't read sid&gt;"
 	content=" can&apos;t read sid from &lt;agent&gt;" />
+
 <MESSAGE
 	id1="pidof"
 	id2="pidof"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" can't get program name from &lt;agent&gt;" />
+
 <MESSAGE
 	id1="validate_dhcpd:01"
 	id2="validate_dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Configured local-address not available as source address for DNS updates&gt;"
 	content="  Configured local-address not available as source address for DNS updates. &lt;result&gt;" />
+
 <MESSAGE
 	id1="validate_dhcpd"
 	id2="validate_dhcpd"
@@ -766,24 +836,28 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" &lt;event_description&gt; " />
+
 <MESSAGE
 	id1="rc"
 	id2="rc"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" executing &lt;agent&gt; start" />
+
 <MESSAGE
 	id1="rc3"
 	id2="rc3"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="rcsysinit"
 	id2="rcsysinit"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  fsck from &lt;version&gt;" />
+
 <MESSAGE
 	id1="watchdog"
 	id2="watchdog"
@@ -887,7 +961,7 @@
 	id2="sshd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
-	content="  Accepted password for root from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt;" />
+	content="  Accepted password for {root|&lt;username&gt;} from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt;" />
 	
 <MESSAGE
 	id1="sshd:02"
@@ -916,18 +990,42 @@
 	eventcategory="1401070000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:logout&gt;"
 	content=" &lt;action&gt;: logout() &lt;result&gt; " />
+
 <MESSAGE
 	id1="sshd:06"
 	id2="sshd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:no identification string&gt;&lt;@event_description:Did not receive identification string from peer&gt;"
 	content=" Did not receive identification string from &lt;saddr&gt; " />
+
 <MESSAGE
 	id1="sshd:07"
 	id2="sshd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:slowing down ssh login&gt;&lt;@event_description:Sleep 60 seconds&gt;"
 	content=" Sleep 60 seconds for slowing down ssh login" />
+
+<MESSAGE
+	id1="sshd:08"
+	id2="sshd"
+	eventcategory="1302010300"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:authentication succeeded&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	content=" &lt;authmethod&gt; authentication succeeded for user &lt;username&gt;" />
+
+<MESSAGE
+	id1="sshd:09"
+	id2="sshd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:User group&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	content=" User group = &lt;group&gt;" />
+
+<MESSAGE
+	id1="sshd:10"
+	id2="sshd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Bad protocol version identification&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	content=" Bad protocol version identification &apos;&lt;protocol_detail&gt;&apos; from &lt;saddr&gt;" />
+
 <MESSAGE
 	id1="openvpn-master"
 	id2="openvpn-master"
@@ -1025,6 +1123,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  Sent mail for &lt;to&gt; (&lt;fld1&gt;) { uid=&lt;uid&gt; username=&lt;username&gt; outbytes=&lt;sbytes&gt; | &lt;space&gt; }" />
+
 <MESSAGE
 	id1="sSMTP:02"
 	id2="sSMTP"
@@ -1052,24 +1151,28 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" Backup to &lt;device&gt; was successful - Backup file &lt;filename&gt;" />
+
 <MESSAGE
 	id1="scheduled_ftp_backups"
 	id2="scheduled_ftp_backups"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Scheduled backup to the FTP server was successful&gt;"
 	content=" Scheduled backup to the &lt;device&gt; was successful - Backup file &lt;filename&gt;" />
+
 <MESSAGE
 	id1="failed_scheduled_ftp_backups"
 	id2="scheduled_ftp_backups"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Scheduled backup to the FTP server failed&gt;"
 	content=" Scheduled backup to the &lt;device&gt; failed - &lt;result&gt;." />
+
 <MESSAGE
 	id1="scheduled_scp_backups"
 	id2="scheduled_scp_backups"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Scheduled backup to the SCP server was successful&gt;"
 	content=" Scheduled backup to the &lt;device&gt; was successful - Backup file &lt;filename&gt;" />
+
 <MESSAGE
 	id1="python"
 	id2="python"
@@ -1181,30 +1284,35 @@
 	eventcategory="1401030000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld20,fld21)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Login Denied&gt;"
 	content=" &lt;fld20&gt; &lt;fld21&gt;.&lt;fld22&gt; [&lt;domain&gt;]: Login_Denied - - to=&lt;terminal&gt; apparently_via=&lt;info&gt; ip=&lt;saddr&gt; error=&lt;result&gt;" />
+
 <MESSAGE
 	id1="serial_console:03"
 	id2="serial_console"
 	eventcategory="1401030000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:No authentication methods succeeded for user&gt;"
 	content="  No authentication methods succeeded for user &lt;username&gt;" />
+
 <MESSAGE
 	id1="serial_console"
 	id2="serial_console"
 	eventcategory="1401060000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content=" &lt;fld1&gt; &lt;fld2&gt;.&lt;fld3&gt; [&lt;username&gt;]: Login_Allowed - - to=&lt;terminal&gt; apparently_via=&lt;info&gt; auth=&lt;authmethod&gt; group=&lt;group&gt;" />
+
 <MESSAGE
 	id1="serial_console:01"
 	id2="serial_console"
 	eventcategory="1302010100"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:RADIUS authentication succeeded for user&gt;"
 	content=" RADIUS authentication succeeded for user &lt;username&gt;" />
+
 <MESSAGE
 	id1="serial_console:02"
 	id2="serial_console"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:User group identification&gt;"
 	content=" User group = &lt;group&gt;" />
+
 <MESSAGE
 	id1="dhcpd:39"
 	id2="dhcpd"
@@ -1302,66 +1410,77 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="  &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="serial_console:05"
 	id2="serial_console"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:system reboot&gt;"
 	content="&lt;fld1&gt; [&lt;username&gt;]: rebooted the system" />
+
 <MESSAGE
 	id1="rc6"
 	id2="rc6"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="acpid"
 	id2="acpid"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="rcsysinit:01"
 	id2="rcsysinit"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="diskcheck"
 	id2="diskcheck"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="debug_mount"
 	id2="debug_mount"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="mount &lt;event_description&gt;" />
+
 <MESSAGE
 	id1="watchdog:04"
 	id2="watchdog"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="smart_check_io"
 	id2="smart_check_io"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="speedstep_control"
 	id2="speedstep_control"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="&lt;event_description&gt;" />
+
 <MESSAGE
 	id1="serial_console:06"
 	id2="serial_console"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Local authentication succeeded for user&gt;"
 	content="Local authentication succeeded for user &lt;username&gt;" />
+
 <MESSAGE
 	id1="controld"
 	id2="controld"
@@ -1398,6 +1517,7 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  Resolved conflict for replicated delete of { PTR | TXT | A | CNAME | SRV } &quot;&lt;fld1&gt;&quot; in zone &quot;&lt;zone&gt;&quot;" />
+
 <MESSAGE
 	id1="rsyncd"
 	id2="rsyncd"
@@ -1435,12 +1555,14 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@info:*HDR(hdata)&gt;"
 	content=" &lt;event_description&gt; " />
+
 <MESSAGE
 	id1="restarting"
 	id2="restarting"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@info:*HDR(hdata)&gt;"
 	content=" &lt;event_description&gt; " />
+
 <MESSAGE
 	id1="ipmievd"
 	id2="ipmievd"
@@ -1518,5 +1640,26 @@
 	 eventcategory="1303000000"
 	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
      content="&lt;result&gt;"/>
+
+<MESSAGE
+	id1="tacacs_acct"
+	id2="tacacs_acct"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	content="&lt;fld1&gt;: Server &lt;daddr&gt; port &lt;dport&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="tacacs_acct:01"
+	id2="tacacs_acct"
+	eventcategory="1303000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;&lt;@event_description:Accounting request failed.&gt;"
+	content="&lt;fld1&gt;: Accounting request failed. &lt;fld2&gt;Server is &lt;daddr&gt;, port is &lt;dport&gt;." />
+
+<MESSAGE
+	id1="tacacs_acct:02"
+	id2="tacacs_acct"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
+	content="&lt;fld1&gt;: Read &lt;fld2&gt; bytes from server &lt;daddr&gt; port &lt;dport&gt;, expecting &lt;fld3&gt;" />
 
 </DEVICEMESSAGES>
