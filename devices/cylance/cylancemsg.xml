@@ -4,13 +4,12 @@
 	displayname="CylanceProtect"
 	group="Anti Virus">
 <VERSION
-	xml="11"
-	checksum="77c30461e054709f4073b1a34b61a6e3"
-	revision="111"
+	xml="14"
+	checksum="79bad0cc3a5125803501157b3d80fd23"
+	revision="119"
 	device="2.0" />
 
  
-	
 <HEADER
 	id1="0001"
 	id2="0001"
@@ -21,6 +20,10 @@
 	id2="0002"
 	content="&lt;hfld1&gt; &lt;hdate&gt;T&lt;htime&gt;.&lt;hfld2&gt; &lt;hostname&gt; &lt;messageid&gt; &lt;!payload&gt;"/>
 
+<HEADER
+	 id1="0003"
+	 id2="0003"
+	 content="&lt;hmonth&gt; &lt;hdate&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hhost&gt; &lt;messageid&gt; Event Type:&lt;vendor_event_cat&gt;, &lt;!payload&gt;"/>
 <VALUEMAP
 		name="getEventLegacyCategoryName"
 		default="Other.Default"
@@ -29,7 +32,7 @@
 <VALUEMAP
 		name="getEventLegacyCategory"
 		default="1901000000"
-		keyvaluepairs="Alert=&apos;1609000000&apos;|DeviceRemove=&apos;1804020000&apos;|PolicyAdd=&apos;1502030000&apos;|ZoneAdd=&apos;1701000000&apos;|SyslogSettingsSave=&apos;1701000000&apos;|LoginSuccess=&apos;1401060000&apos;|ZoneAddDevice=&apos;1701000000&apos;|pechange=&apos;1701000000&apos;|Registration=&apos;1804000000&apos;|threat_found=&apos;1003010000&apos;|threat_changed=&apos;1003010000&apos;|threat_quarantined=&apos;1003010000&apos;|SystemSecurity=&apos;1600000000&apos;|DeviceEdit=&apos;1701000000&apos;|Device Policy Assigned=&apos;1502000000&apos;|ThreatUpdated=&apos;1003010000&apos;" />	 
+		keyvaluepairs="Alert=&apos;1609000000&apos;|DeviceRemove=&apos;1804020000&apos;|PolicyAdd=&apos;1502030000&apos;|ZoneAdd=&apos;1701000000&apos;|SyslogSettingsSave=&apos;1701000000&apos;|LoginSuccess=&apos;1401060000&apos;|ZoneAddDevice=&apos;1701000000&apos;|pechange=&apos;1701000000&apos;|Registration=&apos;1804000000&apos;|threat_found=&apos;1003010000&apos;|threat_changed=&apos;1003010000&apos;|threat_quarantined=&apos;1003010000&apos;|SystemSecurity=&apos;1600000000&apos;|DeviceEdit=&apos;1701000000&apos;|Device Policy Assigned=&apos;1502000000&apos;|ThreatUpdated=&apos;1003010000&apos;|fullaccess=&apos;1804000000&apos;" />	 
 <MESSAGE
 	id1="CylancePROTECT:01"
 	id2="CylancePROTECT"
@@ -152,6 +155,69 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="&lt;fld13&gt; &lt;fld14&gt; {[&lt;fld2&gt;]| &lt;fld5&gt;} Event Type: &lt;vendor_event_cat&gt;, Event Name: &lt;event_type&gt;, {Device Name: &lt;node&gt;|&lt;fld1&gt;}" />
 	 
+
+<MESSAGE
+	 id1="CylancePROTECT:17"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+     content="Event Name:&lt;event_type&gt;, Device Name:&lt;node&gt;, File Path:&lt;filename&gt;, Interpreter:&lt;application&gt;, Interpreter Version:&lt;version&gt;, Zone Names:&lt;info&gt;, User Name: &lt;username&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:18"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Device Name:&lt;node&gt;, Agent Version:&lt;fld1&gt;, IP Address: (&lt;saddr&gt;), MAC Address: (&lt;macaddr&gt;), Logged On Users: (&lt;username&gt;), OS:&lt;os&gt;, Zone Names:&lt;info&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:19"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Device Name:&lt;node&gt;, External Device Type:&lt;device&gt;, External Device Vendor ID:&lt;fld2&gt;, External Device Name:&lt;fld3&gt;, External Device Product ID:&lt;fld4&gt;, External Device Serial Number:&lt;serial_number&gt;, Zone Names:&lt;info&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:20"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Message: The Device:&lt;node&gt;was auto assigned to the Zone:&lt;zone&gt;, User:&lt;user_fname&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:21"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@effective_time:*EVNTTIME($MSG,'%G/%F/%W %N:%U:%O %Q',fld51)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Device Name:&lt;node&gt;, IP Address: (&lt;saddr&gt;), File Name:&lt;filename&gt;, Path:&lt;directory&gt;, Drive Type:&lt;fld1&gt;, SHA256:&lt;checksum&gt;, MD5:&lt;fld3&gt;, Status:&lt;event_state&gt;, Cylance Score:&lt;fld4&gt;, Found Date:&lt;fld51&gt;, File Type:&lt;fld6&gt;, Is Running:&lt;fld7&gt;, Auto Run:&lt;fld8&gt;, Detected By:&lt;fld9&gt;, Zone Names: (&lt;info&gt;), Is Malware:&lt;fld10&gt;, Is Unique To Cylance:&lt;fld11&gt;, Threat Classification:&lt;sigtype&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:22"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="{Event Name: &lt;event_type&gt;, Device Name: &lt;device&gt;, IP Address: (&lt;saddr&gt;), Action: &lt;action&gt;, Process ID: &lt;process_id&gt;, Process Name: &lt;process&gt;, User Name: &lt;username&gt;, Violation Type: &lt;signame&gt;|Event Name:&lt;event_type&gt;, Device Name:&lt;node&gt;}, Zone Names:&lt;info&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:23"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Threat Class:&lt;sigtype&gt;, Threat Subclass:&lt;fld1&gt;, SHA256:&lt;checksum&gt;, MD5:&lt;fld3&gt;"/>
+
+	 
+<MESSAGE
+	 id1="CylancePROTECT:24"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Message: Provider:&lt;fld3&gt;, Source IP:&lt;saddr&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; {(&lt;mail_id&gt;)#015|(&lt;mail_id&gt;)}"/>
 
 	 
 </DEVICEMESSAGES>
