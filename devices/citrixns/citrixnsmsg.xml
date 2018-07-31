@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="69"
-	checksum="eba0123859a3bf15891a9d092997ab11"
-	revision="118"
+	xml="71"
+	checksum="f2d1cd70ac691c2d9ffb56c9d562513a"
+	revision="120"
 	device="2.0" />
 
  
@@ -742,6 +742,27 @@
 	content="  Source &lt;saddr&gt;:&lt;sport&gt; - Vserver &lt;daddr&gt;:&lt;dport&gt; - NatIP &lt;stransaddr&gt;:&lt;stransport&gt; - Destination &lt;dtransaddr&gt;:&lt;dtransport&gt; - Delink Time { &lt;fld11&gt; GMT| &lt;fld11&gt;} Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt;" />
 
 <MESSAGE 
+	id1="UI_CMD_EXECUTED:Login" 
+	id2="UI_CMD_EXECUTED" 
+	eventcategory="1401060000" 
+	functions="&lt;@event_description:UI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@disposition:Success&gt;&lt;@ec_activity:Logon&gt;&lt;@action:*STRCAT(login ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;login &lt;fld11&gt;&quot; - Status &quot;Success&lt;info&gt;&quot;" />
+
+<MESSAGE 
+	id1="UI_CMD_EXECUTED:LoginFail" 
+	id2="UI_CMD_EXECUTED" 
+	eventcategory="1401030000" 
+	functions="&lt;@event_description:UI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@disposition:Error&gt;&lt;@ec_activity:Logon&gt;&lt;@action:*STRCAT(login ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;login &lt;fld11&gt;&quot; - Status &quot;ERROR:&lt;info&gt;&quot;" />
+
+<MESSAGE 
+	id1="UI_CMD_EXECUTED:Logout" 
+	id2="UI_CMD_EXECUTED" 
+	eventcategory="1401070000" 
+	functions="&lt;@event_description:UI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@disposition:Success&gt;&lt;@ec_activity:Logoff&gt;&lt;@action:*STRCAT(logout ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;logout &lt;fld11&gt;&quot; - Status &quot;Success&lt;info&gt;&quot;" />
+
+<MESSAGE 
 	id1="UI_CMD_EXECUTED" 
 	id2="UI_CMD_EXECUTED" 
 	eventcategory="1401040000" 
@@ -982,6 +1003,20 @@
 	content="&lt;obj_type&gt; (haNicsMonitorFailed = &quot;&lt;fld1&gt;&quot;, sysIpAddress = &lt;hostip&gt;)" />
 
 <MESSAGE 
+	id1="UI_CMD_EXECUTED:01_Login" 
+	id2="UI_CMD_EXECUTED" 
+	eventcategory="1401060000" 
+	functions="&lt;@event_description:UI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@ec_activity:Logon&gt;&lt;@action:*STRCAT(login ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;login &lt;fld11&gt;&quot;" />
+
+<MESSAGE 
+	id1="UI_CMD_EXECUTED:01_Logout" 
+	id2="UI_CMD_EXECUTED" 
+	eventcategory="1401070000" 
+	functions="&lt;@event_description:UI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@ec_activity:Logoff&gt;&lt;@action:*STRCAT(logout ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;logout &lt;fld11&gt;&quot;" />
+
+<MESSAGE 
 	id1="UI_CMD_EXECUTED:01" 
 	id2="UI_CMD_EXECUTED" 
 	eventcategory="1401040000" 
@@ -1025,6 +1060,20 @@
 	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;&lt;action&gt; -priority &lt;fld1&gt; -devno &lt;fld2&gt;&quot; - Status &quot;&lt;disposition&gt;&quot;" />
 
 <MESSAGE 
+	id1="GUI_CMD_EXECUTED:Login" 
+	id2="GUI_CMD_EXECUTED" 
+	eventcategory="1401060000" 
+	functions="&lt;@event_description:GUI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@disposition:Success&gt;&lt;@ec_activity:Logon&gt;&lt;@action:*STRCAT(login ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;login &lt;fld11&gt;&quot; - Status &quot;Success&lt;info&gt;&quot;" />
+
+<MESSAGE 
+	id1="GUI_CMD_EXECUTED:Logout" 
+	id2="GUI_CMD_EXECUTED" 
+	eventcategory="1401070000"
+	functions="&lt;@event_description:GUI command executed in NetScaler&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@disposition:Success&gt;&lt;@ec_activity:Logoff&gt;&lt;@action:*STRCAT(logout ,fld11)&gt;"
+	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;logout &lt;fld11&gt;&quot; - Status &quot;Success&lt;info&gt;&quot;" />
+
+<MESSAGE 
 	id1="GUI_CMD_EXECUTED" 
 	id2="GUI_CMD_EXECUTED" 
 	eventcategory="1401040000" 
@@ -1051,6 +1100,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content=" &quot;&lt;event_type&gt;: {&lt;result&gt; for user &lt;username&gt; = &lt;fld1&gt; | &lt;info&gt;} &quot; " />
+
+<MESSAGE 
+	id1="AAATM_Message:04" 
+	id2="AAATM_Message" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&quot;&lt;event_type&gt;: created session for &lt;&lt;&lt;domain&gt;&gt; with cookie: &lt;&lt;&lt;web_cookie&gt;&gt;&quot;"/>
 
 <MESSAGE 
 	id1="AAATM_Message" 
