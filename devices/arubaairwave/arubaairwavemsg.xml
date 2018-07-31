@@ -4,9 +4,9 @@
 	displayname="Aruba Networks AirWave"
 	group="Configuration Management">
 <VERSION
-	xml="10"
-	checksum="389c6213bfc3a7ba0ed97a993ba92d52"
-	revision="116"
+	xml="14"
+	checksum="6505c7d0f3995d3a7235cb6a8bd1ef58"
+	revision="120"
 	device="2.0" />
 	
 	
@@ -237,7 +237,7 @@
 	id2="Device"
 	eventcategory="1609000000"
 	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" Device Up: Device:&lt;device&gt;: All device types (Normal) System &lt;event_type&gt;" />
+	content=" Device Up: {Device: &lt;macaddr&gt; - &lt;device&gt;|Device:&lt;device&gt;}: All device types (Normal) System &lt;event_type&gt;" />
 
 <MESSAGE
 	id1="Aruba:01"
@@ -287,6 +287,13 @@
 	content="&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; Backup Operation Failed, Failed to establish connection to device.Device is down or &lt;network_service&gt; credentials are incorrect System Device ID:&lt;id&gt; Top &lt;fld4&gt;"/>
 
 <MESSAGE
+	id1="Aruba:08"
+	id2="Aruba"
+	eventcategory="1603000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Error in SNMP polling: Timeout&gt;"
+	content="&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; Error in SNMP polling: Timeout(&lt;fld11&gt;) System Device ID:&lt;id&gt; Top &lt;fld4&gt;"/>
+
+<MESSAGE
 	id1="Configuration_verification:01"
 	id2="Configuration_verification"
 	eventcategory="1605000000"
@@ -298,4 +305,53 @@
 	eventcategory="1605000000"
 	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;"
 	content="Aruba Instant Virtual Controller &lt;fld1&gt; Status changed to &apos;&lt;event_state&gt;&apos;&lt;space&gt;System&lt;space&gt;Device&lt;space&gt; ID: &lt;id&gt; Top &lt;location_desc&gt;" />
+<MESSAGE
+	id1="Access_Denied"
+	id2="Access_Denied"
+	eventcategory="1401030000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;event_description&gt;. &lt;fld2&gt; WebUserAudit    &lt;fld1&gt;"/>
+
+<MESSAGE
+	id1="Logged_in"
+	id2="Logged_in"
+	eventcategory="1401060000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Logged in from &lt;saddr&gt; &lt;fld2&gt; WebUserAudit    &lt;fld1&gt;"/>
+
+<MESSAGE
+	id1="Cisco_Catalyst"
+	id2="Cisco_Catalyst"
+	eventcategory="1603000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Error in SNMP polling: Timeout&gt;"
+	content="Cisco Catalyst &lt;fld5&gt; &lt;fld6&gt; Error in SNMP polling: Timeout(&lt;fld11&gt;) System Device ID:&lt;id&gt; Top &lt;fld4&gt;"/>
+
+<MESSAGE
+	id1="Cisco_Catalyst:01"
+	id2="Cisco_Catalyst"
+	eventcategory="1701000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Cisco Catalyst &lt;fld5&gt; Cisco Systems, &lt;fld6&gt; Status changed to &apos;&lt;event_state&gt;&apos; System Device ID: &lt;id&gt; Top &lt;fld4&gt; " />
+
+<MESSAGE
+	id1="Cisco_Catalyst:03"
+	id2="Cisco_Catalyst"
+	eventcategory="1701000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Cisco Catalyst &lt;fld5&gt; &lt;hostname&gt; Configuration status changed to '&lt;network_service&gt; Error: (problem connecting to &quot;&lt;daddr&gt;&quot;, port &lt;dport&gt;: Connection refused) in username or password prompt: ' System Device ID: &lt;id&gt; Top &lt;fld4&gt;" />
+
+<MESSAGE
+	id1="Cisco_Catalyst:02"
+	id2="Cisco_Catalyst"
+	eventcategory="1701000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Cisco Catalyst &lt;fld5&gt; {Cisco Systems, &lt;fld6&gt; | &lt;fld6&gt; } Configuration status changed to &apos;&lt;event_state&gt;&apos; System Device ID: &lt;id&gt; Top &lt;fld4&gt;" />
+
+<MESSAGE
+	id1="Cisco_Catalyst:04"
+	id2="Cisco_Catalyst"
+	eventcategory="1603000000"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Cisco Catalyst &lt;fld5&gt; &lt;hostname&gt; &lt;network_service&gt; Error: problem connecting to &quot;&lt;daddr&gt;&quot;, port &lt;dport&gt;: Connection refused System Device ID: &lt;id&gt; Top &lt;fld4&gt;" />
+
 </DEVICEMESSAGES>
