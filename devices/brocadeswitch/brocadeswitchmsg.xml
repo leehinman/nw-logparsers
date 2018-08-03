@@ -4,9 +4,9 @@
 	displayname="Brocade FastIron Switch"
 	group="Switch">
 <VERSION
-	xml="9"
-	checksum="860f25fca3cad79c296d5d2b3c333a09"
-	revision="118"
+	xml="12"
+	checksum="b6441a1b0d4f47fee19008ad24d88385"
+	revision="120"
 	device="2.0" />
 
  
@@ -148,13 +148,22 @@
 	id2="Security" 
 	eventcategory="1401060000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;&lt;@event_description:SSH Login&gt;"
-	content=" &lt;event_source&gt; Security: SSH login by &lt;username&gt; from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; &lt;state&gt;" />
+	content=" &lt;event_source&gt; Security: SSH login by &lt;username&gt; from src IP &lt;saddr&gt;{,| from} src MAC &lt;smacaddr&gt; { to &lt;info&gt; using RSA as Server Host Key.| &lt;state&gt; }" />
+
 <MESSAGE
 	id1="Security_SSH_logout_successful" 
 	id2="Security" 
 	eventcategory="1401070000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;&lt;@event_description:SSH Logout&gt;"
-	content=" &lt;event_source&gt; Security: SSH logout by &lt;username&gt; from src IP &lt;saddr&gt;, src MAC &lt;smacaddr&gt; &lt;state&gt;" />
+	content="&lt;event_source&gt; Security: SSH logout by &lt;username&gt; from src IP &lt;saddr&gt;{,| from} { src MAC &lt;smacaddr&gt; from &lt;info&gt; using RSA as Server Host Key.| src MAC &lt;smacaddr&gt; &lt;state&gt; | src MAC &lt;smacaddr&gt;}" />
+
+<MESSAGE
+	id1="Security_SSH_session_rejected" 
+	id2="Security" 
+	eventcategory="1401050200" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;&lt;@event_description:SSH session rejected&gt;"
+	content="&lt;event_source&gt; Security: Access to &lt;privilege&gt; is rejected for ssh session due to Incorrect username or password" />
+
 <MESSAGE
 	id1="Security_Telnet_login_successful" 
 	id2="Security" 
@@ -212,6 +221,21 @@
 	eventcategory="1610000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;&lt;@event_description:VLAN Startup State status&gt;"
 	content=" &lt;logip&gt; STP: VLAN &lt;vlan&gt; Port &lt;portname&gt; STP State -&gt; &lt;status&gt; (&lt;state&gt;)" />
+<MESSAGE
+	id1="STP_VLAN_New_RootBridge" 
+	id2="STP" 
+	eventcategory="1610000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content="Turner_Stroud STP: VLAN &lt;vlan&gt; New RootBridge: &lt;fld1&gt; RootPort: &lt;fld2&gt; (&lt;fld3&gt;)" />
+
+<MESSAGE
+	id1="STP_VLAN_RootBridge" 
+	id2="STP" 
+	eventcategory="1610000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content="Turner_Stroud STP: VLAN &lt;vlan&gt; Bridge is RootBridge: &lt;fld1&gt; (&lt;fld3&gt;)" />
+
+
 <MESSAGE
 	id1="System_Fan_Speed_Changed" 
 	id2="System" 
@@ -317,5 +341,52 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
 	content=" &lt;event_source&gt;raslogd: [&lt;fld5&gt;][&lt;fld6&gt;][&lt;fld7&gt;][&lt;fld8&gt; value=&quot;&lt;serial_number&gt;&quot;][&lt;fld9&gt;][&lt;fld10&gt; value=&quot;&lt;severity&gt;&quot;][&lt;fld11&gt;] &lt;event_description&gt;" />
+<MESSAGE
+	id1="NTP_sym_active_association" 
+	id2="NTP" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; NTP: sym_active association is mobilized for &lt;saddr&gt;" />
+<MESSAGE
+	id1="NTP_System_clock" 
+	id2="NTP" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; NTP: System clock is synchronized to &lt;saddr&gt;" />
+
+<MESSAGE
+	id1="NTP" 
+	id2="NTP" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; NTP: &lt;info&gt;" />
+
+<MESSAGE
+	id1="PORT" 
+	id2="PORT" 
+	eventcategory="1401000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; PORT: &lt;interface&gt; disabled by &lt;username&gt; from &lt;network_service&gt; session." />
+
+<MESSAGE
+	id1="PORT:01" 
+	id2="PORT" 
+	eventcategory="1401000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; PORT: &lt;interface&gt; enabled by &lt;username&gt; from &lt;network_service&gt; session." />
+
+<MESSAGE
+	id1="PORT:02" 
+	id2="PORT" 
+	eventcategory="1401000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; PORT: &lt;interface&gt;, added ip address &lt;saddr&gt; by &lt;username&gt; from &lt;network_service&gt; session." />
+
+<MESSAGE
+	id1="VLAN" 
+	id2="VLAN" 
+	eventcategory="1401000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',hmonth,hday,htime)&gt;"
+	content=" &lt;event_source&gt; VLAN: Id &lt;vlan&gt; added by &lt;username&gt; from &lt;network_service&gt; session." />
 
 </DEVICEMESSAGES>
