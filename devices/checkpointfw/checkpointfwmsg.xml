@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DEVICEMESSAGES
+	name="checkpointfw"
+	displayname="Check Point Firewall"
+	group="Firewall">
+<VERSION
+	xml="4"
+	checksum="847e7e6f9577f1a74b5344e89e144bb5"
+	revision="111"
+    device="2.0" />
+
+<HEADER
+	id1="0001"
+	id2="0001"
+	messageid="STRCAT('CHECKPOINT','_','SYSLOG')"
+	content="&lt;fld1&gt; &lt;year&gt;-&lt;month&gt;-&lt;date&gt;T&lt;time&gt; &lt;hhost&gt; &lt;gateway&gt; - Log [ &lt;hfld1&gt; &lt;!payload&gt;" />
+
+<TAGVALMAP
+    delimiter="  &quot;"/>
+		
+<VALUEMAP
+	name="getEventLegacyCategory"
+	default="1901000000"
+	keyvaluepairs="accept=&apos;1801020000&apos;|reject=&apos;1803000000&apos;|drop=&apos;1803000000&apos;|Deny=&apos;1803000000&apos;|encrypt=&apos;1613030000&apos;|decrypt=&apos;1613030000&apos;|logout=&apos;1401070000&apos;|keyinst=&apos;1304000000&apos;|authcrypt=&apos;1304000000&apos;|monitor=&apos;1801010000&apos;|update=&apos;1304000000&apos;" />
+<VALUEMAP
+	name="getEventLegacyCategoryName"
+	default="Other.Default"
+	keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1803000000=&apos;Network.Denied Connections&apos;|1401070000=&apos;User.Activity.Logoff&apos;|1613030000=&apos;System.Crypto.Configuration&apos;|1304000000=&apos;Auth.General&apos;|1801010000=&apos;Network.Connections.Errors&apos;" />	
+<VALUEMAP
+	name="getProtocolName"
+	default="$NONE"
+	keyvaluepairs="0=&apos;HOPOPT&apos;|1=&apos;ICMP&apos;|2=&apos;IGMP&apos;|6=&apos;TCP&apos;|17=&apos;UDP&apos;|21=&apos;PRM&apos;|HOPOPT=&apos;HOPOPT&apos;|icmp=&apos;ICMP&apos;|tcp=&apos;TCP&apos;|udp=&apos;UDP&apos;|prm=&apos;PRM&apos;" />
+	
+<MESSAGE
+	id1="CHECKPOINT_SYSLOG"
+	id2="CHECKPOINT_SYSLOG"
+	eventcategory="1901000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_time:*EVNTTIME($HDR,'%F%B%W %N:%U:%O',fld27)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %G %F %N:%U:%O',year,month,date,time)&gt;"
+	content="Action=&lt;action&gt; UUid=&lt;fld1&gt; inzone=&lt;fld1&gt; outzone=&lt;fld2&gt; rule=&lt;rule&gt; rule_uid=&lt;rule_uid&gt; rule_name=&lt;rulename&gt; service_id=&lt;fld3&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; proto=&lt;fld70&gt; xlatesrc=&lt;stransaddr&gt; NAT_rulenum=&lt;fld15&gt; NAT_addtnl_rulenum=&lt;fld14&gt; src_machine_name=&lt;shost&gt; snid=&lt;fld5&gt; product=&lt;product&gt; service=&lt;network_service&gt; s_port=&lt;sport&gt; xlatesport=&lt;stransport&gt; product_family=&lt;fld6&gt; user=&lt;username&gt; src_user_name=&lt;c_username&gt; xlatedst=&lt;dtransaddr&gt; ICMP Code=&lt;icmpcode&gt; ICMP Type=&lt;icmptype&gt; dst_machine_name=&lt;dhost&gt; file_type=&lt;filetype&gt; malware_detected=&lt;fld10&gt; scanned=&lt;fld11&gt; threatcloud_malware=&lt;fld12&gt; message_info=&lt;info&gt; status=&lt;event_state&gt; product_family=&lt;fld12&gt; tcp_flags=&lt;fld25&gt; tcp_packet_out_of_state=&lt;fld23&gt; web_client_type=&lt;fld24&gt; resource=&lt;fld27&gt; session_id=&lt;sessionid&gt; reason=&lt;result&gt; verdict=&lt;fld28&gt; proxy_src_ip=&lt;fld29&gt; domain_name=&lt;domain&gt; auth_status=&lt;result&gt; auth_method=&lt;authmethod&gt; log_id=&lt;fld30&gt; reject_category=&lt;event_description&gt; peer gateway=&lt;peer&gt; vpn_feature_name=&lt;fld31&gt; community=&lt;fld32&gt; vpn_user=&lt;fld33&gt; mac_address=&lt;macaddr&gt; Hostname=&lt;hostname&gt; auth_encryption_methods=&lt;encryption_type&gt; client_version=&lt;version&gt; Severity=&lt;severity&gt; severity=&lt;severity&gt; subscription_stat_desc=&lt;event_description&gt; description=&lt;event_description&gt;" />	
+
+	
+</DEVICEMESSAGES>
