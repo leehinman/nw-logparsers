@@ -4,8 +4,8 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="73"
-		checksum="6ac4c337bf53bece0a52b01fe3e1067a"
+		xml="76"
+		checksum="8d9144e9cbaf43afedbd7999821b6559"
 		revision="120"
 		device="2.0" />
 	
@@ -135,7 +135,7 @@
 	id2="dhcpd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Unable to add forward map&gt;"
-	content=" Unable to add forward map from &lt;shost&gt; to &lt;daddr&gt;: &lt;result&gt;" />
+	content=" Unable to add forward map from &lt;shost&gt;&lt;fld1&gt;to &lt;daddr&gt;: &lt;result&gt;" />
 
 <MESSAGE
 	id1="dhcpd:13"
@@ -156,7 +156,7 @@
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:Removed forward map&gt;"
-	content=" Removed forward map from &lt;shost&gt; to &lt;daddr&gt;" />
+	content=" Removed forward map from &lt;shost&gt;&lt;fld1&gt;to &lt;daddr&gt;" />
 
 <MESSAGE
 	id1="dhcpd:25"
@@ -303,7 +303,7 @@
 	id2="dhcpd"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description: Forward map failed&gt;"
-	content="  Forward map from &lt;shost&gt; to &lt;daddr&gt; FAILED: &lt;fld1&gt;" />
+	content="  Forward map from &lt;shost&gt;&lt;fld2&gt;to &lt;daddr&gt; FAILED: &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="dhcpd:14"
@@ -436,7 +436,7 @@
 	id2="named"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
-	content="  client &lt;saddr&gt;#&lt;sport&gt;: signer &quot;&lt;owner&gt;&quot; {approved | denied}" />
+	content="  client &lt;saddr&gt;#{&lt;sport&gt;/&lt;fld1&gt;|&lt;sport&gt;}: signer &quot;&lt;owner&gt;&quot; {approved | denied}" />
 	
 	
 <MESSAGE
@@ -516,6 +516,13 @@
 	content="DNS format error from &lt;saddr&gt;#&lt;sport&gt; resolving &lt;domain&gt; for client &lt;daddr&gt;#&lt;dport&gt;: &lt;result&gt;" />
 
 <MESSAGE
+	id1="named:63"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;: &lt;severity&gt;: client {&lt;fld9&gt; &lt;saddr&gt;#| &lt;saddr&gt;#}&lt;sport&gt; (#&lt;fld5&gt;): query: &lt;domain&gt; &lt;fld4&gt; (&lt;daddr&gt;)" />
+
+<MESSAGE
 	id1="named:28"
 	id2="named"
 	eventcategory="1605000000"
@@ -541,7 +548,7 @@
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:dns query&gt;"
-	content=" client &lt;saddr&gt;#{&lt;sport&gt;/&lt;fld21&gt;:|&lt;sport&gt; (&lt;fld21&gt;): |&lt;sport&gt;:} query: &lt;domain&gt; &lt;info&gt; (&lt;daddr&gt;)" />
+	content=" client &lt;saddr&gt;#{&lt;sport&gt; &lt;fld22&gt;/&lt;fld21&gt;:|&lt;sport&gt;/&lt;fld21&gt;:|&lt;sport&gt; (&lt;fld21&gt;): |&lt;sport&gt;:} query: &lt;domain&gt; &lt;info&gt; (&lt;daddr&gt;)" />
 
 <MESSAGE
 	id1="named:29"
@@ -628,6 +635,13 @@
 	content="&lt;event_description&gt;: Authorization denied for the operation (&lt;fld4&gt;): &lt;fld5&gt; (data=&quot;&lt;hostip&gt;&quot;, source=&quot;&lt;hostname&gt;&quot;)" />
 
 <MESSAGE
+	id1="named:64"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="  client &lt;saddr&gt;#&lt;sport&gt;/&lt;fld1&gt;: updating zone &apos;&lt;zone&gt;&apos;: deleting &lt;info&gt; at &lt;hostname&gt; &lt;fld6&gt;" />
+
+<MESSAGE
 	id1="named:45"
 	id2="named"
 	eventcategory="1605000000"
@@ -685,6 +699,13 @@
 	eventcategory="1901000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): query '&lt;zone&gt;' &lt;result&gt;" />
+
+<MESSAGE
+	id1="named:62"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="client &lt;saddr&gt;#&lt;sport&gt;/&lt;fld1&gt; (&lt;hostname&gt;): transfer of '&lt;zone&gt;': &lt;info&gt;" />
 
 <MESSAGE
 	id1="named:53"
