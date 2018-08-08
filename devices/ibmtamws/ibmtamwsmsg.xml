@@ -4,9 +4,9 @@
 	displayname="IBM TAM WebSEAL"
 	group="Access Control">
 <VERSION
-	xml="9"
-	checksum="154682548d6b22c50291cfe31f722a56"
-	revision="0"
+	xml="10"
+	checksum="602c9c229009095ce3b84e8991af0e18"
+	revision="121"
 	device="2.0" />
 
  
@@ -19,6 +19,11 @@
 	id1="0002" 
 	id2="0002"  
 	content="%IBMTAMWS-&lt;hfld1&gt;: &lt;hfld2&gt; - &lt;hfld3&gt; [&lt;hfld4&gt;] &quot;&lt;messageid&gt; &lt;!payload:hfld2&gt;" /> 
+<HEADER 
+	id1="0003" 
+	id2="0003"  
+	content="%IBMTAMWS-&lt;hfld1&gt;: &lt;hfld2&gt; - &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &quot;&lt;messageid&gt; &lt;!payload:hfld2&gt;" /> 
+
 <VALUEMAP 
 	name="outcome" 
 	default="$NONE" 
@@ -30,17 +35,38 @@
 	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld3)&gt;"
 	content="&lt;saddr&gt; - &lt;username&gt; [&lt;fld3&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;url&gt; &lt;fld6&gt;&quot; &lt;resultcode&gt; &lt;rbytes&gt;" />
 <MESSAGE 
+	id1="GET:01" 
+	id2="GET" 
+	eventcategory="1204000000" 
+	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld3)&gt;"
+	content="&lt;saddr&gt; - &lt;username&gt; &lt;fld3&gt; &lt;timezone&gt; &quot;&lt;web_method&gt; &lt;url&gt; &lt;fld6&gt;&quot; &lt;resultcode&gt; &lt;rbytes&gt;" />
+
+<MESSAGE 
 	id1="POST" 
 	id2="POST" 
 	eventcategory="1204000000" 
 	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld3)&gt;"
 	content="&lt;saddr&gt; - &lt;username&gt; [&lt;fld3&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;url&gt; &lt;fld6&gt;&quot; &lt;resultcode&gt; &lt;rbytes&gt;" />
 <MESSAGE 
+	id1="POST:01" 
+	id2="POST" 
+	eventcategory="1204000000" 
+	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld3)&gt;"
+	content="&lt;saddr&gt; - &lt;username&gt; &lt;fld3&gt; &lt;timezone&gt; &quot;&lt;web_method&gt; &lt;url&gt; &lt;fld6&gt;&quot; &lt;resultcode&gt; &lt;rbytes&gt;" />
+
+<MESSAGE 
 	id1="HEAD" 
 	id2="HEAD" 
 	eventcategory="1204000000" 
 	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld3)&gt;"
 	content="&lt;saddr&gt; - &lt;username&gt; [&lt;fld3&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &lt;url&gt; &lt;fld6&gt;&quot; &lt;resultcode&gt; &lt;rbytes&gt;" />
+<MESSAGE 
+	id1="HEAD:01" 
+	id2="HEAD" 
+	eventcategory="1204000000" 
+	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld3)&gt;"
+	content="&lt;saddr&gt; - &lt;username&gt; &lt;fld3&gt; &lt;timezone&gt; &quot;&lt;web_method&gt; &lt;url&gt; &lt;fld6&gt;&quot; &lt;resultcode&gt; &lt;rbytes&gt;" />
+
 <MESSAGE 
 	id1="OPTIONS" 
 	id2="OPTIONS" 
