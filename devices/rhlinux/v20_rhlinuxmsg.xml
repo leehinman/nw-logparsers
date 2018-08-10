@@ -7,8 +7,8 @@
 <VARTYPE name="day" regex="\d{1,2}" />
 <VARTYPE name="time" regex="\d{2}:\d{2}:\d{2}" />
 <VERSION
-	xml="350"
-	checksum="44e94baa5a9caf06d6aa3396ac3649cd"
+	xml="354"
+	checksum="f423deae90bb0a8e41be2edb33b67475"
 	revision="120"
 	device="2.0" />
 
@@ -233,6 +233,10 @@
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; [&lt;messageid&gt;][&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />
 
 <HEADER
+	id1="0094"
+	id2="0094"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;[&lt;process_id&gt;[collect_postgres_rollups.py.ERROR]: &lt;!payload:messageid&gt;" />
+<HEADER
 	id1="0016"
 	id2="0016"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;[&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />
@@ -293,6 +297,11 @@
 	id1="0080"
 	id2="0080"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;fld1&gt;[&lt;fld2&gt;]: [&lt;messageid&gt;]: &lt;!payload&gt;" />
+
+<HEADER
+	id1="0092"
+	id2="0092"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; [&lt;fld1&gt;[&lt;messageid&gt;[&lt;process_id&gt;]]]: &lt;!payload&gt;" />
 
 <HEADER
 	id1="0011"
@@ -390,6 +399,11 @@
 	id1="0087"
 	id2="0087"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hagent&gt;[&lt;hprocess_id&gt;]: Login failed for '&lt;hfld1&gt;' from ::ffff:&lt;hsaddr&gt;:&lt;hsport&gt; &lt;messageid&gt; &lt;!payload:hagent&gt;" />
+<HEADER
+	id1="0093"
+	id2="0093"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;hfld1&gt;[&lt;hfld2&gt; [&lt;hfld3&gt;]:&lt;messageid&gt; &lt;!payload:messageid&gt;" />
+
 <HEADER
 	id1="0029"
 	id2="0029"
@@ -10490,7 +10504,7 @@
 	id2="login"
 	eventcategory="1401030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:too many login tries&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: TOO MANY LOGIN TRIES (&lt;fld1&gt;) FROM &lt;shost&gt; FOR &lt;username&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: TOO MANY LOGIN TRIES (&lt;fld1&gt;) FROM &lt;shost&gt; FOR {&lt;username&gt;,&lt;info&gt;|&lt;username&gt;}" />
 <MESSAGE
 	id1="00010:18"
 	id2="login"
@@ -19174,6 +19188,76 @@
    content="{&lt;username&gt;: Starting|Starting}&lt;service&gt;..."/>
 
 <MESSAGE
+	id1="Completed:01"
+	id2="Completed"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Completed graveyard sweep&gt;"
+	content="Completed graveyard sweep" />
+
+<MESSAGE
+	id1="curl:03"
+	id2="curl"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description: SSL connecting&gt;"
+	content="&lt;agent&gt;: { &lt;fld1&gt;: [ &lt;fld2&gt;:| &lt;fld1&gt;:} SSL connecting {&lt;hostip&gt;]|&lt;hostip&gt;}"/>
+
+<MESSAGE
+	id1="curl:02"
+	id2="curl"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:SSL connection is closed&gt;"
+	content="&lt;agent&gt;: { &lt;fld1&gt;: [ &lt;fld2&gt;:| &lt;fld1&gt;:} An SSL connection is closed {&lt;hostip&gt;]|&lt;hostip&gt;}"/>
+
+<MESSAGE
+	id1="curl:01"
+	id2="curl"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="memorywatch:01"
+	id2="memorywatch"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Output from host&gt;"
+	content="&lt;agent&gt;: Output from host : &lt;hostip&gt;" />
+
+<MESSAGE
+	id1="memorywatch"
+	id2="memorywatch"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="collect_postgres_rollups.py"
+	id2="collect_postgres_rollups.py"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;[&lt;fld2&gt;]: &lt;fld3&gt;" />
+
+<MESSAGE
+	id1="fenet-aggr"
+	id2="fenet-aggr"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="bale"
+	id2="bale"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;fld2&gt;]: &lt;fld3&gt;" />
+
+<MESSAGE
+	id1="MQSIv500"
+	id2="MQSIv500"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;fld3&gt;]: &lt;fld1&gt; node &apos;&lt;node&gt;&apos; &lt;fld2&gt;" />
+
+<MESSAGE
 	id1="00704"
 	id2="startproc"
 	eventcategory="1605000000"
@@ -19253,7 +19337,13 @@
 	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:starting session of user&gt;"
 	 content="Starting Session &lt;sessionid&gt; of user &lt;username&gt;."/>
 
-	 
+<MESSAGE
+	id1="Starting:02"
+	id2="Starting"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Starting graveyard sweep&gt;"
+	content="Starting graveyard sweep" />
+
 <MESSAGE
 	 id1="001457"
 	 id2="Stopping"
@@ -23559,8 +23649,8 @@
 	id1="silverfish"
 	id2="silverfish"
 	eventcategory="1605010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: tid &lt;fld1&gt;: [&lt;event_source&gt;.&lt;severity&gt;]: &lt;info&gt;" />
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]:{&lt;fld1&gt; tid &lt;fld2&gt;:| tid &lt;fld1&gt;:} [&lt;event_source&gt;.&lt;severity&gt;]: {&lt;info&gt;]|&lt;info&gt;}" />
 
 <MESSAGE
 	id1="wae"
@@ -25092,6 +25182,13 @@
 	content="&lt;agent&gt;[&lt;fld1&gt;]: tid &lt;fld2&gt;: [&lt;severity&gt;]: &lt;info&gt;" />
 
 <MESSAGE
+	id1="notifyd:04"
+	id2="notifyd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld3)&gt;"
+	content="&lt;agent&gt;[&lt;fld1&gt;]: &lt;fld2&gt; end_time:&lt;fld3&gt; time_cost:&lt;fld4&gt;" />
+
+<MESSAGE
 	id1="rgp"
 	id2="rgp"
 	eventcategory="1605000000"
@@ -25867,6 +25964,20 @@
 	content="&lt;agent&gt;:&lt;event_description&gt;" />	
 
 	
+<MESSAGE
+	id1="ldap_child"
+	id2="ldap_child"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;event_description&gt;" />	
+
+<MESSAGE
+	id1="ntpd_intres"
+	id2="ntpd_intres"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:host name not found&gt;"
+	content="&lt;fld1&gt;[&lt;fld2&gt;]: host name not found: &lt;shost&gt;" />
+
 <MESSAGE
 	id1="OSBCompStart"
 	id2="OSBCompStart"
