@@ -4,9 +4,9 @@
 	displayname="UNIX AIX"
 	group="Unix">
 <VERSION
-	xml="130"
-	checksum="3a56d29618774ac2b8d7a0e59494442d"
-	revision="114"
+	xml="132"
+	checksum="c1679457a209a6981ddd68881432e713"
+	revision="121"
 	device="2.0" />
 
 <VALUEMAP
@@ -6537,28 +6537,28 @@
 	id2="root"
 	eventcategory="1401050100"
 	functions="&lt;@ec_theme:AccessControl&gt;&lt;@ec_subject:Permission&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_outcome:Success&gt;&lt;@event_description:su by user&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O %W',fld21,fld22,fld23,fld25)&gt;&lt;@result:Super User access granted&gt;"
-	content="&lt;agent&gt;: USER_SU    &lt;username&gt;     OK          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; &lt;action&gt;                              &lt;fld80&gt;" />
+	content="&lt;agent&gt;: USER_SU    &lt;username&gt;     OK          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; { &lt;action&gt;                  &lt;fld80&gt; | &lt;action&gt;}" />
 
 <MESSAGE
 	id1="01068:04"
 	id2="root"
 	eventcategory="1401050200"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O %W',fld21,fld22,fld23,fld25)&gt;&lt;@result:Super User access denied&gt;"
-	content="&lt;agent&gt;: USER_SU    &lt;username&gt;     FAIL          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; &lt;action&gt;                              &lt;fld80&gt;" />
+	content="&lt;agent&gt;: USER_SU    &lt;username&gt;     FAIL          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; { &lt;action&gt;                  &lt;fld80&gt; | &lt;action&gt;}" />
 
 <MESSAGE
 	id1="01068:03"
 	id2="root"
 	eventcategory="1401060000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O %W',fld21,fld22,fld23,fld25)&gt;&lt;@result:User login successful&gt;"
-	content=" &lt;agent&gt;: USER_Login    &lt;username&gt;     OK          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; &lt;action&gt;                              &lt;fld80&gt;" />
+	content=" &lt;agent&gt;: USER_Login    &lt;username&gt;     OK          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; { &lt;action&gt;                  &lt;fld80&gt; | &lt;action&gt;}" />
 
 <MESSAGE
 	id1="01068:02"
 	id2="root"
 	eventcategory="1401030000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O %W',fld21,fld22,fld23,fld25)&gt;&lt;@event_description:User login failed&gt;"
-	content=" &lt;agent&gt;: USER_Login    &lt;username&gt;     FAIL          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; &lt;action&gt;                              &lt;fld80&gt;" />
+	content=" &lt;agent&gt;: USER_Login    &lt;username&gt;     FAIL          &lt;fld20&gt; &lt;fld21&gt; &lt;fld22&gt; &lt;fld23&gt; &lt;fld25&gt; { &lt;action&gt;                  &lt;fld80&gt; | &lt;action&gt;}" />
 
 
 <MESSAGE
@@ -8083,14 +8083,14 @@
 	id2="sshd"
 	eventcategory="1302010200"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:Accepted publickey&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: Accepted publickey for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; " />
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: Accepted publickey for &lt;username&gt; from &lt;saddr&gt; { port &lt;sport&gt; &lt;protocol&gt; | port &lt;sport&gt; } " />
 
 <MESSAGE
 	id1="00003:45"
 	id2="sshd"
 	eventcategory="1302010200"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:Accepted password&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: Accepted password for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; " />
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: Accepted password for &lt;username&gt; from &lt;saddr&gt; { port &lt;sport&gt; &lt;protocol&gt; | port &lt;sport&gt; }" />
 
 <MESSAGE
 	id1="00003:48"
@@ -8244,7 +8244,7 @@
 	id2="sshd"
 	eventcategory="1603000000"
 	functions="&lt;@event_description:subsystem request&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: subsystem request for &lt;protocol&gt; { by user &lt;username&gt; | &lt;space&gt; }" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: subsystem request for { &lt;protocol&gt; by user &lt;username&gt; | &lt;protocol&gt; }" />
 
 <MESSAGE
 	id1="00003:17"
