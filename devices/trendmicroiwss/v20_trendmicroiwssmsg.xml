@@ -4,9 +4,9 @@
 	displayname="Trend Micro IWSS"
 	group="Web Logs">
 <VERSION
-	xml="12"
-	checksum="36af94d48b4338417cfae01930fe1772"
-	revision="115"
+	xml="15"
+	checksum="497f5e21ee1ba896a343c7554a9c1258"
+	revision="121"
 	device="2.0" />
 
  
@@ -14,11 +14,6 @@
 	id1="0001" 
 	id2="0001"  
 	content="%TMIWSS: &lt;hserver&gt;^^&lt;hsite&gt;^^&lt;hdate&gt; &lt;htime&gt;^^&lt;hnetwork_service&gt;^^&lt;messageid&gt;^^&lt;!payload:hserver&gt;" /> 
-
-<HEADER 
-	id1="0002" 
-	id2="0002"  
-	content="%TMIWSS-&lt;hlevel&gt;: &lt;space&gt; Date: &lt;hdate&gt; &lt;htime&gt; &lt;hfld1&gt;  Method: &lt;hmethod&gt;  Server: &lt;hserver&gt;  User: &lt;hfld25&gt;  ClientIP: &lt;hsaddr&gt;  ServerIP: &lt;hdaddr&gt;  Domain: &lt;hweb_domain&gt;  Content-Type: &lt;hcontent_type&gt;  Content-Length: &lt;hbytes&gt;  Path: &lt;hfld8&gt;  Operation: &lt;messageid&gt;&lt;!payload:hdate&gt;" /> 
 
 <HEADER 
 	id1="0003" 
@@ -55,6 +50,12 @@
 	id1="0009" 
 	id2="0009" 
 	content="&lt;hhost&gt;: &lt;&lt;&lt;hday&gt;, &lt;hdate&gt; &lt;hmonth&gt; &lt;hyear&gt; &lt;htime&gt;,&lt;htimezone&gt;&gt; [&lt;htype&gt;|&lt;messageid&gt;] &lt;!payload:hhost&gt;" />
+
+<HEADER 
+	id1="0002" 
+	id2="0002"
+	messageid="STRCAT('GENERIC_TRENDMICROIWSS')"
+	content="%TMIWSS-&lt;hlevel&gt;: &lt;space&gt; Date: &lt;hdate&gt; &lt;htime&gt; &lt;hfld1&gt;  Method: &lt;network_service&gt;  Server: &lt;hostname&gt;  User: &lt;obj_name&gt;  ClientIP: &lt;saddr&gt;  ServerIP: &lt;daddr&gt;  Domain: &lt;web_domain&gt;  Content-Type: &lt;content_type&gt;  Content-Length: &lt;bytes&gt; &lt;!payload&gt;" /> 
 
 <MESSAGE 
 	id1="activate" 
@@ -139,13 +140,6 @@
 	eventcategory="1204010000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',event_time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;"
 	content="&lt;hostname&gt;^^&lt;web_domain&gt;^^&lt;event_time&gt;.&lt;fld1&gt;^^&lt;network_service&gt;^^&lt;web_method&gt;^^&lt;obj_name&gt;^^&lt;daddr&gt;^^&lt;saddr&gt;^^&lt;fld2&gt;^^&lt;rulename&gt;^^&lt;policyname&gt;^^&lt;fld11&gt;^^&lt;fld12&gt;^^&lt;fld13&gt;^^&lt;content_type&gt;^^&lt;fld14&gt;^^&lt;fld15&gt;^^&lt;url&gt;^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;" />
-	
-<MESSAGE 
-	id1="CONNECT:01" 
-	id2="CONNECT" 
-	eventcategory="1204010000" 
-	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%Y %N:%U:%O %P',event_time,fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
-	content="&lt;event_time&gt; &lt;fld1&gt; Method: &lt;network_service&gt;  Server: &lt;hostname&gt;  User: &lt;obj_name&gt;  ClientIP: &lt;saddr&gt;  ServerIP: &lt;daddr&gt;  Domain: &lt;web_domain&gt;  Content-Type: &lt;content_type&gt;  Content-Length: &lt;bytes&gt;  Path: &lt;fld8&gt;  Operation: &lt;web_method&gt;" />
 	
 <MESSAGE 
 	id1="contains" 
@@ -268,26 +262,11 @@
 	content="&lt;hostname&gt;^^&lt;web_domain&gt;^^&lt;event_time&gt;.&lt;fld1&gt;^^&lt;network_service&gt;^^&lt;web_method&gt;^^&lt;obj_name&gt;^^&lt;daddr&gt;^^&lt;saddr&gt;^^&lt;fld2&gt;^^&lt;rulename&gt;^^&lt;policyname&gt;^^&lt;fld11&gt;^^&lt;fld12&gt;^^&lt;fld13&gt;^^&lt;content_type&gt;^^&lt;fld14&gt;^^&lt;fld15&gt;^^&lt;url&gt;^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;" />
 	
 <MESSAGE 
-	id1="GET:01" 
-	id2="GET" 
-	eventcategory="1204010000" 
-	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%Y %N:%U:%O %P',event_time,fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Request&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
-	content="&lt;event_time&gt; &lt;fld1&gt; Method: &lt;network_service&gt;  Server: &lt;hostname&gt;  User: &lt;obj_name&gt;  ClientIP: &lt;saddr&gt;  ServerIP: &lt;daddr&gt;  Domain: &lt;web_domain&gt;  Content-Type: &lt;content_type&gt;  Content-Length: &lt;bytes&gt;  Path: &lt;fld8&gt;  Operation: &lt;web_method&gt;" />
-	
-<MESSAGE 
 	id1="HEAD" 
 	id2="HEAD" 
 	eventcategory="1204010000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',event_time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@obj_type:IP&gt;"
 	content="&lt;hostname&gt;^^&lt;web_domain&gt;^^&lt;event_time&gt;.&lt;fld1&gt;^^&lt;network_service&gt;^^&lt;web_method&gt;^^&lt;obj_name&gt;^^&lt;daddr&gt;^^&lt;saddr&gt;^^&lt;fld2&gt;^^&lt;rulename&gt;^^&lt;policyname&gt;^^&lt;fld11&gt;^^&lt;fld12&gt;^^&lt;fld13&gt;^^&lt;content_type&gt;^^&lt;fld14&gt;^^&lt;fld15&gt;^^&lt;url&gt;^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;" />
-	
-	
-<MESSAGE 
-	id1="HEAD:01" 
-	id2="HEAD" 
-	eventcategory="1204010000" 
-	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%Y %N:%U:%O %P',event_time,fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
-	content="&lt;event_time&gt; &lt;fld1&gt; Method: &lt;network_service&gt;  Server: &lt;hostname&gt;  User: &lt;obj_name&gt;  ClientIP: &lt;saddr&gt;  ServerIP: &lt;daddr&gt;  Domain: &lt;web_domain&gt;  Content-Type: &lt;content_type&gt;  Content-Length: &lt;bytes&gt;  Path: &lt;fld8&gt;  Operation: &lt;web_method&gt;" />
 	
 <MESSAGE 
 	id1="POST" 
@@ -297,27 +276,12 @@
 	content="&lt;hostname&gt;^^&lt;web_domain&gt;^^&lt;event_time&gt;.&lt;fld1&gt;^^&lt;network_service&gt;^^&lt;web_method&gt;^^&lt;obj_name&gt;^^&lt;daddr&gt;^^&lt;saddr&gt;^^&lt;fld2&gt;^^&lt;rulename&gt;^^&lt;policyname&gt;^^&lt;fld11&gt;^^&lt;fld12&gt;^^&lt;fld13&gt;^^&lt;content_type&gt;^^&lt;fld14&gt;^^&lt;fld15&gt;^^&lt;url&gt;^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;" />
 	
 <MESSAGE 
-	id1="POST:01" 
-	id2="POST" 
-	eventcategory="1204010000" 
-	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%Y %N:%U:%O %P',event_time,fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
-	content="&lt;event_time&gt; &lt;fld1&gt; Method: &lt;network_service&gt;  Server: &lt;hostname&gt;  User: &lt;obj_name&gt;  ClientIP: &lt;saddr&gt;  ServerIP: &lt;daddr&gt;  Domain: &lt;web_domain&gt;  Content-Type: &lt;content_type&gt;  Content-Length: &lt;bytes&gt;  Path: &lt;fld8&gt;  Operation: &lt;web_method&gt;" />
-
-<MESSAGE 
 	id1="PROPFIND" 
 	id2="PROPFIND" 
 	eventcategory="1204010000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',event_time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@web_domain:*URL($DOMAIN,url)&gt;&lt;@obj_type:IP&gt;"
 	content="&lt;hostname&gt;^^&lt;web_domain&gt;^^&lt;event_time&gt;.&lt;fld1&gt;^^&lt;network_service&gt;^^&lt;web_method&gt;^^&lt;obj_name&gt;^^&lt;daddr&gt;^^&lt;saddr&gt;^^&lt;fld2&gt;^^&lt;rulename&gt;^^&lt;policyname&gt;^^&lt;fld11&gt;^^&lt;fld12&gt;^^&lt;fld13&gt;^^&lt;content_type&gt;^^&lt;fld14&gt;^^&lt;fld15&gt;^^&lt;url&gt;^^&lt;fld16&gt;^^&lt;fld17&gt;^^&lt;fld18&gt;^^&lt;fld19&gt;^^&lt;fld20&gt;" />
 
-<MESSAGE 
-	id1="PROPFIND:01" 
-	id2="PROPFIND" 
-	eventcategory="1204010000" 
-	functions="&lt;@event_time:*EVNTTIME($MSG,'%G/%F/%Y %N:%U:%O %P',event_time,fld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
-	content="&lt;event_time&gt; &lt;fld1&gt; Method: &lt;network_service&gt;  Server: &lt;hostname&gt;  User: &lt;obj_name&gt;  ClientIP: &lt;saddr&gt;  ServerIP: &lt;daddr&gt;  Domain: &lt;web_domain&gt;  Content-Type: &lt;content_type&gt;  Content-Length: &lt;bytes&gt;  Path: &lt;fld8&gt;  Operation: &lt;web_method&gt;" />
-
-	
 <MESSAGE 
 	id1="setting" 
 	id2="setting" 
@@ -454,4 +418,11 @@
 	content="&lt;hostname&gt;: &lt;&lt;&lt;fld6&gt;, &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt;,&lt;fld11&gt;&gt; [&lt;event_type&gt;|LOG_INFO] &lt;event_log&gt; tk_username=&lt;obj_name&gt;,tk_url=&lt;url&gt;,tk_size=&lt;filename_size&gt;,tk_date_field=&lt;fld12&gt;,tk_protocol=&lt;network_service&gt;,tk_mime_content=&lt;fld13&gt;,tk_server=&lt;fld14&gt;,tk_client_ip=&lt;saddr&gt;,tk_server_ip=&lt;daddr&gt;,tk_domain=&lt;web_domain&gt;,tk_path=&lt;fld18&gt;,tk_file_name=&lt;filename&gt;,tk_operation=&lt;web_method&gt;,tk_uid=&lt;fld21&gt;,tk_category=&lt;fld22&gt;,tk_category_type=&lt;fld23&gt;" />
 
 	
+<MESSAGE 
+	id1="GENERIC_TRENDMICROIWSS" 
+	id2="GENERIC_TRENDMICROIWSS" 
+	eventcategory="1204010000" 
+	functions="&lt;@msg_id:*PARMVAL(web_method)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%Y %N:%U:%O %P',hdate,htime,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
+	content="Path: &lt;fld8&gt;  Operation: &lt;web_method&gt;" />
+
 </DEVICEMESSAGES>
