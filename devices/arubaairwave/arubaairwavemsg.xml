@@ -4,9 +4,9 @@
 	displayname="Aruba Networks AirWave"
 	group="Configuration Management">
 <VERSION
-	xml="14"
-	checksum="6505c7d0f3995d3a7235cb6a8bd1ef58"
-	revision="120"
+	xml="17"
+	checksum="c1896a630fcd5c5c242f37bc9c586da4"
+	revision="121"
 	device="2.0" />
 	
 	
@@ -240,6 +240,13 @@
 	content=" Device Up: {Device: &lt;macaddr&gt; - &lt;device&gt;|Device:&lt;device&gt;}: All device types (Normal) System &lt;event_type&gt;" />
 
 <MESSAGE
+	id1="Device:05"
+	id2="Device"
+	eventcategory="1609000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:SNMP Trap Category is Hardware or SNMP Trap Category is Software.&gt;"
+	content=" Device Event: Device: &lt;device&gt;: SNMP Trap Category is Hardware or SNMP Trap Category is Software (Normal) System &lt;event_type&gt;" />
+
+<MESSAGE
 	id1="Aruba:01"
 	id2="Aruba"
 	eventcategory="1701000000"
@@ -249,8 +256,8 @@
 	id1="Aruba:02"
 	id2="Aruba"
 	eventcategory="1701000000"
-	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="{&lt;fld1&gt; Status|&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; Status|Status} changed to &apos;&lt;event_state&gt;&apos;&lt;space&gt;{ System	Device	ID: &lt;id&gt;| System Device ID: &lt;id&gt;}  Top &lt;fld4&gt; " />
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="{&lt;fld1&gt; Status|&lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; Status|Status} changed to {&apos;&lt;event_state&gt; (SNMP Trap - &lt;fld8&gt; from &lt;saddr&gt;)&apos;|&apos;&lt;event_state&gt;&apos;}&lt;space&gt;{ System	Device	ID: &lt;id&gt;| System Device ID: &lt;id&gt;}  Top &lt;fld4&gt; " />
 <MESSAGE
 	id1="Aruba:03"
 	id2="Aruba"
@@ -353,5 +360,12 @@
 	eventcategory="1603000000"
 	functions="&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Error&gt;&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="Cisco Catalyst &lt;fld5&gt; &lt;hostname&gt; &lt;network_service&gt; Error: problem connecting to &quot;&lt;daddr&gt;&quot;, port &lt;dport&gt;: Connection refused System Device ID: &lt;id&gt; Top &lt;fld4&gt;" />
+
+<MESSAGE
+	id1="Cisco_Catalyst:05"
+	id2="Cisco_Catalyst"
+	eventcategory="1603000000"
+	functions="&lt;@event_computer:*HDR(hfld1)&gt;&lt;@process_id:*HDR(hfld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Cisco Catalyst &lt;fld5&gt; &lt;hostname&gt; Down System Device ID: &lt;id&gt; Top &lt;fld4&gt;" />
 
 </DEVICEMESSAGES>
