@@ -4,12 +4,21 @@
 	displayname="IBM WebSphere MQ"
 	group="Messaging">
 <VERSION
-		xml="6"
-		checksum="48f4fe376ecb5afa62fba9121d1e6d9d"
-		revision="119"
+		xml="9"
+		checksum="13ff3791aa04fc8f2c2d838a845fd04b"
+		revision="121"
 		device="2.0"/>
 
 
+<HEADER
+	id1="009"
+	id2="009"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;hfld1&gt; &lt;hfld2&gt; {AM -|PM -} Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                     Host(&lt;hhostname&gt;) Installation(&lt;hfld4&gt;)                     VRMF(&lt;hfld5&gt;) QMgr(&lt;hfld6&gt;)                     Time(&lt;hfld9&gt;)                     RemoteHost(&lt;hfld8&gt;)&lt;hfld7&gt;CommentInsert3(&lt;hfld10&gt;))&lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
+
+<HEADER
+	id1="010"
+	id2="010"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: --- &lt;hfld1&gt; &lt;hfld2&gt; {AM -|PM -} Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                     Host(&lt;hhostname&gt;) Installation(&lt;hfld4&gt;)                     VRMF(&lt;hfld5&gt;) QMgr(&lt;hfld6&gt;)                     Time(&lt;hfld9&gt;)&lt;hfld7&gt;CommentInsert3(&lt;hfld10&gt;)&lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
 <HEADER
 	id1="006"
 	id2="006"
@@ -19,6 +28,10 @@
 	id1="007"
 	id2="007"
 	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;hfld1&gt; &lt;hfld2&gt; {AM -|PM -} Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                     Host(&lt;hostname&gt;) Installation(&lt;hfld4&gt;)                     VRMF(&lt;hfld5&gt;) QMgr(&lt;hfld6&gt;)                     &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
+<HEADER
+	id1="008"
+	id2="008"
+	content="%IBMWEBSPHEREMQ-&lt;hlevel&gt;: &lt;hfld1&gt; &lt;hfld2&gt; {AM -|PM -} Process(&lt;process_id&gt;.&lt;hfld3&gt;) User(&lt;husername&gt;) Program(&lt;hprocess&gt;)                     Host(&lt;hhostname&gt;) Installation(&lt;hfld5&gt;)                     VRMF(&lt;hfld6&gt;) &lt;messageid&gt;: &lt;!payload:hfld1&gt;"/>
 
 <HEADER
 	id1="001"
@@ -271,11 +284,25 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
 <MESSAGE
+	id1="AMQ6183:01"
+	id2="AMQ6183"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -} Process(&lt;fld15&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)&lt;fld7&gt;Host(&lt;hostname&gt;) Installation(&lt;fld4&gt;)&lt;fld5&gt;VRMF(&lt;fld6&gt;) &lt;id&gt;:&lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+
+<MESSAGE
 	id1="AMQ6209"
 	id2="AMQ6209"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; - Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      Host(&lt;hostname&gt;) &lt;id&gt;: &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ6209:01"
+	id2="AMQ6209"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -} Process(&lt;fld15&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)&lt;fld7&gt;Host(&lt;hostname&gt;) Installation(&lt;fld4&gt;)&lt;fld5&gt;VRMF(&lt;fld6&gt;) &lt;id&gt;:&lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+
 <MESSAGE
 	id1="AMQ6287"
 	id2="AMQ6287"
@@ -691,4 +718,31 @@
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -|- } Process(&lt;process_id&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)                      {Host(&lt;hostname&gt;) Installation(&lt;fld4&gt;)                     VRMF(&lt;fld5&gt;) QMgr(&lt;fld6&gt;)                     &lt;id&gt;:|Host(&lt;hostname&gt;) &lt;id&gt;:} &lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+<MESSAGE
+	id1="AMQ7605"
+	id2="AMQ7605"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -} Process(&lt;fld15&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)&lt;fld7&gt;Host(&lt;hostname&gt;) Installation(&lt;fld4&gt;)&lt;fld5&gt;VRMF(&lt;fld6&gt;) &lt;id&gt;:&lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+
+<MESSAGE
+	id1="AMQ6184"
+	id2="AMQ6184"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -} Process(&lt;fld15&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)&lt;fld7&gt;Host(&lt;hostname&gt;) Installation(&lt;fld4&gt;)&lt;fld5&gt;VRMF(&lt;fld6&gt;) &lt;id&gt;:&lt;info&gt; EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+
+<MESSAGE
+	id1="AMQ9208E"
+	id2="AMQ9208E"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Error on receive from host&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -} Process(&lt;fld15&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)&lt;fld4&gt;Host(&lt;hostname&gt;) Installation(&lt;fld5&gt;)&lt;fld6&gt;VRMF(&lt;fld7&gt;) QMgr(&lt;fld8&gt;)&lt;fld9&gt;Time(&lt;fld10&gt;)&lt;fld11&gt;RemoteHost(&lt;daddr&gt;)&lt;fld12&gt;CommentInsert3(&lt;fld13&gt;)&lt;fld14&gt; &lt;id&gt;: Error on receive from host &lt;dhost&gt; (&lt;fld16&gt;).  EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
+
+<MESSAGE
+	id1="AMQ9999E"
+	id2="AMQ9999E"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%G/%F/%W %H:%T:%S&apos;,fld1,fld2)&gt;&lt;@info:Channel ended abnormally&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; {AM -|PM -} Process(&lt;fld15&gt;.&lt;fld3&gt;) User(&lt;username&gt;) Program(&lt;process&gt;)&lt;fld4&gt;Host(&lt;hostname&gt;) Installation(&lt;fld5&gt;)&lt;fld6&gt;VRMF(&lt;fld7&gt;) QMgr(&lt;fld8&gt;)&lt;fld9&gt;Time(&lt;fld10&gt;)&lt;fld11&gt;CommentInsert3(&lt;fld13&gt;)&lt;id&gt;: Channel &lt;fld16&gt; to host &apos;&lt;daddr&gt;&apos; ended abnormally.  EXPLANATION: &lt;event_description&gt; ACTION: &lt;action&gt;" />
 </DEVICEMESSAGES>
