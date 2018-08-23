@@ -4,9 +4,9 @@
 	displayname="Palo Alto Networks Firewall"
 	group="Firewall">
 <VERSION
-	xml="71"
-	checksum="a7658788a9e04c891e558d3dae2cc1f9"
-	revision="120"
+	xml="72"
+	checksum="c2a5a64ae5cd0e2b856697c160c6a8dd"
+	revision="121"
 	device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -173,6 +173,13 @@
 	eventcategory="1701060000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:commit&gt;&lt;@shost:*PARMVAL(saddr)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;"
 	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,CONFIG,&lt;category&gt;,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;vsys&gt;,commit,&lt;administrator&gt;,&lt;network_service&gt;,&lt;result&gt;,&lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="CONFIG:commit:01" 
+	id2="CONFIG" 
+	eventcategory="1701060000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:commit&gt;&lt;@shost:*PARMVAL(saddr)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,CONFIG,&lt;category&gt;,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;vsys&gt;,commit-all,&lt;administrator&gt;,&lt;network_service&gt;,&lt;result&gt;,&lt;event_description&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,,&lt;hostname&gt;" />
 
 <MESSAGE 
 	id1="CONFIG:create" 
@@ -664,18 +671,32 @@
 
 
 <MESSAGE
+	id1="SYSTEM:AUTH-Failure:01" 
+	id2="SYSTEM" 
+	eventcategory="1401030000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Authentication&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;"
+	content="&lt;domain&gt; 1,&lt;fld1&gt;,&lt;serial_number&gt;,SYSTEM,auth,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;fld10&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;failed authentication for user &apos;&lt;username&gt;&apos;.&lt;space&gt;Reason: &lt;result&gt; auth profile &apos;&lt;rulename&gt;&apos;, vsys &apos;&lt;vsys&gt;&apos;, server profile &apos;&lt;fld11&gt;&apos;, server address &apos;&lt;daddr&gt;&apos;, From: &lt;saddr&gt;.&quot;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld18&gt;,,&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="SYSTEM:AUTH-Failure" 
 	id2="SYSTEM" 
 	eventcategory="1401030000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Authentication&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;"
-	content="&lt;domain&gt; 1,&lt;fld1&gt;,&lt;serial_number&gt;,SYSTEM,auth,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;fld10&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;failed authentication for user &apos;&lt;username&gt;&apos;. Reason: &lt;result&gt; From: &lt;saddr&gt;.&quot;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld18&gt;,,&lt;hostname&gt;" />
+	content="&lt;domain&gt; 1,&lt;fld1&gt;,&lt;serial_number&gt;,SYSTEM,auth,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;fld10&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;failed authentication for user &apos;&lt;username&gt;&apos;.&lt;space&gt;Reason: &lt;result&gt; From: &lt;saddr&gt;.&quot;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;fld18&gt;,,&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="SYSTEM:AUTH-Success:01" 
+	id2="SYSTEM" 
+	eventcategory="1401060000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Authentication&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;"
+	content="&lt;domain&gt; 1,&lt;fld1&gt;,&lt;serial_number&gt;,SYSTEM,auth,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;fld17&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;authenticated for user &apos;&lt;username&gt;&apos;.&lt;space&gt;auth profile &apos;&lt;rulename&gt;&apos;, vsys &apos;&lt;vsys&gt;&apos;, server profile &apos;&lt;fld18&gt;&apos;, server address &apos;&lt;daddr&gt;&apos;, From: &lt;saddr&gt;.&quot;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;hostname&gt;" />
 
 <MESSAGE
 	id1="SYSTEM:AUTH-Success" 
 	id2="SYSTEM" 
 	eventcategory="1401060000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:Authentication&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld3,fld4)&gt;"
-	content="&lt;domain&gt; 1,&lt;fld1&gt;,&lt;serial_number&gt;,SYSTEM,auth,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;vsys&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;authenticated for user &apos;&lt;username&gt;&apos;. From: &lt;saddr&gt;.&quot;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;hostname&gt;" />
+	content="&lt;domain&gt; 1,&lt;fld1&gt;,&lt;serial_number&gt;,SYSTEM,auth,&lt;version&gt;,&lt;fld3&gt; &lt;fld4&gt;,&lt;vsys&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;severity&gt;,&quot;authenticated for user &apos;&lt;username&gt;&apos;.&lt;space&gt;From: &lt;saddr&gt;.&quot;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;fld16&gt;,&lt;hostname&gt;" />
 
 <MESSAGE
 	id1="CORRELATION" 
