@@ -4,8 +4,8 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="84"
-		checksum="7b0afdd77b624ca552cc732bb9324a74"
+		xml="86"
+		checksum="383ddba0c97b71e9cc2e45ccc1b80905"
 		revision="121"
 		device="2.0"/>
 
@@ -121,6 +121,13 @@
 	functions="&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Will run | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: Will run } job &lt;application&gt; in &lt;fld1&gt;" />
 	
+<MESSAGE
+	id1="000295_01"
+	id2="anacron"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]:| &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]:} Job `&lt;application&gt;&apos; started" />
+
 <MESSAGE
 	id1="000305"
 	id2="anacron"
@@ -280,6 +287,14 @@
 	content=" &lt;hostname&gt; &lt;agent&gt;: &lt;fld1&gt;:&lt;fld2&gt;: Notification attempt to consumer id &lt;operation_id&gt; FAILED with error &lt;result&gt;." />
 	
 <MESSAGE
+	id1="000183_01"
+	id2="CROND"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: (&lt;service&gt;) CMD (&lt;param&gt;)" />
+
+	
+<MESSAGE
 	id1="000183"
 	id2="crond"
 	eventcategory="1603110000"
@@ -292,8 +307,8 @@
 	id2="crond"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: (&lt;username&gt;) CMD (&lt;action&gt;) " />
-	
+	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: (&lt;username&gt;) CMD (&lt;param&gt;) " />
+
 <MESSAGE
 	id1="000182"
 	id2="crond"
@@ -313,21 +328,21 @@
 	id2="crond"
 	eventcategory="1609000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content=" {&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]:} USER &lt;username&gt; pid &lt;child_pid&gt; cmd &lt;action&gt;" />
-	
+	content=" {&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } USER &lt;username&gt; pid &lt;child_pid&gt; cmd &lt;param&gt;" />
+
 <MESSAGE
 	id1="000194"
 	id2="crond"
 	eventcategory="1605020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content=" {&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;service&gt;(&lt;fld1&gt;): session opened for user &lt;username&gt; by (uid=&lt;fld2&gt;)" />
+	content=" {&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;service&gt;(&lt;fld1&gt;): session opened for user &lt;username&gt; by (uid=&lt;fld2&gt;)" />
 	
 <MESSAGE
 	id1="000193"
 	id2="crond"
 	eventcategory="1605020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content=" {&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;service&gt;(&lt;fld1&gt;): session closed for user &lt;username&gt;" />
+	content=" {&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;service&gt;(&lt;fld1&gt;): session closed for user &lt;username&gt;" />
 	
 <MESSAGE
 	id1="000211"
@@ -982,6 +997,20 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;fld1&gt;:&lt;fld2&gt;: AUDIT - user &lt;username&gt; - transaction &lt;fld3&gt; - object &lt;fld4&gt; - &lt;action&gt; &lt;fld5&gt; &lt;obj_type&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;obj_name&gt; &lt;info&gt; [Status=&lt;result&gt;]" />
 
 <MESSAGE
+	id1="000379_01"
+	id2="mcpd"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;fld1&gt;:&lt;fld2&gt;: AUDIT - {client &lt;process&gt;, tmsh-pid-&lt;fld3&gt;, user &lt;username&gt;|user &lt;username&gt;} - transaction &lt;fld4&gt; - object &lt;fld5&gt; - &lt;action&gt; {{ &lt;obj_type&gt; {{ devicegroup_name &quot;&lt;obj_name&gt;&quot; } } [Status=&lt;result&gt;]" />
+
+<MESSAGE
+	id1="000161_01"
+	id2="mcpd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Master key updated by user&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: }&lt;fld7&gt;:&lt;fld8&gt;: Master Key updated by user %&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt;-&lt;hostip&gt;" />
+
+<MESSAGE
 	id1="000161"
 	id2="mcpd"
 	eventcategory="1605000000"
@@ -1299,6 +1328,13 @@
 	eventcategory="1401030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld2,fld3,fld5,fld4)&gt;&lt;@endtime:*EVNTTIME($MSG,&apos;%B %F %W %H:%T:%S&apos;,fld7,fld8,fld10,fld9)&gt;&lt;@dclass_counter1_string:Number of Logon Attempts&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;(&lt;service&gt;)[&lt;process_id&gt;]: User=&lt;username&gt; tty=&lt;terminal&gt; host=&lt;saddr&gt; failed to login after &lt;dclass_counter1&gt; attempts (start=&quot;&lt;fld1&gt; &lt;fld2&gt;  &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot; end=&quot;&lt;fld6&gt; &lt;fld7&gt;  &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt;&quot;)." />
+<MESSAGE
+	id1="000177_01"
+	id2="sshd"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="{&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: }refused connect from &lt;saddr&gt; (&lt;fld2&gt;)" />
+
 	   
 <MESSAGE
 	id1="000177"
@@ -1536,7 +1572,6 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" { &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;fld1&gt;: Client: &lt;saddr&gt;, Pool member &lt;daddr&gt;:&lt;dport&gt;" />
 	
-	
 <MESSAGE
 	id1="000124"
 	id2="tmm"
@@ -1705,13 +1740,54 @@
 	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: RESOLVED rrtype = &lt;fld3&gt;, wip = &lt;url&gt;, LDNS(&lt;domain&gt;) to vs(&lt;fld4&gt;) using &lt;pool_name&gt;" />
 
 <MESSAGE
+	id1="000362_01"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: START::{Cookie value: &lt;web_cookie&gt;|Cookie name: &lt;fld5&gt;}....." />
+
+<MESSAGE
+	id1="000362_02"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: Got connection: {(&lt;info&gt;) Client|Client}(&lt;saddr&gt;:&lt;sport&gt;)&lt;&lt;-&gt;(&lt;stransaddr&gt;:&lt;stransport&gt;)LTM(&lt;dtransaddr&gt;:&lt;dtransport&gt;)&lt;&lt;-&gt;(&lt;daddr&gt;:&lt;dport&gt;)Server" />
+
+<MESSAGE
+	id1="000362_03"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: Replacing cookie &lt;fld4&gt; with  &lt;web_cookie&gt;; Secure; HttpOnly" />
+
+<MESSAGE
+	id1="000362_04"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: {BYPASS-Cookie found: &lt;fld9&gt;, cookie value: &lt;web_cookie&gt; Bypass persistence cookie - &lt;fld4&gt;|Cookie found: &lt;fld10&gt; = &lt;web_cookie&gt;}" />
+
+<MESSAGE
+	id1="000362_05"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: (&lt;fld3&gt;) &lt;hostip&gt; -> querystring = &lt;web_query&gt;"/>
+
+<MESSAGE
+	id1="000362_06"
+	id2="tmm"
+	eventcategory="1801020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
+
+<MESSAGE
 	id1="000362"
 	id2="tmm"
 	eventcategory="1609000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: &lt;event_description&gt;" />
-     
-	
+
 <MESSAGE
 	id1="000185"
 	id2="tmm6"
@@ -2792,7 +2868,48 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Request {(&lt;web_method&gt; &lt;web_query&gt;)|&lt;web_method&gt; &lt;web_query&gt;}" />
 	
-	
+<MESSAGE
+	id1="000393_01"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: START::{Cookie name: &lt;fld10&gt;|Cookie value: &lt;web_cookie&gt;}....." />
+
+<MESSAGE
+	id1="000393_02"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: Got connection: {(&lt;info&gt;) Client|Client}(&lt;saddr&gt;:&lt;sport&gt;)&lt;&lt;-&gt;(&lt;stransaddr&gt;:&lt;stransport&gt;)LTM(&lt;dtransaddr&gt;:&lt;dtransport&gt;)&lt;&lt;-&gt;(&lt;daddr&gt;:&lt;dport&gt;)Server" />
+
+<MESSAGE
+	id1="000393_03"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: Replacing cookie &lt;fld10&gt; with  &lt;web_cookie&gt;; Secure; HttpOnly" />
+
+<MESSAGE
+	id1="000393_04"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: {BYPASS-Cookie found: &lt;fld5&gt;, cookie value: &lt;web_cookie&gt; Bypass persistence cookie - &lt;fld4&gt;|Cookie found: &lt;fld8&gt; = &lt;web_cookie&gt;}" />
+
+<MESSAGE
+	id1="000393_05"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: (&lt;fld3&gt;) &lt;hostip&gt; -> querystring = &lt;web_query&gt;"/>
+
+<MESSAGE
+	id1="000393_06"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
+
 <MESSAGE
 	id1="000393"
 	id2="tmm3"
@@ -2800,6 +2917,48 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
 	
+<MESSAGE
+	id1="000394_01"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: START::{Cookie value: &lt;web_cookie&gt;|Cookie name: &lt;fld10&gt;}....." />
+
+<MESSAGE
+	id1="000394_02"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: Got connection: {(&lt;info&gt;) Client|Client}(&lt;saddr&gt;:&lt;sport&gt;)&lt;&lt;-&gt;(&lt;stransaddr&gt;:&lt;stransport&gt;)LTM(&lt;dtransaddr&gt;:&lt;dtransport&gt;)&lt;&lt;-&gt;(&lt;daddr&gt;:&lt;dport&gt;)Server" />
+
+<MESSAGE
+	id1="000394_03"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: Replacing cookie &lt;fld5&gt; with  &lt;web_cookie&gt;; Secure; HttpOnly" />
+
+<MESSAGE
+	id1="000394_04"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: {BYPASS-Cookie found: &lt;fld7&gt;, cookie value: &lt;web_cookie&gt; Bypass persistence cookie - &lt;fld4&gt;|Cookie found: &lt;fld11&gt; = &lt;web_cookie&gt;}" />
+
+<MESSAGE
+	id1="000394_05"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: (&lt;fld3&gt;) &lt;hostip&gt; -> querystring = &lt;web_query&gt;"/>
+
+<MESSAGE
+	id1="000394_06"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
+
 <MESSAGE
 	id1="000394"
 	id2="tmm2"
@@ -2837,7 +2996,48 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Cert authentification success&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: Cert authentification success: &lt;info&gt;" />
 	
-	
+<MESSAGE
+	id1="000396_01"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: START::{Cookie value: &lt;web_cookie&gt;|Cookie name: &lt;fld10&gt;}....." />
+
+<MESSAGE
+	id1="000396_02"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: Got connection: {(&lt;info&gt;) Client|Client}(&lt;saddr&gt;:&lt;sport&gt;)&lt;&lt;-&gt;(&lt;stransaddr&gt;:&lt;stransport&gt;)LTM(&lt;dtransaddr&gt;:&lt;dtransport&gt;)&lt;&lt;-&gt;(&lt;daddr&gt;:&lt;dport&gt;)Server" />
+
+<MESSAGE
+	id1="000396_03"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: Replacing cookie &lt;fld7&gt; with  &lt;web_cookie&gt;; Secure; HttpOnly" />
+
+<MESSAGE
+	id1="000396_04"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: {BYPASS-Cookie found: &lt;fld5&gt;, cookie value: &lt;web_cookie&gt; Bypass persistence cookie - &lt;fld4&gt;|Cookie found: &lt;fld8&gt; = &lt;web_cookie&gt;}" />
+
+<MESSAGE
+	id1="000396_05"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: (&lt;fld3&gt;) &lt;hostip&gt; -> querystring = &lt;web_query&gt;"/>
+
+<MESSAGE
+	id1="000396_06"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
+
 <MESSAGE
 	id1="000396"
 	id2="tmm1"
@@ -3075,5 +3275,54 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:AUDIT&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;fld1&gt;: :: AUDIT - user &lt;username&gt; - &lt;event_description&gt; &lt;info&gt;" />
 	
- 
+<MESSAGE
+	id1="sflow_agent"
+	id2="sflow_agent"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:AUDIT&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt; [&lt;process_id&gt;]: &lt;fld2&gt;" />
+
+																										
+<MESSAGE
+	id1="run-parts"
+	id2="run-parts"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;(&lt;fld1&gt;)[&lt;process_id&gt;]: {starting|finished} &lt;fld2&gt;" />
+
+<MESSAGE
+	id1="000406_01"
+	id2="sSMTP"
+	eventcategory="1801010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description: Unable to connect&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: }Unable to connect to &quot;&lt;shost&gt;&quot; port &lt;sport&gt;." />
+
+<MESSAGE
+	id1="000406_02"
+	id2="sSMTP"
+	eventcategory="1801010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: }Cannot open &lt;shost&gt;:&lt;sport&gt;" />
+
+<MESSAGE
+	id1="000183_02"
+	id2="ldbutil"
+	eventcategory="1613060200"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld3&gt;:&lt;fld4&gt;: &lt;event_description&gt;"/>
+
+<MESSAGE
+	id1="000183_03"
+	id2="CROND"
+	eventcategory="1207000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: (&lt;username&gt;) MAIL (mailed &lt;bytes&gt; bytes of output but got status &lt;resultcode&gt;)"/>
+
+<MESSAGE
+	id1="audit_forwarder"
+	id2="audit_forwarder"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;:&lt;event_description&gt;" />
+
 </DEVICEMESSAGES>
