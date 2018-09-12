@@ -4,13 +4,26 @@
 	displayname="Proofpoint Email Security"
 	group="Application Firewall">
 <VERSION
-	xml="29"
-	checksum="f78b707f04758bb5cad6ab87ac5e3619"
-	revision="114"
+	xml="32"
+	checksum="c8850e18d1f2b4a421a532488d6098f5"
+	revision="122"
 	device="2.0" />
 	
 <TAGVALMAP 
 		delimiter="  &quot;" />
+<HEADER 
+	id1="0024" 
+	id2="0024"
+	messageid="STRCAT(&apos;send&apos;)"	
+	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hfld2&gt; &lt;hinstance&gt;[&lt;hfld3&gt;]: {info|rprt|warn|err|note} s=&lt;hfld4&gt; cmd=send &lt;!payload:hinstance&gt;" />
+<HEADER 
+	id1="0023" 
+	id2="0023" 
+	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hfld2&gt; &lt;messageid&gt;[&lt;hfld3&gt;]: {info|rprt|warn|err|note} &lt;!payload&gt;" />
+<HEADER 
+	id1="0025" 
+	id2="0025" 
+ 	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hinstance&gt; &lt;messageid&gt;[&lt;hfld2&gt;]: &lt;!payload:messageid&gt;" />
 <HEADER 
 	id1="0003" 
 	id2="0003" 
@@ -90,21 +103,6 @@
 	id2="0005"  
 	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hinstance&gt; &lt;hseverity&gt; pid=&lt;hfld5&gt; mod=&lt;msgIdPart1&gt; cmd=&lt;msgIdPart2&gt; &lt;!payload:hinstance&gt;" />
- <HEADER 
-	id1="0024" 
-	id2="0024"
-	messageid="STRCAT(&apos;send&apos;)"	
-	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hfld2&gt; &lt;hinstance&gt;[&lt;hfld3&gt;]: {info|rprt|warn|err|note} s=&lt;hfld4&gt; cmd=send &lt;!payload:hinstance&gt;" />
- 
- <HEADER 
-	id1="0023" 
-	id2="0023" 
-	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hfld2&gt; &lt;messageid&gt;[&lt;hfld3&gt;]: {info|rprt|warn|err|note} &lt;!payload&gt;" />
-<HEADER 
-	id1="0025" 
-	id2="0025" 
- 	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hinstance&gt; &lt;messageid&gt;[&lt;hfld2&gt;]: &lt;!payload:messageid&gt;" />
-
 <HEADER 
 	id1="0006" 
 	id2="0006"  
@@ -1432,12 +1430,19 @@
 	content="s=&lt;sessionid&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt; helo=&lt;fld32&gt; msgs=&lt;fld33&gt; rcpts=&lt;dclass_counter2&gt; routes=&lt;fld4&gt; duration=&lt;duration_string&gt; elapsed=&lt;fld16&gt;" />
 
 <MESSAGE 
+	id1="filter_instance1:05" 
+	id2="filter_instance1" 
+	eventcategory="1207000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+    content="s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; header.from=&quot;\&quot;&lt;info&gt;\&quot; &lt;fld4&gt; &lt;&lt;&lt;user_address&gt;&gt;&quot;"/>
+
+<MESSAGE 
 	id1="filter_instance1" 
 	id2="filter_instance1" 
 	eventcategory="1207000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
 	tagval="true" 
 	missField="true"
-	content="mod=&lt;agent&gt; cmd=&lt;obj_type&gt; type=&lt;fld1&gt; id=&lt;id&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; method=&lt;fld37&gt; vendor=&lt;fld36&gt; engine=&lt;fld49&gt; definitions=&lt;fld50&gt; signatures=&lt;fld94&gt; result=&lt;result&gt; header.from=&lt;fld40&gt; smtp.mailfrom=&lt;fld44&gt; score=&lt;fld39&gt; submsgadjust=&lt;fld53&gt; dict=&lt;fld87&gt; file=&lt;filename&gt; sys=&lt;fld1&gt; evt=&lt;action&gt; active=&lt;fld2&gt; expires=&lt;fld3&gt; msg=&lt;msg&gt; user=&lt;username&gt; delegate-for=&lt;fld5&gt; ksurl=&lt;fld7&gt; duration=&lt;duration_string&gt; sig=&lt;fld60&gt; uid=&lt;uid&gt; pid=&lt;process_id&gt; realm=&lt;fld61&gt; server=&lt;saddr&gt; elapsed=&lt;duration_string&gt; avgtime=&lt;fld2&gt; qname=&lt;fld3&gt; qtype=&lt;fld4&gt; ip=&lt;hostip&gt; country=&lt;location_country&gt; lip=&lt;fld24&gt; prot=&lt;fld25&gt; hops_active=&lt;fld26&gt; routes=&lt;fld4&gt; notroutes=&lt;fld18&gt; perlwait=&lt;fld27&gt; host=&lt;hostname&gt; resolve=&lt;fld28&gt; reverse=&lt;fld13&gt; value=&lt;context&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt; attachments=&lt;fld80&gt; rcpts=&lt;fld59&gt; size=&lt;bytes&gt; guid=&lt;fld14&gt; hdr_mid=&lt;id&gt; qid=&lt;fld15&gt; subject=&lt;subject&gt; tls_version= &lt;fld84&gt; verify=&lt;fld57&gt; cipher=&lt;s_cipher&gt; cipher_bits=&lt;fld59&gt; tls=&lt;fld60&gt; r=&lt;event_counter&gt; verified=&lt;fld3&gt; lint=&lt;fld33&gt; mime=&lt;content_type&gt; omime=&lt;fld7&gt; oext=&lt;fld8&gt; corrupted=&lt;fld9&gt; protected=&lt;fld10&gt; threshold=&lt;fld11&gt; profile=&lt;fld52&gt; alert=&lt;fld53&gt; helo=&lt;fld32&gt; msgs=&lt;fld76&gt; install_dir=&lt;directory&gt; instance=&lt;fld90&gt; maxfd=&lt;fld91&gt; release=&lt;fld92&gt; publickey_cache_entries=&lt;fld6&gt; policy_cache_entries=&lt;fld6&gt; addr=&lt;saddr&gt; from=&lt;from&gt; rcpt=&lt;to&gt; suborg=&lt;fld22&gt; rcpt_routes=&lt;fld28&gt; rcpt_notroutes=&lt;fld29&gt; data_routes=&lt;fld31&gt; data_notroutes=&lt;fld32&gt; query=&lt;fld38&gt; record=&lt;fld39&gt; result_detail=&lt;fld74&gt; result_record=&lt;fld2&gt; virtual=&lt;fld11&gt; a=&lt;fld12&gt; version=&lt;version&gt; dkimresult=&lt;fld65&gt; spfresult=&lt;fld68&gt; num_domains=&lt;fld53&gt; num_domains_to_lookup=&lt;fld40&gt; policy=&lt;fld48&gt; suspectscore=&lt;fld41&gt; malwarescore=&lt;fld41&gt; phishscore=&lt;fld42&gt; bulkscore=&lt;fld43&gt; spamscore=&lt;reputation_num&gt; adjustscore=&lt;fld54&gt; adultscore=&lt;fld44&gt; classifier=&lt;fld45&gt; adjust=&lt;fld46&gt; mlxscore=&lt;fld94&gt; mlxlogscore=&lt;fld95&gt; reason=&lt;fld47&gt; scancount=&lt;fld18&gt; tests=&lt;fld52&gt; sha256=&lt;checksum&gt; rewritten=&lt;fld17&gt; X-Proofpoint-Spam-Details=&lt;fld71&gt; hops-ip=&lt;fld61&gt; virusname=&lt;threat_name&gt;"/>
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="mod=&lt;agent&gt; cmd=&lt;obj_type&gt; type=&lt;fld1&gt; id=&lt;id&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; method=&lt;fld37&gt; vendor=&lt;fld36&gt; engine=&lt;fld49&gt; definitions=&lt;fld50&gt; signatures=&lt;fld94&gt; result=&lt;result&gt; header.from=&lt;fld40&gt; smtp.mailfrom=&lt;fld44&gt; score=&lt;fld39&gt; submsgadjust=&lt;fld53&gt; dict=&lt;fld87&gt; file=&lt;filename&gt; sys=&lt;fld1&gt; evt=&lt;action&gt; active=&lt;fld2&gt; expires=&lt;fld3&gt; msg=&lt;msg&gt; user=&lt;username&gt; delegate-for=&lt;fld5&gt; ksurl=&lt;fld7&gt; duration=&lt;duration_string&gt; sig=&lt;fld60&gt; uid=&lt;uid&gt; pid=&lt;process_id&gt; realm=&lt;fld61&gt; server=&lt;saddr&gt; elapsed=&lt;duration_string&gt; avgtime=&lt;fld2&gt; qname=&lt;fld3&gt; qtype=&lt;fld4&gt; ip=&lt;hostip&gt; country=&lt;location_country&gt; lip=&lt;fld24&gt; prot=&lt;fld25&gt; hops_active=&lt;fld26&gt; routes=&lt;fld4&gt; notroutes=&lt;fld18&gt; perlwait=&lt;fld27&gt; host=&lt;hostname&gt; resolve=&lt;fld28&gt; reverse=&lt;fld13&gt; value=&lt;context&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt; attachments=&lt;fld80&gt; rcpts=&lt;fld59&gt; size=&lt;bytes&gt; guid=&lt;fld14&gt; hdr_mid=&lt;id&gt; qid=&lt;fld15&gt; subject=&lt;subject&gt; tls_version= &lt;fld84&gt; verify=&lt;fld57&gt; cipher=&lt;s_cipher&gt; cipher_bits=&lt;fld59&gt; tls=&lt;fld60&gt; r=&lt;event_counter&gt; verified=&lt;fld3&gt; lint=&lt;fld33&gt; mime=&lt;content_type&gt; omime=&lt;fld7&gt; oext=&lt;fld8&gt; corrupted=&lt;fld9&gt; protected=&lt;fld10&gt; threshold=&lt;fld11&gt; profile=&lt;fld52&gt; alert=&lt;fld53&gt; helo=&lt;fld32&gt; msgs=&lt;fld76&gt; install_dir=&lt;directory&gt; instance=&lt;fld90&gt; maxfd=&lt;fld91&gt; release=&lt;fld92&gt; publickey_cache_entries=&lt;fld6&gt; policy_cache_entries=&lt;fld6&gt; addr=&lt;saddr&gt; from=&lt;from&gt; rcpt=&lt;to&gt; suborg=&lt;fld22&gt; rcpt_routes=&lt;fld28&gt; rcpt_notroutes=&lt;fld29&gt; data_routes=&lt;fld31&gt; data_notroutes=&lt;fld32&gt; query=&lt;fld38&gt; record=&lt;fld39&gt; result_detail=&lt;fld74&gt; result_record=&lt;fld2&gt; virtual=&lt;fld11&gt; a=&lt;fld12&gt; version=&lt;version&gt; dkimresult=&lt;fld65&gt; spfresult=&lt;fld68&gt; num_domains=&lt;fld53&gt; num_domains_to_lookup=&lt;fld40&gt; policy=&lt;fld48&gt; suspectscore=&lt;fld41&gt; malwarescore=&lt;fld41&gt; phishscore=&lt;fld42&gt; bulkscore=&lt;fld43&gt; spamscore=&lt;reputation_num&gt; adjustscore=&lt;fld54&gt; adultscore=&lt;fld44&gt; classifier=&lt;fld45&gt; adjust=&lt;fld46&gt; mlxscore=&lt;fld94&gt; mlxlogscore=&lt;fld95&gt; reason=&lt;fld47&gt; scancount=&lt;fld18&gt; tests=&lt;fld52&gt; sha256=&lt;checksum&gt; rewritten=&lt;fld17&gt; X-Proofpoint-Spam-Details=&lt;fld71&gt; hops-ip=&lt;fld61&gt; virusname=&lt;threat_name&gt; header-size=&lt;bytes&gt;"/>
 
 </DEVICEMESSAGES>
