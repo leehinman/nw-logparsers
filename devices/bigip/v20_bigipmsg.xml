@@ -4,8 +4,8 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="86"
-		checksum="383ddba0c97b71e9cc2e45ccc1b80905"
+		xml="89"
+		checksum="b30487765723e5e6a9c9c41d51c5f4b9"
 		revision="121"
 		device="2.0"/>
 
@@ -143,12 +143,33 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;: | &lt;hostname&gt; &lt;agent&gt;: } &lt;event_description&gt;" />
 	
 <MESSAGE
+	 id1="apmd_03"
+	 id2="apmd"
+	 eventcategory="1605020000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;: Username '&lt;username&gt;'"/>
+
+<MESSAGE
+	 id1="apmd_02"
+	 id2="apmd"
+	 eventcategory="1605020000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;:&lt;fld2&gt;: Access profile:&lt;event_description&gt;"/>
+
+<MESSAGE
 	id1="000349"
 	id2="apmd"
 	eventcategory="1609000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@result: Error while connecting to memcached&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: **ERROR** | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: **ERROR** } &lt;filename&gt; func: &quot;&lt;action&gt;&quot; line: &lt;fld3&gt; Msg: &lt;event_description&gt;" />
 	
+<MESSAGE
+	 id1="apmd_01"
+	 id2="apmd"
+	 eventcategory="1605020000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;fld6&gt;:&lt;event_description&gt;"/>
+
 <MESSAGE
 	id1="000352"
 	id2="apd"
@@ -291,7 +312,7 @@
 	id2="CROND"
 	eventcategory="1605020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: (&lt;service&gt;) CMD (&lt;param&gt;)" />
+	content="{&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]:} (&lt;service&gt;) CMD (&lt;param&gt;)" />
 
 	
 <MESSAGE
@@ -1782,6 +1803,27 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
 
 <MESSAGE
+	 id1="tmm_012"
+	 id2="tmm"
+	 eventcategory="1801030000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@action:Reject ACL&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: reject ACL:&lt;fld15&gt;:&lt;packets&gt;packet:&lt;protocol&gt;&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
+
+<MESSAGE
+	 id1="tmm_01"
+	 id2="tmm"
+	 eventcategory="1801020000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@action:Allow ACL&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: allow ACL:&lt;fld15&gt;:&lt;packets&gt;packet:&lt;protocol&gt;&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
+
+<MESSAGE
+	 id1="tmm_03"
+	 id2="tmm"
+	 eventcategory="1802000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;CLIENT_ACCEPTED&gt;: INFO&lt;info&gt;:&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
+
+<MESSAGE
 	id1="000362"
 	id2="tmm"
 	eventcategory="1609000000"
@@ -3039,6 +3081,13 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
 
 <MESSAGE
+	 id1="tmm1_04"
+	 id2="tmm1"
+	 eventcategory="1802000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;ACCESS_SESSION_STARTED&gt;: INFO&lt;info&gt;, ctx_load_status:&lt;result&gt;"/>
+
+<MESSAGE
 	id1="000396"
 	id2="tmm1"
 	eventcategory="1802000000"
@@ -3193,6 +3242,20 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: &lt;event_description&gt;" />
 <MESSAGE
+	 id1="httpd_01"
+	 id2="httpd"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;:&lt;fld2&gt;addr=&lt;hostip&gt;port=&lt;network_port&gt;"/>
+
+<MESSAGE
+	 id1="httpd_02"
+	 id2="httpd"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;(&lt;fld2&gt;):&lt;event_description&gt;"/>
+
+<MESSAGE
 	id1="000435"
 	id2="diskmonitor"
 	eventcategory="1801000000"
@@ -3217,6 +3280,20 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
 	
+<MESSAGE
+	 id1="000440_2"
+	 id2="logger"
+	 eventcategory="1605020000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;: [ssl_req][&lt;fld2&gt;&lt;timezone&gt;]&lt;hostip&gt;&lt;protocol&gt;&lt;fld4&gt;&quot;&lt;fld5&gt;&quot;&lt;bytes&gt;"/>
+
+<MESSAGE
+	 id1="000440_3"
+	 id2="logger"
+	 eventcategory="1605020000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;: [ssl_acc]&lt;hostip&gt;-&lt;username&gt;[&lt;fld1&gt;&lt;timezone&gt;] &quot;&lt;fld8&gt;&quot;&lt;resultcode&gt;&lt;bytes&gt;"/>
+
 <MESSAGE
 	id1="000440"
 	id2="logger"
@@ -3324,5 +3401,103 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;:&lt;event_description&gt;" />
+
+<MESSAGE
+	 id1="tmm_07"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;: Initializing Access profile&lt;event_description&gt;:&lt;fld5&gt;"/>
+
+<MESSAGE
+	 id1="tmm_08"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]: Rule&lt;rulename&gt;&lt;&lt;ACCESS_POLICY_COMPLETED&gt;: INFO&lt;info&gt;, ctx_push_status:&lt;result&gt;"/>
+
+<MESSAGE
+	 id1="tmm_10"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;&lt;fld2&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;saddr&gt;,&lt;username&gt;,&lt;url&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;disposition&gt;,&lt;fld13&gt;,&lt;domain&gt;"/>
+
+<MESSAGE
+	 id1="tmm_06"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;: New session from client IP&lt;saddr&gt;(&lt;fld5&gt;) at VIP&lt;hostip&gt;Listener&lt;fld16&gt;(Reputation=&lt;fld6&gt;)"/>
+
+<MESSAGE
+	 id1="tmm_09"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;Session statistics - bytes in:&lt;rbytes&gt;, bytes out:&lt;sbytes&gt;"/>
+
+<MESSAGE
+	 id1="tmm_11"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: Request classification returned&lt;fld6&gt;categories: [&lt;fld7&gt;] for URL:&lt;url&gt;"/>
+
+<MESSAGE
+	 id1="tmm_12"
+	 id2="tmm"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE
+	 id1="tmm1_021"
+	 id2="tmm1"
+	 eventcategory="1801030000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@action:Reject ACL&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld15&gt;: reject ACL:&lt;fld5&gt;:&lt;packets&gt;packet:&lt;protocol&gt;&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
+
+<MESSAGE
+	 id1="tmm1_02"
+	 id2="tmm1"
+	 eventcategory="1801020000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@action:Allow ACL&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld15&gt;: allow ACL:&lt;fld5&gt;:&lt;packets&gt;packet:&lt;protocol&gt;&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
+
+<MESSAGE
+	 id1="tmm1_03"
+	 id2="tmm1"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;ACCESS_POLICY_COMPLETED&gt;: INFO&lt;info&gt;, ctx_push_status:&lt;result&gt;"/>
+
+<MESSAGE
+	 id1="tmm1_01"
+	 id2="tmm1"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld14&gt;: Initializing Access profile&lt;event_description&gt;:&lt;fld4&gt;"/>
+
+<MESSAGE
+	 id1="tmm1_06"
+	 id2="tmm1"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;: Assigned PPP Static IPv4:&lt;hostip&gt;Tunnel Type:&lt;fld6&gt;&lt;fld7&gt;Resource:&lt;fld8&gt;Client IP:&lt;saddr&gt;"/>
+
+<MESSAGE
+	 id1="tmm1_07"
+	 id2="tmm1"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE
+	 id1="icrd_child"
+	 id2="icrd_child"
+	 eventcategory="1801030000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Current session has been terminated&gt;"
+	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;:&lt;fld2&gt;:{AUDIT - Cannot|Cannot}load user credentials for user &quot;&lt;username&gt;&quot; Current session has been terminated."/>
 
 </DEVICEMESSAGES>
