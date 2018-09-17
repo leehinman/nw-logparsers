@@ -4,9 +4,9 @@
 	displayname="MySQL"
 	group="Database">
 <VERSION
-	xml="13"
-	checksum="442a34a5f4d7fa8269c32c3ff7f6c549"
-	revision="110"
+	xml="15"
+	checksum="97fe9359427363dead11fa81591ea566"
+	revision="122"
 	device="2.0" />
 
  
@@ -18,7 +18,12 @@
 	id1="0002" 
 	id2="0002" 
 	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)" 
-	content="%MySQL &lt;hhostname&gt;^&lt;hseverity&gt;^&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;^&lt;!payload:hhostname&gt;" />
+	content="{ %MySQL NULL^&lt;hhostname&gt; | %MySQL &lt;hhostname&gt; } ^&lt;hseverity&gt;^&lt;msgIdPart1&gt; &lt;msgIdPart2&gt;^&lt;!payload:hhostname&gt;" />
+<HEADER 
+	id1="0003" 
+	id2="0003" 
+	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2,&apos;_&apos;,msgIdPart3,&apos;_&apos;,msgIdPart4)" 
+	content="%MySQL NULL^&lt;hhostname&gt;^&lt;hseverity&gt;^&lt;msgIdPart1&gt; &lt;msgIdPart2&gt; &lt;msgIdPart3&gt; &lt;msgIdPart4&gt;^&lt;!payload:hhostname&gt;" />
 <MESSAGE 
 	id1="Administration:01" 
 	id2="Administration" 
@@ -170,6 +175,14 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@event_description:Time Zone Data Not Loaded&gt;"
 	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^Time Zone Data Not Loaded^&lt;action&gt;^&lt;info&gt;" />
 <MESSAGE 
+	id1="Administration:26" 
+	id2="Administration" 
+	eventcategory="1609000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
+
+
+<MESSAGE 
 	id1="Heat_Chart:01" 
 	id2="Heat_Chart" 
 	eventcategory="1609000000" 
@@ -271,6 +284,14 @@
 	eventcategory="1609000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@event_description:Thread Cache Size May Not Be Optimal&gt;"
 	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^Thread Cache Size May Not Be Optimal^&lt;action&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Memory_Usage:04" 
+	id2="Memory_Usage" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
+
 <MESSAGE 
 	id1="Performance:01" 
 	id2="Performance" 
@@ -320,6 +341,14 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@event_description:Too Many Concurrent Queries Running&gt;"
 	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^Too Many Concurrent Queries Running^&lt;action&gt;^&lt;info&gt;" />
 <MESSAGE 
+	id1="Performance:09" 
+	id2="Performance" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />	
+
+	
+<MESSAGE 
 	id1="Replication:01" 
 	id2="Replication" 
 	eventcategory="1609000000" 
@@ -368,6 +397,14 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@event_description:Master Not Verifying Checksums When Reading From Binary Log&gt;"
 	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^Master Not Verifying Checksums When Reading From Binary Log^&lt;action&gt;^&lt;info&gt;" />
 <MESSAGE 
+	id1="Replication:09" 
+	id2="Replication" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />	
+
+	
+<MESSAGE 
 	id1="Schema:01" 
 	id2="Schema" 
 	eventcategory="1612000000" 
@@ -403,6 +440,14 @@
 	eventcategory="1612000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@event_description:Server-Enforced Data Integrity Checking Disabled&gt;"
 	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^Server-Enforced Data Integrity Checking Disabled^&lt;action&gt;^&lt;info&gt;" />
+<MESSAGE 
+	id1="Schema:07" 
+	id2="Schema" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />	
+
+	
 <MESSAGE 
 	id1="Security:01" 
 	id2="Security" 
@@ -549,6 +594,22 @@
 	content="&lt;fld5&gt;, &lt;fld6&gt;, &lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
 
 <MESSAGE 
+	id1="Security:25" 
+	id2="Security" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="{&lt;fld4&gt;, &lt;fld5&gt;|&lt;hostname&gt;}^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^{Subject: &lt;fld6&gt;, Firewall Time: &lt;fld7&gt; Category: &lt;category&gt; Event: &lt;fld8&gt; Status: &lt;fld9&gt;^&lt;info&gt;|Subject: &lt;fld6&gt; Time: &lt;fld7&gt; Category: &lt;category&gt; Event: &lt;fld8&gt; Status: &lt;fld9&gt;^&lt;info&gt;|&lt;fld6&gt;^&lt;info&gt;|&lt;info&gt;}" />
+
+<MESSAGE 
+	id1="Security:26"
+	id2="Security" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^{Subject: &lt;fld6&gt;, Firewall Time: &lt;fld7&gt; Category: &lt;category&gt; Event: &lt;fld8&gt; Status: &lt;fld9&gt;^&lt;info&gt;|Subject: &lt;fld6&gt; Time: &lt;fld7&gt; Category: &lt;category&gt; Event: &lt;fld8&gt; Status: &lt;fld9&gt;^&lt;info&gt;|&lt;fld4&gt;^&lt;info&gt;|&lt;info&gt;}" />
+
+	
+
+<MESSAGE 
 	id1="Upgrade:01" 
 	id2="Upgrade" 
 	eventcategory="1609000000" 
@@ -632,4 +693,92 @@
 	eventcategory="1402030000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@event_description:User With Only ALTER Privilege On Partitioned Table Can Obtain SELECT Privilege Information &gt;"
 	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^User With Only ALTER Privilege On Partitioned Table Can Obtain SELECT Privilege Information^&lt;action&gt;^&lt;info&gt;" />
+<MESSAGE 
+	id1="Backup:01" 
+	id2="Backup" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Availability:01" 
+	id2="Availability" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@info:MySQL server is AVAILABLE&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^MySQL server is AVAILABLE"/>
+
+
+<MESSAGE 
+	id1="Availability:02" 
+	id2="Availability" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@info:MySQL server is UNREACHABLE&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^MySQL server is UNREACHABLE"/>
+
+<MESSAGE 
+	id1="Availability:03" 
+	id2="Availability" 
+	eventcategory="1606000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;&lt;@info:MySQL Server Has Been Restarted&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^MySQL Server Has Been Restarted"/>
+
+<MESSAGE 
+	id1="Availability:04" 
+	id2="Availability" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt; "/>
+
+
+<MESSAGE 
+	id1="Monitoring_and_Support_Services:01" 
+	id2="Monitoring_and_Support_Services" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^Subject: &lt;fld4&gt; Time: &lt;fld5&gt; Category: &lt;category&gt; Event: &lt;fld6&gt; Status: &lt;fld7&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Monitoring_and_Support_Services:02" 
+	id2="Monitoring_and_Support_Services"
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="{&lt;hostname&gt;, &lt;fld5&gt;|&lt;hostname&gt;}^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Operating_System:01" 
+	id2="Operating_System" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="{&lt;fld5&gt;, &lt;fld6&gt;|&lt;hostname&gt;}^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Query_Analysis:01" 
+	id2="Query_Analysis" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="{{&lt;fld4&gt; : &lt;fld5&gt;}, &lt;fld6&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld7&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Query_Analysis:02" 
+	id2="Query_Analysis" 
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="{&lt;fld4&gt;, &lt;hostname&gt;|&lt;hostname&gt;}^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld9&gt;{Subject: &lt;fld5&gt; Time: &lt;fld6&gt; Category: &lt;category&gt; Event: &lt;fld7&gt; Status: &lt;fld8&gt;^&lt;info&gt;|^&lt;info&gt;}" />
+
+
+<MESSAGE 
+	id1="Agent:01" 
+	id2="Agent" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="{&lt;fld4&gt;, &lt;hostname&gt;|&lt;hostname&gt;}^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld5&gt;^&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Rule_Category" 
+	id2="Rule_Category" 
+	eventcategory="1901000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1,fld2)&gt;"
+	content="&lt;hostname&gt;^&lt;severity&gt;^&lt;vendor_event_cat&gt;^&lt;fld1&gt;T&lt;fld2&gt;.&lt;fld3&gt;^&lt;fld4&gt;^&lt;info&gt;" />
+
+
 </DEVICEMESSAGES>
