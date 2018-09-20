@@ -4,9 +4,9 @@
 	displayname="Oracle"
 	group="Database">
 <VERSION
-	xml="103"
-	checksum="8a800fb6ac94753cd55e5283cc899cab"
-	revision="121"
+	xml="105"
+	checksum="503f83c6ce7374665e0beca9a76da27a"
+	revision="122"
 	device="2.0" />
 
  
@@ -33,11 +33,11 @@
 <HEADER
 	id1="0018"
 	id2="0018"
-	content="%NICWIN-&lt;level&gt;-Application_34_Oracle.&lt;instance&gt;: &lt;hevent_log&gt;,&lt;hfld7&gt;,&lt;hday&gt; &lt;hdatetime&gt;,34,&lt;hfld1&gt;,&lt;hfld2&gt;,&lt;hfld3&gt;,&lt;hhostname&gt;,&lt;hfld4&gt;,&lt;hfld5&gt;,Audit trail:&lt;hfld6&gt; ACTION&lt;hfld9&gt; &apos;&lt;messageid&gt; &lt;hfld10&gt; &lt;!payload:hfld5&gt;" />
+	content="%NICWIN-&lt;level&gt;-Application_34_Oracle.&lt;instance&gt;: &lt;hevent_log&gt;,&lt;hfld7&gt;,&lt;hday&gt; &lt;hdatetime&gt;,34,&lt;hfld1&gt;,&lt;hfld2&gt;,&lt;hfld3&gt;,&lt;hostname&gt;,&lt;hfld4&gt;,&lt;hfld5&gt;,Audit trail:&lt;hfld6&gt; ACTION&lt;hfld9&gt; &apos;&lt;messageid&gt; &lt;hfld10&gt; &lt;!payload:hfld5&gt;" />
 <HEADER
 	id1="0014"
 	id2="0014"
-	content="%NICWIN-&lt;level&gt;-Application_34_Oracle.&lt;instance&gt;: &lt;hevent_log&gt;,&lt;hfld7&gt;,&lt;hday&gt; &lt;hdatetime&gt;,34,&lt;hfld1&gt;,&lt;hfld2&gt;,&lt;hfld3&gt;,&lt;hhostname&gt;,&lt;hfld4&gt;,&lt;hfld5&gt;,Audit trail:&lt;hfld6&gt; ACTION{:[&lt;hfld9&gt;] &quot;&lt;messageid&gt;&quot;| :[&lt;hfld9&gt;] &apos;&lt;messageid&gt;&apos;} &lt;!payload:hfld5&gt;" />
+	content="%NICWIN-&lt;level&gt;-Application_34_Oracle.&lt;instance&gt;: &lt;hevent_log&gt;,&lt;hfld7&gt;,&lt;hday&gt; &lt;hdatetime&gt;,34,&lt;hfld1&gt;,&lt;hfld2&gt;,&lt;hfld3&gt;,&lt;hostname&gt;,&lt;hfld4&gt;,&lt;hfld5&gt;,Audit trail:&lt;hfld6&gt; ACTION{:[&lt;hfld9&gt;] &quot;&lt;messageid&gt;&quot;| :[&lt;hfld9&gt;] &apos;&lt;messageid&gt;&apos;} &lt;!payload:hfld5&gt;" />
 
 <HEADER
 	id1="0015"
@@ -496,6 +496,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:Oracle Audit&gt;"
 	content="&lt;process_id&gt;]: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld3&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld5&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld6&gt;] &quot;&lt;statement&gt;&quot; {USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld4&gt;] &quot;&lt;hostname&gt;&quot;|USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot;}{TERMINAL:[&lt;fld45&gt;] &quot;&lt;terminal&gt;&quot; ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot;|ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot;}RETURNCODE:[&lt;fld15&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$CREATOR:[&lt;fld48&gt;] &quot;&lt;owner&gt;&quot; OBJ$NAME:[&lt;fld49&gt;] &quot;&lt;obj_name&gt;&quot; NEW$OWNER:[&lt;fld12&gt;] &quot;&lt;fld27&gt;&quot; NEW$NAME:[&lt;fld13&gt;] &quot;&lt;fld29&gt;&quot; COMMENT$TEXT:[&lt;fld14&gt;] &quot;&lt;fld16&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld11&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld21&gt;] &quot;&lt;privilege&gt;&quot;" />
+
+<MESSAGE 
+	id1="59:51" 
+	id2="59" 
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;"
+	content="&lt;fld1&gt;,Audit trail: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld3&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld5&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld6&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld4&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld45&gt;] &quot;&lt;terminal&gt;&quot; ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld15&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld49&gt;] &quot;&lt;obj_name&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld11&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld28&gt;] &quot;&lt;privilege&gt;&quot;." />
 
 <MESSAGE
 	id1="61:50"
@@ -1933,6 +1940,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CREATE USER&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld26)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld28)&gt;"
 	content="&lt;version&gt;,&lt;fld1&gt;,&lt;node&gt;,&lt;fld2&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;sessionid&gt;,&lt;entry&gt;,&lt;statement&gt;,&lt;fld26&gt;,&lt;username&gt;,&lt;hostname&gt;,&lt;terminal&gt;,&lt;id&gt;,&lt;resultcode&gt;,&lt;owner&gt;,&lt;obj_name&gt;,&lt;fld5&gt;,&lt;administrator&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;context&gt;,&lt;fld22&gt;,&lt;lread&gt;,&lt;pread&gt;,&lt;lwrite&gt;,&lt;dead&gt;,{(null)|&lt;fld28&gt;},{Authenticated by: &lt;authmethod&gt;; Client address: (ADDRESS=(PROTOCOL=&lt;protocol&gt;)(HOST=&lt;saddr&gt;)(PORT=&lt;sport&gt;))|Authenticated by: &lt;authmethod&gt;|&lt;info&gt;},&lt;sessionid1&gt;,&lt;c_username&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,{&lt;privilege&gt;,&lt;cpu&gt;,&lt;fld39&gt;,&lt;sql&gt;|&lt;privilege&gt;,&lt;cpu&gt;}" />
+<MESSAGE 
+	id1="51:09" 
+	id2="51" 
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;"
+	content="&lt;fld1&gt;,Audit trail: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld3&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld5&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld6&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld4&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld45&gt;] &quot;&lt;terminal&gt;&quot; ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld15&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld49&gt;] &quot;&lt;obj_name&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld11&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld28&gt;] &quot;&lt;privilege&gt;&quot;." />
+
 <MESSAGE  
 	id1="52" 
 	id2="52" 
@@ -2135,11 +2149,25 @@
 	content="&lt;version&gt;,&lt;fld1&gt;,&lt;node&gt;,&lt;fld2&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;sessionid&gt;,&lt;entry&gt;,&lt;statement&gt;,&lt;fld26&gt;,&lt;username&gt;,&lt;hostname&gt;,&lt;terminal&gt;,&lt;id&gt;,&lt;resultcode&gt;,&lt;owner&gt;,&lt;obj_name&gt;,&lt;fld5&gt;,&lt;administrator&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;context&gt;,&lt;fld22&gt;,&lt;lread&gt;,&lt;pread&gt;,&lt;lwrite&gt;,&lt;dead&gt;,{(null)|&lt;fld28&gt;},{Authenticated by: &lt;authmethod&gt;; Client address: (ADDRESS=(PROTOCOL=&lt;protocol&gt;)(HOST=&lt;saddr&gt;)(PORT=&lt;sport&gt;))|Authenticated by: &lt;authmethod&gt;|&lt;info&gt;},&lt;sessionid1&gt;,&lt;c_username&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,{&lt;privilege&gt;,&lt;cpu&gt;,&lt;fld39&gt;,&lt;sql&gt;|&lt;privilege&gt;,&lt;cpu&gt;}" />
 
 <MESSAGE 
+	id1="66:01" 
+	id2="66" 
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;"
+	content="&lt;fld1&gt;,Audit trail: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld3&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld5&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld6&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld4&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld45&gt;] &quot;&lt;terminal&gt;&quot; ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld15&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld49&gt;] &quot;&lt;obj_name&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld11&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld28&gt;] &quot;&lt;privilege&gt;&quot;." />
+
+<MESSAGE 
 	id1="67" 
 	id2="67" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:ALTER PROFILE&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld26)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld28)&gt;"
 	content="&lt;version&gt;,&lt;fld1&gt;,&lt;node&gt;,&lt;fld2&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;sessionid&gt;,&lt;entry&gt;,&lt;statement&gt;,&lt;fld26&gt;,&lt;username&gt;,&lt;hostname&gt;,&lt;terminal&gt;,&lt;id&gt;,&lt;resultcode&gt;,&lt;owner&gt;,&lt;obj_name&gt;,&lt;fld5&gt;,&lt;administrator&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;context&gt;,&lt;fld22&gt;,&lt;lread&gt;,&lt;pread&gt;,&lt;lwrite&gt;,&lt;dead&gt;,{(null)|&lt;fld28&gt;},{Authenticated by: &lt;authmethod&gt;; Client address: (ADDRESS=(PROTOCOL=&lt;protocol&gt;)(HOST=&lt;saddr&gt;)(PORT=&lt;sport&gt;))|Authenticated by: &lt;authmethod&gt;|&lt;info&gt;},&lt;sessionid1&gt;,&lt;c_username&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,{&lt;privilege&gt;,&lt;cpu&gt;,&lt;fld39&gt;,&lt;sql&gt;|&lt;privilege&gt;,&lt;cpu&gt;}" />
+<MESSAGE 
+	id1="67:01" 
+	id2="67" 
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;"
+	content="&lt;fld1&gt;,Audit trail: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld3&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld5&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld6&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld4&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld45&gt;] &quot;&lt;terminal&gt;&quot; ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld15&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld49&gt;] &quot;&lt;obj_name&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld11&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld28&gt;] &quot;&lt;privilege&gt;&quot;." />
+
 <MESSAGE  
 	id1="68" 
 	id2="68" 
@@ -2272,6 +2300,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CREATE FUNCTION&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld26)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld28)&gt;"
 	content="&lt;version&gt;,&lt;fld1&gt;,&lt;node&gt;,&lt;fld2&gt;,&lt;instance&gt;,&lt;fld3&gt;,&lt;fld4&gt;,&lt;sessionid&gt;,&lt;entry&gt;,&lt;statement&gt;,&lt;fld26&gt;,&lt;username&gt;,&lt;hostname&gt;,&lt;terminal&gt;,&lt;id&gt;,&lt;resultcode&gt;,&lt;owner&gt;,&lt;obj_name&gt;,&lt;fld5&gt;,&lt;administrator&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;context&gt;,&lt;fld22&gt;,&lt;lread&gt;,&lt;pread&gt;,&lt;lwrite&gt;,&lt;dead&gt;,{(null)|&lt;fld28&gt;},{Authenticated by: &lt;authmethod&gt;; Client address: (ADDRESS=(PROTOCOL=&lt;protocol&gt;)(HOST=&lt;saddr&gt;)(PORT=&lt;sport&gt;))|Authenticated by: &lt;authmethod&gt;|&lt;info&gt;},&lt;sessionid1&gt;,&lt;c_username&gt;,&lt;fld8&gt;,&lt;fld9&gt;,&lt;fld10&gt;,{&lt;privilege&gt;,&lt;cpu&gt;,&lt;fld39&gt;,&lt;sql&gt;|&lt;privilege&gt;,&lt;cpu&gt;}" />
+<MESSAGE 
+	id1="91:03" 
+	id2="91" 
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;"
+	content="&lt;fld1&gt;,Audit trail: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld3&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld5&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld6&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld17&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld4&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld45&gt;] &quot;&lt;terminal&gt;&quot; ACTION:[&lt;fld46&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld15&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld49&gt;] &quot;&lt;obj_name&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld11&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld28&gt;] &quot;&lt;privilege&gt;&quot;." />
+
 <MESSAGE  
 	id1="92" 
 	id2="92" 
@@ -3222,7 +3257,7 @@
 	id2="BEGIN" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:BEGIN&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &lt;fld1&gt; {ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos;|ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos;|ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;}" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &lt;fld1&gt; {ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos;|ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos;|ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;}" />
 
 <MESSAGE 
 	id1="BEGIN:02" 
@@ -3249,7 +3284,7 @@
 	id2="begin" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:begin&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &apos;&lt;fld41&gt;&apos; ACTION :[&lt;fld1&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld43&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:[&lt;fld61&gt;] &apos;&lt;db_id&gt;&apos; SESSIONID:[&lt;fld62&gt;] &apos;&lt;sessionid&gt;&apos; USERHOST:[&lt;fld63&gt;] &apos;&lt;hostname&gt;&apos; CLIENT ADDRESS:[&lt;fld64&gt;] &apos;&lt;fld65&gt;&apos; ACTION NUMBER:[&lt;fld66&gt;] &apos;&lt;fld69&gt;&apos; | DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos;|&lt;space&gt;}" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &apos;&lt;fld41&gt;&apos; ACTION :[&lt;fld1&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld43&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:[&lt;fld61&gt;] &apos;&lt;db_id&gt;&apos; SESSIONID:[&lt;fld62&gt;] &apos;&lt;sessionid&gt;&apos; USERHOST:[&lt;fld63&gt;] &apos;&lt;hostname&gt;&apos; CLIENT ADDRESS:[&lt;fld64&gt;] &apos;&lt;fld65&gt;&apos; ACTION NUMBER:[&lt;fld66&gt;] &apos;&lt;fld69&gt;&apos; | DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos;|&lt;space&gt;}" />
 
 <MESSAGE 
 	id1="BRARCHIVE" 
@@ -3333,6 +3368,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:commit&gt;"
 	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:}&lt;fld15&gt;ACTION {:[&lt;fld2&gt;]|:} &lt;action&gt; DATABASE USER{:[&lt;fld3&gt;]|:}&apos;&lt;username&gt;&apos; PRIVILEGE {:[&lt;fld4&gt;]|:} &lt;privilege&gt; CLIENT USER{:[&lt;fld5&gt;]|:} &lt;c_username&gt; CLIENT TERMINAL{:[&lt;fld6&gt;]|:} &lt;terminal&gt; STATUS{:[&lt;fld7&gt;]|:} &lt;resultcode&gt;" />
+<MESSAGE 
+	id1="Commit" 
+	id2="Commit" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;&lt;@event_type:select&gt;&lt;@instance:*HDR(instance)&gt;&lt;@shost:*HDR(hhostname)&gt;&lt;@event_log:*HDR(hevent_log)&gt;"
+	content="&lt;fld5&gt;,Audit trail: LENGTH: &apos;&lt;fld47&gt;&apos; ACTION :[&lt;fld46&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld45&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld44&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld43&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld42&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld41&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld40&gt;] &apos;&lt;db_id&gt;&apos;" />
+
 <MESSAGE 
 	id1="CONNECT" 
 	id2="CONNECT" 
@@ -3422,7 +3464,7 @@
 	id2="CREATE" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CREATE&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; {STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld11&gt;] &apos;&lt;db_id&gt;&apos;|STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos;}" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld2&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; {STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld11&gt;] &apos;&lt;db_id&gt;&apos;|STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos;}" />
 
 <MESSAGE 
 	id1="create" 
@@ -3467,7 +3509,7 @@
 	id2="declare" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:declare&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:[&lt;fld61&gt;] &apos;&lt;db_id&gt;&apos; SESSIONID:[&lt;fld62&gt;] &apos;&lt;sessionid&gt;&apos; USERHOST:[&lt;fld63&gt;] &apos;&lt;hostname&gt;&apos; CLIENT ADDRESS:[&lt;fld64&gt;] &apos;&lt;fld65&gt;&apos; ACTION NUMBER:[&lt;fld66&gt;] &apos;&lt;fld69&gt;&apos; | DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos;| &lt;space&gt;}" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:[&lt;fld61&gt;] &apos;&lt;db_id&gt;&apos; SESSIONID:[&lt;fld62&gt;] &apos;&lt;sessionid&gt;&apos; USERHOST:[&lt;fld63&gt;] &apos;&lt;hostname&gt;&apos; CLIENT ADDRESS:[&lt;fld64&gt;] &apos;&lt;fld65&gt;&apos; ACTION NUMBER:[&lt;fld66&gt;] &apos;&lt;fld69&gt;&apos; | DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos;| &lt;space&gt;}" />
 
 <MESSAGE 
 	id1="DELETE" 
@@ -3580,6 +3622,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld25)&gt;&lt;@event_type:SELECT&gt;"
 	content="EVENTTIME: &quot;&lt;fld24&gt; &lt;fld25&gt;&quot; VERSION: &quot; &lt;version&gt;&quot; OS: &quot;&lt;os&gt;&quot; SYSTEM: &quot;&lt;fld23&gt;&quot; NODE: &quot;&lt;node&gt;&quot; INSTANCE: &quot;&lt;instance&gt;&quot; ORACLEPID: &quot;&lt;db_pid&gt;&quot; UNIXPID: &quot;&lt;process_id&gt;&quot; ACTION : &quot;&lt;action&gt;&quot; DATABASE USER: &quot;&lt;username&gt;&quot; PRIVILEGE : &lt;privilege&gt; CLIENT USER: &lt;c_username&gt; CLIENT TERMINAL: &lt;terminal&gt; { STATUS: &lt;resultcode&gt; DBID: &lt;db_id&gt; | STATUS: &lt;resultcode&gt;}" />
+<MESSAGE 
+	id1="Select:01" 
+	id2="Select" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;&lt;@event_type:select&gt;&lt;@instance:*HDR(instance)&gt;&lt;@shost:*HDR(hhostname)&gt;&lt;@event_log:*HDR(hevent_log)&gt;"
+	content="&lt;fld5&gt;,Audit trail: LENGTH: &apos;&lt;fld47&gt;&apos; ACTION :[&lt;fld46&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld45&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld44&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld43&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld42&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld41&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld40&gt;] &apos;&lt;db_id&gt;&apos;" />
+
 	
 <MESSAGE 
 	id1="SELECT:01" 
@@ -3722,7 +3771,7 @@
 	id2="ROLLBACK" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:Rollback&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:&lt;fld51&gt;&apos;&lt;db_id&gt;&apos;|&lt;fld51&gt;}" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:&lt;fld51&gt;&apos;&lt;db_id&gt;&apos;|&lt;fld51&gt;}" />
 <MESSAGE 
 	id1="rollback" 
 	id2="rollback" 
@@ -3921,7 +3970,7 @@
 	id2="DECLARE" 
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:declare&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; { STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos; | STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; }" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; { STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld60&gt;] &apos;&lt;db_id&gt;&apos; | STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; }" />
 <MESSAGE
 	id1="x"
 	id2="x"
@@ -4689,7 +4738,7 @@
 	id2="with"
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:&lt;fld51&gt;&apos;&lt;db_id&gt;&apos;|&lt;fld51&gt;}" />
+	content="{&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;]|&lt;fld33&gt;,Audit trail:|&lt;process_id&gt;]:} {LENGTH :|LENGTH:} &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld41&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld2&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld31&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld3&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld4&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld5&gt;] &apos;&lt;resultcode&gt;&apos; {DBID:&lt;fld51&gt;&apos;&lt;db_id&gt;&apos;|&lt;fld51&gt;}" />
 
 <MESSAGE
 	id1="114:06"
