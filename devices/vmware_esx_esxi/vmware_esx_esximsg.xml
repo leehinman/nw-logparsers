@@ -4,9 +4,9 @@
 	displayname="VMware ESX / ESXi"
 	group="Virtualization">
 <VERSION
-	xml="47"
-	checksum="9781fb1941b604b08bc034dc5b6988b8"
-	revision="117"
+	xml="48"
+	checksum="7c1f63dde844509f9314dd5909208b54"
+	revision="122"
 	device="2.0" />
 
  
@@ -3067,5 +3067,54 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Error in opening and reading the slot file&gt;"
 	content="&lt;agent&gt;: &lt;&lt;&lt;fld1&gt;&gt;, &lt;fld2&gt; Error &lt;resultcode&gt; &lt;fld3&gt;" />
+
+<MESSAGE 
+	id1="vsansystem" 
+	id2="vsansystem" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;severity&gt; vsansystem[&lt;fld1&gt;] [&lt;fld2&gt; sub=&lt;fld3&gt; opID=&lt;fld4&gt;] &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="cmmdsTimeMachineDump" 
+	id2="cmmdsTimeMachineDump" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="cmmdsTimeMachine" 
+	id2="cmmdsTimeMachine" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="VsanInternalSystem" 
+	id2="VsanInternalSystem" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;,&lt;fld2&gt; [&lt;fld3&gt;] &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="python" 
+	id2="python" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="esxupdate" 
+	id2="esxupdate" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt;:&lt;fld2&gt;:&lt;severity&gt;:&lt;info&gt;" />
+
+<MESSAGE 
+	id1="/vsip_mem_stats.sh" 
+	id2="/vsip_mem_stats.sh" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;:&lt;info&gt;" />
 
 </DEVICEMESSAGES>
