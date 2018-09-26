@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="120"
+	revision="122"
     device="2.0" />
 	
 
@@ -62,7 +62,7 @@
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0007"
@@ -208,12 +208,12 @@
 	id1="amazonguardduty" 
 	id2="amazonguardduty" 
 	eventcategory="1612000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_endtime)&gt;&lt;@dclass_counter1_string:Alert Count&gt;"
-	content="&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_starttime)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_recorded_time)&gt;&lt;@dclass_counter1_string:Alert Count&gt;"
+	content="&lt;param_starttime&gt;&lt;param_recorded_time&gt;&lt;msghold&gt;" />
 
 <MESSAGE 
-	id1="netskope" 
-	id2="netskope" 
+	id1="NetskopeCloudSecurityPlatform" 
+	id2="NetskopeCloudSecurityPlatform" 
 	eventcategory="1612000000"
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%X',cs_recorded_time)&gt;&lt;@dclass_counter1_string:Event Count&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',cs_page_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',cs_page_endtime)&gt;"
 	content="&lt;param_event_time&gt;&lt;cs_page_starttime&gt;&lt;cs_page_endtime&gt;&lt;cs_recorded_time&gt;&lt;msghold&gt;" />
@@ -239,6 +239,12 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_endtime)&gt;"
 	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
 
+ <MESSAGE 
+	id1="amazonvpc" 
+	id2="amazonvpc" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',param_endtime)&gt;" />
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -279,10 +285,12 @@
 	<Vendor2Device vendor="Check Point" product="Application Control" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="VPN-1 &amp; FireWall-1" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Google" product="Cloud Platform" device="googlecloud" group="Cloud"/>
-	<Vendor2Device vendor="netskope" product="netskope" device="netskope" group="Cloud"/>
+	<Vendor2Device vendor="netskope" product="Netskope Cloud Security Platform" device="NetskopeCloudSecurityPlatform" group="Cloud"/>
 	<Vendor2Device vendor="RSA" product="RSA SecurID Access" device="rsasecuridaccess" group="Cloud"/>
     <Vendor2Device vendor="RSA" product="rsa_netwitness_for_malware_audit_logging" device="rsa_netwitness_malware" group="Anti Virus"/>
 	<Vendor2Device vendor="RSA" product="Netwitness for Malware Audit logging" device="rsa_netwitness_malware" group="Anti Virus"/>
+	<Vendor2Device vendor="Amazon" product="Amazon vpc" device="amazonvpc" group="Cloud"/>
+
 </VendorProducts>
 
 
@@ -303,6 +311,7 @@
 		<ExtensionKey cefName="deviceCustomDate2" metaName="cs_customdate"/>
 		<ExtensionKey cefName="deviceDirection" metaName="direction">
 			<device2meta device="rsaflow" metaName="param_direction"/>
+			<device2meta device="msazurensg" metaName="cs_fld"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="deviceDnsDomain" metaName="domain"/>
 		<ExtensionKey cefName="deviceExternalId" metaName="hardware_id"/>
@@ -392,7 +401,7 @@
 		</ExtensionKey>
 		<ExtensionKey cefName="requestContext" metaName="context"/>
 		<ExtensionKey cefName="type" metaName="cs_fld">
-		    <device2meta device="netskope" metaName="event_type"/>
+		    <device2meta device="NetskopeCloudSecurityPlatform" metaName="event_type"/>
 		</ExtensionKey>	
 		
 		
@@ -461,7 +470,8 @@
 		<ExtensionKey cefName="requestid" metaName="cs_reqid">
 			<device2meta device="salesforce" metaName="trans_id"/>
 		</ExtensionKey>
-		<ExtensionKey cefName="errorcode" metaName="resultcode"/>	
+		<ExtensionKey cefName="errorcode" metaName="resultcode"/>
+		<ExtensionKey cefName="resource" metaName="directory"/>
 		
 
 	
@@ -724,7 +734,7 @@
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
 			<device2meta device="vmwareappdefense" metaName="id"/>
 			<device2meta device="office365audit" metaName="id"/>
-			<device2meta device="netskope" metaName="id"/>
+			<device2meta device="NetskopeCloudSecurityPlatform" metaName="id"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="signinDateTimeInMillis" metaName="event_time_string"/>
 		<ExtensionKey cefName="userPrincipalName" metaName="username"/>
@@ -1082,7 +1092,7 @@
 		
 		
 		<ExtensionKey cefName="availabilityZone" metaName="zone"/>
-		<ExtensionKey cefName="instanceId" metaName="instance"/>
+		<ExtensionKey cefName="instanceId" metaName="agent.id"/>
 		<ExtensionKey cefName="groupId" metaName="groupid"/>
 		<ExtensionKey cefName="groupName" metaName="group"/>
 		<ExtensionKey cefName="instanceState" metaName="event_state"/>
@@ -1090,21 +1100,21 @@
 		<ExtensionKey cefName="connectionDirection" metaName="direction"/>
 		<ExtensionKey cefName="actionType" metaName="action"/>
 		<ExtensionKey cefName="additionalInfo" metaName="info"/>
-		<ExtensionKey cefName="updatedAt" metaName="param_endtime"/>
+		<ExtensionKey cefName="updatedAt" metaName="param_recorded_time"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemotePortDetails.Port" metaName="dport"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.LocalPortDetails.Port" metaName="sport"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.Country.CountryName" metaName="location_country"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.City.CityName" metaName="location_city"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.GeoLocation.Lat" metaName="latdec_dst"/>
-		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.GeoLocation.Lon" metaName="longdec_src"/>
+		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.GeoLocation.Lon" metaName="longdec_dst"/>
 		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.Country.CountryName" metaName="location_country"/>
 		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.City.CityName" metaName="location_city"/>
 		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.GeoLocation.Lat" metaName="latdec_dst"/>
-		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.GeoLocation.Lon" metaName="longdec_src"/>
+		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.GeoLocation.Lon" metaName="longdec_dst"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.IpAddressV4" metaName="daddr"/>
 		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.IpAddressV4" metaName="daddr"/>
 		<ExtensionKey cefName="serviceName" metaName="service"/>
-		<ExtensionKey cefName="resourceType" metaName="resource"/>
+		<ExtensionKey cefName="resourceType" metaName="obj_type"/>
 		<ExtensionKey cefName="PrivateIpAddress" metaName="saddr"/>
 		<ExtensionKey cefName="accountId" metaName="id1"/>
 		 
@@ -1130,24 +1140,23 @@
 		<ExtensionKey cefName="protoPayload.startTime" metaName="param_starttime"/>
 		<ExtensionKey cefName="protoPayload.endTime" metaName="param_endtime"/>
 		<ExtensionKey cefName="protoPayload.request.resource.instanceName.instanceId" metaName="instance"/>
-		<ExtensionKey cefName="resource.labels.instance_id" metaName="id1"/>
+		<ExtensionKey cefName="resource.labels.instance_id" metaName="agent.id"/>
 		<ExtensionKey cefName="resource.labels.zone" metaName="zone"/>
 		<ExtensionKey cefName="resource.labels.database_id" metaName="db_id"/>
-		<ExtensionKey cefName="resource.labels.region" metaName="zone"/>
+		<ExtensionKey cefName="resource.labels.region" metaName="location_desc"/>
 		<ExtensionKey cefName="logName" metaName="event_log"/>
 		<ExtensionKey cefName="insertId" metaName="id"/>
 		
 		<ExtensionKey cefName="dstip" metaName="daddr"/>
 		<ExtensionKey cefName="event_type" metaName="event_type"/>
 		<ExtensionKey cefName="dsthost" metaName="dhost"/>
-		<ExtensionKey cefName="site" metaName="site"/>
-		<ExtensionKey cefName="Field Name" metaName="Sample value"/>
+		<ExtensionKey cefName="site" metaName="cs_fld"/>
 		<ExtensionKey cefName="srcip" metaName="saddr"/>
-		<ExtensionKey cefName="alert_type" metaName="alert"/>
+		<ExtensionKey cefName="alert_type" metaName="vendor_event_cat"/>
 		<ExtensionKey cefName="organization_unit" metaName="org.src"/>
 		<ExtensionKey cefName="_id" metaName="id1"/>
 		<ExtensionKey cefName="app_session_id" metaName="sessionid"/>
-		<ExtensionKey cefName="dst_location" metaName="location_dst"/>
+		<ExtensionKey cefName="dst_location" metaName="city.dst"/>
 		<ExtensionKey cefName="category" metaName="category"/>
 		<ExtensionKey cefName="src_longitude" metaName="longdec_src"/>
 		<ExtensionKey cefName="dst_country" metaName="location_dst"/>
@@ -1158,7 +1167,7 @@
 		<ExtensionKey cefName="dst_longitude" metaName="longdec_dst"/>
 		<ExtensionKey cefName="to_user" metaName="username"/>
 		<ExtensionKey cefName="from_user" metaName="c_username"/>
-		<ExtensionKey cefName="src_location" metaName="location_src"/>
+		<ExtensionKey cefName="src_location" metaName="city.src"/>
 		<ExtensionKey cefName="org" metaName="user_org"/>
 		<ExtensionKey cefName="src_country" metaName="location_src"/>
 		<ExtensionKey cefName="src_latitude" metaName="latdec_src"/>
@@ -1170,8 +1179,8 @@
 		<ExtensionKey cefName="browser" metaName="user_agent"/>
 		<ExtensionKey cefName="audit_log_event" metaName="event_description"/>
 		<ExtensionKey cefName="_insertion_epoch_timestamp" metaName="cs_recorded_time"/>
-		<ExtensionKey cefName="severity_level" metaName="level"/>
-		<ExtensionKey cefName="supporting_data" metaName="data"/>
+		<ExtensionKey cefName="severity_level" metaName="severity"/>
+		<ExtensionKey cefName="supporting_data" metaName="cs_fld"/>
 		<ExtensionKey cefName="device_name" metaName="device"/>
 		<ExtensionKey cefName="alarm_description" metaName="event_description"/>
 		<ExtensionKey cefName="serial" metaName="serial_number"/>
@@ -1184,13 +1193,13 @@
 		<ExtensionKey cefName="page_starttime" metaName="cs_page_starttime"/>
 		<ExtensionKey cefName="page_endtime" metaName="cs_page_endtime"/>
 		<ExtensionKey cefName="userip" metaName="hostip"/>
-		<ExtensionKey cefName="userkey" metaName="c_username"/>
-        <ExtensionKey cefName="transaction_id" metaName="trans_id"/>
+		<ExtensionKey cefName="userkey" metaName="cs_fld"/>
+        <ExtensionKey cefName="transaction_id" metaName="cs_fld"/>
 		<ExtensionKey cefName="action" metaName="action"/>
-		<ExtensionKey cefName="object_id" metaName="obj_id"/>
+		<ExtensionKey cefName="object_id" metaName="cs_fld"/>
         <ExtensionKey cefName="instance_type" metaName="obj_type"/>
         <ExtensionKey cefName="policy" metaName="policyname"/>
-        <ExtensionKey cefName="user" metaName="username"/>
+        <ExtensionKey cefName="user" metaName="cs_fld"/>
 		
 		
 		<ExtensionKey cefName="eventLogDate" metaName="param_event_time"/>
@@ -1209,6 +1218,23 @@
         <ExtensionKey cefName="customerId" metaName="id1"/>
         <ExtensionKey cefName="customerName" metaName="user_org"/>
         <ExtensionKey cefName="AccessID" metaName="sigid"/>
-        <ExtensionKey cefName="AccessType " metaName="signame"/>
+		<ExtensionKey cefName="AccessType" metaName="signame"/>
+		<ExtensionKey cefName="eventCategory" metaName="category"/>
+		<ExtensionKey cefName="policyId" metaName="policy_id"/>
+		<ExtensionKey cefName="policyName" metaName="policyname"/>
+		<ExtensionKey cefName="deviceName" metaName="device"/>
+		<ExtensionKey cefName="userId" metaName="uid"/>
+		<ExtensionKey cefName="method" metaName="authmethod"/>
+		<ExtensionKey cefName="application" metaName="application"/>
+		<ExtensionKey cefName="eventCode" metaName="resultcode"/>
+		
+        
+		<ExtensionKey cefName="interface-id" metaName="interface"/>
+		<ExtensionKey cefName="srcaddr" metaName="saddr"/>
+		<ExtensionKey cefName="dstaddr" metaName="daddr"/>
+		<ExtensionKey cefName="srcport" metaName="sport"/>
+		<ExtensionKey cefName="dstport" metaName="dport"/>
+		<ExtensionKey cefName="log-status" metaName="event_state"/>
+		<ExtensionKey cefName="account-id" metaName="id1"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
