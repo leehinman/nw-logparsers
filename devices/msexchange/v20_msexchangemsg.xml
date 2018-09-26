@@ -4,9 +4,9 @@
 	displayname="Microsoft Exchange"
 	group="Mail Servers">
 <VERSION
-	xml="114"
-	checksum="f12f1587fd0a3b23c99faf599794a83a"
-	revision="121"
+	xml="116"
+	checksum="f41d1439fabdb3e5be6ef9ae4bb151eb"
+	revision="122"
 	device="2.0" />
 
 <HEADER 
@@ -26,6 +26,13 @@
 	content="%MSExchange-&lt;hlevel&gt;: &lt;hdate&gt;T&lt;htime&gt;Z||&lt;hsessionid&gt;||&lt;hfld1&gt;||/o=&lt;hfld2&gt;||&lt;hfld3&gt;||&lt;hprocess&gt;||&lt;hversion&gt;||&lt;hevent_type&gt;||&lt;hdaddr&gt;||&lt;hfld4&gt;||&lt;hprotocol&gt;||&lt;hfld5&gt;||&lt;!payload&gt;" />
 
 		
+
+<HEADER 
+	id1="0022" 
+	id2="0022" 
+	messageid="STRCAT(&apos;MSExchange&apos;)"
+	content="%MSExchange-&lt;hlevel&gt;: &lt;hdate&gt;T&lt;htime&gt;Z||&lt;hfld1&gt;||&lt;hfld2&gt;||&lt;hfld3&gt;||&lt;hsaddr&gt;:&lt;hsport&gt;||&lt;hdaddr&gt;:&lt;hdport&gt;||&lt;hfld4&gt;||&lt;!payload:hlevel&gt;" />
+
 <HEADER 
 	id1="0015" 
 	id2="0015" 
@@ -16205,6 +16212,13 @@
 	
 		
 <MESSAGE 
+	id1="SMTP:Information_02" 
+	id2="MSExchange"
+	eventcategory="1207010000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %H:%U:%S&apos;,fld2,fld3)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;fld1&gt;: &lt;fld2&gt;T&lt;fld3&gt;.&lt;fld4&gt;||&lt;fld5&gt;||&lt;sessionid&gt;||&lt;fld6&gt;||&lt;saddr&gt;:&lt;sport&gt;||&lt;daddr&gt;:&lt;dport&gt;||&lt;fld7&gt;||{&quot;&lt;event_description&gt;&quot; | &lt;event_description&gt;}||&lt;info&gt;" />
+
+<MESSAGE 
 	id1="SMTP_Connectivity:Connect" 
 	id2="SMTP" 
 	eventcategory="1207010000" 
@@ -16871,5 +16885,13 @@
 	eventcategory="1901000000"
 	functions="&lt;@msg_id:*STRCAT(event_log,_,id,_,event_source)&gt;&lt;@vid:*STRCAT(event_log,_,id,_,event_source)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',datetime)&gt;"
 	content="&lt;event_log&gt;,&lt;fld11&gt;,&lt;fld12&gt; &lt;datetime&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld2&gt;,&lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="HAREDIRECT:01" 
+	id2="HAREDIRECT" 
+	eventcategory="1207010000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%W-%G-%F %N:%U:%O&apos;,date,fld91)&gt;&lt;@to:*PARMVAL(mail_id)&gt;&lt;@id:HAREDIRECT&gt;"
+	content="&lt;date&gt;T&lt;fld91&gt;Z,&lt;saddr&gt;,&lt;username&gt;,&lt;daddr&gt;,&lt;dhost&gt;,{ &quot;&lt;fld1&gt;&quot;, | &lt;fld1&gt;, }&lt;fld2&gt;,&lt;agent&gt;,HAREDIRECT,&lt;id1&gt;,&lt;id2&gt;,&lt;mail_id&gt;,{ &quot;&lt;disposition&gt;&quot;, | &lt;disposition&gt;, }&lt;bytes&gt;,&lt;fld21&gt;,&lt;fld3&gt;,&lt;fld4&gt;,{ &quot;&lt;subject&gt;&quot;, | &lt;subject&gt;, }&lt;from&gt;,&lt;fld5&gt;,&lt;fld10&gt;,&lt;direction&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;fld8&gt;,&lt;fld9&gt;" />
+	
 
 </DEVICEMESSAGES>
