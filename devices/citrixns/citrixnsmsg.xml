@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="71"
-	checksum="f2d1cd70ac691c2d9ffb56c9d562513a"
-	revision="120"
+	xml="72"
+	checksum="7009027aaddc2033f0075d4e85efbd54"
+	revision="122"
 	device="2.0" />
 
  
@@ -740,6 +740,13 @@
 	eventcategory="1605020000" 
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Start&gt;&lt;@event_description:A Server side and a Client side TCP connection is delinked. This is not tracked by Netscaler&gt;&lt;@severity:Informational&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld11)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content="  Source &lt;saddr&gt;:&lt;sport&gt; - Vserver &lt;daddr&gt;:&lt;dport&gt; - NatIP &lt;stransaddr&gt;:&lt;stransport&gt; - Destination &lt;dtransaddr&gt;:&lt;dtransport&gt; - Delink Time { &lt;fld11&gt; GMT| &lt;fld11&gt;} Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt;" />
+
+<MESSAGE 
+	id1="TCP_NAT_OTHERCONN_DELINK" 
+	id2="TCP_NAT_OTHERCONN_DELINK" 
+	eventcategory="1605020000" 
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@event_description:A server side and a client side TCP connection for RNAT are delinked&gt;&lt;@severity:Informational&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld11)&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld10)&gt;"
+	content="  Source &lt;saddr&gt;:&lt;sport&gt; - Destination &lt;daddr&gt;:&lt;dport&gt; - NatIP &lt;stransaddr&gt;:&lt;stransport&gt; - Destination &lt;dtransaddr&gt;:&lt;dtransport&gt; - Start Time { &lt;fld10&gt; GMT| &lt;fld10&gt;} - Delink Time { &lt;fld11&gt; GMT| &lt;fld11&gt;} - Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt; - &lt;info&gt;" />
 
 <MESSAGE 
 	id1="UI_CMD_EXECUTED:Login" 
