@@ -4,9 +4,9 @@
 	displayname="Microsoft SQL Server"
 	group="Database">
 <VERSION
-	xml="54"
-	checksum="423afc562319af179dcec93c0ab28558"
-	revision="121"
+	xml="56"
+	checksum="2d296883e83280fb9ed6de3c3932fbeb"
+	revision="122"
 	device="2.0" />
 
 
@@ -245,6 +245,13 @@
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld51)&gt;&lt;@event_description:User failed to log in to Microsoft SQL Server&gt;&lt;@event_computer:*PARMVAL(hostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld50)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*SYSVAL($ID1)&gt;"
 	content="&lt;id&gt; || &lt;c_username&gt; || &lt;username&gt; || &lt;db_pid&gt; ||{(null)|&lt;fld50&gt;}|| &lt;obj_name&gt; || &lt;fld35&gt; || &lt;trans_id&gt; || &lt;domain&gt; || &lt;hostname&gt; || &lt;process_id&gt; || &lt;application&gt; || &lt;duration&gt; ||{(null)|&lt;fld51&gt;}|| &lt;lread&gt; || &lt;lwrite&gt; || &lt;cpu&gt; || &lt;permissions&gt; || &lt;severity&gt; || &lt;fld39&gt; || &lt;fld36&gt; || &lt;event_state&gt; || &lt;index&gt; || &lt;info&gt; || &lt;instance&gt; || &lt;obj_type&gt; || &lt;fld37&gt; || &lt;fld40&gt; || &lt;resultcode&gt; || &lt;fld41&gt; || &lt;fld42&gt; ||&lt;db_name&gt; || &lt;filename&gt; || &lt;owner&gt; || &lt;privilege&gt; || &lt;fld43&gt; || &lt;fld44&gt; || &lt;logon_id&gt; || &lt;fld45&gt; || &lt;fld46&gt; || &lt;statement&gt; || &lt;binary&gt; || &lt;action&gt;. Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;]" />
 <MESSAGE
+	 id1="Audit_Login_Failed:05"
+	 id2="20"
+	 eventcategory="1401030000"
+	 functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld51)&gt;&lt;@event_description:User failed to log in to Microsoft SQL Server&gt;&lt;@event_computer:*PARMVAL(hostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld50)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_type:*SYSVAL($ID1)&gt;"
+	 content="&lt;id&gt;||&lt;c_username&gt;||&lt;username&gt;||&lt;db_pid&gt;||{(null)|&lt;fld50&gt;}||&lt;obj_name&gt;||&lt;fld35&gt;||&lt;trans_id&gt;||&lt;domain&gt;||&lt;hostname&gt;||&lt;process_id&gt;||&lt;application&gt;||&lt;duration&gt;||{(null)|&lt;fld51&gt;}||&lt;lread&gt;||&lt;lwrite&gt;||&lt;cpu&gt;||&lt;permissions&gt;||&lt;severity&gt;||&lt;fld39&gt;||&lt;fld36&gt;||&lt;event_state&gt;||&lt;index&gt;||&lt;info&gt;||&lt;instance&gt;||&lt;obj_type&gt;||&lt;fld37&gt;||&lt;fld40&gt;||&lt;resultcode&gt;||&lt;fld41&gt;||&lt;fld42&gt;||&lt;db_name&gt;||&lt;filename&gt;||&lt;owner&gt;||&lt;privilege&gt;||&lt;fld43&gt;||&lt;fld44&gt;||&lt;logon_id&gt;||&lt;fld45&gt;||&lt;fld46&gt;||&lt;statement&gt;||&lt;binary&gt;||{Login failed for user '&lt;fld11&gt;'.|Login failed for user '&lt;fld11&gt;' Reason:&lt;result&gt;}[CLIENT:&lt;saddr&gt;]"/>
+
+<MESSAGE
 	id1="Audit_Login_Failed:03"
 	id2="20"
 	eventcategory="1401030000"
@@ -304,13 +311,13 @@
 	id2="22"
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld51)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld50)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*SYSVAL($ID1)&gt;"
-	content="&lt;id&gt; || &lt;c_username&gt; || &lt;username&gt; || &lt;db_pid&gt; ||{(null)|&lt;fld50&gt;}|| &lt;obj_name&gt; || &lt;fld35&gt; || &lt;trans_id&gt; || &lt;domain&gt; || &lt;hostname&gt; || &lt;process_id&gt; || &lt;application&gt; || &lt;duration&gt; ||{(null)|&lt;fld51&gt;}|| &lt;lread&gt; || &lt;lwrite&gt; || &lt;cpu&gt; || &lt;permissions&gt; || &lt;severity&gt; || &lt;fld39&gt; || &lt;fld36&gt; || &lt;event_state&gt; || &lt;index&gt; || &lt;info&gt; || &lt;instance&gt; || &lt;obj_type&gt; || &lt;fld37&gt; || &lt;fld40&gt; || &lt;resultcode&gt; || &lt;fld41&gt; || &lt;fld42&gt; ||&lt;db_name&gt; || &lt;filename&gt; || &lt;owner&gt; || &lt;privilege&gt; || &lt;fld43&gt; || &lt;fld44&gt; || &lt;fld48&gt; || &lt;fld45&gt; || &lt;fld46&gt; || &lt;statement&gt; || &lt;fld33&gt; || &lt;fld31&gt; &lt;fld56&gt; &lt;fld57&gt; Login succeeded for user &apos;&lt;fld32&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: trusted. }[CLIENT: {&lt;&lt;&lt;shost&gt;&gt;|&lt;saddr&gt;}] " />
+	content="&lt;id&gt; || &lt;c_username&gt; || &lt;username&gt; || &lt;db_pid&gt; ||{(null)|&lt;fld50&gt;}|| &lt;obj_name&gt; || &lt;fld35&gt; || &lt;trans_id&gt; || &lt;domain&gt; || &lt;hostname&gt; || &lt;process_id&gt; || &lt;application&gt; || &lt;duration&gt; ||{(null)|&lt;fld51&gt;}|| &lt;lread&gt; || &lt;lwrite&gt; || &lt;cpu&gt; || &lt;permissions&gt; || &lt;severity&gt; || &lt;fld39&gt; || &lt;fld36&gt; || &lt;event_state&gt; || &lt;index&gt; || &lt;info&gt; || &lt;instance&gt; || &lt;obj_type&gt; || &lt;fld37&gt; || &lt;fld40&gt; || &lt;resultcode&gt; || &lt;fld41&gt; || &lt;fld42&gt; ||&lt;db_name&gt; || &lt;filename&gt; || &lt;owner&gt; || &lt;privilege&gt; || &lt;fld43&gt; || &lt;fld44&gt; || &lt;fld48&gt; || &lt;fld45&gt; || &lt;fld46&gt; || &lt;statement&gt; || &lt;fld33&gt; || &lt;fld31&gt; &lt;fld56&gt; &lt;fld57&gt; Login succeeded for user &apos;&lt;fld32&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: trusted. }[CLIENT: {&lt;&lt;&lt;saddr&gt;&gt;|&lt;saddr&gt;}] " />
 <MESSAGE
 	id1="LoginSuccess:01"
 	id2="22"
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld51)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%S',fld50)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*SYSVAL($ID1)&gt;"
-	content="&lt;id&gt; || &lt;c_username&gt; || &lt;username&gt; || &lt;db_pid&gt; ||{(null)|&lt;fld50&gt;}|| &lt;obj_name&gt; || &lt;fld35&gt; || &lt;trans_id&gt; || &lt;domain&gt; || &lt;hostname&gt; || &lt;process_id&gt; || &lt;application&gt; || &lt;duration&gt; ||{(null)|&lt;fld51&gt;}|| &lt;lread&gt; || &lt;lwrite&gt; || &lt;cpu&gt; || &lt;permissions&gt; || &lt;severity&gt; || &lt;fld39&gt; || &lt;fld36&gt; || &lt;event_state&gt; || &lt;index&gt; || &lt;info&gt; || &lt;instance&gt; || &lt;obj_type&gt; || &lt;fld37&gt; || &lt;fld40&gt; || &lt;resultcode&gt; || &lt;fld41&gt; || &lt;fld42&gt; ||&lt;db_name&gt; || &lt;filename&gt; || &lt;owner&gt; || &lt;privilege&gt; || &lt;fld43&gt; || &lt;fld44&gt; || &lt;fld48&gt; || &lt;fld45&gt; || &lt;fld46&gt; || &lt;statement&gt; || &lt;fld32&gt; || &lt;fld31&gt; &lt;fld56&gt; &lt;fld57&gt; Login succeeded for user &apos;&lt;fld33&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: non-trusted. }[CLIENT: {&lt;&lt;&lt;shost&gt;&gt;|&lt;saddr&gt;}] " />
+	content="&lt;id&gt; || &lt;c_username&gt; || &lt;username&gt; || &lt;db_pid&gt; ||{(null)|&lt;fld50&gt;}|| &lt;obj_name&gt; || &lt;fld35&gt; || &lt;trans_id&gt; || &lt;domain&gt; || &lt;hostname&gt; || &lt;process_id&gt; || &lt;application&gt; || &lt;duration&gt; ||{(null)|&lt;fld51&gt;}|| &lt;lread&gt; || &lt;lwrite&gt; || &lt;cpu&gt; || &lt;permissions&gt; || &lt;severity&gt; || &lt;fld39&gt; || &lt;fld36&gt; || &lt;event_state&gt; || &lt;index&gt; || &lt;info&gt; || &lt;instance&gt; || &lt;obj_type&gt; || &lt;fld37&gt; || &lt;fld40&gt; || &lt;resultcode&gt; || &lt;fld41&gt; || &lt;fld42&gt; ||&lt;db_name&gt; || &lt;filename&gt; || &lt;owner&gt; || &lt;privilege&gt; || &lt;fld43&gt; || &lt;fld44&gt; || &lt;fld48&gt; || &lt;fld45&gt; || &lt;fld46&gt; || &lt;statement&gt; || &lt;fld32&gt; || &lt;fld31&gt; &lt;fld56&gt; &lt;fld57&gt; Login succeeded for user &apos;&lt;fld33&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: non-trusted. }[CLIENT: {&lt;&lt;&lt;saddr&gt;&gt;|&lt;saddr&gt;}] " />
 <MESSAGE
 	id1="003875"
 	id2="22"
@@ -1597,6 +1604,13 @@
 	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;"
 	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
+	id1="Application_18487_MSSQLSERVER:01" 
+	id2="Application_18487_MSSQLSERVER"  
+	eventcategory="1401030000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,Login failed for user &apos;&lt;username&gt;&apos;. Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;]" />
+
+<MESSAGE 
 	id1="Application_18487_MSSQLSERVER" 
 	id2="Application_18487_MSSQLSERVER"  
 	eventcategory="1605000000" 
@@ -1657,11 +1671,19 @@
 	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;"
 	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE 
+	id1="Application_18488_MSSQLSERVER:01" 
+	id2="Application_18488_MSSQLSERVER"  
+	eventcategory="1401030000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,Login failed for user &apos;&lt;username&gt;&apos;. {Reason: &lt;result&gt; [CLIENT: &lt;&lt;&lt;saddr&gt;&gt;]|Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;]|[CLIENT: &lt;&lt;&lt;saddr&gt;&gt;]|[CLIENT: &lt;saddr&gt;]}" />
+
+<MESSAGE 
 	id1="Application_18488_MSSQLSERVER" 
 	id2="Application_18488_MSSQLSERVER"  
 	eventcategory="1605000000" 
 	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;"
-	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,&lt;event_description&gt; {Reason: &lt;result&gt; [CLIENT: &lt;&lt;&lt;shost&gt;&gt;]|Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;]|[CLIENT: &lt;&lt;&lt;shost&gt;&gt;]|[CLIENT: &lt;saddr&gt;]}" />
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,&lt;event_description&gt; {Reason: &lt;result&gt; [CLIENT: &lt;&lt;&lt;saddr&gt;&gt;]|Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;]|[CLIENT: &lt;&lt;&lt;saddr&gt;&gt;]|[CLIENT: &lt;saddr&gt;]}" />
+
 <MESSAGE 
 	id1="Application_8562_MSSQLSERVER" 
 	id2="Application_8562_MSSQLSERVER"  
@@ -2467,7 +2489,7 @@
 	id2="Application_18453_MSSQLSERVER"  
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;&lt;@event_description:Login succeeded for user. Connection: trusted&gt;"
-	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,Login succeeded for user &apos;&lt;username&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: trusted. }[CLIENT: {&lt;&lt;&lt;shost&gt;&gt;|&lt;saddr&gt;}]" />
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,Login succeeded for user &apos;&lt;username&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: trusted. }[CLIENT: {&lt;&lt;&lt;saddr&gt;&gt;|&lt;saddr&gt;}]" />
 		
 <MESSAGE 
 	id1="Application_18453_MSSQLSERVER:01" 
@@ -2480,7 +2502,7 @@
 	id2="Application_18454_MSSQLSERVER"  
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;&lt;@event_description:Login succeeded for user. Connection: non-trusted&gt;"
-	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,Login succeeded for user &apos;&lt;username&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: non-trusted. }[CLIENT: {&lt;&lt;&lt;shost&gt;&gt;|&lt;saddr&gt;}]" />
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,Login succeeded for user &apos;&lt;username&gt;&apos;. {Connection made using &lt;fld13&gt; authentication. | Connection: non-trusted. }[CLIENT: {&lt;&lt;&lt;saddr&gt;&gt;|&lt;saddr&gt;}]" />
 <MESSAGE 
 	id1="Application_18454_MSSQLSERVER:01"
 	id2="Application_18454_MSSQLSERVER"  
@@ -2906,6 +2928,13 @@
 	eventcategory="1402030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
 	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+<MESSAGE
+	id1="GRANT:01"
+	id2="G"
+	eventcategory="1402030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: event_time:&lt;fld4&gt;| Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; user_defined_event_id:&lt;fld46&gt; transaction_id:&lt;fld47&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld48&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld56&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+
 <MESSAGE
 	id1="DATABASE_PERMISSION_CHANGE_GROUP"
 	id2="GRDB"
@@ -24805,11 +24834,19 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;"
 	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;fld12&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
 <MESSAGE
+	id1="LOGIN_FAILED:04"
+	id2="LGIF"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: event_time:&lt;fld4&gt;| Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;| is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld46&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;fld47&gt; sequence_group_id:&lt;fld48&gt;| class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld56&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:Login failed for user &apos;&lt;fld77&gt;&apos;. Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;] additional_information:&lt;info&gt;" />
+
+<MESSAGE
 	id1="LOGIN_FAILED:01"
 	id2="LGIF"
 	eventcategory="1401030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
 	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: event_time:&lt;fld4&gt;| Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;| is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld46&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;fld47&gt; sequence_group_id:&lt;fld48&gt;| class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld56&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; Reason: &lt;result&gt; [CLIENT: &lt;saddr&gt;] additional_information:&lt;info&gt;|&lt;action&gt;} " />
+
 		
 <MESSAGE
 	id1="UPDATE:01"
