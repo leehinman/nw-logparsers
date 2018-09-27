@@ -4,8 +4,8 @@
 	displayname="Oracle"
 	group="Database">
 <VERSION
-	xml="105"
-	checksum="503f83c6ce7374665e0beca9a76da27a"
+	xml="107"
+	checksum="02348f84a3a5394338beb4f7546dd3ec"
 	revision="122"
 	device="2.0" />
 
@@ -2704,7 +2704,7 @@
 	id2="100" 
 	eventcategory="1401060000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@resultcode:0&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:LOGON&gt;"
-	content="&lt;process_id&gt;]: LENGTH: &quot;&lt;fld1&gt;&quot; SESSIONID:[&lt;fld2&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld3&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld4&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld5&gt;] &quot;&lt;username&gt;&quot; {USERHOST:[&lt;fld81&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld99&gt;] &quot;&lt;terminal&gt;&quot;|USERHOST:[&lt;fld81&gt;] &quot;&lt;hostname&gt;&quot;} ACTION:[&lt;fld7&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld8&gt;] &quot;&lt;resultcode&gt;&quot; COMMENT$TEXT:[&lt;fld9&gt;] &quot;Authenticated by:&lt;authmethod&gt;; Client address: (ADDRESS=(PROTOCOL=&lt;protocol&gt;)(HOST=&lt;saddr&gt;)(PORT=&lt;sport&gt;)); DBLINK_INFO: (SOURCE_GLOBAL_NAME=&lt;fld10&gt;)&quot; OS$USERID:[&lt;fld11&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld12&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld13&gt;] &quot;&lt;privilege&gt;&quot;" />
+	content="{&lt;process_id&gt;]:|&lt;fld33&gt;,Audit trail:} LENGTH: &quot;&lt;fld1&gt;&quot; SESSIONID:[&lt;fld2&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld3&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld4&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld5&gt;] &quot;&lt;username&gt;&quot; {USERHOST:[&lt;fld81&gt;] &quot;&lt;hostname&gt;&quot; TERMINAL:[&lt;fld99&gt;] &quot;&lt;terminal&gt;&quot;|USERHOST:[&lt;fld81&gt;] &quot;&lt;hostname&gt;&quot;} ACTION:[&lt;fld7&gt;] &quot;&lt;id&gt;&quot; RETURNCODE:[&lt;fld8&gt;] &quot;&lt;resultcode&gt;&quot; COMMENT$TEXT:[&lt;fld9&gt;] &quot;Authenticated by:&lt;authmethod&gt;; Client address: (ADDRESS=(PROTOCOL=&lt;protocol&gt;)(HOST=&lt;saddr&gt;)(PORT=&lt;sport&gt;)); DBLINK_INFO: (SOURCE_GLOBAL_NAME=&lt;fld10&gt;)&quot; OS$USERID:[&lt;fld11&gt;] &quot;&lt;c_username&gt;&quot; DBID:[&lt;fld12&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld13&gt;] &quot;&lt;privilege&gt;&quot;" />
 
 <MESSAGE 
 	id1="100:190" 
@@ -3560,6 +3560,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:drop&gt;"
 	content="&lt;process_id&gt;]: LENGTH : {&apos;&lt;fld2&gt;&apos;|&lt;fld2&gt;} ACTION :[&lt;fld3&gt;] {&apos;&lt;action&gt;&apos;|&lt;action&gt;} DATABASE USER:[&lt;fld4&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld5&gt;] {&apos;&lt;privilege&gt;&apos;|&lt;privilege&gt;} CLIENT USER:[&lt;fld6&gt;] {&apos;&lt;c_username&gt;&apos;|&lt;c_username&gt;} CLIENT TERMINAL:[&lt;fld7&gt;] {&apos;&lt;terminal&gt;&apos;|&lt;terminal&gt;} STATUS:[&lt;fld8&gt;] {&apos;&lt;resultcode&gt;&apos;|&lt;resultcode&gt;} DBID:[&lt;fld10&gt;] {&apos;&lt;db_id&gt;&apos;|&lt;db_id&gt;}" />
+
+<MESSAGE 
+	id1="drop:01" 
+	id2="drop" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hdatetime)&gt;&lt;@event_log:*HDR(hevent_log)&gt;"
+	content="&lt;fld5&gt;,Audit trail: LENGTH: &apos;&lt;fld47&gt;&apos; ACTION :[&lt;fld46&gt;] &apos;&lt;action&gt;&apos; DATABASE USER:[&lt;fld45&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld44&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld43&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld42&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld41&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld40&gt;] &apos;&lt;db_id&gt;&apos;" />
 
 <MESSAGE 
 	id1="grant" 
