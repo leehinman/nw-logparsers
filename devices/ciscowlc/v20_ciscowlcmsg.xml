@@ -4,8 +4,8 @@
 	displayname="Cisco Wireless LAN Controller"
 	group="Wireless Devices">
 <VERSION 
-	xml="31"
-	checksum="e2154de3fb28fd0e50d161bcda7e836e"
+	xml="32"
+	checksum="fa31248c73ebd6224f6343c8f71e866b"
 	revision="122"
 	device="2.0" />
 <TAGVALMAP
@@ -1025,6 +1025,13 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not find the mobile in internal database&gt;"
 	content=" Could not find the mobile &lt;smacaddr&gt; in internal database" />
+
+<MESSAGE 
+	id1="APF-4-MS_NOT_FOUND_IN_BLACKLIST_TREE" 
+	id2="APF-4-MS_NOT_FOUND_IN_BLACKLIST_TREE" 
+	eventcategory="1609000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not find the mobile in internal blacklist database&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" Could not find the mobile &lt;macaddr&gt; in internal blacklist database" />
 
 <MESSAGE 
 	id1="APF-4-PROC_DOT11_MAC_MGMT_DATA_FAILED" 
@@ -5092,6 +5099,13 @@
 	content=" Port &lt;sport&gt; Admin Mode is Disable!" />
 
 <MESSAGE 
+	id1="NIM-3-ADMIN_MODE_ENABLE_RETRY" 
+	id2="NIM-3-ADMIN_MODE_ENABLE_RETRY" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Port Admin Mode Enabled&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@dclass_counter1_string:Retry Count&gt;"
+	content=" Port &lt;network_port&gt; Admin Mode is Enabled (retry-&lt;dclass_counter1&gt;)!" />
+
+<MESSAGE 
 	id1="NIM-3-CANT_DISABLE_MCAST" 
 	id2="NIM-3-CANT_DISABLE_MCAST" 
 	eventcategory="1603000000" 
@@ -5207,6 +5221,14 @@
 	content=" Unable to create username &lt;username&gt; for mobile&lt;smacaddr&gt;" />
 
 <MESSAGE 
+	id1="APF-3-APF_CHANNEL_CHANGE"
+	id2="APF-3-APF_CHANNEL_CHANGE" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client deletion failed due to Channel change and Spectrum mgmt bit set.&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" Client deletion failed. Clt mac:&lt;macaddr&gt; Channel Change Occured. Spectrum Mgmt bit set." />
+
+
+<MESSAGE 
 	id1="CAPWAP-3-DTLS_CONN_ERR" 
 	id2="CAPWAP-3-DTLS_CONN_ERR" 
 	eventcategory="1603000000" 
@@ -5246,6 +5268,14 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Unable to store capwap fragment from AP&gt;"
 	content=" Unable to store capwap fragment from &lt;smacaddr&gt;." />
+
+<MESSAGE 
+	id1="CAPWAP-3-POST_DECODE_ERR" 
+	id2="CAPWAP-3-POST_DECODE_ERR" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Post decode processing failed from AP&gt;"
+	content="Post decode processing failed for &lt;fld1&gt; from AP &lt;smacaddr&gt;" />
+
 
 <MESSAGE 
 	id1="CAPWAP-3-SEM_RELEASE_ERR"
@@ -6412,6 +6442,21 @@
 	content=" Unable to find Mobile &lt;smacaddr&gt; entry in the database, &lt;info&gt;" />
 	
 <MESSAGE
+	id1="APF_HA-4-SYNC_RETRANSMIT_WARNING"
+	id2="APF_HA-4-SYNC_RETRANSMIT_WARNING"
+	eventcategory="1609000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description: Maximum retransmission exceeded for client &gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" Maximum retransmission exceeded for client (&lt;smacaddr&gt; )data sync block:&lt;fld1&gt;. Retry after &lt;duration&gt; secs." />
+
+<MESSAGE
+	id1="APF_HA-3-SYNC_RETRANSMIT_FAIL"
+	id2="APF_HA-3-SYNC_RETRANSMIT_FAIL"
+	eventcategory="1603020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description: Maximum retransmission exceeded for client &gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" Maximum retransmission exceeded for client (&lt;smacaddr&gt; )data sync block:&lt;fld1&gt;. Retry after &lt;duration&gt; secs." />
+
+
+<MESSAGE
 	id1="PEM-6-QVLAN_INTF_REMAP"
 	id2="PEM-6-QVLAN_INTF_REMAP"
 	eventcategory="1603000000"
@@ -6439,6 +6484,13 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="Ping response from &lt;saddr&gt; is invalid. Incorrect checksum. " />
+
+<MESSAGE 
+	id1="RMGR-3-RED_API_RET_ERROR" 
+	id2="RMGR-3-RED_API_RET_ERROR" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;event_description&gt;" />
 
 <MESSAGE
 	id1="EMWEB-3-READ_ERROR"
@@ -6924,7 +6976,23 @@
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_description:Controller is connecting to Tacacs server&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	 content="Controller is connecting to Tacacs server IP:&lt;daddr&gt;"/>
 
-<MESSAGE 
+ 
+<MESSAGE
+	 id1="LWAPP-3-RD_ERR4:01"
+	 id2="LWAPP-3-RD_ERR4"
+	 eventcategory="1603000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	 content="The system detects an invalid regulatory domain &lt;domain&gt; for AP &lt;macaddr&gt;"/> 
+
+<MESSAGE
+	 id1="SYSTEM-6-MBUF_ALREADY_FREE"
+	 id2="SYSTEM-6-MBUF_ALREADY_FREE"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	 content="&lt;info&gt;. mbuf = &lt;fld1&gt;, tail = &lt;fld2&gt;, head =&lt;fld3&gt;, i = &lt;fld4&gt;, free = &lt;fld5&gt;"/> 
+
+ 
+ <MESSAGE 
 	id1="CISCOWLC_GENERIC" 
 	id2="CISCOWLC_GENERIC"
 	eventcategory="1901000000"
