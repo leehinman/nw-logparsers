@@ -4,9 +4,9 @@
 	displayname="Palo Alto Networks Firewall"
 	group="Firewall">
 <VERSION
-	xml="76"
-	checksum="5b1d00820c64ebd18b08bc678c9816fe"
-	revision="122"
+	xml="78"
+	checksum="ca03ce55f0226d7ca2cac37fef6ec6bb"
+	revision="123"
 	device="2.0" />
 <VALUEMAP
 	name="getEventLegacyCategory"
@@ -17,6 +17,12 @@
 	name="getEventLegacyCategoryName"
 	default="Other.Default"
 	keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1803000000=&apos;Network.Denied Connections&apos;" />	
+	
+<VALUEMAP
+	name="getecActivity"
+	default="$NONE"
+	keyvaluepairs="allow=&apos;Permit&apos;|deny=&apos;Deny&apos;|drop=&apos;Deny&apos;" />
+	
 <HEADER 
 	id1="0001" 
 	id2="0001" 
@@ -893,7 +899,7 @@ content=" {PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;
 <MESSAGE 
 	id1="TRAFFIC1:01" 
 	id2="TRAFFIC" 
-	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',starttime)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:Communication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',starttime)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@ec_activity:*getecActivity(action)&gt;"
 	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,TRAFFIC,&lt;category&gt;,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;fld8&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,&lt;bytes&gt;,&lt;sbytes&gt;,&lt;rbytes&gt;,&lt;packets&gt;,&lt;starttime&gt;,&lt;duration&gt;,&lt;filter&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;location_src&gt;,&lt;location_dst&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;fld15&gt;,&lt;result&gt;,&lt;fld17&gt;,&lt;fld18&gt;,&lt;fld19&gt;,&lt;fld20&gt;,&lt;vsys&gt;,&lt;sensor&gt;,&lt;fld23&gt;" />
 
 <MESSAGE 
