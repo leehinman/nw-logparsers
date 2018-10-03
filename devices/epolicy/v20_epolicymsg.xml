@@ -4,9 +4,9 @@
 	displayname="McAfee ePolicy Orchestrator"
 	group="Anti Virus">
 <VERSION
-	xml="75"
-	checksum="cdf38173358a7dd68c67fcb27c9e9155"
-	revision="121"
+	xml="77"
+	checksum="89a512d2a24e63e032edb7fb67013662"
+	revision="122"
     device="2.0" />
  
 <HEADER 
@@ -21,6 +21,11 @@
 	id1="0003" 
 	id2="0003"  
 	content="%ePolicy: &lt;timestamp&gt;, &lt;messageid&gt;, &lt;!payload:messageid&gt;" /> 
+<HEADER 
+	id1="0010" 
+	id2="0010" 
+    messageid="STRCAT(&apos;mcafeeens&apos;,&apos;_&apos;,&apos;generic&apos;)"	
+	content="%ePolicy_ens-&lt;hseverity&gt;-&lt;hid&gt;:&lt;!payload&gt;"/>
 <HEADER 
 	id1="0004" 
 	id2="0004"  
@@ -45,6 +50,18 @@
 	id1="0007" 
 	id2="0007"  
 	content="%ePolicy-&lt;level&gt;: &lt;hnumber&gt;^^&lt;hnumber1&gt;^^&lt;husername&gt;^^&lt;hseverity&gt;^^&lt;messageid&gt;^^&lt;!payload:hnumber&gt;" />
+
+<VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="System.Reboots"
+		keyvaluepairs="1611000000=&apos;System.Shutdown&apos;|1610000000=&apos;System.Startup&apos;" />
+   		
+<VALUEMAP
+		name="getEventLegacyCategory"
+		default="1606000000"
+		keyvaluepairs="Server was shut down.=&apos;1611000000&apos;|Server was started.=&apos;1610000000&apos;|Server was shutdown.=&apos;1611000000&apos;" />	
+ 
+		
 <MESSAGE 
 	id1="0" 
 	id2="0" 
@@ -6662,9 +6679,9 @@
 <MESSAGE 
 	id1="Server_restart:01" 
 	id2="Server" 
-	eventcategory="1611000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Server restart&gt;"
-	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Server restart^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
+	eventcategory="1606000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Server restart&gt;&lt;@event_cat:*getEventLegacyCategory(info)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^{Server restart|Server Restart}^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 <MESSAGE 
 	id1="Set_Default_Dashboard" 
 	id2="Set" 
@@ -7634,7 +7651,7 @@
 	id2="Remove" 
 	eventcategory="1402020400" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Remove user&gt;"
-	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^Remove user^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^{Remove user|Remove User}^^&lt;info&gt;^^&lt;result&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
 <MESSAGE 
 	id1="New_Group" 
 	id2="New" 
@@ -7829,5 +7846,12 @@
 	eventcategory="1003010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld12&gt;^^&lt;hostname&gt;^^&lt;recorded_time&gt;^^&lt;event_time&gt;^^&lt;fld10&gt;^^&lt;product&gt;^^&lt;version&gt;^^&lt;shost&gt;^^&lt;hostip&gt;^^&lt;content_version&gt;^^&lt;component_version&gt;^^&lt;event_source&gt;^^&lt;fld35&gt;^^&lt;saddr&gt;^^&lt;fld31&gt;^^&lt;daddr&gt;^^&lt;username&gt;^^&lt;sport&gt;^^&lt;fld33&gt;^^&lt;fld34&gt;^^&lt;filename&gt;^^&lt;vendor_event_cat&gt;^^&lt;id&gt;^^&lt;severity&gt;^^&lt;virusname&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;fld9&gt;" />
+
+<MESSAGE 
+	id1="mcafeeens_generic" 
+	id2="mcafeeens_generic" 
+	eventcategory="1003010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;fld12&gt;^^&lt;hostname&gt;^^&lt;recorded_time&gt;^^&lt;event_time&gt;^^&lt;fld10&gt;^^&lt;product&gt;^^&lt;version&gt;^^&lt;shost&gt;^^&lt;hostip&gt;^^&lt;content_version&gt;^^&lt;component_version&gt;^^&lt;event_source&gt;^^&lt;fld35&gt;^^&lt;saddr&gt;^^&lt;dhost&gt;^^&lt;daddr&gt;^^&lt;username&gt;^^&lt;dport&gt;^^&lt;protocol&gt;^^&lt;process&gt;^^&lt;filename&gt;^^&lt;vendor_event_cat&gt;^^&lt;id&gt;^^&lt;severity&gt;^^&lt;virusname&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;fld9&gt;" />
 
 </DEVICEMESSAGES>
