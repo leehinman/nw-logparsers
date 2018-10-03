@@ -65,6 +65,12 @@
 	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
+	id1="0010"
+	id2="0010"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
 	id1="0007"
 	id2="0007"
 	messageid="VENDORMAP(devvendor, product)"
@@ -970,6 +976,7 @@
 		<ExtensionKey cefName="cs2" metaName="cs_fld">
 			<device2meta device="bit9" metaName="v_instafname" label="installerFilename"/>
 			<device2meta device="guardium" metaName="obj_type"/>
+			<device2meta device="akamaikona" metaName="context"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs2Label" metaName="cs_fld"/>
 		
@@ -1205,7 +1212,7 @@
 		<ExtensionKey cefName="eventLogDate" metaName="param_event_time"/>
 		<ExtensionKey cefName="eventId" metaName="id"/>
 		<ExtensionKey cefName="targetObject1Id" metaName="obj_id"/>
-		<ExtensionKey cefName="targetObject2Name" metaName="obj_server"/>
+		<ExtensionKey cefName="targetObject1Name" metaName="obj_server"/>
 		<ExtensionKey cefName="adminUserName" metaName="administrator"/>
 		<ExtensionKey cefName="adminUserRole" metaName="user_role"/>
 		<ExtensionKey cefName="result" metaName="disposition"/>
