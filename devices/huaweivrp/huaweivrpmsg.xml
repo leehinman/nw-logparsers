@@ -4,9 +4,9 @@
 	displayname="Huawei VRP"
 	group="Router">
 <VERSION
-	xml="9"
-	checksum="d99dc5ef3f9caed2b0f78ce829e9454e"
-	revision="116"
+	xml="11"
+	checksum="e8c7f3cef56e371688ac340b848e08f3"
+	revision="122"
 	device="2.0" />
 	
 <HEADER 
@@ -256,7 +256,14 @@
 	id2="LOGIN" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  &lt;username&gt; login from &lt;saddr&gt;" />
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  {access type:&lt;protocol&gt; vsys:&lt;vsys&gt; user:&lt;username&gt; | &lt;username&gt;} login from &lt;saddr&gt;" />
+
+<MESSAGE 
+	id1="LOGIN:02" 
+	id2="LOGIN" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:&lt;event_description&gt; to &lt;terminal&gt;. (UserType=&lt;fld2&gt;, UserName=&lt;username&gt;, AuthenticationMethod=&quot;&lt;authmethod&gt;&quot;, Ip=&lt;saddr&gt;, VpnName=&lt;netname&gt;)" />
 
 <MESSAGE 
 	id1="NEEDAUTHCMD" 
@@ -280,11 +287,25 @@
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:  &lt;username&gt; logout from &lt;saddr&gt;" />
 
 <MESSAGE 
+	id1="LOGOUT:02" 
+	id2="LOGOUT" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;:&lt;event_description&gt; of &lt;terminal&gt;. (UserType=&lt;fld1&gt;, UserName=&lt;username&gt;, Ip=&lt;saddr&gt;, VpnName=&lt;netname&gt;)" />
+
+<MESSAGE 
 	id1="CMDRECORD" 
 	id2="CMDRECORD" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: task: &lt;fld1&gt; ip: &lt;saddr&gt; user: &lt;username&gt; command: &lt;action&gt;." />
+
+<MESSAGE 
+	id1="CMDRECORD:01" 
+	id2="CMDRECORD" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: &lt;event_description&gt; (Task=&lt;fld1&gt;, Ip=&lt;saddr&gt;, VpnName=&lt;netname&gt;, User=&lt;username&gt;, AuthenticationMethod=&quot;&lt;authmethod&gt;&quot;, Command=&quot;&lt;action&gt;&quot;)" />
 
 <MESSAGE 
 	id1="CTRLLERCHANGEDOWN" 
@@ -334,6 +355,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Number of times&gt;"
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Login through &lt;logon_type&gt; failed(ip=&lt;saddr&gt; times=&lt;dclass_counter1&gt;)." />
+
+<MESSAGE 
+	id1="SNMP_FAIL:01" 
+	id2="SNMP_FAIL" 
+	eventcategory="1301000000" 
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Number of times&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: Login through &lt;logon_type&gt; failed. (UserName=&lt;username&gt;, ip=&lt;saddr&gt;, times=&lt;dclass_counter1&gt;)" />
 
 <MESSAGE 
 	id1="ACCEPT" 
@@ -552,6 +580,13 @@
 	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: task: &lt;fld1&gt; ip: &lt;saddr&gt; user: &lt;username&gt; command: &lt;action&gt;" />
 
 <MESSAGE 
+	id1="DISPLAY_CMDRECORD:01" 
+	id2="DISPLAY_CMDRECORD" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld21&gt;: &lt;event_description&gt; (Task=&lt;fld1&gt;, Ip=&lt;saddr&gt;, VpnName=&lt;netname&gt;, User=&lt;username&gt;, AuthenticationMethod=&quot;&lt;authmethod&gt;&quot;, Command=&quot;&lt;action&gt;&quot;)" />
+
+<MESSAGE 
 	id1="TunnelStateSwitched" 
 	id2="TunnelStateSwitched" 
 	eventcategory="1605000000" 
@@ -635,5 +670,320 @@
 	eventcategory="1603010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;fld2&gt;"/>
+
+<MESSAGE 
+	id1="ADDOK" 
+	id2="ADDOK"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (SyslogId=&lt;fld2&gt;, IpVersion=&lt;fld3&gt;, SrcIp=&lt;saddr&gt;, DstIp=&lt;daddr&gt;, SrcPort=&lt;sport&gt;, DstPort=&lt;dport&gt;, Protocol=&lt;protocol&gt;, User=&lt;username&gt;, VSysId=&lt;fld4&gt;, VSys=&lt;vsys&gt;, Reason= &lt;result&gt;, Timeout=&lt;expiration_time&gt;min)"/>
+
+<MESSAGE 
+	id1="DELOK" 
+	id2="DELOK"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (SyslogId=&lt;fld2&gt;, IpVersion=&lt;fld3&gt;, SrcIp=&lt;saddr&gt;, DstIp=&lt;daddr&gt;, SrcPort=&lt;sport&gt;, DstPort=&lt;dport&gt;,Protocol=&lt;protocol&gt;, User=&lt;username&gt;, VSysId=&lt;fld4&gt;, VSys=&lt;vsys&gt;)"/>
+
+<MESSAGE 
+	id1="WARNING" 
+	id2="WARNING"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="UPLOG" 
+	id2="UPLOG"
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="DOWNLOG" 
+	id2="DOWNLOG"
+	eventcategory="1605020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="CLOCK_UPDATE" 
+	id2="CLOCK_UPDATE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; from &lt;change_old&gt;(&lt;fld2&gt;) to &lt;change_new&gt;(&lt;fld3&gt;)."/>
+
+<MESSAGE 
+	id1="LSA_CHANGE_FREQUENT" 
+	id2="LSA_CHANGE_FREQUENT"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld3)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (ProcessId=&lt;process_id&gt;, AdvertiseRouterId=&lt;hostip&gt;, TotalCount=&lt;dclass_counter1&gt;, BeginTime=&lt;fld2&gt;, EndTime=&lt;fld3&gt;, &lt;fld4&gt;)"/>
+
+<MESSAGE 
+	id1="OUT" 
+	id2="OUT"
+	eventcategory="1401070000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:logout&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: User &lt;username&gt;(IP:&lt;saddr&gt; ID:&lt;id&gt;) logout"/>
+
+<MESSAGE 
+	id1="EXIT" 
+	id2="EXIT"
+	eventcategory="1401070000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The user exit from configure mode.&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:  The user &lt;username&gt; exit from configure mode."/>
+
+<MESSAGE 
+	id1="PASS" 
+	id2="PASS"
+	eventcategory="1401060000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:login succeeded&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: User &lt;username&gt;(IP:&lt;saddr&gt; ID:&lt;id&gt;) login succeeded"/>
+
+<MESSAGE 
+	id1="FAIL" 
+	id2="FAIL"
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: login failed&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: User &lt;username&gt;(IP:&lt;saddr&gt; ID:&lt;id&gt;) login failed"/>
+
+<MESSAGE 
+	id1="LOGONFAIL" 
+	id2="LOGONFAIL"
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (User Name=&lt;username&gt;, Vsys=&lt;vsys&gt;, Source IP=&lt;saddr&gt;, Source MAC=&lt;smacaddr&gt;, Logon Time=&lt;fld2&gt;, Logon Mode=&lt;logon_type&gt;, Authentication Mode=&lt;authmethod&gt;, Device Category=&lt;category&gt;,Failed Reason=&lt;result&gt;)"/>
+
+<MESSAGE 
+	id1="PHYSICALDOWN" 
+	id2="PHYSICALDOWN"
+	eventcategory="1803000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: On the interface &lt;interface&gt;, &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="SAVE:01" 
+	id2="SAVE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="LOGINFAIL:01" 
+	id2="LOGINFAIL"
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:User login failed&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: access type:&lt;protocol&gt; User &lt;username&gt; login failed from &lt;saddr&gt;(times=&lt;dclass_counter1&gt;)."/>
+
+<MESSAGE 
+	id1="DOWNLOAD" 
+	id2="DOWNLOAD"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (Login IP=&lt;saddr&gt; User Name=&lt;username&gt; File Name=&lt;filename&gt;)"/>
+
+<MESSAGE 
+	id1="FAILURE" 
+	id2="FAILURE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (SyslogId=&lt;fld2&gt;, Module=&lt;fld3&gt;, Pre-UpdateVersion=&lt;change_old&gt;, UpdateVersion=&lt;change_new&gt;, Status=&lt;fld4&gt;, Duration(s)=&lt;duration&gt;)"/>
+
+<MESSAGE 
+	id1="LOGINFAILED" 
+	id2="LOGINFAILED"
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (Ip=&lt;saddr&gt;, UserName=&lt;username&gt;, Times=&lt;dclass_counter1&gt;, AccessType=&lt;protocol&gt;, VpnName=&lt;netname&gt;)"/>
+
+<MESSAGE 
+	id1="CMDCONFIRM_CHANGEPWDCHOOSEINFO" 
+	id2="CMDCONFIRM_CHANGEPWDCHOOSEINFO"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (User=&lt;username&gt;, IP=&lt;saddr&gt;, VpnName=&lt;netname&gt;)"/>
+
+<MESSAGE 
+	id1="DATASYNC_CFGCHANGE" 
+	id2="DATASYNC_CFGCHANGE"
+	eventcategory="1701000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:OID &lt;snmp.oid&gt; &lt;event_description&gt;. &lt;info&gt;"/>
+
+<MESSAGE 
+	id1="CMDCONFIRM_UNIFORMRECORD" 
+	id2="CMDCONFIRM_UNIFORMRECORD"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (Task=&lt;fld2&gt;, IP=&lt;saddr&gt;, VpnName=&lt;netname&gt;, User=&lt;username&gt;, Command=&quot;&lt;action&gt;&quot;, PromptInfo=&quot;&lt;info&gt;&quot;, UserInput=&lt;fld3&gt;)"/>
+
+<MESSAGE 
+	id1="TRAPLOG" 
+	id2="TRAPLOG"
+	eventcategory="1701000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:OID &lt;snmp.oid&gt; &lt;event_description&gt;. (&lt;fld2&gt;)"/>
+
+<MESSAGE 
+	id1="NODERESUME" 
+	id2="NODERESUME"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="NODEFAULT" 
+	id2="NODEFAULT"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="PHY_TRANSCEIVER_ABSENT" 
+	id2="PHY_TRANSCEIVER_ABSENT"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="PHY_TRANSCEIVER_PRESENT" 
+	id2="PHY_TRANSCEIVER_PRESENT"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="OPTICALREMOVE" 
+	id2="OPTICALREMOVE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: OID &lt;snmp.oid&gt; &lt;event_description&gt;. (&lt;fld2&gt;)"/>
+
+<MESSAGE 
+	id1="OPTICALINSERT" 
+	id2="OPTICALINSERT"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: OID &lt;snmp.oid&gt; &lt;event_description&gt;. (&lt;fld2&gt;)"/>
+
+<MESSAGE 
+	id1="BACKUPCONFIG_SUC" 
+	id2="BACKUPCONFIG_SUC"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Succeeded in backing up file cfcard&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Succeeded in backing up file cfcard:&lt;filename&gt;."/>
+
+<MESSAGE 
+	id1="CMDRECORDFAILED" 
+	id2="CMDRECORDFAILED"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;. (Task=&lt;fld2&gt;, Ip=&lt;saddr&gt;, VpnName=&lt;netname&gt;, User=&lt;username&gt;, AuthenticationMethod=&quot;&lt;authmethod&gt;&quot;, Command=&quot;&lt;action&gt;&quot;, Result=&lt;result&gt;)"/>
+
+<MESSAGE 
+	id1="LINK_STATE:02" 
+	id2="LINK_STATE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The line protocol IP on the interface has entered the UP state.&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:The line protocol IP on the interface &lt;interface&gt; has entered the UP state."/>
+
+<MESSAGE 
+	id1="LINK_STATE:01" 
+	id2="LINK_STATE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The line protocol IP on the interface has entered the DOWN state.&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:The line protocol IP on the interface &lt;interface&gt; has entered the DOWN state."/>
+
+<MESSAGE 
+	id1="BACKUPCONFIG_FAIL" 
+	id2="BACKUPCONFIG_FAIL"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="PHYSICALPORTDOWN" 
+	id2="PHYSICALPORTDOWN"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: OID &lt;snmp.oid&gt; &lt;event_description&gt;. (&lt;fld2&gt;)"/>
+
+<MESSAGE 
+	id1="PHYSICALPORTUP" 
+	id2="PHYSICALPORTUP"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: OID &lt;snmp.oid&gt; &lt;event_description&gt; (&lt;fld2&gt;)"/>
+
+<MESSAGE 
+	id1="PHY_STATUS_UP" 
+	id2="PHY_STATUS_UP"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:change status to up.&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Slot=&lt;fld2&gt;,Vcpu=&lt;fld3&gt;;&lt;interface&gt; change status to up."/>
+
+<MESSAGE 
+	id1="PHY_STATUS_UP2DOWN" 
+	id2="PHY_STATUS_UP2DOWN"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:change status to down.&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Slot=&lt;fld2&gt;,Vcpu=&lt;fld3&gt;;&lt;interface&gt; change status to down. The possible cause is:&lt;info&gt;"/>
+
+<MESSAGE 
+	id1="IF_CHG_E:01" 
+	id2="IF_CHG_E"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Interface &lt;interface&gt; received event {WaitTimer|InterfaceUp}, &lt;event_description&gt; (ProcessId=&lt;process_id&gt;)"/>
+
+<MESSAGE 
+	id1="LOS" 
+	id2="LOS"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Slot=&lt;fld2&gt;,Vcpu=&lt;fld3&gt;; OID: &lt;snmp.oid&gt; &lt;event_description&gt; (PhyIfIndex=&lt;fld4&gt;, SlotID=&lt;fld5&gt;, CardID=&lt;fld6&gt;, PortID=&lt;fld7&gt;, InterfaceName=&lt;interface&gt;, PhyPortAlarmName=&lt;fld8&gt;)"/>
+
+<MESSAGE 
+	id1="LOSRESUME" 
+	id2="LOSRESUME"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Slot=&lt;fld2&gt;,Vcpu=&lt;fld3&gt;; OID: &lt;snmp.oid&gt; &lt;event_description&gt; (PhyIfIndex=&lt;fld4&gt;, SlotID=&lt;fld5&gt;, CardID=&lt;fld6&gt;, PortID=&lt;fld7&gt;, InterfaceName=&lt;interface&gt;, PhyPortAlarmName=&lt;fld8&gt;)"/>
+
+<MESSAGE 
+	id1="REMOTEFAULT" 
+	id2="REMOTEFAULT"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Slot=&lt;fld2&gt;,Vcpu=&lt;fld3&gt;; OID: &lt;snmp.oid&gt; &lt;event_description&gt; (IfIndex=&lt;fld4&gt;, IfName=&lt;interface&gt;)"/>
+
+<MESSAGE 
+	id1="REMOTEFAULTRESUME" 
+	id2="REMOTEFAULTRESUME"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:Slot=&lt;fld2&gt;,Vcpu=&lt;fld3&gt;; OID: &lt;snmp.oid&gt; &lt;event_description&gt; (IfIndex=&lt;fld4&gt;, IfName=&lt;interface&gt;)"/>
+
+<MESSAGE 
+	id1="LEAP_CHANGE:01" 
+	id2="LEAP_CHANGE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:&lt;event_description&gt;"/>
+
+<MESSAGE 
+	id1="PEER_SELE:01" 
+	id2="PEER_SELE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:The peer selected by the system&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;:The peer selected by the system is &lt;hostip&gt;"/>
+
+<MESSAGE 
+	id1="STRATUM_CHANGE:01" 
+	id2="STRATUM_CHANGE"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;hostname&gt; %%&lt;agent&gt;/&lt;severity&gt;/&lt;fld1&gt;: &lt;event_description&gt; (SourceAddress=&lt;saddr&gt;)"/>
 
 </DEVICEMESSAGES>
