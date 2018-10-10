@@ -4,9 +4,9 @@
 	displayname="Astaro Security Gateway"
 	group="Firewall">
 <VERSION
-		xml="21"
-		checksum="5cf2a3cb62ae9642fa4d1f4fb9ca9df1"
-		revision="118"
+		xml="22"
+		checksum="e190664dc7547f6b6e8ed198a042dde9"
+		revision="122"
 		device="2.0"/>
 
 
@@ -33,6 +33,12 @@
 	messageid="STRCAT(&apos;reverseproxy&apos;)"
 	content="&lt;hfld1&gt; &lt;hostname&gt; reverseproxy: &lt;!payload&gt;"/>
 <HEADER
+	id1="0006"
+	id2="0006"
+	content="device=&quot;&lt;product&gt;&quot; date=&lt;hdate&gt; time=&lt;htime&gt; timezone=&quot;&lt;timezone&gt;&quot; device_name=&quot;&lt;device&gt;&quot; device_id=&lt;hardware_id&gt; log_id=&lt;messageid&gt; &lt;!payload&gt;"/>
+
+	
+<HEADER
 	id1="0005"
 	id2="0005"
 	content="&lt;hfld1&gt; &lt;hostname&gt; &lt;messageid&gt;: &lt;!payload&gt;"/>
@@ -43,7 +49,6 @@
 	messageid="*STRCAT('astarosg','_','TVM')"
 	content="&lt;hfld1&gt;  &lt;id&gt;[&lt;process_id&gt;]: &lt;!payload&gt;"/>
 
-	
 <VALUEMAP
 	name="getEventLegacyCategory"
 	default="1901000000"
@@ -1490,5 +1495,14 @@
 	eventcategory="1502000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W:%G:%F-%H:%U:%S&apos;,hfld1)&gt;"
 	content="[&lt;event_log&gt;:&lt;result&gt;] [pid &lt;fld3&gt;:&lt;fld4&gt;] [client &lt;gateway&gt;] ModSecurity: Warning. &lt;rulename&gt; [file &quot;&lt;filename&gt;&quot;] [line &quot;&lt;fld5&gt;&quot;] [id &quot;&lt;rule&gt;&quot;] [rev &quot;&lt;fld2&gt;&quot;] [msg &quot;&lt;event_description&gt;&quot;] [severity &quot;&lt;severity&gt;&quot;] [ver &quot;&lt;version&gt;&quot;] [maturity &quot;&lt;fld22&gt;&quot;] [accuracy &quot;&lt;fld23&gt;&quot;] [tag &quot;&lt;fld24&gt;&quot;] [hostname &quot;&lt;dhost&gt;&quot;] [uri &quot;&lt;web_root&gt;&quot;] [unique_id &quot;&lt;operation_id&gt;&quot;]&lt;fld25&gt;" />
+
+<MESSAGE
+	id1="050901616001"
+	id2="050901616001"
+	eventcategory="1204000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%U:%S&apos;,hdate,htime)&gt;&lt;@id:*HDR(messageid)&gt;"
+	content="log_type=&lt;event_type&gt; log_component=&lt;event_source&gt; log_subtype=&lt;category&gt; status=&lt;event_state&gt; priority=&lt;severity&gt; fw_rule_id=&lt;rule_uid&gt; user_name=&lt;username&gt; user_gp=&lt;group&gt; iap=&lt;id1&gt; category=&lt;fld4&gt; category_type=&lt;fld5&gt; url=&lt;url&gt; contenttype=&lt;content_type&gt; override_token=&lt;fld5&gt; httpresponsecode=&lt;fld6&gt; src_ip=&lt;saddr&gt; dst_ip=&lt;daddr&gt; protocol=&lt;protocol&gt; src_port=&lt;sport&gt; dst_port=&lt;dport&gt; sent_bytes=&lt;sbytes&gt; recv_bytes=&lt;rbytes&gt; domain=&lt;fqdn&gt; exceptions=&lt;fld7&gt; activityname=&lt;fld8&gt; reason=&lt;result&gt; user_agent=&lt;user_agent&gt; status_code=&lt;resultcode&gt; transactionid=&lt;id2&gt; referer=&lt;web_referer&gt;" />
 
 </DEVICEMESSAGES>
