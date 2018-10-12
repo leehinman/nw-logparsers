@@ -4,9 +4,9 @@
 	displayname="Fortinet Manager/Analyzer"
 	group="Firewall">
 <VERSION
-	xml="15"
-	checksum="65f61610d30ba1aa24c4811402babfea"
-	revision="119"
+	xml="16"
+	checksum="ffd80ae1e09acba1216e50fa0b50fa8e"
+	revision="123"
     device="2.0" />
     
 
@@ -32,6 +32,11 @@
 	id2="0004"
 	messageid="STRCAT('generic_fortinetmgr_1')"
 	content="logver=&lt;hfld1&gt; dtime=&lt;hdatetime&gt; devid=&lt;hfld2&gt; devname=&lt;hdevice&gt; &lt;!payload&gt;" />
+<HEADER
+	id1="0005"
+	id2="0005"
+	messageid="STRCAT('generic_fortinetmgr_1')"
+	content="logver=&lt;hfld1&gt; devname=&quot;&lt;hdevice&gt;&quot; devid=&quot;&lt;hfld2&gt;&quot; &lt;!payload&gt;" />
 
 <VALUEMAP
 	name="getEventLegacyCategoryName"
@@ -106,7 +111,7 @@
 	 eventcategory="1801000000"
 	 tagval="true"
 	 missField="true"
-	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld2)&gt;"
-	 content="vd=&lt;vsys&gt; date=&lt;fld1&gt; time=&lt;fld2&gt; logid=&lt;id&gt; type=&lt;event_type&gt; subtype=&lt;category&gt; level=&lt;severity&gt; logtime=&lt;fld35&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; srcintfrole=&lt;fld30&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; dstintfrole=&lt;fld31&gt; poluuid=&lt;fld5&gt; sessionid=&lt;sessionid&gt; proto=&lt;fld6&gt; action=&lt;action&gt; policyid=&lt;policy_id&gt; policytype=&lt;fld34&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld9&gt; crlevel=&lt;fld10&gt; appcat=&lt;fld33&gt; service=&lt;network_service&gt;"/>
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@protocol:*getProtocolName(fld6)&gt;"
+	 content="vd=&lt;vsys&gt; date=&lt;fld1&gt; time=&lt;fld2&gt; logid=&lt;id&gt; type=&lt;event_type&gt; subtype=&lt;category&gt; level=&lt;severity&gt; eventtime=&lt;event_time_string&gt; logtime=&lt;fld35&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&lt;sinterface&gt; srcintfrole=&lt;fld30&gt; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstintf=&lt;dinterface&gt; dstintfrole=&lt;fld31&gt; poluuid=&lt;fld5&gt; sessionid=&lt;sessionid&gt; proto=&lt;fld6&gt; action=&lt;action&gt; policyid=&lt;policy_id&gt; policytype=&lt;fld34&gt; crscore=&lt;reputation_num&gt; craction=&lt;fld9&gt; crlevel=&lt;fld10&gt; appcat=&lt;fld33&gt; service=&lt;network_service&gt; srccountry=&lt;location_src&gt; dstcountry=&lt;location_dst&gt; trandisp=&lt;context&gt; tranip=&lt;dtransaddr&gt; tranport=&lt;dtransport&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld15&gt; app=&lt;obj_name&gt;"/>
 
 </DEVICEMESSAGES>
