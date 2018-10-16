@@ -7,9 +7,9 @@
 <VARTYPE name="day" regex="\d{1,2}" />
 <VARTYPE name="time" regex="\d{2}:\d{2}:\d{2}" />
 <VERSION
-	xml="354"
-	checksum="f423deae90bb0a8e41be2edb33b67475"
-	revision="120"
+	xml="355"
+	checksum="1b0707ea205b5bcfad3c5e1b25281177"
+	revision="123"
 	device="2.0" />
 
 
@@ -168,6 +168,7 @@
 	id1="6555"
 	id2="6555"
 	content="&lt;messageid&gt;logd-&lt;hfld1&gt;[&lt;process_id&gt;]: &lt;!payload:messageid&gt;" />
+
 <HEADER
 	id1="0006"
 	id2="0006"
@@ -236,6 +237,7 @@
 	id1="0094"
 	id2="0094"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;[&lt;process_id&gt;[collect_postgres_rollups.py.ERROR]: &lt;!payload:messageid&gt;" />
+
 <HEADER
 	id1="0016"
 	id2="0016"
@@ -478,7 +480,7 @@
 	id2="0078"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; Message forwarded from &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
 
-	<VALUEMAP
+<VALUEMAP
 		name="ecSubUserGroup"
 		default="$NONE"
 		keyvaluepairs="user='User'|group='Group'" />
@@ -507,6 +509,7 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="(&lt;agent&gt;): &lt;space&gt; Unable to open transaction log: &lt;filename&gt; &lt;info&gt;" />
+
 <MESSAGE
 	id1="001828"
 	id2="0maestro"
@@ -7791,17 +7794,20 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: SACM accepted connection from client H: /&lt;saddr&gt; P: &lt;sport&gt; LP: &lt;fld1&gt;" />
 <MESSAGE
-	id1="03499:01"
-	id2="HMC"
-	eventcategory="1801020000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content="&lt;agent&gt;: &lt;info&gt;" />
-<MESSAGE
 	id1="03499:02"
 	id2="HMC"
 	eventcategory="1801020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;:[EVENT &lt;id&gt;]:&lt;event_description&gt;" />
+
+	
+<MESSAGE
+	id1="03499:01"
+	id2="HMC"
+	eventcategory="1801020000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;info&gt;" />
+
 <MESSAGE
 	id1="00875"
 	id2="HSV"
@@ -10784,6 +10790,26 @@
 	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } &lt;filename&gt;: Multiple same specifications for &lt;directory&gt;" />
 
 
+<MESSAGE
+	id1="002582"
+	id2="lvm"
+	eventcategory="1401030000"
+	functions="&lt;@event_description:lvmetad is being updated&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;severity&gt;: lvmetad is being updated, &lt;info&gt;" />
+<MESSAGE
+	id1="002583"
+	id2="lvm"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt; logical volume(s) in volume group &lt;info&gt;" />
+
+	
+<MESSAGE
+	id1="002479"
+	id2="lvm"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;agent&gt;: Device &lt;fld1&gt; not found. &lt;event_description&gt;" />	
 <MESSAGE
 	id1="lvm"
 	id2="lvm"
@@ -24173,25 +24199,7 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: &lt;application&gt; &lt;event_description&gt;" />
 		
-<MESSAGE
-	id1="002479"
-	id2="lvm"
-	eventcategory="1401030000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: Device &lt;fld1&gt; not found. &lt;event_description&gt;" />
-<MESSAGE
-	id1="002582"
-	id2="lvm"
-	eventcategory="1401030000"
-	functions="&lt;@event_description:lvmetad is being updated&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;severity&gt;: lvmetad is being updated, &lt;info&gt;" />
-<MESSAGE
-	id1="002583"
-	id2="lvm"
-	eventcategory="1401030000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;fld1&gt; logical volume(s) in volume group &lt;info&gt;" />
-		
+
 <MESSAGE
 	id1="002480"
 	id2="teamd"
@@ -24524,14 +24532,15 @@
 	id2="error"
 	eventcategory="1605000000"
 	functions="&lt;@event_description:error retrieving information about user&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="error retrieving information about user &lt;username&gt;" />
+	content="&lt;fld3&gt;(&lt;fld4&gt;): error retrieving information about user &lt;username&gt;" />
+
 <MESSAGE
 	id1="error:04"
 	id2="error"
 	eventcategory="1605000000"
 	functions="&lt;@event_description:pam_sm_authenticate error&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="error [login:&lt;username&gt;][error code:&lt;result&gt;]" />
-			
+	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld4&gt;]&lt;fld5&gt; error [login:&lt;username&gt;][error code:&lt;result&gt;]" />
+
 <MESSAGE
 	id1="002540"
 	id2="incident_collation"
@@ -24589,14 +24598,6 @@
 	content="&lt;agent&gt;: SpectraGuard Sensor[&lt;smacaddr&gt;] with ip address[&lt;hostip&gt;] upgrading from SpectraGuard Server {[&lt;daddr&gt;] &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;daddr&gt;] &lt;dhost&gt;,protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;daddr&gt;] ,protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;daddr&gt;]}" />
 
 <MESSAGE
-	id1="002544:03"
-	id2="sensord"
-	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
-	content="&lt;agent&gt;: &lt;event_description&gt; {[&lt;smacaddr&gt;] &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;smacaddr&gt;] &lt;fld2&gt; [&lt;daddr&gt;]|[&lt;smacaddr&gt;] &lt;fld2&gt;}" /> 
-
-						
-<MESSAGE
 	id1="002545"
 	id2="sensord"
 	eventcategory="1605000000"
@@ -24609,7 +24610,15 @@
 	eventcategory="1605000000"
 	functions="&lt;@event_description:Keepalive thread timed out&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: Keepalive thread timed out, posting PMAC reinit for Spectraguard Sensor [&lt;smacaddr&gt;]" />
-										
+<MESSAGE
+	id1="002544:03"
+	id2="sensord"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt; {[&lt;smacaddr&gt;] &lt;dhost&gt;, real server &lt;fld1&gt;, protocol &lt;protocol&gt;, proxied &lt;fld2&gt;|[&lt;smacaddr&gt;] &lt;fld2&gt; [&lt;daddr&gt;]|[&lt;smacaddr&gt;] &lt;fld2&gt;}" /> 
+
+						
+								
 <MESSAGE
 	id1="002547"
 	id2="nails-update-task-info"
@@ -24825,6 +24834,8 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
 	content="[&lt;process_id&gt;]: [ID &lt;id&gt; &lt;fld1&gt;] &lt;fld2&gt; inside alarmHandler &lt;info&gt;" />
+
+	
 <MESSAGE
 	id1="002574"
 	id2="falcasd"
