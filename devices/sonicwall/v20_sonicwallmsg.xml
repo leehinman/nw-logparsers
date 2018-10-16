@@ -4,9 +4,9 @@
 	displayname="Sonicwall-FW"
 	group="Firewall">
 <VERSION
-	xml="45"
-	checksum="23e7737427203ab13c44e27f9283c8bc"
-	revision="121"
+	xml="47"
+	checksum="ad41681b29bc8f56705dada670b00a7a"
+	revision="123"
     device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -2293,18 +2293,18 @@
 	functions="&lt;@msg:*RMQ(msg)&gt;"
 	content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; if=&lt;fld2&gt; ucastRx=&lt;fld3&gt; bcastRx=&lt;fld4&gt; bytesRx=&lt;rbytes&gt; ucastTx=&lt;fld5&gt; bcastTx=&lt;fld6&gt; bytesTx=&lt;sbytes&gt;" />
 <MESSAGE
-	 id1="809"
-	 id2="809"
-	 eventcategory="1003010000"
-	  functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
-	 content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;:&lt;shost&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
+	id1="809"
+	id2="809"
+	eventcategory="1003010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;:&lt;shost&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
 
 <MESSAGE
-	 id1="809:01"
-	 id2="809"
-	 eventcategory="1003010000"
-	  functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
-	 content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
+	id1="809:01"
+	id2="809"
+	eventcategory="1003010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
 
 <MESSAGE 
 	id1="935" 
@@ -2312,7 +2312,84 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*RMQ(msg)&gt;"
 	content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; src=&lt;stransaddr&gt;:&lt;stransport&gt;:&lt;sinterface&gt;:&lt;host&gt; dst=&lt;dtransaddr&gt;:&lt;dtransport&gt;:&lt;dinterface&gt;:&lt;shost&gt;" />
+<MESSAGE 
+	id1="614" 
+	id2="614" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="748" 
+	id2="748" 
+	eventcategory="1301000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; sess=&quot;&lt;fld1&gt;&quot; dur=&lt;duration&gt; n=&lt;fld2&gt; usr=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto={&lt;protocol&gt;/&lt;fld3&gt;|&lt;protocol&gt;} fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE 
+	id1="794" 
+	id2="794" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; sid=&lt;sid&gt; spycat=&lt;fld1&gt; spypri=&lt;fld2&gt; pktdatId=&lt;fld3&gt; n=&lt;fld4&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto={&lt;protocol&gt;/&lt;fld5&gt;|&lt;protocol&gt;} fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="1086" 
+	id2="1086" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="1430" 
+	id2="1430" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; srcV6=&lt;saddr_v6&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dstV6=&lt;daddr_v6&gt; srcMac=&lt;smacaddr&gt; dstMac=&lt;dmacaddr&gt; proto=&lt;protocol&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="1149" 
+	id2="1149" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
 		
+<MESSAGE 
+	id1="1159" 
+	id2="1159" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="1195" 
+	id2="1195" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="1195:01" 
+	id2="1195" 
+	eventcategory="1609000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="1226" 
+	id2="1226" 
+	eventcategory="1603000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; fw_action=&quot;&lt;action&gt;&quot;" />
+
+<MESSAGE 
+	id1="1222" 
+	id2="1222" 
+	eventcategory="1603000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',date,time)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt; dst=&lt;daddr&gt;:&lt;dport&gt; note=&quot;&lt;fld3&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;" />
+
 <MESSAGE 
 	id1="1154" 
 	id2="1154" 
@@ -2419,11 +2496,11 @@
 	eventcategory="1605000000" 
 	content="msg=&quot;&lt;msg&gt;&quot; sess=&lt;fld1&gt; n=&lt;fld2&gt; src={&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;:&lt;shost&gt; dst= | &lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst= } { &lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;:&lt;dhost&gt; npcs= | &lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; npcs= } &lt;info&gt;" />
 <MESSAGE
-	 id1="1008"
-	 id2="1008"
-	 eventcategory="1401070000"
-	  functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
-	 content="msg=&quot;&lt;msg&gt;&quot; sess=&quot;&lt;fld1&gt;&quot; dur=&lt;duration&gt; n=&lt;fld2&gt; usr=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;::&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto=&lt;protocol&gt; note=&quot;&lt;rulename&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
+	id1="1008"
+	id2="1008"
+	eventcategory="1401070000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
+	content="msg=&quot;&lt;msg&gt;&quot; sess=&quot;&lt;fld1&gt;&quot; dur=&lt;duration&gt; n=&lt;fld2&gt; usr=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;::&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto=&lt;protocol&gt; note=&quot;&lt;rulename&gt;&quot; fw_action=&quot;&lt;action&gt;&quot;"/>
 
 <MESSAGE 
 	id1="708" 
