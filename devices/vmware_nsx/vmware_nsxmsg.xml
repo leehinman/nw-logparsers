@@ -4,9 +4,9 @@
 	displayname="VMware NSX"
 	group="Virtualization">
 <VERSION
-	xml="8"
-	checksum="c7b9e4bdd7fb75390a384bde5bb62898"
-	revision="112"
+	xml="9"
+	checksum="493810aa3ae07dffa99562b799a036f1"
+	revision="123"
 	device="2.0" />
 <HEADER 
 	id1="0002" 
@@ -106,7 +106,7 @@
 	id2="firewall"
 	eventcategory="1801000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;]: &lt;fld2&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; LEN=&lt;fld3&gt; TOS=&lt;fld4&gt; PREC=&lt;fld5&gt; TTL=&lt;duration&gt; ID=&lt;fld6&gt;  {DF PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; WINDOW=&lt;fld8&gt; RES=&lt;resultcode&gt; &lt;fld9&gt; URGP=&lt;fld10&gt;|PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; LEN=&lt;fld11&gt;|DF PROTO=&lt;protocol&gt;}" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;]: &lt;fld2&gt;IN=&lt;sinterface&gt; OUT=&lt;dinterface&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; LEN=&lt;fld3&gt; TOS=&lt;fld4&gt; PREC=&lt;fld5&gt; TTL=&lt;duration&gt; ID=&lt;fld6&gt;  {DF PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; WINDOW=&lt;fld8&gt; RES=&lt;resultcode&gt; &lt;fld9&gt; URGP=&lt;fld10&gt;|PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; LEN=&lt;fld11&gt;|DF PROTO=&lt;protocol&gt;}" />
 
 <MESSAGE
 	id1="nat:01"
@@ -114,6 +114,20 @@
 	eventcategory="1801000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;]: &lt;fld2&gt; SRC=&lt;saddr&gt; DST=&lt;daddr&gt; LEN=&lt;fld3&gt; TOS=&lt;fld4&gt; PREC=&lt;fld5&gt; TTL=&lt;duration&gt; ID=&lt;fld6&gt; DF PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; LEN=&lt;fld8&gt;" />
+
+<MESSAGE
+	id1="nat:02"
+	id2="nat"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hfld1,hfld2,hfld3)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;]: &lt;fld2&gt;IN=&lt;sinterface&gt; OUT=&lt;dinterface&gt; {MAC=&lt;macaddr&gt; SRC=&lt;saddr&gt;|SRC=&lt;saddr&gt;} DST=&lt;daddr&gt; LEN=&lt;fld3&gt; TOS=&lt;fld4&gt; PREC=&lt;fld5&gt; TTL=&lt;duration&gt; ID=&lt;fld6&gt; DF PROTO=&lt;protocol&gt; SPT=&lt;sport&gt; DPT=&lt;dport&gt; WINDOW=&lt;fld8&gt; RES=&lt;resultcode&gt; &lt;fld9&gt; URGP=&lt;fld10&gt;" />
+
+<MESSAGE
+	id1="loadbalancer"
+	id2="loadbalancer"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hfld1,hfld2,hfld3)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;]: &lt;hostip&gt;:&lt;network_port&gt; [&lt;fld2&gt;]&lt;info&gt;" />
 
 <MESSAGE
 	id1="config:01"
