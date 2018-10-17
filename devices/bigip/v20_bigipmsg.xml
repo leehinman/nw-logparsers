@@ -4,9 +4,9 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="89"
-		checksum="b30487765723e5e6a9c9c41d51c5f4b9"
-		revision="121"
+		xml="90"
+		checksum="af914cf884a88d3c81879c17937b88ee"
+		revision="122"
 		device="2.0"/>
 
 
@@ -1030,6 +1030,20 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Master key updated by user&gt;"
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: }&lt;fld7&gt;:&lt;fld8&gt;: Master Key updated by user %&lt;fld1&gt;-&lt;fld2&gt;-&lt;fld3&gt;-&lt;hostip&gt;" />
+
+<MESSAGE
+	 id1="000161_02"
+	 id2="mcpd"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@action:create&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;: AUDIT - client&lt;interface&gt;, user&lt;username&gt;- transaction #&lt;id1&gt;- object&lt;fld33&gt;- create {{&lt;obj_name&gt;{{ {node_address_name &quot;&lt;fld31&gt;&quot; node_address_description &quot;&lt;fld35&gt;&quot; node_address_addr&lt;hostip&gt;&lt;info&gt;|&lt;info&gt;}} } [Status=&lt;result&gt;]"/>
+
+<MESSAGE
+	 id1="000161_03"
+	 id2="mcpd"
+	 eventcategory="1605000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@action:obj_delete&gt;"
+	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;: AUDIT - client&lt;interface&gt;, user&lt;username&gt;- transaction #&lt;id1&gt;- object&lt;fld4&gt;- obj_delete {{&lt;obj_name&gt;{{&lt;info&gt;} } [Status=&lt;result&gt;]"/>
 
 <MESSAGE
 	id1="000161"
