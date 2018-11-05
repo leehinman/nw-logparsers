@@ -4,9 +4,9 @@
 	displayname="Apache Web Server"
 	group="Web Logs">
 <VERSION
-	xml="21"
-	checksum="aea463b330ea720650cfd5a15aa3d14f"
-	revision="118"
+	xml="23"
+	checksum="fd9e1aee934b09a98dd6a5caecc1002f"
+	revision="123"
     device="2.0" />
 
 <HEADER 
@@ -494,4 +494,32 @@
 	id2="\x80g\x01\x03" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
 	content=" &lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt;  " />
+<MESSAGE 
+	id1="HTTP" 
+	id2="HTTP/1.1"	
+	eventcategory="1204000000" 
+	functions="&lt;@web_ref_domain:*URL($DOMAIN,web_referer)&gt;&lt;@web_domain:*URL($DOMAIN,web_host)&gt;&lt;@fqdn:*PARMVAL(web_host)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content=" &lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &quot;&lt;web_host&gt;&quot; &quot;&lt;webpage&gt;&quot; &quot;&lt;web_query&gt;&quot; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &quot;&lt;web_referer&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_cookie&gt;&quot;  " />
+
+<MESSAGE 
+	id1="Secure" 
+	id2="Secure"	
+	eventcategory="1204000000" 
+	functions="&lt;@web_ref_domain:*URL($DOMAIN,web_referer)&gt;&lt;@web_domain:*URL($DOMAIN,web_host)&gt;&lt;@fqdn:*PARMVAL(web_host)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content=" &lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &quot;&lt;web_host&gt;&quot; &quot;&lt;webpage&gt;&quot; &quot;&lt;web_query&gt;&quot; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &quot;&lt;web_referer&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_cookie&gt;&quot;  " />
+
+<MESSAGE 
+	id1="OPENVAS" 
+	id2="OPENVAS"	
+	eventcategory="1204000000" 
+	functions="&lt;@web_ref_domain:*URL($DOMAIN,web_referer)&gt;&lt;@web_domain:*URL($DOMAIN,web_host)&gt;&lt;@fqdn:*PARMVAL(web_host)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content=" &lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &quot;&lt;web_host&gt;&quot; &quot;&lt;webpage&gt;&quot; &quot;&lt;web_query&gt;&quot; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &quot;&lt;web_referer&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_cookie&gt;&quot;  " />
+
+<MESSAGE 
+	id1="id:02" 
+	id2="id;"	
+	eventcategory="1204000000" 
+	functions="&lt;@web_ref_domain:*URL($DOMAIN,web_referer)&gt;&lt;@web_domain:*URL($DOMAIN,web_host)&gt;&lt;@fqdn:*PARMVAL(web_host)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%D/%B/%W:%N:%U:%O',fld7)&gt;"
+	content=" &lt;saddr&gt; &lt;fld5&gt; &lt;username&gt; [&lt;fld7&gt; &lt;timezone&gt;] &quot;&lt;web_method&gt; &quot;&lt;web_host&gt;&quot; &quot;&lt;webpage&gt;&quot; &quot;&lt;web_query&gt;&quot; &lt;network_service&gt;&quot; &lt;resultcode&gt; &lt;sbytes&gt; &quot;&lt;web_referer&gt;&quot; &quot;&lt;user_agent&gt;&quot; &quot;&lt;web_cookie&gt;&quot;  " />
+
 </DEVICEMESSAGES>
