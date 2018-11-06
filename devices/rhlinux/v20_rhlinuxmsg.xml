@@ -4,11 +4,15 @@
 	displayname="Linux"
 	group="Unix">
 <VARTYPE name="month" regex="Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" ignorecase="true" />
-<VARTYPE name="day" regex="\d{1,2}" />
+<VARTYPE name="day" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 <VARTYPE name="time" regex="\d{2}:\d{2}:\d{2}" />
+<VARTYPE name="hmonth" regex="0[1-9]|1[012]|[1-9]" />
+<VARTYPE name="hyear" regex="([0-9]{4})" />
+<VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
+
 <VERSION
-	xml="355"
-	checksum="1b0707ea205b5bcfad3c5e1b25281177"
+	xml="356"
+	checksum="2fdcc91cd8877a0c6af60bbc96c702a2"
 	revision="123"
 	device="2.0" />
 
@@ -23,6 +27,11 @@
 	name="getEventLegacyCategory"
 	default="1901000000"
 	keyvaluepairs="Failed=&apos;1303000000&apos;|Postponed=&apos;1304000000&apos;" />	
+<HEADER
+	id1="0095"
+	id2="0095"
+	content="&lt;fld1&gt; &lt;hyear&gt;-&lt;hmonth&gt;-&lt;hday&gt;T&lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt;.&lt;hfld99&gt; &lt;hhost&gt; &lt;messageid&gt; &lt;!payload&gt;" /> 
+
 <HEADER
 	id1="9999"
 	id2="9999"
@@ -23117,6 +23126,19 @@
 
 	
 <MESSAGE
+	id1="systemd:01"
+	id2="systemd"
+	eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%W %G %F %H%T%O',hyear,hmonth,hday,hhour,hmin,hsec)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:*HDR(messageid)&gt;"
+	content="&lt;process_id&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;action&gt;{slice User Slice of|User Slice of}&lt;username&gt;."/>
+<MESSAGE
+	id1="systemd:03"
+	id2="systemd"
+	eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%W %G %F %H%T%O',hyear,hmonth,hday,hhour,hmin,hsec)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:*HDR(messageid)&gt;"
+	content="&lt;process_id&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;action&gt;Session&lt;sessionid&gt;of user&lt;username&gt;."/>
+
+<MESSAGE
 	id1="002423:03"
 	id2="systemd"
 	eventcategory="1605010000"
@@ -23432,6 +23454,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;username&gt;(&lt;sessionid&gt;): &lt;action&gt;" />
+
+<MESSAGE
+	id1="CROND:01"
+	id2="CROND"
+	eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%W %G %F %H%T%O',hyear,hmonth,hday,hhour,hmin,hsec)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:*HDR(messageid)&gt;"
+	content="&lt;process_id&gt; &lt;fld2&gt; &lt;fld3&gt; (&lt;username&gt;) CMD (&lt;action&gt;)"/>
 
 <MESSAGE
 	id1="00091:01"
