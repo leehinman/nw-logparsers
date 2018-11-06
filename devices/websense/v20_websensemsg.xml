@@ -3,10 +3,15 @@
 	name="websense"
 	displayname="Websense Web Security"
 	group="Web Logs">
+<VARTYPE name="day" regex="Mon|Tue|Wed|Thu|Fri|Sat|Sun" ignorecase="true" />
+<VARTYPE name="month" regex="Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" ignorecase="true" />
+<VARTYPE name="date" regex="\d{1,2}" />
+
+
 <VERSION
-xml="38"
-checksum="514ec24e8bf48fed282f60c846641869"
-revision="117"
+xml="40"
+checksum="9ee8dac012d838b496af8c919ccd4213"
+revision="123"
 device="2.0"/>
 
 <HEADER 
@@ -20,7 +25,7 @@ device="2.0"/>
 <HEADER 
 	id1="0003" 
 	id2="0003"  
-	content="%WEBSENSE Websense &lt;messageid&gt;:  &lt;!payload&gt;" /> 
+	content="%WEBSENSE {Websense &lt;messageid&gt;:|&lt;messageid&gt;:}  &lt;!payload&gt;" />
 <HEADER 
 	id1="0004" 
 	id2="0004"  
@@ -237,19 +242,33 @@ device="2.0"/>
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@event_description:Database Download Failure&gt;"
 	content="Database Download Failure  Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt;  Filtering Service: &lt;daddr&gt; Subscription Key: &lt;fld11&gt; &lt;info&gt;" />
 
+ <MESSAGE 
+	id1="Threshold_Exceeded_Permitted:01" 
+	id2="Alert" 
+	eventcategory="1204010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',month,date,time,year)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;&lt;@action:Permitted&gt;&lt;@event_description:Threshold exceeded for Permitted Category&gt;"
+	content="Threshold exceeded for Permitted Category - &lt;fld1&gt; (&lt;fld2&gt;)&lt;space&gt;Date: &lt;day&gt; &lt;month&gt; &lt;date&gt; &lt;time&gt; &lt;year&gt;&lt;space&gt;Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;dn&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Permitted | Protocol:&lt;protocol&gt; Action: Permitted } --Most recent request-- URL:&lt;url&gt; IP address: &lt;daddr&gt; Port: &lt;dport&gt;" />
+
 <MESSAGE 
 	id1="Threshold_Exceeded_Permitted" 
 	id2="Alert" 
 	eventcategory="1204010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;&lt;@action:Threshold exceeded for Permitted Category&gt;&lt;@event_description:Threshold exceeded for Permitted Category&gt;"
-	content="Threshold exceeded for Permitted Category - &lt;fld1&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;dn&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Permitted | Protocol:&lt;protocol&gt; Action: Permitted } --Most recent request-- URL:&lt;url&gt; IP address: &lt;daddr&gt; Port: &lt;dport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O','%B %F %N:%U:%O %W',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Permitted&gt;&lt;@action:Threshold exceeded for Permitted Category&gt;&lt;@event_description:Threshold exceeded for Permitted Category&gt;"
+	content="Threshold exceeded for Permitted Category - &lt;fld1&gt; (&lt;fld2&gt;)&lt;space&gt;Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;dn&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Permitted | Protocol:&lt;protocol&gt; Action: Permitted } --Most recent request-- URL:&lt;url&gt; IP address: &lt;daddr&gt; Port: &lt;dport&gt;" />
+
+<MESSAGE 
+	id1="Threshold_Exceeded_Blocked:01" 
+	id2="Alert" 
+	eventcategory="1204020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',month,date,time,year)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;&lt;@action:Blocked&gt;&lt;@event_description:Threshold exceeded for Blocked Category&gt;"
+	content="Threshold exceeded for Blocked Category - &lt;fld1&gt; (&lt;fld2&gt;)&lt;space&gt;Date: &lt;day&gt; &lt;month&gt; &lt;date&gt; &lt;time&gt; &lt;year&gt;&lt;space&gt;Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;username&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Blocked | Protocol:&lt;protocol&gt; Action: Blocked } &lt;fld3&gt; URL:&lt;url&gt; IP address:&lt;daddr&gt; Port: &lt;dport&gt;" />
 
 <MESSAGE 
 	id1="Threshold_Exceeded_Blocked" 
 	id2="Alert" 
 	eventcategory="1204020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;&lt;@action:Threshold exceeded for Blocked Category&gt;&lt;@event_description:Threshold exceeded for Blocked Category&gt;"
-	content="Threshold exceeded for Blocked Category - &lt;fld1&gt; (&lt;fld2&gt;) Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;username&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Blocked | Protocol:&lt;protocol&gt; Action: Blocked } &lt;fld3&gt; URL:&lt;url&gt; IP address:&lt;daddr&gt; Port: &lt;dport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%G/%W %N:%U:%O','%G/%F/%W %N:%U:%O','%B %F %N:%U:%O %W',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@web_query:*URL($QUERY,url)&gt;&lt;@event_state:Blocked&gt;&lt;@action:Threshold exceeded for Blocked Category&gt;&lt;@event_description:Threshold exceeded for Blocked Category&gt;"
+	content="Threshold exceeded for Blocked Category - &lt;fld1&gt; (&lt;fld2&gt;)&lt;space&gt;Date: &lt;fld20&gt; Type: &lt;severity&gt; Source: &lt;agent&gt; &lt;info&gt; User name: &lt;username&gt; User IP address: &lt;saddr&gt; Threshold (in visits): &lt;trigger_val&gt; {Category: &lt;category&gt; Action: Blocked | Protocol:&lt;protocol&gt; Action: Blocked } &lt;fld3&gt; URL:&lt;url&gt; IP address:&lt;daddr&gt; Port: &lt;dport&gt;" />
 
 <MESSAGE 
 	id1="Alert" 
