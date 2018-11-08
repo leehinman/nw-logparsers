@@ -4,9 +4,9 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="90"
-		checksum="af914cf884a88d3c81879c17937b88ee"
-		revision="122"
+		xml="92"
+		checksum="5586dd08df3655eb2e2d42d3bdf3edd8"
+		revision="123"
 		device="2.0"/>
 
 
@@ -1838,6 +1838,20 @@
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;CLIENT_ACCEPTED&gt;: INFO&lt;info&gt;:&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
 
 <MESSAGE
+	id1="tmm_013"
+	id2="tmm"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="tmm_014"
+	id2="tmm"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session protocol number: &lt;fld3&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt;, destination: &lt;daddr&gt;" />
+
+<MESSAGE
 	id1="000362"
 	id2="tmm"
 	eventcategory="1609000000"
@@ -3016,6 +3030,13 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
 
 <MESSAGE
+	id1="tmm2:01"
+	id2="tmm2"
+	eventcategory="1801010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; , destination: &lt;daddr&gt;, type code: &lt;info&gt; " />
+
+<MESSAGE
 	id1="000394"
 	id2="tmm2"
 	eventcategory="1802000000"
@@ -3506,6 +3527,40 @@
 	 eventcategory="1801000000"
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;event_description&gt;"/>
+<MESSAGE
+	id1="tmm5"
+	id2="tmm5"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="tmm5:01"
+	id2="tmm5"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; , destination: &lt;daddr&gt;, type code: &lt;info&gt; " />
+
+<MESSAGE
+	id1="tmm8"
+	id2="tmm8"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="tmm8:01"
+	id2="tmm8"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; , destination: &lt;daddr&gt;, type code: &lt;info&gt; " />
+
+<MESSAGE
+	id1="tmm9"
+	id2="tmm9"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
+	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
 
 <MESSAGE
 	 id1="icrd_child"
