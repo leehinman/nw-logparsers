@@ -4,9 +4,9 @@
 	displayname="Aruba ClearPass Policy Manager"
 	group="Access Control">
 <VERSION
-	xml="16"
-	checksum="4c9a755f5cea448d52644838e80d39a7"
-	revision="118"
+	xml="17"
+	checksum="8608ac23a26ef5ab9d9f067c525e71d7"
+	revision="123"
 	device="2.0" />
 
  
@@ -292,4 +292,13 @@
 	missField="true"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld3)&gt;"
 	content=" CN=&lt;fld1&gt;,Common.Host-MAC-Address=&lt;smacaddr&gt;,Common.NAS-IP-Address=&lt;stransaddr&gt;,Common.Request-Timestamp=&lt;fld3&gt;,Common.Roles=&lt;user_role&gt;,Common.Service=&lt;service&gt;,Common.Username=&lt;username&gt;,RADIUS.Acct-Framed-IP-Address=&lt;fld4&gt;,Common.Enforcement-Profiles=&lt;fld5&gt;,Common.System-Posture-Token=&lt;fld6&gt;,RADIUS.Auth-Method=&lt;authmethod&gt;,WEBAUTH.Host-IP-Address=&lt;saddr&gt; " />
+<MESSAGE
+	id1="Insight_Failed_Auth"
+	id2="Insight_Failed_Auth"
+	eventcategory="1301000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld5,hfld6)&gt;"
+	content=" Auth.Username=&lt;username&gt;,Auth.Host-MAC-Address=&lt;macaddr&gt;,Auth.NAS-IP-Address=&lt;saddr&gt;,Auth.Service=&lt;service&gt;,CppmErrorCode.Error-Code-Details=&lt;result&gt;,CppmAlert.Alerts=&lt;info&gt;  " />
+
 </DEVICEMESSAGES>                                                                                                                                                                    
