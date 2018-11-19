@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="123"
+	revision="124"
     device="2.0" />
 	
 
@@ -271,6 +271,16 @@
 	eventcategory="1612000000"
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+	
+<MESSAGE 
+	id1="aws_cloudwatch" 
+	id2="aws_cloudwatch" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
+	
+	
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -319,6 +329,7 @@
 	<Vendor2Device vendor="Amazon" product="Amazon vpc" device="amazonvpc" group="Cloud"/>
 	<Vendor2Device vendor="Microsoft" product="Azure Monitor" device="azuremonitor" group="Cloud"/>
     <Vendor2Device vendor="Cisco" product="Cisco Umbrella" device="ciscoumbrella" group="Cloud"/>
+	<Vendor2Device vendor="AWS" product="CloudWatch" device="aws_cloudwatch" group="Cloud"/>
 </VendorProducts>
 
 
@@ -432,6 +443,46 @@
 		    <device2meta device="NetskopeCloudSecurityPlatform" metaName="event_type"/>
 		</ExtensionKey>	
 		
+
+		
+		<ExtensionKey cefName="source" metaName="cs_fld"/>
+		<ExtensionKey cefName="substatus" metaName="result"/>
+		<ExtensionKey cefName="uristem" metaName="webpage"/>
+		<ExtensionKey cefName="ClientIp" metaName="saddr"/>
+		<ExtensionKey cefName="timetaken" metaName="cs_fld"/>
+		<ExtensionKey cefName="uriquery" metaName="cs_fld"/>
+		<ExtensionKey cefName="win32status" metaName="disposition"/>
+		<ExtensionKey cefName="UserAgent" metaName="user_agent"/>
+		<ExtensionKey cefName="serverIp" metaName="daddr"/>
+		
+
+		<ExtensionKey cefName="domain" metaName="domain"/>
+		<ExtensionKey cefName="event.desc" metaName="event_description"/>
+		<ExtensionKey cefName="ec.activity" metaName="ec_activity"/>
+		<ExtensionKey cefName="ec.outcome" metaName="ec_outcome"/>
+		<ExtensionKey cefName="ec.subject" metaName="ec_subject"/>
+		<ExtensionKey cefName="ec.theme" metaName="ec_theme"/>
+		<ExtensionKey cefName="esa.time" metaName="cs_fld"/>
+		<ExtensionKey cefName="event.cat" metaName="event_cat"/>
+		<ExtensionKey cefName="event.cat.name" metaName="event_cat_name"/>
+		<ExtensionKey cefName="event.computer" metaName="event_computer"/>
+		<ExtensionKey cefName="event.log" metaName="event_log"/>
+		<ExtensionKey cefName="event.source.id" metaName="cs_fld"/>
+		<ExtensionKey cefName="event.time" metaName="cs_fld"/>
+		<ExtensionKey cefName="forward.ip" metaName="cs_fld"/>
+		<ExtensionKey cefName="header.id" metaName="cs_fld"/>
+		<ExtensionKey cefName="inv.category" metaName="inv.category"/>
+		<ExtensionKey cefName="inv.context" metaName="inv.context"/>
+		<ExtensionKey cefName="lc.cid" metaName="cs_fld"/>
+		<ExtensionKey cefName="log.session.id" metaName="sessionid"/>
+		<ExtensionKey cefName="msg.id" metaName="id1"/>
+		<ExtensionKey cefName="msg.vid" metaName="cs_fld"/>
+		<ExtensionKey cefName="privilege" metaName="privilege"/>
+		<ExtensionKey cefName="reference.id" metaName="id"/>
+		<ExtensionKey cefName="sdomain" metaName="sdomain"/>
+		<ExtensionKey cefName="user.dst" metaName="username"/>
+		<ExtensionKey cefName="user.sid.dst" metaName="sid"/>
+		<ExtensionKey cefName="user.src" metaName="c_username"/>		
 		
 
 		
@@ -753,6 +804,7 @@
 		<ExtensionKey cefName="status" metaName="disposition">
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
 			<device2meta device="vmwareappdefense" metaName="event_state"/>
+			<device2meta device="aws_cloudwatch" metaName="resultcode"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="subscriptionId" metaName="id1"/>
 		<ExtensionKey cefName="uid" metaName="user.id"/>
@@ -1272,6 +1324,9 @@
 		<ExtensionKey cefName="identity.claims.http://schemas.microsoft.com/claims/authnmethodsreferences" metaName="authmethod"/>
 		<ExtensionKey cefName="identity.claims.name" metaName="c_username"/>
 		<ExtensionKey cefName="properties.statusCode" metaName="disposition"/>
+		<ExtensionKey cefName="properties.eventName" metaName="event_log"/>
+		<ExtensionKey cefName="EventName" metaName="event_log"/>
+		<ExtensionKey cefName="durationMs" metaName="duration_string"/>
         
 		<ExtensionKey cefName="InternalIp" metaName="saddr"/>
 		<ExtensionKey cefName="ExternalIp" metaName="stransaddr"/>
