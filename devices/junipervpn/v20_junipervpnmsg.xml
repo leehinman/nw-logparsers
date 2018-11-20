@@ -4,9 +4,9 @@
 	displayname="Pulse Secure"
 	group="VPN">
 <VERSION 
-	xml="115"
-	checksum="170739d09cdca3dd4ee215ae990ecd2c"
-	revision="123"
+	xml="118"
+	checksum="98b9820472188b13c493c645174c1c5d"
+	revision="124"
 	device="2.0" />
 
  
@@ -111,6 +111,10 @@
 	id1="22331"
 	id2="22331"
 	content="&lt;hfld1&gt;-&lt;hfld2&gt;-&lt;hfld3&gt;T&lt;hfld4&gt;:&lt;hfld5&gt;:&lt;hfld6&gt;+&lt;hfld7&gt;:&lt;hfld8&gt; &lt;hostname&gt; PulseSecure: - - - &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;node&gt; - [&lt;hfld0&gt;] &lt;husername&gt;(&lt;hfld11&gt;)[&lt;hgroup&gt;] - &lt;messageid&gt; &lt;!payload:messageid&gt;" />		     
+<HEADER 
+	id1="22332"
+	id2="22332"
+	content="&lt;hfld1&gt;-&lt;hfld2&gt;-&lt;hfld3&gt;T&lt;hfld4&gt;:&lt;hfld5&gt;:&lt;hfld6&gt;-&lt;hfld7&gt;:&lt;hfld8&gt; &lt;hostname&gt; PulseSecure: - - - &lt;hfld31&gt;-&lt;hfld32&gt;-&lt;hfld33&gt; &lt;time&gt; - &lt;node&gt; - [&lt;hfld0&gt;] &lt;husername&gt;(&lt;hfld11&gt;)[&lt;hgroup&gt;] - &lt;messageid&gt; &lt;!payload:messageid&gt;" />		     
 <HEADER 
 	id1="2233"
 	id2="2233"
@@ -1938,6 +1942,12 @@
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@result:realm restrictions&gt;&lt;@action:successfull&gt;"
 	content="Password realm restrictions successfully passed for { &lt;c_username&gt;\&lt;fld1&gt; | &lt;fld1&gt; } /&lt;fld2&gt; &lt;fld3&gt;" />
 <MESSAGE 
+	id1="Password"
+	id2="Password"
+	eventcategory="1801000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@result:realm restrictions&gt;&lt;@action:successfull&gt;"
+	content="Password realm restrictions successfully passed for &lt;c_username&gt;/&lt;fld2&gt;" />
+<MESSAGE 
 	id1="000458"
 	id2="Password"
 	eventcategory="1605000000"
@@ -2547,7 +2557,7 @@
 	id2="Session"
 	eventcategory="1605000000"
 	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;"
-	content="Session extended for &lt;fld1&gt; from &lt;smacaddr&gt;" />
+	content="Session extended for &lt;fld1&gt; from {&lt;smacaddr&gt;.|&lt;smacaddr&gt;}" />
 <MESSAGE 
 	id1="001296"
 	id2="Session"
@@ -3205,6 +3215,13 @@
 
 	
 <MESSAGE 
+	id1="User:02"
+	id2="User"
+	eventcategory="1605000000"
+	functions="&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;"
+	content="User Record Synchronization [&lt;fld1&gt;] failed to {request|push} all data for &lt;c_username&gt; in &lt;fld2&gt; because the request could not be sent" />
+
+<MESSAGE 
 	id1="000385"
 	id2="Local"
 	eventcategory="1402000000"
@@ -3506,6 +3523,13 @@
 	eventcategory="1401060000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@hostip:*HDR(hfld0)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@action:Web SSO: Authentication successful&gt;"
 	content="Web SSO: Authentication successful. Credential Used: Username: &lt;c_username&gt;, BasicHash: &lt;fld1&gt;, Realm: &lt;fld3&gt;, Auth Type: (&lt;authmethod&gt;) &lt;fld4&gt;, Cred Type: (&lt;fld5&gt;) &lt;fld6&gt;, Target: &lt;hostname&gt;, Password: &lt;fld6&gt;, Policy Auth: &lt;fld6&gt;" />
+
+<MESSAGE 
+	id1="Web:02"
+	id2="Web"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@realm:*HDR(hfld11)&gt;&lt;@group:*HDR(hgroup)&gt;&lt;@username:*HDR(husername)&gt;&lt;@domain:*HDR(hdomain)&gt;&lt;@event_type:VPN&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H:%U:%O',hfld31,hfld32,hfld33,time)&gt;"
+	content="Web request connection from &lt;saddr&gt; timed out. Requested URI &lt;url&gt;, bytes received &lt;rbytes&gt;, bytes expected &lt;fld1&gt;." />
 
 <MESSAGE 
 	id1="000484"
