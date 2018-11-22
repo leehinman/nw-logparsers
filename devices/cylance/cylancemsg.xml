@@ -4,9 +4,9 @@
 	displayname="CylanceProtect"
 	group="Anti Virus">
 <VERSION
-	xml="15"
-	checksum="30c9f14d626225ab0be0ff22df46d8ad"
-	revision="122"
+	xml="17"
+	checksum="d7200d59ceff4adc3d76a96d3243cd80"
+	revision="124"
 	device="2.0" />
 
  
@@ -200,7 +200,7 @@
 	 id2="CylancePROTECT"
 	 eventcategory="1901000000"
 	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	 content="Event Name:&lt;event_type&gt;, Message: The Device:&lt;node&gt;was auto assigned to the Zone:&lt;zone&gt;, User:&lt;user_fname&gt;"/>
+	 content="Event Name:&lt;event_type&gt;, Message: {The Device|Device}:&lt;node&gt;was auto assigned {to the| to} Zone:&lt;zone&gt;, User:&lt;user_fname&gt;"/>
 
 	 
 <MESSAGE
@@ -235,4 +235,20 @@
 	 content="Event Name:&lt;event_type&gt;, Message: Provider:&lt;fld3&gt;, Source IP:&lt;saddr&gt;, User: &lt;user_fname&gt; &lt;user_lname&gt; {(&lt;mail_id&gt;)#015|(&lt;mail_id&gt;)}"/>
 
 	 
+<MESSAGE
+	 id1="CylancePROTECT:26"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Device Message: Device: &lt;device&gt;; Policy Changed: &lt;fld4&gt; to &apos;&lt;policyname&gt;&apos;, User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;), Zone Names: &lt;info&gt;"/>
+
+	
+ <MESSAGE
+	 id1="CylancePROTECT:27"
+	 id2="CylancePROTECT"
+	 eventcategory="1901000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hdate,hhour,hmin,hsec)&gt;&lt;@event_cat:*getEventLegacyCategory(event_type)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="Event Name:&lt;event_type&gt;, Device Message: Device: &lt;device&gt;; {Zones Removed: &lt;fld4&gt;; Zones Added: &lt;fld5&gt;,|Zones Removed: &lt;fld4&gt;,} User: &lt;user_fname&gt; &lt;user_lname&gt; (&lt;mail_id&gt;), Zone Names: &lt;info&gt;"/>
+
+	
 </DEVICEMESSAGES>
