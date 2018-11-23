@@ -4,9 +4,9 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="92"
-		checksum="5586dd08df3655eb2e2d42d3bdf3edd8"
-		revision="123"
+		xml="93"
+		checksum="ccf43e8bcdea017f0200b45be6de5c1f"
+		revision="124"
 		device="2.0"/>
 
 
@@ -48,12 +48,18 @@
 	id1="0008"
 	id2="0008"
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; &lt;hfld1&gt; /&lt;hfld2&gt;/&lt;hfld3&gt;/&lt;messageid&gt;[&lt;pid&gt;]: &lt;!payload:hhost&gt;"/>
+
+<HEADER
+	id1="0018"
+	id2="0018"
+	messageid="STRCAT('ICSA',&apos;_&apos;,'GENERIC')"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; &lt;hlevel&gt; &lt;hfld4&gt;[&lt;hfld7&gt;]: &lt;hfld5&gt;:&lt;hfld6&gt;: ICSA: &lt;!payload:hhost&gt;"/>
+
 	
 <HEADER
 	id1="0006"
 	id2="0006"
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; &lt;hfld1&gt; &lt;messageid&gt;[&lt;pid&gt;]: &lt;!payload:hhost&gt;"/>
-		
 	
 <HEADER
 	id1="0002"
@@ -97,8 +103,17 @@
 	id1="0017"
 	id2="0017"
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhost&gt; -&lt;messageid&gt;[&lt;pid&gt;]: &lt;!payload:hhost&gt;"/>
- 
- 
+
+<VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="Other.Default"
+		keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1803000000=&apos;Network.Denied.Connections&apos;" />
+   		
+<VALUEMAP
+		name="getEventLegacyCategory"
+		default="1901000000"
+		keyvaluepairs="accepted=&apos;1801020000&apos;|rejected=&apos;1803000000&apos;" />	
+
 <MESSAGE
 	id1="000058"
 	id2="alertd"
@@ -1025,6 +1040,14 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;fld1&gt;:&lt;fld2&gt;: AUDIT - {client &lt;process&gt;, tmsh-pid-&lt;fld3&gt;, user &lt;username&gt;|user &lt;username&gt;} - transaction &lt;fld4&gt; - object &lt;fld5&gt; - &lt;action&gt; {{ &lt;obj_type&gt; {{ devicegroup_name &quot;&lt;obj_name&gt;&quot; } } [Status=&lt;result&gt;]" />
 
 <MESSAGE
+	id1="000161_04"
+	id2="mcpd"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="{ &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: }&lt;fld1&gt;:&lt;fld2&gt;: AUDIT - client&lt;interface&gt;, user &lt;username&gt;- transaction #&lt;id1&gt;- object &lt;fld33&gt; - &lt;action&gt; {{ &lt;obj_type&gt;{{ global_sync_status_sync_status {{ cmi_sync_status_sync_status &lt;fld35&gt; cmi_sync_status_status &quot;&lt;fld39&gt;&quot; cmi_sync_status_mode &lt;fld36&gt; cmi_sync_status_color &lt;fld37&gt; cmi_sync_status_summary &quot;&lt;info&gt;&quot; cmi_sync_status_details {{ &lt;context&gt; } } } } [Status=&lt;result&gt;]"/>
+
+ 
+<MESSAGE
 	id1="000161_01"
 	id2="mcpd"
 	eventcategory="1605000000"
@@ -1836,20 +1859,6 @@
 	 eventcategory="1802000000"
 	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;CLIENT_ACCEPTED&gt;: INFO&lt;info&gt;:&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
-
-<MESSAGE
-	id1="tmm_013"
-	id2="tmm"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
-
-<MESSAGE
-	id1="tmm_014"
-	id2="tmm"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session protocol number: &lt;fld3&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt;, destination: &lt;daddr&gt;" />
 
 <MESSAGE
 	id1="000362"
@@ -3030,13 +3039,6 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
 
 <MESSAGE
-	id1="tmm2:01"
-	id2="tmm2"
-	eventcategory="1801010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; , destination: &lt;daddr&gt;, type code: &lt;info&gt; " />
-
-<MESSAGE
 	id1="000394"
 	id2="tmm2"
 	eventcategory="1802000000"
@@ -3345,14 +3347,20 @@
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="  -- &lt;fld1&gt;[&lt;process_id&gt;]: &lt;service&gt;(&lt;event_type&gt;): session closed for user &lt;username&gt;" />
 	
-	
+<MESSAGE
+	id1="000444"
+	id2="OSPF"
+	eventcategory="1609000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Detected router with duplicaterouter ID&gt;"
+	content="  &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;protocol&gt;: Detected router with duplicaterouter ID &lt;fld1&gt; in area &lt;fld2&gt;" />	
+
 	
 <MESSAGE
 	id1="000443"
 	id2="OSPF"
 	eventcategory="1605020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content="  &lt;fld1&gt; &lt;severity&gt; &lt;fld2&gt;[&lt;process_id&gt;]: &lt;protocol&gt;: &lt;agent&gt;: &lt;event_description&gt;" />
+	content="  &lt;fld1&gt; &lt;severity&gt; &lt;fld2&gt;[&lt;process_id&gt;]: &lt;protocol&gt;: {&lt;agent&gt;: &lt;event_description&gt;|&lt;event_description&gt;}" />
 	
 <MESSAGE
 	id1="AUDIT"
@@ -3528,45 +3536,17 @@
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]}:&lt;fld1&gt;:&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;event_description&gt;"/>
 <MESSAGE
-	id1="tmm5"
-	id2="tmm5"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
-
-<MESSAGE
-	id1="tmm5:01"
-	id2="tmm5"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; , destination: &lt;daddr&gt;, type code: &lt;info&gt; " />
-
-<MESSAGE
-	id1="tmm8"
-	id2="tmm8"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
-
-<MESSAGE
-	id1="tmm8:01"
-	id2="tmm8"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; , destination: &lt;daddr&gt;, type code: &lt;info&gt; " />
-
-<MESSAGE
-	id1="tmm9"
-	id2="tmm9"
-	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@a:non-session &gt;&lt;@b: packet &gt;&lt;@event_description:*STRCAT(a,protocol,b,disposition)&gt;"
-	content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: non-session &lt;protocol&gt; packet &lt;disposition&gt;, source: &lt;saddr&gt; port &lt;sport&gt;, destination: &lt;daddr&gt; port:&lt;dport&gt;" />
-
-<MESSAGE
 	 id1="icrd_child"
 	 id2="icrd_child"
 	 eventcategory="1801030000"
 	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Current session has been terminated&gt;"
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}&lt;fld1&gt;:&lt;fld2&gt;:{AUDIT - Cannot|Cannot}load user credentials for user &quot;&lt;username&gt;&quot; Current session has been terminated."/>
+
+<MESSAGE
+	 id1="ICSA_GENERIC"
+	 id2="ICSA_GENERIC"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@msg_id:*PARMVAL(agent)&gt;&lt;@vid:*PARMVAL(agent)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content=" {&lt;hostname&gt; &lt;severity&gt;|&lt;hostname&gt;} &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: ICSA: {non-session protocol number: &lt;fld3&gt; packet &lt;disposition&gt;,|non-session &lt;protocol&gt; packet &lt;disposition&gt;,} {source: &lt;saddr&gt; port &lt;sport&gt;,|source: &lt;saddr&gt;,} {destination: &lt;daddr&gt; port:&lt;dport&gt;|destination: &lt;daddr&gt;, type code:&lt;info&gt;|destination: &lt;daddr&gt;}" />
 
 </DEVICEMESSAGES>
