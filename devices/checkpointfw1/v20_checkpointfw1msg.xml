@@ -4,9 +4,9 @@
 	displayname="Check Point FW-1"
 	group="Firewall">
 <VERSION
-	xml="110"
-	checksum="b1e7297a49f6aa28692177bcb1dfa071"
-	revision="120"
+	xml="112"
+	checksum="82f2d1ed7cd6a641c5a4275fa81048de"
+	revision="124"
     device="2.0" />
 
 <HEADER
@@ -1378,6 +1378,22 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@obj_type:*PARMVAL(type)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@shost:*PARMVAL(client)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Type=&lt;type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;operation&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
 <MESSAGE
+	id1="080000:04"
+	id2="080000"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;action&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes={&quot;&lt;changes&gt;&quot;|&lt;changes&gt;},session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;},Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080000:05"
+	id2="080000"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080000"
 	id2="080000"
 	eventcategory="1605030000"
@@ -1408,6 +1424,22 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@change_new:*PARMVAL(changes)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@obj_type:*PARMVAL(type)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Type=&lt;type&gt;,Category=&lt;category&gt;,Operation=&quot;&quot;&lt;operation&gt;&quot;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Changes=&quot;&quot;&lt;changes&gt;&quot;&lt;fld1&gt;" />
 <MESSAGE
+	id1="080010:05"
+	id2="080010"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;action&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes={&quot;&lt;changes&gt;&quot;|&lt;changes&gt;},session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;},Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080010:06"
+	id2="080010"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080010"
 	id2="080010"
 	eventcategory="1605030000"
@@ -1419,6 +1451,22 @@
 	eventcategory="1605030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@obj_type:*PARMVAL(type)&gt;&lt;@change_new:*PARMVAL(changes)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Type=&lt;type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;operation&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Changes=&quot;&lt;changes&gt;&quot;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
+<MESSAGE
+	id1="080020:02"
+	id2="080020"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;action&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes={&quot;&lt;changes&gt;&quot;|&lt;changes&gt;},Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080020:03"
+	id2="080020"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
 <MESSAGE
 	id1="080020"
 	id2="080020"
@@ -1437,6 +1485,22 @@
 	eventcategory="1605030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@obj_type:*PARMVAL(type)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Type=&lt;type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;operation&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
+<MESSAGE
+	id1="080030:03"
+	id2="080030"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;action&gt;&quot;,Uid={{&lt;uid&gt;},Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080030:04"
+	id2="080030"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
 <MESSAGE
 	id1="080030"
 	id2="080030"
@@ -1489,6 +1553,22 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,{Operation Number=&lt;recordnum&gt;,|Operation Number=&lt;recordnum&gt;}" />
 <MESSAGE
+	id1="080070:03"
+	id2="080070"
+	eventcategory="1401060000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Operation=&quot;&lt;action&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080070:04"
+	id2="080070"
+	eventcategory="1401060000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Info=&lt;info&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080070"
 	id2="080070"
 	eventcategory="1401060000"
@@ -1534,6 +1614,22 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,{Operation Number=&lt;recordnum&gt;,|Operation Number=&lt;recordnum&gt;}" />
 <MESSAGE
+	id1="080090:03"
+	id2="080090"
+	eventcategory="1401070000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Operation=&quot;&lt;action&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080090:04"
+	id2="080090"
+	eventcategory="1401070000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080090"
 	id2="080090"
 	eventcategory="1401070000"
@@ -1545,6 +1641,22 @@
 	eventcategory="1605030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Audit Status=&lt;status&gt;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
+<MESSAGE
+	id1="080100:02"
+	id2="080100"
+	eventcategory="1612000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Operation=&quot;&lt;action&gt;&quot;,Administrator={&quot;&lt;administrator&gt;&quot;|&lt;administrator&gt;},Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Audit Status=&lt;result&gt;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;operation_id&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080100:03"
+	id2="080100"
+	eventcategory="1612000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,Audit Status=&lt;result&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
 <MESSAGE
 	id1="080100"
 	id2="080100"
@@ -1648,6 +1760,22 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@obj_type:*PARMVAL(type)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Type=&lt;type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
 <MESSAGE
+	id1="080240:02"
+	id2="080240"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;action&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,session_id=&lt;sessionid&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080240:03"
+	id2="080240"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080240"
 	id2="080240"
 	eventcategory="1605030000"
@@ -1659,6 +1787,22 @@
 	eventcategory="1605030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@obj_name:*PARMVAL(name)&gt;&lt;@obj_type:*PARMVAL(type)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&lt;name&gt;,Type=&lt;type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
+<MESSAGE
+	id1="080250:02"
+	id2="080250"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&quot;&lt;action&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,session_id=&lt;sessionid&gt;,Subject=&quot;&lt;subject&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080250:03"
+	id2="080250"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
 <MESSAGE
 	id1="080250"
 	id2="080250"
@@ -1750,6 +1894,22 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&quot;&lt;name&gt;&quot;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
 <MESSAGE
+	id1="080390:02"
+	id2="080390"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;},Operation=&quot;&lt;action&gt;&quot;,Administrator={&quot;&lt;administrator&gt;&quot;|&lt;administrator&gt;},Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;operation_id&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE 
+	id1="080390:03"
+	id2="080390"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,Info=&lt;info&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080390"
 	id2="080390"
 	eventcategory="1605030000"
@@ -1761,6 +1921,22 @@
 	eventcategory="1605030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Name=&quot;&lt;name&gt;&quot;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;recordnum&gt;," />
+<MESSAGE
+	id1="080400:02"
+	id2="080400"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Name={&quot;&lt;obj_name&gt;&quot;|&lt;obj_name&gt;},Operation=&quot;&lt;action&gt;&quot;,Administrator={&quot;&lt;administrator&gt;&quot;|&lt;administrator&gt;},Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;operation_id&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE 
+	id1="080400:03"
+	id2="080400"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Info=&lt;info&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
 <MESSAGE
 	id1="080400"
 	id2="080400"
@@ -1804,11 +1980,43 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@action:*PARMVAL(operation)&gt;&lt;@shost:*PARMVAL(client)&gt;&lt;@hostname:*PARMVAL(origin)&gt;&lt;@operation_id:*PARMVAL(recordnum)&gt;"
 	content="Origin=&lt;origin&gt;,Application=&lt;application&gt;,Operation=&quot;&lt;operation&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;client&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info=&lt;info&gt;,Operation Number=&lt;recordnum&gt;," />
 <MESSAGE
+	id1="080430:02"
+	id2="080430"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Operation=&quot;&lt;action&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Subject=&quot;&lt;subject&gt;&quot;,Info={&quot;&lt;info&gt;&quot;|&lt;info&gt;},Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
+	id1="080430:03"
+	id2="080430"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Info=&lt;info&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE
 	id1="080430"
 	id2="080430"
 	eventcategory="1605030000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@auditdata:*CKPTAUDIT()&gt;&lt;@level:*HDR(hlevel)&gt;"
 	content="&lt;msg&gt;" />
+<MESSAGE
+	id1="080440:01"
+	id2="080440"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;"
+	content="time=&lt;fld85&gt;,{Application=&quot;&lt;application&gt;&quot;|Application=&lt;application&gt;},Operation=&quot;&lt;action&gt;&quot;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;},Subject=&quot;&lt;subject&gt;&quot;,Info=&quot;&lt;info&gt;&quot;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
+<MESSAGE  
+	id1="080440:02"
+	id2="080440"
+	eventcategory="1605000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %H:%U:%O',month,day,year,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*HDR(hlevel)&gt;&lt;@change_new:*PARMVAL(changes)&gt;"
+	content="time=&lt;fld85&gt;,Application=&lt;application&gt;,Name=&lt;obj_name&gt;,Type=&lt;obj_type&gt;,Category=&lt;category&gt;,Info=&lt;info&gt;,Operation=&lt;action&gt;,Uid=&lt;uid&gt;,Administrator=&lt;administrator&gt;,Client=&lt;shost&gt;,Changes=&lt;changes&gt;,session_id=&lt;sessionid&gt;,Subject=&lt;subject&gt;,Operation Number=&lt;operation_id&gt;,client_ip=&lt;saddr&gt;,origin_sic_name=&lt;fld1&gt;,s_port=&lt;sport&gt;,d_port=&lt;dport&gt;,Origin=&lt;hostname&gt;" />
+
 <MESSAGE
 	id1="080440"
 	id2="080440"
