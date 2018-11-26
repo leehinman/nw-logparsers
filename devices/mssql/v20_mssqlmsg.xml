@@ -4,9 +4,9 @@
 	displayname="Microsoft SQL Server"
 	group="Database">
 <VERSION
-	xml="56"
-	checksum="2d296883e83280fb9ed6de3c3932fbeb"
-	revision="122"
+	xml="58"
+	checksum="b855dfbcd70ac6f2d94da94351561b49"
+	revision="124"
 	device="2.0" />
 
 
@@ -48,7 +48,7 @@
 <HEADER 
 	id1="0008" 
 	id2="0008"
-	content="%NICWIN-&lt;level&gt;-&lt;messageid&gt;: &lt;hevent_log&gt;,&lt;hlinenum&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,{ Report Server Windows Service (&lt;hfld1&gt;) | SQL Server Reporting Services (&lt;hfld2&gt;) | SQLBrowser | SQL Server Report Service | MSSQLServerOLAPService | SQLVDI }, &lt;!payload:hevent_log&gt;" />  
+	content="%NICWIN-&lt;level&gt;-{&lt;messageid&gt; Server Windows Service (&lt;hfld1&gt;):|&lt;messageid&gt;:} &lt;hevent_log&gt;,&lt;hlinenum&gt;,&lt;hday&gt; &lt;hdatetime&gt;,&lt;hevent_id&gt;,{ Report Server Windows Service (&lt;hfld1&gt;) | SQL Server Reporting Services (&lt;hfld2&gt;) | SQLBrowser | SQL Server Report Service | MSSQLServerOLAPService | SQLVDI }, &lt;!payload:hevent_log&gt;" />  
 <HEADER 
 	id1="0009" 
 	id2="0009"  
@@ -1489,8 +1489,19 @@
 	eventcategory="1603110000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;&lt;@event_description:Login succeeded for user. Connection: trusted&gt;"
 	content="&lt;event_log&gt;,rn=&lt;fld10&gt; cid=&lt;fld11&gt; eid=&lt;fld12&gt;,&lt;fld14&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;fld13&gt;,&lt;fld26&gt;,&lt;event_computer&gt;,&lt;fld16&gt;,&lt;fld17&gt;," />
-		
-		
+<MESSAGE 
+	id1="Application_120_Report" 
+	id2="Application_120_Report"  
+	eventcategory="1603110000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;"
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt; (&lt;service&gt;),&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,&lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="Application_140_Report" 
+	id2="Application_140_Report"  
+	eventcategory="1603110000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,&apos;%B %D %N:%U:%O %W&apos;,fld55)&gt;&lt;@event_description:The application domain failed to initialize.&gt;"
+	content="&lt;event_log&gt;,&lt;fld10&gt;,&lt;fld11&gt; &lt;fld55&gt;,&lt;id&gt;,&lt;event_source&gt; (&lt;service&gt;),&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld1&gt;,The application domain &lt;domain&gt; failed to initialize. Error:&lt;error&gt;" />
 <MESSAGE 
 	id1="Application_208_SQLSERVERAGENT" 
 	id2="Application_208_SQLSERVERAGENT"  
@@ -2860,7 +2871,7 @@
 	id2="D"
 	eventcategory="1609000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;|Audit event: event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;|is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld47&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld49&gt;|class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 <MESSAGE
 	id1="DBCC"
 	id2="DBCC"
@@ -2933,7 +2944,7 @@
 	id2="G"
 	eventcategory="1402030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: event_time:&lt;fld4&gt;| Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; user_defined_event_id:&lt;fld46&gt; transaction_id:&lt;fld47&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld48&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld56&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: event_time:&lt;fld4&gt;| Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; user_defined_event_id:&lt;fld46&gt; {transaction_id:&lt;fld47&gt; class_type:&lt;obj_type&gt;|class_type:&lt;obj_type&gt;} permission_bitmask:&lt;permissions&gt; {sequence_group_id:&lt;fld48&gt; session_server_principal_name:&lt;fld11&gt;|session_server_principal_name:&lt;fld11&gt;} server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld56&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 
 <MESSAGE
 	id1="DATABASE_PERMISSION_CHANGE_GROUP"
@@ -2970,7 +2981,7 @@
 	id2="GWG"
 	eventcategory="1402030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;|Audit event: event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;|is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld47&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld49&gt;|class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 <MESSAGE
 	id1="DATABASE_PRINCIPAL_IMPERSONATION_GROUP"
 	id2="IMDP"
@@ -3193,7 +3204,7 @@
 	id2="PWPL"
 	eventcategory="1402000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: {audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;|event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;|is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld12&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld14&gt;|class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld93&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 <MESSAGE
 	id1="RESET_PASSWORD"
 	id2="PWR"
@@ -3217,7 +3228,7 @@
 	id2="R"
 	eventcategory="1609000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: {audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;|event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;|is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld12&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld14&gt;|class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld93&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 <MESSAGE
 	id1="RECEIVE"
 	id2="RC"
@@ -3325,7 +3336,7 @@
 	id2="TO"
 	eventcategory="1401000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;|Audit event: event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;|is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld47&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld49&gt;|class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 <MESSAGE
 	id1="DATABASE_OWNERSHIP_CHANGE_GROUP"
 	id2="TODB"
@@ -3379,7 +3390,7 @@
 	id2="USLG"
 	eventcategory="1402000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld4)&gt;"
-	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,Audit event: event_time:&lt;fld4&gt; sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt; session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; class_type:&lt;obj_type&gt; session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
+	content="&lt;fld1&gt;,&lt;hostname&gt;,&lt;fld2&gt;,&lt;fld3&gt;,{Audit event: audit_schema_version:&lt;version&gt; event_time:&lt;fld4&gt;|Audit event: event_time:&lt;fld4&gt;} sequence_number:&lt;dclass_counter1&gt; action_id:&lt;event_type&gt; succeeded:&lt;event_state&gt; {permission_bitmask:&lt;permissions&gt; is_column_permission:&lt;fld6&gt;|is_column_permission:&lt;fld6&gt;} session_id:&lt;sessionid&gt; server_principal_id:&lt;fld7&gt; database_principal_id:&lt;fld8&gt; target_server_principal_id:&lt;fld9&gt; target_database_principal_id:&lt;fld10&gt; object_id:&lt;fld36&gt; {user_defined_event_id:&lt;fld47&gt; class_type:&lt;obj_type&gt; permission_bitmask:&lt;permissions&gt; sequence_group_id:&lt;fld49&gt;|class_type:&lt;obj_type&gt;} session_server_principal_name:&lt;fld11&gt; server_principal_name:&lt;username&gt; server_principal_sid:&lt;logon_id&gt; database_principal_name:&lt;fld14&gt; target_server_principal_name:&lt;c_username&gt; target_server_principal_sid:&lt;fld46&gt; target_database_principal_name:&lt;fld16&gt; server_instance_name:&lt;instance&gt; database_name:&lt;db_name&gt; schema_name:&lt;owner&gt; object_name:&lt;obj_name&gt; statement:{&lt;action&gt; additional_information:&lt;info&gt; user_defined_information:&lt;fld91&gt;|&lt;action&gt; additional_information:&lt;info&gt;|&lt;action&gt;} " />
 <MESSAGE
 	id1="VIEW_DATABASE_STATE"
 	id2="VDST"
