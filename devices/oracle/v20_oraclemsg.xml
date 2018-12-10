@@ -4,9 +4,9 @@
 	displayname="Oracle"
 	group="Database">
 <VERSION
-	xml="112"
-	checksum="b51cdc0d208c6f7779f02396a2841f49"
-	revision="123"
+	xml="114"
+	checksum="bb340c5f52912389d765e712e5bc79d0"
+	revision="125"
 	device="2.0" />
 
  
@@ -76,9 +76,17 @@
 	id2="0005"
 	content="&lt;hfld16&gt;Oracle Audit[&lt;hfld1&gt;]:&lt;hfld2&gt;ACTION: {[&lt;hfld3&gt;] &quot;&lt;messageid&gt; &lt;fld4&gt;&quot; | &quot;&lt;messageid&gt; &lt;fld4&gt;&quot;} &lt;!payload:hfld1&gt;" />
 <HEADER
+	id1="0010"
+	id2="0010"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; {Message forwarded from &lt;hostname&gt;: | &lt;hostname&gt;} Oracle Audit[&lt;hfld1&gt;]:&lt;hfld2&gt;ACTION : {[&lt;hfld3&gt;] &apos;&lt;messageid&gt;&apos; | &apos;&lt;messageid&gt;&apos;} &lt;!payload:hfld1&gt;" />
+<HEADER
 	id1="0006"
 	id2="0006"
 	content="&lt;hfld16&gt;Oracle Audit[&lt;hfld1&gt;]:&lt;hfld2&gt;ACTION : {[&lt;hfld3&gt;] &apos;&lt;messageid&gt;&apos; | &apos;&lt;messageid&gt;&apos;} &lt;!payload:hfld1&gt;" />
+<HEADER
+	id1="0011"
+	id2="0011"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; {Message forwarded from &lt;hostname&gt;: Oracle Audit| &lt;fld1&gt;: Oracle Audit| &lt;hostname&gt; Oracle Audit}[&lt;hfld1&gt;]:&lt;hfld2&gt;ACTION :[&lt;hfld3&gt;] &apos;&lt;messageid&gt; &lt;hfld4&gt;&apos; &lt;!payload:hfld1&gt;" />		
 <HEADER
 	id1="0007"
 	id2="0007"
@@ -175,6 +183,12 @@
 	id1="0019"
 	id2="0019"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+<HEADER 
+	id1="9988" 
+	id2="9988" 
+	messageid="STRCAT('Oracle_Audit')"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hostname&gt; Oracle Audit[&lt;hfld1&gt;]: LENGTH: &quot;&lt;hfld2&gt;&quot; SESSIONID:[&lt;hfld3&gt;] &quot;&lt;hfld4&gt;&quot; &lt;!payload:hfld1&gt;" />
+
 
 <MESSAGE 
 	id1="0" 
@@ -872,6 +886,14 @@
 	eventcategory="1611000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',event_time_string)&gt;&lt;@event_description:Shutdown normal performed on instance&gt;"
 	content="&lt;fld3&gt;: &lt;event_log&gt;,&lt;fld11&gt;,&lt;fld12&gt; &lt;event_time_string&gt;,&lt;id&gt;,&lt;event_source&gt;,&lt;event_user&gt;,&lt;event_type&gt;,&lt;event_computer&gt;,&lt;category&gt;,&lt;fld2&gt;,Shutdown normal performed on instance &lt;instance&gt;" />
+<MESSAGE 
+	id1="8:01" 
+	id2="8" 
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;process_id&gt;]: LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld2&gt;] &lt;action&gt; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld8&gt;] &apos;&lt;db_id&gt;&apos;" />
+
+	
 <MESSAGE 
 	id1="WIN_12" 
 	id2="12" 
@@ -1818,6 +1840,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:ALTER USER&gt;"
 	content="&lt;process_id&gt;]: [ID &lt;fld34&gt; &lt;fld35&gt;] &lt;fld30&gt; SESSIONID:&lt;fld3&gt; &quot;&lt;sessionid&gt;&quot; ENTRYID:&lt;fld5&gt; &quot;&lt;entry&gt;&quot; STATEMENT:&lt;fld6&gt; &quot;&lt;statement&gt;&quot; USERID:&lt;fld9&gt; &quot;&lt;username&gt;&quot; {USERHOST:&lt;fld8&gt; &quot;&lt;hostname&gt;&quot; TERMINAL:&lt;fld99&gt;&quot;&lt;terminal&gt;&quot;| USERHOST:&lt;fld8&gt; &quot;&lt;hostname&gt;&quot;} ACTION:&lt;fld13&gt; &quot;&lt;id&gt;&quot; RETURNCODE:&lt;fld15&gt; &quot;&lt;resultcode&gt;&quot; OBJ$NAME:&lt;fld17&gt; &quot;&lt;obj_name&gt;&quot; OS$USERID:&lt;fld16&gt; &lt;c_username&gt; DBID:&lt;fld27&gt; &quot;&lt;db_id&gt;&quot; PRIV$USED:&lt;fld28&gt; &lt;privilege&gt;" />
+<MESSAGE 
+	id1="43:10" 
+	id2="43" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;process_id&gt;]: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld1&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld2&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld3&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld4&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld5&gt;] &quot;&lt;hostname&gt;&quot; ACTION:[&lt;fld6&gt;] &quot;&lt;action&gt;&quot; RETURNCODE:[&lt;fld7&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld8&gt;] &quot;&lt;obj_name&gt;&quot; COMMENT$TEXT:[&lt;fld9&gt;] &quot;&lt;info&gt;&quot; OS$USERID:[&lt;fld10&gt;] &quot;&lt;c_username&gt;&quot; SES$LABEL:[&lt;fld11&gt;] &quot;&lt;fld12&gt;&quot; DBID:[&lt;fld13&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld14&gt;] &quot;&lt;privilege&gt;&quot;" />	
+
 <MESSAGE 
 	id1="44" 
 	id2="44" 
@@ -4019,6 +4048,14 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld25)&gt;&lt;@event_type:update&gt;"
 	content="EVENTTIME: &quot;&lt;fld24&gt; &lt;fld25&gt;&quot; VERSION: &quot;&lt;version&gt;&quot; OS: &quot;&lt;os&gt;&quot; SYSTEM: &quot;&lt;fld23&gt;&quot; NODE: &quot;&lt;node&gt;&quot; INSTANCE: &quot;&lt;instance&gt;&quot; ORACLEPID: &quot;&lt;db_pid&gt;&quot; UNIXPID: &quot;&lt;process_id&gt;  ACTION : &quot;&lt;action&gt;&quot; DATABASE USER: &quot;&lt;username&gt;&quot; PRIVILEGE : &lt;privilege&gt; CLIENT USER: &lt;c_username&gt; CLIENT TERMINAL: &lt;terminal&gt; STATUS: &lt;resultcode&gt;" />
 <MESSAGE
+	id1="ts:01"
+	id2="ts"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;process_id&gt;]: LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld2&gt;] &lt;action&gt; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld8&gt;] &apos;&lt;db_id&gt;&apos;" />
+
+	
+<MESSAGE
 	id1="to"
 	id2="to"
 	eventcategory="1401000000"
@@ -4547,6 +4584,14 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O %W',fld25)&gt;&lt;@event_type:update&gt;"
 	content="EVENTTIME: &quot;&lt;fld24&gt; &lt;fld25&gt;&quot; VERSION: &quot;&lt;version&gt;&quot; OS: &quot;&lt;os&gt;&quot; SYSTEM: &quot;&lt;fld23&gt;&quot; NODE: &quot;&lt;node&gt;&quot; INSTANCE: &quot;&lt;instance&gt;&quot; ORACLEPID: &quot;&lt;db_pid&gt;&quot; UNIXPID: &quot;&lt;process_id&gt;  ACTION : &quot;&lt;action&gt;&quot; DATABASE USER: &quot;&lt;username&gt;&quot; PRIVILEGE : &lt;privilege&gt; &lt;info&gt;" />
 <MESSAGE
+	id1="LE:02"
+	id2="LE"
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;process_id&gt;]: LENGTH : &apos;&lt;fld1&gt;&apos; ACTION :[&lt;fld2&gt;] &lt;action&gt; DATABASE USER:[&lt;fld3&gt;] &apos;&lt;username&gt;&apos; PRIVILEGE :[&lt;fld4&gt;] &apos;&lt;privilege&gt;&apos; CLIENT USER:[&lt;fld5&gt;] &apos;&lt;c_username&gt;&apos; CLIENT TERMINAL:[&lt;fld6&gt;] &apos;&lt;terminal&gt;&apos; STATUS:[&lt;fld7&gt;] &apos;&lt;resultcode&gt;&apos; DBID:[&lt;fld8&gt;] &apos;&lt;db_id&gt;&apos;" />
+
+	
+<MESSAGE
 	id1="X$KCCTF"
 	id2="X$KCCTF"
 	eventcategory="1401000000"
@@ -4804,6 +4849,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg_id:*HDR(p_msgid)&gt;&lt;@vid:*HDR(p_msgid)&gt;&lt;@event_type:Oracle Audit&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="{[ID&lt;fld1&gt;&lt;fld2&gt;] SESSIONID: &quot;&lt;sessionid&gt;&quot; | SESSIONID: &quot;&lt;sessionid&gt;&quot;} ENTRYID: &quot;&lt;entry&gt;&quot; STATEMENT: &quot;&lt;statement&gt;&quot; USERID: &quot;&lt;username&gt;&quot; USERHOST: &quot;&lt;hostname&gt;&quot; TERMINAL: &quot;&lt;terminal&gt;&quot; ACTION: &quot;&lt;action&gt;&quot; RETURNCODE: &quot;&lt;resultcode&gt;&quot; OBJ$CREATOR: &quot;&lt;owner&gt;&quot; OBJ$NAME: &quot;&lt;obj_name&gt;&quot; OS$USERID: &quot;&lt;c_username&gt;&quot; " />
+
+<MESSAGE 
+	id1="Oracle_Audit:05" 
+	id2="Oracle_Audit" 
+	eventcategory="1401000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:Oracle Audit&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;process_id&gt;]: LENGTH: &quot;&lt;fld30&gt;&quot; SESSIONID:[&lt;fld1&gt;] &quot;&lt;sessionid&gt;&quot; ENTRYID:[&lt;fld2&gt;] &quot;&lt;entry&gt;&quot; STATEMENT:[&lt;fld3&gt;] &quot;&lt;statement&gt;&quot; USERID:[&lt;fld4&gt;] &quot;&lt;username&gt;&quot; USERHOST:[&lt;fld5&gt;] &quot;&lt;hostname&gt;&quot; {TERMINAL:[&lt;fld6&gt;] &quot;&lt;terminal&gt;quot; ACTION:[&lt;fld7&gt;] &quot;&lt;action&gt;&quot;|ACTION:[&lt;fld7&gt;] &quot;&lt;action&gt;&quot;} RETURNCODE:[&lt;fld8&gt;] &quot;&lt;resultcode&gt;&quot; OBJ$NAME:[&lt;fld9&gt;] &quot;&lt;obj_name&gt;&quot; COMMENT$TEXT:[&lt;fld10&gt;] &quot;&lt;info&gt;&quot; OS$USERID:[&lt;fld11&gt;] &quot;&lt;c_username&gt;&quot; SES$LABEL:[&lt;fld12&gt;] &quot;&lt;fld13&gt;&quot; DBID:[&lt;fld14&gt;] &quot;&lt;db_id&gt;&quot; PRIV$USED:[&lt;fld15&gt;] &quot;&lt;privilege&gt;&quot;" />	
 
 <MESSAGE
 	id1="Oracle_Audit:03"
