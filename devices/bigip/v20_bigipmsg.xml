@@ -4,9 +4,9 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="93"
-		checksum="ccf43e8bcdea017f0200b45be6de5c1f"
-		revision="124"
+		xml="94"
+		checksum="da2a8038dda5675ea7ae2404dab4cd5b"
+		revision="125"
 		device="2.0"/>
 
 
@@ -2899,7 +2899,13 @@
 	eventcategory="1401000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;info&gt;" />
-	
+<MESSAGE
+	id1="000388_01"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; {&lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;[&lt;process_id&gt;]}: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;fld2&gt;| IP address is &lt;saddr&gt; |  SSL cipher strength is &lt;protocol&gt; | cipher used &lt;s_cipher&gt; | user agent is &lt;user_agent&gt; | HTTP version is &lt;version&gt;" />
+
 <MESSAGE
 	id1="000388"
 	id2="tmm"
