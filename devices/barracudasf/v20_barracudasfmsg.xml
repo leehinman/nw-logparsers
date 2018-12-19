@@ -4,9 +4,9 @@
 	displayname="Barracuda Spam Firewall"
 	group="Anti Virus">
 <VERSION 
-	xml="10"
-	checksum="c8f8172a3b07209241a8078b62652c22"
-	revision="118"
+	xml="12"
+	checksum="0d6e1a45a8723d41e015c5eddfdf7e96"
+	revision="125"
 	device="2.0" />
 
  
@@ -22,59 +22,88 @@
 	id1="0003" 
 	id2="0003"  
 	content="&lt;messageid&gt;: &lt;!payload:messageid&gt;" /> 
+	
+<VALUEMAP
+		name="getActionName"
+		default="$NONE"
+		keyvaluepairs="0=&apos;Allowed Message&apos;|1=&apos;Aborted Message&apos;|2=&apos;Blocked Message&apos;|3=&apos;Quarantined Message&apos;|4=&apos;Tagged Message&apos;|5=&apos;Deferred Message&apos;|6=&apos;Per-User Quarantined Message&apos;|7=&apos;Whitelisted Message&apos;|8=&apos;Encrypted Message&apos;|9=&apos;Redirected Message&apos;|10=&apos;Attachments Stubbed&apos;" />
+<VALUEMAP
+		name="getActionNameForSend"
+		default="$NONE"
+		keyvaluepairs="1=&apos;Delivered Message&apos;|2=&apos;Rejected Message&apos;|3=&apos;Deferred Message&apos;|4=&apos;Expired Message&apos;" />
+<VALUEMAP
+		name="getReasonName"
+		default="$NONE"
+		keyvaluepairs="1=&apos;Virus&apos;|2=&apos;Banned Attachment&apos;|3=&apos;RBL Match&apos;|4=&apos;Rate Control&apos;|5=&apos;Too Many Message In Session&apos;|6=&apos;Timeout Exceeded&apos;|7=&apos;No Such Domain&apos;|8=&apos;No Such User&apos;|9=&apos;Subject Filter Match&apos;|11=&apos;Client IP&apos;|12=&apos;Recipient Address&apos;|13=&apos;No Valid Recipients&apos;|14=&apos;Domain Not Found&apos;|15=&apos;Sender Address&apos;|&apos;|17=&apos;Need Fully Qualified Recipient&apos;|18=&apos;Need Fully Qualified Sender&apos;|19=&apos;Unsupported Command&apos;|20=&apos;MAIL FROM Syntax Error&apos;|21=&apos;Bad Address Syntax&apos;|22=&apos;RCPT TO Syntax Error&apos;|23=&apos;Send EHLO/HELO First&apos;|24=&apos;Need MAIL Command&apos;|25=&apos;Nested MAIL Command&apos;|27=&apos;EHLO/HELO Syntax Error&apos;|30=&apos;Mail Protocol Violation&apos;|31=&apos;Score&apos;|34=&apos;Header Filter Match&apos;|35=&apos;Sender Block/Accept&apos;|36=&apos;Recipient Block/Accept&apos;|37=&apos;Body Filter Match&apos;|38=&apos;Message Size Bypass&apos;|39=&apos;Intention Analysis Match&apos;|40=&apos;SPF/Caller-ID&apos;|41=&apos;Client Host Rejected&apos;|44=&apos;Authentication Not Enabled&apos;|45=&apos;Allowed Message Size Exceeded&apos;|46=&apos;Too Many Recipients&apos;|47=&apos;Need RCPT Command&apos;|48=&apos;DATA Syntax Error&apos;|49=&apos;Internal Error&apos;|50=&apos;Too Many Hops&apos;|51=&apos;Mail Protocol Error&apos;|55=&apos;Invalid Parameter Syntax&apos;|56=&apos;STARTTLS Syntax Error&apos;|57=&apos;TLS Already Active&apos;|58=&apos;Too Many Errors&apos;|59=&apos;Need STARTTLS First&apos;|60=&apos;Spam Fingerprint Found&apos;|61=&apos;Barracuda Reputation Whitelist&apos;|62=&apos;Barracuda Reputation Blocklist&apos;|63=&apos;DomainKeys&apos;|64=&apos;Recipient Verification Unavailable&apos;|65=&apos;Realtime Intent&apos;|66=&apos;Client Reverse DNS&apos;|67=&apos;Email Registry&apos;|68=&apos;Invalid Bounce&apos;|69=&apos;Intent - Adult&apos;|70=&apos;Intent - Political&apos;|71=&apos;Multi-Level Intent&apos;|72=&apos;Attachment Limit Exceeded&apos;|73=&apos;System Busy&apos;|74=&apos;BRTS Intent&apos;|75=&apos;Per Domain Recipient&apos;|76=&apos;Per Domain Sender&apos;|77=&apos;Per Domain Client IP&apos;|78=&apos;Sender Spoofed&apos;|79=&apos;Attachment Content&apos;|80=&apos;Outlook Add-in&apos;|82=&apos;Barracuda IP/Domain Reputation&apos;|83=&apos;Authentication Failure&apos;|85=&apos;Attachment Size&apos;|86=&apos;Virus detected by Extended Malware Protection&apos;|87=&apos;Extended Malware Protection engine is busy&apos;|88=&apos;A message was categorized for Email Category&apos;|89=&apos;Macro Blocked&apos;" />
+<VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="Other.Default"
+		keyvaluepairs="1207010100=&apos;Content.Email.Delivery.Success&apos;|1207040200=&apos;Content.Email.Spam.Blocked&apos;|1207040100=&apos;Content.Email.Spam.Suspect&apos;|1207010201=&apos;Content.Email.Delivery.Error.Nondelivery Receipt&apos;|1207010000=&apos;Content.Email.Delivery&apos;|1207000000=&apos;Content.Email&apos;" />
+<VALUEMAP
+		name="getEventLegacyCategory"
+		default="1901000000"
+		keyvaluepairs="Delivered Message=&apos;1207010100&apos;|Rejected Message=&apos;1207040200&apos;|Allowed Message=&apos;1207010100&apos;|Aborted Message=&apos;1207040200&apos;|Blocked Message=&apos;1207040200&apos;|Quarantined Message=&apos;1207040100&apos;|Tagged Message=&apos;1207040100&apos;|Deferred Message=&apos;1207010201&apos;|Per-User Quarantined Message=&apos;1207010000&apos;|Whitelisted Message=&apos;1207010100&apos;|Encrypted Message=&apos;1207010000&apos;|Redirected Message=&apos;1207000000&apos;|Attachments Stubbed=&apos;1207000000&apos;|Expired Message=&apos;1207010000&apos;" />	
+ 
 <MESSAGE 
 	id1="000001"
 	id2="inbound/pass1" 
 	eventcategory="1207010201" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="inbound/pass1[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;from&gt; &lt;to&gt; &lt;info&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="inbound/pass1[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;from&gt; &lt;to&gt; {&lt;fld3&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}" />
 <MESSAGE 
 	id1="inbound/pass1"
 	id2="inbound/pass1" 
 	eventcategory="1207010201" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;domain&gt; &lt;info&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld3&gt; &lt;resultcode&gt; {&lt;fld6&gt; SZ:&lt;fld8&gt; SUBJ:&lt;subject&gt;|&lt;domain&gt; &lt;info&gt;}" />
+
 <MESSAGE
 	id1="inbound/pass1:01"
 	id2="inbound/pass1"
 	eventcategory="1207010201"
-	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;"
-	content="inbound/pass1:&lt;web_domain&gt;[&lt;saddr&gt;]&lt;fld1&gt;&lt;fld3&gt;&lt;fld2&gt;&lt;action&gt;&lt;from&gt;&lt;to&gt;&lt;info&gt;"/>
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="inbound/pass1:&lt;web_domain&gt;[&lt;saddr&gt;]&lt;id&gt;&lt;fld1&gt;&lt;fld2&gt;&lt;action&gt;&lt;from&gt;&lt;to&gt;{&lt;fld3&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}"/>
 
 	
 <MESSAGE 
 	id1="000002"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;info&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; {&lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}" />
 <MESSAGE 
 	id1="outbound/smtp"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;}  {[InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;event_description&gt; #to#&lt;ddomain&gt; | [InternalId=&lt;id&gt;] &lt;event_description&gt; #to#&lt;daddr&gt; | [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;info&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;}" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld5&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;}  {[InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;event_description&gt; #to#&lt;ddomain&gt; | [InternalId=&lt;id&gt;] &lt;event_description&gt; #to#&lt;daddr&gt; | [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;info&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;}" />
 	
 <MESSAGE 
 	id1="000009"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {&lt;fld8&gt; ok&lt;fld9&gt;| ok&lt;fld9&gt;} Message &lt;fld10&gt; accepted #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
-	
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; {&lt;fld8&gt; ok&lt;fld9&gt;| ok&lt;fld9&gt;} Message &lt;fld10&gt; accepted #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+<MESSAGE 
+	id1="outbound/smtp:01"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@result: Message accepted for delivery&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; Message accepted for delivery #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+
 <MESSAGE 
 	id1="000010"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {Ok &lt;fld9&gt; &lt;fld10&gt; - gsmtp| Ok: queued as &lt;fld9&gt; |ok &lt;fld9&gt;| Ok (&lt;fld9&gt;)| OK &lt;fld9&gt; | &lt;fld9&gt; } #to#&lt;daddr&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;fld7&gt; {Ok &lt;fld9&gt; &lt;fld10&gt; - gsmtp| Ok: queued as &lt;fld9&gt; |ok &lt;fld9&gt;| Ok (&lt;fld9&gt;)| OK &lt;fld9&gt; | &lt;fld9&gt; } #to#&lt;daddr&gt;" />
 	
 <MESSAGE 
 	id1="000011"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;  connect to &lt;ddomain&gt;[&lt;daddr&gt;]: &lt;event_description&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt;  connect to &lt;ddomain&gt;[&lt;daddr&gt;]: &lt;event_description&gt; " />
 	
 
 	
@@ -82,32 +111,32 @@
 	id1="000012"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; [&lt;ddomain&gt;]: &lt;event_description&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;fld7&gt; [&lt;ddomain&gt;]: &lt;event_description&gt; " />
 <MESSAGE 
 	id1="000013"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;&lt;&lt;from&gt;&gt;: &lt;event_description&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;fld7&gt; &lt;&lt;&lt;from&gt;&gt;: &lt;event_description&gt; " />
 <MESSAGE 
 	id1="000014"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; &lt;fld8&gt; &lt;event_description&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;fld8&gt; &lt;event_description&gt; " />
 <MESSAGE 
 	id1="000003"
 	id2="scan" 
 	eventcategory="1207040000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="scan[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; -  &lt;from&gt; &lt;to&gt; &lt;info&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="scan[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld8&gt;  &lt;from&gt; &lt;to&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;resultcode&gt; &lt;fld7&gt; {SZ:&lt;fld9&gt; SUBJ:&lt;subject&gt;| &lt;info&gt;}" />
 <MESSAGE 
 	id1="scan"
 	id2="scan" 
 	eventcategory="1207040000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="scan: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;fld3&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld8&gt; &lt;from&gt; &lt;to&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt; &lt;fld7&gt; {SZ:&lt;fld8&gt; SUBJ:&lt;subject&gt;| &lt;info&gt;} " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="scan: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld8&gt; &lt;from&gt; &lt;to&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;resultcode&gt; &lt;fld7&gt; {SZ:&lt;fld9&gt; SUBJ:&lt;subject&gt;| &lt;info&gt;} " />
 		
 <MESSAGE 
 	id1="000004"
@@ -149,8 +178,8 @@
 	id1="000008" 
 	id2="notify/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="notify/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;bytes&gt; &lt;version&gt; &lt;from&gt; &lt;info&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="notify/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;bytes&gt; &lt;version&gt; &lt;from&gt; &lt;info&gt;" />
 <MESSAGE 
 	id1="reports"
 	id2="reports" 
