@@ -4,8 +4,8 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="94"
-		checksum="da2a8038dda5675ea7ae2404dab4cd5b"
+		xml="95"
+		checksum="263f72b61103ffd7d38be7f139a6dde2"
 		revision="125"
 		device="2.0"/>
 
@@ -2911,8 +2911,15 @@
 	id2="tmm"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;fld1&gt; &lt;fld2&gt; &lt;saddr&gt; - &lt;daddr&gt; &lt;dport&gt; &lt;web_method&gt; &lt;web_query&gt;" />
+	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;year&gt;-&lt;month&gt;-&lt;date&gt; &lt;hour&gt;:&lt;min&gt;:&lt;sec&gt; &lt;fld2&gt; &lt;saddr&gt; - &lt;daddr&gt; &lt;dport&gt; &lt;web_method&gt; &lt;web_query&gt;" />
 	
+<MESSAGE
+	id1="000388_02"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; {&lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;[&lt;process_id&gt;]}: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;event_description&gt;" />
+
 	
 <MESSAGE
 	id1="000389"
