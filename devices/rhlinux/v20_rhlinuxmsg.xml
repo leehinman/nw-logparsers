@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="357"
-	checksum="e370eb4898c3e139200d29cde7dc06cc"
-	revision="124"
+	xml="359"
+	checksum="ba3eb4bbc6b2ae76a7e6f11ad9185210"
+	revision="125"
 	device="2.0" />
 
 
@@ -2427,7 +2427,7 @@
 	id1="audit:21"
 	id2="audit"
 	eventcategory="1502000000"
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:AVC&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:AVC&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@context.dst:*PARMVAL(t_context)&gt;"
 	content="AVC msg=&lt;agent&gt;(&lt;info&gt;): avc:&lt;disposition&gt;{{&lt;fld1&gt;} for  pid=&lt;process_id&gt;comm=&quot;&lt;process&gt;&quot; path=&quot;&lt;filename&gt;&quot; dev=&quot;&lt;device&gt;&quot; ino=&lt;inode&gt;scontext=&lt;s_context&gt;tcontext=&lt;t_context&gt;tclass=&lt;obj_type&gt;"/>
 
 	
@@ -11785,8 +11785,8 @@
 	id1="00103:02"
 	id2="named"
 	eventcategory="1605010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: client &lt;saddr&gt;#&lt;sport&gt;: query: &lt;domain&gt; {IN &lt;fld3&gt; (&lt;hostip&gt;)|IN &lt;fld1&gt;}" />
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: {queries: info: client|client} &lt;saddr&gt;{#&lt;sport&gt;(&lt;fld1&gt;)|#&lt;sport&gt;}: query: &lt;domain&gt; {IN &lt;fld3&gt; (&lt;hostip&gt;)|IN &lt;fld1&gt;}" />
 <MESSAGE
 	id1="00103:04"
 	id2="named"
@@ -17529,7 +17529,7 @@
 	id1="01037:01"
 	id2="setroubleshoot"
 	eventcategory="1502010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@context.dst:*PARMVAL(t_context)&gt;"
 	content="&lt;agent&gt;: &lt;space&gt; [&lt;event_type&gt;] audit event host=&lt;hostname&gt; type=&lt;category&gt; msg=audit(&lt;fld20&gt;.&lt;fld21&gt;:&lt;id&gt;): &lt;space&gt; avc: &lt;action&gt; {{&lt;privilege&gt;} for  pid=&lt;process_id&gt; comm=&quot;&lt;process&gt;&quot; { path | name }=&quot;&lt;obj_name&gt;&quot; dev=&lt;device&gt; ino=&lt;inode&gt; scontext=&lt;s_context&gt; tcontext=&lt;t_context&gt; tclass=&lt;obj_type&gt; &lt;info&gt;" />
 <MESSAGE
 	id1="01037:02"
