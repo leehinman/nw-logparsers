@@ -4,9 +4,9 @@
 	displayname="Trend Micro IWSS"
 	group="Web Logs">
 <VERSION
-	xml="15"
-	checksum="497f5e21ee1ba896a343c7554a9c1258"
-	revision="121"
+	xml="16"
+	checksum="1cf5b61c2754e1dcb44b5248f8055a1c"
+	revision="125"
 	device="2.0" />
 
  
@@ -381,7 +381,15 @@
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%F %B %W %N:%U:%O',fld7,fld8,fld9,fld10)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Scan&gt;&lt;@ec_theme:ALM&gt;&lt;@obj_type:IP&gt;"
 	content="&lt;hostname&gt;: &lt;&lt;&lt;fld6&gt;, &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt;,&lt;fld11&gt;&gt; [&lt;event_type&gt;|LOG_CRIT] &lt;event_log&gt; tk_username=&lt;obj_name&gt;,tk_date_field=&lt;fld12&gt;,tk_entity_name=&lt;fld13&gt;,tk_rule_name=&lt;rulename&gt;,tk_group_name=&lt;group&gt;,tk_scan_type=&lt;filter&gt;,tk_action=&lt;action&gt;,tk_protocol=&lt;network_service&gt;,tk_url=&lt;url&gt;,tk_malicious_entity=&lt;info&gt;,tk_file_name=&lt;filename&gt;,tk_uid=&lt;uid&gt;" />
 
-		
+	
+<MESSAGE 
+	id1="LOG_CRIT:02" 
+	id2="LOG_CRIT" 
+	eventcategory="1204000000" 
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%F %B %W %N:%U:%O',fld7,fld8,fld9,fld10)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:NetworkComm&gt;"
+	content="&lt;hostname&gt;: &lt;&lt;&lt;fld6&gt;, &lt;fld7&gt; &lt;fld8&gt; &lt;fld9&gt; &lt;fld10&gt;,&lt;fld11&gt;&gt; [&lt;event_type&gt;|LOG_CRIT] &lt;event_log&gt; tk_username=&lt;obj_name&gt;,tk_date_field=&lt;fld12&gt;,tk_protocol=&lt;network_service&gt;,tk_url=&lt;url&gt;,tk_domain=&lt;web_domain&gt;,tk_device_name=&lt;device&gt;,tk_rule_name=&lt;rulename&gt;,tk_group_name=&lt;group&gt;,tk_client_ip=&lt;saddr&gt;,tk_server_ip=&lt;daddr&gt;,tk_destination_port=&lt;dport&gt;,tk_ccca_source=&lt;fld18&gt;,tk_risk_level=&lt;risk_num&gt;,tk_filter_action=&lt;fld17&gt;" />
+
+	
 <MESSAGE 
 	id1="LOG_WARNING:01" 
 	id2="LOG_WARNING" 
