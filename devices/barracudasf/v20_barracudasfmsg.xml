@@ -4,8 +4,8 @@
 	displayname="Barracuda Spam Firewall"
 	group="Anti Virus">
 <VERSION 
-	xml="12"
-	checksum="0d6e1a45a8723d41e015c5eddfdf7e96"
+	xml="13"
+	checksum="011c6507260645244ece991b3575ef2f"
 	revision="125"
 	device="2.0" />
 
@@ -48,21 +48,21 @@
 	id1="000001"
 	id2="inbound/pass1" 
 	eventcategory="1207010201" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="inbound/pass1[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;from&gt; &lt;to&gt; {&lt;fld3&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@action: RECV&gt;"
+	content="inbound/pass1[&lt;fld14&gt;]: &lt;username&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; RECV &lt;from&gt; &lt;to&gt; {&lt;fld3&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}" />
 <MESSAGE 
 	id1="inbound/pass1"
 	id2="inbound/pass1" 
 	eventcategory="1207010201" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld3&gt; &lt;resultcode&gt; {&lt;fld6&gt; SZ:&lt;fld8&gt; SUBJ:&lt;subject&gt;|&lt;domain&gt; &lt;info&gt;}" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@action: SCAN&gt;"
+	content="inbound/pass1: &lt;web_domain&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; SCAN &lt;fld4&gt; &lt;from&gt; &lt;to&gt; &lt;fld5&gt; &lt;fld3&gt; &lt;resultcode&gt; {&lt;fld6&gt; SZ:&lt;fld8&gt; SUBJ:&lt;subject&gt;|&lt;domain&gt; &lt;info&gt;}" />
 
 <MESSAGE
 	id1="inbound/pass1:01"
 	id2="inbound/pass1"
 	eventcategory="1207010201"
-	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="inbound/pass1:&lt;web_domain&gt;[&lt;saddr&gt;]&lt;id&gt;&lt;fld1&gt;&lt;fld2&gt;&lt;action&gt;&lt;from&gt;&lt;to&gt;{&lt;fld3&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}"/>
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:inbound&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%X',fld2)&gt;&lt;@disposition:*getActionName(fld3)&gt;&lt;@result:*getReasonName(resultcode)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@action: RECV&gt;"
+	content="inbound/pass1:&lt;web_domain&gt;[&lt;saddr&gt;] &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; RECV &lt;from&gt; &lt;to&gt;{&lt;fld3&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}"/>
 
 	
 <MESSAGE 
@@ -90,6 +90,13 @@
 	eventcategory="1207010000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@result: Message accepted for delivery&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; Message accepted for delivery #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+
+<MESSAGE 
+	id1="outbound/smtp:02"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; conversation with &lt;fld5&gt;[&lt;fld6&gt;] timed out while sending &lt;fld7&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; " />
 
 <MESSAGE 
 	id1="000010"
