@@ -11,8 +11,8 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="359"
-	checksum="ba3eb4bbc6b2ae76a7e6f11ad9185210"
+	xml="360"
+	checksum="a42128ec5c92887c18a403bd655d32d3"
 	revision="125"
 	device="2.0" />
 
@@ -488,6 +488,10 @@
 	id1="0078"
 	id2="0078"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; Message forwarded from &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+<HEADER
+	id1="0096"
+	id2="0096"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; {Message forwarded from|From}&lt;hhost&gt;:&lt;messageid&gt;[&lt;hdata&gt;]:&lt;!payload:messageid&gt;"/>
 
 <VALUEMAP
 		name="ecSubUserGroup"
@@ -26081,5 +26085,33 @@
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hfld1,hfld2,hfld3)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;event_type&gt; msg=&lt;agent&gt;(&lt;info&gt;): &lt;event_description&gt;" />
+
+<MESSAGE
+	 id1="uxauthd"
+	 id2="uxauthd"
+	 eventcategory="1605010000"
+	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	 content="&lt;agent&gt;[&lt;process_id&gt;]:{[ID&lt;info&gt;] Looking|Looking}for user '&lt;username&gt;' in '&lt;fld1&gt;' as&lt;fld2&gt;"/>
+
+<MESSAGE
+	 id1="uxauthd:01"
+	 id2="uxauthd"
+	 eventcategory="1401030000"
+	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:User log in denied based on local exception list&gt;"
+	 content="&lt;agent&gt;[&lt;process_id&gt;]: User&lt;username&gt;log in denied based on local exception list."/>
+
+<MESSAGE
+	 id1="ovs-vsctl"
+	 id2="ovs-vsctl"
+	 eventcategory="1605010000"
+	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	 content="&lt;agent&gt;:&lt;info&gt;"/>
+
+<MESSAGE
+	 id1="neutron-openvswitch-agent"
+	 id2="neutron-openvswitch-agent"
+	 eventcategory="1605010000"
+	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	 content="&lt;agent&gt;:&lt;info&gt;"/>
 
 </DEVICEMESSAGES>
