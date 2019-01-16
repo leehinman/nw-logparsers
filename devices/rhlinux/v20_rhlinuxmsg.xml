@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="360"
-	checksum="a42128ec5c92887c18a403bd655d32d3"
-	revision="125"
+	xml="361"
+	checksum="d6c5f9984ecff0eb6e06df8ee7435af6"
+	revision="126"
 	device="2.0" />
 
 
@@ -24251,8 +24251,13 @@
 	eventcategory="1401030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;: Network interface NamePolicy= &lt;action&gt; on kernel command line, &lt;result&gt;." />
-			
-			
+<MESSAGE
+	id1="journal:01"
+	id2="journal"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;:&lt;fld1&gt; [INFO][&lt;fld2&gt;]&lt;info&gt;" />
+
 <MESSAGE
 	id1="002478"
 	id2="journal"
@@ -25312,7 +25317,7 @@
 	id2="systemd-journald"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;}: &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="vastool"
@@ -26018,7 +26023,7 @@
 	id2="dockerd"
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %H:%T:%S',month,day,time)&gt;"
-	content="&lt;agent&gt;: time=&quot;&lt;fld1&gt;&quot; level=&lt;severity&gt; msg=&quot;&lt;info&gt;&quot;" />
+	content="&lt;agent&gt;: time=&lt;fld1&gt; level=&lt;severity&gt; msg=&quot;&lt;info&gt;&quot;" />
 
 
  <MESSAGE
@@ -26113,5 +26118,47 @@
 	 eventcategory="1605010000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	 content="&lt;agent&gt;:&lt;info&gt;"/>
+
+<MESSAGE
+	id1="runcap"
+	id2="runcap"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;: Child (PID:&lt;process_id&gt;) sent a certain kill." />
+
+<MESSAGE
+	id1="runcap:01"
+	id2="runcap"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;info&gt;" />
+
+<MESSAGE
+	id1="kubelet"
+	id2="kubelet"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;:&lt;info&gt;" />
+
+<MESSAGE
+	id1="falcon-sensor"
+	id2="falcon-sensor"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]:&lt;info&gt;" />
+
+<MESSAGE
+	id1="ansible-command"
+	id2="ansible-command"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;:&lt;info&gt;" />
+
+<MESSAGE
+	id1="SAPPR2_39"
+	id2="SAPPR2_39"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]:&lt;info&gt;" />
 
 </DEVICEMESSAGES>
