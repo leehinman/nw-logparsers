@@ -3,7 +3,7 @@
 <VERSION
 	xml="1"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="125"
+	revision="126"
     device="2.0" />
 	
 
@@ -67,7 +67,7 @@
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0010"
@@ -206,8 +206,8 @@
 	id1="vmwareappdefense" 
 	id2="vmwareappdefense" 
 	eventcategory="1612000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%X',param_recorded_time)&gt;&lt;@dclass_counter1_string:Alarm Count&gt;"
-	content="&lt;param_event_time&gt;&lt;param_recorded_time&gt;&lt;msghold&gt;" />
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%X',param_recorded_time)&gt;&lt;@dclass_counter1_string:Alarm Count&gt;&lt;@cert.thumbprint:*PARMVAL(cert_checksum)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_recorded_time&gt;&lt;cert_checksum&gt;&lt;msghold&gt;" />
 
 <MESSAGE 
 	id1="dropbox" 
@@ -264,6 +264,12 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
+<MESSAGE 
+	id1="gsuite" 
+	id2="gsuite" 
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 	
 <MESSAGE 
 	id1="ciscoumbrella" 
@@ -280,6 +286,13 @@
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
 	
+<MESSAGE
+	id1="ciscoamp" 
+	id2="ciscoamp" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;msghold&gt;" />	
+
 	
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -287,7 +300,7 @@
 	<Vendor2Device vendor="RSA" product="RSA ECAT" device="rsaecat" group="Anti Virus"/>
 	<Vendor2Device vendor="EMC" product="ECAT ConsoleServer" device="rsaecat" group="Anti Virus"/>
 	<Vendor2Device vendor="NetWitness" product="Spectrum" device="netwitnessspectrum" group="Anti Virus"/>
-	<Vendor2Device vendor="RSA" product="Security Analytics" device="netwitnessspectrum" group="Anti Virus"/>
+	<Vendor2Device vendor="RSA" product="Security Analytics" device="securityanalytics" group="Analysis"/>
 	<Vendor2Device vendor="RSA" product="Security Analytics Malware" device="netwitnessspectrum" group="Anti Virus"/>
 	<Vendor2Device vendor="Trend Micro" product="Deep Security Manager" device="trendmicrods" group="Application Firewall"/>
 	<Vendor2Device vendor="Trend Micro" product="Deep Security Agent" device="trendmicrodsa" group="Application Firewall"/>
@@ -330,6 +343,8 @@
 	<Vendor2Device vendor="Microsoft" product="Azure Monitor" device="azuremonitor" group="Cloud"/>
     <Vendor2Device vendor="Cisco" product="Cisco Umbrella" device="ciscoumbrella" group="Cloud"/>
 	<Vendor2Device vendor="AWS" product="CloudWatch" device="aws_cloudwatch" group="Cloud"/>
+	<Vendor2Device vendor="Google" product="Gsuite" device="gsuite" group="Cloud"/>
+    <Vendor2Device vendor="Cisco" product="Cisco AMP" device="ciscoamp" group="Cloud"/>
 </VendorProducts>
 
 
@@ -1334,7 +1349,10 @@
 		<ExtensionKey cefName="Action" metaName="action"/>
 		<ExtensionKey cefName="Identity" metaName="obj_name"/>
 		<ExtensionKey cefName="Categories" metaName="category"/>
+		<ExtensionKey cefName="MostGranularIdentityType" metaName="cs_fld"/>
+		<ExtensionKey cefName="BlockedCategories" metaName="cs_fld"/>
 		
+		<ExtensionKey cefName="eventType" metaName="event_type"/>
 		<ExtensionKey cefName="Identities" metaName="obj_name"/>
 		<ExtensionKey cefName="AMPMalwareName" metaName="threat_name"/>
 		<ExtensionKey cefName="DestinationIP" metaName="daddr"/>
@@ -1357,5 +1375,78 @@
 		<ExtensionKey cefName="SourceIp" metaName="saddr"/>
 		<ExtensionKey cefName="SourcePort" metaName="sport"/>
 		<ExtensionKey cefName="DestinationPort" metaName="dport"/>
+		
+		<ExtensionKey cefName="id.time" metaName="param_event_time"/>
+		<ExtensionKey cefName="id.uniqueQualifier" metaName="id"/>
+		<ExtensionKey cefName="id.applicationName" metaName="event_cat_name"/>
+		<ExtensionKey cefName="actor.email" metaName="user.id"/>
+		<ExtensionKey cefName="ipAddress" metaName="alias.ip"/>
+		<ExtensionKey cefName="USER_EMAIL" metaName="email"/>
+		<ExtensionKey cefName="actor.profileId" metaName="cs_fld"/>
+		<ExtensionKey cefName="scope_0" metaName="cs_fld"/>
+		<ExtensionKey cefName="scope_1" metaName="cs_fld"/>
+		<ExtensionKey cefName="app_name" metaName="server"/>
+		<ExtensionKey cefName="login_type" metaName="logon.type.desc"/>
+		
+		<ExtensionKey cefName="cloud_ioc.short_description" metaName="event_description"/>
+		<ExtensionKey cefName="computer.connector_guid" metaName="agent.id"/>
+		<ExtensionKey cefName="network_info.remote_ip" metaName="daddr"/>
+		<ExtensionKey cefName="network_info.parent.file_name" metaName="filename_src"/>
+		<ExtensionKey cefName="network_info.remote_port" metaName="dport"/>
+		<ExtensionKey cefName="file.parent.identity.sha256" metaName="cs_fld"/>
+		<ExtensionKey cefName="vulnerabilities.url" metaName="url"/>
+		<ExtensionKey cefName="computer.hostname" metaName="shost"/>
+		<ExtensionKey cefName="detection" metaName="virusname"/>
+		<ExtensionKey cefName="network_info.nfm.protocol" metaName="protocol"/>
+		<ExtensionKey cefName="scan.scanned_paths" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.file_name" metaName="filename"/>
+		<ExtensionKey cefName="detection_id" metaName="id2"/>
+		<ExtensionKey cefName="file.identity.sha256" metaName="checksum"/>
+		<ExtensionKey cefName="scan.clean" metaName="cs_fld"/>
+		<ExtensionKey cefName="vulnerabilities.name" metaName="threat_name"/>
+		<ExtensionKey cefName="file.attack_details.application" metaName="application"/>
+		<ExtensionKey cefName="file.parent.process_id" metaName="process_id_src"/>
+		<ExtensionKey cefName="file.file_path" metaName="directory"/>
+		<ExtensionKey cefName="scan.malicious_detections" metaName="cs_fld"/>
+		<ExtensionKey cefName="vulnerabilities.score" metaName="threat_val"/>
+		<ExtensionKey cefName="computer.links.trajectory" metaName="cs_fld"/>
+		<ExtensionKey cefName="scan.description" metaName="context"/>
+		<ExtensionKey cefName="file.archived_file.identity.sha256" metaName="cs_fld"/>
+		<ExtensionKey cefName="computer.network_addresses.mac" metaName="smacaddr"/>
+		<ExtensionKey cefName="file.identity.sha1" metaName="cs_fld"/>
+		<ExtensionKey cefName="vulnerabilities.version" metaName="cs_fld"/>
+		<ExtensionKey cefName="start_date" metaName="cs_fld"/>
+		<ExtensionKey cefName="network_info.local_ip" metaName="saddr"/>
+		<ExtensionKey cefName="file.attack_details.attacked_module" metaName="cs_fld"/>
+		<ExtensionKey cefName="network_info.dirty_url" metaName="url"/>
+		<ExtensionKey cefName="computer.active" metaName="cs_fld"/>
+		<ExtensionKey cefName="connector_guid" metaName="groupid"/>
+		<ExtensionKey cefName="network_info.parent.process_id" metaName="process_id_src"/>
+		<ExtensionKey cefName="network_info.local_port" metaName="sport"/>
+		<ExtensionKey cefName="vulnerabilities.cve" metaName="cve"/>
+		<ExtensionKey cefName="scan.scanned_processes" metaName="cs_fld"/>
+		<ExtensionKey cefName="computer.user" metaName="username"/>
+		<ExtensionKey cefName="event_type_id" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.disposition" metaName="disposition"/>
+		<ExtensionKey cefName="network_info.parent.disposition" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.archived_file.disposition" metaName="cs_fld"/>
+		<ExtensionKey cefName="start_timestamp" metaName="param_starttime"/>
+		<ExtensionKey cefName="scan.scanned_files" metaName="cs_fld"/>
+		<ExtensionKey cefName="computer.links.computer" metaName="cs_fld"/>
+		<ExtensionKey cefName="network_info.parent.identity.sha1" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.attack_details.base_address" metaName="cs_fld"/>
+		<ExtensionKey cefName="cloud_ioc.description" metaName="info"/>
+		<ExtensionKey cefName="computer.links.group" metaName="group"/>
+		<ExtensionKey cefName="computer.network_addresses.ip" metaName="saddr"/>
+		<ExtensionKey cefName="file.identity.md5" metaName="cs_fld"/>
+		<ExtensionKey cefName="network_info.parent.identity.sha256" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.parent.identity.md5" metaName="cs_fld"/>
+		<ExtensionKey cefName="network_info.parent.identity.md5" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.parent.identity.sha1" metaName="cs_fld"/>
+		<ExtensionKey cefName="timestamp_nanoseconds" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.parent.file_name" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.parent.disposition" metaName="disposition"/>
+		<ExtensionKey cefName="computer.external_ip" metaName="stransaddr"/>
+		<ExtensionKey cefName="network_info.nfm.direction" metaName="direction"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
