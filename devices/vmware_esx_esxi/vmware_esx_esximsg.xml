@@ -4,9 +4,9 @@
 	displayname="VMware ESX / ESXi"
 	group="Virtualization">
 <VERSION
-	xml="48"
-	checksum="7c1f63dde844509f9314dd5909208b54"
-	revision="122"
+	xml="51"
+	checksum="1aeb6b35e0f8e9f7cc687b0da879e6f1"
+	revision="126"
 	device="2.0" />
 
  
@@ -81,6 +81,11 @@
 	id1="0010" 
 	id2="0010" 
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hhostname&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+
+<HEADER 
+	id1="0011" 
+	id2="0011" 
+	content="&lt;fld1&gt;T&lt;fld2&gt;Z &lt;hhostname&gt; &lt;hfld1&gt;: &lt;messageid&gt; &lt;!payload:hfld1&gt;" />
 
 <MESSAGE 
 	id1="ComputeResource.destroy" 
@@ -2433,7 +2438,7 @@
 	id2="Rhttpproxy" 
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
-	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld7&gt;] [&lt;fld2&gt; &lt;fld3&gt;] Resolved endpoint : [&lt;fld4&gt;] _serverNamespace = &lt;fld5&gt; _isRedirect = &lt;fld6&gt; _port = &lt;network_port&gt;" />
+	content="&lt;agent&gt;: &lt;severity&gt; rhttpproxy[&lt;fld7&gt;] [&lt;fld2&gt; &lt;fld3&gt;] Resolved endpoint : [&lt;fld4&gt;] _serverNamespace = &lt;fld5&gt; {_isRedirect = &lt;fld6&gt;|action = &lt;action&gt;} _port = &lt;network_port&gt;" />
 
 <MESSAGE 
 	id1="Rhttpproxy:08" 
@@ -2455,6 +2460,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;agent&gt;: [&lt;fld2&gt; &lt;severity&gt; &lt;fld3&gt;] &lt;event_description&gt; " />
+
+<MESSAGE 
+	id1="Rhttpproxy:09" 
+	id2="Rhttpproxy" 
+	eventcategory="1605000000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
+	content="&lt;agent&gt;: Section for VMware ESX, pid=&lt;process_id&gt;, version=&lt;version&gt;, build=&lt;fld3&gt;, option=&lt;fld4&gt;" />
 
 <MESSAGE 
 	id1="Vpxa:01" 
@@ -3116,5 +3128,12 @@
 	eventcategory="1605000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;"
 	content="&lt;agent&gt;:&lt;info&gt;" />
+
+<MESSAGE 
+	id1="Creating" 
+	id2="Creating" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@event_description:Creating archive&gt;"
+	content="&lt;fld1&gt;: Creating archive" />
 
 </DEVICEMESSAGES>
