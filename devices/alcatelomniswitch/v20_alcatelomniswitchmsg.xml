@@ -4,13 +4,18 @@
 	displayname="Alcatel-Lucent OmniSwitch"
 	group="Switch">
 <VERSION
-	xml="8"
-	checksum="2310bc706438f4e0912fb070579db2c9"
-	revision="0"
+	xml="9"
+	checksum="d05756c28d68ccbcfae63a56b24b152d"
+	revision="126"
 	device="2.0" />
 
  
 
+
+<HEADER 
+	id1="0003" 
+	id2="0003"  
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hostname&gt; &lt;messageid&gt;(&lt;number&gt;) &lt;!payload:messageid&gt;"/> 
 
 <HEADER 
 	id1="0001" 
@@ -140,6 +145,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;"
 	content="SSH(&lt;number&gt;) Data: Maximum session:&lt;fld1&gt;,Established:&lt;fld2&gt;" />
 <MESSAGE 
+	id1="SSH:01" 
+	id2="SSH" 
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SSH&gt;"
+	content="SSH(&lt;number&gt;) Data: SSH : The Value set for IPC socket max segment size is &lt;bytes&gt;" />
+
+<MESSAGE 
 	id1="CCM-CHASSIS" 
 	id2="CCM-CHASSIS" 
 	eventcategory="1605000000"
@@ -230,6 +242,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Authentication Failed&gt;"
 	content=" SESSION(&lt;number&gt;) Data: [SES] Authentication failed: { Session | Sesion } &lt;fld5&gt;, access type &lt;group&gt;" />
 <MESSAGE
+	id1="SESSION_Authentication_succeed" 
+	id2="SESSION" 
+	eventcategory="1801020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:SESSION&gt;&lt;@event_description:Authentication succeed&gt;"
+	content=" SESSION(&lt;number&gt;) Data: [SES] Authentication succeed: { Session | Sesion } &lt;fld5&gt;, access type &lt;group&gt;" />
+
+<MESSAGE
 	id1="SESSION_Info_Username" 
 	id2="SESSION" 
 	eventcategory="1803010000" 
@@ -284,4 +303,32 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="WEB(&lt;number&gt;) Data: &lt;event_description&gt;" />
+<MESSAGE 
+	id1="NTP" 
+	id2="NTP" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:NTP&gt;"
+	content="NTP(&lt;number&gt;) Data:  NTP Active server is &lt;hostip&gt;" />
+
+<MESSAGE 
+	id1="Auth:01" 
+	id2="802.1X" 
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:802.1X&gt;"
+	content="802.1X(&lt;number&gt;) Data: [Count.] &lt;macaddr&gt;  vlan &lt;vlan&gt; on gport &lt;network_port&gt; LINE &lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="Auth:02" 
+	id2="802.1X" 
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:802.1X&gt;"
+	content="802.1X(&lt;number&gt;) Data: *ignoreMacToSL flag set, Since vlan and gport is same for mac &lt;macaddr&gt;" />
+
+<MESSAGE 
+	id1="Auth:03" 
+	id2="802.1X" 
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@service:802.1X&gt;"
+	content="802.1X(&lt;number&gt;) Data: &lt;event_description&gt;" />
+
 </DEVICEMESSAGES>
