@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="72"
-	checksum="7009027aaddc2033f0075d4e85efbd54"
-	revision="122"
+	xml="73"
+	checksum="f7e181f98acb1a85317f6a646c3c97d7"
+	revision="126"
 	device="2.0" />
 
  
@@ -1135,6 +1135,20 @@
 	eventcategory="1605000000" 
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@event_type:cookie idx&gt;"
 	content=" &quot;cookie idx is &lt;fld1&gt;, &lt;info&gt;&quot; " />
+
+<MESSAGE 
+	id1="AAATM_Message:03" 
+	id2="AAATM_Message" 
+	eventcategory="1304000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@event_type:sent request&gt;"
+	content=" &quot;sent request to &lt;fld1&gt; for authentication, user &lt;&lt;&lt;domain&gt;\&lt;username&gt;&gt;, client ip &lt;saddr&gt;&quot; " />
+
+<MESSAGE 
+	id1="AAATM_Message:05" 
+	id2="AAATM_Message" 
+	eventcategory="1302000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@event_type:setting up session&gt;"
+	content=" &quot;authentication succeeded for user &lt;&lt;&lt;domain&gt;\&lt;username&gt;&gt;, client ip &lt;saddr&gt;, setting up session&quot; " />
 
 <MESSAGE 
 	id1="AAATM_HTTPREQUEST" 
