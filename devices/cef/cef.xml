@@ -67,7 +67,7 @@
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp | azuremonitor}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0010"
@@ -1378,7 +1378,7 @@
 		
 		<ExtensionKey cefName="id.time" metaName="param_event_time"/>
 		<ExtensionKey cefName="id.uniqueQualifier" metaName="id"/>
-		<ExtensionKey cefName="id.applicationName" metaName="event_cat_name"/>
+		<ExtensionKey cefName="id.applicationName" metaName="cs_fld"/>
 		<ExtensionKey cefName="actor.email" metaName="user.id"/>
 		<ExtensionKey cefName="ipAddress" metaName="alias.ip"/>
 		<ExtensionKey cefName="USER_EMAIL" metaName="email"/>
@@ -1436,7 +1436,7 @@
 		<ExtensionKey cefName="network_info.parent.identity.sha1" metaName="cs_fld"/>
 		<ExtensionKey cefName="file.attack_details.base_address" metaName="cs_fld"/>
 		<ExtensionKey cefName="cloud_ioc.description" metaName="info"/>
-		<ExtensionKey cefName="computer.links.group" metaName="group"/>
+		<ExtensionKey cefName="computer.links.group" metaName="cs_fld"/>
 		<ExtensionKey cefName="computer.network_addresses.ip" metaName="saddr"/>
 		<ExtensionKey cefName="file.identity.md5" metaName="cs_fld"/>
 		<ExtensionKey cefName="network_info.parent.identity.sha256" metaName="cs_fld"/>
@@ -1448,5 +1448,63 @@
 		<ExtensionKey cefName="file.parent.disposition" metaName="disposition"/>
 		<ExtensionKey cefName="computer.external_ip" metaName="stransaddr"/>
 		<ExtensionKey cefName="network_info.nfm.direction" metaName="direction"/>
+		
+		
+		<ExtensionKey cefName="ad.app" metaName="application"/>
+		<ExtensionKey cefName="ad.appact" metaName="action"/>
+		<ExtensionKey cefName="ad.appcat" metaName="category"/>
+		<ExtensionKey cefName="ad.appid" metaName="id1"/>
+		<ExtensionKey cefName="ad.applist" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.apprisk" metaName="risk"/>
+		<ExtensionKey cefName="ad.cat" metaName="category"/>
+		<ExtensionKey cefName="ad.countapp" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.countweb" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.craction" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.crlevel" metaName="severity"/>
+		<ExtensionKey cefName="ad.crscore" metaName="reputation_num"/>
+		<ExtensionKey cefName="ad.devtype" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.direction" metaName="direction"/>
+		<ExtensionKey cefName="ad.dstcountry" metaName="location_dst"/>
+		<ExtensionKey cefName="ad.dstdevtype" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.dstintfrole" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.dstmac" metaName="dmacaddr"/>
+		<ExtensionKey cefName="ad.dstserver" metaName="dhost"/>
+		<ExtensionKey cefName="ad.duration" metaName="duration"/>
+		<ExtensionKey cefName="ad.eventtime" metaName="event_time_string"/>
+		<ExtensionKey cefName="ad.eventtype" metaName="event_type"/>
+		<ExtensionKey cefName="ad.incidentserialno" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.lanin" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.lanout" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.logdesc" metaName="event_description"/>
+		<ExtensionKey cefName="ad.logid" metaName="id"/>
+		<ExtensionKey cefName="ad.masterdstmac" metaName="dmacaddr"/>
+		<ExtensionKey cefName="ad.mastersrcmac" metaName="smacaddr"/>
+		<ExtensionKey cefName="ad.method" metaName="authmethod"/>
+		<ExtensionKey cefName="ad.policyid" metaName="policy_id"/>
+		<ExtensionKey cefName="ad.policytype" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.poluuid" metaName="id2"/>
+		<ExtensionKey cefName="ad.profile" metaName="profile"/>
+		<ExtensionKey cefName="ad.rcvdpkt" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.referralurl" metaName="url"/>
+		<ExtensionKey cefName="ad.reqtype" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.scertcname" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.sentpkt" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.shaperdropsentbyte" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.shaperperipdropbyte" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.shaperperipname" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.shapersentname" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.shapingpolicyid" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.srccountry" metaName="location_src"/>
+		<ExtensionKey cefName="ad.srcintfrole" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.srcmac" metaName="smacaddr"/>
+		<ExtensionKey cefName="ad.srcserver" metaName="shost"/>
+		<ExtensionKey cefName="ad.status" metaName="event_state"/>
+		<ExtensionKey cefName="ad.subtype" metaName="obj_type"/>
+		<ExtensionKey cefName="ad.trandisp" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.utmaction" metaName="action"/>
+		<ExtensionKey cefName="ad.vd" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.wanin" metaName="cs_fld"/>
+		<ExtensionKey cefName="ad.wanout" metaName="cs_fld"/>
+		<ExtensionKey cefName="logver" metaName="version"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
