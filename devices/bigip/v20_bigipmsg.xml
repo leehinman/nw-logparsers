@@ -4,8 +4,8 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="97"
-		checksum="720276ea8008200401622d6e42578c3b"
+		xml="99"
+		checksum="c69cfc3fa921290b4aa0a78bfe6a0a51"
 		revision="126"
 		device="2.0"/>
 
@@ -1695,7 +1695,7 @@
 	id2="tmm1"
 	eventcategory="1801010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: Pool has available members&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: &lt;pool_name&gt; now has available members" />
+	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Pool &lt;pool_name&gt; now has available members" />
 	
 <MESSAGE
 	id1="000199"
@@ -1835,6 +1835,20 @@
 	eventcategory="1801020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
+
+<MESSAGE
+	id1="000362_07"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected request: &lt;hostip&gt; User-Agent:&lt;user_agent&gt; requested &lt;url&gt;"/>
+
+<MESSAGE
+	id1="000362_08"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: c-ip=&lt;hostip&gt;^^method=&lt;web_method&gt;^^uri=&lt;fld1&gt;^^host=&lt;dhost&gt;^^s-ip=&lt;saddr&gt;^^pool-name=&lt;pool_name&gt;^^s-port=&lt;sport&gt;^^status=&lt;resultcode&gt;"/>
 
 <MESSAGE
 	 id1="tmm_012"
@@ -2911,6 +2925,13 @@
 	content="&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;year&gt;-&lt;month&gt;-&lt;date&gt; &lt;hour&gt;:&lt;min&gt;:&lt;sec&gt; &lt;fld2&gt; &lt;saddr&gt; - &lt;daddr&gt; &lt;dport&gt; &lt;web_method&gt; &lt;web_query&gt;" />
 	
 <MESSAGE
+	id1="000388_03"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected &lt;hostip&gt; with {malicious SCRIPTS|SQL}, requested URL &lt;url&gt;"/>
+
+<MESSAGE
 	id1="000388_02"
 	id2="tmm"
 	eventcategory="1802000000"
@@ -2924,7 +2945,7 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Pool &lt;pool_name&gt; now has available members" />
-	
+
 	
 <MESSAGE
 	id1="000390"
@@ -2932,7 +2953,7 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: No members available for pool &lt;pool_name&gt;" />
-	
+
 	
 <MESSAGE
 	id1="000391"
@@ -3000,12 +3021,26 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
 
 <MESSAGE
+	id1="000393_07"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected request: &lt;hostip&gt; User-Agent:&lt;user_agent&gt; requested &lt;url&gt;"/>
+
+<MESSAGE
+	id1="000393_08"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected &lt;hostip&gt; with {malicious file extensions|SQL}, requested URL &lt;url&gt;"/>
+
+<MESSAGE
 	id1="000393"
 	id2="tmm3"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
-	
+
 <MESSAGE
 	id1="000394_01"
 	id2="tmm2"
@@ -3049,12 +3084,40 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: |&lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } Rule &lt;rulename&gt; &lt;&lt;SERVER_CONNECTED&gt;: &lt;hostip&gt;" />
 
 <MESSAGE
+	id1="000394_07"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected request: &lt;hostip&gt; User-Agent:&lt;user_agent&gt; requested &lt;url&gt;"/>
+
+<MESSAGE
+	id1="000394_11"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected &lt;hostip&gt; with {malicious file extensions|SQL}, requested URL &lt;url&gt;"/>
+
+<MESSAGE
+	id1="000394_08"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: No members available for pool &lt;pool_name&gt;" />
+
+<MESSAGE
+	id1="000394_09"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Pool &lt;pool_name&gt; now has available members" />
+
+<MESSAGE
 	id1="000394"
 	id2="tmm2"
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
-	
+
 	
 <MESSAGE
 	id1="000499"
@@ -3133,6 +3196,27 @@
 	 eventcategory="1802000000"
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;ACCESS_SESSION_STARTED&gt;: INFO&lt;info&gt;, ctx_load_status:&lt;result&gt;"/>
+
+<MESSAGE
+	id1="000396_07"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected request: &lt;hostip&gt; User-Agent:&lt;user_agent&gt; requested &lt;url&gt;"/>
+
+<MESSAGE
+	id1="000396_08"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected &lt;hostip&gt; with SQL, requested URL &lt;url&gt;"/>
+
+<MESSAGE
+	id1="000396_09"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
+    content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: c-ip=&lt;hostip&gt;^^method=&lt;web_method&gt;^^{uri=&lt;fld1&gt;url=&lt;url&gt;|uri=&lt;fld1&gt;}^^host=&lt;dhost&gt;^^s-ip=&lt;saddr&gt;^^pool-name=&lt;pool_name&gt;^^s-port=&lt;sport&gt;^^status=&lt;resultcode&gt;"/>
 
 <MESSAGE
 	id1="000396"
