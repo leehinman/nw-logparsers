@@ -4,9 +4,9 @@
 	displayname="Cisco Ironport WSA"
 	group="Web Logs">
 <VERSION
-	xml="76"
-	checksum="c32e5387bb63b7613e4e34d339a3dd2e"
-	revision="121"
+	xml="77"
+	checksum="e04a7bae839bd378ed57afb1fc101116"
+	revision="126"
 	device="2.0" />
 
  
@@ -171,6 +171,13 @@
 	eventcategory="1204000000"
 	functions="&lt;@username:*RMQ(username_fld)&gt;&lt;@sdomain:*RMQ(sdomain_fld)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($FQDN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@web_ref_domain:*URL($DOMAIN,web_referer)&gt;&lt;@web_ref_page:*URL($PAGE,web_referer)&gt;&lt;@web_ref_query:*URL($QUERY,web_referer)&gt;&lt;@web_ref_root:*URL($ROOT,web_referer)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@protocol:*getProtocolName(fld11)&gt;"
 	content=" &lt;fld1&gt;.&lt;fld2&gt; &lt;duration_string&gt; &lt;saddr&gt; &lt;action&gt;/&lt;resultcode&gt; &lt;sbytes&gt; &lt;web_method&gt; &lt;url&gt; { &lt;sdomain_fld&gt;\&lt;username_fld&gt;@&lt;fld51&gt;|&lt;sdomain_fld&gt;\&lt;username_fld&gt;|&lt;username_fld&gt; } &lt;fld4&gt;/&lt;fld5&gt; &lt;content_type&gt; &lt;policyname&gt; &lt;&lt;&lt;info&gt;&gt; &lt;fld7&gt; s-ip= &lt;daddr&gt; s-port= &lt;dport&gt; webcat-code= { - | &lt;filter&gt; } cs-version= &lt;fld11&gt; cs-auth-group= &lt;group_object&gt; c-port= &lt;sport&gt; cs-bytes= &lt;rbytes&gt; wbrs-score= { ns | &lt;reputation_num&gt; } wbrs-threat-reason= &lt;result&gt; wbrs-threat-type= &lt;category&gt; cs-user-agent= { - | &lt;user_agent&gt; } cs-referer= { - | &lt;web_referer&gt; } cs-cookie= { - | &lt;web_cookie&gt; }" />
+
+<MESSAGE 
+	id1="CONNECT:09" 
+	id2="CONNECT" 
+	eventcategory="1204000000"
+	functions="&lt;@username:*RMQ(username_fld)&gt;&lt;@sdomain:*RMQ(sdomain_fld)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld20)&gt;&lt;@domain:*URL($DOMAIN,url)&gt;&lt;@fqdn:*URL($FQDN,url)&gt;&lt;@web_domain:*URL($FQDN,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" &lt;fld20&gt;.&lt;fld16&gt; &lt;duration_string&gt; &lt;saddr&gt; &lt;action&gt;/&lt;resultcode&gt; &lt;rbytes&gt; &lt;web_method&gt; &lt;url&gt; { &quot;&lt;sdomain_fld&gt;\&lt;username_fld&gt;@&lt;fld51&gt;&quot;|&quot;&lt;sdomain_fld&gt;\&lt;username_fld&gt;&quot;| -|&quot;&lt;username_fld&gt;&quot;  } &lt;fld30&gt; &lt;content_type&gt; &lt;policyname&gt; &lt;&lt;&lt;fld17&gt;,{ ns | &lt;reputation_num&gt; },&lt;fld18&gt;&gt; {&quot;&lt;filter&gt;&quot;|-}" />
 
 <MESSAGE 
 	id1="GET:03" 
