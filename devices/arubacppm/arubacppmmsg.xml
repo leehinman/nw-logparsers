@@ -4,9 +4,9 @@
 	displayname="Aruba ClearPass Policy Manager"
 	group="Access Control">
 <VERSION
-	xml="17"
-	checksum="8608ac23a26ef5ab9d9f067c525e71d7"
-	revision="123"
+	xml="18"
+	checksum="cab728f80dbc671dbe213221798052a9"
+	revision="126"
 	device="2.0" />
 
  
@@ -90,7 +90,7 @@
 	eventcategory="1605020000"
 	tagval="true"
 	functions="&lt;@ec_theme:AccessControl&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld29)&gt;"
-	content=" auth_method=&lt;authmethod&gt;,auth_source=&lt;fld1&gt;,access_device_ip=&lt;saddr&gt;,access_device_port=&lt;sport&gt;,end_host_id=&lt;fld2&gt;,monitor_mode=&lt;fld3&gt;,roles=&lt;user_role&gt;,audit_posture_token=&lt;fld4&gt;,enforcement_profiles=&lt;profile&gt;,acct_session_id=&lt;fld5&gt;,nas_ip_address=&lt;fld6&gt;,nas_port=&lt;fld7&gt;,nas_port_type=&lt;fld8&gt;,calling_station_id=&lt;fld9&gt;,called_station_id=&lt;fld10&gt;,framed_ip_address=&lt;fld11&gt;,accounting_service_type=&lt;fld12&gt;,account_authentication_type=&lt;fld12&gt;,account_delay_time=&lt;fld13&gt;,account_input_octets=&lt;fld14&gt;,account_output_octets=&lt;fld15&gt;,account_input_packets=&lt;fld16&gt;,account_output_packets=&lt;fld17&gt;,account_session_time=&lt;fld18&gt;,termination_cause=&lt;result&gt;,user_session_id=&lt;fld19&gt;,flags=&lt;fld20&gt;,remote_ip=&lt;fld21&gt;,command_privelege_level=&lt;fld22&gt;,authentication_type=&lt;fld23&gt;,tacacs_protocol_authentication_method=&lt;fld24&gt;,tacacs_protocol_authentication_service=&lt;fld25&gt;,client_ip=&lt;daddr&gt;,client_port=&lt;dport&gt;,authentication_action=&lt;fld26&gt;,session_id=&lt;fld27&gt;,protocol=&lt;protocol&gt;,username=&lt;username&gt;,service_name=&lt;service&gt;,login_status=&lt;disposition&gt;,system_posture_status=&lt;fld28&gt;,request_timestamp=&lt;fld29&gt;,error_code=&lt;resultcode&gt;,alert_message=&lt;event_description&gt;" />
+	content=" auth_method=&lt;authmethod&gt;,auth_source=&lt;fld1&gt;,access_device_ip=&lt;saddr&gt;,access_device_port=&lt;sport&gt;,end_host_id=&lt;fld2&gt;,monitor_mode=&lt;fld3&gt;,roles=&lt;user_role&gt;,audit_posture_token=&lt;fld4&gt;,enforcement_profiles=&lt;profile&gt;,acct_session_id=&lt;fld5&gt;,nas_ip_address=&lt;fld6&gt;,nas_port=&lt;fld7&gt;,nas_port_type=&lt;fld8&gt;,calling_station_id=&lt;fld9&gt;,called_station_id=&lt;fld10&gt;,framed_ip_address=&lt;fld11&gt;,accounting_service_type=&lt;fld12&gt;,account_authentication_type=&lt;fld12&gt;,account_delay_time=&lt;fld13&gt;,account_input_octets=&lt;fld14&gt;,account_output_octets=&lt;fld15&gt;,account_input_packets=&lt;fld16&gt;,account_output_packets=&lt;fld17&gt;,account_session_time=&lt;fld18&gt;,termination_cause=&lt;result&gt;,user_session_id=&lt;fld19&gt;,flags=&lt;fld20&gt;,remote_ip=&lt;fld21&gt;,command_privelege_level=&lt;fld22&gt;,authentication_type=&lt;fld23&gt;,tacacs_protocol_authentication_method=&lt;fld24&gt;,tacacs_protocol_authentication_service=&lt;fld25&gt;,client_ip=&lt;daddr&gt;,client_port=&lt;dport&gt;,authentication_action=&lt;fld26&gt;,session_id=&lt;fld27&gt;,protocol=&lt;protocol&gt;,username=&lt;username&gt;,service_name=&lt;service&gt;,login_status=&lt;disposition&gt;,system_posture_status=&lt;fld28&gt;,request_timestamp=&lt;fld29&gt;,error_code=&lt;resultcode&gt;,alert_message=&lt;event_description&gt;,id=&lt;id&gt;,process_id=&lt;process_id&gt;,cpu_usage=&lt;fld20&gt;,res_mem_usage=&lt;fld21&gt;,virt_mem_usage=&lt;fld22&gt;,timestamp=&lt;event_time_string&gt;" />
 <MESSAGE
 	id1="Session_Logs:01"
 	id2="Session_Logs"
@@ -300,5 +300,14 @@
 	missField="true"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld5,hfld6)&gt;"
 	content=" Auth.Username=&lt;username&gt;,Auth.Host-MAC-Address=&lt;macaddr&gt;,Auth.NAS-IP-Address=&lt;saddr&gt;,Auth.Service=&lt;service&gt;,CppmErrorCode.Error-Code-Details=&lt;result&gt;,CppmAlert.Alerts=&lt;info&gt;  " />
+
+<MESSAGE
+	id1="Insight_Logs"
+	id2="Insight_Logs"
+	eventcategory="1801000000"
+	tagval="true"
+	missField="true"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hfld5,hfld6)&gt;"
+	content=" Auth.Username=&lt;username&gt;Auth.Host-MAC-Address=&lt;macaddr&gt;Auth.Service=&lt;service&gt;Auth.Roles=&lt;user_role&gt;Auth.NAS-IP-Address=&lt;saddr&gt;Auth.Protocol=&lt;protocol&gt;Auth.Login-Status=&lt;disposition&gt;Auth.Source=&lt;authmethod&gt;CppmErrorCode.Error-Code-Details=&lt;result&gt;CppmAlert.Alerts=&lt;info&gt;Radius.Username=&lt;username&gt;Radius.Calling-Station-Id=&lt;macaddr&gt;Radius.NAS-IP-Address=&lt;saddr&gt;Radius.Start-Time=&lt;starttime&gt;Radius.Duration=&lt;duration_string&gt;Radius.Input-bytes=&lt;rbytes&gt;Radius.Output-bytes=&lt;sbytes&gt;Tacacs.Username=&lt;username&gt;Tacacs.Authen-Service=&lt;service&gt;Tacacs.NAS-IP-Address=&lt;saddr&gt;Tacacs.Auth-Source=&lt;authmethod&gt;Tacacs.Roles=&lt;user_role&gt;Auth.Error-Code=&lt;error&gt;Endpoint.IP-Address=&lt;hostip&gt;Endpoint.MAC-Address=&lt;macaddr&gt;Endpoint.MAC-Vendor=&lt;fld1&gt;Endpoint.Device-Category=&lt;fld2&gt;Endpoint.Device-Family=&lt;fld3&gt;Endpoint.Device-Name=&lt;device&gt;Endpoint.Conflict=&lt;fld4&gt;Endpoint.Status=&lt;disposition&gt;Endpoint.Added-At=&lt;fld5&gt;Endpoint.Updated-At=&lt;fld6&gt;Guest.Username=&lt;username&gt;Guest.MAC-Address=&lt;macaddr&gt;Guest.Visitor-Name=&lt;fld7&gt;Guest.Visitor-Company=&lt;fld8&gt;Guest.Enabled=&lt;fld9&gt;Guest.Created-At=&lt;fld10&gt;Guest.Starts-At=&lt;starttime&gt;Guest.Expires-At=&lt;expiration_time&gt;OnboardEnrollment.Username=&lt;username&gt;OnboardEnrollment.Device-Name=&lt;device&gt;OnboardEnrollment.MAC-Address=&lt;macaddr&gt;OnboardEnrollment.Device-Product=&lt;product&gt;OnboardEnrollment.Device-Version=&lt;version&gt;OnboardEnrollment.Added-At=&lt;fld11&gt;OnboardEnrollment.Updated-At=&lt;fld12&gt;OnboardCert.Username=&lt;username&gt;OnboardCert.Mac-Address=&lt;macaddr&gt;OnboardCert.Subject=&lt;cert_subject&gt;OnboardCert.Issuer=&lt;fld13&gt;OnboardCert.Valid-From=&lt;fld14&gt;OnboardCert.Valid-To=&lt;fld15&gt;OnboardCert.Revoked-At=&lt;fld16&gt;OnboardCert.Updated-At=&lt;fld17&gt;OnboardOCSP.Remote-Address=&lt;daddr&gt;OnboardOCSP.Response-StatusName=&lt;disposition&gt;OnboardOCSP.Timestamp=&lt;fld18&gt;CppmNode.CPPM-Node=&lt;hostip&gt;CppmSystemEvent.Source=&lt;process_src&gt;CppmSystemEvent.Category=&lt;category&gt;CppmSystemEvent.Action=&lt;action&gt;CppmSystemEvent.Timestamp=&lt;fld19&gt;CppmSystemEvent.Description=&lt;event_description&gt;CppmConfigAudit.Name=&lt;c_username&gt;CppmConfigAudit.Action=&lt;action&gt;CppmConfigAudit.Category=&lt;category&gt;CppmConfigAudit.Updated-By=&lt;username&gt;CppmConfigAudit.Updated-At=&lt;fld20&gt;" />
 
 </DEVICEMESSAGES>                                                                                                                                                                    
