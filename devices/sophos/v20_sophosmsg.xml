@@ -4,10 +4,12 @@
 	displayname="Sophos Enterprise Console"
 	group="Anti Virus">
 <VERSION 
-	xml="74"
-	checksum="c2523a7c351a747a9d60964065b72d37"
-	revision="103"
+	xml="75"
+	checksum="f7711b70e5377400bae38e1d5f612294"
+	revision="126"
 	device="2.0" />
+<TAGVALMAP
+    delimiter="^^" />
 <HEADER 
 	id1="0001" 
 	id2="0001"  
@@ -17,6 +19,11 @@
 	id1="0002" 
 	id2="0002"  
 	content="%SOPHOS &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+<HEADER 
+	id1="0003" 
+	id2="0003"  
+	messageid="STRCAT('SOPHOSES_TVM')"
+	content="%sophosestvm: &lt;id1&gt;^^&lt;!payload&gt;" />
 	
 <VALUEMAP 
 		name ="threat_type"
@@ -114,4 +121,13 @@
 	eventcategory="1502000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type:*threat_type(fld52)&gt;&lt;@obj_type:ThreatName&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld10,fld11)&gt;"
 	content="&lt;id&gt;^^&lt;fld53&gt;^^&lt;hostname&gt;^^&lt;fld52&gt;^^&lt;fld51&gt;^^&lt;obj_name&gt;^^&lt;fld10&gt; &lt;fld11&gt;.&lt;fld12&gt;^^&lt;action&gt;^^&lt;filename&gt;" />
+<MESSAGE 
+    id1="SOPHOSES_TVM" 
+    id2="SOPHOSES_TVM" 
+    eventcategory="1001000000" 
+	missField="true"
+	tagval="true"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U%Q',fld1)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%B %F %W %N:%U%Q',fld4)&gt;"
+    content="ComputerID=&lt;agent.id&gt;^^EventTime=&lt;fld1&gt;^^AlertType=&lt;threat_name&gt;^^UserName=&lt;username&gt;^^FamilyID=&lt;id2&gt;^^Thumbprint=&lt;fld2&gt;^^ProcessName=&lt;process&gt;^^FileVersion=&lt;version&gt;^^FilePath=&lt;directory&gt;^^Pid=&lt;process_id&gt;^^Status=&lt;disposition&gt;^^InsertedAt=&lt;fld4&gt;" />
+
 </DEVICEMESSAGES>
