@@ -4,9 +4,9 @@
 	displayname="EMC Isilon"
 	group="Storage">
 <VERSION
-	xml="13"
-	checksum="450b209e38be72595369c1ceac3bbc2b"
-	revision="92"
+	xml="14"
+	checksum="39a771620bd73779e3bd3ea1e0ab1dab"
+	revision="126"
     device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -61,6 +61,11 @@
 	id1="0010"
 	id2="0010"
 	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;htime&gt; &lt;hagent&gt;[&lt;hfld1&gt;]: &lt;messageid&gt; &lt;!payload:messageid&gt;"/>
+
+<HEADER
+	id1="0012"
+	id2="0012"
+	content="&lt;hdate&gt;T&lt;hfld1&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;hfld7&gt;]: &lt;!payload:messageid&gt;"/>
 
 <MESSAGE 
 	id1="ACCESS" 
@@ -197,15 +202,51 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Config changes&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: request: &lt;sessionid&gt;; uid: &lt;uid&gt;; sid: &lt;sid&gt;; remote_addr: &lt;saddr&gt;; uri: &lt;url&gt;; method: &lt;web_method&gt;; args[&lt;fld1&gt;/&lt;fld2&gt;]: &lt;info&gt;" />
 <MESSAGE 
+	id1="audit_protocol:02" 
+	id2="audit_protocol" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_type:OPEN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@protocol:SMB&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;saddr&gt;|SMB|OPEN|&lt;result&gt;|&lt;fld4&gt;|FILE|&lt;action&gt;|&lt;fld5&gt;|&lt;filename&gt;" />
+
+<MESSAGE 
+	id1="audit_protocol:03" 
+	id2="audit_protocol" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_type:OPEN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@protocol:SMB&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;saddr&gt;|SMB|OPEN|&lt;result&gt;|&lt;fld4&gt;|DIR|&lt;action&gt;|&lt;fld5&gt;|&lt;directory&gt;" />
+
+<MESSAGE 
+	id1="audit_protocol:04" 
+	id2="audit_protocol" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_type:DELETE&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@protocol:SMB&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;saddr&gt;|SMB|DELETE|&lt;result&gt;|FILE|&lt;fld5&gt;|&lt;filename&gt;" />
+
+<MESSAGE 
+	id1="audit_protocol:05" 
+	id2="audit_protocol" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_type:SET_SECURITY&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@protocol:SMB&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;saddr&gt;|SMB|SET_SECURITY|&lt;result&gt;|FILE|&lt;fld5&gt;|&lt;filename&gt;" />
+
+<MESSAGE 
+	id1="audit_protocol:06" 
+	id2="audit_protocol" 
+	eventcategory="1612000000" 
+	functions="&lt;@event_type:RENAME&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@protocol:SMB&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;saddr&gt;|SMB|RENAME|&lt;result&gt;|FILE|&lt;fld5&gt;|&lt;filename_src&gt;|&lt;filename_dst&gt;" />
+
+
+<MESSAGE 
 	id1="audit_protocol" 
 	id2="audit_protocol" 
 	eventcategory="1612000000" 
-	functions="&lt;@event_type:CLOSE&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="audit_protocol[&lt;process_id&gt;]: &lt;fld1&gt;|&lt;fld2&gt;|&lt;saddr&gt;|CLOSE|&lt;result&gt;|DIR|&lt;fld3&gt;|&lt;fld4&gt;|&lt;directory&gt;" />
+	functions="&lt;@event_type:CLOSE&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld2&gt;|&lt;saddr&gt;|CLOSE|&lt;result&gt;|DIR|&lt;fld3&gt;|&lt;fld4&gt;|&lt;directory&gt;" />
 <MESSAGE 
 	id1="audit_protocol:01" 
 	id2="audit_protocol" 
 	eventcategory="1612000000" 
-	functions="&lt;@event_type:OPEN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="audit_protocol[&lt;process_id&gt;]: &lt;fld1&gt;|&lt;fld2&gt;|&lt;saddr&gt;|OPEN|&lt;result&gt;|&lt;fld4&gt;|DIR|&lt;action&gt;|&lt;directory&gt;" />
+	functions="&lt;@event_type:OPEN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%S','%W-%G-%F %H:%U:%SZ',hdate,hfld1)&gt;"
+	content="audit_protocol[&lt;process_id&gt;]: &lt;sid&gt;|&lt;fld2&gt;|&lt;saddr&gt;|OPEN|&lt;result&gt;|&lt;fld4&gt;|DIR|&lt;action&gt;|&lt;directory&gt;" />
 </DEVICEMESSAGES>
