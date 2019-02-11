@@ -4,9 +4,9 @@
 	displayname="McAfee ePolicy Orchestrator"
 	group="Anti Virus">
 <VERSION
-	xml="78"
-	checksum="0e8418261ebf8fa12dfda9c903d97d85"
-	revision="125"
+	xml="79"
+	checksum="264c5ec9a2eac5f7220af5241c9ed83e"
+	revision="127"
     device="2.0" />
  
 <HEADER 
@@ -34,6 +34,10 @@
 	id1="0006" 
 	id2="0006"  
 	content="%ePolicy-&lt;level&gt;: &lt;hnumber&gt;^^&lt;hnumber1&gt;^^&lt;husername&gt;^^&lt;hseverity&gt;^^&lt;messageid&gt; &lt;!payload:hnumber&gt;" />
+<HEADER 
+	id1="0011" 
+	id2="0011"  
+	content="%ePolicy-&lt;level&gt;: &lt;hnumber&gt;^^&lt;hnumber1&gt;^^&lt;husername&gt;^^&lt;hseverity&gt;^^ASCI - &lt;messageid&gt; &lt;!payload:hnumber&gt;" />
 <HEADER 
 	id1="0008" 
 	id2="0008"  
@@ -6531,6 +6535,13 @@
 	eventcategory="1701010000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:New system&gt;&lt;@result:*getResult(resultcode)&gt;"
 	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^New system^^&lt;info&gt;^^&lt;resultcode&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
+<MESSAGE 
+	id1="New_system:02" 
+	id2="New" 
+	eventcategory="1701010000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:New system&gt;&lt;@result:*getResult(resultcode)&gt;"
+	content="&lt;fld1&gt;^^&lt;uid&gt;^^&lt;username&gt;^^&lt;severity&gt;^^ASCI - New system^^Adding system: &quot;&lt;node&gt;&quot;, &lt;info&gt;  MAC addr: &quot;&lt;fld2&gt;&quot;, platform: &quot;&lt;os&gt;&quot;^^&lt;resultcode&gt;^^&lt;starttime&gt;^^&lt;endtime&gt;" />
+
 <MESSAGE 
 	id1="Purge_Event_Log" 
 	id2="Purge" 
