@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="73"
-	checksum="f7e181f98acb1a85317f6a646c3c97d7"
-	revision="126"
+	xml="74"
+	checksum="7fc91a0f424bb316becb7bd479ae1fc9"
+	revision="127"
 	device="2.0" />
 
  
@@ -1151,11 +1151,18 @@
 	content=" &quot;authentication succeeded for user &lt;&lt;&lt;domain&gt;\&lt;username&gt;&gt;, client ip &lt;saddr&gt;, setting up session&quot; " />
 
 <MESSAGE 
+	id1="AAATM_Message:06" 
+	id2="AAATM_Message" 
+	eventcategory="1605000000" 
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content=" &lt;info&gt;" />
+
+<MESSAGE 
 	id1="AAATM_HTTPREQUEST" 
 	id2="AAATM_HTTPREQUEST" 
 	eventcategory="1605000000" 
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@effective_time:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld2)&gt;&lt;@event_description:AAATM HTTP Request&gt;"
-	content=" Context &lt;fld1&gt; - SessionId: &lt;sessionid&gt;- &lt;event_computer&gt; User &lt;username&gt; : Group(s) &lt;group&gt; : Vserver &lt;daddr&gt;:&lt;dport&gt; - &lt;fld2&gt; &lt;timezone&gt;: SSO is &lt;fld3&gt; : &lt;web_method&gt; &lt;url&gt; &lt;fld4&gt;" />
+	content=" Context &lt;fld1&gt; - SessionId: &lt;sessionid&gt;- &lt;event_computer&gt; User &lt;username&gt; : Group(s) &lt;group&gt; : Vserver &lt;daddr&gt;:&lt;dport&gt; - &lt;fld2&gt; &lt;timezone&gt;{: SSO is &lt;fld3&gt; : &lt;web_method&gt;|&lt;web_method&gt;} &lt;url&gt; &lt;fld4&gt;" />
 
 <MESSAGE 
 	id1="SSLVPN_REMOVE_SESSION_ERR" 
@@ -1256,5 +1263,19 @@
 	eventcategory="1801010100" 
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content=" Sessionid &lt;sessionid&gt; - User &lt;username&gt; - Client_ip &lt;saddr&gt; - Nat_ip { &quot;&lt;stransaddr&gt;&quot;| &lt;stransaddr&gt;} - Vserver_ip &lt;daddr&gt; - Errmsg &quot; &lt;event_description&gt; &quot; " />
+
+ <MESSAGE 
+	id1="AAATM_LOGIN" 
+	id2="AAATM_LOGIN" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content=" { Context &lt;fld1&gt; - SessionId: &lt;sessionid&gt;- User &lt;username&gt; | Context &lt;fld1&gt; - User &lt;username&gt; | User &lt;username&gt; } - Client_ip &lt;saddr&gt; - Nat_ip {&quot;&lt;stransaddr&gt;&quot;|&lt;stransaddr&gt;} - Vserver &lt;daddr&gt;:&lt;dport&gt; - Browser_type &lt;user_agent&gt;- Group(s) &quot;&lt;group&gt;&quot;" />
+
+ <MESSAGE 
+	id1="AAATM_LOGOUT" 
+	id2="AAATM_LOGOUT" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@dclass_ratio1_string: Compression_ratio_send&gt;&lt;@dclass_ratio2_string: Compression_ratio_recv&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld11)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld10)&gt;"
+	content=" { Context &lt;fld1&gt; - SessionId: &lt;sessionid&gt;- User &lt;username&gt; | Context &lt;fld1&gt; - User &lt;username&gt; | User &lt;username&gt; } - Client_ip &lt;saddr&gt; - Nat_ip {&quot;&lt;stransaddr&gt;&quot;|&lt;stransaddr&gt;} - Vserver &lt;daddr&gt;:&lt;dport&gt; - Start_time {&quot; &lt;fld10&gt; GMT&quot;|&quot; &lt;fld10&gt;&quot;| &lt;fld10&gt;} - End_time {&quot; &lt;fld11&gt; GMT&quot;|&quot; &lt;fld11&gt;&quot;| &lt;fld11&gt;} - Duration &lt;duration_string&gt;  - Http_resources_accessed &lt;fld3&gt; - Total_TCP_connections &lt;fld5&gt; - Total_policies_allowed &lt;fld7&gt; - Total_policies_denied &lt;fld8&gt; - Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt; - Total_compressedbytes_send &lt;fld12&gt; - Total_compressedbytes_recv &lt;fld13&gt; - Compression_ratio_send &lt;dclass_ratio1&gt; - Compression_ratio_recv &lt;dclass_ratio2&gt; - LogoutMethod &quot;&lt;result&gt;&quot; - Group(s) &quot;&lt;group&gt;&quot;" />
 
 </DEVICEMESSAGES>
