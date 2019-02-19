@@ -4,9 +4,9 @@
 	displayname="HP_UX / FreeBSD"
 	group="Unix">
 <VERSION
-	xml="31"
-	checksum="69b21ad4f39cca0b8e4f2a41e9c846b8"
-	revision="0"
+	xml="32"
+	checksum="4fe1dbb673cd22eb91e497a241f731a7"
+	revision="127"
 	device="2.0" />
 
 <HEADER 
@@ -73,6 +73,11 @@
 	id1="0088" 
 	id2="0088" 
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; [&lt;hfld1&gt;]: &lt;messageid&gt;: &lt;!payload:hfld1&gt;" />
+
+<HEADER 
+	id1="0099" 
+	id2="0099" 
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" />
 
 <MESSAGE 
 	id1="Mark_message" 
@@ -5472,6 +5477,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Found matching RSA key&gt;"
 	content=" &lt;agent&gt;[&lt;process_id&gt;]: Found matching RSA key: &lt;info&gt; " />
 <MESSAGE 
+	id1="sshd:01" 
+	id2="sshd" 
+	eventcategory="1302000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:Service&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@a:user &gt;&lt;@b:granted access&gt;&lt;@event_description: *STRCAT(a,username,&#009;,b)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: pam_winbind(sshd:&lt;category&gt;): user &apos;&lt;username&gt;&apos; granted access" />
+
+<MESSAGE 
 	id1="00009:15" 
 	id2="sshd" 
 	eventcategory="1605000000" 
@@ -6977,4 +6989,18 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;event_description&gt;" />
+<MESSAGE 
+	id1="isakmpd:01" 
+	id2="isakmpd" 
+	eventcategory="1803000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: transport_send_messages: giving up on exchange &lt;fld1&gt;-{&lt;saddr&gt;/&lt;sport&gt;|&lt;saddr&gt;}{-to-|-}{&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;}, no response from peer &lt;hostip&gt;:&lt;network_port&gt;" />
+
+<MESSAGE 
+	id1="isakmpd:02" 
+	id2="isakmpd" 
+	eventcategory="1803000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: transport_send_messages: giving up on exchange &lt;fld1&gt;-&lt;saddr&gt;-{&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;}, no response from peer &lt;hostip&gt;:&lt;network_port&gt;" />
+
 </DEVICEMESSAGES>
