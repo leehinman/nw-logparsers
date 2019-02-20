@@ -4,9 +4,9 @@
 	displayname="F5 BigIP"
 	group="Switch">
 <VERSION
-		xml="99"
-		checksum="c69cfc3fa921290b4aa0a78bfe6a0a51"
-		revision="126"
+		xml="102"
+		checksum="648a371d9af8bde3ed328f0544c946f1"
+		revision="127"
 		device="2.0"/>
 
 
@@ -1066,6 +1066,27 @@
 	 content="&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;: AUDIT - client&lt;interface&gt;, user&lt;username&gt;- transaction #&lt;id1&gt;- object&lt;fld4&gt;- obj_delete {{&lt;obj_name&gt;{{&lt;info&gt;} } [Status=&lt;result&gt;]"/>
 
 <MESSAGE
+	id1="000161_07"
+	id2="mcpd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:monitor status down&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Pool &lt;pool_name&gt; member &lt;device&gt; monitor status down. &lt;info&gt;" />
+
+<MESSAGE
+	id1="000161_05"
+	id2="mcpd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:monitor status up&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Pool &lt;pool_name&gt; member &lt;device&gt; monitor status up. &lt;info&gt;" />
+
+<MESSAGE
+	id1="000161_06"
+	id2="mcpd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:monitor status up&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Node &lt;node&gt; address &lt;hostip&gt; monitor status up.&lt;info&gt;" />
+
+<MESSAGE
 	id1="000161"
 	id2="mcpd"
 	eventcategory="1605000000"
@@ -1186,7 +1207,7 @@
 	id2="snmpd"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
-	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } &lt;event_description&gt;" />
+	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: | &lt;hostname&gt; &lt;agent&gt;[&lt;process_id&gt;]: } {&lt;fld1&gt;:&lt;fld2&gt;: &lt;event_description&gt;|&lt;event_description&gt;}" />
 	
 <MESSAGE
 	id1="000180"
@@ -1512,6 +1533,41 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: syslog-ng startup succeeded&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;: &lt;application&gt; startup | &lt;hostname&gt; &lt;agent&gt;: &lt;application&gt; startup } succeeded" />
 	
+<MESSAGE
+	id1="000206:01"
+	id2="syslog-ng"
+	eventcategory="1801020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:syslog-ng&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Syslog connection established&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; syslog-ng[&lt;process_id&gt;]: Syslog connection established; fd='&lt;fld1&gt;', server='AF_INET(&lt;saddr&gt;:&lt;sport&gt;)', local='AF_INET(&lt;daddr&gt;:&lt;dport&gt;)'" />
+
+<MESSAGE
+	id1="000206:02"
+	id2="syslog-ng"
+	eventcategory="1803000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:syslog-ng&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Syslog connection broken&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; syslog-ng[&lt;process_id&gt;]: Syslog connection broken; fd='&lt;fld1&gt;', server='AF_INET(&lt;hostip&gt;:&lt;network_port&gt;)', time_reopen='&lt;fld2&gt;'" />
+
+<MESSAGE
+	id1="000206:03"
+	id2="syslog-ng"
+	eventcategory="1803000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:syslog-ng&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Error binding socket&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; syslog-ng[&lt;process_id&gt;]: Error binding socket; addr='AF_INET(&lt;hostip&gt;:&lt;network_port&gt;)', error='&lt;disposition&gt;'" />
+
+<MESSAGE
+	id1="000206:04"
+	id2="syslog-ng"
+	eventcategory="1803000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:syslog-ng&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Initiating connection failed, reconnecting&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; syslog-ng[&lt;process_id&gt;]: Initiating connection failed, reconnecting; time_reopen='&lt;fld2&gt;'" />
+
+<MESSAGE
+	id1="000206:05"
+	id2="syslog-ng"
+	eventcategory="1803000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@agent:syslog-ng&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Suspending write operation because of an I/O error&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; syslog-ng[&lt;process_id&gt;]: Suspending write operation because of an I/O error; fd='&lt;fld1&gt;', time_reopen='&lt;fld2&gt;'" />
+
 <MESSAGE
 	id1="000206"
 	id2="syslog-ng"
@@ -1870,6 +1926,20 @@
 	 eventcategory="1802000000"
 	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	 content="{&lt;hostname&gt;&lt;severity&gt;&lt;agent&gt;[&lt;process_id&gt;]:|&lt;hostname&gt;&lt;agent&gt;[&lt;process_id&gt;]:}Rule&lt;rulename&gt;&lt;&lt;CLIENT_ACCEPTED&gt;: INFO&lt;info&gt;:&lt;saddr&gt;:&lt;sport&gt;-&gt;&lt;daddr&gt;:&lt;dport&gt;"/>
+
+<MESSAGE
+	id1="000362_09"
+	id2="tmm"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:SSL Handshake failed for TCP&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: SSL Handshake failed for TCP &lt;saddr&gt;:&lt;sport&gt; -> &lt;daddr&gt;:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="000362_10"
+	id2="tmm"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: {local&lt;fld3&gt;.&quot;&lt;result&gt;&quot;|&lt;event_description&gt;}" />
 
 <MESSAGE
 	id1="000362"
@@ -2734,6 +2804,20 @@
 	content=" { &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;: | &lt;hostname&gt; &lt;agent&gt;: } &lt;event_description&gt;" />
 	
 <MESSAGE
+	id1="000302:01"
+	id2="kernel"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Registered protocol family&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;: &lt;fld1&gt; Registered protocol family &lt;fld2&gt;" />
+
+<MESSAGE
+	id1="000302:02"
+	id2="kernel"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:Unregistered protocol family&gt;"
+	content="&lt;hostname&gt; &lt;agent&gt;: &lt;fld1&gt; Unregistered protocol family &lt;fld2&gt;" />
+
+<MESSAGE
 	id1="000302"
 	id2="kernel"
 	eventcategory="1609000000"
@@ -3035,6 +3119,27 @@
     content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: Rejected &lt;hostip&gt; with {malicious file extensions|SQL}, requested URL &lt;url&gt;"/>
 
 <MESSAGE
+	id1="000393_09"
+	id2="tmm3"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:SSL Handshake failed for TCP&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: SSL Handshake failed for TCP &lt;saddr&gt;:&lt;sport&gt; -> &lt;daddr&gt;:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="000393_10"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="000393_11"
+	id2="tmm3"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: {local&lt;fld3&gt;.&quot;&lt;result&gt;&quot;|&lt;event_description&gt;}" />
+
+<MESSAGE
 	id1="000393"
 	id2="tmm3"
 	eventcategory="1802000000"
@@ -3110,6 +3215,27 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
 	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Pool &lt;pool_name&gt; now has available members" />
+
+<MESSAGE
+	id1="000394_12"
+	id2="tmm2"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:SSL Handshake failed for TCP&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: SSL Handshake failed for TCP &lt;saddr&gt;:&lt;sport&gt; -> &lt;daddr&gt;:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="000394_13"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="000394_14"
+	id2="tmm2"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: {local&lt;fld3&gt;.&quot;&lt;result&gt;&quot;|&lt;event_description&gt;}" />
 
 <MESSAGE
 	id1="000394"
@@ -3217,6 +3343,27 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@result:Rejected request&gt;"
     content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_RESPONSE&gt;: c-ip=&lt;hostip&gt;^^method=&lt;web_method&gt;^^{uri=&lt;fld1&gt;url=&lt;url&gt;|uri=&lt;fld1&gt;}^^host=&lt;dhost&gt;^^s-ip=&lt;saddr&gt;^^pool-name=&lt;pool_name&gt;^^s-port=&lt;sport&gt;^^status=&lt;resultcode&gt;"/>
+
+<MESSAGE
+	id1="000396_10"
+	id2="tmm1"
+	eventcategory="1609000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;&lt;@event_description:SSL Handshake failed for TCP&gt;"
+	content=" &lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: SSL Handshake failed for TCP &lt;saddr&gt;:&lt;sport&gt; -> &lt;daddr&gt;:&lt;dport&gt;" />
+
+<MESSAGE
+	id1="000396_11"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="000396_12"
+	id2="tmm1"
+	eventcategory="1802000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hdate,htime)&gt;"
+	content="&lt;hostname&gt; &lt;severity&gt; &lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;:&lt;fld2&gt;: Rule &lt;rulename&gt; &lt;&lt;HTTP_REQUEST&gt;: {local&lt;fld3&gt;.&quot;&lt;result&gt;&quot;|&lt;event_description&gt;}" />
 
 <MESSAGE
 	id1="000396"
