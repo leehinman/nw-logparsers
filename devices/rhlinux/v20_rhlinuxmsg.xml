@@ -11,8 +11,8 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="363"
-	checksum="a5c9521d0a2a67d5d134013e6e14afbe"
+	xml="366"
+	checksum="3f918d8f1ad7ca3f310d5c7ebb7c67a7"
 	revision="126"
 	device="2.0" />
 
@@ -27,6 +27,15 @@
 	name="getEventLegacyCategory"
 	default="1901000000"
 	keyvaluepairs="Failed=&apos;1303000000&apos;|Postponed=&apos;1304000000&apos;|Installed=&apos;1701010000&apos;|Updated=&apos;1701020000&apos;|Erased=&apos;1701030000&apos;" />	
+<HEADER
+	id1="0078"
+	id2="0078"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; Message forwarded from &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+<HEADER
+	id1="0096"
+	id2="0096"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; {Message forwarded from|From}&lt;hhost&gt;:&lt;messageid&gt;[&lt;hdata&gt;]:&lt;!payload:messageid&gt;"/>
+
 <HEADER
 	id1="0095"
 	id2="0095"
@@ -255,6 +264,14 @@
 	id1="0079"
 	id2="0079"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hfld1&gt; &lt;hfld2&gt; 0[&lt;hfld3&gt;]: &lt;messageid&gt;: Authentication &lt;!payload:hfld2&gt;" />
+
+<HEADER
+	id1="0073"
+	id2="0073"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" />		
+		
+ 
+	
 <HEADER
 	id1="0012"
 	id2="0012"
@@ -377,6 +394,8 @@
 	id1="0090"
 	id2="0090"
 	content="&lt;fld1&gt;: &lt;fld2&gt; &lt;fld3&gt;: Write &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
+
+	
 <HEADER
 	id1="0022"
 	id2="0022"
@@ -467,12 +486,6 @@
 	id2="0052"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;messageid&gt;:&lt;!payload:messageid&gt;" />
 		
-<HEADER
-	id1="0073"
-	id2="0073"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" />		
-		
- 
 		
 	
 <HEADER
@@ -484,14 +497,6 @@
 	id1="0077"
 	id2="0077"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;hfld3&gt; &lt;hfld1&gt; local&lt;hfld2&gt;.info] &lt;messageid&gt;. &lt;!payload:hhost&gt;" />
-<HEADER
-	id1="0078"
-	id2="0078"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; Message forwarded from &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
-<HEADER
-	id1="0096"
-	id2="0096"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; {Message forwarded from|From}&lt;hhost&gt;:&lt;messageid&gt;[&lt;hdata&gt;]:&lt;!payload:messageid&gt;"/>
 
 <VALUEMAP
 		name="ecSubUserGroup"
@@ -1358,6 +1363,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt; &lt;info&gt;|&lt;product&gt;|&lt;application&gt;|&lt;version&gt;|&lt;fld1&gt;|&lt;result&gt;|5|{user=&lt;username&gt;(&lt;fld5&gt;)|user=&lt;username&gt;}pid=&lt;fld2&gt; utc=&lt;fld3&gt; centrifyEventID=&lt;operation_id&gt; status=&lt;disposition&gt; {service=&lt;service&gt; tty=&lt;terminal&gt; client=&lt;fld4&gt;|server=&lt;obj_server&gt;}" />
 
 <MESSAGE
+	id1="002269:02"
+	id2="adclient"
+	eventcategory="1302000000"
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:user OK or granted access&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt; &lt;info&gt;|&lt;product&gt;|&lt;application&gt;|&lt;version&gt;|&lt;fld1&gt;|&lt;result&gt;|5|user=&lt;username&gt; pid=&lt;fld2&gt; utc=&lt;fld3&gt; centrifyEventID=&lt;operation_id&gt; status=&lt;disposition&gt; service=&lt;service&gt; tty=&lt;terminal&gt; authMechanism=&lt;authmethod&gt; client=&lt;saddr&gt; sshRights=&lt;permissions&gt; command=&lt;param&gt;" />
+
+<MESSAGE
 	id1="002270"
 	id2="adclient"
 	eventcategory="1302000000"
@@ -1370,6 +1382,13 @@
 	eventcategory="1301000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;severity&gt; &lt;&lt;&lt;filename&gt; &lt;action&gt; &gt; &lt;process&gt; { &lt;application&gt;: &lt;event_description&gt; (Reason:&lt;result&gt;) | &lt;event_description&gt; }" />
+
+<MESSAGE
+	id1="002330:01"
+	id2="adclient"
+	eventcategory="1301000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@severity:DEBUG&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: {DEBUG|DIAG} &lt;&lt;&lt;action&gt; &gt; &lt;process&gt; &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="002330"
@@ -1448,7 +1467,7 @@
 	id2="adinfo"
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } { INFO | WARN } &lt;process&gt; &lt;event_description&gt;" />
+	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } { INFO | WARN | DEBUG | DIAG} &lt;process&gt; &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="00995"
@@ -2541,7 +2560,7 @@
 	id2="audit"
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;event_description&gt;" />
+	content="{&lt;agent&gt;: &lt;event_description&gt;|&lt;event_description&gt;}" />
 <MESSAGE
 	id1="00321"
 	id2="auditd"
@@ -3691,7 +3710,7 @@
 	id2="cdcwatch"
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;event_description&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
 <MESSAGE
 	id1="00990"
 	id2="centrifydc"
@@ -6045,18 +6064,18 @@
 	content="&lt;agent&gt;:  &lt;event_description&gt;" />
 
 <MESSAGE
+	id1="002129:01"
+	id2="dropbear"
+	eventcategory="1401030000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Login failed for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />
+
+<MESSAGE
 	id1="002129"
 	id2="dropbear"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
-
-<MESSAGE
-	id1="002129:01"
-	id2="Server"
-	eventcategory="1401030000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: Login failed for '&lt;fld6&gt;' from ::ffff:&lt;saddr&gt;:&lt;sport&gt; Server &lt;daddr&gt;, hostname &lt;dhost&gt;, real server &lt;fld4&gt;, protocol &lt;protocol&gt;, proxied &lt;fld5&gt;" />
 
 <MESSAGE
 	id1="001208"
@@ -7090,7 +7109,14 @@
 	id2="ftpd"
 	eventcategory="1801020000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:connection&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: connection from &lt;saddr&gt; (&lt;shost&gt;) at &lt;event_time_string&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: connection from {&lt;saddr&gt; (&lt;shost&gt;)|&lt;shost&gt;} at &lt;event_time_string&gt;" />
+
+<MESSAGE
+	id1="00045:05"
+	id2="ftpd"
+	eventcategory="1801020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:FTP LOGIN&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: FTP LOGIN FROM &lt;shost&gt;, &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="00045:03"
@@ -7112,6 +7138,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cannot open file&gt;"
 	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } &lt;process&gt;(&lt;application&gt;): Couldn&apos;t open &lt;filename&gt;" />
+
+<MESSAGE
+	id1="00045:06"
+	id2="ftpd"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:EXPORT file local&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;: EXPORT file local &lt;filename&gt;" />
 
 <MESSAGE
 	id1="002302"
@@ -16575,7 +16608,7 @@
 	id2="runmappers"
 	eventcategory="1607000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;event_description&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
 <MESSAGE
 	id1="00798"
 	id2="run-crons"
@@ -19070,9 +19103,16 @@
 	content="&lt;agent&gt;: ERROR: &lt;service&gt;: &lt;event_description&gt;: &lt;result&gt;" />
 
 <MESSAGE
-	id1="002138"
+	id1="ssh"
 	id2="ssh"
 	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:failed login attempt&gt;"
+	content="&lt;agent&gt;: failed login attempt for &lt;username&gt; from &lt;saddr&gt;" />
+
+<MESSAGE
+	id1="002138"
+	id2="ssh"
+	eventcategory="1401030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:invalid context system_u&gt;"
 	content="&lt;agent&gt;: &lt;info&gt;: &lt;space&gt; invalid context system_u:&lt;result&gt;" />
 
@@ -19565,7 +19605,7 @@
 	id2="sshd"
 	eventcategory="1801030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@result:Disconnected&gt;"
-	 content="&lt;agent&gt;[&lt;process_id&gt;]: Disconnected from&lt;saddr&gt;{port&lt;sport&gt;[&lt;fld1&gt;]|port&lt;sport&gt;}"/>
+	 content="&lt;agent&gt;[&lt;process_id&gt;]: Disconnected from {&lt;saddr&gt; port&lt;sport&gt;[&lt;fld1&gt;]|&lt;saddr&gt; port&lt;sport&gt;|&lt;saddr&gt;}"/>
 
 <MESSAGE
 	id1="00020:12"
@@ -21055,6 +21095,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The station data in local base&gt;"
 	content="The station data in local base = &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="001456:02"
+	id2="The"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;event_description&gt;" />
 
 <MESSAGE
 	id1="00264"
@@ -26469,6 +26516,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;service&gt;: {discarded packet from &lt;hostip&gt; attempting to take over interface &lt;interface&gt;, VRID &lt;fld1&gt; while local router is master | interface &lt;interface&gt;, VRID &lt;fld2&gt;: state=&lt;fld3&gt;}" />
 
 <MESSAGE
+	id1="ipsrd:04"
+	id2="ipsrd"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: {Exit|Start} &lt;fld1&gt;[&lt;fld2&gt;] &lt;info&gt;" />
+
+<MESSAGE
 	id1="ipsrd:02"
 	id2="ipsrd"
 	eventcategory="1605010000"
@@ -26481,13 +26535,6 @@
 	eventcategory="1605010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: {task_reconfigure re-initializing from &lt;filename&gt;|&lt;info&gt;}" />
-
-<MESSAGE
-	id1="ipsrd:04"
-	id2="ipsrd"
-	eventcategory="1605010000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;] &lt;info&gt;" />
 
 <MESSAGE
 	id1="sshd-x:01"
@@ -26876,5 +26923,76 @@
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@error:address family AF_INET6 not supported by protocol&gt;"
     content="&lt;agent&gt;: rpc.nfsd: address family AF_INET6 not supported by protocol &lt;protocol&gt; " /> 
+
+<MESSAGE
+	id1="certgp.pl"
+	id2="certgp.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: {Run|run} {command using system|command using pipe|command: &lt;param&gt;}" /> 
+
+<MESSAGE
+	id1="dzdo.pl"
+	id2="dzdo.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: {Run|run} {command using system|command using pipe|command: &lt;param&gt;}" /> 
+
+<MESSAGE
+	id1="syncpass.pl"
+	id2="syncpass.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: {Run|run} {command using system|command using pipe|command: &lt;param&gt;}" /> 
+
+<MESSAGE
+	id1="syncpass.pl:01"
+	id2="syncpass.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:No user need to sync password.&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: No user need to sync password."/> 
+
+<MESSAGE
+	id1="nssoverrides.pl"
+	id2="nssoverrides.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:file not exist. return undef&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: Read [&lt;filename&gt;]: file not exist. return undef" /> 
+
+<MESSAGE
+	id1="sshd.pl"
+	id2="sshd.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: run command: &lt;param&gt;" /> 
+
+<MESSAGE
+	id1="sshd.pl:01"
+	id2="sshd.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:ServiceAuthLocation does not meet requirement&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: ServiceAuthLocation does not meet requirement (&lt;info&gt;)" /> 
+
+<MESSAGE
+	id1="SAPJVM"
+	id2="SAPJVM"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt;:&lt;fld2&gt;[&lt;fld3&gt;] &lt;fld4&gt; ***Warning: &lt;info&gt;" /> 
+
+<MESSAGE
+	id1="sudoers.pl"
+	id2="sudoers.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:No sudoers registry setting. No need to update sudoers file.&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: No sudoers registry setting. No need to update sudoers file." /> 
+
+	
+<MESSAGE
+	id1="DirectAudit.pl"
+	id2="DirectAudit.pl"
+	eventcategory="1605010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Removing&gt;"
+    content="&lt;agent&gt;[&lt;process_id&gt;]: Removing &lt;filename&gt;" /> 
 
 </DEVICEMESSAGES>
