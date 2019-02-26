@@ -4,9 +4,9 @@
 	displayname="Cisco Nexus"
 	group="Switch">
 <VERSION
-	xml="35"
-	checksum="c4364584afdf418b9dd8406e69da338b"
-	revision="0"
+	xml="37"
+	checksum="08cbcbe81d4e0f1dcf150bedc0541b99"
+	revision="127"
 	device="2.0" />
 
 
@@ -97,6 +97,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Authentication failure for user&gt;"
 	content=" error: PAM: Authentication failure for &lt;username&gt; from &lt;shost&gt; " />
 <MESSAGE
+	id1="SYSTEM_MSG:19"
+	id2="SYSTEM_MSG"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	content=" error: maximum authentication attempts exceeded for {invalid user &lt;username&gt;|&lt;username&gt;} from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;agent&gt;[&lt;process_id&gt;]" />
+
+<MESSAGE
 	id1="SYSTEM_MSG:02"
 	id2="SYSTEM_MSG"
 	eventcategory="1603000000"
@@ -107,7 +114,7 @@
 	id2="SYSTEM_MSG"
 	eventcategory="1401030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" (pam_unix) authentication failure; logname=&lt;fld20&gt; uid=&lt;fld21&gt; euid=&lt;fld22&gt; tty=&lt;fld23&gt; ruser=&lt;fld24&gt; rhost=&lt;fld25&gt; user=&lt;username&gt; - aaad" />
+	content=" {(pam_unix)|pam_unix(&lt;fld1&gt;:&lt;fld2&gt;):} authentication failure; logname=&lt;fld20&gt; uid=&lt;fld21&gt; euid=&lt;fld22&gt; tty=&lt;terminal&gt; ruser=&lt;fld24&gt; {rhost=&lt;fld25&gt; user=&lt;username&gt;|rhost=&lt;fld25&gt;} - aaad" />
 <MESSAGE
 	id1="SYSTEM_MSG:04"
 	id2="SYSTEM_MSG"
@@ -119,7 +126,7 @@
 	id2="SYSTEM_MSG"
 	eventcategory="1401030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" pam_aaa:Authentication failed for user &lt;username&gt; from &lt;saddr&gt; - &lt;agent&gt;[&lt;process_id&gt;]" />
+	content=" pam_aaa:Authentication failed {for user &lt;username&gt; from|from} &lt;saddr&gt; - &lt;agent&gt;[&lt;process_id&gt;]" />
 <MESSAGE
 	id1="SYSTEM_MSG:06"
 	id2="SYSTEM_MSG"
@@ -156,6 +163,48 @@
 	eventcategory="1401030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content=" &lt;fld43&gt; : Subsequent authentication success for user (&lt;username&gt;) failed." />
+<MESSAGE
+	id1="SYSTEM_MSG:15"
+	id2="SYSTEM_MSG"
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_theme:Authentication&gt;"
+	content=" &lt;fld1&gt; : TTY=&lt;terminal&gt; ; PWD=&lt;directory&gt; ; USER=&lt;username&gt; ; COMMAND=&lt;param&gt;" />
+
+<MESSAGE
+	id1="SYSTEM_MSG:16"
+	id2="SYSTEM_MSG"
+	eventcategory="1401030000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content=" Login failed for user &lt;username&gt; - &lt;agent&gt;[&lt;process_id&gt;]" />
+
+<MESSAGE
+	id1="SYSTEM_MSG:17"
+	id2="SYSTEM_MSG"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" NTP: Peer &lt;hostip&gt; {with stratum &lt;fld1&gt; selected|is &lt;disposition&gt;} - &lt;agent&gt;[&lt;process_id&gt;]" />
+
+<MESSAGE
+	id1="SYSTEM_MSG:20"
+	id2="SYSTEM_MSG"
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_theme:Authentication&gt;"
+	content="New user added with username &lt;username&gt; - &lt;agent&gt;" />
+
+<MESSAGE
+	id1="SYSTEM_MSG:21"
+	id2="SYSTEM_MSG"
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:Password&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
+	content=" pam_unix(&lt;fld1&gt;:&lt;fld2&gt;): password changed for &lt;username&gt; - &lt;agent&gt;" />
+
+<MESSAGE
+	id1="SYSTEM_MSG:22"
+	id2="SYSTEM_MSG"
+	eventcategory="1304000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_theme:Authentication&gt;"
+	content=" pam_unix(&lt;fld1&gt;:&lt;fld2&gt;): check pass; user &lt;username&gt; - &lt;agent&gt;" />
+
 <MESSAGE
 	id1="SYSTEM_MSG:08"
 	id2="SYSTEM_MSG"
@@ -629,7 +678,15 @@
 	id2="PS_STATUS"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" &lt;event_description&gt;" />
+	content="{ PowerSupply &lt;fld1&gt; current-status is &lt;disposition&gt;| &lt;event_description&gt;}" />
+
+<MESSAGE
+	id1="PS_CAPACITY_CHANGE:01"
+	id2="PS_CAPACITY_CHANGE"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content=" Power supply &lt;fld1&gt; changed its capacity. possibly due to On/Off or power cable removal/insertion (Serial number &lt;serial_number&gt;)" />
+
 <MESSAGE
 	id1="PS_CAPACITY_CHANGE"
 	id2="PS_CAPACITY_CHANGE"
@@ -827,7 +884,8 @@
 	id2="CFGWRITE_STARTED"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" &lt;event_description&gt;" />
+	content="{ &lt;event_description&gt; (PID &lt;process_id&gt;).|&lt;event_description&gt;}" />
+
 <MESSAGE
 	id1="IF_ATTACHED"
 	id2="IF_ATTACHED"
@@ -929,7 +987,7 @@
 	id2="VSHD_SYSLOG_CONFIG_I"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" Configured from vty by &lt;username&gt; on &lt;saddr&gt;" />
+	content=" Configured from vty by &lt;username&gt; on {&lt;saddr&gt;@&lt;terminal&gt;|&lt;saddr&gt;}" />
 <MESSAGE
 	id1="VSHD_SYSLOG_CONFIG_I:01"
 	id2="VSHD_SYSLOG_CONFIG_I"
@@ -2058,4 +2116,74 @@
 	eventcategory="1401030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
 	content="error: &lt;result&gt;" />
+<MESSAGE
+	 id1="L2FM_MAC_FLAP_DISABLE_LEARN"
+	 id2="L2FM_MAC_FLAP_DISABLE_LEARN"
+	 eventcategory="1701000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_activity:Disable&gt;"
+	 content="Disabling learning in vlan &lt;vlan&gt; for &lt;duration&gt;s due to too many mac moves"/>
+
+<MESSAGE
+	 id1="L2FM_MAC_FLAP_RE_ENABLE_LEARN"
+	 id2="L2FM_MAC_FLAP_RE_ENABLE_LEARN"
+	 eventcategory="1701000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_activity:Enable&gt;"
+	 content="Re-enabling learning in vlan &lt;vlan&gt;"/>
+
+<MESSAGE
+	 id1="PS_ABSENT"
+	 id2="PS_ABSENT"
+	 eventcategory="1603000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="Power supply &lt;fld1&gt; is &lt;disposition&gt;, ps-redundancy might be affected"/>
+
+<MESSAGE
+	 id1="PS_DETECT"
+	 id2="PS_DETECT"
+	 eventcategory="1603000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="Power supply &lt;fld1&gt; detected but &lt;disposition&gt; (Serial number &lt;serial_number&gt;)"/>
+
+<MESSAGE
+	 id1="SUBPROC_TERMINATED"
+	 id2="SUBPROC_TERMINATED"
+	 eventcategory="1603000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="&quot;System Manager (configuration controller)&quot; (PID &lt;process_id&gt;) has finished with error code &lt;result&gt; (&lt;resultcode&gt;)."/>
+
+<MESSAGE
+	 id1="UPDOWN"
+	 id2="UPDOWN"
+	 eventcategory="1701000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="Line Protocol on Interface vlan &lt;vlan&gt;, changed state to &lt;disposition&gt;"/>
+
+<MESSAGE
+	 id1="L2FM_MAC_MOVE2"
+	 id2="L2FM_MAC_MOVE2"
+	 eventcategory="1701000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@change_attribute:Interface&gt;"
+	 content="Mac &lt;smacaddr&gt; in vlan &lt;vlan&gt; has moved between &lt;change_old&gt; to &lt;change_new&gt;"/>
+
+<MESSAGE
+	 id1="PFM_PS_RED_MODE_CHG"
+	 id2="PFM_PS_RED_MODE_CHG"
+	 eventcategory="1701000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_theme:Configuration&gt;"
+	 content="Power redundancy configured mode changed to &lt;event_state&gt;"/>
+
+<MESSAGE
+	 id1="PS_RED_MODE_CHG"
+	 id2="PS_RED_MODE_CHG"
+	 eventcategory="1701000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_theme:Configuration&gt;"
+	 content="Power supply operational redundancy mode changed to &lt;event_state&gt;"/>
+
+<MESSAGE
+	 id1="INVAL_MAC"
+	 id2="INVAL_MAC"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_theme:Configuration&gt;"
+	 content="&lt;agent&gt;  [&lt;process_id&gt;]  Received packet with invalid source MAC address (&lt;smacaddr&gt;) from &lt;saddr&gt; on &lt;vlan&gt;"/>
+
 </DEVICEMESSAGES>
