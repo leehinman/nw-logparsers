@@ -4,9 +4,9 @@
 	displayname="Aruba Networks Mobility Controller"
 	group="Wireless Devices">
 <VERSION
-	xml="35"
-	checksum="2a01d27a574ade192967eed73067838f"
-	revision="126"
+	xml="37"
+	checksum="9ef7a342d4bdb82b80eed8119de88d1c"
+	revision="127"
 	device="2.0" />
 <HEADER
 	id1="0001"
@@ -3203,14 +3203,14 @@
 	id2="501100"
 	eventcategory="1602010000"
 	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld10&gt; &lt;fld11&gt;&gt;  Assoc success @ &lt;fld12&gt; &lt;smacaddr&gt; AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld48&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld10&gt; &lt;fld11&gt;&gt;  Assoc success @ &lt;fld12&gt; &lt;smacaddr&gt;: AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld48&gt;" />
 
 <MESSAGE
 	id1="501100:01"
 	id2="501100"
 	eventcategory="1602010000"
 	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;@&lt;fld11&gt; stm|  Assoc success @ &lt;fld12&gt; &lt;smacaddr&gt; AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld48&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;@&lt;fld11&gt; stm|  Assoc success @ &lt;fld12&gt; &lt;smacaddr&gt;: AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld48&gt;" />
 	
 <MESSAGE
 	id1="501101"
@@ -3258,13 +3258,13 @@
 	id2="501109"
 	eventcategory="1304000000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld10&gt; &lt;fld11&gt;&gt;  Auth request: &lt;smacaddr&gt; AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld48&gt; auth_alg &lt;fld14&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld10&gt; &lt;fld11&gt;&gt;  Auth request: &lt;smacaddr&gt;: AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld48&gt; auth_alg &lt;fld14&gt;" />
 <MESSAGE
 	id1="501109:01"
 	id2="501109"
 	eventcategory="1304000000"
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;@&lt;fld11&gt; stm|  Auth request: &lt;smacaddr&gt; AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld3&gt; auth_alg &lt;fld14&gt; " />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;@&lt;fld11&gt; stm|  Auth request: &lt;smacaddr&gt;: AP &lt;hostip&gt;-&lt;macaddr&gt;-&lt;fld3&gt; auth_alg &lt;fld14&gt; " />
 
 <MESSAGE
 	id1="501114"
@@ -5374,7 +5374,7 @@
 	id2="501103"
 	eventcategory="1301000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;@&lt;fld11&gt; stm|  Blacklist add: &lt;smacaddr&gt; &lt;result&gt;  " />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;@&lt;fld11&gt; stm|  Blacklist add: {&lt;smacaddr&gt;: Reason:&lt;result&gt;|&lt;smacaddr&gt; &lt;result&gt;} " />
  
   
  
@@ -5383,7 +5383,7 @@
 	id2="501116"
 	eventcategory="1301000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld2&gt;&gt;  Blacklist del: &lt;smacaddr&gt; &lt;result&gt;  " />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld2&gt;&gt;  Blacklist del: &lt;smacaddr&gt; &lt;result&gt; " />
  
 
 		
@@ -5392,7 +5392,7 @@
 	id2="501103"
 	eventcategory="1301000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld2&gt;&gt;  Blacklist add: &lt;smacaddr&gt; &lt;result&gt;  " />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld2&gt;&gt;  Blacklist add: {&lt;smacaddr&gt;: Reason:&lt;result&gt;|&lt;smacaddr&gt; &lt;result&gt;} " />
  
  
  
@@ -5510,7 +5510,7 @@
 	id2="132197"
 	eventcategory="1605000000"  
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld10&gt; &lt;fld11&gt;&gt;  Maximum number of retries was attempted for station &lt;smacaddr&gt; &lt;macaddr&gt; &lt;result&gt;" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld10&gt; &lt;fld11&gt;&gt;  Maximum number of retries was attempted for station &lt;smacaddr&gt; &lt;macaddr&gt;, &lt;result&gt;" />
 	
 	
 <MESSAGE
@@ -5688,7 +5688,7 @@
 	id2="501097"
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld2&gt;&gt;  Assoc request: &lt;smacaddr&gt; Dropped AP &lt;fld10&gt;- &lt;fld11&gt;- &lt;fld12&gt;- &lt;fld13&gt;- &lt;fld14&gt;- &lt;fld15&gt; &lt;result&gt; " />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; &lt;&lt;&lt;fld2&gt;&gt;  Assoc request: &lt;smacaddr&gt;: Dropped AP &lt;fld10&gt;- &lt;fld11&gt;- &lt;fld12&gt;- &lt;fld13&gt;- &lt;fld14&gt;- &lt;fld15&gt; &lt;result&gt; " />
 
 	
 <MESSAGE
@@ -5696,7 +5696,7 @@
 	id2="501097"
 	eventcategory="1605000000"	
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;- &lt;fld11&gt;- &lt;fld12&gt;- &lt;fld13&gt; @ &lt;fld20&gt; stm|  Assoc request: &lt;smacaddr&gt; Dropped AP &lt;fld14&gt;- &lt;fld15&gt;- &lt;fld16&gt;- &lt;fld17&gt;- &lt;fld18&gt;- &lt;fld19&gt; &lt;result&gt; " />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;&lt;&lt;fld1&gt;&gt; &lt;&lt;&lt;severity&gt;&gt; |AP &lt;fld10&gt;- &lt;fld11&gt;- &lt;fld12&gt;- &lt;fld13&gt; @ &lt;fld20&gt; stm|  Assoc request: &lt;smacaddr&gt;: Dropped AP &lt;fld14&gt;- &lt;fld15&gt;- &lt;fld16&gt;- &lt;fld17&gt;- &lt;fld18&gt;- &lt;fld19&gt; &lt;result&gt; " />
 
 <MESSAGE
 	id1="400178"
