@@ -4,8 +4,8 @@
 	displayname="Cisco Nexus"
 	group="Switch">
 <VERSION
-	xml="37"
-	checksum="08cbcbe81d4e0f1dcf150bedc0541b99"
+	xml="40"
+	checksum="3f1e457970ac4d94e7528220d231b1e7"
 	revision="127"
 	device="2.0" />
 
@@ -114,7 +114,7 @@
 	id2="SYSTEM_MSG"
 	eventcategory="1401030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" {(pam_unix)|pam_unix(&lt;fld1&gt;:&lt;fld2&gt;):} authentication failure; logname=&lt;fld20&gt; uid=&lt;fld21&gt; euid=&lt;fld22&gt; tty=&lt;terminal&gt; ruser=&lt;fld24&gt; {rhost=&lt;fld25&gt; user=&lt;username&gt;|rhost=&lt;fld25&gt;} - aaad" />
+	content=" {(pam_unix)|pam_unix(&lt;fld1&gt;:&lt;fld2&gt;):} authentication failure; logname=&lt;fld20&gt; uid=&lt;fld21&gt; euid=&lt;fld22&gt; tty=&lt;terminal&gt; ruser=&lt;fld24&gt; {rhost=&lt;fld25&gt; user=&lt;username&gt;|rhost=&lt;fld25&gt;} - &lt;agent&gt;" />
 <MESSAGE
 	id1="SYSTEM_MSG:04"
 	id2="SYSTEM_MSG"
@@ -206,11 +206,25 @@
 	content=" pam_unix(&lt;fld1&gt;:&lt;fld2&gt;): check pass; user &lt;username&gt; - &lt;agent&gt;" />
 
 <MESSAGE
+	id1="SYSTEM_MSG:23"
+	id2="SYSTEM_MSG"
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;"
+	content="  new user: name=&lt;username&gt;, uid=&lt;uid&gt;, gid=&lt;fld1&gt;, home=&lt;directory&gt;, shell=&lt;fld2&gt; - &lt;agent&gt;[&lt;process_id&gt;]" />
+
+<MESSAGE
+	id1="SYSTEM_MSG:24"
+	id2="SYSTEM_MSG"
+	eventcategory="1402020100"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_outcome:Success&gt;"
+	content=" delete user {`&lt;username&gt;&apos;|&apos;&lt;username&gt;&apos;} - &lt;agent&gt;[&lt;process_id&gt;]" />
+
+<MESSAGE
 	id1="SYSTEM_MSG:08"
 	id2="SYSTEM_MSG"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" &lt;event_description&gt;" />
+	content="{ &lt;event_description&gt; - &lt;agent&gt;| &lt;event_description&gt;}" />
 <MESSAGE
 	id1="VDC_HOSTNAME_CHANGE"
 	id2="VDC_HOSTNAME_CHANGE"
@@ -1091,11 +1105,39 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:program update&gt;"
 	content="  update:&lt;saddr&gt;@&lt;terminal&gt;:&lt;application&gt;:terminal width &lt;dclass_counter1&gt; (&lt;result&gt;)" />
 <MESSAGE
+	id1="AAA_ACCOUNTING_MESSAGE:27"
+	id2="AAA_ACCOUNTING_MESSAGE"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Update&gt;"
+	content=" update:&lt;saddr&gt;@&lt;terminal&gt;:&lt;username&gt;:{configure terminal ; ntp source-interface &lt;sinterface&gt;|show ntp statistics peer ipaddr &lt;hostip&gt;} (&lt;result&gt;)" />
+
+<MESSAGE
+	id1="AAA_ACCOUNTING_MESSAGE:28"
+	id2="AAA_ACCOUNTING_MESSAGE"
+	eventcategory="1605020000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@action:Update&gt;"
+	content=" update:&lt;saddr&gt;@&lt;terminal&gt;:&lt;username&gt;:{clock set &lt;event_time_string&gt;|show logging last &lt;fld1&gt;} (&lt;result&gt;)" />
+
+<MESSAGE
 	id1="AAA_ACCOUNTING_MESSAGE:20"
 	id2="AAA_ACCOUNTING_MESSAGE"
 	eventcategory="1605020000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content=" update:&lt;saddr&gt;@&lt;terminal&gt;:&lt;username&gt;:&lt;info&gt; (&lt;result&gt;)" />
+<MESSAGE
+	id1="AAA_ACCOUNTING_MESSAGE:30"
+	id2="AAA_ACCOUNTING_MESSAGE"
+	eventcategory="1402020200"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@event_description:Added user&gt;&lt;@action:Update&gt;"
+	content="  update:&lt;saddr&gt;@&lt;terminal&gt;:&lt;username&gt;:added user &lt;c_username&gt;" />
+
+<MESSAGE
+	id1="AAA_ACCOUNTING_MESSAGE:29"
+	id2="AAA_ACCOUNTING_MESSAGE"
+	eventcategory="1402020100"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@event_description:Deleted user&gt;&lt;@action:Update&gt;"
+	content="  update:&lt;saddr&gt;@&lt;terminal&gt;:&lt;username&gt;:deleted user &lt;c_username&gt;" />
+
 <MESSAGE
 	id1="AAA_ACCOUNTING_MESSAGE:21"
 	id2="AAA_ACCOUNTING_MESSAGE"
@@ -1161,8 +1203,8 @@
 	id1="ACLLOG_FLOW_INTERVAL"
 	id2="ACLLOG_FLOW_INTERVAL"
 	eventcategory="1605020000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:ACL Log Flow Interval&gt;"
-	content=" Source IP: &lt;saddr&gt;, Destination IP: &lt;daddr&gt;, Source Port: &lt;sport&gt;, Destination Port: &lt;dport&gt;, Source Interface: &lt;sinterface&gt;, { Protocol: | protocol: } &quot;&lt;protocol&gt;&quot;(&lt;protocol_detail&gt;),&lt;space&gt; Hit-count = &lt;dclass_counter1&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:ACL Log Flow Interval&gt;&lt;@dclass_counter1_string:Hit Count&gt;"
+	content=" {Source|Src} IP: &lt;saddr&gt;, {Destination|Dst} IP: &lt;daddr&gt;, {Source|Src} Port: &lt;sport&gt;, {Destination|Dst} Port: &lt;dport&gt;, {Source Interface|Src Intf}: &lt;sinterface&gt;, { Protocol: | protocol: } &quot;&lt;protocol&gt;&quot;(&lt;protocol_detail&gt;),&lt;space&gt; Hit-count = &lt;dclass_counter1&gt;" />
 <MESSAGE
 	id1="ACLLOG_MAXFLOW_REACHED"
 	id2="ACLLOG_MAXFLOW_REACHED"
@@ -1173,8 +1215,8 @@
 	id1="ACLLOG_NEW_FLOW"
 	id2="ACLLOG_NEW_FLOW"
 	eventcategory="1605020000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:ACL Lof New Flow&gt;"
-	content="  Source IP: &lt;saddr&gt;, Destination IP: &lt;daddr&gt;, Source Port: &lt;sport&gt;, Destination Port: &lt;dport&gt;, Source Interface: &lt;sinterface&gt;, { Protocol: | protocol: } &quot;&lt;protocol&gt;&quot;(&lt;protocol_detail&gt;),&lt;space&gt; Hit-count = &lt;dclass_counter1&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:ACL Lof New Flow&gt;&lt;@dclass_counter1_string:Hit Count&gt;"
+	content="  {Source|Src} IP: &lt;saddr&gt;, {Destination|Dst} IP: &lt;daddr&gt;, {Source|Src} Port: &lt;sport&gt;, {Destination|Dst} Port: &lt;dport&gt;, {Source Interface|Src Intf}: &lt;sinterface&gt;, { Protocol: | protocol: } &quot;&lt;protocol&gt;&quot;(&lt;protocol_detail&gt;),&lt;space&gt; Hit-count = &lt;dclass_counter1&gt;" />
 <MESSAGE
 	id1="DUP_VADDR_SRC_IP"
 	id2="DUP_VADDR_SRC_IP"
@@ -1239,7 +1281,7 @@
 	id1="last"
 	id2="last"
 	eventcategory="1605020000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:last message repeated number of times.&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:last message repeated number of times.&gt;&lt;@dclass_counter1_string:Number of times repeated&gt;"
 	content=" message repeated &lt;dclass_counter1&gt; time " />
 <MESSAGE
 	id1="SERVICE_CRASHED"
@@ -1288,13 +1330,13 @@
 	id2="NEIGHBOR_ADDED"
 	eventcategory="1701010000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" Device &lt;fld22&gt; discovered of type &lt;fld23&gt; with port &lt;fld24&gt; on incoming port &lt;network_port&gt; with ip addr &lt;fld25&gt; and mgmt ip &lt;hostip&gt;" />
+	content=" Device &lt;fld22&gt; discovered of type &lt;fld23&gt; with port &lt;fld24&gt; on incoming port &lt;interface&gt; with ip addr &lt;fld25&gt; and mgmt ip &lt;hostip&gt;" />
 <MESSAGE
 	id1="NEIGHBOR_REMOVED"
 	id2="NEIGHBOR_REMOVED"
 	eventcategory="1701030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" CDP Neighbor &lt;fld22&gt; on port &lt;network_port&gt; has been removed" />
+	content=" CDP Neighbor &lt;fld22&gt; on port &lt;interface&gt; has been removed" />
 <MESSAGE
 	id1="IF_BANDWIDTH_CHANGE"
 	id2="IF_BANDWIDTH_CHANGE"
@@ -1312,7 +1354,7 @@
 	id2="PORT_INDIVIDUAL_DOWN"
 	eventcategory="1603030000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content=" individual port &lt;network_port&gt; is down" />
+	content=" individual port &lt;interface&gt; is down" />
 <MESSAGE
 	id1="PORT_SUSPENDED"
 	id2="PORT_SUSPENDED"
@@ -2004,8 +2046,8 @@
 	id1="MAC_MOVE_NOTIFICATION"
 	id2="MAC_MOVE_NOTIFICATION"
 	eventcategory="1603030000"
-	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
-	content=" Host &lt;hostname&gt; in vlan &lt;vlan&gt; is flapping between port &lt;portname&gt; and port &lt;sport&gt; " />
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@change_attribute:Port&gt;"
+	content=" Host &lt;hostname&gt; in vlan &lt;vlan&gt; is flapping between port &lt;change_old&gt; and port &lt;change_new&gt; " />
 <MESSAGE
 	id1="zone"
 	id2="zone"
@@ -2111,11 +2153,81 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Authentication failed&gt;"
 	content=" pam_aaa:Authentication failed from &lt;shost&gt; - &lt;agent&gt;" />
 <MESSAGE
+	id1="%AUTHPRIV-5-SYSTEM_MSG"
+	id2="%AUTHPRIV-5-SYSTEM_MSG"
+	eventcategory="1402020200"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:New user added&gt;"
+	content="New user added with username &lt;username&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%AUTHPRIV-6-SYSTEM_MSG:01"
+	id2="%AUTHPRIV-6-SYSTEM_MSG"
+	eventcategory="1304000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	content="&lt;action&gt;: &lt;service&gt; pid=&lt;process_id&gt; from=::ffff:&lt;saddr&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%AUTHPRIV-6-SYSTEM_MSG"
+	id2="%AUTHPRIV-6-SYSTEM_MSG"
+	eventcategory="1304000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:session opened for user&gt;"
+	content="pam_unix(&lt;fld1&gt;:session): session opened for user &lt;username&gt; by (uid=&lt;uid&gt;) - &lt;agent&gt;"/>
+
+<MESSAGE
 	id1="%USER-3-SYSTEM_MSG"
 	id2="%USER-3-SYSTEM_MSG"
 	eventcategory="1401030000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(severity)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
 	content="error: &lt;result&gt;" />
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Invalid user&gt;"
+	content="Invalid user &lt;username&gt; from &lt;saddr&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG:01"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Invalid user&gt;"
+	content="input_userauth_request: invalid user &lt;username&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG:02"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Failed none for invalid user&gt;"
+	content="Failed none for invalid user &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG:03"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Accepted password for user&gt;"
+	content="Accepted password for &lt;username&gt; from &lt;saddr&gt; port &lt;sport&gt; &lt;protocol&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG:04"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:No such file or directory&gt;"
+	content="lastlog_openseek: Couldn't stat &lt;directory&gt;: No such file or directory - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG:05"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Could not load host key&gt;"
+	content="Could not load host key: &lt;encryption_type&gt; - &lt;agent&gt;"/>
+
+<MESSAGE
+	id1="%USER-6-SYSTEM_MSG:06"
+	id2="%USER-6-SYSTEM_MSG"
+	eventcategory="1401000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hfld19)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	content="&lt;event_description&gt; - &lt;agent&gt;"/>
+
 <MESSAGE
 	 id1="L2FM_MAC_FLAP_DISABLE_LEARN"
 	 id2="L2FM_MAC_FLAP_DISABLE_LEARN"
@@ -2152,6 +2264,13 @@
 	 content="&quot;System Manager (configuration controller)&quot; (PID &lt;process_id&gt;) has finished with error code &lt;result&gt; (&lt;resultcode&gt;)."/>
 
 <MESSAGE
+	 id1="SUBPROC_SUCCESS_EXIT"
+	 id2="SUBPROC_SUCCESS_EXIT"
+	 eventcategory="1605020000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_subject:Service&gt;&lt;@ec_outcome:Success&gt;"
+	 content="&quot;&lt;service&gt;&quot; (PID &lt;process_id&gt;) has successfully exited with exit code &lt;result&gt; (&lt;resultcode&gt;)."/>
+
+<MESSAGE
 	 id1="UPDOWN"
 	 id2="UPDOWN"
 	 eventcategory="1701000000"
@@ -2183,7 +2302,71 @@
 	 id1="INVAL_MAC"
 	 id2="INVAL_MAC"
 	 eventcategory="1801000000"
-	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_theme:Configuration&gt;"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
 	 content="&lt;agent&gt;  [&lt;process_id&gt;]  Received packet with invalid source MAC address (&lt;smacaddr&gt;) from &lt;saddr&gt; on &lt;vlan&gt;"/>
+
+<MESSAGE
+	 id1="SRVSTATE_CHANGED"
+	 id2="SRVSTATE_CHANGED"
+	 eventcategory="1605020000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@change_attribute:Service status&gt;"
+	 content=" State for service &quot;&lt;service&gt;&quot; changed from &lt;change_old&gt; to &lt;change_new&gt; in vdc &lt;fld1&gt;."/>
+
+<MESSAGE
+	 id1="INFO"
+	 id2="INFO"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="&lt;event_description&gt;"/>
+
+<MESSAGE
+	 id1="TACACS_ACCOUNTING_MESSAGE:04"
+	 id2="TACACS_ACCOUNTING_MESSAGE"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="&lt;action&gt;: &lt;saddr&gt;@&lt;terminal&gt;: &lt;username&gt;: configure terminal ; ntp source-interface &lt;sinterface&gt; (&lt;result&gt;)&lt;info&gt;"/>
+
+	 
+<MESSAGE
+	 id1="TACACS_ACCOUNTING_MESSAGE:05"
+	 id2="TACACS_ACCOUNTING_MESSAGE"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="&lt;action&gt;: &lt;saddr&gt;@&lt;terminal&gt;: &lt;username&gt;: {show ntp statistics peer ipaddr &lt;hostip&gt;|show logging last &lt;fld3&gt;} (&lt;result&gt;)&lt;info&gt;"/>
+
+<MESSAGE
+	 id1="TACACS_ACCOUNTING_MESSAGE:06"
+	 id2="TACACS_ACCOUNTING_MESSAGE"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="&lt;action&gt;: &lt;saddr&gt;@&lt;terminal&gt;: &lt;username&gt;: clock set &lt;event_time_string&gt; (&lt;result&gt;)&lt;info&gt;"/>
+
+<MESSAGE
+	 id1="TACACS_ACCOUNTING_MESSAGE:08"
+	 id2="TACACS_ACCOUNTING_MESSAGE"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:Performing configuration copy&gt;"
+	 content="&lt;action&gt;: &lt;saddr&gt;@&lt;terminal&gt;: &lt;username&gt;: Performing configuration copy. &lt;info&gt;"/>
+
+<MESSAGE
+	 id1="TACACS_ACCOUNTING_MESSAGE:09"
+	 id2="TACACS_ACCOUNTING_MESSAGE"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@event_description:shell terminated because of session timeout&gt;"
+	 content="&lt;action&gt;: {&lt;saddr&gt;@&lt;terminal&gt;:|&lt;fld1&gt;} &lt;username&gt;: shell terminated because of session timeout {(&lt;result&gt;)&lt;info&gt;|&lt;info&gt;}"/>
+
+<MESSAGE
+	 id1="TACACS_ACCOUNTING_MESSAGE:07"
+	 id2="TACACS_ACCOUNTING_MESSAGE"
+	 eventcategory="1801000000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;"
+	 content="&lt;action&gt;: {&lt;saddr&gt;@&lt;terminal&gt;:|&lt;fld1&gt;} &lt;username&gt;: &lt;event_description&gt; {(&lt;result&gt;)&lt;info&gt;|&lt;info&gt;}"/>
+
+<MESSAGE
+	 id1="SERVICE_STARTED"
+	 id2="SERVICE_STARTED"
+	 eventcategory="1605020000"
+	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W %B %F %N:%U:%O',hfld14,hfld15,hfld16,hfld17)&gt;&lt;@ec_subject:Service&gt;&lt;@ec_activity:Start&gt;&lt;@ec_outcome:Success&gt;"
+	 content=" Service &quot;&lt;service&gt;&quot; in vdc &lt;fld1&gt; started with PID(&lt;process_id&gt;)."/>
 
 </DEVICEMESSAGES>
