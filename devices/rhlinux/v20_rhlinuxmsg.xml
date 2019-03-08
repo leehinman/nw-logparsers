@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="366"
-	checksum="3f918d8f1ad7ca3f310d5c7ebb7c67a7"
-	revision="126"
+	xml="367"
+	checksum="ddfb58fba2d172c9b4bd8f34fc3b7cb5"
+	revision="128"
 	device="2.0" />
 
 
@@ -14990,15 +14990,22 @@
 	id1="postfix/smtpd:01"
 	id2="postfix/smtpd"
 	eventcategory="1801020000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:connect from loopback&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: connect from localhost[&lt;saddr&gt;]" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@a:connect from &gt;&lt;@event_description:*STRCAT(a,shost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: connect from &lt;shost&gt;[&lt;saddr&gt;]" />
+
+<MESSAGE
+	id1="postfix/smtpd:03"
+	id2="postfix/smtpd"
+	eventcategory="1801030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@a:lost connection after CONNECT from &gt;&lt;@event_description:*STRCAT(a,shost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: lost connection after CONNECT from &lt;shost&gt;[&lt;saddr&gt;]" />
 
 <MESSAGE
 	id1="postfix/smtpd"
 	id2="postfix/smtpd"
 	eventcategory="1801030000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:disconnect from loopback&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content=" &lt;agent&gt;[&lt;process_id&gt;]: disconnect from localhost[&lt;saddr&gt;]" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@a:disconnect from &gt;&lt;@event_description:*STRCAT(a,shost)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" &lt;agent&gt;[&lt;process_id&gt;]: disconnect from &lt;shost&gt;[&lt;saddr&gt;]" />
 
 <MESSAGE
 	id1="00122"
