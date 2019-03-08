@@ -4,9 +4,9 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="254"
-	checksum="313946aa2282b65d7224778506953104"
-	revision="126"
+	xml="256"
+	checksum="6ff73980d468f4915c8362b3d43f890c"
+	revision="128"
 	device="2.0" />
 
 
@@ -738,7 +738,7 @@
 	id2="106100"
 	eventcategory="1801020000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@dclass_counter1_string:Hitcount&gt;&lt;@event_description:permitted&gt;"
-	content="access-list &lt;listnum&gt; { est-allowed | permitted } &lt;protocol&gt; &lt;sinterface&gt;/&lt;saddr&gt;(&lt;sport&gt;) -&gt; &lt;dinterface&gt;/&lt;daddr&gt;(&lt;dport&gt;) hit-cnt &lt;dclass_counter1&gt; &lt;fld6&gt;" />
+	content="access-list &lt;listnum&gt; { est-allowed | permitted } &lt;protocol&gt; &lt;sinterface&gt;/&lt;saddr&gt;{(&lt;sport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;sport&gt;)} -&gt; &lt;dinterface&gt;/&lt;daddr&gt;(&lt;dport&gt;) hit-cnt &lt;dclass_counter1&gt; &lt;fld6&gt;" />
 <MESSAGE
 	id1="106101"
 	id2="106101"
@@ -8120,7 +8120,21 @@
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:SFR requested ASA to bypass further packet redirection&gt;"
 	content="SFR requested ASA to bypass further packet redirection and process &lt;protocol&gt; flow from &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; locally" />
 
-                 
+<MESSAGE
+	id1="199018"
+	id2="199018"
+	eventcategory="1603000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;saddr&gt; AP:&lt;access_point&gt;: *&lt;event_time_string&gt;: %DOT11-6-ASSOC: Interface &lt;interface&gt;, Station   &lt;macaddr&gt; REAP Associated KEY_MGMT[&lt;fld6&gt;]"/>
+
+<MESSAGE
+	id1="199018:01"
+	id2="199018"
+    eventcategory="1603000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;saddr&gt; AP:&lt;access_point&gt;: *&lt;event_time_string&gt;: %DOT11-6-DISASSOC: Interface &lt;interface&gt;, Deauthenticating Station &lt;macaddr&gt;&lt;event_description&gt;"/>
+
+               
 
 
 <MESSAGE
