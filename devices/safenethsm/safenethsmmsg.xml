@@ -4,9 +4,9 @@
 	displayname="SafeNet HSM"
 	group="Access Control">
 <VERSION 
-	xml="41" 
-	checksum="abc873d337a8ee810579ae3c5eaf751a" 
-	revision="0" 
+	xml="42" 
+	checksum="0de428f090534f52fa3bc0985719e190" 
+	revision="128" 
 	device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -64,6 +64,27 @@
 	eventcategory="1701010000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;"
 	content="&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Saved syslog settings for Audit Log [syslog: &lt;disposition&gt;; IP #1: [&lt;daddr&gt;]; port #1: &lt;dport&gt;; IP #2: &lt;fld2&gt;; port #2: &lt;fld3&gt;; facility: &lt;fld4&gt;; proto #1: &lt;protocol&gt;; proto #2: &lt;fld5&gt;]" />
+<MESSAGE
+	id1="ConfigChange:06"
+	id2="ConfigChange"
+	eventcategory="1701000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;@event_description:Loaded restore information&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Loaded restore information for &lt;obj_name&gt;"/>
+
+<MESSAGE
+	id1="ConfigChange:07"
+	id2="ConfigChange"
+	eventcategory="1701000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;@event_description:Restored backup&gt;&lt;@ec_activity:Restore&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Restored backup [&lt;filename&gt;], source: [&lt;fld2&gt;], backup items: [ &lt;info&gt;]"/>
+
+<MESSAGE
+	id1="ConfigChange:08"
+	id2="ConfigChange"
+	eventcategory="1701000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdatetime)&gt;&lt;@event_description:Downloaded backup&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;fld1&gt; [&lt;username&gt;] [&lt;event_type&gt;] [&lt;event_source&gt;]: Downloaded backup &lt;filename&gt;"/>
+
 <MESSAGE 
 	id1="ConfigChange:05" 
 	id2="ConfigChange" 
