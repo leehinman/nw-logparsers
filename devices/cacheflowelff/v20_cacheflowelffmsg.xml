@@ -4,9 +4,9 @@
 	displayname="Blue Coat ELFF"
 	group="Web Logs">
 <VERSION
-	xml="96"
-	checksum="cf041c8c27f63abffd122d85f1e529d6"
-	revision="125"
+	xml="99"
+	checksum="3f2f25a37123e34f51e472e0fde90895"
+	revision="128"
     device="2.0" />
 <TAGVALMAP 
 		delimiter=", &quot;" />
@@ -142,11 +142,32 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
 	content="LDAP: Authentication failed from &lt;daddr&gt;: no such user in realm &apos;&lt;username&gt;&apos;(&lt;fld82&gt;) &lt;event_type&gt; { ..//../&lt;filename&gt; | ../&lt;filename&gt; } &lt;fld80&gt;" />
 <MESSAGE  
+	id1="140002:04" 
+	id2="140002" 
+	eventcategory="1402020100" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:deleted user&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="{Config|SSH} &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;, deleted user &apos;&lt;c_username&gt;&apos; in local user list &apos;&lt;listnum&gt;&apos;(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
+<MESSAGE  
+	id1="140002:05" 
+	id2="140002" 
+	eventcategory="1402020200" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:added user&gt;"
+	content="{Config|SSH} &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;, added user &apos;&lt;c_username&gt;&apos; to local user list &apos;&lt;listnum&gt;&apos;(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
+<MESSAGE  
+	id1="140002:06" 
+	id2="140002" 
+	eventcategory="1402040100" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:changed password for user&gt;"
+	content="{Config|SSH} &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;, changed password for user &apos;&lt;c_username&gt;&apos; in local user list &apos;&lt;listnum&gt;&apos;(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+
+<MESSAGE  
 	id1="140002" 
 	id2="140002" 
 	eventcategory="1701000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
-	content="{Config|SSH} &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;, &lt;info&gt;(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+	content="{Config|SSH} &lt;fld82&gt; at &lt;saddr&gt; &apos;&lt;username&gt;&apos;,{&lt;info&gt;(&lt;fld1&gt;).(&lt;fld81&gt;)|&lt;info&gt;(&lt;fld81&gt;)} &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
 		
 <MESSAGE  
 	id1="260017" 
@@ -265,7 +286,7 @@
 	id2="3D0005"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="ISTag for &lt;fld82&gt; changed from &quot;&lt;change_old&gt;&quot; to &quot;&lt;change_new&gt;&quot;.(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
+	content="ISTag for &lt;username&gt; changed from &quot;&lt;change_old&gt;&quot; to &quot;&lt;change_new&gt;&quot;.(&lt;fld81&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld80&gt;" />
 <MESSAGE
 	id1="3E0005"
 	id2="3E0005"
@@ -568,6 +589,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description: Download of database failed&gt;"
 	content="Download of &lt;db_name&gt; database failed(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
 <MESSAGE  
+	id1="50006B" 
+	id2="50006B" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;"
+	content="CFS error: &lt;result&gt;:&lt;fld1&gt;(&lt;fld81&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
+<MESSAGE  
 	id1="500098" 
 	id2="500098" 
 	eventcategory="1603000000" 
@@ -769,7 +797,7 @@
 	id2="90000" 
 	eventcategory="1603050000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Receive timeout, retrying NTP Server&gt;"
-	content="NTP: Receive timeout, retrying NTP Server: &lt;fld1&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
+	content="NTP: Receive timeout, retrying NTP Server: &lt;hostip&gt;(&lt;fld81&gt;) &lt;event_type&gt; {../&lt;filename&gt;|&lt;filename&gt;} &lt;fld80&gt;" />
 
 <MESSAGE  
 	id1="A0000" 
@@ -968,6 +996,34 @@
 	content="Console user password authentication from &lt;saddr&gt; failed for user &apos;&lt;username&gt;&apos;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
 
 <MESSAGE  
+	id1="250034" 
+	id2="250034" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:domain trust&gt;"
+	content="     domain trust &lt;domain&gt;, flags &lt;fld1&gt;, trust flags &lt;fld2&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;"/>
+
+<MESSAGE  
+	id1="250034:01" 
+	id2="250034" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Newly discovered primary domain trust&gt;"
+	content="Newly discovered primary domain trust &lt;domain&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;"/>
+
+<MESSAGE  
+	id1="250043" 
+	id2="250043" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Administrator logout&gt;"
+	content="Administrator logout, user &apos;&lt;username&gt;&apos;, realm &apos;&lt;group_object&gt;&apos;, from &lt;saddr&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;"/>
+
+<MESSAGE  
+	id1="250043:01" 
+	id2="250043" 
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Administrator logout&gt;"
+	content="Administrator logout (&lt;fld1&gt;), session_id &lt;sessionid&gt;, user &apos;&lt;username&gt;&apos;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;"/>
+
+<MESSAGE  
 	id1="250046" 
 	id2="250046" 
 	eventcategory="1401060000" 
@@ -982,11 +1038,32 @@
 	content="Administrator login, session_id &lt;sessionid&gt;, user &apos;&lt;username&gt;&apos;, from &lt;saddr&gt;, &lt;privilege&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
 
 <MESSAGE  
+	id1="250047" 
+	id2="250047" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Administrator login&gt;"
+	content="Administrator login, session_id &lt;sessionid&gt;, user &apos;&lt;username&gt;&apos;, realm &apos;&lt;group_object&gt;&apos;, from &lt;saddr&gt;, &lt;privilege&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
+<MESSAGE  
+	id1="250047:01" 
+	id2="250047" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Administrator login&gt;"
+	content="Administrator login, user &apos;&lt;username&gt;&apos;, realm &apos;&lt;group_object&gt;&apos;, from &lt;saddr&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
+<MESSAGE  
 	id1="250042" 
 	id2="250042" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@event_description:Administrator logout&gt;"
 	content="Administrator logout, user &apos;&lt;username&gt;&apos;, from &lt;saddr&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+
+<MESSAGE  
+	id1="250053" 
+	id2="250053" 
+	eventcategory="1401060000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Administrator login&gt;"
+	content="Administrator login, user &apos;&lt;username&gt;&apos;, realm &apos;&lt;group_object&gt;&apos;, from &lt;saddr&gt;,  denied : &lt;disposition&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
 
 <MESSAGE  
 	id1="E0009" 
