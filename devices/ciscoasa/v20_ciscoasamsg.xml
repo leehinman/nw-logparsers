@@ -4,8 +4,8 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="256"
-	checksum="6ff73980d468f4915c8362b3d43f890c"
+	xml="257"
+	checksum="1c0adf0449a934ab35cba9d2e8208853"
 	revision="128"
 	device="2.0" />
 
@@ -7381,6 +7381,13 @@
 	eventcategory="1801000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="SSL client &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt; proposes the following &lt;fld1&gt; cipher(s)" />
+
+<MESSAGE
+	id1="725009:01"
+	id2="725009"
+	eventcategory="1801000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Device proposes cipher(s)&gt;&lt;@dclass_counter1_string:The number of supported ciphers&gt;"
+	content="Device proposes the following &lt;dclass_counter1&gt; cipher(s) to {server|client} &lt;interface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt;" />
 
 <MESSAGE
 	id1="725009"
