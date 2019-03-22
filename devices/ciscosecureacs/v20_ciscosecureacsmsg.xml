@@ -5,9 +5,9 @@
 	group="Access Control">
 	
 <VERSION
-	xml="129"
-	checksum="85be26443e38d3532bfdad8e656d136f"
-	revision="127"
+	xml="130"
+	checksum="0e0f77df214b3234fe81078c6e99902c"
+	revision="128"
 	device="2.0" />
 <TAGVALMAP 
 		delimiter=","/>
@@ -49,6 +49,11 @@
 	id2="00017"  
 	content="&lt;hfld1&gt; &lt;hfld2&gt; &lt;hfld3&gt; &lt;messageid&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;hyear&gt;-&lt;hmonth&gt;-&lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt;.&lt;hfld7&gt; &lt;hfld8&gt; &lt;hfld9&gt; &lt;hfld10&gt; &lt;hseverity&gt; &lt;hfld11&gt;: &lt;hevent_description&gt;, &lt;!payload&gt;" />      
 <HEADER 
+	id1="0015" 
+	id2="0015"  
+	content="&lt;hmonth&gt;  &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; &lt;fld1&gt;/&lt;username&gt;: [ACS &lt;messageid&gt;] &lt;!payload&gt;" /> 
+
+<HEADER 
 	id1="0006" 
 	id2="0006"  
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hsaddr&gt; &lt;messageid&gt; &lt;hinfo&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;!payload&gt;" /> 
@@ -68,6 +73,15 @@
 	id1="0012" 
 	id2="0012"  
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hsaddr&gt; CISE_&lt;messageid&gt; &lt;hinfo&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;!payload&gt;" /> 
+<HEADER 
+	id1="0013" 
+	id2="0013"  
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; [&lt;messageid&gt;]: &lt;!payload&gt;" /> 
+<HEADER 
+	id1="0014" 
+	id2="0014"  
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;fld1&gt;]: &lt;!payload:messageid&gt;" /> 
+
 <MESSAGE 
 	id1="CISE_Administrative_and_Operational_Audit:01" 
 	id2="CISE_Administrative_and_Operational_Audit" 
@@ -754,4 +768,60 @@
 	missField="true"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W%G%F %H%U%O',hyear,hmonth,hday,hhour,hmin,hsec)&gt;&lt;@timezone:*HDR(hfld8)&gt;&lt;@hostname:*HDR(hnode)&gt;&lt;@id:*HDR(hfld4)&gt;&lt;@id1:*HDR(hfld5)&gt;&lt;@id2:*HDR(hfld6)&gt;&lt;@operation_id:*HDR(hfld10)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@category:*HDR(hfld11)&gt;&lt;@event_description:*HDR(hevent_description)&gt;"
 	content="MESSAGE=&lt;de&gt;,used_space=&lt;us&gt;" />
+<MESSAGE 
+	id1="ACS-View-Decap-Clean" 
+	id2="ACS-View-Decap-Clean" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;info&gt;" />
+
+<MESSAGE 
+	id1="ACS-View-compress-DB" 
+	id2="ACS-View-compress-DB" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;info&gt;" />
+
+<MESSAGE 
+	id1="ADEOSShell" 
+	id2="ADEOSShell" 
+	eventcategory="1401070000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type: SSH_EXIT&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;&lt;@a: User&gt;&lt;@b: logged out&gt;&lt;@event_description: *STRCAT(a,&#009;,c_username,&#009;,b)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;, type=SSH_EXIT, name=&lt;fld2&gt;, username=&lt;username&gt;, cause=&lt;event_description&gt;, adminipaddress=&lt;saddr&gt;, interface=&lt;interface&gt;, detail=User &lt;c_username&gt; logged out " />
+
+<MESSAGE 
+	id1="ADEOSShell:01" 
+	id2="ADEOSShell" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type: COPY&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;, type=COPY, name=&lt;fld2&gt;, username=&lt;username&gt;, cause=&lt;event_description&gt;, adminipaddress=&lt;saddr&gt;, interface=&lt;interface&gt;, {detail=Copied localfile &lt;filename&gt; to url &lt;url&gt; &lt;disposition&gt;|detail=Copying localfile &lt;filename&gt; to url &lt;url&gt; &lt;disposition&gt;:&lt;info&gt;|detail=Copying localfile &lt;filename&gt; to url &lt;url&gt; &lt;disposition&gt;|detail=Localfile &lt;filename&gt; transfer to url &lt;url&gt; &lt;disposition&gt;|detail=&lt;info&gt;} " />
+
+<MESSAGE 
+	id1="ADEOSShell:02" 
+	id2="ADEOSShell" 
+	eventcategory="1701020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type: LOG SERVER&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;, type=LOG SERVER, name=&lt;fld2&gt;, username=&lt;username&gt;, cause=&lt;event_description&gt;, adminipaddress=&lt;saddr&gt;, interface=&lt;interface&gt;,{detail=Log server configuration has been modified, &lt;hostip&gt; with &lt;protocol&gt; transport added|detail=&lt;info&gt;} " />
+
+<MESSAGE 
+	id1="ADEOSShell:03" 
+	id2="ADEOSShell" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_type: DELETE&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;, type=DELETE, name=&lt;fld2&gt;, username=&lt;username&gt;, cause=&lt;event_description&gt;, adminipaddress=&lt;saddr&gt;, interface=&lt;interface&gt;, {detail=Deleted file &lt;filename&gt; &lt;disposition&gt;|detail=&lt;info&gt;} " />
+
+<MESSAGE 
+	id1="ADE-SERVICE" 
+	id2="ADE-SERVICE" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: [&lt;fld1&gt;]:[&lt;severity&gt;] &lt;fld6&gt;: &lt;fld2&gt;[&lt;fld3&gt;] [&lt;fld4&gt;]: {application component backup &lt;filename&gt; to repository &lt;fld5&gt;: &lt;disposition&gt;|&lt;info&gt;}" />
+
+<MESSAGE 
+	id1="delete-log-CLI" 
+	id2="delete-log-CLI" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %N:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description: DELETE LOG FILE&gt;"
+	content="&apos;&lt;filename&gt;&apos; &lt;action&gt; &lt;disposition&gt;" />
+
 </DEVICEMESSAGES>
