@@ -4,9 +4,9 @@
 	displayname="Cisco Wireless LAN Controller"
 	group="Wireless Devices">
 <VERSION 
-	xml="32"
-	checksum="fa31248c73ebd6224f6343c8f71e866b"
-	revision="122"
+	xml="33"
+	checksum="dac67747e51690d41b0d0ff4394462e5"
+	revision="128"
 	device="2.0" />
 <TAGVALMAP
 	pairdelimiter="," encapsulator="&quot;" />
@@ -1710,6 +1710,13 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received invalid information  msg in START  state &gt;"
 	content=" Received invalid &lt;event_type&gt; msg in START  state - &lt;result&gt;; &lt;info&gt;, client &lt;smacaddr&gt;" />
+
+<MESSAGE 
+	id1="DOT1X-6-11R_FORCED_AUTH"
+	id2="DOT1X-6-11R_FORCED_AUTH" 
+	eventcategory="1603040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:FT Auth successful&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" FT Auth successful. Moving client &lt;smacaddr&gt; to forced auth state" />
 
 <MESSAGE 
 	id1="APF-3-NO_FRAMED_IP_ADDRESS" 
@@ -5207,6 +5214,13 @@
 	content=" Could not update rogue AP &lt;macaddr&gt; with rogue client &lt;smacaddr&gt; information. &lt;reason&gt;" />
 
 <MESSAGE 
+	id1="APF-3-PREAUTH_FAILURE"
+	id2="APF-3-PREAUTH_FAILURE" 
+	eventcategory="1603040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Can't do preauth&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content=" There is no PMK cache entry for client&lt;smacaddr&gt;. Can't do preauth" />
+
+<MESSAGE 
 	id1="APF-3-AID_UPDATE_FAILED"
 	id2="APF-3-AID_UPDATE_FAILED" 
 	eventcategory="1601000000" 
@@ -5227,6 +5241,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Client deletion failed due to Channel change and Spectrum mgmt bit set.&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content=" Client deletion failed. Clt mac:&lt;macaddr&gt; Channel Change Occured. Spectrum Mgmt bit set." />
 
+
+<MESSAGE 
+	id1="APF-4-PROC_RADIUS__ASS_RES_FAILED"
+	id2="APF-4-PROC_RADIUS__ASS_RES_FAILED" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Could not process RADIUS association response&gt;"
+	content=" Could not process RADIUS association response. Found mobile in this state after receiving AAA Response.State: &lt;fld1&gt; &lt;macaddr&gt;" />
 
 <MESSAGE 
 	id1="CAPWAP-3-DTLS_CONN_ERR" 
@@ -5283,6 +5304,27 @@
 	eventcategory="1603040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:system could not release exclusive access of AP entry for mac in databasei&gt;"
 	content=" The system could not release exclusive access of AP entry for &lt;macaddr&gt; in the database" />
+
+<MESSAGE 
+	id1="CAPWAP-3-DTLS_CLOSED_ERR" 
+	id2="CAPWAP-3-DTLS_CLOSED_ERR" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:DTLS connection closed &gt;"
+	content="&lt;macaddr&gt;:  DTLS connection closed forAP &lt;access_point&gt;, Controller: &lt;fld1&gt;(&lt;fld2&gt;) {Echo Timer Expiry|AP Message Timeout}" />
+
+<MESSAGE 
+	id1="CAPWAP-3-AP_DB_ALLOC" 
+	id2="CAPWAP-3-AP_DB_ALLOC" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:The system is unable to alloc AP entry&gt;"
+	content="The system is unable to alloc AP entry in database for &lt;fld1&gt;" />
+
+<MESSAGE 
+	id1="CAPWAP-3-MAX_RETRANSMISSIONS_REACHED" 
+	id2="CAPWAP-3-MAX_RETRANSMISSIONS_REACHED" 
+	eventcategory="1603000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Max retransmissions reached on AP&gt;"
+	content="Max retransmissions reached on AP(&lt;access_point&gt;),message (&lt;fld1&gt;  ),number of pending messages(&lt;fld2&gt;)" />
 
 <MESSAGE 
 	id1="DTL-3-NPUARP_ADD_FAILED"
@@ -5475,6 +5517,13 @@
 	eventcategory="1801010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Could not Process 802.11 MAC mgmt Data&gt;"
 	content=" { Could not Process 802.11 MAC mgmt Data from &lt;smacaddr&gt; to &lt;dmacaddr&gt; - | Could not Process 802.11 MAC mgmt Data. } &lt;reason&gt; - &lt;info&gt;." />
+
+<MESSAGE 
+	id1="APF-4-NOT_REGISTERING_IP_ADD_ON_MSCB"
+	id2="APF-4-NOT_REGISTERING_IP_ADD_ON_MSCB" 
+	eventcategory="1803020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Not registering IP address&gt;"
+	content="Not registering IP address &lt;saddr&gt; with netmask &lt;smask&gt; for client &lt;smacaddr&gt;" />
 
 <MESSAGE 
 	id1="MM-3-MEMORY_READ_ERROR:01" 
