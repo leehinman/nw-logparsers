@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="76"
-		checksum="8d9144e9cbaf43afedbd7999821b6559"
-		revision="120"
+		xml="78"
+		checksum="90dc81bc5fab79891d0a6d0c26d3d138"
+		revision="128"
 		device="2.0" />
 	
 <HEADER
@@ -1682,5 +1682,82 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %D %Z',month,day,time)&gt;"
 	content="&lt;fld1&gt;: Read &lt;fld2&gt; bytes from server &lt;daddr&gt; port &lt;dport&gt;, expecting &lt;fld3&gt;" />
+
+<MESSAGE
+	id1="dhcpdv6"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Relay-forward message&gt;"
+	content="Relay-forward message from &lt;saddr_v6&gt; port &lt;sport&gt;, link address &lt;fld1&gt;, peer address &lt;daddr_v6&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:01"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Encapsulated Solicit message&gt;"
+	content="Encapsulated Solicit message from &lt;saddr_v6&gt; port &lt;sport&gt; from client DUID &lt;fld1&gt;, transaction ID &lt;id&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:02"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:IP unknown - No addresses available for this interface&gt;"
+	content="Client &lt;fld1&gt;, IP '&lt;fld2&gt;': No addresses available for this interface"/>
+
+<MESSAGE
+	id1="dhcpdv6:03"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Encapsulating Advertise message&gt;"
+	content="Encapsulating Advertise message to send to &lt;saddr_v6&gt; port &lt;sport&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:04"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Sending Relay-reply message&gt;"
+	content="Sending Relay-reply message to &lt;saddr_v6&gt; port &lt;sport&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:05"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Encapsulated Information-request message&gt;"
+	content="Encapsulated Information-request message from &lt;saddr_v6&gt; port &lt;sport&gt;, transaction ID &lt;id&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:06"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Encapsulating Reply message&gt;"
+	content="Encapsulating Reply message to send to &lt;saddr_v6&gt; port &lt;sport&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:07"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:Encapsulated Renew message&gt;"
+	content="Encapsulated Renew message from &lt;saddr_v6&gt; port &lt;sport&gt; from client DUID &lt;fld1&gt;, transaction ID &lt;id&gt;"/>
+
+<MESSAGE
+	id1="dhcpdv6:08"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="Reply NA: address &lt;saddr_v6&gt; to client with duid &lt;fld1&gt; iaid = &lt;fld2&gt; static"/>
+
+<MESSAGE
+	id1="dhcpdv6:09"
+	id2="dhcpdv6"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="&lt;event_description&gt;"/>
+
+<MESSAGE
+	id1="debug"
+	id2="debug"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="&lt;event_description&gt;"/>
 
 </DEVICEMESSAGES>
