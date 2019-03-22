@@ -4,9 +4,9 @@
 	displayname="McAfee Email Gateway"
 	group="Application Firewall">
 <VERSION
-	xml="31"
-	checksum="473618f0ca6796a09b71747ca1123b4b"
-	revision="121"
+	xml="33"
+	checksum="1cf6d274224720b7b5c6650462553c62"
+	revision="128"
 	device="2.0" />
 	
 <HEADER 
@@ -377,12 +377,14 @@
 	eventcategory="1605020000" 
 	functions="&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@disposition:Passed&gt;"
 	content="VFQ-UP &apos;Host:&lt;fld1&gt; - Content Extraction Queue Test { Passed. &lt;info&gt;&apos; | Passed.&apos; }" />
+
 <MESSAGE 
 	id1="SCM_HEARTBEAT" 
 	id2="SCM_HEARTBEAT" 
 	eventcategory="1604000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,SCM_HEARTBEAT i.now=&lt;fld7&gt;" />
+
 <MESSAGE 
 	id1="HEARTBEAT:01" 
 	id2="HEARTBEAT" 
@@ -390,12 +392,14 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt;SCM_HEARTBEAT i.now=&lt;fld5&gt;" />
 
+
 <MESSAGE 
 	id1=":01" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, SMTP Messages Received=&apos;&lt;fld4&gt;&apos;, SMTP Total Detections=&apos;&lt;fld5&gt;&apos;, Sender Connection Detections=&apos;&lt;fld6&gt;&apos;, Deny Sender Detections=&apos;&lt;fld7&gt;&apos;, RBL Detections=&apos;&lt;fld8&gt;&apos;, BATV Detections=&apos;&lt;fld9&gt;&apos;, SPF Detections=&apos;&lt;fld10&gt;&apos;, Recipient Detections=&apos;&lt;fld11&gt;&apos;, Anti Relay Detections=&apos;&lt;fld12&gt;&apos;, Grey Listing Detections=&apos;&lt;fld13&gt;&apos;, LDAP Recipient Detections=&apos;&lt;fld14&gt;&apos;, Directoty Harvesting Detections=&apos;&lt;fld15&gt;&apos;, Content Detections=&apos;&lt;fld16&gt;&apos;, GTI Message Reputation Detections=&apos;&lt;fld17&gt;&apos;, Sender ID Detections=&apos;&lt;fld18&gt;&apos;, DKIM Detections=&apos;&lt;fld19&gt;&apos;, Spam Detections =&apos;&lt;fld20&gt;&apos;, Phish Detections =&apos;&lt;fld21&gt;&apos;, Mail Filtering Detections =&apos;&lt;fld22&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld23&gt;&apos;, File Filtering Detections =&apos;&lt;fld24&gt;&apos;, Compliance Detections =&apos;&lt;fld25&gt;&apos;, Image Filtering Detections =&apos;&lt;fld26&gt;&apos;, DLP Detections =&apos;&lt;fld27&gt;&apos;, Virus Detected =&apos;&lt;fld28&gt;&apos;, Pups Detected =&apos;&lt;fld29&gt;&apos;, Packers Detected =&apos;&lt;fld30&gt;&apos;, POP3 Messages Received=&apos;&lt;fld31&gt;&apos;, POP3 Total Detections=&apos;&lt;fld32&gt;&apos;, Spam Detections =&apos;&lt;fld33&gt;&apos;, Phish Detections =&apos;&lt;fld34&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld35&gt;&apos;, Image Filtering Detections =&apos;&lt;fld36&gt;&apos;, Virus Detected =&apos;&lt;fld37&gt;&apos;, Pups Detected =&apos;&lt;fld38&gt;&apos;, Packers Detected =&apos;&lt;fld39&gt;&apos;" />
+
 	
 <MESSAGE 
 	id1=":02" 
@@ -411,12 +415,14 @@
 	eventcategory="1901000000" 
 	functions="&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} {status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld13&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld54&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,|status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;,} {original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;| attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|original-sender=&apos;&lt;fld16&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}" />
+
 <MESSAGE 
 	id1=":26" 
 	id2=":" 
 	eventcategory="1901000000" 
 	functions="&lt;@ec_subject:Mailbox&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, {received-email-over-tls=&apos;&lt;fld51&gt;&apos;, sent-email-over-tls=&apos;&lt;fld53&gt;&apos; | received-email-over-tls=&apos;&lt;fld51&gt;&apos;}, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
+
 	
 <MESSAGE 
 	id1=":04" 
@@ -424,6 +430,7 @@
 	eventcategory="1901000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay=(&lt;shost&gt;), {status=&apos;&lt;result&gt;&apos;, received-email-over-tls='&lt;fld54&gt;', |status=&apos;&lt;result&gt;&apos;,} subject='&lt;subject&gt;', attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;" />
+
 	
 <MESSAGE 
 	id1=":05" 
@@ -431,6 +438,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, {value=&lt;fld5&gt;, rule=&lt;fld6&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, convid=&lt;fld8&gt;| to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, convid=&lt;fld8&gt;}" />
+
 	
 <MESSAGE 
 	id1=":06" 
@@ -438,6 +446,7 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, convid=&lt;fld6&gt;" />
+
 	
 <MESSAGE 
 	id1=":07" 
@@ -445,78 +454,91 @@
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld5&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, contentrule=&lt;fld6&gt;, filename=[&lt;filename&gt;], scan-identity-name=&lt;fld7&gt;" />
+
 <MESSAGE 
 	id1=":08" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:spamthreshold&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;reputation_num&gt;, spamthreshold=&lt;dclass_counter1&gt;, spamrules=&lt;rulename&gt;, GTI message reputation score=&lt;fld9&gt;, GTI message ip reputation status code=&lt;fld10&gt;, GTI message hash length=&lt;fld11&gt;, {GTI message hash=&lt;fld12&gt;, scan-identity-name=&lt;event_source&gt;| GTI message hash=&lt;fld12&gt;}" />
+
 <MESSAGE 
 	id1=":09" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld5&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, rule=&lt;fld6&gt;.  Cause of corruption: &lt;fld7&gt;, filename=&lt;filename&gt;, scan-identity-name=&lt;event_source&gt;" />
+
 <MESSAGE 
 	id1=":10" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:spamthreshold&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;reputation_num&gt;, spamthreshold=&lt;dclass_counter1&gt;, spamrules=&lt;rulename&gt;, scan-identity-name=&lt;event_source&gt;" />
+
 <MESSAGE 
 	id1=":11" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:spamthreshold&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;reputation_num&gt;, spamthreshold=&lt;dclass_counter1&gt;, spamrules=&lt;rulename&gt;" />
+
 <MESSAGE 
 	id1=":12" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:spamthreshold&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, spamscore=&lt;reputation_num&gt;, spamthreshold=&lt;dclass_counter1&gt;, spamrules=&lt;rulename&gt;" />
+
 <MESSAGE 
 	id1=":13" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=(&lt;saddr&gt;), msgid=&lt;id&gt;, contentrule=&lt;fld6&gt;, filename=[&lt;filename&gt;]" />
+
 <MESSAGE 
 	id1=":14" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, {contentrule=&lt;fld7&gt;| rule=&lt;fld7&gt;}, filename=&lt;filename&gt;" />
+
 <MESSAGE 
 	id1=":15" 
 	id2=":" 
 	eventcategory="1901000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, received-email-over-tls=&apos;&lt;fld10&gt;&apos;" />
+
 <MESSAGE 
 	id1=":16" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, filename=&lt;filename&gt;, IA Score=&lt;fld7&gt;, IA Threshold=&lt;fld8&gt;" />
+
 <MESSAGE 
 	id1=":17" 
 	id2=":" 
 	eventcategory="1003010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, status=&lt;result&gt;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld6&gt;(&lt;saddr&gt;), msgid=&lt;id&gt;, virusname=&lt;virusname&gt;, filename=&lt;filename&gt;" />
+
 <MESSAGE 
 	id1=":18" 
 	id2=":" 
 	eventcategory="1901000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&lt;attachment&gt;" />
+
 <MESSAGE 
 	id1=":19" 
 	id2=":" 
 	eventcategory="1901000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay=(&lt;shost&gt;), status=&apos;&lt;result&gt;&apos;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;&lt;@dclass_counter1_string:Number of Attachments&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from | From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source={(&lt;saddr&gt;)|&lt;fld12&gt;(&lt;saddr&gt;)}, rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;to&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay=(&lt;shost&gt;), {status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, original-sender=&lt;fld11&gt;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|status=&apos;&lt;result&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|status=&apos;&lt;result&gt;&apos;, encryption-type=&apos;&lt;encryption_type&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|status=&apos;&lt;result&gt;&apos;}" />
+
 
 <MESSAGE 
 	id1="scmgateway:07" 
@@ -524,48 +546,56 @@
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; UTC,&lt;fld5&gt;,&lt;fld6&gt;, [AV-DAT]" />
+
 <MESSAGE 
 	id1="scmgateway:08" 
 	id2="scmgateway" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;),&lt;fld2&gt; &lt;fld3&gt; UTC,&lt;fld4&gt;,&lt;fld5&gt;, [SPAM-ENG] &lt;fld6&gt; [FILES] &lt;filename&gt;" />
+
 <MESSAGE 
 	id1="scmgateway:01" 
 	id2="scmgateway" 
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [AV-DAT] &lt;fld5&gt; [SOURCE-IP] &lt;fld6&gt; [USER-NAME] &lt;username&gt;" />
+
 <MESSAGE 
 	id1="scmgateway:02" 
 	id2="scmgateway" 
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [PROTOCOL] &lt;fld6&gt;" />
+
 <MESSAGE 
 	id1="scmgateway:03" 
 	id2="scmgateway" 
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [SPAM-RULES] &lt;fld5&gt;" />
+
 <MESSAGE 
 	id1="scmgateway:04" 
 	id2="scmgateway" 
 	eventcategory="1605020000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)&lt;fld2&gt; &lt;fld3&gt; UTC&lt;fld4&gt; [SOURCE-IP] &lt;fld5&gt; [USER-NAME] &lt;username&gt;" />
+
 <MESSAGE 
 	id1="scmgateway:05" 
 	id2="scmgateway" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; (&lt;fld3&gt;)&lt;fld4&gt; &lt;fld5&gt; UTC&lt;fld6&gt;:&lt;fld7&gt; &lt;event_description&gt;,src-ip:&lt;saddr&gt;,id:&lt;id&gt;" />
+
 <MESSAGE 
 	id1="scmgateway:06" 
 	id2="scmgateway"
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)" />
+
 <MESSAGE 
 	id1="mx6" 
 	id2="mx6" 
@@ -573,42 +603,49 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; (&lt;saddr&gt;)" />
 
+
 <MESSAGE 
 	id1=":20" 
 	id2=":" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld40&gt; : Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, SMTP Messages Received=&apos;&lt;fld4&gt;&apos;, SMTP Total Detections=&apos;&lt;fld5&gt;&apos;, Sender Connection Detections=&apos;&lt;fld6&gt;&apos;, Deny Sender Detections=&apos;&lt;fld7&gt;&apos;, RBL Detections=&apos;&lt;fld8&gt;&apos;, BATV Detections=&apos;&lt;fld9&gt;&apos;, SPF Detections=&apos;&lt;fld10&gt;&apos;, Recipient Detections=&apos;&lt;fld11&gt;&apos;, Anti Relay Detections=&apos;&lt;fld12&gt;&apos;, Grey Listing Detections=&apos;&lt;fld13&gt;&apos;, LDAP Recipient Detections=&apos;&lt;fld14&gt;&apos;, Directory Harvesting Detections=&apos;&lt;fld15&gt;&apos;, Content Detections=&apos;&lt;fld16&gt;&apos;, GTI Message Reputation Detections=&apos;&lt;fld17&gt;&apos;, Sender ID Detections=&apos;&lt;fld18&gt;&apos;, DKIM Detections=&apos;&lt;fld19&gt;&apos;, Spam Detections =&apos;&lt;fld20&gt;&apos;, Phish Detections =&apos;&lt;fld21&gt;&apos;, Mail Filtering Detections =&apos;&lt;fld22&gt;&apos;, Mail Size Filtering Detections =&apos;&lt;fld23&gt;&apos;, File Filtering Detections =&apos;&lt;fld24&gt;&apos;, Compliance Detections =&apos;&lt;fld25&gt;&apos;, Image Filtering Detections =&apos;&lt;fld26&gt;&apos;, DLP Detections =&apos;&lt;fld27&gt;&apos;, Virus Detected =&apos;&lt;fld28&gt;&apos;, Pups Detected =&apos;&lt;fld29&gt;&apos;, Packers Detected =&apos;&lt;fld30&gt;&apos;, Mail URL Detected =&apos;&lt;fld31&gt;&apos;, Max Mail URLs =&apos;&lt;fld32&gt;&apos;, ClickProtect URLs =&apos;&lt;fld33&gt;&apos;, ClickProtect Not Possible =&apos;&lt;fld34&gt;&apos;, Unscannable Content Detected =&apos;&lt;fld35&gt;&apos;, POP3 Messages Received=&apos;&lt;fld36&gt;&apos;, POP3 Total Detections=&apos;&lt;fld37&gt;&apos;, Spam Detections =&apos;&lt;fld38&gt;&apos;, &lt;fld39&gt; " />
+
 <MESSAGE
 	id1=":21"
 	id2=":"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;MISversion&quot;: &quot;&lt;fld6&gt;&quot;,&quot;SUMversion&quot;: &quot;&lt;fld7&gt;&quot;,&quot;OSversion&quot;: &quot;&lt;version&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;Parent MD5&quot;: &quot;&lt;fld14&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;Src IP&quot;: &quot;&lt;saddr&gt;&quot;,&quot;Dst IP&quot;: &quot;&lt;daddr&gt;&quot;,&quot;TaskId&quot;: &quot;&lt;fld10&gt;&quot;,&quot;JobId&quot;: &quot;&lt;fld11&gt;&quot;,&quot;JSONversion&quot;: &quot;&lt;fld12&gt;&quot;,&quot;hasDynamicAnalysis&quot;: &quot;&lt;fld13&gt;&quot;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;fld15&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;md5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;sha-1&quot;: &quot;&lt;fld16&gt;&quot;,&quot;size&quot;: &quot;&lt;filename_size&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;parent_archive&quot;: &quot;&lt;fld17&gt;&quot;},&quot;Selectors&quot;: [&lt;fld45&gt;&quot;Engine&quot;: &quot;&lt;fld18&gt;&quot;,&quot;MalwareName&quot;: &quot;&lt;threat_name&gt;&quot;,&quot;Severity&quot;: &quot;&lt;severity&gt;&quot;}],&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &quot;&lt;fld19&gt;&quot;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;},&quot;Stats&quot;: [&lt;fld47&gt;&quot;ID&quot;: &quot;&lt;fld20&gt;&quot;,&quot;Category&quot;: &quot;&lt;category&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld21&gt;&quot;},&lt;fld48&gt;&quot;ID&quot;: &quot;&lt;fld22&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld23&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld24&gt;&quot;},&lt;fld49&gt;&quot;ID&quot;: &quot;&lt;fld25&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld26&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld27&gt;&quot;},&lt;fld50&gt;&quot;ID&quot;: &quot;&lt;fld28&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld29&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld30&gt;&quot;},&lt;fld51&gt;&quot;ID&quot;: &quot;&lt;fld31&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld32&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld33&gt;&quot;},&lt;fld52&gt;&quot;ID&quot;: &quot;&lt;fld34&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld35&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld36&gt;&quot;},&lt;fld53&gt;&quot;ID&quot;: &quot;&lt;fld37&gt;&quot;,&quot;Category&quot;: &quot;&lt;fld38&gt;&quot;,&quot;Severity&quot;: &quot;&lt;fld39&gt;&quot;}],&quot;Behavior&quot;: [&quot;&lt;fld40&gt;&quot;,&quot;&lt;fld41&gt;&quot;]}}" />
+
 <MESSAGE
 	id1=":22"
 	id2=":"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;MISversion&quot;: &quot;&lt;fld6&gt;&quot;,&quot;SUMversion&quot;: &quot;&lt;fld7&gt;&quot;,&quot;OSversion&quot;: &quot;&lt;version&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;Parent MD5&quot;: &quot;&lt;fld14&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;Src IP&quot;: &quot;&lt;saddr&gt;&quot;,&quot;Dst IP&quot;: &quot;&lt;daddr&gt;&quot;,&quot;TaskId&quot;: &quot;&lt;fld10&gt;&quot;,&quot;JobId&quot;: &quot;&lt;fld11&gt;&quot;,&quot;JSONversion&quot;: &quot;&lt;fld12&gt;&quot;,&quot;hasDynamicAnalysis&quot;: &quot;&lt;fld13&gt;&quot;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;fld15&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;md5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;sha-1&quot;: &quot;&lt;fld16&gt;&quot;,&quot;size&quot;: &quot;&lt;filename_size&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;parent_archive&quot;: &quot;&lt;fld17&gt;&quot;},&quot;Selectors&quot;: [&lt;fld45&gt;&quot;Engine&quot;: &quot;&lt;fld18&gt;&quot;,&quot;MalwareName&quot;: &quot;&lt;threat_name&gt;&quot;,&quot;Severity&quot;: &quot;&lt;severity&gt;&quot;}],&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &quot;&lt;fld19&gt;&quot;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;}}}" />
+
 <MESSAGE
 	id1=":23"
 	id2=":"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;&quot;Summary&quot;: &lt;fld43&gt;&quot;Event_Type&quot;: &quot;&lt;event_type&gt;&quot;,&quot;fileId&quot;: &quot;&lt;fld8&gt;&quot;,&quot;ATD IP&quot;: &quot;&lt;fld9&gt;&quot;,&quot;JobId&quot;: &lt;fld11&gt;,&quot;TaskId&quot;: &lt;fld10&gt;,&quot;Subject&quot;: &lt;fld44&gt;&quot;Name&quot;: &quot;&lt;filename&gt;&quot;,&quot;MD5&quot;: &quot;&lt;checksum&gt;&quot;,&quot;Timestamp&quot;: &quot;&lt;event_time_string&gt;&quot;,&quot;Type&quot;: &quot;&lt;obj_type&gt;&quot;,&quot;Size&quot;: &lt;filename_size&gt;},&quot;Verdict&quot;: &lt;fld46&gt;&quot;Severity&quot;: &lt;severity&gt;,&quot;Description&quot;: &quot;&lt;event_description&gt;&quot;}}}" />
+
 <MESSAGE
 	id1=":24"
 	id2=":"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, spf_query=&lt;fld5&gt;, spf_result_code=&lt;fld6&gt;, spf_result_text=&lt;fld9&gt;, spf_header=&lt;fld8&gt;, scan-identity-name=&lt;policyname&gt;" />
+
 <MESSAGE
 	id1=":25"
 	id2=":"
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; : Application=&lt;application&gt;, Event=&lt;event_type&gt;, {status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, to=&lt;&lt;&lt;to&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, From=&lt;&lt;&lt;from&gt;&gt;, source=&lt;fld7&gt;(&lt;saddr&gt;)| status=&lt;result&gt;, source=(&lt;saddr&gt;)}, msgid=&lt;id&gt;, URLS=&apos;&lt;url&gt;&apos;, scan-identity-name=&lt;policyname&gt;" />
+
  
 <MESSAGE 
 	id1=":27" 
@@ -616,6 +653,7 @@
 	eventcategory="1901000000" 
 	functions="&lt;@dclass_counter1_string: Attachment Quantity&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@dclass_counter2_string:number of receipts after all of the aliasing and forwarding has finished&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %N:%U:%O',fld1,fld2,fld3)&gt;"
 	content="&lt;fld1&gt;&lt;fld2&gt;&lt;fld3&gt;&lt;fld4&gt;: Application=&lt;application&gt;, Event=&apos;&lt;event_type&gt;&apos;, {from|From}=&lt;&lt;&lt;from&gt;&gt;, size=&lt;filename_size&gt;, source=(&lt;saddr&gt;), rhdr_ip=(&lt;fld6&gt;), nrcpts=&lt;dclass_counter2&gt;, to=&lt;&lt;&lt;to&gt;&gt;, virtual_host=&lt;hostname&gt;, msgid=&lt;id&gt;, orig_msgid=&apos;&lt;id1&gt;&apos;, relay={&lt;fld9&gt;(&lt;shost&gt;),|(&lt;shost&gt;),} status=&apos;&lt;result&gt;&apos;, sent-email-over-tls=&apos;&lt;fld10&gt;&apos;, {encryption-type=&apos;&lt;encryption_type&gt;&apos;, subject=&apos;&lt;subject&gt;&apos;, original-sender=&apos;&lt;fld11&gt;&apos;, original-subject=&apos;&lt;fld12&gt;&apos;, attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;|attachment(s)=&apos;&lt;attachment&gt;&apos;, number-attachment(s)=&apos;&lt;dclass_counter1&gt;&apos;}" />
+
 
 
 <MESSAGE 
