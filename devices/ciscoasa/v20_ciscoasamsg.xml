@@ -4,8 +4,8 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="257"
-	checksum="1c0adf0449a934ab35cba9d2e8208853"
+	xml="258"
+	checksum="18fc58d3858058df8e3e4d2df3d1aa84"
 	revision="128"
 	device="2.0" />
 
@@ -738,7 +738,21 @@
 	id2="106100"
 	eventcategory="1801020000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@dclass_counter1_string:Hitcount&gt;&lt;@event_description:permitted&gt;"
-	content="access-list &lt;listnum&gt; { est-allowed | permitted } &lt;protocol&gt; &lt;sinterface&gt;/&lt;saddr&gt;{(&lt;sport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;sport&gt;)} -&gt; &lt;dinterface&gt;/&lt;daddr&gt;(&lt;dport&gt;) hit-cnt &lt;dclass_counter1&gt; &lt;fld6&gt;" />
+	content="access-list &lt;listnum&gt; { est-allowed | permitted } &lt;protocol&gt; &lt;sinterface&gt;/&lt;saddr&gt;(&lt;sport&gt;)(&lt;domain&gt;\&lt;username&gt;) -&gt; &lt;dinterface&gt;/&lt;daddr&gt;{(&lt;dport&gt;)(&lt;fld7&gt;)|(&lt;dport&gt;)} hit-cnt &lt;dclass_counter1&gt; &lt;fld6&gt;" />
+<MESSAGE
+	id1="106100:02"
+	id2="106100"
+	eventcategory="1801020000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@dclass_counter1_string:Hitcount&gt;&lt;@event_description:permitted&gt;"
+	content="access-list &lt;listnum&gt; { est-allowed | permitted } &lt;protocol&gt; &lt;sinterface&gt;/&lt;saddr&gt;(&lt;sport&gt;)(&lt;fld5&gt;) -&gt; &lt;dinterface&gt;/&lt;daddr&gt;{(&lt;dport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;dport&gt;)(&lt;fld7&gt;)|(&lt;dport&gt;)} hit-cnt &lt;dclass_counter1&gt; &lt;fld6&gt;" />
+
+<MESSAGE
+	id1="106100:03"
+	id2="106100"
+	eventcategory="1801020000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@dclass_counter1_string:Hitcount&gt;&lt;@event_description:permitted&gt;"
+	content="access-list &lt;listnum&gt; { est-allowed | permitted } &lt;protocol&gt; &lt;sinterface&gt;/&lt;saddr&gt;(&lt;sport&gt;) -&gt; &lt;dinterface&gt;/&lt;daddr&gt;{(&lt;dport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;dport&gt;)(&lt;fld7&gt;)|(&lt;dport&gt;)} hit-cnt &lt;dclass_counter1&gt; &lt;fld6&gt;" />
+
 <MESSAGE
 	id1="106101"
 	id2="106101"
@@ -1942,6 +1956,12 @@
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
 	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;) duration &lt;duration&gt; bytes &lt;bytes&gt; {(&lt;result&gt;) | &lt;result&gt;}" />
 <MESSAGE
+	id1="302014:04"
+	id2="302014"
+	eventcategory="1801030000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;domain&gt;\&lt;fld3&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;fld20&gt;) duration &lt;duration&gt; bytes &lt;bytes&gt; {&lt;info&gt; (&lt;username&gt;)|&lt;info&gt;}" />
+<MESSAGE
 	id1="302014"
 	id2="302014"
 	eventcategory="1801030000"
@@ -1992,6 +2012,13 @@
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
 	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;) duration &lt;duration&gt; {bytes &lt;bytes&gt; (&lt;username&gt;)|bytes &lt;bytes&gt;}" />
 <MESSAGE
+	id1="302016:06"
+	id2="302016"
+	eventcategory="1801030000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld5&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:{&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;(&lt;fld20&gt;)} duration &lt;duration&gt; bytes &lt;bytes&gt; { &apos;&lt;username&gt;&apos; | (&lt;username&gt;) }" />
+
+<MESSAGE
 	id1="302016"
 	id2="302016"
 	eventcategory="1801030000"
@@ -2002,7 +2029,7 @@
 	id2="302016"
 	eventcategory="1801030000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
-	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld5&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:{&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;(&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;} duration &lt;duration&gt; bytes &lt;bytes&gt;" />
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld5&gt;)|&lt;saddr&gt;/&lt;sport&gt;(&lt;fld20&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:{&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;(&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;} duration &lt;duration&gt; bytes &lt;bytes&gt;" />
 <MESSAGE
 	id1="302016:02"
 	id2="302016"
@@ -2044,7 +2071,7 @@
 	id2="302020"
 	eventcategory="1801020000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;"	
-	content="Built inbound ICMP connection for faddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;domain&gt;\&lt;fld1&gt;)|&lt;saddr&gt;/&lt;sport&gt;|&lt;saddr&gt;(&lt;fld11&gt;)|&lt;saddr&gt;} gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;/&lt;dport&gt; (&lt;fld12&gt;) type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;daddr&gt;/&lt;dport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;daddr&gt;/&lt;dport&gt;(&lt;username&gt;)|&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;(&lt;fld10&gt;)|&lt;daddr&gt;}" />
+	content="Built inbound ICMP connection for faddr {&lt;saddr&gt;/&lt;sport&gt;(&lt;domain&gt;\&lt;fld1&gt;)|&lt;saddr&gt;/&lt;sport&gt;(&lt;fld20&gt;)|&lt;saddr&gt;/&lt;sport&gt;|&lt;saddr&gt;(&lt;fld11&gt;)|&lt;saddr&gt;} gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;/&lt;dport&gt; (&lt;fld12&gt;) type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;daddr&gt;/&lt;dport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;daddr&gt;/&lt;dport&gt;(&lt;username&gt;)|&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;(&lt;fld10&gt;)|&lt;daddr&gt;}" />
 <MESSAGE
 	id1="302020:04"
 	id2="302020"
@@ -2058,7 +2085,7 @@
 	id2="302020"
 	eventcategory="1801020000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;"
-	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr &lt;saddr&gt;/{&lt;sport&gt;(&lt;domain&gt;\&lt;username&gt;)|&lt;sport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;sport&gt;(&lt;username&gt;)|&lt;sport&gt;}" />
+	content="Built outbound ICMP connection for faddr &lt;daddr&gt;/&lt;dport&gt; gaddr &lt;hostip&gt;/&lt;fld4&gt; laddr &lt;saddr&gt;/{&lt;sport&gt;(&lt;domain&gt;\&lt;username&gt;)|&lt;sport&gt;(&lt;fld20&gt;) type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;sport&gt; type &lt;icmptype&gt; code &lt;icmpcode&gt;|&lt;sport&gt;(&lt;username&gt;)|&lt;sport&gt;}" />
 
 	
 <MESSAGE
@@ -2087,11 +2114,19 @@
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:teardown connection&gt;&lt;@protocol:ICMP&gt;"
 	content="Teardown ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld5&gt;) gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;username&gt;)|&lt;daddr&gt;/&lt;dport&gt; &lt;username&gt;|&lt;daddr&gt;/&lt;dport&gt;}" />
 <MESSAGE
+	id1="302021:02"
+	id2="302021"
+	eventcategory="1801030000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:teardown connection&gt;&lt;@protocol:ICMP&gt;"
+	content="Teardown ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt;(&lt;fld20&gt;) gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;username&gt;)|&lt;daddr&gt;/&lt;dport&gt;} type &lt;icmptype&gt; code &lt;icmpcode&gt;" />
+
+<MESSAGE
 	id1="302021:01"
 	id2="302021"
 	eventcategory="1801030000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:teardown connection&gt;&lt;@protocol:ICMP&gt;"
 	content="Teardown ICMP connection for faddr &lt;saddr&gt;/&lt;sport&gt; gaddr {&lt;hostip&gt;/&lt;fld4&gt;|&lt;hostip&gt;} laddr {&lt;daddr&gt;/&lt;dport&gt;(&lt;username&gt;)|&lt;daddr&gt;/&lt;dport&gt; &lt;username&gt;|&lt;daddr&gt;/&lt;dport&gt;}" />
+
 <MESSAGE
 	id1="302022"
 	id2="302022"
