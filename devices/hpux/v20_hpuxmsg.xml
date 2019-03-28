@@ -4,9 +4,9 @@
 	displayname="HP_UX / FreeBSD"
 	group="Unix">
 <VERSION
-	xml="32"
-	checksum="4fe1dbb673cd22eb91e497a241f731a7"
-	revision="127"
+	xml="34"
+	checksum="940721404ae079523b529a1a5a8ec392"
+	revision="128"
 	device="2.0" />
 
 <HEADER 
@@ -78,6 +78,10 @@
 	id1="0099" 
 	id2="0099" 
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;hfld1&gt;]: &lt;!payload:messageid&gt;" />
+<HEADER 
+	id1="0098" 
+	id2="0098" 
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
 
 <MESSAGE 
 	id1="Mark_message" 
@@ -2858,11 +2862,60 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;event_description&gt;" />
 <MESSAGE 
+	id1="00287:02" 
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@info:martian source&gt;"
+	content="&lt;agent&gt;: martian source &lt;hostip&gt; from &lt;saddr&gt;, on dev &lt;sinterface&gt;" />
+
+<MESSAGE 
+	id1="00287:03"
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: EXT4-fs &lt;severity&gt; (device &lt;device&gt;): ext4_dx_add_entry: &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="00287:04"
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@dclass_counter1_string:Device number&gt;"
+	content="&lt;agent&gt;: usb 7-1: {new full speed USB device number &lt;dclass_counter1&gt; using uhci_hcd|USB disconnect, device number &lt;dclass_counter1&gt;}" />
+
+<MESSAGE 
+	id1="00287:05"
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:New USB device found&gt;"
+	content="&lt;agent&gt;: usb 7-1: New USB device found, idVendor=&lt;fld1&gt;, idProduct=&lt;fld2&gt;" />
+
+<MESSAGE 
+	id1="00287:06"
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:New USB device strings&gt;"
+	content="&lt;agent&gt;: usb 7-1: New USB device strings: Mfr=&lt;fld1&gt;, Product=&lt;fld2&gt;, SerialNumber=&lt;serial_number&gt;" />
+
+<MESSAGE 
+	id1="00287:07"
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:New USB device strings&gt;"
+	content="&lt;agent&gt;: usb 7-1: Product: &lt;product&gt;" />
+
+<MESSAGE 
+	id1="00287:01" 
+	id2="kernel" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt; header: &lt;info&gt;" />
+
+<MESSAGE 
 	id1="00287" 
 	id2="kernel" 
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;event_description&gt;" />
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
 <MESSAGE 
 	id1="00070" 
 	id2="krsd" 
@@ -3823,6 +3876,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;event_description&gt;" />
+<MESSAGE 
+	id1="00023:01" 
+	id2="ntpd" 
+	eventcategory="1605010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: synchronized to &lt;hostip&gt;, stratum &lt;fld2&gt;" />	
+
 <MESSAGE 
 	id1="00023" 
 	id2="ntpd" 
@@ -7002,5 +7062,117 @@
 	eventcategory="1803000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: transport_send_messages: giving up on exchange &lt;fld1&gt;-&lt;saddr&gt;-{&lt;daddr&gt;/&lt;dport&gt;|&lt;daddr&gt;}, no response from peer &lt;hostip&gt;:&lt;network_port&gt;" />
+
+<MESSAGE 
+	id1="rtvscand" 
+	id2="rtvscand" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt; Version: &lt;version&gt;." />
+
+<MESSAGE 
+	id1="rtvscand:01" 
+	id2="rtvscand" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@dclass_counter1_string:Number of Threats&gt;&lt;@dclass_counter2_string:Number of files scanned&gt;&lt;@dclass_counter3_string:Files/Folders/Drives Omitted&gt;&lt;@event_description:Scan Complete&gt;"
+	content="&lt;agent&gt;: Scan Complete:  Threats: &lt;dclass_counter1&gt;   Scanned: &lt;dclass_counter2&gt;   Files/Folders/Drives Omitted: &lt;dclass_counter3&gt;" />
+
+<MESSAGE 
+	id1="rtvscand:02" 
+	id2="rtvscand" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@dclass_counter1_string:Number of files&gt;&lt;@event_description:Could not scan files due to extraction errors encountered by the Decomposer Engines.&gt;"
+	content="&lt;agent&gt;: Could not scan &lt;dclass_counter1&gt; files inside &lt;filename&gt; due to extraction errors encountered by the Decomposer Engines." />
+
+<MESSAGE 
+	id1="rtvscand:03" 
+	id2="rtvscand" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="symcfgd" 
+	id2="symcfgd" 
+	eventcategory="1605010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Subscriber has left&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: subscriber &lt;fld1&gt; has left -- closed &lt;fld2&gt; remaining handles" />
+
+<MESSAGE 
+	id1="smcd" 
+	id2="smcd" 
+	eventcategory="1605010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="ReportAgent" 
+	id2="ReportAgent" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:Successfully connected to the Distribution Server&gt;"
+	content="&lt;agent&gt;: Successfully connected to the Distribution Server &lt;protocol&gt;://&lt;domain&gt;:&lt;port&gt;" />
+
+<MESSAGE 
+	id1="uxauthd" 
+	id2="uxauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Domain &apos;&lt;domain&gt;&apos;, used DCs &apos;&lt;info&gt;&apos;." />
+
+<MESSAGE 
+	id1="uxauthd:01" 
+	id2="uxauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:No active DCs in domain&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: No active DCs in domain &apos;&lt;domain&gt;&apos;." />
+
+<MESSAGE 
+	id1="uxauthd:02" 
+	id2="uxauthd" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:Successfully renew proxy ticket for domain&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Successfully renew proxy ticket for domain &apos;&lt;domain&gt;&apos;." />
+
+<MESSAGE 
+	id1="auditd" 
+	id2="auditd" 
+	eventcategory="1605010000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;event_description&gt;" />
+
+<MESSAGE 
+	id1="rhsmd" 
+	id2="rhsmd" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="audispd:01"
+	id2="audispd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+    content="&lt;agent&gt;: node=&lt;fld1&gt; type=&lt;event_type&gt; msg=&lt;info&gt;: pid=&lt;process_id&gt; uid=&lt;uid&gt; old auid=&lt;fld2&gt; new auid=&lt;fld6&gt; old ses=&lt;fld8&gt; new ses=&lt;sessionid&gt;"/>
+
+<MESSAGE
+	id1="audispd:02"
+	id2="audispd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+    content="&lt;agent&gt;: node=&lt;fld1&gt; type=&lt;event_type&gt; msg=&lt;info&gt;: user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld6&gt; ses=&lt;sessionid&gt; msg=&apos;op=&lt;action&gt; {direction=&lt;direction&gt; cipher=&lt;encryption_type&gt; ksize=&lt;bytes&gt;|kind=&lt;fld31&gt; fp=&lt;fld32&gt; direction=&lt;direction&gt;} spid=&lt;fld10&gt; suid=&lt;fld21&gt; {rport=&lt;dport&gt; laddr=&lt;saddr&gt; lport=&lt;sport&gt; exe=&quot;&lt;fld11&gt;&quot;|exe=&quot;&lt;fld11&gt;&quot;} hostname=&lt;fld15&gt; addr=&lt;hostip&gt; terminal=&lt;terminal&gt; res=&lt;result&gt;&apos;"/>
+
+<MESSAGE
+	id1="audispd:03"
+	id2="audispd"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;"
+    content="&lt;agent&gt;: node=&lt;fld1&gt; type=&lt;event_type&gt; msg=&lt;info&gt;: user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld6&gt; ses=&lt;sessionid&gt; msg=&apos;op=&lt;action&gt; {acct=&quot;&lt;username&gt;&quot;|id=&lt;id1&gt;} exe=&quot;&lt;fld8&gt;&quot; hostname=&lt;fld9&gt; addr=&lt;fld10&gt; terminal=&lt;terminal&gt; res=&lt;result&gt;&apos;"/>
+
+<MESSAGE 
+	id1="rsyslogd" 
+	id2="rsyslogd" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B%F %Z',month,day,time)&gt;&lt;@event_description:rsyslogd was HUPed&gt;"
+	content="&lt;agent&gt;: [origin software=&quot;&lt;fld33&gt;&quot; swVersion=&quot;&lt;version&gt;&quot; x-pid=&quot;&lt;process_id&gt;&quot; x-info=&quot;&lt;info&gt;&quot;] rsyslogd was HUPed" />
 
 </DEVICEMESSAGES>
