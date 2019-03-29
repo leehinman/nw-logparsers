@@ -3,39 +3,27 @@
 	displayname="Evidian"
 	group="Access Control">
 <VERSION
-		xml="42"
-		checksum="fa39b615b1f61c742afd986aa0df9558"
-		revision="83"
+		xml="44"
+		checksum="6c500d550c9acd203dfd2d321a857952"
+		revision="128"
 		device="2.0"/>
 
  
+<TAGVALMAP
+	pairdelimiter="|"
+    valuedelimiter=":"	/>
 <HEADER 
 	id1="0001" 
-	id2="0001"  
-	content="%evidian: &lt;hid&gt;^^&lt;hdatetime&gt;.&lt;hfld6&gt;^^&lt;messageid&gt;^^&lt;!payload:hid&gt;" /> 
+	id2="0001" 
+    messageid="STRCAT('EVIDIAN_GENERIC')"	
+	content="%evidian: &lt;id&gt;^^&lt;hdatetime&gt;.&lt;hfld6&gt;^^&lt;category&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;access_point&gt;^^&lt;hfld2&gt;^^&lt;hfld3&gt;^^&lt;obj_name&gt;^^&lt;!payload&gt;" /> 
 
 <MESSAGE 
-	id1="1" 
-	id2="1" 
-	eventcategory="1605000000" 		
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%U:%O&apos;,hdatetime)&gt;"
-	content="&lt;id&gt;^^&lt;datetime&gt;.&lt;fld1&gt;^^&lt;category&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;access_point&gt;{^^^^^^|^^&lt;saddr&gt;^^&lt;shost&gt;^^}&lt;objname&gt;^^&lt;info&gt; " />
-<MESSAGE 
-	id1="2" 
-	id2="2" 
-	eventcategory="1605000000" 		
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%U:%O&apos;,hdatetime)&gt;"
-	content="&lt;id&gt;^^&lt;datetime&gt;.&lt;fld1&gt;^^&lt;category&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;access_point&gt;{^^^^^^|^^&lt;saddr&gt;^^&lt;shost&gt;^^}&lt;objname&gt;^^&lt;info&gt; " />
-<MESSAGE 
-	id1="3" 
-	id2="3" 
-	eventcategory="1605000000" 		
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%U:%O&apos;,hdatetime)&gt;"
-	content="&lt;id&gt;^^&lt;datetime&gt;.&lt;fld1&gt;^^&lt;category&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;access_point&gt;{^^^^^^|^^&lt;saddr&gt;^^&lt;shost&gt;^^}&lt;objname&gt;^^&lt;info&gt; " />
-<MESSAGE 
-	id1="4" 
-	id2="4" 
-	eventcategory="1605000000" 		
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%U:%O&apos;,hdatetime)&gt;"
-	content="&lt;id&gt;^^&lt;datetime&gt;.&lt;fld1&gt;^^&lt;category&gt;^^&lt;event_type&gt;^^&lt;username&gt;^^&lt;access_point&gt;{^^^^^^|^^&lt;saddr&gt;^^&lt;shost&gt;^^}&lt;objname&gt;^^&lt;info&gt; " />
+	id1="EVIDIAN_GENERIC" 
+	id2="EVIDIAN_GENERIC" 
+	eventcategory="1605000000" 	
+    tagval="true"
+    missField="true"	
+	functions="&lt;@msg_id:*HDR(category)&gt;&lt;@vid:*HDR(category)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,&apos;%W-%G-%F %H:%U:%O&apos;,hdatetime)&gt;"
+	content="audit-cache-date:&lt;fld1&gt;|audit-last-known:&lt;fld2&gt;|enatelXCertificateIssuer:&lt;fld3&gt;|enatelXRevocationURI:&lt;url&gt;|cache-auth:&lt;fld4&gt;|cluster-session:&lt;fld5&gt;|enatelAllowedApplicationMask:&lt;fld6&gt;|enatelTokenClassName:&lt;fld7&gt;|re-auth:&lt;fld8&gt;|token-class-type:&lt;fld9&gt;|token-config:&lt;fld10&gt;|enatelAccountType:&lt;fld11&gt;|enatelSSOAccountLoginIdentifier:&lt;fld12&gt;|program-exe:&lt;filename&gt;|enatelAccountBaseID:&lt;fld13&gt;|enatelApplicationObject:&lt;fld14&gt;|enatelLastUpdateTime:&lt;fld15&gt;|mac-address:&lt;macaddr&gt;|enatelUserEntityObject:&lt;fld16&gt;|roaming-session:&lt;fld17&gt;|domain:&lt;domain&gt;|controller:&lt;fld18&gt;|SCD-Week-hours:&lt;fld19&gt;|new-name:&lt;fld20&gt;|APPPRF-On-desktop:&lt;fld21&gt;|APPPRF-Prim-auth-req:&lt;fld22&gt;|APPPRF-Is-launched:&lt;fld23&gt;|APPSSO-Is-token-cached:&lt;fld24&gt;|APPSSO-Is-token-only:&lt;fld25&gt;|APPSSO-Can-reveal-act:&lt;fld26&gt;|APPSSO-Can-reveal-act:&lt;fld27&gt;|APPSSO-Can-edit-pwd:&lt;fld28&gt;|APPSSO-Can-lock-act:&lt;fld29&gt;|APPSSO-Act-prot:&lt;fld30&gt;|APPSSO-Act-cancel:&lt;fld31&gt;|APP-DLG-new-pwd:&lt;fld32&gt;|APP-DLG-duration:&lt;fld33&gt;|APP-DLG-mode:&lt;fld34&gt;|OLE-Authorized:&lt;fld35&gt;|OLE-Empty:&lt;fld36&gt;|enatelAllowedLoginModification:&lt;fld37&gt;|enatelAllowedOnAllAccessPoints:&lt;fld38&gt;|presentationAddress:&lt;fld39&gt;|enatelPropagationType:&lt;fld40&gt;|enatelIsPublic:&lt;fld41&gt;|enatelHasNoParameter:&lt;fld42&gt;|enatelAdmObject:&lt;fld43&gt;" />
 </DEVICEMESSAGES>
