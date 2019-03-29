@@ -4,9 +4,9 @@
 	displayname="Palo Alto Networks Firewall"
 	group="Firewall">
 <VERSION
-	xml="85"
-	checksum="1ef8980b128d8445e15e3190da237dec"
-	revision="127"
+	xml="87"
+	checksum="7ca018738f33a8974b2987593621471d"
+	revision="128"
 	device="2.0" />
 <VALUEMAP
 	name="getEventLegacyCategory"
@@ -828,6 +828,13 @@
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:file&gt;"
 	content=" {PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,file,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;fld8&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,&quot;&lt;filename&gt;&quot;,&lt;signame&gt;(&lt;fld15&gt;)(&lt;sigid&gt;),&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;location_src&gt;,&lt;location_dst&gt;,&lt;fld14&gt;,&lt;fld17&gt;" />
 
+
+<MESSAGE 
+	id1="THREAT1:06" 
+	id2="THREAT" 
+	eventcategory="1001000000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:virus&gt;&lt;@dclass_counter1_string:Number of sessions with same Source IP, Destination IP, Application, and Subtype&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,virus,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;dclass_counter1&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,&quot;&lt;context&gt;&quot;,&lt;signame&gt;(&lt;sigid&gt;),&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;location_src&gt;,&lt;location_dst&gt;,&lt;fld14&gt;,&lt;content_type&gt;,&lt;fld18&gt;,&lt;fld19&gt;,&lt;fld20&gt;,&lt;fld21&gt;,&lt;user_agent&gt;,&lt;filetype&gt;,&lt;ip.orig&gt;,&lt;web_referer&gt;,&lt;from&gt;,{&quot;&lt;subject&gt;&quot;|&lt;subject&gt;},&lt;to&gt;,&lt;fld31&gt;,&lt;fld32&gt;,&lt;fld23&gt;,&lt;fld24&gt;,&lt;fld25&gt;,&lt;vsys&gt;,&lt;sensor&gt;,{&lt;fld50&gt;,&lt;fld59&gt;,&lt;fld52&gt;,&lt;web_method&gt;,&lt;fld54&gt;,&lt;fld55&gt;,&lt;fld56&gt;,&lt;starttime&gt;,&lt;fld58&gt;,&lt;threat_name&gt;,&lt;content_version&gt;,&lt;fld51&gt;|&lt;fld45&gt;}"/>
 
 <MESSAGE 
 	id1="THREAT1:05" 
