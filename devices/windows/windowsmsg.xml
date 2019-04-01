@@ -4,9 +4,9 @@
 	displayname="Microsoft Windows"
 	group="Windows Hosts">
 <VERSION
-	xml="11"
-	checksum="276a86c2c377f6e7d62f6e18987364a2"
-	revision="125"
+	xml="14"
+	checksum="521b9d241067e6d24ae4729e1aac3a01"
+	revision="128"
 	device="2.0" />
 
 <TAGVALMAP
@@ -93,13 +93,20 @@
 	content="Agent=&lt;agent&gt; AgentIP=&lt;hostip&gt; AgentComputer=&lt;hostname&gt; AgentTime=&lt;event_time_string&gt; TimeCreatedSystemTime=&lt;fld1&gt; EventID=&lt;id&gt; Provider=&lt;event_source&gt; Channel=&lt;event_log&gt; Level=&lt;severity&gt; Task=&lt;fld&gt; Version=&lt;version&gt; ProcessID=&lt;process_id&gt; Computer=&lt;event_computer&gt; RecordId=&lt;fld&gt; Message=&lt;info&gt; OpCode=&lt;fld&gt; Keyword=&lt;fld&gt; User=&lt;user&gt; ExtraInfo=&lt;fld&gt; Detail=&lt;fld&gt; timestamp=&lt;fld45&gt; TaskCategory=&lt;category&gt; EventId=&lt;id&gt; LogName=&lt;event_log&gt; Source=&lt;event_computer&gt;" />
 
 <MESSAGE
+	id1="System:01"
+	id2="System"
+	eventcategory="1605020000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O',fld1)&gt;&lt;@System_id:*STRCAT(System,_,id)&gt;"
+	content="Agent=&lt;agent&gt; AgentIP=&lt;hostip&gt; AgentComputer=&lt;hostname&gt; AgentTime=&lt;event_time_string&gt; TimeCreatedSystemTime=&lt;fld1&gt; EventID=&lt;id&gt; QualifiedEventID=&lt;fld&gt; Provider=&quot;&lt;event_source&gt;&quot; Channel=&lt;event_log&gt; Level=&lt;severity&gt; Task=&lt;fld&gt; OpCode=&lt;fld&gt; Version=&lt;version&gt; Keyword=&lt;fld&gt; ProcessID=&lt;process_id&gt; User={&quot;&lt;user&gt;&quot;|&lt;user&gt;} Computer=&lt;event_computer&gt; RecordId=&lt;fld&gt; ServiceName={&quot;&lt;service.name&gt;&quot;|&lt;service.name&gt;} ImagePath={&quot;'&lt;filename&gt;' /&lt;param&gt;&quot;|&quot;'&lt;filename&gt;' -s '&lt;param&gt;'&quot;|&quot;'&lt;filename&gt;'&quot;|&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} ServiceType=&lt;fld23&gt; StartType=&lt;fld24&gt; AccountName=&lt;user&gt; Message=&quot;&lt;event_description&gt;. &lt;info&gt;&quot;" />
+
+<MESSAGE
 	id1="System"
 	id2="System"
 	eventcategory="1901000000"
 	missField="true"
 	tagval="true"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O',fld1)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%N:%U:%O',fld13)&gt;&lt;@System_id:*STRCAT(System,_,id)&gt;&lt;@event_cat:*getSystemEventLegacyCategory(System_id)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@ec_outcome:*getEventCategoryOutcome(System_id)&gt;&lt;@ec_theme:*getEventCategoryTheme(System_id)&gt;&lt;@ec_subject:*getEventCategorySubject(System_id)&gt;&lt;@ec_activity:*getEventCategoryActivity(System_id)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld45)&gt;"
-	content="Agent=&lt;agent&gt; AgentIP=&lt;hostip&gt; AgentComputer=&lt;hostname&gt; AgentTime=&lt;event_time_string&gt; TimeCreatedSystemTime=&lt;fld1&gt; EventID=&lt;id&gt; Provider=&lt;event_source&gt; Channel=&lt;event_log&gt; Level=&lt;severity&gt; Task=&lt;fld&gt; Version=&lt;version&gt; ProcessID=&lt;process_id&gt; Computer=&lt;event_computer&gt; RecordId=&lt;fld&gt; Message=&lt;info&gt; OpCode=&lt;fld&gt; Keyword=&lt;fld&gt; User=&lt;user&gt; DeviceName=&lt;device&gt; Group=&lt;fld&gt; Status=&lt;resultcode&gt; BootMenuPolicy=&lt;fld&gt; ProcessPid=&lt;process_id&gt; StopTime=&lt;fld13&gt; BuildVersion=&lt;fld&gt; SentUpdateServer=&lt;fld&gt; LastShutdownGood=&lt;fld&gt; ExitBootServicesEntry=&lt;fld&gt; FinalStatus=&lt;fld&gt; StatusInformation=&lt;fld&gt; DeviceNameLength=&lt;fld&gt; FilterID=&lt;fld&gt; LastBootGood=&lt;fld&gt; HostName=&lt;fld&gt; Ipaddress=&lt;saddr&gt; DeviceTime=&lt;fld&gt; LoadOptions=&lt;fld&gt; ResetCount=&lt;fld&gt; ExtensibleModulePath=&lt;directory&gt; QueryName=&lt;fld&gt; FilePath=&lt;directory&gt; GUID=&lt;sessionid1&gt; DnsServerList=&lt;fld&gt; Reason=&lt;result&gt; ResetReason=&lt;fld&gt; ErrorDescription=&lt;result&gt; DeviceName=&lt;device&gt; Group=&lt;group&gt; FailureName=&lt;fld&gt; ProcessingTimeInMilliseconds=&lt;fld&gt; ErrorCode=&lt;resultcode&gt; DCName=&lt;domain&gt; TimeSource=&lt;fld&gt; Caption=&lt;fld&gt; ProcessPath=&lt;directory&gt; ErrorMessage=&lt;info&gt; Status=&lt;disposition&gt; timestamp=&lt;fld45&gt; TaskCategory=&lt;category&gt; EventId=&lt;id&gt; LogName=&lt;event_log&gt; Source=&lt;event_computer&gt; Description=&lt;event_description&gt;" />
+	content="Agent=&lt;agent&gt; AgentIP=&lt;hostip&gt; AgentComputer=&lt;hostname&gt; AgentTime=&lt;event_time_string&gt; TimeCreatedSystemTime=&lt;fld1&gt; EventID=&lt;id&gt; Provider=&lt;event_source&gt; Channel=&lt;event_log&gt; Level=&lt;severity&gt; Task=&lt;fld&gt; Version=&lt;version&gt; ProcessID=&lt;process_id&gt; Computer=&lt;event_computer&gt; RecordId=&lt;fld&gt; Message=&lt;info&gt; OpCode=&lt;fld&gt; Keyword=&lt;fld&gt; User=&lt;user&gt; DeviceName=&lt;device&gt; Group=&lt;fld&gt; Status=&lt;resultcode&gt; BootMenuPolicy=&lt;fld&gt; ProcessPid=&lt;process_id&gt; StopTime=&lt;fld13&gt; BuildVersion=&lt;fld&gt; SentUpdateServer=&lt;fld&gt; LastShutdownGood=&lt;fld&gt; ExitBootServicesEntry=&lt;fld&gt; FinalStatus=&lt;fld&gt; StatusInformation=&lt;fld&gt; DeviceNameLength=&lt;fld&gt; FilterID=&lt;fld&gt; LastBootGood=&lt;fld&gt; HostName=&lt;fld&gt; Ipaddress=&lt;saddr&gt; DeviceTime=&lt;fld&gt; LoadOptions=&lt;fld&gt; ResetCount=&lt;fld&gt; ExtensibleModulePath=&lt;directory&gt; QueryName=&lt;fld&gt; FilePath=&lt;directory&gt; GUID=&lt;sessionid1&gt; DnsServerList=&lt;fld&gt; Reason=&lt;result&gt; ResetReason=&lt;fld&gt; ErrorDescription=&lt;result&gt; DeviceName=&lt;device&gt; Group=&lt;group&gt; FailureName=&lt;fld&gt; ProcessingTimeInMilliseconds=&lt;fld&gt; ErrorCode=&lt;resultcode&gt; DCName=&lt;domain&gt; TimeSource=&lt;fld&gt; Caption=&lt;fld&gt; ProcessPath=&lt;directory&gt; ErrorMessage=&lt;info&gt; Status=&lt;disposition&gt; timestamp=&lt;fld45&gt; TaskCategory=&lt;category&gt; EventId=&lt;id&gt; LogName=&lt;event_log&gt; Source=&lt;event_computer&gt; Description=&lt;event_description&gt; ServiceName=&lt;service.name&gt; ImagePath=&lt;filename&gt; ServiceType=&lt;fld23&gt; StartType=&lt;fld24&gt; AccountName=&lt;user&gt;" />
 
 <MESSAGE
 	id1="Setup"
