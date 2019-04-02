@@ -4,8 +4,8 @@
 	displayname="Barracuda Web Application Firewall"
 	group="Application Firewall">
 <VERSION
-	xml="26"
-	checksum="8b7498e92d99a98ea392ca3bc6c638d8"
+	xml="27"
+	checksum="4f19b435a4e8b6543f013215090542e3"
 	revision="128"
 	device="2.0" />
 
@@ -30,6 +30,11 @@
 	content="&lt;hhost&gt; &lt;hfld7&gt; &lt;hfld8&gt;.&lt;hfld2&gt; &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &lt;hfld6&gt; &lt;messageid&gt; &lt;!payload:hfld7&gt;" />
 
 <HEADER 
+	id1="0009" 
+	id2="0009"
+	messageid="STRCAT(&apos;TR_Logs&apos;)"
+	content="&lt;hhost&gt; &lt;hfld7&gt; &lt;hfld8&gt;.&lt;hfld2&gt; &lt;hfld3&gt; TR &lt;hfld5&gt; &lt;hfld6&gt; &lt;hfld8&gt; &lt;!payload:hfld7&gt;" />
+<HEADER 
 	id1="0007" 
 	id2="0007"
 	messageid="STRCAT(&apos;Audit_Logs&apos;)"
@@ -39,11 +44,6 @@
 	id2="0008"
 	messageid="STRCAT(&apos;WF&apos;)"
 	content="&lt;hhost&gt; &lt;hfld7&gt; &lt;hfld8&gt;.&lt;hfld2&gt; &lt;hfld3&gt; WF &lt;hfld5&gt; &lt;hfld6&gt; &lt;hfld8&gt; &lt;!payload:hfld7&gt;" />
-<HEADER 
-	id1="0009" 
-	id2="0009"
-	messageid="STRCAT(&apos;TR_Logs&apos;)"
-	content="&lt;hhost&gt; &lt;hfld7&gt; &lt;hfld8&gt;.&lt;hfld2&gt; &lt;hfld3&gt; TR &lt;hfld5&gt; &lt;hfld6&gt; &lt;hfld8&gt; &lt;!payload:hfld7&gt;" />
 
 <HEADER 
 	id1="0006" 
@@ -747,48 +747,6 @@
 	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;severity&gt; &lt;event_type&gt; &lt;saddr&gt; &lt;sport&gt; &lt;rulename&gt; &lt;rule_group&gt; &lt;action&gt; &lt;context&gt;{ &quot;[&lt;result&gt;]&quot; | [&lt;result&gt;] } &lt;web_method&gt; &lt;url&gt; &lt;protocol&gt; - &lt;stransaddr&gt; &lt;stransport&gt; &lt;web_referer&gt;" />
 
 <MESSAGE 
-	id1="GET" 
-	id2="GET" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &quot;&lt;web_query&gt;&quot; &quot;&lt;web_cookie&gt;&quot; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; { &lt;stransport&gt; &lt;content_type&gt; | &lt;stransport&gt; }" />
-
-<MESSAGE 
-	id1="GET:01" 
-	id2="GET" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &quot;&lt;web_query&gt;&quot; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt;" />
-
-<MESSAGE
-	id1="GET:02"
-	id2="GET"
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &quot;&lt;cert_username&gt;&quot; &quot;&lt;logon_id&gt;&quot; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;fld3&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt; &lt;content_type&gt;"/>
-
-<MESSAGE 
-	id1="DELETE" 
-	id2="DELETE" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &lt;user_agent&gt; &lt;stransaddr&gt; &lt;stransport&gt; &lt;content_type&gt;" />
-
-<MESSAGE 
-	id1="HEAD" 
-	id2="HEAD" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &lt;user_agent&gt; &lt;stransaddr&gt; &lt;stransport&gt; &lt;content_type&gt;" />
-
-<MESSAGE 
-	id1="POST" 
-	id2="POST" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt;" />
-
-<MESSAGE 
 	id1="NO_DOMAIN_MATCH_IN_PROFILE" 
 	id2="NO_DOMAIN_MATCH_IN_PROFILE" 
 	eventcategory="1204000000" 
@@ -815,20 +773,6 @@
 	eventcategory="1204000000" 
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
 	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;severity&gt; &lt;event_type&gt; &lt;saddr&gt; &lt;sport&gt; &lt;rulename&gt; &lt;rule_group&gt; &lt;action&gt; &lt;context&gt; [&lt;result&gt;] &lt;web_method&gt; &lt;url&gt; &lt;protocol&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt; &lt;web_referer&gt;" />
-
-<MESSAGE 
-	id1="PROPFIND" 
-	id2="PROPFIND" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt;" />
-
-<MESSAGE 
-	id1="OPTIONS" 
-	id2="OPTIONS" 
-	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt;" />
 
 <MESSAGE 
 	id1="UNKNOWN_CONTENT_TYPE" 
@@ -903,10 +847,29 @@
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
 	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;severity&gt; &lt;event_type&gt; &lt;saddr&gt; &lt;sport&gt; &lt;rulename&gt; &lt;rule_group&gt; &lt;action&gt; &lt;context&gt; [&lt;result&gt;] &lt;web_method&gt; &lt;url&gt; &lt;protocol&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt; &lt;web_referer&gt;" />
 <MESSAGE 
-	id1="TR_Logs" 
-	id2="TR_Logs"
+	id1="TR_Logs:01" 
+	id2="TR_Logs" 
 	eventcategory="1204000000" 
-	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
-	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; &lt;stransport&gt; &lt;content_type&gt;" />
+	functions="&lt;@msg_id:*PARMVAL(web_method)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
+	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &quot;-&quot; &quot;-&quot; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; { &lt;stransport&gt; &lt;content_type&gt; | &lt;stransport&gt;}" />
+<MESSAGE 
+	id1="TR_Logs:02" 
+	id2="TR_Logs" 
+	eventcategory="1204000000" 
+	functions="&lt;@msg_id:*PARMVAL(web_method)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
+	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &quot;-&quot; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; { &lt;stransport&gt; &lt;content_type&gt; | &lt;stransport&gt;}" />
+<MESSAGE 
+	id1="TR_Logs:03" 
+	id2="TR_Logs" 
+	eventcategory="1204000000" 
+	functions="&lt;@msg_id:*PARMVAL(web_method)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
+	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &quot;-&quot; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; { &lt;stransport&gt; &lt;content_type&gt; | &lt;stransport&gt;}" />
+
+<MESSAGE 
+	id1="TR_Logs" 
+	id2="TR_Logs" 
+	eventcategory="1204000000" 
+	functions="&lt;@msg_id:*PARMVAL(web_method)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hfld7,hfld8)&gt;"
+	content=" &lt;fld88&gt; &lt;fld89&gt; &lt;timezone&gt; &lt;category&gt; &lt;operation_id&gt; &lt;protocol&gt; &lt;web_method&gt; &lt;saddr&gt; &lt;sport&gt; &lt;daddr&gt; &lt;dport&gt; &lt;url&gt; &lt;cert_username&gt; &lt;logon_id&gt; &lt;web_host&gt; &lt;web_referer&gt; &lt;resultcode&gt; &lt;sbytes&gt; &lt;rbytes&gt; &lt;web_query&gt; &lt;web_cookie&gt; &quot;&lt;user_agent&gt;&quot; &lt;stransaddr&gt; { &lt;stransport&gt; &lt;content_type&gt; | &lt;stransport&gt;}" />
 
 </DEVICEMESSAGES>
