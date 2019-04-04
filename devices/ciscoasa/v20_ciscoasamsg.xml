@@ -4,8 +4,8 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="258"
-	checksum="18fc58d3858058df8e3e4d2df3d1aa84"
+	xml="261"
+	checksum="7055918d260fcacd0a2b5d0a8c951ae7"
 	revision="128"
 	device="2.0" />
 
@@ -1901,6 +1901,12 @@
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Connection pre-allocated&gt;"
 	content="{ Pre-allocate | Preallocate } &lt;network_service&gt; Call Signalling Connection for faddr &lt;saddr&gt;/&lt;sport&gt; to laddr &lt;daddr&gt;" />
 <MESSAGE
+	id1="302013:07"
+	id2="302013"
+	eventcategory="1801020000"
+	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;&lt;@event_description:build connection&gt;"
+	content="Built inbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)(&lt;domain&gt;\&lt;fld3&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;ddomain&gt;\&lt;c_username&gt;) (&lt;username&gt;)" />
+<MESSAGE
 	id1="302013"
 	id2="302013"
 	eventcategory="1801020000"
@@ -1917,7 +1923,7 @@
 	id2="302013"
 	eventcategory="1801020000"
 	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;&lt;@event_description:build connection&gt;"
-	content="Built inbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)" />
+	content="Built inbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/{&lt;stransport&gt;)(&lt;domain&gt;\&lt;username&gt;)|&lt;stransport&gt;) } to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)" />
 <MESSAGE
 	id1="302013:03"
 	id2="302013"
@@ -7796,6 +7802,20 @@
 	content="failed to sync master key for password encryption, reason=&lt;result&gt;" />
 
 <MESSAGE
+	id1="746001"
+	id2="746001"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;"
+	content="&lt;application&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="746006"
+	id2="746006"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;"
+	content="&lt;application&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
 	id1="746012"
 	id2="746012"
 	eventcategory="1401060000"
@@ -7822,6 +7842,13 @@
 	eventcategory="1802000000"
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@event_description:VPN user logout&gt;&lt;@result:Failed&gt;"
 	content="&lt;application&gt;: Delete IP-User mapping &lt;saddr&gt; - &lt;shost&gt; Failed - VPN user logout" />
+
+<MESSAGE
+	id1="746018"
+	id2="746018"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@event_description:Update import-user done&gt;"
+	content="&lt;application&gt;: Update import-user &lt;domain&gt;\\&lt;group&gt; done" />
 
 <MESSAGE
 	id1="750001"
