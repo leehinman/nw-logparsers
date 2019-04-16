@@ -4,9 +4,9 @@
 	displayname="Blue Coat ELFF"
 	group="Web Logs">
 <VERSION
-	xml="99"
-	checksum="3f2f25a37123e34f51e472e0fde90895"
-	revision="128"
+	xml="100"
+	checksum="491d1db2d72877fb04bf2dec47629081"
+	revision="129"
     device="2.0" />
 <TAGVALMAP 
 		delimiter=", &quot;" />
@@ -831,6 +831,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
 	content="Licensing: Load from Blue Coat error (ERROR: &lt;result&gt; )(&lt;fld25&gt;) &lt;event_type&gt; {../&lt;filename&gt; | &lt;filename&gt;} &lt;fld80&gt;" />
 <MESSAGE  
+	id1="540000:02" 
+	id2="540000" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time_string:*HDR(htime)&gt;"
+	content="Licensing: committing license: &lt;fld1&gt;(&lt;fld2&gt;), state = (&lt;severity&gt;)(&lt;fld3&gt;) &lt;event_type&gt; &lt;filename&gt; &lt;fld4&gt;" />
+
+<MESSAGE  
 	id1="E0000" 
 	id2="E0000" 
 	eventcategory="1605020000" 
@@ -1042,7 +1049,7 @@
 	id2="250047" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Administrator login&gt;"
-	content="Administrator login, session_id &lt;sessionid&gt;, user &apos;&lt;username&gt;&apos;, realm &apos;&lt;group_object&gt;&apos;, from &lt;saddr&gt;, &lt;privilege&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
+	content="Administrator login, session_id &lt;sessionid&gt;, user &apos;&lt;username&gt;&apos;,{ realm &apos;&lt;group_object&gt;&apos;, from &lt;saddr&gt;|from &lt;saddr&gt;}, &lt;privilege&gt;, request=&lt;fld24&gt;(&lt;fld25&gt;) &lt;event_type&gt; { ../&lt;filename&gt; | &lt;filename&gt; } &lt;fld80&gt;" />
 
 <MESSAGE  
 	id1="250047:01" 
