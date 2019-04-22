@@ -4,9 +4,9 @@
 	displayname="Fortinet FortiGate"
 	group="Firewall">
 <VERSION
-		xml="151"
-		checksum="605bd32c33594aeabcc391f706547502"
-		revision="126"
+		xml="153"
+		checksum="3c5f6a46e2c39cfec32bdcc8d28ba50e"
+		revision="129"
 		device="2.0"/>
  
 
@@ -180,17 +180,18 @@
 		name="icmpHexToInt"
 		default="$NONE"
 		keyvaluepairs="0x00='0'|0x01='1'|0x02='2'|0x03='3'|0x04='4'|0x05='5'|0x06='6'|0x07='7'|0x08='8'|0x09='9'|0x0a='10'|0x0b='11'|0x0c='12'|0x0d='13'|0x0e='14'|0x0f='15'|0x10='16'|0x11='17'|0x12='18'|0x1e='30'|0x1f='31'|0x28='40'"/>	
-		
+  
   <VALUEMAP
 		name="getEventLegacyCategoryName"
 		default="Other.Default"
-		keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1803000000=&apos;Network.Denied.Connections&apos;|1001030000=&apos;Attacks.Access.Informational&apos;" />
+		keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1803000000=&apos;Network.Denied.Connections&apos;|1001030000=&apos;Attacks.Access.Informational&apos;|1801010000=&apos;Network.Connections.Errors&apos;|1801030000=&apos;Network.Connections.Terminations&apos;|1801000000=&apos;Network.Connections&apos;" />
    		
   <VALUEMAP
 		name="getEventLegacyCategory"
 		default="1901000000"
-		keyvaluepairs="accept=&apos;1801020000&apos;|deny=&apos;1803000000&apos;|blocked=&apos;1803000000&apos;|detected=&apos;1001030000&apos;" />	
-   <VALUEMAP
+		keyvaluepairs="accept=&apos;1801020000&apos;|deny=&apos;1803000000&apos;|blocked=&apos;1803000000&apos;|detected=&apos;1001030000&apos;|ip-conn=&apos;1801010000&apos;|close=&apos;1801030000&apos;|start=&apos;1801000000&apos;|timeout=&apos;1801030000&apos;" />	
+  	
+  <VALUEMAP
 		name="getProtocolName"
 		default="$NONE"
 		keyvaluepairs="3=&apos;GGP&apos;|0=&apos;HOPOPT&apos;|1=&apos;ICMP&apos;|6=&apos;TCP&apos;|17=&apos;UDP&apos;|21=&apos;PRM&apos;|HOPOPT=&apos;HOPOPT&apos;|icmp=&apos;ICMP&apos;|tcp=&apos;TCP&apos;|udp=&apos;UDP&apos;|prm=&apos;PRM&apos;" />
@@ -7116,6 +7117,14 @@
 	content="vd=&lt;vsys&gt; {srcip=&lt;saddr&gt; srcport=&lt;sport&gt;|srcip=&lt;saddr&gt;} srcintf=&quot;&lt;sinterface&gt;&quot; {dstip=&lt;daddr&gt; dstport=&lt;dport&gt;|dstip=&lt;daddr&gt;} dstintf=&quot;&lt;dinterface&gt;&quot; sessionid=&lt;sessionid&gt; status=&lt;event_state&gt; policyid=&lt;policy_id&gt; dstcountry=&quot;&lt;location_dst&gt;&quot; srccountry=&quot;&lt;location_src&gt;&quot; {trandisp=&lt;context&gt; transip=&lt;stransaddr&gt; transport=&lt;stransport&gt;|trandisp=&lt;context&gt;} service=&lt;network_service&gt; proto=&lt;fld70&gt; {app=&lt;obj_name&gt; duration=&lt;duration&gt;|duration=&lt;duration&gt;} sentbyte=&lt;sbytes&gt; {rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld5&gt; rcvdpkt=&lt;fld6&gt;|rcvdbyte=&lt;rbytes&gt;}" />
 		
 <MESSAGE
+	id1="0000000015:02"
+	id2="0000000015"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;"
+	content="vd=&lt;vsys&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcintf=&quot;&lt;sinterface&gt;&quot;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstintf=&quot;&lt;dinterface&gt;&quot;,{poluuid=&lt;id2&gt;,sessionid=&lt;sessionid&gt;|poluuid=&lt;id2&gt;},proto=&lt;fld70&gt;,action=&lt;action&gt;,policyid=&lt;policy_id&gt;,policytype=&lt;fld6&gt;,dstcountry=&quot;&lt;location_dst&gt;&quot;,srccountry=&quot;&lt;location_src&gt;&quot;,{trandisp=&lt;context&gt;,transip=&lt;stransaddr&gt;,transport=&lt;stransport&gt;,service=&quot;&lt;network_service&gt;&quot;|trandisp=&lt;context&gt;,service=&quot;&lt;network_service&gt;&quot;},duration=&lt;duration&gt;,sentbyte=&lt;sbytes&gt;,rcvdbyte=&lt;rbytes&gt;,sentpkt=&lt;fld5&gt;,appcat=&quot;&lt;category&gt;&quot;" />
+
+		
+<MESSAGE
 	id1="0000000015:01"
 	id2="0000000015"
 	eventcategory="1605000000"
@@ -7648,6 +7657,22 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;"
 	content="vd=&lt;vsys&gt; {srcip=&lt;saddr&gt; srcport=&lt;sport&gt;|srcip=&lt;saddr&gt;} srcintf={&quot;&lt;sinterface&gt;&quot;|&lt;sinterface&gt;} {dstip=&lt;daddr&gt; dstport=&lt;dport&gt;|dstip=&lt;daddr&gt;} dstintf={&quot;&lt;dinterface&gt;&quot;|&lt;dinterface&gt;} {poluuid=&lt;id2&gt; sessionid=&lt;sessionid&gt;|sessionid=&lt;sessionid&gt;} {action=&lt;action&gt; user=&quot;&lt;username&gt;&quot; group=&quot;&lt;group&gt;&quot;|action=&lt;action&gt; user=&quot;&lt;username&gt;&quot;|action=&lt;action&gt;} {policyid=&lt;policy_id&gt; dstcountry=&quot;&lt;location_dst&gt;&quot; srccountry=&quot;&lt;location_src&gt;&quot;|policyid=&lt;policy_id&gt;} trandisp=&lt;context&gt; service=&lt;network_service&gt; proto=&lt;fld70&gt; duration=&lt;duration&gt; sentbyte=&lt;sbytes&gt; rcvdbyte=&lt;rbytes&gt; sentpkt=&lt;fld10&gt; {crscore=&lt;reputation_num&gt; craction=&lt;fld37&gt; crlevel=&lt;fld38&gt;|utmaction=&lt;fld12&gt; countapp=&lt;fld13&gt;|utmaction=&lt;fld12&gt; countips=&lt;fld13&gt;|rcvdpkt=&lt;fld11&gt;}" />
+<MESSAGE
+	id1="0000000013:12"
+	id2="0000000013"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;"
+	content="vd=&lt;vsys&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcintf=&quot;&lt;sinterface&gt;&quot;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstintf=&quot;&lt;dinterface&gt;&quot;,{poluuid=&lt;id2&gt;,sessionid=&lt;sessionid&gt;|sessionid=&lt;sessionid&gt;},proto=&lt;fld70&gt;,action=&lt;action&gt;,policyid=&lt;policy_id&gt;,policytype=&lt;fld26&gt;,dstcountry=&quot;&lt;location_dst&gt;&quot;,srccountry=&quot;&lt;location_src&gt;&quot;,{trandisp=&lt;context&gt;,service=&quot;&lt;network_service&gt;&quot;,appid=&lt;fld12&gt;,app=&quot;&lt;obj_name&gt;&quot;,appcat=&quot;&lt;category&gt;&quot;,apprisk=&lt;risk&gt;,applist=&quot;&lt;group_object&gt;&quot;|trandisp=&lt;context&gt;,service=&quot;&lt;network_service&gt;&quot;,appcat=&quot;&lt;category&gt;&quot;,applist=&quot;&lt;group_object&gt;&quot;|trandisp=&lt;context&gt;,service=&quot;&lt;network_service&gt;&quot;},duration=&lt;duration&gt;,sentbyte=&lt;sbytes&gt;,rcvdbyte=&lt;rbytes&gt;,{sentpkt=&lt;fld5&gt;,rcvdpkt=&lt;fld6&gt;|sentpkt=&lt;fld5&gt;},{wanin=&lt;fld7&gt;,wanout=&lt;fld8&gt;,lanin=&lt;fld9&gt;,lanout=&lt;fld10&gt;,utmaction=&lt;disposition&gt;,countapp=&lt;fld4&gt;,crscore=&lt;reputation_num&gt;,craction=&lt;fld37&gt;,crlevel=&lt;fld2&gt;|appcat=&quot;&lt;category&gt;&quot;,crscore=&lt;reputation_num&gt;,craction=&lt;fld37&gt;,crlevel=&lt;fld2&gt;|crscore=&lt;reputation_num&gt;,craction=&lt;fld37&gt;,crlevel=&lt;fld2&gt;|utmaction=&lt;disposition&gt;,countapp=&lt;fld14&gt;|appcat=&quot;&lt;category&gt;&quot;}" />
+
+	
+<MESSAGE
+	id1="0000000013:13"
+	id2="0000000013"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;"
+	content="vd=&lt;vsys&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcintf=&quot;&lt;sinterface&gt;&quot;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstintf=&quot;&lt;dinterface&gt;&quot;,{poluuid=&lt;id2&gt;,sessionid=&lt;sessionid&gt;|sessionid=&lt;sessionid&gt;},proto=&lt;fld70&gt;,action=&lt;action&gt;,policyid=&lt;policy_id&gt;,policytype=&lt;fld26&gt;,dstcountry=&quot;&lt;location_dst&gt;&quot;,srccountry=&quot;&lt;location_src&gt;&quot;,trandisp=&lt;context&gt;,service=&quot;&lt;network_service&gt;&quot;,{appid=&lt;fld12&gt;,app=&quot;&lt;obj_name&gt;&quot;,appcat=&quot;&lt;category&gt;&quot;,apprisk=&lt;risk&gt;,applist=&quot;&lt;group_object&gt;&quot;|appcat=&quot;&lt;category&gt;&quot;,applist=&quot;&lt;group_object&gt;&quot;},duration=&lt;duration&gt;,sentbyte=&lt;sbytes&gt;,rcvdbyte=&lt;rbytes&gt;,sentpkt=&lt;fld5&gt;,rcvdpkt=&lt;fld6&gt;" />
+
+	
 <MESSAGE
 	id1="0000000013:04"
 	id2="0000000013"
@@ -11403,6 +11428,13 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_activity:Deny&gt;&lt;@ec_theme:Communication&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;"
 	content="vd=&lt;vsys&gt; sessionid=&lt;sessionid&gt; epoch=&lt;fld55&gt; eventid=&lt;fld56&gt; srcip=&lt;saddr&gt; dstip=&lt;daddr&gt; srcport=&lt;sport&gt; dstport=&lt;dport&gt; proto=&lt;protocol&gt; srcintf=&lt;sinterface&gt; dstintf=&lt;dinterface&gt; policyid=&lt;policy_id&gt; user=&lt;username&gt; group=&lt;group&gt; profile=&lt;rulename&gt; profiletype=&lt;rule_template&gt; voipproto=&lt;protocol&gt; kind=&lt;fld58&gt; action=&lt;action&gt; status=&lt;event_state&gt; duration=&lt;duration&gt; phone=&lt;fld27&gt;" />
 <MESSAGE
+	id1="0000000011:01"
+	id2="0000000011"
+	eventcategory="1803000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;"
+	content="vd=&lt;vsys&gt;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcintf=&quot;&lt;sinterface&gt;&quot;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstintf=&quot;&lt;dinterface&gt;&quot;,poluuid=&lt;id2&gt;,sessionid=&lt;sessionid&gt;,proto=&lt;fld70&gt;,action=&lt;action&gt;,policyid=&lt;policy_id&gt;,policytype=&lt;fld26&gt;,appcat=&quot;&lt;category&gt;&quot;,crscore=&lt;reputation_num&gt;,craction=&lt;fld37&gt;,crlevel=&lt;fld2&gt;" />
+
+<MESSAGE
 	id1="0000000011"
 	id2="0000000011"
 	eventcategory="1803000000"
@@ -11547,6 +11579,13 @@
 	eventcategory="1802000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@dclass_counter1_string:The total number of packets sent during the session&gt;"
 	content="vd=&lt;vsys&gt; attackid=&lt;sigid&gt; srcip=&lt;saddr&gt; srcport=&lt;sport&gt; srcintf=&quot;&lt;sinterface&gt;&quot; dstip=&lt;daddr&gt; dstport=&lt;dport&gt; dstname=&quot;&lt;dhost&gt;&quot; proto=&lt;fld70&gt; service=&quot;&lt;network_service&gt;&quot; policyid=&lt;policy_id&gt; identidx=&lt;id&gt; sessionid=&lt;sessionid&gt; applist=&quot;&lt;group_object&gt;&quot; apptype=&quot;&lt;obj_type&gt;&quot; app=&quot;&lt;obj_name&gt;&quot; action=&lt;action&gt; count=&lt;dclass_counter1&gt; msg=&quot;&lt;event_description&gt;&quot;" />
+
+<MESSAGE
+	id1="1059028704:19"
+	id2="1059028704"
+	eventcategory="1802000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hserialnum)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hsub_type)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@protocol:*getProtocolName(fld70)&gt;&lt;@id:*HDR(messageid)&gt;"
+	content="vd=&lt;vsys&gt;,appid=&lt;fld7&gt;,user=&quot;&lt;username&gt;&quot;,srcip=&lt;saddr&gt;,srcport=&lt;sport&gt;,srcintf=&quot;&lt;sinterface&gt;&quot;,dstip=&lt;daddr&gt;,dstport=&lt;dport&gt;,dstintf=&quot;&lt;dinterface&gt;&quot;,profiletype=&quot;&lt;rule_template&gt;&quot;,proto=&lt;fld70&gt;,service=&quot;&lt;network_service&gt;&quot;,policyid=&lt;policy_id&gt;,sessionid=&lt;sessionid&gt;,applist=&quot;&lt;group_object&gt;&quot;,appcat=&quot;&lt;category&gt;&quot;,app=&quot;&lt;obj_name&gt;&quot;,{action=&lt;action&gt;,hostname=&quot;&lt;hostname&gt;&quot;,url=&quot;&lt;url&gt;&quot;|action=&lt;action&gt;},msg=&quot;&lt;event_description&gt;&quot;,apprisk=&lt;risk&gt;" />
 
 <MESSAGE
 	id1="1059028704:18"
