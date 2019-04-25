@@ -4,9 +4,9 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="261"
-	checksum="7055918d260fcacd0a2b5d0a8c951ae7"
-	revision="128"
+	xml="265"
+	checksum="b41e12c06293eda92157c9954fd96a20"
+	revision="129"
 	device="2.0" />
 
 
@@ -695,7 +695,7 @@
 	id2="106023"
 	eventcategory="1803000000"
 	functions="&lt;@ec_activity:Deny&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O','%B %F %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@event_description:denied by access-group&gt;"
-	content="Deny &lt;protocol&gt; src &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; dst &lt;dinterface&gt;:&lt;daddr&gt;/{&lt;dport&gt;(&lt;domain&gt;\&lt;username&gt;)|&lt;dport&gt;} by access-group { &quot;&lt;rule_group&gt;&quot; &lt;fld1&gt;|&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;}" />
+	content="Deny &lt;protocol&gt; src &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; dst &lt;dinterface&gt;:&lt;daddr&gt;/{&lt;dport&gt;(&lt;domain&gt;\&lt;username&gt;)|&lt;dport&gt;(&lt;fld2&gt;)|&lt;dport&gt;} by access-group { &quot;&lt;rule_group&gt;&quot; &lt;fld1&gt;|&quot;&lt;rule_group&gt;&quot;|&lt;rule_group&gt;}" />
 <MESSAGE
 	id1="106023:02"
 	id2="106023"
@@ -1949,6 +1949,20 @@
 	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:outbound&gt;&lt;@event_description:build connection&gt;"
 	content="Built outbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;dinterface&gt; :&lt;daddr&gt;/&lt;dport&gt; {(&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;dtransaddr&gt;/&lt;dtransport&gt;)} to {&lt;sinterface&gt;:&lt;fld2&gt;:&lt;saddr&gt;|&lt;sinterface&gt;:&lt;saddr&gt;}/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)" />
 <MESSAGE
+	id1="302013:09"
+	id2="302013"
+	eventcategory="1801020000"
+	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;&lt;@event_description:build connection&gt;"
+	content="Built inbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;domain&gt;\&lt;username&gt;)" />
+
+<MESSAGE
+	id1="302013:08"
+	id2="302013"
+	eventcategory="1801020000"
+	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;&lt;@event_description:build connection&gt;"
+	content="Built inbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)(&lt;fld&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)" />
+
+<MESSAGE
 	id1="302014:03"
 	id2="302014"
 	eventcategory="1801030000"
@@ -1966,7 +1980,14 @@
 	id2="302014"
 	eventcategory="1801030000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
-	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;domain&gt;\&lt;fld3&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;fld20&gt;) duration &lt;duration&gt; bytes &lt;bytes&gt; {&lt;info&gt; (&lt;username&gt;)|&lt;info&gt;}" />
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;domain&gt;\&lt;fld3&gt;) to | &lt;saddr&gt;/&lt;sport&gt;(&lt;fld3&gt;) to |&lt;saddr&gt;/&lt;sport&gt; to} &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;fld20&gt;) duration &lt;duration&gt; bytes &lt;bytes&gt; {&lt;info&gt; (&lt;username&gt;)|&lt;info&gt;}" />
+<MESSAGE
+	id1="302014:05"
+	id2="302014"
+	eventcategory="1801030000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt;(&lt;fld3&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; duration &lt;duration&gt; bytes &lt;bytes&gt; {&lt;info&gt; (&lt;username&gt;)|&lt;info&gt;}" />
+
 <MESSAGE
 	id1="302014"
 	id2="302014"
@@ -1996,7 +2017,7 @@
 	id2="302015"
 	eventcategory="1801020000"
 	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:*PARMVAL(fld1)&gt;&lt;@event_description:build connection&gt;"
-	content="Built &lt;fld1&gt; &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; {(&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;dtransaddr&gt;/&lt;dtransport&gt;)} to {&lt;sinterface&gt;:&lt;fld2&gt;:&lt;saddr&gt;|&lt;sinterface&gt;:&lt;saddr&gt;}/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)" />
+	content="Built &lt;fld1&gt; &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; {(&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;domain&gt;\&lt;username&gt;)|(&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;fld3&gt;)|(&lt;dtransaddr&gt;/&lt;dtransport&gt;)} to {&lt;sinterface&gt;:&lt;fld2&gt;:&lt;saddr&gt;|&lt;sinterface&gt;:&lt;saddr&gt;}/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)" />
 
 <MESSAGE
 	id1="302015:04"
@@ -2012,6 +2033,13 @@
 	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld7&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;) duration &lt;duration&gt; bytes {&lt;bytes&gt; (&lt;username&gt;)|&lt;bytes&gt;}" />
 
 <MESSAGE
+	id1="302016:07"
+	id2="302016"
+	eventcategory="1801030000"
+	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt;(&lt;fld1&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;) duration &lt;duration&gt; {bytes &lt;bytes&gt; (&lt;username&gt;)|bytes &lt;bytes&gt;}" />
+
+<MESSAGE
 	id1="302016:04"
 	id2="302016"
 	eventcategory="1801030000"
@@ -2022,7 +2050,7 @@
 	id2="302016"
 	eventcategory="1801030000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
-	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld5&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:{&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;(&lt;fld20&gt;)} duration &lt;duration&gt; bytes &lt;bytes&gt; { &apos;&lt;username&gt;&apos; | (&lt;username&gt;) }" />
+	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:{&lt;saddr&gt;/&lt;sport&gt;(&lt;sdomain&gt;\&lt;fld5&gt;)|&lt;saddr&gt;/&lt;sport&gt;} to &lt;dinterface&gt;:{&lt;daddr&gt;/&lt;dport&gt;(&lt;ddomain&gt;\&lt;c_username&gt;)|&lt;daddr&gt;/&lt;dport&gt;(&lt;fld20&gt;)} duration &lt;duration&gt; { bytes &lt;bytes&gt; &apos;&lt;username&gt;&apos; | bytes &lt;bytes&gt; (&lt;username&gt;) | bytes &lt;bytes&gt;}" />
 
 <MESSAGE
 	id1="302016"
@@ -7358,19 +7386,20 @@
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="Group &lt;&lt;&lt;group&gt;&gt; User { &lt;&lt;&lt;username&gt;&gt; | &apos;&lt;username&gt;&apos; | &lt;username&gt; } IP &lt;&lt;&lt;hostip&gt;&gt; Secure Desktop Results: &lt;info&gt;" />
 <MESSAGE
+	id1="725001:01"
+	id2="725001"
+	eventcategory="1801000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Starting SSL handshake&gt;"
+	content="Starting SSL handshake with { client | server } &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt;to&lt;daddr&gt;/&lt;dport&gt;for &lt;version&gt; session" />
+
+	
+<MESSAGE
 	id1="725001"
 	id2="725001"
 	eventcategory="1801000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Starting SSL handshake&gt;"
 	content="Starting SSL handshake with { client | server } &lt;interface&gt;:&lt;hostip&gt;/&lt;network_port&gt; for &lt;version&gt; session." />
-<MESSAGE
-	id1="725001:01"
-	id2="725001"
-	eventcategory="1801000000"
-	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:Starting SSL handshake&gt;"
-	content="Starting SSL handshake with client &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt;to&lt;daddr&gt;/&lt;dport&gt;for &lt;version&gt; session" />
 
-	
 <MESSAGE
 	id1="725002"
 	id2="725002"
@@ -7383,6 +7412,14 @@
 	eventcategory="1801000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="SSL client &lt;interface&gt;:&lt;hostip&gt;/&lt;network_port&gt; &lt;action&gt;." />
+
+<MESSAGE
+	id1="725005:01"
+	id2="725005"
+	eventcategory="1304000000"
+	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@event_description:SSL server  requesting certificate for authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+	content="SSL server &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;daddr&gt;/&lt;dport&gt; requesting our device certificate for {authentication.|authentication}" />
+
 <MESSAGE
 	id1="725005"
 	id2="725005"
@@ -7809,6 +7846,13 @@
 	content="&lt;application&gt;: &lt;event_description&gt;" />
 
 <MESSAGE
+	id1="746002"
+	id2="746002"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;"
+	content="&lt;application&gt;: &lt;event_description&gt;" />
+
+<MESSAGE
 	id1="746006"
 	id2="746006"
 	eventcategory="1605000000"
@@ -8151,7 +8195,21 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@id:*HDR(messageid)&gt;"
 	content="Local CA Server certificate enrollment related info for user: &lt;username&gt;. Info: &lt;info&gt;" />
-		
+
+<MESSAGE
+	id1="776251"
+	id2="776251"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:added to binding manager&gt;"
+	content="CTS SGT-MAP: Binding &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;fld1&gt;:&lt;group&gt; from &lt;fld2&gt; added to binding manager." />
+
+<MESSAGE
+	id1="776252"
+	id2="776252"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@event_description:deleted to binding manager&gt;"
+	content="CTS SGT-MAP: Binding &lt;saddr&gt;/&lt;sport&gt;-&gt;&lt;fld1&gt;:&lt;group&gt; from &lt;fld2&gt; deleted from binding manager." />
+
 		
 <MESSAGE
 	id1="429002"
@@ -8190,6 +8248,13 @@
 	content="SFR requested ASA to bypass further packet redirection and process &lt;protocol&gt; flow from &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; locally" />
 
 <MESSAGE
+	id1="199015"
+	id2="199015"
+	eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;saddr&gt; &lt;info&gt;"/>
+
+<MESSAGE
 	id1="199018"
 	id2="199018"
 	eventcategory="1603000000"
@@ -8202,8 +8267,35 @@
     eventcategory="1603000000"
 	functions="&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
     content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;saddr&gt; AP:&lt;access_point&gt;: *&lt;event_time_string&gt;: %DOT11-6-DISASSOC: Interface &lt;interface&gt;, Deauthenticating Station &lt;macaddr&gt;&lt;event_description&gt;"/>
+<MESSAGE
+	id1="199018:02"
+	id2="199018"
+    eventcategory="1801020000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): session opened for user &lt;username&gt; by (uid=&lt;uid&gt;)"/>
 
-               
+<MESSAGE
+	id1="199018:03"
+	id2="199018"
+    eventcategory="1801030000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;agent&gt;[&lt;process_id&gt;]: pam_unix(&lt;service&gt;): session closed for user &lt;username&gt;"/>
+
+<MESSAGE
+	id1="199018:04"
+	id2="199018"
+    eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;agent&gt;[&lt;process_id&gt;]: (&lt;username&gt;) CMD (&lt;action&gt;)"/>
+
+	               
+<MESSAGE
+	id1="199018:05"
+	id2="199018"
+    eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;info&gt;"/>
+
 
 
 <MESSAGE
