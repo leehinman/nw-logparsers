@@ -4,9 +4,9 @@
 	displayname="F5 Big-IP Application Security Manager"
 	group="Application Firewall">
 <VERSION
-	xml="61"
-	checksum="0c26c7b4d10442f2fcec107809c913c9"
-	revision="124"
+	xml="63"
+	checksum="f37089b1c4c1bb7c3359ae4480c4d87e"
+	revision="129"
 	device="2.0" />
 
  
@@ -496,6 +496,15 @@
 	content="&lt;fld33&gt; &lt;event_source&gt;:&lt;fld1&gt;:&lt;fld2&gt;|&lt;fld3&gt;|&lt;fld4&gt;|&lt;version&gt;|&lt;info&gt;|&lt;event_description&gt;|&lt;severity&gt;|dvchost=&lt;hostname&gt; dvc=&lt;hostip&gt; cs1=&lt;policyname&gt; cs1Label=policy_name cs2=&lt;obj_name&gt; cs2Label=&lt;obj_type&gt; deviceCustomDate1=&lt;fld6&gt; deviceCustomDate1Label=policy_apply_date externalId=&lt;operation_id&gt; act=&lt;fld50&gt; cn1=&lt;resultcode&gt; cn1Label=response_code src=&lt;saddr&gt; spt=&lt;sport&gt; dst=&lt;daddr&gt; dpt=&lt;dport&gt; requestMethod=&lt;web_method&gt; app=&lt;network_service&gt; cs5=&lt;fld5&gt; cs5Label=x_forwarded_for_header_value rt=&lt;month&gt; &lt;date&gt; &lt;year&gt; &lt;time&gt; deviceExternalId=&lt;fld10&gt; cs4=&lt;event_type&gt; cs4Label=attack_type cs6=&lt;location_country&gt; {cs6Label=&lt;fld22&gt; c6a1=&lt;fld23&gt; c6a1Label=device_address c6a2=&lt;fld24&gt; c6a2Label=source_address c6a3=&lt;fld35&gt; c6a3Label=destination_address c6a4=&lt;fld25&gt; c6a4Label=&lt;fld26&gt; msg=&lt;msg&gt; suid=&lt;uid&gt; suser=&lt;username&gt; request=&lt;webpage&gt;|cs6Label=&lt;fld22&gt;} cs3Label=full_request cs3=&lt;context&gt;" />
 
 <MESSAGE 
+	id1="HEAD:01" 
+	id2="HEAD" 
+	missField="true"
+	tagval="true"
+	eventcategory="1607000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%T:%S',event_time_string)&gt;&lt;@info:*HDR(hfld16)&gt;&lt;@sigid:*PARMVAL(info)&gt;&lt;@event_description:*HDR(hfld17)&gt;&lt;@signame:*PARMVAL(event_description)&gt;&lt;@version:*HDR(hversion)&gt;"
+	content="dvchost=&lt;hostname&gt; dvc=&lt;hostip&gt; cs1=&lt;policyname&gt; cs1Label=policy_name cs2=&lt;obj_name&gt; cs2Label=&lt;obj_type&gt; deviceCustomDate1=&lt;fld6&gt; deviceCustomDate1Label=policy_apply_date externalId=&lt;operation_id&gt; act=&lt;action&gt; cn1=&lt;resultcode&gt; cn1Label=response_code src=&lt;saddr&gt; spt=&lt;sport&gt; dst=&lt;daddr&gt; dpt=&lt;dport&gt; requestMethod=&lt;web_method&gt; app=&lt;network_service&gt; cs5=&lt;fld5&gt; cs5Label=x_forwarded_for_header_value rt=&lt;event_time_string&gt; deviceExternalId=&lt;fld10&gt; cs4=&lt;event_type&gt; cs4Label=attack_type cs6=&lt;location_country&gt; cs6Label=&lt;fld22&gt; c6a1=&lt;fld23&gt; c6a1Label=device_address c6a2=&lt;fld24&gt; c6a2Label=source_address c6a3=&lt;fld35&gt; c6a3Label=destination_address c6a4=&lt;fld25&gt; c6a4Label=&lt;fld26&gt; msg=&lt;msg&gt; suid=&lt;uid&gt; suser=&lt;username&gt; request=&lt;webpage&gt; cn2=&lt;dclass_counter2&gt; cn2Label=&lt;dclass_counter2_string&gt; cn3=&lt;dclass_counter3&gt; cn3Label=&lt;dclass_counter3_string&gt;" />
+
+<MESSAGE 
 	id1="RPC_OUT_DATA" 
 	id2="RPC_OUT_DATA" 
 	eventcategory="1607000000"
@@ -536,6 +545,15 @@
 	eventcategory="1001000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld33&gt; &lt;event_source&gt;:&lt;fld1&gt;:&lt;fld2&gt;|&lt;fld3&gt;|&lt;fld4&gt;|&lt;version&gt;|&lt;info&gt;|&lt;event_description&gt;|&lt;severity&gt;|dvchost=&lt;hostname&gt; dvc=&lt;hostip&gt; cs1=&lt;policyname&gt; cs1Label=policy_name cs2=&lt;obj_name&gt; cs2Label=&lt;obj_type&gt; deviceCustomDate1=&lt;fld6&gt; deviceCustomDate1Label=policy_apply_date act=&lt;action&gt; cn3=&lt;operation_id&gt; cn3Label=attack_id cs3=&lt;context&gt; cs3Label=attack_status cn4=&lt;dclass_counter3&gt; cn4Label=&lt;dclass_counter3_string&gt; cn5=&lt;fld7&gt; cn5label=&lt;fld8&gt; c6a1=&lt;fld9&gt; c6a1Label=&lt;fld10&gt;" />
+
+<MESSAGE 
+	id1="attack:05" 
+	id2="attack"
+	missField="true"
+	tagval="true"
+	eventcategory="1001000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%T:%S',fld6)&gt;&lt;@info:*HDR(hfld16)&gt;&lt;@event_description:*HDR(hfld17)&gt;&lt;@version:*HDR(hversion)&gt;"
+	content="dvchost=&lt;hostname&gt; dvc=&lt;hostip&gt; cs1=&lt;policyname&gt; cs1Label=policy_name cs2=&lt;obj_name&gt; cs2Label=&lt;obj_type&gt; deviceCustomDate1=&lt;fld6&gt; deviceCustomDate1Label=policy_apply_date act=&lt;action&gt; cn3=&lt;operation_id&gt; cn3Label=attack_id cs3=&lt;context&gt; cs3Label=attack_status cn4=&lt;dclass_counter3&gt; cn4Label=&lt;dclass_counter3_string&gt; cn5=&lt;fld7&gt; cn5Label=&lt;fld8&gt; c6a1=&lt;fld9&gt; c6a1Label=&lt;fld10&gt;" />
 
 
 <MESSAGE 
