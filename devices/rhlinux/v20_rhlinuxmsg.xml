@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="369"
-	checksum="236ff82d7702171797dae0956a8cc60c"
-	revision="129"
+	xml="371"
+	checksum="6a30abca4cbae5cbac661f0297b24dec"
+	revision="130"
 	device="2.0" />
 
 
@@ -497,7 +497,13 @@
 	id1="0077"
 	id2="0077"
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;hfld3&gt; &lt;hfld1&gt; local&lt;hfld2&gt;.info] &lt;messageid&gt;. &lt;!payload:hhost&gt;" />
+<HEADER
+	id1="0055"
+	id2="0055"
+	messageid="STRCAT('cp_radius_helper')"
+	content="&lt;hostname&gt; cp_radius_helper_&lt;hfld1&gt;: &lt;!payload&gt;" />
 
+	
 <VALUEMAP
 		name="ecSubUserGroup"
 		default="$NONE"
@@ -27001,5 +27007,12 @@
 	eventcategory="1605010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Removing&gt;"
     content="&lt;agent&gt;[&lt;process_id&gt;]: Removing &lt;filename&gt;" /> 
+
+<MESSAGE
+	id1="cp_radius_helper"
+	id2="cp_radius_helper"
+	eventcategory="1402020300"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:given role to user&gt;"
+    content="Non-local user '&lt;username&gt;' given role '&lt;user_role&gt;'" /> 
 
 </DEVICEMESSAGES>
