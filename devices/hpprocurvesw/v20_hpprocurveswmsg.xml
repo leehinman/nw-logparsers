@@ -4,9 +4,9 @@
 	displayname="HP ProCurve Switch"
 	group="Switch">
 <VERSION
-	xml="8"
-	checksum="e39d3309b48d36f8d9ea4b48da0b51ad"
-	revision="0"
+	xml="10"
+	checksum="a5dc6e657694cab54afc15ee0ef91b74"
+	revision="129"
 	device="2.0" />
 
 <HEADER 
@@ -20,7 +20,11 @@
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostip&gt; &lt;hfld1&gt; &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
   
   
-  
+<HEADER
+	id1="0003"
+	id2="0003"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;year&gt; &lt;hhost&gt; {%%10&lt;messageid&gt;|&lt;messageid&gt;}/&lt;hseverity&gt;/&lt;hfld2&gt;:&lt;!payload&gt;"/>
+	
 <MESSAGE 
 	id1="000001"
 	id2="auth"
@@ -167,4 +171,16 @@
 	eventcategory="1603090000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*HDR(hostip)&gt;"
 	content=" ssh:  read error &lt;result&gt;" />
+<MESSAGE
+	id1="SHELL"
+	id2="SHELL"
+	eventcategory="1401030000"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_source:*HDR(hhost)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_description:User failed to log in&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',month,day,time,year)&gt;"
+	content="&lt;protocol&gt; {user failed to log in | user &lt;username&gt; failed to log in} from {&lt;saddr&gt;(&lt;fld3&gt;) | &lt;saddr&gt;} on {&lt;terminal&gt; due to&lt;disposition&gt; | &lt;terminal&gt; &lt;info&gt; | &lt;terminal&gt;}"/>
+<MESSAGE
+	id1="DRVDBG"
+	id2="DRVDBG"
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_source:*HDR(hhost)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',month,day,time,year)&gt;"
+	content="&lt;event_description&gt;"/>
 </DEVICEMESSAGES>
