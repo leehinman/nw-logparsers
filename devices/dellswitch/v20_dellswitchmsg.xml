@@ -4,16 +4,24 @@
 	displayname="Dell PowerSwitch"
 	group="Switch">
 <VERSION 
-	xml="3"
-	checksum="0fd3f76181f24de9bbf4e42b466fa6d4"
-	revision="0"
+	xml="6"
+	checksum="9630502d41bac3dd096d86d74a1c8cf4"
+	revision="129"
 	device="2.0" />
 
+<VARTYPE name="month" regex="Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" ignorecase="true" />
+<VARTYPE name="day" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
+<VARTYPE name="time" regex="\d{2}:\d{2}:\d{2}" />
 <HEADER 
 	id1="0001" 
 	id2="0001" 
 	messageid="STRCAT(msgIdPart1,&apos;_&apos;,msgIdPart2)" 
 	content="%&lt;msgIdPart1&gt;-&lt;hlevel&gt;-&lt;msgIdPart2&gt;: &lt;!payload:msgIdPart1&gt;" />
+
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; &lt;messageid&gt;[&lt;hprocessid&gt;]: &lt;hfilename&gt;(&lt;hfld1&gt;) &lt;hfld2&gt; %% &lt;!payload:messageid&gt;" /> 
 
 <VALUEMAP 
 		name="convertSeverity"
@@ -80,4 +88,60 @@
 	eventcategory="1603110000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@severity:*convertSeverity(severity)&gt;"
 	content=" &lt;service&gt;-&lt;severity&gt;-&lt;fld23&gt;: An error message was received: &lt;resultcode&gt; &lt;result&gt;" />
+<MESSAGE 
+	id1="TRAPMGR:01" 
+	id2="TRAPMGR" 
+	eventcategory="1301000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:An invalid user tried to login through CLI&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% An invalid user tried to login through CLI from &lt;saddr&gt;" /> 
+
+<MESSAGE 
+	id1="TRAPMGR:02" 
+	id2="TRAPMGR" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% {Failed User Login with User ID|Failed User Login: Unit: &lt;fld4&gt; User ID}: &lt;username&gt;" /> 
+
+<MESSAGE 
+	id1="TRAPMGR" 
+	id2="TRAPMGR" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% &lt;info&gt;" /> 
+
+<MESSAGE 
+	id1="UNKN" 
+	id2="UNKN" 
+	eventcategory="1605000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"	
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% &lt;info&gt;" />
+
+<MESSAGE 
+	id1="USER_MGR" 
+	id2="USER_MGR" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% User &lt;username&gt; Failed to login because of authentication failures" />
+
+<MESSAGE 
+	id1="CLI_WEB:01" 
+	id2="CLI_WEB" 
+	eventcategory="1401030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% [CLI:&lt;web_method&gt; / &lt;protocol&gt;/&lt;version&gt;:&lt;saddr&gt;] User login authentication failed" />
+
+<MESSAGE 
+	id1="CLI_WEB" 
+	id2="CLI_WEB" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% &lt;info&gt;" />
+
+<MESSAGE 
+	id1="DNS_CLIEN" 
+	id2="DNS_CLIEN" 
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;filename&gt;(&lt;fld2&gt;) &lt;fld3&gt; %% &lt;info&gt;" />
+
 </DEVICEMESSAGES>
