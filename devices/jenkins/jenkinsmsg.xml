@@ -4,13 +4,11 @@
 	displayname="Jenkins"
 	group="Application Servers">
 <VERSION
-	xml="6"
-	checksum="dbe1422d9ad996cdff999d9868f2fab2"
-	revision="0"
+	xml="9"
+	checksum="1f5f37dd3c37484d1dcec48845fb4e7f"
+	revision="130"
 	device="2.0" />
-	
-
- 
+  
 <HEADER 
 	id1="0001" 
 	id2="0001"  
@@ -23,109 +21,177 @@
 	id1="system"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@ec_subject:OS&gt;&lt;@ec_activity:Disable&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Shutting down&gt;"
+	functions="&lt;@ec_subject:OS&gt;&lt;@ec_activity:Disable&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Shutting down&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: JVM is terminating. Shutting down &lt;fld7&gt;" />
 <MESSAGE
 	id1="system:01"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Send&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: Jenkins configured to output log messages to syslog server &lt;daddr&gt;:&lt;dport&gt;" />
 <MESSAGE
 	id1="system:02"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Started SSHD&gt;"
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Started SSHD&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: Started SSHD at port &lt;dport&gt;" />
 <MESSAGE
 	id1="system:03"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Completed initialization&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Completed initialization&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: Completed initialization" />
 <MESSAGE
 	id1="system:04"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Request&gt;&lt;@ec_theme:Communication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Attempting to reconnect&gt;"
+	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Request&gt;&lt;@ec_theme:Communication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Attempting to reconnect&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: Attempting to reconnect &lt;node&gt;" />
 <MESSAGE
 	id1="system:05"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@ec_subject:OS&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Jenkins is fully up and running&gt;"
+	functions="&lt;@ec_subject:OS&gt;&lt;@ec_activity:Start&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:Jenkins is fully up and running&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: Jenkins is fully up and running" />
 <MESSAGE
 	id1="system:06"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:main build action completed&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:main build action completed&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;fld5&gt;: &lt;obj_name&gt;#&lt;version&gt; main build action completed: &lt;disposition&gt;" />
 <MESSAGE
 	id1="system:07"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;event_type&gt;: &lt;severity&gt; [&lt;event_description&gt;] &lt;obj_name&gt;: &lt;info&gt;" />
 <MESSAGE
 	id1="system:08"
 	id2="system"
 	eventcategory="1701010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;event_type&gt;: &lt;fld3&gt;" />
 <MESSAGE
 	id1="audit"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:login&gt;"
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:login&gt;"
 	content="&lt;event_type&gt;: /login by &lt;username&gt;" />
 <MESSAGE
 	id1="audit:01"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:configure&gt;"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:configure&gt;"
 	content="&lt;event_type&gt;: &lt;info&gt;/configure by &lt;username&gt;" />
 <MESSAGE
 	id1="audit:02"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:createItem&gt;"
+	functions="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:createItem&gt;"
 	content="&lt;event_type&gt;: &lt;info&gt;/createItem by &lt;username&gt;" />
 <MESSAGE
 	id1="audit:03"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:configSubmit&gt;"
+	functions="&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:configSubmit&gt;"
 	content="&lt;event_type&gt;: &lt;info&gt;/configSubmit by &lt;username&gt;" />
 <MESSAGE
 	id1="audit:04"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:doDelete&gt;"
+	functions="&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:doDelete&gt;"
 	content="&lt;event_type&gt;: &lt;info&gt;/doDelete by &lt;username&gt;" />
+<MESSAGE
+	id1="audit:09"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by user,Started by upstream project&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by user &lt;username&gt;, Started by upstream project &quot;&lt;process_src&gt;&quot; build number {&lt;jobnum&gt; on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | &lt;jobnum&gt;}" />
+<MESSAGE
+	id1="audit:18"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by upstream project,Started by user&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by upstream project &quot;&lt;process_src&gt;&quot; build number &lt;jobnum&gt;,{Started by user &lt;username&gt; on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | Started by user &lt;username&gt;}" />
+	
+<MESSAGE
+	id1="audit:19"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by user,Restarted from build,Trigger Prod Group Regression Jobs&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by user &lt;username&gt;, Restarted from build #&lt;jobnum&gt;, stage Trigger Prod &lt;group&gt; Regression Jobs" />
+<MESSAGE
+	id1="audit:10"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by remote host,Started by user&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by remote host &lt;dhost&gt;, Started by user {&lt;username&gt;, Rebuilds build #&lt;jobnum&gt;,&lt;fld3&gt; | &lt;username&gt;} on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt;" />
+	
+<MESSAGE
+	id1="audit:11"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by remote host,Started by user&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by remote host &lt;dhost&gt;, Started by user {&lt;username&gt;, Rebuilds build #&lt;jobnum&gt;,&lt;fld3&gt; | &lt;username&gt;}" />
+	
 <MESSAGE
 	id1="audit:05"
 	id2="audit"
-	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
-	content="&lt;event_type&gt;: &lt;info&gt; Started by user &lt;username&gt; on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt;" />
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by user&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by user {&lt;username&gt;, Rebuilds build #&lt;jobnum&gt;,&lt;fld3&gt; | &lt;username&gt;} on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt;" />
+<MESSAGE
+	id1="audit:12"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by user&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by user {&lt;username&gt;, Rebuilds build #&lt;jobnum&gt;,&lt;fld3&gt; | &lt;username&gt;}" />
+<MESSAGE
+	id1="audit:13"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by upstream project&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by upstream project &quot;&lt;process_src&gt;&quot; build number{&lt;jobnum&gt; on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | &lt;jobnum&gt;}" />
+<MESSAGE
+	id1="audit:14"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by timer&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; {Started by timer on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | Started by timer}" />
+<MESSAGE
+	id1="audit:15"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by an SCM change&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; {Started by an SCM change on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | Started by an SCM change}" />
+<MESSAGE
+	id1="audit:16"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:Started by remote host&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; Started by remote host {&lt;dhost&gt; on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | &lt;dhost&gt;}" />
+<MESSAGE
+	id1="audit:17"
+	id2="audit"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@trigger_desc:The execution script returns the expected exit code&gt;"
+	content="&lt;event_type&gt;: &lt;info&gt; [&lt;event_description&gt;] The execution script returns the expected exit code {(&lt;result&gt;) on node &lt;node&gt; started at &lt;event_time_string&gt; completed in &lt;duration_string&gt; completed: &lt;disposition&gt; | (&lt;result&gt;)}" />
 <MESSAGE
 	id1="audit:06"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:stop&gt;"
+	functions="&lt;@ec_activity:Stop&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:stop&gt;"
 	content="&lt;event_type&gt;: &lt;info&gt;/stop by &lt;username&gt;" />
 <MESSAGE
 	id1="audit:07"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:doCreateItem&gt;"
+	functions="&lt;@ec_activity:Create&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@action:doCreateItem&gt;"
 	content="&lt;event_type&gt;: &lt;info&gt;/doCreateItem by &lt;username&gt;" />
- 
 <MESSAGE
 	id1="audit:08"
 	id2="audit"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O',hmonth,hdate,htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;event_type&gt;: &lt;fld3&gt;" />
 </DEVICEMESSAGES>
