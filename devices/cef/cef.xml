@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="2"
+	xml="4"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="129"
+	revision="130"
     device="2.0" />
 	
 
@@ -423,7 +423,9 @@
 		<ExtensionKey cefName="oldFileSize" metaName="cn_oldfilesize"/>
 		<ExtensionKey cefName="oldFileType" metaName="cs_oldfiletype"/>
 		<ExtensionKey cefName="out" metaName="sbytes"/>
-		<ExtensionKey cefName="outcome" metaName="result"/>
+		<ExtensionKey cefName="outcome" metaName="result">
+			<device2meta device="msoffice365" metaName="disposition"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="proto" metaName="protocol">
 			<device2meta device="rsaflow" metaName="ip_proto"/>
 			<device2meta device="checkpointfw1" metaName="ip_proto"/>
@@ -826,7 +828,7 @@
 		<ExtensionKey cefName="id" metaName="cs_fld">
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
 			<device2meta device="vmwareappdefense" metaName="id"/>
-			<device2meta device="office365audit" metaName="id"/>
+			<device2meta device="msoffice365" metaName="id"/>
 			<device2meta device="NetskopeCloudSecurityPlatform" metaName="id"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="signinDateTimeInMillis" metaName="event_time_string"/>
@@ -964,6 +966,7 @@
 		<ExtensionKey cefName="nw.recipient_0" metaName="to"/>
 		<ExtensionKey cefName="nw.recipient_1" metaName="to"/>
 		<ExtensionKey cefName="nw.recipient_2" metaName="to"/>
+		<ExtensionKey cefName="LogonError" metaName="result"/>
 
 		
 		<ExtensionKey cefName="method_name" metaName="context"/>
@@ -1395,15 +1398,42 @@
 		
 		<ExtensionKey cefName="id.time" metaName="param_event_time"/>
 		<ExtensionKey cefName="id.uniqueQualifier" metaName="id"/>
-		<ExtensionKey cefName="id.applicationName" metaName="cs_fld"/>
-		<ExtensionKey cefName="actor.email" metaName="user.id"/>
-		<ExtensionKey cefName="ipAddress" metaName="alias.ip"/>
+		<ExtensionKey cefName="id.applicationName" metaName="category"/>
+		<ExtensionKey cefName="actor.email" metaName="username"/>
 		<ExtensionKey cefName="USER_EMAIL" metaName="email"/>
-		<ExtensionKey cefName="actor.profileId" metaName="cs_fld"/>
 		<ExtensionKey cefName="scope_0" metaName="cs_fld"/>
 		<ExtensionKey cefName="scope_1" metaName="cs_fld"/>
-		<ExtensionKey cefName="app_name" metaName="server"/>
-		<ExtensionKey cefName="login_type" metaName="logon.type.desc"/>
+		<ExtensionKey cefName="app_name" metaName="application"/>
+		<ExtensionKey cefName="ROLE_NAME" metaName="user_role"/>
+		<ExtensionKey cefName="ipAddress" metaName="stransaddr"/>
+		<ExtensionKey cefName="GROUP_EMAIL" metaName="email"/>
+		<ExtensionKey cefName="DOMAIN_NAME" metaName="domain"/>
+		<ExtensionKey cefName="API_CLIENT_NAME" metaName="cs_fld"/>
+		<ExtensionKey cefName="API_SCOPES" metaName="cs_fld"/>
+		<ExtensionKey cefName="actor.profileId" metaName="user.id"/>
+		<ExtensionKey cefName="CERTIFICATE_NAME" metaName="cert_common"/>
+		<ExtensionKey cefName="ORG_UNIT_NAME" metaName="user_org"/>
+		<ExtensionKey cefName="SERVICE_NAME" metaName="service.name"/>
+		<ExtensionKey cefName="DESTINATION_USER_EMAIL" metaName="to"/>
+		<ExtensionKey cefName="APPLICATION_NAME" metaName="application"/>
+		<ExtensionKey cefName="is_suspicious" metaName="cs_fld"/>
+		<ExtensionKey cefName="login_type" metaName="logon_type"/>
+		<ExtensionKey cefName="login_challenge_method_0" metaName="authmethod"/>
+		<ExtensionKey cefName="login_challenge_status" metaName="disposition"/>
+		<ExtensionKey cefName="user_agent" metaName="user_agent"/>
+		<ExtensionKey cefName="ownerDomain" metaName="domain"/>
+		<ExtensionKey cefName="recipient_email" metaName="to"/>
+		<ExtensionKey cefName="notification_message_id" metaName="cs_fld"/>
+		<ExtensionKey cefName="notification_type" metaName="subject"/>
+		<ExtensionKey cefName="event_id" metaName="cs_fld"/>
+		<ExtensionKey cefName="start_time" metaName="cs_fld"/>
+		<ExtensionKey cefName="end_time" metaName="cs_fld"/>
+		<ExtensionKey cefName="access_level" metaName="accesses"/>
+		<ExtensionKey cefName="grantee_email" metaName="cs_fld"/>
+		<ExtensionKey cefName="calendar_timezone" metaName="timezone"/>
+		<ExtensionKey cefName="event_response_status" metaName="result"/>
+		<ExtensionKey cefName="acl_permission" metaName="permissions"/>
+
 		
 		<ExtensionKey cefName="cloud_ioc.short_description" metaName="event_description"/>
 		<ExtensionKey cefName="computer.connector_guid" metaName="agent.id"/>
