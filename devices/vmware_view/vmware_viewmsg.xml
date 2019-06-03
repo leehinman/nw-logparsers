@@ -4,9 +4,9 @@
 	displayname="VMware View"
 	group="Virtualization">
 <VERSION 
-	xml="27" 
-	checksum="d2d37f4f04b831eefb75ecdda81513f8" 
-	revision="119" 
+	xml="28" 
+	checksum="e279e8e68ad7cfe258b23f50468d6f01" 
+	revision="130" 
 	device="2.0" />
 
 <TAGVALMAP
@@ -3495,7 +3495,14 @@
 	id2="BROKER_USER_AUTHFAILED_BAD_USER_PASSWORD"
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="Severity=&quot;&lt;severity&gt;&quot; Module=&quot;&lt;fld2&gt;&quot; EventType=&quot;&lt;event_type&gt;&quot; UserDisplayName=&quot;&lt;fld7&gt;&quot; ClientIpAddress=&quot;&lt;fld9&gt;&quot;] &lt;fld13&gt;" />
+	content="Severity=&quot;&lt;severity&gt;&quot; Module=&quot;&lt;fld2&gt;&quot; EventType=&quot;&lt;event_type&gt;&quot; {UserDisplayName=&quot;&lt;domain&gt;\\&lt;username&gt;&quot;|UserDisplayName=&quot;&lt;username&gt;&quot;} ClientIpAddress=&quot;&lt;saddr&gt;&quot;] &lt;info&gt;" />
+<MESSAGE
+	id1="BROKER_USER_AUTHFAILED_RADIUS_ACCESS_DENIED:01"
+	id2="BROKER_USER_AUTHFAILED_RADIUS_ACCESS_DENIED"
+	eventcategory="1612010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="Severity=&quot;&lt;severity&gt;&quot; Module=&quot;&lt;fld2&gt;&quot; EventType=&quot;&lt;event_type&gt;&quot; UserDisplayName=&quot;&lt;username&gt;&quot;] &lt;info&gt;" />
+
 <MESSAGE
 	id1="BROKER_USER_AUTHFAILED_PASSWORD_EXPIRED:01"
 	id2="BROKER_USER_AUTHFAILED_PASSWORD_EXPIRED"
