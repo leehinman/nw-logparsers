@@ -4,9 +4,9 @@
 	displayname="Sophos Enterprise Console"
 	group="Anti Virus">
 <VERSION 
-	xml="75"
-	checksum="f7711b70e5377400bae38e1d5f612294"
-	revision="126"
+	xml="76"
+	checksum="34de31193bda1f458f0ceb4a7eb1282e"
+	revision="130"
 	device="2.0" />
 <TAGVALMAP
     delimiter="^^" />
@@ -24,7 +24,16 @@
 	id2="0003"  
 	messageid="STRCAT('SOPHOSES_TVM')"
 	content="%sophosestvm: &lt;id1&gt;^^&lt;!payload&gt;" />
-	
+<HEADER 
+	id1="0004" 
+	id2="0004"  
+	messageid="STRCAT('SOPHOSES_TVM')"
+	content="%sophoses: EventID=&lt;id1&gt;^^&lt;!payload&gt;" />
+<HEADER 
+	id1="0005" 
+	id2="0005"  
+	messageid="STRCAT('SOPHOSES_TVM')"
+	content="%sophoses: ThreatID=&lt;id1&gt;^^&lt;!payload&gt;" />	
 <VALUEMAP 
 		name ="threat_type"
 		default="undefined"
@@ -127,7 +136,7 @@
     eventcategory="1001000000" 
 	missField="true"
 	tagval="true"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U%Q',fld1)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%B %F %W %N:%U%Q',fld4)&gt;"
-    content="ComputerID=&lt;agent.id&gt;^^EventTime=&lt;fld1&gt;^^AlertType=&lt;threat_name&gt;^^UserName=&lt;username&gt;^^FamilyID=&lt;id2&gt;^^Thumbprint=&lt;fld2&gt;^^ProcessName=&lt;process&gt;^^FileVersion=&lt;version&gt;^^FilePath=&lt;directory&gt;^^Pid=&lt;process_id&gt;^^Status=&lt;disposition&gt;^^InsertedAt=&lt;fld4&gt;" />
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U%Q','%W-%G-%F %Z',fld1)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%B %F %W %N:%U%Q','%W-%G-%F %Z',fld4)&gt;"
+    content="ComputerID=&lt;agent.id&gt;^^EventTime=&lt;fld1&gt;^^AlertType=&lt;threat_name&gt;^^UserName=&lt;username&gt;^^FamilyID=&lt;id2&gt;^^Thumbprint=&lt;fld2&gt;^^ProcessName=&lt;process&gt;^^FileVersion=&lt;version&gt;^^FilePath=&lt;directory&gt;^^Pid=&lt;process_id&gt;^^Status=&lt;disposition&gt;^^InsertedAt=&lt;fld4&gt;^^ComputerName=&lt;hostname&gt;^^EventTypeID=&lt;id2&gt;^^EventTypeName=&lt;event_type&gt;^^Name=&lt;hostname&gt;^^ReportingName=&lt;fld47&gt;^^ActionID=&lt;fld46&gt;^^ActionName=&lt;action&gt;^^ScanTypeID=&lt;fld45&gt;^^ScanTypeName=&lt;context&gt;^^SubTypeID=&lt;fld44&gt;^^SubTypeName=&lt;fld43&gt;^^ThreatTypeID=&lt;id2&gt;^^ThreatTypeName=&lt;category&gt;^^ThreatSubTypeID=&lt;fld42&gt;^^ThreatSubTypeName=&lt;fld41&gt;^^Priority=&lt;fld40&gt;^^ThreatName=&lt;threat_name&gt;^^FullFilePath=&lt;directory&gt;^^CheckSum=&lt;checksum&gt;^^FirstDetectedAt=&lt;fld50&gt;^^ActionTakenName=&lt;action&gt;" />
 
 </DEVICEMESSAGES>
