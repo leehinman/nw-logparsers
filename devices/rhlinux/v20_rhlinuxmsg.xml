@@ -11,8 +11,8 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="371"
-	checksum="6a30abca4cbae5cbac661f0297b24dec"
+	xml="373"
+	checksum="aea032e56269c01e7dfc34f064caf589"
 	revision="130"
 	device="2.0" />
 
@@ -19611,7 +19611,14 @@
 	id2="sshd"
 	eventcategory="1801030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@result:Connection closed&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: Connection closed by &lt;saddr&gt; port &lt;sport&gt; [&lt;fld1&gt; ]" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Connection closed {by invalid user &lt;username&gt;|by authenticating user &lt;username&gt;|by} &lt;saddr&gt; port &lt;sport&gt; [&lt;fld1&gt; ]" />
+
+<MESSAGE
+	id1="sshd:03"
+	id2="sshd"
+	eventcategory="1801030000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@result:Disconnected&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Disconnected from {authenticating user|user} &lt;username&gt;{&lt;saddr&gt; port&lt;sport&gt;[&lt;fld1&gt;]|&lt;saddr&gt; port&lt;sport&gt;|&lt;saddr&gt;}"/>
 
 <MESSAGE
 	id1="sshd:02"
