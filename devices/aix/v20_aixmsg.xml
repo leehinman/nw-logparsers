@@ -4,9 +4,9 @@
 	displayname="UNIX AIX"
 	group="Unix">
 <VERSION
-	xml="135"
-	checksum="338e960b5b34f1a56d59497902fe0624"
-	revision="127"
+	xml="136"
+	checksum="135d240803031d801f9bf0961d9957e2"
+	revision="130"
 	device="2.0" />
 
 <VALUEMAP
@@ -8140,6 +8140,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: reverse mapping checking getaddrinfo for &lt;fqdn&gt; { [&lt;saddr&gt;] | &lt;space&gt; } failed - &lt;info&gt; " />
 
 <MESSAGE
+	id1="sshd:01"
+	id2="sshd"
+	eventcategory="1801030000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:closed connection&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: Connection closed {by invalid user &lt;username&gt;|by authenticating user &lt;username&gt;|by} &lt;saddr&gt; port &lt;sport&gt; [&lt;fld1&gt; ]" />
+
+<MESSAGE
 	id1="00003"
 	id2="sshd"
 	eventcategory="1801030000"
@@ -8878,6 +8885,13 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content=" { &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } { PAM: &lt;application&gt;: | &lt;application&gt;: } &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="sshd"
+	id2="sshd"
+	eventcategory="1801030000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@result:Disconnected&gt;"
+	 content="&lt;agent&gt;[&lt;process_id&gt;]: Disconnected from {authenticating user|user} &lt;username&gt;{&lt;saddr&gt; port&lt;sport&gt;[&lt;fld1&gt;]|&lt;saddr&gt; port&lt;sport&gt;|&lt;saddr&gt;}"/>
 
 <MESSAGE
 	id1="00003:0100"
