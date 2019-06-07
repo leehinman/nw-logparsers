@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="78"
-		checksum="90dc81bc5fab79891d0a6d0c26d3d138"
-		revision="128"
+		xml="79"
+		checksum="f417e31f851bacb09c27d8468fd8555f"
+		revision="130"
 		device="2.0" />
 	
 <HEADER
@@ -511,8 +511,8 @@
 <MESSAGE
 	id1="named:25"
 	id2="named"
-	eventcategory="1605000000"
-	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:DNS format error&gt;"
+	eventcategory="1801010000"
+	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_description:DNS format error&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="DNS format error from &lt;saddr&gt;#&lt;sport&gt; resolving &lt;domain&gt; for client &lt;daddr&gt;#&lt;dport&gt;: &lt;result&gt;" />
 
 <MESSAGE
@@ -523,11 +523,39 @@
 	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;: &lt;severity&gt;: client {&lt;fld9&gt; &lt;saddr&gt;#| &lt;saddr&gt;#}&lt;sport&gt; (#&lt;fld5&gt;): query: &lt;domain&gt; &lt;fld4&gt; (&lt;daddr&gt;)" />
 
 <MESSAGE
+	id1="named:72"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="client &lt;saddr&gt;#&lt;sport&gt; (&lt;fld1&gt;): {view&lt;fld3&gt;: query:|query:} &lt;domain&gt; &lt;info&gt; (&lt;daddr&gt;)" />
+
+<MESSAGE
 	id1="named:28"
 	id2="named"
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
 	content="  &lt;action&gt; (&lt;saddr&gt;#&lt;sport&gt;) &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="named:71"
+	id2="named"
+	eventcategory="1801010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="transfer of &apos;&lt;zone&gt;&apos; from &lt;saddr&gt;#&lt;sport&gt;: {failed to connect: &lt;result&gt;|failed while receiving responses: &lt;result&gt;}" />
+
+<MESSAGE
+	id1="named:70"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="transfer of &apos;&lt;zone&gt;&apos; from &lt;saddr&gt;#&lt;sport&gt;: {connected using &lt;daddr&gt;#&lt;dport&gt;|&lt;event_description&gt;}" />
+
+<MESSAGE
+	id1="named:40"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content=" &lt;fld1&gt; client &lt;saddr&gt;#&lt;sport&gt;: {view &lt;fld2&gt;: &lt;protocol&gt;|&lt;protocol&gt;}: query: &lt;domain&gt; &lt;info&gt; response:&lt;result&gt;  &lt;fld10&gt;" />
 
 <MESSAGE
 	id1="named:04"
@@ -574,29 +602,29 @@
 <MESSAGE
 	id1="named:06"
 	id2="named"
-	eventcategory="1603000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
-	content="  zone &lt;zone&gt;: &lt;event_description&gt; " />
-	
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content="  {zone_&lt;fld1&gt;|zone &lt;zone&gt;}: &lt;event_description&gt; " />
+
 <MESSAGE
 	id1="named:20"
 	id2="named"
 	eventcategory="1605000000"
-	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
+	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="REFUSED unexpected RCODE resolving &apos;&lt;saddr&gt;.in-addr.arpa/&lt;event_description&gt;/IN&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
 
 <MESSAGE
 	id1="named:49"
 	id2="named"
 	eventcategory="1901000000"
-	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;"
+	functions="&lt;@ec_activity:Request&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Refused&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="REFUSED unexpected RCODE resolving &apos;&lt;zone&gt;&apos;: &lt;daddr&gt;#&lt;dport&gt;" />
 
 <MESSAGE
 	id1="named:24"
 	id2="named"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@action:Denied&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="client &lt;saddr&gt;#&lt;sport&gt; {(&lt;domain&gt;): &lt;fld2&gt;: zone transfer|(&lt;domain&gt;): zone transfer} &apos;&lt;zone&gt;&apos; &lt;action&gt;" />
 
 <MESSAGE
@@ -660,7 +688,7 @@
 	id1="named:43"
 	id2="named"
 	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content=" client &lt;saddr&gt;#&lt;sport&gt; (&lt;domain&gt;): query (&lt;fld3&gt;) &apos;&lt;fld4&gt;&apos; &lt;result&gt;" />
 
 
@@ -680,13 +708,6 @@
 	content=" &lt;fld1&gt;: unable to find root NS &apos;&lt;domain&gt;&apos;" />
 
 <MESSAGE
-	id1="named:40"
-	id2="named"
-	eventcategory="1605000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
-	content=" &lt;fld1&gt; client &lt;saddr&gt;#&lt;sport&gt;: &lt;protocol&gt;: query: &lt;domain&gt; &lt;info&gt; response:&lt;result&gt;  &lt;fld10&gt;" />
-
-<MESSAGE
 	id1="named:47"
 	id2="named"
 	eventcategory="1502000000"
@@ -697,7 +718,7 @@
 	id1="named:48"
 	id2="named"
 	eventcategory="1901000000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="client &lt;saddr&gt;#&lt;sport&gt; (&lt;hostname&gt;): query '&lt;zone&gt;' &lt;result&gt;" />
 
 <MESSAGE
@@ -793,6 +814,21 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content=" loading configuration from &apos;&lt;filename&gt;&apos;" />
+
+<MESSAGE
+	id1="named:73"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content=" fetch: &lt;zone&gt;" />
+
+<MESSAGE
+	id1="named:74"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
+	content=" decrement_reference: delete from rbt: &lt;fld1&gt; &lt;domain&gt;" />
+
 
 <MESSAGE
 	id1="named:07"
