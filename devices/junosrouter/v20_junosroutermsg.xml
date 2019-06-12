@@ -4,9 +4,9 @@
 	displayname="Juniper JUNOS"
 	group="Router">
 <VERSION
-	xml="58"
-	checksum="fa2a3abbf577949a0dcecfe0a6faffe2"
-	revision="118"
+	xml="59"
+	checksum="ee6fccc534b696b40b2b9eb7cb0a9419"
+	revision="131"
     device="2.0" />
 
 
@@ -201,7 +201,17 @@
 	messageid="STRCAT('JUNOSROUTER','_','GENERIC')"
 	content="{mgd[|rpd[|dcd[}&lt;process_id&gt;]:&lt;!payload&gt;" />
 
-  <HEADER
+<HEADER
+	id1="9995"
+	id2="9995"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;hfld1&gt; &lt;hfld2&gt; &lt;messageid&gt;[&lt;hfld3&gt;]:&lt;!payload:messageid&gt;" />
+
+<HEADER 
+	id1="9994" 
+	id2="9994" 
+	messageid="STRCAT('qsfp')"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hfld2&gt; &lt;hfld1&gt; qsfp &lt;!payload:hfld2&gt;" />
+<HEADER
 	id1="9999"
 	id2="9999"
 	messageid="STRCAT('JUNOSROUTER','_','GENERIC')"
@@ -339,6 +349,27 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:cron RELOAD&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="  &lt;process&gt;[&lt;process_id&gt;]: (&lt;username&gt;) &lt;action&gt; (&lt;filename&gt;)" />
+
+<MESSAGE
+	id1="CROND"
+	id2="CROND"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: (&lt;username&gt;) CMD (&lt;action&gt;)"/>
+
+<MESSAGE
+	id1="crond:01"
+	id2="crond"
+	eventcategory="1801020000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: pam_unix(crond:session): session opened for user &lt;username&gt; by (uid=&lt;uid&gt;)"/>
+
+<MESSAGE
+	id1="CROND:02"
+	id2="CROND"
+	eventcategory="1801030000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;process&gt;[&lt;process_id&gt;]: pam_unix(crond:session): session closed for user &lt;username&gt;"/>
 
 <MESSAGE 
 	id1="dcd" 
@@ -4527,8 +4558,8 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	id1="trace_on" 
 	id2="trace_on" 
 	eventcategory="1605000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:tracing to file&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content=" &lt;process&gt;[&lt;process_id&gt;]: &lt;event_type&gt;: tracing to &quot;&lt;filename&gt;&quot;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:tracing to file&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@filename:*RMQ(fld33)&gt;"
+	content=" &lt;process&gt;[&lt;process_id&gt;]: &lt;event_type&gt;: tracing to &lt;fld33&gt; started" />
 
 <MESSAGE 
 	id1="trace_rotate" 
@@ -5616,6 +5647,13 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld32)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhostname)&gt;"
 	content="&lt;event_type&gt;[junos@&lt;fld32&gt; category=&quot;&lt;fld1&gt;&quot; sub-category=&quot;&lt;fld2&gt;&quot; action=&quot;&lt;action&gt;&quot; action-detail=&quot;&lt;fld4&gt;&quot; http-host=&quot;&lt;fld17&gt;&quot; threat-severity=&quot;&lt;severity&gt;&quot; source-address=&quot;&lt;saddr&gt;&quot; source-port=&quot;&lt;sport&gt;&quot; destination-address=&quot;&lt;daddr&gt;&quot; destination-port=&quot;&lt;dport&gt;&quot; protocol-id=&quot;&lt;protocol&gt;&quot; application=&quot;&lt;fld5&gt;&quot; nested-application=&quot;&lt;fld6&gt;&quot; feed-name=&quot;&lt;fld18&gt;&quot; policy-name=&quot;&lt;policyname&gt;&quot; profile-name=&quot;&lt;rulename&gt;&quot; username=&quot;&lt;username&gt;&quot; roles=&quot;&lt;user_role&gt;&quot; session-id-32=&quot;&lt;sessionid&gt;&quot; source-zone-name=&quot;&lt;src_zone&gt;&quot; destination-zone-name=&quot;&lt;dst_zone&gt;&quot;]&lt;fld10&gt;"/>
 
+<MESSAGE
+	id1="qsfp"
+	id2="qsfp"
+	eventcategory="1605000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;hostname&gt; {&lt;fld2&gt; &lt;fld3&gt; &lt;process&gt;: qsfp-&lt;interface&gt; Chan# |&lt;fld2&gt; qsfp-&lt;interface&gt; Chan# }&lt;fld5&gt;:&lt;event_description&gt;"/>
+
 <MESSAGE 
 	id1="JUNOSROUTER_GENERIC:03" 
 	id2="JUNOSROUTER_GENERIC" 
@@ -5679,7 +5717,7 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface Monitor failure recovered&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content="&lt;event_type&gt; Interface Monitor failure recovered &lt;fld1&gt;"/>
 
- <MESSAGE
+<MESSAGE
 	id1="JUNOSROUTER_GENERIC"
 	id2="JUNOSROUTER_GENERIC"
 	eventcategory="1901000000"
