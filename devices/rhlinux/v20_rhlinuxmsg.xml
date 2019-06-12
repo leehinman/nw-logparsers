@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="373"
-	checksum="aea032e56269c01e7dfc34f064caf589"
-	revision="130"
+	xml="375"
+	checksum="3d9360f0431b3e3f234bee38dc68a800"
+	revision="131"
 	device="2.0" />
 
 
@@ -12125,7 +12125,7 @@
 	id2="named"
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	content="&lt;agent&gt;[&lt;process_id&gt;]: {queries: info: client|client} &lt;saddr&gt;{#&lt;sport&gt;(&lt;fld1&gt;)|#&lt;sport&gt;}: query: &lt;domain&gt; {IN &lt;fld3&gt; (&lt;hostip&gt;)|IN &lt;fld1&gt;}" />
+	content="&lt;agent&gt;[&lt;process_id&gt;]: {queries: info: client|client} &lt;saddr&gt;{#&lt;sport&gt;/&lt;fld2&gt;(&lt;fld1&gt;)|#&lt;sport&gt;(&lt;fld1&gt;)|#&lt;sport&gt;}: query: &lt;domain&gt; {IN &lt;fld3&gt; (&lt;hostip&gt;)|IN &lt;fld1&gt;}" />
 <MESSAGE
 	id1="00103:04"
 	id2="named"
@@ -12134,6 +12134,13 @@
 	content="&lt;agent&gt;[&lt;process_id&gt;]: client &lt;saddr&gt;#&lt;sport&gt;: RFC 1918 response from Internet for &lt;daddr&gt;" />
 
 	
+<MESSAGE
+	id1="00103:06"
+	id2="named"
+	eventcategory="1605010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: queries: info: client &lt;saddr&gt;#&lt;sport&gt; &lt;info&gt;: query: &lt;domain&gt; IN &lt;fld3&gt; (&lt;hostip&gt;)" />
+
 <MESSAGE
 	id1="00103:03"
 	id2="named"
