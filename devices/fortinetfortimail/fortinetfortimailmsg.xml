@@ -4,9 +4,9 @@
 	displayname="Fortinet FortiMail"
 	group="Application Firewall">
 <VERSION
-	xml="13"
-	checksum="4fc5de415cfa2acf193d8d34c1656041"
-	revision="126"
+	xml="14"
+	checksum="5ba4a63d8d9f965f2ede2cc7d0cafb49"
+	revision="131"
 	device="2.0" />
 
  
@@ -266,7 +266,7 @@
 	id2="spam" 
 	eventcategory="1207040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;"
-	content="session_id=&quot;&lt;sessionid&gt;&quot; client_name=&quot;&lt;fqdn&gt; [&lt;saddr&gt;]&quot; dst_ip=&quot;&lt;daddr&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; subject=&quot;&lt;subject&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
+	content="session_id=&quot;&lt;sessionid&gt;&quot; client_name={&quot;&lt;fqdn&gt; [&lt;saddr&gt;]&quot; | &quot;&lt;fqdn&gt;&quot; client_ip=&quot;&lt;saddr&gt;&quot;} dst_ip=&quot;&lt;daddr&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; subject=&quot;&lt;subject&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
 
 <MESSAGE 
 	id1="spam:02" 
