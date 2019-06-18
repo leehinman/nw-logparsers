@@ -4,9 +4,9 @@
 	displayname="Proofpoint Email Security"
 	group="Application Firewall">
 <VERSION
-	xml="32"
-	checksum="c8850e18d1f2b4a421a532488d6098f5"
-	revision="122"
+	xml="34"
+	checksum="9a9d723035b997dbd7e462ce6b215066"
+	revision="131"
 	device="2.0" />
 	
 <TAGVALMAP 
@@ -24,6 +24,11 @@
 	id1="0025" 
 	id2="0025" 
  	content="&lt;hdate&gt;T&lt;htime&gt;.&lt;hfld1&gt; &lt;hinstance&gt; &lt;messageid&gt;[&lt;hfld2&gt;]: &lt;!payload:messageid&gt;" />
+<HEADER 
+	id1="0026" 
+	id2="0026" 
+	messageid="STRCAT(msgIdPart1, &apos;_&apos;, msgIdPart2)"	
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; &lt;hinstance&gt;[&lt;hfld4&gt;]: &lt;hseverity&gt; s=&lt;hfld1&gt; m=&lt;hfld2&gt; x=&lt;hfld3&gt; attachment=&lt;hfld7&gt; file=&lt;hfld5&gt; mod=&lt;msgIdPart1&gt; cmd=&lt;msgIdPart2&gt; &lt;!payload:hinstance&gt;" />
 <HEADER 
 	id1="0003" 
 	id2="0003" 
@@ -334,8 +339,8 @@
 	id1="session_judge" 
 	id2="session_judge" 
 	eventcategory="1207000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; " />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@filename:*RMQ(fld1)&gt;"
+	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; {attachment=&lt;fld58&gt; file=&lt;fld1&gt; mod=&lt;agent&gt;|mod=&lt;agent&gt;} cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; " />
 	
 <MESSAGE 
 	id1="session_judge:01" 
@@ -410,8 +415,8 @@
 	id1="session_dispose:02" 
 	id2="session_dispose" 
 	eventcategory="1207040200" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt;  m=&lt;mail_id&gt; x=&lt;sessionid1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@filename:*RMQ(fld1)&gt;"
+	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt;  m=&lt;mail_id&gt; x=&lt;sessionid1&gt; {attachment=&lt;fld58&gt; file=&lt;fld1&gt; mod=&lt;agent&gt;|mod=&lt;agent&gt;} cmd=&lt;obj_type&gt; module=&lt;event_source&gt; rule=&lt;rulename&gt; action=&lt;action&gt;" />
 	
 <MESSAGE 
 	id1="session_dispose:03" 
@@ -444,8 +449,8 @@
 	id1="av_run:02" 
 	id2="av_run" 
 	eventcategory="1003010000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; attachment=&lt;fld58&gt; file=&lt;filename&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; rule=&lt;rulename&gt; name=&lt;fld34&gt; cleaned=&lt;fld35&gt; vendor=&lt;fld36&gt; duration=&lt;duration_string&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@filename:*RMQ(fld1)&gt;"
+	content="&lt;fld0&gt; &lt;severity&gt; s=&lt;sessionid&gt; m=&lt;mail_id&gt; x=&lt;sessionid1&gt; attachment=&lt;fld58&gt; file=&lt;fld1&gt; mod=&lt;agent&gt; cmd=&lt;obj_type&gt; rule=&lt;rulename&gt; name=&lt;fld34&gt; {cleaned=&lt;fld35&gt; vendor=&lt;fld36&gt;|vendor=&lt;fld36&gt; version=&quot;&lt;component_version&gt;&quot;|vendor=&lt;fld36&gt;} duration=&lt;duration_string&gt;" />
 	
 <MESSAGE 
 	id1="av_run:03" 
