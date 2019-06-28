@@ -4,11 +4,12 @@
 	displayname="McAfee ePolicy Orchestrator"
 	group="Anti Virus">
 <VERSION
-	xml="81"
-	checksum="316647fdd1c8e1335c35965ace10c0fe"
-	revision="129"
+	xml="83"
+	checksum="41e6128ce47277ec7d0a437bc231457d"
+	revision="131"
     device="2.0" />
- 
+<TAGVALMAP pairdelimiter="^^" 
+           valuedelimiter="="  />
 <HEADER 
 	id1="0001" 
 	id2="0001"  
@@ -21,6 +22,16 @@
 	id1="0003" 
 	id2="0003"  
 	content="%ePolicy: &lt;timestamp&gt;, &lt;messageid&gt;, &lt;!payload:messageid&gt;" /> 
+<HEADER 
+	id1="0012" 
+	id2="0012" 
+    messageid="STRCAT(&apos;mcafeeens&apos;,&apos;_&apos;,&apos;generic&apos;)"	
+	content="%ePolicy_ens-&lt;severity&gt;-&lt;id&gt;: &lt;hfld1&gt;^^&lt;hostip&gt;^^&lt;saddr&gt;^^&lt;daddr&gt;^^ServerID=&lt;hfld2&gt;^^&lt;!payload&gt;"/>
+<HEADER 
+	id1="0013" 
+	id2="0013" 
+    messageid="STRCAT(&apos;mcafeeens&apos;,&apos;_&apos;,&apos;generic&apos;)"	
+	content="%ePolicy-&lt;severity&gt;-&lt;id&gt;: &lt;hfld1&gt;^^&lt;hostip&gt;^^&lt;saddr&gt;^^&lt;daddr&gt;^^ServerID=&lt;hfld2&gt;^^&lt;!payload&gt;"/>
 <HEADER 
 	id1="0010" 
 	id2="0010" 
@@ -7890,6 +7901,15 @@
 	eventcategory="1003010000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld12&gt;^^&lt;hostname&gt;^^&lt;recorded_time&gt;^^&lt;event_time&gt;^^&lt;fld10&gt;^^&lt;product&gt;^^&lt;version&gt;^^&lt;shost&gt;^^&lt;hostip&gt;^^&lt;content_version&gt;^^&lt;component_version&gt;^^&lt;event_source&gt;^^&lt;fld35&gt;^^&lt;saddr&gt;^^&lt;fld31&gt;^^&lt;daddr&gt;^^&lt;username&gt;^^&lt;sport&gt;^^&lt;fld33&gt;^^&lt;fld34&gt;^^&lt;filename&gt;^^&lt;vendor_event_cat&gt;^^&lt;id&gt;^^&lt;severity&gt;^^&lt;virusname&gt;^^&lt;category&gt;^^&lt;action&gt;^^&lt;fld9&gt;" />
+
+<MESSAGE 
+	id1="mcafeeens_generic:01" 
+	id2="mcafeeens_generic" 
+	eventcategory="1003010000" 
+	tagval="true"
+	missField="true"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%B %F %W %N:%U%P',fld50)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U%P',fld51)&gt;"
+	content="ReceivedUTC=&lt;fld50&gt; DetectedUTC=&lt;fld51&gt; Analyzer=&lt;fld2&gt; AnalyzerName=&lt;product&gt; AnalyzerVersion=&lt;version&gt; AnalyzerHostName=&lt;hostname&gt; AnalyzerDATVersion=&lt;content_version&gt; AnalyzerEngineVersion=&lt;component_version&gt; AnalyzerDetectionMethod=&lt;event_source&gt; SourceHostName=&lt;shost&gt; SourceMAC=&lt;smacaddr&gt; SourceUserName=&lt;username&gt; SourceProcessName=&lt;process&gt; SourceURL=&lt;url&gt; TargetHostName=&lt;dhost&gt; TargetMAC=&lt;dmacaddr&gt; TargetUserName=&lt;c_username&gt; TargetPort=&lt;dport&gt; TargetProtocol=&lt;protocol&gt; TargetProcessName=&lt;process&gt; TargetFileName=&lt;filename&gt; ThreatCategory=&lt;vendor_event_cat&gt; ThreatEventID=&lt;id&gt; ThreatSeverity=&lt;severity&gt; ThreatName=&lt;virusname&gt; ThreatType=&lt;category&gt; ThreatActionTaken=&lt;action&gt; ThreatHandled=&lt;fld4&gt; SourceProcessHash=&lt;checksum&gt; SourcePort=&lt;sport&gt; SourceFilePath=&lt;directory&gt; SourceParentProcessHash=&lt;checksum.src&gt; SourceHash=&lt;checksum&gt; TargetHash=&lt;checksum&gt; TargetURL=&lt;url&gt; TargetParentProcessHash=&lt;checksum.dst&gt;" />
 
 <MESSAGE 
 	id1="mcafeeens_generic" 
