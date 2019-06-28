@@ -4,9 +4,9 @@
 	displayname="Cisco Wireless LAN Controller"
 	group="Wireless Devices">
 <VERSION 
-	xml="33"
-	checksum="dac67747e51690d41b0d0ff4394462e5"
-	revision="128"
+	xml="34"
+	checksum="7fa0049ce64691d1077c7abd644f28d0"
+	revision="131"
 	device="2.0" />
 <TAGVALMAP
 	pairdelimiter="," encapsulator="&quot;" />
@@ -1379,7 +1379,7 @@
 	id2="DHCP-4-LEASE_NOT_MATCH" 
 	eventcategory="1603000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Lease does not belong to client&gt;"
-	content=" Lease for &lt;saddr&gt; does not belong to &lt;smacaddr&gt;" />
+	content=" Lease for &lt;saddr&gt; does not belong to {&lt;smacaddr&gt;.|&lt;smacaddr&gt;}" />
 
 <MESSAGE 
 	id1="DHCP-4-LEASE_NOT_OBTAINED"
@@ -5850,7 +5850,7 @@
 	id2="SECURITY" 
 	eventcategory="1603000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received an empty EAP message from mobile&gt;"
-	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received an empty EAP message from mobile &lt;smacaddr&gt;" />
+	content=" &lt;severity&gt;] &lt;agent&gt; &lt;process_id&gt;: Received an empty EAP message from mobile {&lt;smacaddr&gt; ((&lt;fld1&gt;), &lt;fld2&gt;) |&lt;smacaddr&gt;}" />
 
 <MESSAGE 
 	id1="SECURITY:21" 
@@ -6165,91 +6165,106 @@
 	id1="APASSOCIATED" 
 	id2="APASSOCIATED" 
 	eventcategory="1605000000" 
-	content="APMacAddrTrapVariable=&quot;&lt;macaddr&gt;&quot;,APPortNumberTrapVariable=&lt;fport&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APPortNumberTrapVariable=&lt;fport&gt; " />
 
 <MESSAGE 
 	id1="APCONTAINEDASROGUE" 
 	id2="APCONTAINEDASROGUE" 
 	eventcategory="1603010000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;,ClearTrapVariable={ &quot;&lt;service&gt;&quot; | &lt;service&gt; }" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;,ClearTrapVariable={ &quot;&lt;service&gt;&quot; | &lt;service&gt; }" />
 
 <MESSAGE 
 	id1="APCOVERAGEPROFILEFAILED" 
 	id2="APCOVERAGEPROFILEFAILED" 
 	eventcategory="1603010000" 
-	content="APMacAddrTrapVariable=&quot;&lt;smacaddr&gt;&quot;,APNameTrapVariable=&quot;&lt;group&gt;&quot;,APSlotIdTrapVariable=&lt;connectionid&gt;,APCoverageThresholdTrapVariable=&lt;ntype&gt;,APCoverageFailedClients=&lt;fld8&gt;,APCoverageTotalClients=&lt;duration&gt;,ClientMacAddr=&quot;&lt;macaddr&gt;&quot;,ClientRssi=&lt;fld5&gt;,ClientSnr=&lt;vlan&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;},APNameTrapVariable=&quot;&lt;group&gt;&quot;,APSlotIdTrapVariable=&lt;connectionid&gt;,APCoverageThresholdTrapVariable=&lt;ntype&gt;,APCoverageFailedClients=&lt;fld8&gt;,APCoverageTotalClients=&lt;duration&gt;,ClientMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},ClientRssi=&lt;fld10&gt;,ClientSnr=&lt;vlan&gt;" />
 
 <MESSAGE 
 	id1="APCURRENTCHANNELCHANGED" 
 	id2="APCURRENTCHANNELCHANGED" 
 	eventcategory="1603010000" 
-	content="APMacAddrTrapVariable=&quot;&lt;macaddr&gt;&quot;,APSlotIdTrapVariable=&lt;connectionid&gt;,APChannelNumberTrapVariable=&lt;fld8&gt;,InterferenceEnergyBeforeChannelUpdate=&lt;rulename&gt;,InterferenceEnergyAfterChannelUpdate=&lt;fld5&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APSlotIdTrapVariable=&lt;connectionid&gt;,APChannelNumberTrapVariable=&lt;fld8&gt;,InterferenceEnergyBeforeChannelUpdate=&lt;rulename&gt;,InterferenceEnergyAfterChannelUpdate=&lt;fld10&gt;" />
 
 <MESSAGE 
 	id1="APCURRENTTXPOWERCHANGED" 
 	id2="APCURRENTTXPOWERCHANGED" 
-	eventcategory="1603010000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APIfPhyTxPowerLevel=&lt;fld5&gt;" />
+	eventcategory="1603010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APIfPhyTxPowerLevel=&lt;fld7&gt;" />
 
 <MESSAGE 
 	id1="APDISASSOCIATED" 
 	id2="APDISASSOCIATED" 
 	eventcategory="1605000000" 
-	content="APMacAddrTrapVariable=&quot;&lt;macaddr&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;} " />
 
 <MESSAGE 
 	id1="APIFDOWN" 
 	id2="APIFDOWN" 
-	eventcategory="1603010000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APAdminStatus=&lt;ntype&gt;,APIfAdminStatus=&lt;inout&gt; " />
+	eventcategory="1603010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APAdminStatus=&lt;ntype&gt;,APIfAdminStatus=&lt;inout&gt; " />
 
 <MESSAGE 
 	id1="APIMPERSONATIONDETECTED" 
 	id2="APIMPERSONATIONDETECTED" 
-	eventcategory="1603010000" 
-	content="ImpersonatedAPMacAddr=&quot;&lt;smacaddr&gt;&quot;,APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;" />
+	eventcategory="1603010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="ImpersonatedAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;},APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;" />
 
 <MESSAGE 
 	id1="APINTERFERENCEPROFILEFAILED" 
 	id2="APINTERFERENCEPROFILEFAILED" 
 	eventcategory="1601000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="APINTERFERENCEPROFILEUPDATEDTOPASS" 
 	id2="APINTERFERENCEPROFILEUPDATEDTOPASS" 
 	eventcategory="1605000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="APLOADPROFILEFAILED" 
 	id2="APLOADPROFILEFAILED" 
 	eventcategory="1603000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="APNOISEPROFILEFAILED" 
 	id2="APNOISEPROFILEFAILED" 
 	eventcategory="1603000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="ASSOCIATE" 
 	id2="ASSOCIATE" 
 	eventcategory="1605000000" 
-	content="StationAPMacAddr=&quot;&lt;macaddr&gt;&quot;,StationAPIfSlotId=&lt;connectionid&gt;,UserIpAddress=&lt;saddr&gt;,StationMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="StationAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},StationAPIfSlotId=&lt;connectionid&gt;,UserIpAddress=&lt;saddr&gt;,StationMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;} " />
 
 <MESSAGE 
 	id1="ASSOCIATEFAILURE" 
 	id2="ASSOCIATEFAILURE" 
-	eventcategory="1603010000" 
-	content="StationAPMacAddr=&quot;&lt;macaddr&gt;&quot;,StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	eventcategory="1603010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"	
+	content="StationAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;} " />
 
 <MESSAGE 
 	id1="AUTHENTICATEFAILURE" 
 	id2="AUTHENTICATEFAILURE" 
 	eventcategory="1301000000" 
-	content="StationAPMacAddr=&quot;&lt;macaddr&gt;&quot;,StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="StationAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;} " />
 
 <MESSAGE 
 	id1="AUTHENTICATIONFAILURE" 
@@ -6267,61 +6282,77 @@
 	id1="DEAUTHENTICATE" 
 	id2="DEAUTHENTICATE" 
 	eventcategory="1605000000" 
-	content="StationAPMacAddr=&quot;&lt;macaddr&gt;&quot;,StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="StationAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;} " />
 
 <MESSAGE 
 	id1="DISASSOCIATE" 
 	id2="DISASSOCIATE" 
 	eventcategory="1605000000" 
-	content="StationAPMacAddr=&quot;&lt;macaddr&gt;&quot;,StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="StationAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;} " />
 
 <MESSAGE 
 	id1="DISASSOCIATENOTIFICATION" 
 	id2="DISASSOCIATENOTIFICATION" 
-	eventcategory="1605000000" 
-	content="StationAPMacAddr=&quot;&lt;macaddr&gt;&quot;,StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="StationAPMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},StationAPIfSlotId=&lt;connectionid&gt;,StationReasonCode=&lt;action&gt;,StationMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;} " />
 
 <MESSAGE 
 	id1="DUPLICATEIPADDRESSREPORTED" 
 	id2="DUPLICATEIPADDRESSREPORTED" 
 	eventcategory="1603000000" 
-	content="DuplicateIpReportedByAP=&lt;fld8&gt;,APMacAddrTrapVariable=&quot;&lt;macaddr&gt;&quot;,DuplicateIpTrapVariable=&lt;saddr&gt;,RogueAPDot11MacAddress=&quot;&lt;smacaddr&gt;&quot;,DuplicateIpTrapClear=&lt;ntype&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="DuplicateIpReportedByAP=&lt;fld8&gt;,APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},DuplicateIpTrapVariable=&lt;saddr&gt;,RogueAPDot11MacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;},DuplicateIpTrapClear=&lt;ntype&gt;" />
 
 <MESSAGE 
 	id1="LOADPROFILEUPDATEDTOPASS" 
 	id2="LOADPROFILEUPDATEDTOPASS" 
 	eventcategory="1603000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="MAXROGUECOUNTERCLEAR" 
 	id2="MAXROGUECOUNTERCLEAR" 
 	eventcategory="1603000000" 
-	content="APMacAddrTrapVariable=&quot;&lt;macaddr&gt;&quot;,MaxRogueCount=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},MaxRogueCount=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="MAXROGUECOUNTEXCEEDED" 
 	id2="MAXROGUECOUNTEXCEEDED" 
 	eventcategory="1603000000" 
-	content="APMacAddrTrapVariable=&quot;&lt;macaddr&gt;&quot;,MaxRogueCount=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APMacAddrTrapVariable={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},MaxRogueCount=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="NOISEPROFILEUPDATEDTOPASS" 
 	id2="NOISEPROFILEUPDATEDTOPASS" 
 	eventcategory="1603000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt; " />
 
 <MESSAGE 
 	id1="RADARCHANNELCLEARED" 
 	id2="RADARCHANNELCLEARED" 
 	eventcategory="1605000000" 
-	content="{ APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APIfPhyChannelNumber=&lt;fld8&gt; | message=&quot;&lt;msg&gt;&quot; }" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APIfPhyChannelNumber=&lt;fld8&gt;" />
+
+<MESSAGE 
+	id1="RADARCHANNELCLEARED:01" 
+	id2="RADARCHANNELCLEARED" 
+	eventcategory="1605000000" 
+	content="message=&quot;&lt;msg&gt;&quot; " />
 
 <MESSAGE 
 	id1="RADARCHANNELDETECTED" 
 	id2="RADARCHANNELDETECTED" 
 	eventcategory="1603000000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APIfPhyChannelNumber=&lt;fld8&gt; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APIfPhyChannelNumber=&lt;fld8&gt; " />
 
 <MESSAGE 
 	id1="RADIUSSERVERNOTRESPONDING" 
@@ -6339,13 +6370,22 @@
 	id1="SIGNATUREATTACKDETECTED" 
 	id2="SIGNATUREATTACKDETECTED" 
 	eventcategory="1001020000" 
-	content="APDot3MacAddress=&quot;&lt;macaddr&gt;&quot;,APIfSlotId=&lt;connectionid&gt;,APName=&quot;&lt;group&gt;&quot;,APIfType=&lt;fld7&gt;,SignatureType=&lt;ntype&gt;,SignatureName=&quot;&lt;rulename&gt;&quot;,SignatureDescription=&quot;&lt;fld5&gt;&quot;,ClearTrapVariable={&quot;&lt;service&gt;&quot;|&lt;service&gt;},SignatureAttackPreced=&lt;fld8&gt;,SignatureAttackFrequency=&lt;duration&gt;,SignatureAttackChannel=&lt;vlan&gt;,SignatureAttackerMacAddress=&quot;&lt;smacaddr&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="APDot3MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APIfSlotId=&lt;connectionid&gt;,APName=&quot;&lt;group&gt;&quot;,APIfType=&lt;fld7&gt;,SignatureType=&lt;ntype&gt;,SignatureName=&quot;&lt;rulename&gt;&quot;,SignatureDescription=&quot;&lt;context&gt;&quot;,ClearTrapVariable={&quot;&lt;service&gt;&quot;|&lt;service&gt;},SignatureAttackPreced=&lt;fld8&gt;,SignatureAttackFrequency=&lt;duration&gt;,SignatureAttackChannel=&lt;vlan&gt;,SignatureAttackerMacAddress={&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;|&quot;NULL&quot;}" />
 
 <MESSAGE 
 	id1="STATIONBLACKLISTED" 
 	id2="STATIONBLACKLISTED" 
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="APDot11MacAddress={&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;|&quot;NULL&quot;},APAirespaceAPSlotId=&lt;connectionid&gt;,BlacklistingReasonCode=&lt;action&gt;,ClientMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;}" />
+
+<MESSAGE 
+	id1="STATIONBLACKLISTED:01" 
+	id2="STATIONBLACKLISTED" 
 	eventcategory="1603000000" 
-	content="{APMacAddrTrapVariable=|APDot11MacAddress=}&quot;&lt;smacaddr&gt;&quot;,{APSlotIdTrapVariable=&lt;connectionid&gt;|APAirespaceAPSlotId=&lt;connectionid&gt;,BlacklistingReasonCode=&lt;action&gt;},{NavDosAttackSourceMacAddr=|ClientMacAddr=}&quot;&lt;macaddr&gt;&quot;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="APMacAddrTrapVariable={&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;|&quot;NULL&quot;},APSlotIdTrapVariable=&lt;connectionid&gt;,NavDosAttackSourceMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;}" />
 
 <MESSAGE 
 	id1="TOOMANYUNSUCCESSLOGINATTEMPTS" 
@@ -6357,7 +6397,8 @@
 	id1="WEPKEYDECRYPTERROR" 
 	id2="WEPKEYDECRYPTERROR" 
 	eventcategory="1603000000" 
-	content="ClientMacAddr=&quot;&lt;macaddr&gt;&quot;,APDot11MacAddress=&quot;&lt;smacaddr&gt;&quot;,APAirespaceAPSlotId=&lt;connectionid&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="ClientMacAddr={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},APDot11MacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;},APAirespaceAPSlotId=&lt;connectionid&gt;" />
 
 
 <MESSAGE 
@@ -6552,8 +6593,8 @@
 	id1="ROGUEAPREMOVED" 
 	id2="ROGUEAPREMOVED" 
 	eventcategory="1605000000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="RogueAPDot11MacAddress=&quot;&lt;macaddr&gt;&quot;,RogueAPAirespaceAPMacAddress=&quot;&lt;smacaddr&gt;&quot;,RogueAPAirespaceAPSlotId=&lt;connectionid&gt;,RogueAPRadioType=&lt;ntype&gt;,RogueAPAirespaceAPName=&quot;&lt;group&gt;&quot; " />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@macaddr:*STRCAT(fld1,:,fld2,:,fld3,:,fld4,:,fld5,:,fld6)&gt;&lt;@smacaddr:*STRCAT(fld11,:,fld12,:,fld13,:,fld14,:,fld15,:,fld16)&gt;"
+	content="RogueAPDot11MacAddress={&quot;NULL&quot;|&quot;&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt; &lt;fld6&gt;&quot;},RogueAPAirespaceAPMacAddress={&quot;NULL&quot;|&quot;&lt;fld11&gt; &lt;fld12&gt; &lt;fld13&gt; &lt;fld14&gt; &lt;fld15&gt; &lt;fld16&gt;&quot;},RogueAPAirespaceAPSlotId=&lt;connectionid&gt;,RogueAPRadioType=&lt;ntype&gt;,RogueAPAirespaceAPName=&quot;&lt;group&gt;&quot; " />
 	
 <MESSAGE
 	id1="INVALID_STATE_EVENT"
@@ -7048,6 +7089,6 @@
 	tagval="true"
 	missField="true"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@msg_id:*HDR(event_type)&gt;&lt;@vid:*HDR(event_type)&gt;"
-	content="APAdminStatus=&lt;ntype&gt;,APAirespaceAPSlotId=&lt;connectionid&gt;,APChannelNumberTrapVariable=&lt;fld8&gt;,APCoverageFailedClients=&lt;fld1&gt;,APCoverageThresholdTrapVariable=&lt;ntype&gt;,APCoverageTotalClients=&lt;duration&gt;,APDot11MacAddress=&lt;smacaddr&gt;,APDot3MacAddress=&lt;macaddr&gt;,APIfAdminStatus=&lt;inout&gt;,APIfPhyChannelNumber=&lt;fld8&gt;,APIfPhyTxPowerLevel=&lt;fld5&gt;,APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;,APMacAddrTrapVariable=&lt;macaddr&gt;,APName=&lt;group&gt;,APNameTrapVariable=&lt;group&gt;,APPortNumberTrapVariable=&lt;fport&gt;,APSlotIdTrapVariable=&lt;connectionid&gt;,AuthFailUserName=&lt;username&gt;,AuthFailUserType=&lt;ntype&gt;,BlacklistingReasonCode=&lt;action&gt;,ClearTrapVariable=&lt;service&gt;,ClientMacAddr=&lt;macaddr&gt;,ClientRssi=&lt;fld5&gt;,ClientSnr=&lt;vlan&gt;,DuplicateIpReportedByAP=&lt;fld8&gt;,DuplicateIpTrapClear=&lt;ntype&gt;,DuplicateIpTrapVariable=&lt;saddr&gt;,ImpersonatedAPMacAddr=&lt;smacaddr&gt;,InterferenceEnergyAfterChannelUpdate=&lt;fld5&gt;,InterferenceEnergyBeforeChannelUpdate=&lt;rulename&gt;,MaxRogueCount=&lt;connectionid&gt;,RogueAPAirespaceAPMacAddress=&lt;smacaddr&gt;,RogueAPAirespaceAPName=&lt;group&gt;,RogueAPAirespaceAPRSSI=&lt;duration&gt;,RogueAPAirespaceAPSNR=&lt;inout&gt;,RogueAPAirespaceAPSlotId=&lt;connectionid&gt;,RogueAPChannelNumber=&lt;fld8&gt;,RogueAPDot11MacAddress=&lt;macaddr&gt;,RogueAPOnWiredNetwork=&lt;vlan&gt;,RogueAPRadioType=&lt;ntype&gt;,RogueAPSsid=&lt;fld7&gt;,RogueAdhocMode=&lt;rulename&gt;,SignatureAttackChannel=&lt;vlan&gt;,SignatureAttackFrequency=&lt;duration&gt;,SignatureAttackPreced=&lt;fld8&gt;,SignatureAttackerMacAddress=&lt;smacaddr&gt;,SignatureDescription=&lt;fld5&gt;,SignatureName=&lt;rulename&gt;,SignatureType=&lt;ntype&gt;,StationAPIfSlotId=&lt;connectionid&gt;,StationAPMacAddr=&lt;macaddr&gt;,StationMacAddress=&lt;smacaddr&gt;,StationReasonCode=&lt;action&gt;,UserIpAddress=&lt;saddr&gt;,UserName=&lt;c_user_name&gt;,message=&lt;msg&gt;" />
+	content="APAdminStatus=&lt;ntype&gt;,APAirespaceAPSlotId=&lt;connectionid&gt;,APChannelNumberTrapVariable=&lt;fld8&gt;,APCoverageFailedClients=&lt;fld1&gt;,APCoverageThresholdTrapVariable=&lt;ntype&gt;,APCoverageTotalClients=&lt;duration&gt;,APDot11MacAddress=&lt;smacaddr&gt;,APDot3MacAddress=&lt;macaddr&gt;,APIfAdminStatus=&lt;inout&gt;,APIfPhyChannelNumber=&lt;fld8&gt;,APIfPhyTxPowerLevel=&lt;fld5&gt;,APIfSlotId=&lt;connectionid&gt;,APIfType=&lt;fld7&gt;,APMacAddrTrapVariable=&lt;macaddr&gt;,APName=&lt;group&gt;,APNameTrapVariable=&lt;group&gt;,APPortNumberTrapVariable=&lt;fport&gt;,APSlotIdTrapVariable=&lt;connectionid&gt;,AuthFailUserName=&lt;username&gt;,AuthFailUserType=&lt;ntype&gt;,BlacklistingReasonCode=&lt;action&gt;,ClearTrapVariable=&lt;service&gt;,ClientMacAddr=&lt;macaddr&gt;,ClientRssi=&lt;fld5&gt;,ClientSnr=&lt;vlan&gt;,DuplicateIpReportedByAP=&lt;fld8&gt;,DuplicateIpTrapClear=&lt;ntype&gt;,DuplicateIpTrapVariable=&lt;saddr&gt;,ImpersonatedAPMacAddr=&lt;smacaddr&gt;,InterferenceEnergyAfterChannelUpdate=&lt;fld5&gt;,InterferenceEnergyBeforeChannelUpdate=&lt;rulename&gt;,MaxRogueCount=&lt;connectionid&gt;,RogueAPAirespaceAPMacAddress=&lt;smacaddr&gt;,RogueAPAirespaceAPName=&lt;group&gt;,RogueAPAirespaceAPRSSI=&lt;duration&gt;,RogueAPAirespaceAPSNR=&lt;inout&gt;,RogueAPAirespaceAPSlotId=&lt;connectionid&gt;,RogueAPChannelNumber=&lt;fld8&gt;,RogueAPDot11MacAddress=&lt;macaddr&gt;,RogueAPOnWiredNetwork=&lt;vlan&gt;,RogueAPRadioType=&lt;ntype&gt;,RogueAPSsid=&lt;fld7&gt;,RogueAdhocMode=&lt;rulename&gt;,SignatureAttackChannel=&lt;vlan&gt;,SignatureAttackFrequency=&lt;duration&gt;,SignatureAttackPreced=&lt;fld8&gt;,SignatureAttackerMacAddress=&lt;smacaddr&gt;,SignatureDescription=&lt;context&gt;,SignatureName=&lt;rulename&gt;,SignatureType=&lt;ntype&gt;,StationAPIfSlotId=&lt;connectionid&gt;,StationAPMacAddr=&lt;macaddr&gt;,StationMacAddress=&lt;smacaddr&gt;,StationReasonCode=&lt;action&gt;,UserIpAddress=&lt;saddr&gt;,UserName=&lt;c_user_name&gt;,message=&lt;msg&gt;" />
 
 </DEVICEMESSAGES>
