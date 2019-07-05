@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="4"
+	xml="9"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="130"
+	revision="132"
     device="2.0" />
 	
 
@@ -64,10 +64,16 @@
 	content="&lt;event_time_string&gt; &lt;hostname&gt; mwg: CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
+	id1="0012"
+	id2="0012"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;event_time_string&gt; &lt;hostname&gt; ATA:CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hostname&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp | azuremonitor}|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp | azuremonitor | cloudtrail }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0010"
@@ -294,6 +300,20 @@
 	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;msghold&gt;" />	
 
 	
+<MESSAGE 
+	id1="msata" 
+	id2="msata" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_starttime)&gt;&lt;@dclass_counter1_string:count of the number of times the alert happened&gt;"
+	content="&lt;param_starttime&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
+	id1="rsa_netwitness_audit" 
+	id2="rsa_netwitness_audit" 
+	eventcategory="1901000000" 
+	functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U:%O',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -339,12 +359,15 @@
 	<Vendor2Device vendor="RSA" product="RSA SecurID Access" device="rsasecuridaccess" group="Cloud"/>
     <Vendor2Device vendor="RSA" product="rsa_netwitness_for_malware_audit_logging" device="rsa_netwitness_malware" group="Anti Virus"/>
 	<Vendor2Device vendor="RSA" product="Netwitness for Malware Audit logging" device="rsa_netwitness_malware" group="Anti Virus"/>
+	<Vendor2Device vendor="RSA" product="NetWitness Audit" device="rsa_netwitness_audit" group="Analysis"/>
 	<Vendor2Device vendor="Amazon" product="Amazon vpc" device="amazonvpc" group="Cloud"/>
 	<Vendor2Device vendor="Microsoft" product="Azure Monitor" device="azuremonitor" group="Cloud"/>
     <Vendor2Device vendor="Cisco" product="Cisco Umbrella" device="ciscoumbrella" group="Cloud"/>
 	<Vendor2Device vendor="AWS" product="CloudWatch" device="aws_cloudwatch" group="Cloud"/>
 	<Vendor2Device vendor="Google" product="Gsuite" device="gsuite" group="Cloud"/>
     <Vendor2Device vendor="Cisco" product="Cisco AMP" device="ciscoamp" group="Cloud"/>
+	<Vendor2Device vendor="Microsoft" product="ATA" device="msata" group="IDS"/>
+
 </VendorProducts>
 
 
@@ -354,6 +377,7 @@
 		<ExtensionKey cefName="cat" metaName="category"/>
 		<ExtensionKey cefName="cnt" metaName="event_counter">
 			<device2meta device="trendmicrodsa" metaName="dclass_counter1"/>
+			<device2meta device="msata" metaName="dclass_counter1"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cntLabel" metaName="cs_fld" />
 		<ExtensionKey cefName="Culture" metaName="cs_fld"/>
@@ -393,7 +417,9 @@
 		<ExtensionKey cefName="dvchost" metaName="hostname"/>
 		<ExtensionKey cefName="dtz" metaName="cs_fld"/>		
 		<ExtensionKey cefName="end" metaName="param_endtime"/>
-		<ExtensionKey cefName="externalId" metaName="hardware_id"/>
+		<ExtensionKey cefName="externalId" metaName="hardware_id">
+			<device2meta device="msata" metaName="id"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="fileCreateTime" metaName="cs_filectime"/>
 		<ExtensionKey cefName="fileHash" metaName="checksum"/>
 		<ExtensionKey cefName="fileId" metaName="cs_fileid"/>
@@ -410,6 +436,7 @@
 		<ExtensionKey cefName="in" metaName="rbytes"/>
 		<ExtensionKey cefName="msg" metaName="msg">
 			<device2meta device="trendmicrodsa" metaName="info"/>
+			<device2meta device="msata" metaName="info"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
@@ -425,6 +452,7 @@
 		<ExtensionKey cefName="out" metaName="sbytes"/>
 		<ExtensionKey cefName="outcome" metaName="result">
 			<device2meta device="msoffice365" metaName="disposition"/>
+			<device2meta device="msata" metaName="disposition"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="proto" metaName="protocol">
 			<device2meta device="rsaflow" metaName="ip_proto"/>
@@ -541,10 +569,14 @@
 		<ExtensionKey cefName="deviceService" metaName="cs_devservice"/>
 		<ExtensionKey cefName="operation" metaName="cs_operation"/>
 		<ExtensionKey cefName="parameters" metaName="info"/>
-		<ExtensionKey cefName="paramKey" metaName="cs_paramkey"/>
+		<ExtensionKey cefName="paramKey" metaName="cs_paramkey">
+				<device2meta device="rsa_netwitness_audit" metaName="obj_name"/>		
+		</ExtensionKey>
 		<ExtensionKey cefName="paramValue" metaName="cs_paramvalue"/>
 		<ExtensionKey cefName="userGroup" metaName="group"/>
-		<ExtensionKey cefName="referrerURL" metaName="url"/>
+		<ExtensionKey cefName="referrerURL" metaName="url">
+				<device2meta device="rsa_netwitness_audit" metaName="referer"/>
+		</ExtensionKey>		
 		<ExtensionKey cefName="sessionId" metaName="sessionid"/>
 
 	
@@ -566,6 +598,10 @@
 		</ExtensionKey>
 		<ExtensionKey cefName="errorcode" metaName="resultcode"/>
 		<ExtensionKey cefName="resource" metaName="directory"/>
+		<ExtensionKey cefName="nw.instanceid" metaName="agent.id"/>
+		<ExtensionKey cefName="nw.dstip" metaName="daddr"/>
+		<ExtensionKey cefName="nw.computername" metaName="hostname"/>
+		<ExtensionKey cefName="eventname" metaName="event_description"/>
 		
 
 	
@@ -967,6 +1003,15 @@
 		<ExtensionKey cefName="nw.recipient_1" metaName="to"/>
 		<ExtensionKey cefName="nw.recipient_2" metaName="to"/>
 		<ExtensionKey cefName="LogonError" metaName="result"/>
+		<ExtensionKey cefName="Subject" metaName="subject"/>
+		<ExtensionKey cefName="Comments" metaName="comments"/>
+		<ExtensionKey cefName="PolicyId" metaName="policy_id"/>
+		<ExtensionKey cefName="Status" metaName="disposition"/>
+		<ExtensionKey cefName="EntityType" metaName="threat_name"/>
+		<ExtensionKey cefName="Name" metaName="alert"/>
+		<ExtensionKey cefName="Category" metaName="category"/>
+		<ExtensionKey cefName="nw.ad" metaName="threat_val"/>
+		<ExtensionKey cefName="nw.trc" metaName="to"/>
 
 		
 		<ExtensionKey cefName="method_name" metaName="context"/>
@@ -1066,6 +1111,7 @@
 			<device2meta device="mcafeereconnex" metaName="policyname"/>
 			<device2meta device="akamaikona" metaName="rulename"/>
 			<device2meta device="guardium" metaName="severity"/>
+			<device2meta device="msata" metaName="url"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs1Label" metaName="cs_fld" />
 	
@@ -1311,8 +1357,10 @@
 		<ExtensionKey cefName="object_id" metaName="cs_fld"/>
         <ExtensionKey cefName="instance_type" metaName="obj_type"/>
         <ExtensionKey cefName="policy" metaName="policyname"/>
-        <ExtensionKey cefName="user" metaName="cs_fld"/>
-		
+		<ExtensionKey cefName="user" metaName="cs_fld"> 
+				<device2meta device="rsa_netwitness_audit" metaName="username"/>
+		</ExtensionKey>			
+
 		
 		<ExtensionKey cefName="eventLogDate" metaName="param_event_time"/>
 		<ExtensionKey cefName="eventId" metaName="id"/>
@@ -1408,7 +1456,7 @@
 		<ExtensionKey cefName="app_name" metaName="application"/>
 		<ExtensionKey cefName="ROLE_NAME" metaName="user_role"/>
 		<ExtensionKey cefName="ipAddress" metaName="stransaddr"/>
-		<ExtensionKey cefName="GROUP_EMAIL" metaName="email"/>
+		<ExtensionKey cefName="GROUP_EMAIL" metaName="group"/>
 		<ExtensionKey cefName="DOMAIN_NAME" metaName="domain"/>
 		<ExtensionKey cefName="API_CLIENT_NAME" metaName="cs_fld"/>
 		<ExtensionKey cefName="API_SCOPES" metaName="cs_fld"/>
@@ -1555,5 +1603,31 @@
 		<ExtensionKey cefName="ad.wanin" metaName="cs_fld"/>
 		<ExtensionKey cefName="ad.wanout" metaName="cs_fld"/>
 		<ExtensionKey cefName="logver" metaName="version"/>
+		
+		
+		<ExtensionKey cefName="reasonForFailure" metaName="result"/> 
+		<ExtensionKey cefName="Role" metaName="user_role"/> 
+		<ExtensionKey cefName="role" metaName="user_role"/> 
+		<ExtensionKey cefName="uri" metaName="directory"/> 
+		<ExtensionKey cefName="AccountProvider" metaName="info"/> 
+		<ExtensionKey cefName="file" metaName="filename"/> 
+		<ExtensionKey cefName="ModuleSettings" metaName="info"/> 
+		<ExtensionKey cefName="deviceIDs" metaName="hardware_id"/> 
+		<ExtensionKey cefName="account" metaName="username"/> 
+		<ExtensionKey cefName="userRole" metaName="user_role"/>
+		<ExtensionKey cefName="key" metaName="obj_name"/>
+		<ExtensionKey cefName="value" metaName="cs_fld"/>
+		<ExtensionKey cefName="name" metaName="alert"/>
+		<ExtensionKey cefName="enabled" metaName="cs_fld"/>
+		<ExtensionKey cefName="disabled" metaName="cs_fld"/>
+		<ExtensionKey cefName="notificationBinding" metaName="info"/>
+		<ExtensionKey cefName="incident" metaName="context"/>
+		<ExtensionKey cefName="alert" metaName="alert"/>
+		<ExtensionKey cefName="remoteAddress" metaName="saddr"/>
+		<ExtensionKey cefName="addRole" metaName="user_role"/>
+		<ExtensionKey cefName="addPermission" metaName="permissions"/>
+		<ExtensionKey cefName="params" metaName="info"/>
+		<ExtensionKey cefName="arguments" metaName="info"/>
+		
 </ExtensionKeys>
 </DEVICEMESSAGES>
