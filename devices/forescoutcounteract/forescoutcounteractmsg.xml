@@ -3,13 +3,41 @@
 	name="forescoutcounteract"
 	displayname="Forescout CounterAct"
 	group="Access Control">
+<VARTYPE name="month" regex="Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" ignorecase="true" />
+<VARTYPE name="day" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
+<VARTYPE name="time" regex="\d{2}:\d{2}:\d{2}" />
 <VERSION
-	xml="15"
-	checksum="b530f488d65c0301479ab01f890f542f"
-	revision="120"
+	xml="16"
+	checksum="f6de203b277e7ecc86f6c70ca1ffe65d"
+	revision="132"
 	device="2.0" />
 
  
+<VALUEMAP
+	 name="getEventLegacyCategory"
+	 default="1901000000"
+	 keyvaluepairs="Closed connection=&apos;1801030000&apos;|Failed to connect=&apos;1801010000&apos;|Lost connection=&apos;1801010000&apos;|Successful connection=&apos;1801020000&apos;"/>
+<VALUEMAP
+	 name="getEventLegacyCategoryName"
+	 default="Other.Default"
+	 keyvaluepairs="1801010000=&apos;Network.Connections.Errors&apos;|1801020000=&apos;Network.Connections.Successful&apos;|1801030000=&apos;Network.Connections.Terminations&apos;"/>
+<HEADER
+	 id1="0009"
+	 id2="0009"
+	 content="&lt;month&gt;&lt;day&gt;&lt;time&gt;&lt;hostip&gt;CounterACT[&lt;hfld2&gt;]: log_sec=&lt;hfld3&gt;, log_time=&lt;hfld4&gt;, log_sub_component=&lt;event_source&gt;, log_group=&lt;group&gt;, log_status=&lt;resultcode&gt;, log_user=&lt;username&gt;.&lt;messageid&gt;:&lt;!payload&gt;"/>
+
+<HEADER
+	 id1="0010"
+	 id2="0010"
+	 messageid="STRCAT(msgIdPart1,'_',msgIdPart2,'_',msgIdPart3)"
+	 content="&lt;month&gt;&lt;day&gt;&lt;time&gt;&lt;hostip&gt;CounterACT[&lt;hfld2&gt;]:&lt;msgIdPart1&gt;&lt;msgIdPart2&gt;&lt;msgIdPart3&gt;:&lt;!payload:msgIdPart1&gt;"/>
+
+<HEADER
+	 id1="0011"
+	 id2="0011"
+	 messageid="STRCAT(msgIdPart1,'_',msgIdPart2,'_',msgIdPart3)"
+	 content="&lt;month&gt;&lt;day&gt;&lt;time&gt;&lt;hostname&gt;CounterACT&lt;hfld1&gt;[&lt;hfld2&gt;]:&lt;msgIdPart1&gt;&lt;msgIdPart2&gt;&lt;msgIdPart3&gt;:&lt;!payload:msgIdPart1&gt;"/>
+
 <HEADER 
 	id1="0001" 
 	id2="0001"
@@ -160,8 +188,8 @@
 	id1="NAC_Policy_Log:01" 
 	id2="NAC_Policy_Log" 
 	eventcategory="1502050000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Match:&lt;rulename&gt;, Category:&lt;fld2&gt;, Details:&lt;info&gt; Reason:&lt;result&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%T:%S',month,day,time)&gt;"
+	content="NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Match:{&quot;&lt;rulename&gt;&quot;|&lt;rulename&gt;}, Category:&lt;fld2&gt;, Details:&lt;info&gt; {Reason:&lt;result&gt; Duration:&lt;fld9&gt;|Reason:&lt;result&gt;}" />
 <MESSAGE
 	id1="NAC_Policy_Log:02"
 	id2="NAC_Policy_Log"
@@ -180,8 +208,8 @@
 	id1="NAC_Policy_Log" 
 	id2="NAC_Policy_Log" 
 	eventcategory="1502050000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, Details:&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%T:%S',month,day,time)&gt;"
+	content="NAC Policy Log: Source:&lt;saddr&gt;, Rule:&lt;policyname&gt;, {Details:&lt;info&gt; Reason:&lt;result&gt; Duration:&lt;fld9&gt;|Details:&lt;info&gt;}" />
 <MESSAGE 
 	id1="System_statistics" 
 	id2="System_statistics" 
@@ -297,7 +325,20 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description: Failed to connect to CounterACT Appliance&gt;"
 	content=" Log: Failed to connect to CounterACT Appliance at &lt;hostip&gt;. Details: &lt;info&gt;. Severity: &lt;severity&gt;" />
-	
+<MESSAGE
+	 id1="Log:16"
+	 id2="Log"
+	 eventcategory="1801000000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%T:%S',month,day,time)&gt;&lt;@ec_subject:User&gt;&lt;@event_cat:*getEventLegacyCategory(result)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	 content="&lt;context&gt;Details: Connection Status:&lt;result&gt;. Type: &lt;network_service&gt;, Source:&lt;saddr&gt;, Target:&lt;daddr&gt;, Vendor: &lt;product&gt;. Severity:&lt;severity&gt;"/>
+
+<MESSAGE
+	 id1="Log:17"
+	 id2="Log"
+	 eventcategory="1401060000"
+	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%T:%S',month,day,time)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;"
+	 content="&lt;context&gt;Details: Login Status :&lt;result&gt;. Type: &lt;network_service&gt;, Source:&lt;saddr&gt;, Target:&lt;daddr&gt;, Vendor: &lt;product&gt;. Severity:&lt;severity&gt;"/>
+
 <MESSAGE 
 	id1="Port_bite" 
 	id2="Port" 
