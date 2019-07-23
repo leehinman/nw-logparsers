@@ -4,9 +4,9 @@
 	displayname="Palo Alto Networks Firewall"
 	group="Firewall">
 <VERSION
-	xml="88"
-	checksum="273119848c5109e9c9c3c0ac35546c69"
-	revision="130"
+	xml="90"
+	checksum="94723cd5c02e6e6bd047c95ac63cd2ee"
+	revision="132"
 	device="2.0" />
 <VALUEMAP
 	name="getEventLegacyCategory"
@@ -650,6 +650,13 @@
 	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,url-filtering,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;vsys&gt;,&lt;service&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;severity&gt;,{&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;},&lt;fld9&gt;,&lt;fld10&gt;" />
 
 <MESSAGE 
+	id1="SYSTEM:userid_03" 
+	id2="SYSTEM" 
+	eventcategory="1801000000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:userid&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:userid&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,userid,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;vsys&gt;,&lt;service&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;severity&gt;,&quot;ldap cfg Directory-Group-Mapping connected to server &lt;fld15&gt;:&lt;sport&gt;, initiated by: &lt;saddr&gt;&quot;,&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;vsys&gt;,&lt;sensor&gt;" />
+
+<MESSAGE 
 	id1="SYSTEM:userid" 
 	id2="SYSTEM" 
 	eventcategory="1801000000" 
@@ -818,7 +825,7 @@
 	id2="THREAT" 
 	eventcategory="1001000000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:TEV&gt;&lt;@url:*PARMVAL(url_raw)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:url&gt;"
-	content=" {PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,url,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;fld8&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,&lt;url_raw&gt;,&lt;signame&gt;(&lt;fld15&gt;)(&lt;sigid&gt;),&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;" />
+	content=" {PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,url,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;fld8&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,{&quot;&lt;url_raw&gt;&quot;|&lt;url_raw&gt;},&lt;signame&gt;(&lt;fld15&gt;)(&lt;sigid&gt;),&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;" />
 
 
 <MESSAGE 
@@ -826,7 +833,7 @@
 	id2="THREAT" 
 	eventcategory="1001000000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:TEV&gt;&lt;@url:*PARMVAL(url_raw)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:url&gt;"
-	content=" {PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,url,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;fld8&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,&lt;url_raw&gt;,&lt;signame&gt;(&lt;sigid&gt;),&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;" />
+	content=" {PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,url,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;fld8&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,{&quot;&lt;url_raw&gt;&quot;|&lt;url_raw&gt;},&lt;signame&gt;(&lt;sigid&gt;),&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;" />
 
 
 
@@ -835,7 +842,14 @@
 	id2="THREAT" 
 	eventcategory="1001000000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:virus&gt;&lt;@dclass_counter1_string:Number of sessions with same Source IP, Destination IP, Application, and Subtype&gt;"
-	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,{virus|file},&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;dclass_counter1&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,{&quot;&lt;context&gt;&quot;|&lt;context&gt;},{&lt;signame&gt;(&lt;fld15&gt;)(&lt;sigid&gt;)|&lt;signame&gt;(&lt;sigid&gt;)},&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;location_src&gt;,&lt;location_dst&gt;,&lt;fld14&gt;,&lt;content_type&gt;,&lt;fld18&gt;,&lt;fld19&gt;,&lt;fld20&gt;,&lt;fld21&gt;,{&quot;&lt;user_agent&gt;&quot;|&lt;user_agent&gt;},&lt;filetype&gt;,&lt;ip.orig&gt;,{&quot;&lt;web_referer&gt;&quot;|&lt;web_referer&gt;},&lt;from&gt;,{&quot;&lt;subject&gt;&quot;|&lt;subject&gt;},&lt;to&gt;,&lt;fld31&gt;,&lt;fld32&gt;,&lt;fld23&gt;,&lt;fld24&gt;,&lt;fld25&gt;,&lt;vsys&gt;,&lt;sensor&gt;,{&lt;fld50&gt;,&lt;fld59&gt;,&lt;fld52&gt;,&lt;web_method&gt;,&lt;fld54&gt;,&lt;fld55&gt;,&lt;fld56&gt;,&lt;starttime&gt;,&lt;fld58&gt;,&lt;threat_name&gt;,&lt;content_version&gt;,&lt;fld51&gt;|&lt;fld45&gt;}"/>
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,virus,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;dclass_counter1&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,{&quot;&lt;context&gt;&quot;|&lt;context&gt;},{&lt;signame&gt;(&lt;fld15&gt;)(&lt;sigid&gt;)|&lt;signame&gt;(&lt;sigid&gt;)},&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;location_src&gt;,&lt;location_dst&gt;,&lt;fld14&gt;,&lt;content_type&gt;,&lt;fld18&gt;,&lt;fld19&gt;,&lt;fld20&gt;,&lt;fld21&gt;,{&quot;&lt;user_agent&gt;&quot;|&lt;user_agent&gt;},&lt;filetype&gt;,&lt;ip.orig&gt;,{&quot;&lt;web_referer&gt;&quot;|&lt;web_referer&gt;},&lt;from&gt;,{&quot;&lt;subject&gt;&quot;|&lt;subject&gt;},&lt;to&gt;,&lt;fld31&gt;,&lt;fld32&gt;,&lt;fld23&gt;,&lt;fld24&gt;,&lt;fld25&gt;,&lt;vsys&gt;,&lt;sensor&gt;,{&lt;fld50&gt;,&lt;fld59&gt;,&lt;fld52&gt;,&lt;web_method&gt;,&lt;fld54&gt;,&lt;fld55&gt;,&lt;fld56&gt;,&lt;starttime&gt;,&lt;fld58&gt;,&lt;threat_name&gt;,&lt;content_version&gt;,&lt;fld51&gt;|&lt;fld45&gt;}"/>
+
+<MESSAGE 
+	id1="THREAT1:07" 
+	id2="THREAT" 
+	eventcategory="1001000000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_theme:TEV&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:file&gt;&lt;@dclass_counter1_string:Number of sessions with same Source IP, Destination IP, Application, and Subtype&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,THREAT,file,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;saddr&gt;,&lt;daddr&gt;,&lt;stransaddr&gt;,&lt;dtransaddr&gt;,&lt;rule&gt;,&lt;c_username&gt;,&lt;username&gt;,&lt;application&gt;,&lt;vsys&gt;,&lt;src_zone&gt;,&lt;dst_zone&gt;,&lt;sinterface&gt;,&lt;dinterface&gt;,&lt;rulename&gt;,&lt;fld7&gt;,&lt;sessionid&gt;,&lt;dclass_counter1&gt;,&lt;sport&gt;,&lt;dport&gt;,&lt;stransport&gt;,&lt;dtransport&gt;,&lt;fld9&gt;,&lt;protocol&gt;,&lt;action&gt;,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},{&lt;filetype&gt;(&lt;fld15&gt;)(&lt;sigid&gt;)|&lt;filetype&gt;(&lt;sigid&gt;)},&lt;filter&gt;,&lt;severity&gt;,&lt;direction&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;location_src&gt;,&lt;location_dst&gt;,&lt;fld14&gt;,&lt;content_type&gt;,&lt;fld18&gt;,&lt;fld19&gt;,&lt;fld20&gt;,&lt;fld21&gt;,{&quot;&lt;user_agent&gt;&quot;|&lt;user_agent&gt;},&lt;filetype&gt;,&lt;ip.orig&gt;,{&quot;&lt;web_referer&gt;&quot;|&lt;web_referer&gt;},&lt;from&gt;,{&quot;&lt;subject&gt;&quot;|&lt;subject&gt;},&lt;to&gt;,&lt;fld31&gt;,&lt;fld32&gt;,&lt;fld23&gt;,&lt;fld24&gt;,&lt;fld25&gt;,&lt;vsys&gt;,&lt;sensor&gt;,{&lt;fld50&gt;,&lt;fld59&gt;,&lt;fld52&gt;,&lt;web_method&gt;,&lt;fld54&gt;,&lt;fld55&gt;,&lt;fld56&gt;,&lt;starttime&gt;,&lt;fld58&gt;,&lt;threat_name&gt;,&lt;content_version&gt;,&lt;fld51&gt;|&lt;fld45&gt;}"/>
 
 <MESSAGE 
 	id1="THREAT1:04" 
