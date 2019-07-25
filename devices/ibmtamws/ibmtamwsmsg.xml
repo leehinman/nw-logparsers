@@ -4,10 +4,14 @@
 	displayname="IBM TAM WebSEAL"
 	group="Access Control">
 <VERSION
-	xml="10"
-	checksum="602c9c229009095ce3b84e8991af0e18"
-	revision="121"
+	xml="13"
+	checksum="306a1d92c781e485c1941e403d184042"
+	revision="132"
 	device="2.0" />
+	
+<TAGVALMAP
+    pairdelimiter="|" 
+	encapsulator="&quot;" />
 
  
  
@@ -23,6 +27,10 @@
 	id1="0003" 
 	id2="0003"  
 	content="%IBMTAMWS-&lt;hfld1&gt;: &lt;hfld2&gt; - &lt;hfld3&gt; &lt;hfld4&gt; &lt;hfld5&gt; &quot;&lt;messageid&gt; &lt;!payload:hfld2&gt;" /> 
+<HEADER 
+	id1="0004" 
+	id2="0004"  
+	content="&lt;hfld1&gt; &lt;hostname&gt; &lt;hfld3&gt; &lt;hfld4&gt; - - &lt;messageid&gt;|&lt;!payload&gt;" /> 
 
 <VALUEMAP 
 	name="outcome" 
@@ -311,4 +319,13 @@
 	eventcategory="1401070000" 
 	functions="&lt;@action:Switch-user logout&gt;&lt;@disposition:*outcome(fld7)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F-%H:%U:%O',fld1)&gt;"
 	content="&lt;fld1&gt;.&lt;fld2&gt;^^Eventid=&lt;fld3&gt;^^Outcome=&lt;fld7&gt;^^Reason=&lt;result&gt;^^Blade=&lt;event_source&gt;^^Instance=&lt;instance&gt;^^Component=&lt;category&gt;^^Action=&lt;event_type&gt;^^Location=&lt;hostname&gt;^^Principal=&lt;username&gt;^^name_in_rgy=&lt;src_dn&gt;^^Session_id=&lt;sessionid&gt;^^User_Location=&lt;saddr&gt;^^Resource=&lt;obj_type&gt;^^Object=&lt;obj_name&gt;^^Auth_Type=&lt;authmethod&gt;^^Term_reason=&lt;info&gt;^^Audit_event=&lt;event_state&gt;" />
+<MESSAGE 
+	id1="isam-http-request-log" 
+	id2="isam-http-request-log" 
+	eventcategory="1204000000" 
+	tagval="true" 
+	missField="true"
+	functions="&lt;@web_query:*URL($QUERY,url)&gt;&lt;@web_root:*URL($ROOT,url)&gt;&lt;@webpage:*URL($PAGE,url)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F/%B/%W:%H:%U:%O',fld2)&gt;"
+	content="client-ip=&lt;daddr&gt;|server-ip=&lt;saddr&gt;|client-logname=&lt;fld1&gt;|remote-user=&lt;username&gt;|time=&lt;fld2&gt;|port=&lt;port&gt;|protocol=&lt;protocol&gt;|request-method=&lt;web_method&gt;|response-status=&lt;resultcode&gt;|url=&lt;url&gt;|bytes=&lt;rbytes&gt;|remote-host=&lt;hostip&gt;|request=&lt;fld4&gt;" />
+
 </DEVICEMESSAGES>
