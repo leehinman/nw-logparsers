@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="13"
+	xml="15"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
 	revision="132"
     device="2.0" />
@@ -74,6 +74,12 @@
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
 	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp | azuremonitor | cloudtrail }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
+	id1="0013"
+	id2="0013"
+	messageid="VENDORMAP(devvendor, product)"
+	content="&lt;hmonth&gt; &lt;hdate&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hostname&gt; &lt;hfld1&gt;: &lt;hseverity&gt; - &lt;hfld3&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|&lt;event_type&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0010"
@@ -198,7 +204,7 @@
 	id1="websense" 
 	id2="websense" 
 	eventcategory="1901000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X','%B %F %W %Z',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
 <MESSAGE 
@@ -313,6 +319,19 @@
 	eventcategory="1901000000" 
 	functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U:%O',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+<MESSAGE 
+	id1="enforcive_escpa" 
+	id2="enforcive_escpa" 
+	eventcategory="1901000000" 
+	functions="&lt;@event_name:*HDR(event_description)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %N:%U:%O',param_event_time)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F-%H.%T.%O',param_endtime)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_endtime&gt;&lt;msghold&gt;" />
+
+<MESSAGE
+	id1="symantecatp" 
+	id2="symantecatp" 
+	eventcategory="1001030000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />	
 
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -329,6 +348,7 @@
 	<Vendor2Device vendor="BCN" product="Adonis" device="bluecat" group="System"/>
 	<Vendor2Device vendor="Websense" product="Security" device="websense" group="Web Logs"/>
 	<Vendor2Device vendor="Forcepoint" product="Security" device="websense" group="Web Logs"/>
+	<Vendor2Device vendor="FORCEPOINT" product="Firewall" device="websense" group="Web Logs"/>
 	<Vendor2Device vendor="Websense" product="Data Security" device="websenseds" group="DLP"/>
 	<Vendor2Device vendor="McAfee" product="Web Gateway" device="mcafeewg" group="Web Logs"/>
 	<Vendor2Device vendor="RSA" product="Security Analytics Audit" device="securityanalytics" group="Analysis"/>
@@ -370,7 +390,9 @@
 	<Vendor2Device vendor="Google" product="Gsuite" device="gsuite" group="Cloud"/>
     <Vendor2Device vendor="Cisco" product="Cisco AMP" device="ciscoamp" group="Cloud"/>
 	<Vendor2Device vendor="Microsoft" product="ATA" device="msata" group="IDS"/>
-
+	<Vendor2Device vendor="Enforcive" product="ES CPA" device="enforcive_escpa" group="Analysis"/>
+    <Vendor2Device vendor="Symantec" product="SEDR" device="symantecatp" group="Anti Virus"/>
+	<Vendor2Device vendor="Symantec" product="ATPU" device="symantecatp" group="Anti Virus"/>
 </VendorProducts>
 
 
@@ -396,7 +418,9 @@
 		</ExtensionKey>
 		<ExtensionKey cefName="deviceDnsDomain" metaName="domain"/>
 		<ExtensionKey cefName="deviceExternalId" metaName="hardware_id"/>
-		<ExtensionKey cefName="deviceFacility" metaName="cs_devfacility"/>
+		<ExtensionKey cefName="deviceFacility" metaName="cs_devfacility">
+			<device2meta device="websense" metaName="policyname"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="deviceInboundInterface" metaName="sinterface"/>
 		<ExtensionKey cefName="deviceMacAddress" metaName="macaddr"/>
 		<ExtensionKey cefName="dvcmac" metaName="macaddr"/>
@@ -441,6 +465,8 @@
 			<device2meta device="trendmicrodsa" metaName="info"/>
 			<device2meta device="msata" metaName="info"/>
 			<device2meta device="checkpointfw1" metaName="info"/>
+			<device2meta device="enforcive_escpa" metaName="info"/>
+			<device2meta device="websense" metaName="info"/>			
 		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
@@ -534,6 +560,7 @@
 
 		
 		<ExtensionKey cefName="loginID" metaName="username"/>
+		<ExtensionKey cefName="requestURL" metaName="url"/>
 		
 
 		
@@ -1342,7 +1369,9 @@
 		<ExtensionKey cefName="src_latitude" metaName="latdec_src"/>
 		<ExtensionKey cefName="url" metaName="url"/>
 		<ExtensionKey cefName="risk_level_id" metaName="risk_num"/>
-		<ExtensionKey cefName="object" metaName="filename"/>
+		<ExtensionKey cefName="object" metaName="filename">		
+			<device2meta device="enforcive_escpa" metaName="cs_fld"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="alert_name" metaName="alert"/>
 		<ExtensionKey cefName="activity" metaName="action"/>
 		<ExtensionKey cefName="browser" metaName="user_agent"/>
@@ -1370,6 +1399,7 @@
         <ExtensionKey cefName="policy" metaName="policyname"/>
 		<ExtensionKey cefName="user" metaName="cs_fld"> 
 				<device2meta device="rsa_netwitness_audit" metaName="username"/>
+				<device2meta device="enforcive_escpa" metaName="username"/>
 		</ExtensionKey>			
 
 		
@@ -1639,6 +1669,40 @@
 		<ExtensionKey cefName="addPermission" metaName="permissions"/>
 		<ExtensionKey cefName="params" metaName="info"/>
 		<ExtensionKey cefName="arguments" metaName="info"/>
+
 		
+		<ExtensionKey cefName="bapp" metaName="cs_fld"/>
+		<ExtensionKey cefName="acttype" metaName="cs_fld"/>
+		<ExtensionKey cefName="actcode" metaName="cs_fld"/>
+		<ExtensionKey cefName="library" metaName="cs_fld"/>
+		<ExtensionKey cefName="objecttype" metaName="obj_type"/>
+		<ExtensionKey cefName="program" metaName="application"/>
+		<ExtensionKey cefName="jobid" metaName="operation_id"/>
+		<ExtensionKey cefName="rcv" metaName="cs_fld"/>
+		
+		
+	
+		<ExtensionKey cefName="device_time" metaName="param_event_time"/>
+		<ExtensionKey cefName="device_uid" metaName="agent.id"/>
+		<ExtensionKey cefName="internalIP" metaName="saddr"/>
+		<ExtensionKey cefName="internalHost" metaName="shost"/>
+		<ExtensionKey cefName="sha2" metaName="checksum"/>
+		<ExtensionKey cefName="md5" metaName="checksum"/>
+		<ExtensionKey cefName="AVEVirusName" metaName="virusname"/>
+		<ExtensionKey cefName="actual_action" metaName="action"/>
+		<ExtensionKey cefName="user_name" metaName="username"/>
+	    <ExtensionKey cefName="domain_name" metaName="domain"/>
+		<ExtensionKey cefName="disposition" metaName="disposition"/>
+		<ExtensionKey cefName="disposition_atp" metaName="cs_fld"/>
+		<ExtensionKey cefName="externalIP" metaName="daddr"/>
+		<ExtensionKey cefName="externalPort" metaName="dport"/>
+		<ExtensionKey cefName="data_source_url_domain" metaName="alias.ip"/>
+		<ExtensionKey cefName="data_source_url" metaName="url"/>
+		<ExtensionKey cefName="VantageSignatureID" metaName="sigid"/>
+		<ExtensionKey cefName="incident_uuid" metaName="cs_fld"/>
+		<ExtensionKey cefName="rule_name" metaName="rulename"/>
+		<ExtensionKey cefName="description" metaName="event_description"/>
+		<ExtensionKey cefName="message" metaName="context"/>
+		<ExtensionKey cefName="json" metaName="info"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
