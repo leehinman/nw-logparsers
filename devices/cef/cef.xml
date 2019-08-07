@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="15"
+	xml="18"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="132"
+	revision="133"
     device="2.0" />
 	
 
@@ -208,6 +208,13 @@
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
 <MESSAGE 
+	id1="forcepoint_firewall" 
+	id2="forcepoint_firewall" 
+	eventcategory="1901000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X','%B %F %W %Z',param_event_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
 	id1="msazurensg" 
 	id2="msazurensg" 
 	eventcategory="1612000000"
@@ -333,6 +340,13 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />	
 
+<MESSAGE
+	id1="fsecure_client_security" 
+	id2="fsecure_client_security" 
+	eventcategory="1001030000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -348,7 +362,7 @@
 	<Vendor2Device vendor="BCN" product="Adonis" device="bluecat" group="System"/>
 	<Vendor2Device vendor="Websense" product="Security" device="websense" group="Web Logs"/>
 	<Vendor2Device vendor="Forcepoint" product="Security" device="websense" group="Web Logs"/>
-	<Vendor2Device vendor="FORCEPOINT" product="Firewall" device="websense" group="Web Logs"/>
+	<Vendor2Device vendor="FORCEPOINT" product="Firewall" device="forcepoint_firewall" group="Web Logs"/>
 	<Vendor2Device vendor="Websense" product="Data Security" device="websenseds" group="DLP"/>
 	<Vendor2Device vendor="McAfee" product="Web Gateway" device="mcafeewg" group="Web Logs"/>
 	<Vendor2Device vendor="RSA" product="Security Analytics Audit" device="securityanalytics" group="Analysis"/>
@@ -377,6 +391,11 @@
 	<Vendor2Device vendor="Check Point" product="Syslog" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="Anti Virus" device="checkpointfw1" group="Firewall"/>
     <Vendor2Device vendor="Check Point" product="Connectra" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="Linux OS" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="Security Gateway/Management" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="SmartConsole" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="Threat Emulation" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="WEB_API" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Google" product="Cloud Platform" device="googlecloud" group="Cloud"/>
 	<Vendor2Device vendor="netskope" product="Netskope Cloud Security Platform" device="NetskopeCloudSecurityPlatform" group="Cloud"/>
 	<Vendor2Device vendor="RSA" product="RSA SecurID Access" device="rsasecuridaccess" group="Cloud"/>
@@ -393,6 +412,7 @@
 	<Vendor2Device vendor="Enforcive" product="ES CPA" device="enforcive_escpa" group="Analysis"/>
     <Vendor2Device vendor="Symantec" product="SEDR" device="symantecatp" group="Anti Virus"/>
 	<Vendor2Device vendor="Symantec" product="ATPU" device="symantecatp" group="Anti Virus"/>
+	<Vendor2Device vendor="F-Secure" product="F-Secure Client Security Premium" device="fsecure_client_security" group="Anti Virus"/>
 </VendorProducts>
 
 
@@ -466,7 +486,8 @@
 			<device2meta device="msata" metaName="info"/>
 			<device2meta device="checkpointfw1" metaName="info"/>
 			<device2meta device="enforcive_escpa" metaName="info"/>
-			<device2meta device="websense" metaName="info"/>			
+			<device2meta device="websense" metaName="info"/>
+			<device2meta device="fsecure_client_security" metaName="info"/>			
 		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
@@ -565,7 +586,8 @@
 
 		
 		<ExtensionKey cefName="spfResult" metaName="event_state"/>
-		
+
+		<ExtensionKey cefName="domainTreePath" metaName="directory"/>
 
 		<ExtensionKey cefName="ifname" metaName="interface"/>
 		<ExtensionKey cefName="loguid" metaName="cs_fld"/>
@@ -596,6 +618,32 @@
 		<ExtensionKey cefName="client_build" metaName="cs_fld"/>
 		<ExtensionKey cefName="cvpn_category" metaName="category"/>
 		<ExtensionKey cefName="device_identification" metaName="cs_fld"/>
+		<ExtensionKey cefName="product_category" metaName="category"/>
+		<ExtensionKey cefName="update_service" metaName="cs_fld"/>
+		<ExtensionKey cefName="administrator" metaName="user"/>
+		<ExtensionKey cefName="machine" metaName="hostname"/>
+		<ExtensionKey cefName="additional_info" metaName="context"/>
+		<ExtensionKey cefName="operation_number" metaName="operation_id"/>
+		<ExtensionKey cefName="control_log_type" metaName="cs_fld"/>
+		<ExtensionKey cefName="logid" metaName="id1"/>
+		<ExtensionKey cefName="cu_detected_by" metaName="dhost"/>
+		<ExtensionKey cefName="cu_detection_time" metaName="cs_fld"/>
+		<ExtensionKey cefName="cu_log_count" metaName="cs_fld"/>
+		<ExtensionKey cefName="cu_rule_category" metaName="rule_group"/>
+		<ExtensionKey cefName="cu_rule_id" metaName="rule_uid"/>
+		<ExtensionKey cefName="event_name" metaName="event_description"/>
+		<ExtensionKey cefName="event_start_time" metaName="param_starttime"/>
+		<ExtensionKey cefName="hostname" metaName="shost"/>
+		<ExtensionKey cefName="is_correlated" metaName="cs_fld"/>
+		<ExtensionKey cefName="is_last" metaName="cs_fld"/>
+		<ExtensionKey cefName="max_num_count_detected" metaName="cs_fld"/>
+		<ExtensionKey cefName="num_of_updates" metaName="dclass_counter1"/>
+		<ExtensionKey cefName="origin_repetitions" metaName="cs_fld"/>
+		<ExtensionKey cefName="source_repetitions" metaName="cs_fld"/>
+		<ExtensionKey cefName="users_repetitions" metaName="cs_fld"/>
+		<ExtensionKey cefName="time_interval" metaName="duration_string"/>
+		<ExtensionKey cefName="subject" metaName="info"/>
+
 		
 
 		
