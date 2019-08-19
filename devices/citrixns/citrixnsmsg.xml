@@ -4,12 +4,14 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="74"
-	checksum="7fc91a0f424bb316becb7bd479ae1fc9"
-	revision="127"
+	xml="76"
+	checksum="2b1da248e315eb7628672ed5a3ed6be7"
+	revision="133"
 	device="2.0" />
 
  
+<TAGVALMAP 
+	delimiter=" &quot;" />
 <HEADER 
 	id1="0001" 
 	id2="0001"
@@ -38,6 +40,12 @@
 	id2="0004"  
 	content="CEF:0|Citrix|&lt;fld1&gt;|&lt;fld2&gt;|&lt;fld3&gt;|&lt;messageid&gt;| &lt;!payload:fld1&gt;" /> 
 
+<HEADER 
+	id1="0006" 
+	id2="0006"  
+	messageid="*STRCAT('CITRIX','_','TVM')"
+	content="CEF:0|Citrix|&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;hfld1&gt;|&lt;severity&gt;| &lt;!payload&gt;" /> 
+
 <MESSAGE 
 	id1="AAA_EXTRACTED_GROUPS" 
 	id2="AAA_EXTRACTED_GROUPS" 
@@ -45,6 +53,16 @@
 	functions="&lt;@event_description:The groups extracted after user logs in&gt;&lt;@severity:Informational&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content="  {Extracted_groups &quot;&lt;group&gt;&quot; | Extracted_groups &quot;&lt;group&gt;} " />
 
+ <VALUEMAP
+		name="getEventLegacyCategoryName"
+		default="Other.Default"
+		keyvaluepairs="1204010000=&apos;Content.Web Traffic.Successful&apos;|1204020000=&apos;Content.Web Traffic.Denied&apos;" />
+   		
+  <VALUEMAP
+		name="getEventLegacyCategory"
+		default="1901000000"
+		keyvaluepairs="not blocked=&apos;1204010000&apos;|blocked=&apos;1204020000&apos;" />	
+ 
 <MESSAGE 
 	id1="AAA_LOGIN_FAILED" 
 	id2="AAA_LOGIN_FAILED" 
@@ -863,56 +881,65 @@
 	id2="APPFW_COOKIE" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="APPFW_CSRF_TAG" 
 	id2="APPFW_CSRF_TAG" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="APPFW_STARTURL" 
 	id2="APPFW_STARTURL" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="APPFW_FIELDCONSISTENCY" 
 	id2="APPFW_FIELDCONSISTENCY" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="APPFW_REFERER_HEADER" 
 	id2="APPFW_REFERER_HEADER" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="APPFW_SIGNATURE_MATCH" 
 	id2="APPFW_SIGNATURE_MATCH" 
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; cs6=&lt;fld9&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs3=&lt;fld6&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; cs6=&lt;fld9&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="AF_400_RESP" 
 	id2="AF_400_RESP" 
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="AF_MALFORMED_REQ_ERR" 
 	id2="AF_MALFORMED_REQ_ERR" 
 	eventcategory="1603000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;fld4&gt; cs2=&lt;fld5&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+	content="&lt;product&gt;|&lt;version&gt;|&lt;rule&gt;|&lt;fld1&gt;|&lt;severity&gt;|src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
+
+<MESSAGE 
+	id1="CITRIX_TVM" 
+	id2="CITRIX_TVM" 
+	tagval="true"
+	missField="true"
+	eventcategory="1603000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@vid:*HDR(hfld1)&gt;&lt;@msg_id:*HDR(hfld1)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="src=&lt;saddr&gt; spt=&lt;sport&gt; method=&lt;web_method&gt; request=&lt;url&gt; msg=&lt;info&gt; cn1=&lt;fld2&gt; cn2=&lt;fld3&gt; cs1=&lt;policyname&gt; cs2=&lt;fld5&gt; cs4=&lt;fld7&gt; cs5=&lt;fld8&gt; act=&lt;action&gt;" />
 
 <MESSAGE 
 	id1="APPFW_APPFW_POLICY_HIT" 
