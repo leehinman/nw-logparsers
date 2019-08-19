@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="18"
+	xml="21"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
 	revision="133"
     device="2.0" />
@@ -74,6 +74,12 @@
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
 	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp | azuremonitor | cloudtrail }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+
+<HEADER
+	id1="0014"
+	id2="0014"
+	messageid="VENDORMAP(devvendor, hproduct)"
+	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;hproduct&gt;|&lt;hversion&gt;|msazuregraph_security|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0013"
@@ -347,6 +353,20 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;msghold&gt;" />
 
+<MESSAGE 
+	id1="msazuregraph_security" 
+	id2="msazuregraph_security" 
+	eventcategory="1609000000" 
+	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_endtime)&gt;&lt;@effective_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_effective_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;param_effective_time&gt;&lt;msghold&gt;" />
+
+<MESSAGE 
+	id1="citrixns" 
+	id2="citrixns" 
+	eventcategory="1801000000" 
+	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_endtime)&gt;&lt;@effective_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_effective_time)&gt;"
+	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;param_effective_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -413,6 +433,9 @@
     <Vendor2Device vendor="Symantec" product="SEDR" device="symantecatp" group="Anti Virus"/>
 	<Vendor2Device vendor="Symantec" product="ATPU" device="symantecatp" group="Anti Virus"/>
 	<Vendor2Device vendor="F-Secure" product="F-Secure Client Security Premium" device="fsecure_client_security" group="Anti Virus"/>
+	<Vendor2Device vendor="Microsoft" product="Graph Security API" device="msazuregraph_security" group="Cloud"/>
+	<Vendor2Device vendor="Citrix" product="NetScaler" device="citrixns" group="Application Firewall"/>
+
 </VendorProducts>
 
 
@@ -440,6 +463,7 @@
 		<ExtensionKey cefName="deviceExternalId" metaName="hardware_id"/>
 		<ExtensionKey cefName="deviceFacility" metaName="cs_devfacility">
 			<device2meta device="websense" metaName="policyname"/>
+			<device2meta device="forcepoint_firewall" metaName="policyname"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="deviceInboundInterface" metaName="sinterface"/>
 		<ExtensionKey cefName="deviceMacAddress" metaName="macaddr"/>
@@ -487,7 +511,9 @@
 			<device2meta device="checkpointfw1" metaName="info"/>
 			<device2meta device="enforcive_escpa" metaName="info"/>
 			<device2meta device="websense" metaName="info"/>
-			<device2meta device="fsecure_client_security" metaName="info"/>			
+			<device2meta device="fsecure_client_security" metaName="info"/>	
+			<device2meta device="forcepoint_firewall" metaName="info"/>
+			<device2meta device="citrixns" metaName="info"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
@@ -942,6 +968,7 @@
 			<device2meta device="trendmicrodsa" metaName="cs_fld"/>
 			<device2meta device="vmwareappdefense" metaName="event_state"/>
 			<device2meta device="aws_cloudwatch" metaName="resultcode"/>
+			<device2meta device="msazuregraph_security" metaName="event_state"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="subscriptionId" metaName="id1"/>
 		<ExtensionKey cefName="uid" metaName="user.id"/>
@@ -952,6 +979,8 @@
 			<device2meta device="vmwareappdefense" metaName="id"/>
 			<device2meta device="msoffice365" metaName="id"/>
 			<device2meta device="NetskopeCloudSecurityPlatform" metaName="id"/>
+			<device2meta device="msazuregraph_security" metaName="id"/>
+			
 		</ExtensionKey>
 		<ExtensionKey cefName="signinDateTimeInMillis" metaName="event_time_string"/>
 		<ExtensionKey cefName="userPrincipalName" metaName="username"/>
@@ -1198,6 +1227,7 @@
 			<device2meta device="akamaikona" metaName="rulename"/>
 			<device2meta device="guardium" metaName="severity"/>
 			<device2meta device="msata" metaName="url"/>
+			<device2meta device="citrixns" metaName="policyname"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs1Label" metaName="cs_fld" />
 	
@@ -1473,7 +1503,9 @@
 		<ExtensionKey cefName="policyName" metaName="policyname"/>
 		<ExtensionKey cefName="deviceName" metaName="device"/>
 		<ExtensionKey cefName="userId" metaName="uid"/>
-		<ExtensionKey cefName="method" metaName="authmethod"/>
+		<ExtensionKey cefName="method" metaName="authmethod"> 
+				<device2meta device="citrixns" metaName="web_method"/>
+		</ExtensionKey>			
 		<ExtensionKey cefName="eventCode" metaName="resultcode"/>
 		
         
@@ -1752,5 +1784,26 @@
 		<ExtensionKey cefName="description" metaName="event_description"/>
 		<ExtensionKey cefName="message" metaName="context"/>
 		<ExtensionKey cefName="json" metaName="info"/>
+		
+		
+		<ExtensionKey cefName="vendorInformation.provider" metaName="event_source"/>
+		<ExtensionKey cefName="azureSubscriptionId" metaName="id1"/>
+		<ExtensionKey cefName="closedDateTime" metaName="param_endtime"/>
+		<ExtensionKey cefName="activityGroupName" metaName="group"/>
+		<ExtensionKey cefName="comments" metaName="comments"/>
+		<ExtensionKey cefName="eventDateTime" metaName="param_event_time"/>
+		<ExtensionKey cefName="lastModifiedDateTime" metaName="param_effective_time"/>
+		<ExtensionKey cefName="userStates.userPrincipalName" metaName="username"/>
+		<ExtensionKey cefName="userStates.emailRole" metaName="cs_fld"/>
+		<ExtensionKey cefName="userStates.domainName" metaName="domain.src"/>
+		<ExtensionKey cefName="userStates.aadUserId" metaName="user.id"/>
+		<ExtensionKey cefName="userStates.accountName" metaName="user"/>
+		<ExtensionKey cefName="userStates.logonIp" metaName="saddr"/>
+		<ExtensionKey cefName="userStates.logonLocation" metaName="location_desc"/>
+		<ExtensionKey cefName="userStates.riskScore" metaName="risk_num"/>
+		<ExtensionKey cefName="createdDateTime" metaName="param_starttime"/>
+		<ExtensionKey cefName="vendorInformation.subProvider" metaName="context"/>
+		<ExtensionKey cefName="vendorInformation.vendor" metaName="product"/>
+		<ExtensionKey cefName="title" metaName="info"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
