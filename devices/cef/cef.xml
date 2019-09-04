@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="21"
+	xml="24"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
 	revision="133"
     device="2.0" />
@@ -73,13 +73,13 @@
 	id1="0008"
 	id2="0008"
 	messageid="VENDORMAP(devvendor, product)"
-	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella|ciscoamp | azuremonitor | cloudtrail }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;product&gt;|&lt;version&gt;|{ azureaudit | azure_ad_signin | azure_ad_audit | vmwareappdefense | netskope |rsasecurid|amazonvpc|ciscoumbrella | azuremonitor | cloudtrail }|&lt;hevent_description&gt;|&lt;severity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0014"
 	id2="0014"
 	messageid="VENDORMAP(devvendor, hproduct)"
-	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;hproduct&gt;|&lt;hversion&gt;|msazuregraph_security|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;"/>
+	content="&lt;event_time_string&gt; &lt;hhost&gt; CEF:&lt;cefversion&gt;|&lt;devvendor&gt;|&lt;hproduct&gt;|&lt;hversion&gt;|{ msazuregraph_security | ciscoamp | qualys_vm_hosts }|&lt;hevent_description&gt;|&lt;hseverity&gt;|&lt;!payload&gt;"/>
 
 <HEADER
 	id1="0013"
@@ -315,7 +315,7 @@
 	id1="ciscoamp" 
 	id2="ciscoamp" 
 	eventcategory="1612000000"
-    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%X',param_starttime)&gt;&lt;@dclass_counter1_string:scan.malicious_detections&gt;"
 	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;msghold&gt;" />	
 
 	
@@ -367,6 +367,13 @@
 	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_event_time)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_starttime)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_endtime)&gt;&lt;@effective_time:*EVNTTIME($MSG,'%W-%G-%FT%Z',param_effective_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;param_starttime&gt;&lt;param_endtime&gt;&lt;param_effective_time&gt;&lt;msghold&gt;" />
 
+<MESSAGE
+	id1="qualysvmhosts" 
+	id2="qualysvmhosts" 
+	eventcategory="1612000000"
+    functions="&lt;@msg:*PARMVAL($MSG)&gt;"
+	content="&lt;msghold&gt;" />	
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -416,6 +423,10 @@
 	<Vendor2Device vendor="Check Point" product="SmartConsole" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="Threat Emulation" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Check Point" product="WEB_API" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="CPMI Client" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="ESOD" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="SmartView" device="checkpointfw1" group="Firewall"/>
+	<Vendor2Device vendor="Check Point" product="System Monitor" device="checkpointfw1" group="Firewall"/>
 	<Vendor2Device vendor="Google" product="Cloud Platform" device="googlecloud" group="Cloud"/>
 	<Vendor2Device vendor="netskope" product="Netskope Cloud Security Platform" device="NetskopeCloudSecurityPlatform" group="Cloud"/>
 	<Vendor2Device vendor="RSA" product="RSA SecurID Access" device="rsasecuridaccess" group="Cloud"/>
@@ -435,6 +446,7 @@
 	<Vendor2Device vendor="F-Secure" product="F-Secure Client Security Premium" device="fsecure_client_security" group="Anti Virus"/>
 	<Vendor2Device vendor="Microsoft" product="Graph Security API" device="msazuregraph_security" group="Cloud"/>
 	<Vendor2Device vendor="Citrix" product="NetScaler" device="citrixns" group="Application Firewall"/>
+	<Vendor2Device vendor="Qualys" product="VM Host Detection" device="qualysvmhosts" group="Cloud"/>
 
 </VendorProducts>
 
@@ -669,6 +681,19 @@
 		<ExtensionKey cefName="users_repetitions" metaName="cs_fld"/>
 		<ExtensionKey cefName="time_interval" metaName="duration_string"/>
 		<ExtensionKey cefName="subject" metaName="info"/>
+		<ExtensionKey cefName="sys_message:" metaName="info"/>
+		<ExtensionKey cefName="deviceCustomDate2Label" metaName="cs_label"/>
+		<ExtensionKey cefName="update_src" metaName="cs_fld"/>
+		<ExtensionKey cefName="sensor_alert_blade" metaName="cs_fld"/>
+		<ExtensionKey cefName="sensor_alert_category" metaName="category"/>
+		<ExtensionKey cefName="sensor_alert_duration" metaName="duration_string"/>
+		<ExtensionKey cefName="sensor_alert_id" metaName="cs_fld"/>
+		<ExtensionKey cefName="sensor_alert_source" metaName="event_source"/>
+		<ExtensionKey cefName="sensor_alert_message" metaName="context"/>
+		<ExtensionKey cefName="sensor_alert_module" metaName="process"/>
+		<ExtensionKey cefName="sensor_alert_title" metaName="info"/>
+		<ExtensionKey cefName="sensor_alert_type" metaName="event_type"/>
+		<ExtensionKey cefName="sensor_test_name" metaName="cs_fld"/>
 
 		
 
@@ -679,7 +704,9 @@
 	
 
 		<ExtensionKey cefName="deviceService" metaName="cs_devservice"/>
-		<ExtensionKey cefName="operation" metaName="cs_operation"/>
+		<ExtensionKey cefName="operation" metaName="cs_operation">
+			<device2meta device="checkpointfw1" metaName="action"/>		
+		</ExtensionKey>
 		<ExtensionKey cefName="parameters" metaName="info"/>
 		<ExtensionKey cefName="paramKey" metaName="cs_paramkey">
 				<device2meta device="rsa_netwitness_audit" metaName="obj_name"/>		
@@ -1245,10 +1272,11 @@
 			<device2meta device="akamaikona" metaName="info"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs3Label" metaName="cs_fld"/>
-		
+
 		<ExtensionKey cefName="cs4" metaName="cs_fld">
 			<device2meta device="mcafeewg" metaName="info" label="URL Categories"/>
 			<device2meta device="checkpointfw1" metaName="threat_name" label="Protection Name"/>
+			<device2meta device="citrixns" metaName="severity"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs4Label" metaName="cs_fld"/>
 		
@@ -1607,7 +1635,7 @@
 
 		
 		<ExtensionKey cefName="cloud_ioc.short_description" metaName="event_description"/>
-		<ExtensionKey cefName="computer.connector_guid" metaName="agent.id"/>
+		<ExtensionKey cefName="computer.connector_guid" metaName="cs_fld"/>
 		<ExtensionKey cefName="network_info.remote_ip" metaName="daddr"/>
 		<ExtensionKey cefName="network_info.parent.file_name" metaName="filename_src"/>
 		<ExtensionKey cefName="network_info.remote_port" metaName="dport"/>
@@ -1625,7 +1653,7 @@
 		<ExtensionKey cefName="file.attack_details.application" metaName="application"/>
 		<ExtensionKey cefName="file.parent.process_id" metaName="process_id_src"/>
 		<ExtensionKey cefName="file.file_path" metaName="directory"/>
-		<ExtensionKey cefName="scan.malicious_detections" metaName="cs_fld"/>
+		<ExtensionKey cefName="scan.malicious_detections" metaName="dclass_counter1"/>
 		<ExtensionKey cefName="vulnerabilities.score" metaName="threat_val"/>
 		<ExtensionKey cefName="computer.links.trajectory" metaName="cs_fld"/>
 		<ExtensionKey cefName="scan.description" metaName="context"/>
@@ -1638,7 +1666,7 @@
 		<ExtensionKey cefName="file.attack_details.attacked_module" metaName="cs_fld"/>
 		<ExtensionKey cefName="network_info.dirty_url" metaName="url"/>
 		<ExtensionKey cefName="computer.active" metaName="cs_fld"/>
-		<ExtensionKey cefName="connector_guid" metaName="groupid"/>
+		<ExtensionKey cefName="connector_guid" metaName="connectionid"/>
 		<ExtensionKey cefName="network_info.parent.process_id" metaName="process_id_src"/>
 		<ExtensionKey cefName="network_info.local_port" metaName="sport"/>
 		<ExtensionKey cefName="vulnerabilities.cve" metaName="cve"/>
@@ -1662,10 +1690,13 @@
 		<ExtensionKey cefName="network_info.parent.identity.md5" metaName="cs_fld"/>
 		<ExtensionKey cefName="file.parent.identity.sha1" metaName="cs_fld"/>
 		<ExtensionKey cefName="timestamp_nanoseconds" metaName="cs_fld"/>
-		<ExtensionKey cefName="file.parent.file_name" metaName="cs_fld"/>
+		<ExtensionKey cefName="file.parent.file_name" metaName="filename_src"/>
 		<ExtensionKey cefName="file.parent.disposition" metaName="disposition"/>
 		<ExtensionKey cefName="computer.external_ip" metaName="stransaddr"/>
 		<ExtensionKey cefName="network_info.nfm.direction" metaName="direction"/>
+		<ExtensionKey cefName="fault_event_title" metaName="result"/>
+		<ExtensionKey cefName="error.error_code" metaName="resultcode"/>
+		<ExtensionKey cefName="error.description" metaName="result"/>
 		
 		
 		<ExtensionKey cefName="ad.app" metaName="application"/>
@@ -1805,5 +1836,17 @@
 		<ExtensionKey cefName="vendorInformation.subProvider" metaName="context"/>
 		<ExtensionKey cefName="vendorInformation.vendor" metaName="product"/>
 		<ExtensionKey cefName="title" metaName="info"/>
+		
+		<ExtensionKey cefName="HOST.ID" metaName="id1"/>
+		<ExtensionKey cefName="HOST.IP" metaName="saddr"/>
+		<ExtensionKey cefName="HOST.OS" metaName="os"/>
+		<ExtensionKey cefName="HOST.NETBIOS" metaName="domain_id"/>
+		<ExtensionKey cefName="HOST.DNS" metaName="event_computer"/>
+		<ExtensionKey cefName="DETECTION.QID" metaName="id2"/>
+		<ExtensionKey cefName="DETECTION.RESULTS" metaName="event_description"/>
+		<ExtensionKey cefName="DETECTION.STATUS" metaName="result"/>
+		<ExtensionKey cefName="DETECTION.SEVERITY" metaName="severity"/>
+		<ExtensionKey cefName="QID.BUGTRAQ_LIST.BUGTRAQ.URL" metaName="url"/>
+		<ExtensionKey cefName="QID.CVE_LIST.CVE.ID" metaName="cve"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
