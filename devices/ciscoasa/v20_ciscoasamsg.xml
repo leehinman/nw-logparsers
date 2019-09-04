@@ -4,9 +4,9 @@
 	displayname="Cisco ASA"
 	group="Firewall">
 <VERSION
-	xml="268"
-	checksum="83990640ba81a84c6d52da8fcd72e189"
-	revision="132"
+	xml="270"
+	checksum="371fb863f32b45749184a7f4eed740f7"
+	revision="133"
 	device="2.0" />
 
 
@@ -2000,6 +2000,13 @@
 	eventcategory="1801030000"
 	functions="&lt;@ec_theme:ALM&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@inout:*DIRCHK(saddr)&gt;&lt;@duration:*DUR($MSG,&apos;%N:%U:%O&apos;,duration)&gt;&lt;@event_description:teardown connection&gt;"
 	content="Teardown &lt;protocol&gt; connection &lt;connectionid&gt; faddr &lt;saddr&gt;/&lt;sport&gt; gaddr &lt;hostip&gt;/&lt;network_port&gt; laddr &lt;daddr&gt;/&lt;dport&gt; duration &lt;duration&gt; bytes &lt;bytes&gt; { (&lt;result&gt;) | &lt;result&gt; }" />
+<MESSAGE
+	id1="302015:05"
+	id2="302015"
+	eventcategory="1801020000"
+	functions="&lt;@ec_activity:Permit&gt;&lt;@ec_theme:Communication&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@level:*HDR(level)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;&lt;@direction:inbound&gt;&lt;@event_description:build connection&gt;"
+	content="Built inbound &lt;protocol&gt; connection &lt;connectionid&gt; for &lt;sinterface&gt;:&lt;saddr&gt;/&lt;sport&gt; (&lt;stransaddr&gt;/&lt;stransport&gt;)(&lt;domain&gt;\&lt;fld3&gt;) to &lt;dinterface&gt;:&lt;daddr&gt;/&lt;dport&gt; (&lt;dtransaddr&gt;/&lt;dtransport&gt;)(&lt;fld4&gt;) (&lt;username&gt;)" />
+
 <MESSAGE
 	id1="302015"
 	id2="302015"
@@ -8253,6 +8260,20 @@
 	eventcategory="1605010000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
     content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;saddr&gt; &lt;info&gt;"/>
+
+<MESSAGE
+	id1="199016"
+	id2="199016"
+	eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;fld6&gt;: [&lt;fld7&gt;] &lt;info&gt;"/>
+
+<MESSAGE
+	id1="199017"
+	id2="199017"
+	eventcategory="1605010000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %W %N %U %O',month,day,year,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@id:*HDR(messageid)&gt;"
+    content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt; &lt;fld6&gt;: &lt;info&gt;"/>
 
 <MESSAGE
 	id1="199018"
