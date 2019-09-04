@@ -4,15 +4,23 @@
 	displayname="HP OpenVMS"
 	group="Midrange">
 <VERSION
-	xml="9"
-	checksum="81ff5e208f40693898042b4db8e76ebf"
-	revision="0"
+	xml="10"
+	checksum="06e692517d655062e8f00dfdf2a13b43"
+	revision="133"
     device="2.0" />
 
  
   
 
-  
+<HEADER 
+	id1="0005" 
+	id2="0005"  
+	content="%OPENVMS-&lt;level&gt;: &lt;month&gt; &lt;day&gt; &lt;time&gt;[VMS-Audit] Security alarm (SECURITY) and security audit (SECURITY) on&lt;hhostname&gt;, system id: &lt;hsystem&gt;, Auditable event:&lt;messageid&gt; &lt;hfld1&gt;, &lt;!payload:messageid&gt;" />  
+    
+<HEADER 
+	id1="0006" 
+	id2="0006"  
+	content="%OPENVMS-&lt;level&gt;: &lt;month&gt; &lt;day&gt; &lt;time&gt;[VMS-Audit] Security audit (SECURITY) on &lt;hhostname&gt;, system id: &lt;hsystem&gt;, Auditable event:&lt;messageid&gt; &lt;hfld1&gt;, &lt;!payload:messageid&gt;" />  
 <HEADER 
 	id1="0001" 
 	id2="0001"  
@@ -30,20 +38,10 @@
 	id2="0004"  
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; [VMS-Audit] Security alarm (SECURITY) and security audit (SECURITY) on &lt;hhostname&gt;, system id: &lt;hsystem&gt;, Auditable event: &lt;messageid&gt; &lt;fld1&gt;, &lt;!payload:messageid&gt;" />  
 <HEADER 
-	id1="0005" 
-	id2="0005"  
-	content="%OPENVMS-&lt;level&gt;: &lt;month&gt; &lt;day&gt; &lt;time&gt;[VMS-Audit] Security alarm (SECURITY) and security audit (SECURITY) on&lt;hhostname&gt;, system id: &lt;hsystem&gt;, Auditable event:&lt;messageid&gt; &lt;hfld1&gt;, &lt;!payload:messageid&gt;" />  
-    
-<HEADER 
-	id1="0006" 
-	id2="0006"  
-	content="%OPENVMS-&lt;level&gt;: &lt;month&gt; &lt;day&gt; &lt;time&gt;[VMS-Audit] Security audit (SECURITY) on &lt;hhostname&gt;, system id: &lt;hsystem&gt;, Auditable event:&lt;messageid&gt; &lt;hfld1&gt;, &lt;!payload:messageid&gt;" />  
-<HEADER 
 	id1="0007" 
 	id2="0007"  
 	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; [VMS-Audit] Security alarm (SECURITY) and Security alarm (SECURITY) on &lt;hhostname&gt;, system id: &lt;hsystem&gt;, Auditable event: &lt;messageid&gt; &lt;fld1&gt;, &lt;!payload:messageid&gt;" />    
-	
-	
+
 <MESSAGE 
 	id1="000001" 
 	id2="Audit" 
@@ -116,6 +114,13 @@
 	eventcategory="1701030000" 
 	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Delete&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Identifier removed&gt;"
 	content="Identifier removed, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Terminal name: &lt;terminal&gt;, Image name: &lt;application&gt;, Identifier name: &lt;fld8&gt;, Identifier value: &lt;fld9&gt;, Attributes: &lt;fld10&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt; " />
+<MESSAGE
+	id1="Identifier:01"
+	id2="Identifier"
+	eventcategory="1701020000" 
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Modify&gt;&lt;@ec_theme:Configuration&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Identifier modified&gt;"
+	content="Identifier modified, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Identifier name: &lt;fld9&gt;, Identifier value: &lt;fld89&gt;, Attributes: &lt;fld10&gt;, New identifier value: &lt;fld11&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;,"/>
+
 <MESSAGE 
 	id1="000005" 
 	id2="Local" 
@@ -139,13 +144,13 @@
 	id2="Network" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Network login&gt;"
-	content="Network login, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt; " />
+	content="Network login, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, {Posix GID: &lt;groupid&gt;,|Posix GID: &lt;groupid&gt;} " />
 <MESSAGE 
 	id1="000008" 
 	id2="Network" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:NetworkComm&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Network logout&gt;"
-	content="Network logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt; " />
+	content="Network logout, Event time: &lt;fld1&gt;, {PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;|PID: &lt;process_id_val&gt;}, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, {Posix GID: &lt;groupid&gt;,|Posix GID: &lt;groupid&gt;} " />
 <MESSAGE 
 	id1="000027" 
 	id2="Network" 
@@ -168,14 +173,21 @@
 	id1="000009" 
 	id2="Object" 
 	eventcategory="1206000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;"
-	content=" Object access, Event information: &lt;event_description&gt;, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: &lt;owner&gt;, Terminal name: &lt;terminal&gt;:, Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, Object owner: [&lt;fld9&gt;], Object protection: &lt;privilege&gt;, OWNER:&lt;fld11&gt;, GROUP:&lt;group&gt;, WORLD:&lt;fld12&gt;, {Directory name: &lt;directory&gt;, Directory ID: (&lt;fld13&gt;), Directory entry: &lt;fld14&gt;|File name: &lt;filename&gt;, File ID: &lt;fld14&gt;}, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld18&gt;, Status: &lt;result&gt;, &lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+	content=" Object access, Event information: &lt;event_description&gt;, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Terminal name: &lt;terminal&gt;:, Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, Object owner: [&lt;user&gt;], Object protection: &lt;privilege&gt;, OWNER:&lt;fld11&gt;, GROUP:&lt;group&gt;, WORLD:&lt;fld12&gt;, {Directory name: &lt;directory&gt;, Directory ID: (&lt;fld13&gt;), Directory entry: &lt;fld14&gt;|File name: &lt;filename&gt;, File ID: &lt;fld14&gt;}, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld18&gt;, Status: &lt;result&gt;, {&lt;info&gt;,|&lt;info&gt;}" />
+<MESSAGE 
+	id1="000043:01" 
+	id2="Object" 
+	eventcategory="1206000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+	content=" Object access, Event information: &lt;event_description&gt;, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, Object owner: [&lt;user&gt;], Object protection: &lt;privilege&gt;, OWNER:&lt;fld11&gt;, GROUP:&lt;group&gt;, WORLD:&lt;fld12&gt;, {Directory name: &lt;directory&gt;, Directory ID: (&lt;fld13&gt;), Directory entry: &lt;fld14&gt; | File name: &lt;filename&gt;, File ID: &lt;fld14&gt; }, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld18&gt;, Status: &lt;result&gt;, {&lt;info&gt;,|&lt;info&gt;}" />
+
 <MESSAGE 
 	id1="000043" 
 	id2="Object" 
 	eventcategory="1206000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;"
-	content=" Object access, Event information: &lt;event_description&gt;, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: &lt;owner&gt;, Object class name: &lt;obj_type&gt;, Object owner: [&lt;fld9&gt;], Object protection: &lt;privilege&gt;, OWNER:&lt;fld11&gt;, GROUP:&lt;group&gt;, WORLD:&lt;fld12&gt;, {Directory name: &lt;directory&gt;, Directory ID: (&lt;fld13&gt;), Directory entry: &lt;fld14&gt; | File name: &lt;filename&gt;, File ID: &lt;fld14&gt; }, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld18&gt;, Status: &lt;result&gt;, &lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+	content=" Object access, Event information: &lt;event_description&gt;, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Object class name: &lt;obj_type&gt;, Object owner: [&lt;user&gt;], Object protection: &lt;privilege&gt;, OWNER:&lt;fld11&gt;, GROUP:&lt;group&gt;, WORLD:&lt;fld12&gt;, {Directory name: &lt;directory&gt;, Directory ID: (&lt;fld13&gt;), Directory entry: &lt;fld14&gt; | File name: &lt;filename&gt;, File ID: &lt;fld14&gt; }, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld18&gt;, Status: &lt;result&gt;, {&lt;info&gt;,|&lt;info&gt;,}" />
 <MESSAGE 
 	id1="000010" 
 	id2="Object" 
@@ -192,26 +204,82 @@
 	id1="000012" 
 	id2="Object" 
 	eventcategory="1206000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;"
-	content="Object access, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Terminal name: &lt;terminal&gt;, Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, File name: &lt;filename&gt;, File ID: &lt;fld8&gt;, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld12&gt;, Status: &lt;result&gt;, &lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+	content="Object access, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Terminal name: &lt;terminal&gt;, Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, File name: &lt;filename&gt;, File ID: &lt;fld8&gt;, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, {Deaccess key: &lt;fld55&gt;, Sequence key: &lt;fld12&gt;|Sequence key: &lt;fld12&gt;}, Status: &lt;result&gt;, {&lt;info&gt;,|&lt;info&gt;}" />
+<MESSAGE 
+	id1="000036:01" 
+	id2="Object" 
+	eventcategory="1206000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+	content="Object access, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;ParentPID:&lt;process_id_src&gt;, Process name: &lt;process&gt;Parentprocessname:&lt;process_src&gt;, Username: &lt;username&gt;Parentusername:&lt;c_username&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, File name: &lt;filename&gt;, File ID: &lt;fld8&gt;, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt; Parent Posix UID:&lt;fld56&gt;, Posix GID: &lt;groupid&gt; Parent Posix GID:&lt;fld55&gt;, Sequence key: &lt;fld12&gt;, Status: &lt;result&gt;, &lt;info&gt;," />
+
 <MESSAGE 
 	id1="000036" 
 	id2="Object" 
 	eventcategory="1206000000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;"
-	content="Object access, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, File name: &lt;filename&gt;, File ID: &lt;fld8&gt;, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld12&gt;, Status: &lt;result&gt;, &lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+	content="Object access, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Object class name: &lt;obj_type&gt;, File name: &lt;filename&gt;, File ID: &lt;fld8&gt;, Access requested: &lt;action&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Sequence key: &lt;fld12&gt;, Status: &lt;result&gt;, {&lt;info&gt;,|&lt;info&gt;}" />
+<MESSAGE
+	id1="Object:01"
+	id2="Object"
+	eventcategory="1206000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object access&gt;"
+    content="Object access, Event time:&lt;fld1&gt;,{PID:&lt;process_id_val&gt;ParentPID:&lt;process_id_src&gt;, Process name:&lt;process&gt;Parentprocessname:&lt;process_src&gt;, Username:&lt;username&gt;Parentusername:&lt;c_username&gt;|PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;}, Process owner: [&lt;owner&gt;],{Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;, Directory name:&lt;directory&gt;, Directory ID:&lt;fld9&gt;, Directory entry:&lt;fld10&gt;|Object class name:&lt;obj_type&gt;, File name:&lt;filename&gt;, File ID:&lt;fld9&gt;}, Access requested:&lt;action&gt;, Posix UID:&lt;uid&gt;Parent Posix UID:&lt;fld77&gt;, Posix GID:&lt;groupid&gt;Parent Posix GID:&lt;fld4&gt;,{Deaccess key:&lt;fld17&gt;, Sequence key:&lt;fld18&gt;|Sequence key:&lt;fld18&gt;}, Status:&lt;result&gt;,&lt;info&gt;,"/>
+
+<MESSAGE
+	id1="Object:02"
+	id2="Object"
+	eventcategory="1206000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object creation&gt;"
+    content="Object creation, Event time:&lt;fld1&gt;,{PID:&lt;process_id_val&gt;ParentPID:&lt;process_id_src&gt;, Process name:&lt;process&gt;Parentprocessname:&lt;process_src&gt;, Username:&lt;username&gt;Parentusername:&lt;c_username&gt;|PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;}, Process owner: [&lt;owner&gt;],{Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;, Directory name:&lt;directory&gt;, Directory ID:&lt;fld9&gt;, Directory entry:&lt;fld10&gt;|Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;, File name:&lt;filename&gt;, File ID:&lt;fld9&gt;|Object class name:&lt;obj_type&gt;, File name:&lt;filename&gt;, File ID:&lt;fld9&gt;}, Posix UID:&lt;uid&gt;Parent Posix UID:&lt;fld41&gt;, Posix GID:&lt;groupid&gt;Parent Posix GID:&lt;fld4&gt;,{Deaccess key:&lt;fld17&gt;, Sequence key:&lt;fld18&gt;|Sequence key:&lt;fld18&gt;}, Status:&lt;result&gt;,&lt;info&gt;,"/>
+
+<MESSAGE
+	id1="Object:03"
+	id2="Object"
+	eventcategory="1206000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object creation&gt;"
+	content="Object creation, Event time:&lt;fld1&gt;, PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;, Process owner: [&lt;owner&gt;],{Terminal name:&lt;terminal&gt;, Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;|Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;|Terminal name:&lt;terminal&gt;, Object class name:&lt;obj_type&gt;|Object class name:&lt;obj_type&gt;}, File name:&lt;filename&gt;, File ID:&lt;fld8&gt;, Posix UID:&lt;uid&gt;, Posix GID:&lt;groupid&gt;, Deaccess key:&lt;fld17&gt;, Sequence key:&lt;fld18&gt;, Status:&lt;result&gt;,&lt;info&gt;,"/>
+
+<MESSAGE
+	id1="Object:04"
+	id2="Object"
+	eventcategory="1206000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object deaccess&gt;"
+	content="Object deaccess, Event time:&lt;fld1&gt;, PID:&lt;process_id_val&gt;, Object class name:&lt;obj_type&gt;, Deaccess key:&lt;fld17&gt;,"/>
+
+<MESSAGE
+	id1="Object:05"
+	id2="Object"
+	eventcategory="1206000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Object creation&gt;"
+	content="Object creation, Event information:&lt;event_description&gt;, Event time:&lt;fld1&gt;, PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;, Process owner: [&lt;owner&gt;],{Terminal name:&lt;terminal&gt;, Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;|Image name:&lt;application&gt;, Object class name:&lt;obj_type&gt;|Terminal name:&lt;terminal&gt;, Object class name:&lt;obj_type&gt;|Object class name:&lt;obj_type&gt;}, Object owner: [&lt;user&gt;], Object protection: &lt;privilege&gt;, OWNER:&lt;fld11&gt;, GROUP:&lt;group&gt;, WORLD:&lt;fld12&gt;, File name:&lt;filename&gt;, File ID:&lt;fld4&gt;, Posix UID:&lt;uid&gt;, Posix GID:&lt;groupid&gt;, Sequence key:&lt;fld7&gt;, Status:&lt;result&gt;,&lt;info&gt;,"/>
+
+<MESSAGE
+	id1="Privilege"
+	id2="Privilege"
+	eventcategory="1612000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Privilege used&gt;"
+	content="Privilege used, Event information:&lt;event_description&gt;, Event time:&lt;fld1&gt;, PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;, Process owner: [&lt;owner&gt;], Image name:&lt;application&gt;, Privileges used:&lt;privilege&gt;, Posix UID:&lt;uid&gt;, Posix GID:&lt;groupid&gt;,"/>
+
+<MESSAGE
+	id1="Remote:01"
+	id2="Remote"
+	eventcategory="1401000000" 
+	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Remote interactive breakin detection&gt;"
+	content="Remote interactive breakin detection, Event time:&lt;fld1&gt;, PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;, Password:&lt;fld19&gt;, Terminal name:&lt;terminal&gt;,&lt;fld5&gt;, Host:&lt;fqdn&gt;Port:&lt;network_port&gt;, Remote nodename:&lt;node&gt;, Remote node id:&lt;r_hostid&gt;, Remote username:&lt;c_username&gt;, Status:&lt;result&gt;,&lt;info&gt;,"/>
+
 <MESSAGE 
 	id1="000013" 
 	id2="Remote" 
 	eventcategory="1401030000" 
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Remote interactive login failure&gt;"
-	content="Remote interactive login failure, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Terminal name: &lt;terminal&gt;, &lt;fld5&gt;, Host: &lt;fqdn&gt; {Port: &lt;network_port&gt;, Remote nodename:|, Remote nodename:} &lt;node&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Status: &lt;result&gt;, &lt;info&gt; " />
+	content="Remote interactive login failure, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Terminal name: &lt;terminal&gt;, &lt;fld5&gt;, Host: &lt;fqdn&gt; {Port: &lt;network_port&gt;, Remote nodename:|, Remote nodename:} &lt;node&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Status: &lt;result&gt;, {&lt;info&gt;,|&lt;info&gt;} " />
 <MESSAGE 
 	id1="000014" 
 	id2="Remote" 
 	eventcategory="1401030000" 
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Remote interactive login failure&gt;"
-	content="Remote interactive login failure, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Terminal name: &lt;terminal&gt;, Host: &lt;fqdn&gt; Port: &lt;network_port&gt;, Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, { Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Status: &lt;result&gt;, &lt;info&gt; | Status: &lt;result&gt;, &lt;info&gt; } " />
+	content="Remote interactive login failure, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Terminal name: &lt;terminal&gt;, Host: &lt;fqdn&gt; Port: &lt;network_port&gt;, Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, { Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;, Status: &lt;result&gt;| Status: &lt;result&gt;}, {&lt;info&gt;,|&lt;info&gt;}  " />
 <MESSAGE 
 	id1="000028" 
 	id2="Remote" 
@@ -229,13 +297,13 @@
 	id2="Remote" 
 	eventcategory="1401060000" 
 	functions="&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Remote interactive login&gt;"
-	content="Remote interactive login, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Terminal name: &lt;terminal&gt;:, Host: &lt;fqdn&gt; Port: &lt;network_port&gt;, Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt; " />
+	content="Remote interactive login, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Terminal name: &lt;terminal&gt;:, Host: &lt;fqdn&gt; {Locn: &lt;location_desc&gt;|Port: &lt;network_port&gt;}, Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, {Posix GID: &lt;groupid&gt;,|Posix GID: &lt;groupid&gt;} " />
 <MESSAGE 
 	id1="000016"
 	id2="Remote" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Remote interactive logout&gt;"
-	content="Remote interactive logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Terminal name: &lt;terminal&gt;:, Host: &lt;fqdn&gt; Port: &lt;network_port&gt;, Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt; " />
+	content="Remote interactive logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, {Process name: &lt;process&gt;, Username: &lt;username&gt;|Username: &lt;username&gt;}, Process owner: [&lt;owner&gt;], Terminal name: &lt;terminal&gt;:, Host: &lt;fqdn&gt; {Locn: &lt;location_desc&gt;|Port: &lt;network_port&gt;}, Image name: &lt;application&gt;, Remote node id: &lt;r_hostid&gt;, Remote username: &lt;c_username&gt;, Posix UID: &lt;uid&gt;, {Posix GID: &lt;groupid&gt;,|Posix GID: &lt;groupid&gt;} " />
 <MESSAGE 
 	id1="000017" 
 	id2="Security" 
@@ -248,12 +316,26 @@
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Server thread logout&gt;"
 	content="Server thread logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt;, Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt; " />
+<MESSAGE
+	id1="Server:01"
+	id2="Server"
+	eventcategory="1401070000" 
+	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Server thread logout&gt;"
+	content="Server thread logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], Posix UID: &lt;uid&gt;, Posix GID: &lt;groupid&gt;,"/>
+
 <MESSAGE 
 	id1="000022"
 	id2="Subprocess" 
 	eventcategory="1302000000" 
-	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Subprocess or pipe subprocess login&gt;"
-	content="Subprocess or pipe subprocess login, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt; { Parent username: | Parentusername: }&lt;agent&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt;, Posix UID: &lt;uid&gt; Parent Posix UID: &lt;fld3&gt;, Posix GID: &lt;groupid&gt; Parent Posix GID: &lt;fld4&gt; " />
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Subprocess or pipe subprocess login&gt;&lt;@c_username:*PARMVAL(agent)&gt;"
+	content="Subprocess or pipe subprocess login, Event time: &lt;fld1&gt;, {PID: &lt;process_id_val&gt; Parent PID:&lt;process_id_src&gt;, Process name: &lt;process&gt;Parent process name:&lt;process_src&gt;|PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;}, Username: &lt;username&gt; { Parent username: | Parentusername: }&lt;agent&gt;, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt;, Posix UID: &lt;uid&gt; Parent Posix UID: &lt;fld3&gt;, Posix GID: &lt;groupid&gt; Parent Posix GID: &lt;fld4&gt; " />
+<MESSAGE
+	id1="Subprocess:01"
+	id2="Subprocess"
+	eventcategory="1304000000" 
+	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Subprocess or pipe subprocess logout&gt;"
+	content="Subprocess or pipe subprocess logout, Event time:&lt;fld1&gt;, PID: &lt;process_id_val&gt;ParentPID:&lt;process_id_src&gt;, Process name: &lt;process&gt;Parentprocessname:&lt;process_src&gt;, Username: &lt;username&gt;Parentusername:&lt;c_username&gt;, Process owner: [&lt;fld8&gt;], Image name: &lt;application&gt;, Posix UID: &lt;uid&gt; Parent Posix UID:&lt;fld9&gt;, Posix GID: &lt;groupid&gt; Parent Posix GID: &lt;fld11&gt;,"/>
+
 <MESSAGE 
 	id1="000019" 
 	id2="System" 
@@ -333,7 +415,7 @@
 	id2="Subprocess" 
 	eventcategory="1302000000" 
 	functions="&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Subprocess or pipe subprocess login&gt;"
-	content="Subprocess or pipe subprocess login, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt; " />
+	content="Subprocess or pipe subprocess login, Event time: &lt;fld1&gt;, {PID:&lt;process_id_val&gt;ParentPID:&lt;process_id_src&gt;, Process name:&lt;process&gt;Parentprocessname:&lt;process_src&gt;, Username:&lt;username&gt;Parentusername:&lt;c_username&gt;|PID:&lt;process_id_val&gt;, Process name:&lt;process&gt;, Username:&lt;username&gt;}, Process owner: [&lt;owner&gt;], Image name: &lt;application&gt; " />
 		
 		
 <MESSAGE 
@@ -381,7 +463,7 @@
 	id2="Batch" 
 	eventcategory="1401070000" 
 	functions="&lt;@ec_subject:Process&gt;&lt;@ec_activity:Logoff&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($MSG,'%F-%B-%W %N:%U:%O',fld1)&gt;&lt;@event_description:Batch process logout&gt;"
-	content="Batch process logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;fld2&gt;], Image name: &lt;application&gt;" />
+	content="Batch process logout, Event time: &lt;fld1&gt;, PID: &lt;process_id_val&gt;, Process name: &lt;process&gt;, Username: &lt;username&gt;, Process owner: [&lt;owner&gt;], {Image name: &lt;application&gt;, Posix UID:&lt;uid&gt;, Posix GID: &lt;groupid&gt;,|Image name: &lt;application&gt;,|Image name: &lt;application&gt;}" />
 	
 			
 </DEVICEMESSAGES>
