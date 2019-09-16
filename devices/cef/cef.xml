@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="24"
+	xml="27"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
 	revision="133"
     device="2.0" />
@@ -374,6 +374,13 @@
     functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;msghold&gt;" />	
 
+<MESSAGE
+        id1="nginx"
+        id2="nginx"
+        eventcategory="1901000000"
+        functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_event_time)&gt;"
+        content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -447,6 +454,7 @@
 	<Vendor2Device vendor="Microsoft" product="Graph Security API" device="msazuregraph_security" group="Cloud"/>
 	<Vendor2Device vendor="Citrix" product="NetScaler" device="citrixns" group="Application Firewall"/>
 	<Vendor2Device vendor="Qualys" product="VM Host Detection" device="qualysvmhosts" group="Cloud"/>
+	<Vendor2Device vendor="Elasticsearch" product="NGINX" device="nginx" group="Web Logs"/>
 
 </VendorProducts>
 
@@ -936,7 +944,9 @@
 		<ExtensionKey cefName="whois.registrant" metaName="cs_registrant"/>
 		<ExtensionKey cefName="whois.registrar" metaName="cs_registrar"/>
 		<ExtensionKey cefName="whois.server" metaName="cs_whois_server"/>
-		<ExtensionKey cefName="time" metaName="param_event_time"/>
+		<ExtensionKey cefName="time" metaName="param_event_time">
+			<device2meta device="nginx" metaName="cs_fld"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="did" metaName="cn_log_did"/>
 		<ExtensionKey cefName="rid" metaName="cn_log_rid"/>
 		<ExtensionKey cefName="medium" metaName="cs_log_medium"/>
