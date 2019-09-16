@@ -4,16 +4,25 @@
 	displayname="Netscreen"
 	group="Firewall">
 <VERSION 
-	xml="34"
-	checksum="5dd5250fd97750ca86bb97078028cf79"
-	revision="121"
+	xml="35"
+	checksum="a4e8daae32569c406e96d702c7c5db3b"
+	revision="134"
 	device="2.0" />
 	
 
 <HEADER 
 	id1="0001" 
 	id2="0001" 
-	content="&lt;hfld1&gt;: NetScreen device_id=&lt;hfld2&gt; {[No Name]system|[&lt;hvsys&gt;]system|system}-&lt;hseverity&gt;-&lt;messageid&gt;(&lt;hfld3&gt;): &lt;!payload&gt;" />
+	content="&lt;hfld1&gt;: NetScreen device_id=&lt;hfld2&gt; [No Name]system-&lt;hseverity&gt;-&lt;messageid&gt;(&lt;hfld3&gt;): &lt;!payload&gt;" />
+<HEADER 
+	id1="0003" 
+	id2="0003" 
+	content="&lt;hfld1&gt;: NetScreen device_id=&lt;hfld2&gt; [&lt;hvsys&gt;]system-&lt;hseverity&gt;-&lt;messageid&gt;(&lt;hfld3&gt;): &lt;!payload&gt;" />
+<HEADER 
+	id1="0004" 
+	id2="0004" 
+	content="&lt;hfld1&gt;: NetScreen device_id=&lt;hfld2&gt; system-&lt;hseverity&gt;-&lt;messageid&gt;(&lt;hfld3&gt;): &lt;!payload&gt;" />
+
 <HEADER 
 	id1="0002" 
 	id2="0002" 
@@ -1837,6 +1846,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="unit &lt;fld2&gt; just { disappeared | discovered }" />
+<MESSAGE 
+	id1="00015:33" 
+	id2="00015" 
+	eventcategory="1605000000" 
+	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2)&gt;"
+	content="NSRP: HA data channel change to  &lt;interface&gt;. (&lt;fld2&gt;)" />
+
 <MESSAGE 
 	id1="00015:27" 
 	id2="00015" 
@@ -4582,7 +4598,7 @@
 	id2="00257" 
 	eventcategory="1801000000" 
 	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@inout:*DIRCHK($OUT,saddr,daddr)&gt;&lt;@action:*PARMVAL(disposition)&gt;"
-	content="start_time=&quot;&lt;fld2&gt;&quot; duration=&lt;duration&gt; policy_id=&lt;policy_id&gt; service=&lt;service&gt; proto=&lt;protocol&gt; src zone=&lt;src_zone&gt; dst zone=&lt;dst_zone&gt; action=&lt;disposition&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; {icmp type=&lt;icmptype&gt; icmp code=&lt;icmpcode&gt; session_id=&lt;sessionid&gt; reason=&lt;result&gt;|icmp type=&lt;icmptype&gt;}" />
+	content="start_time=&quot;&lt;fld2&gt;&quot; duration=&lt;duration&gt; policy_id=&lt;policy_id&gt; service=&lt;service&gt; proto=&lt;protocol&gt; src zone=&lt;src_zone&gt; dst zone=&lt;dst_zone&gt; action=&lt;disposition&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt; {icmp type=&lt;icmptype&gt; icmp code=&lt;icmpcode&gt; session_id=&lt;sessionid&gt; reason=&lt;result&gt;|icmp type=&lt;icmptype&gt; session_id=&lt;sessionid&gt;|icmp type=&lt;icmptype&gt;}" />
 
  
 <MESSAGE 
@@ -4590,13 +4606,13 @@
 	id2="00257" 
 	eventcategory="1803000000" 
 	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@inout:*DIRCHK($OUT,saddr,daddr)&gt;&lt;@action:Deny&gt;&lt;@disposition:Deny&gt;"
-	content="start_time=&quot;&lt;fld2&gt;&quot; duration=&lt;duration&gt; policy_id=&lt;policy_id&gt; service=&lt;service&gt; proto=&lt;protocol&gt; src zone=&lt;src_zone&gt; dst zone=&lt;dst_zone&gt; action=Deny sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt;" />
+	content="start_time=&quot;&lt;fld2&gt;&quot; duration=&lt;duration&gt; policy_id=&lt;policy_id&gt; service=&lt;service&gt; proto=&lt;protocol&gt; src zone=&lt;src_zone&gt; dst zone=&lt;dst_zone&gt; action=Deny sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; src=&lt;saddr&gt; {dst=&lt;daddr&gt; session_id=&lt;sessionid&gt;|dst=&lt;daddr&gt;}" />
 <MESSAGE 
 	id1="00257:11" 
 	id2="00257" 
 	eventcategory="1801000000" 
 	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2)&gt;&lt;@bytes:*CALC(sbytes,+,rbytes)&gt;&lt;@inout:*DIRCHK($OUT,saddr,daddr)&gt;&lt;@action:*PARMVAL(disposition)&gt;"
-	content="start_time=&quot;&lt;fld2&gt;&quot; duration=&lt;duration&gt; policy_id=&lt;policy_id&gt; service=&lt;service&gt; proto=&lt;protocol&gt; src zone=&lt;src_zone&gt; dst zone=&lt;dst_zone&gt; action=&lt;disposition&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; src=&lt;saddr&gt; dst=&lt;daddr&gt;" />
+	content="start_time=&quot;&lt;fld2&gt;&quot; duration=&lt;duration&gt; policy_id=&lt;policy_id&gt; service=&lt;service&gt; proto=&lt;protocol&gt; src zone=&lt;src_zone&gt; dst zone=&lt;dst_zone&gt; action=&lt;disposition&gt; sent=&lt;sbytes&gt; rcvd=&lt;rbytes&gt; src=&lt;saddr&gt; {dst=&lt;daddr&gt; session_id=&lt;sessionid&gt; reason=&lt;result&gt;|dst=&lt;daddr&gt;}" />
 <MESSAGE 
 	id1="00257:12" 
 	id2="00257" 
@@ -5039,8 +5055,8 @@
 	id1="00513" 
 	id2="00513" 
 	eventcategory="1605000000" 
-	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;"
-	content="The physical state of { the interface | the Interface | interface } &lt;interface&gt; has changed to &lt;fld2&gt;" />
+	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld1)&gt;"
+	content="The physical state of { the interface | the Interface | interface } &lt;interface&gt; has changed to {&lt;result&gt;. (&lt;fld1&gt;)|&lt;result&gt;}" />
 <MESSAGE 
 	id1="00515" 
 	id2="00515" 
@@ -5769,8 +5785,8 @@
 	id1="00531:03" 
 	id2="00531" 
 	eventcategory="1701000000" 
-	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;"
-	content="The system clock was updated from &lt;type&gt; NTP server type &lt;hostname&gt; with { a ms | an } adjustment of &lt;fld3&gt;. Authentication was &lt;fld4&gt;. Update mode was &lt;fld5&gt;" />
+	functions="&lt;@hardware_id:*HDR(hfld2)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@vsys:*HDR(hvsys)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@level:*SYSVAL($LEVEL)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',fld2)&gt;"
+	content="The system clock was updated from &lt;type&gt; NTP server type &lt;hostname&gt; with { a ms | an } adjustment of &lt;fld3&gt;. Authentication was &lt;fld4&gt;. Update mode was {&lt;fld5&gt;(&lt;fld2&gt;)|&lt;fld5&gt;}" />
 <MESSAGE 
 	id1="00531:04" 
 	id2="00531" 
