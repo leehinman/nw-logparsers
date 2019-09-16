@@ -4,9 +4,9 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="168"
-	checksum="46b922e4758b652182461cd1fe5fc533"
-	revision="128"
+	xml="169"
+	checksum="c0092bea8c9abf428226ee900410600f"
+	revision="134"
     device="2.0" />
 
 
@@ -3419,7 +3419,7 @@
 	id2="Allowed"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@event_description:File Write&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
-	content="{ - Caller MD5=&lt;checksum&gt;|&lt;fld1&gt;},File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+	content="{ - Caller MD5=&lt;checksum&gt;|&lt;fld1&gt;},File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 
 <MESSAGE
 	id1="Allowed:03"
@@ -3551,7 +3551,7 @@
 	id2="Continue"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Write Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Write&gt;"
-	content="&lt;fld5&gt; - Caller MD5=&lt;checksum&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,{Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;|Action Type:&lt;fld44&gt;}" />
+	content="&lt;fld5&gt; - Caller MD5=&lt;checksum&gt;,File Write,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},User: &lt;username&gt;,Domain: &lt;domain&gt;,{Action Type:&lt;fld46&gt;,File size (&lt;fld10&gt;): &lt;filename_size&gt;,Device ID: &lt;device&gt;|Action Type:&lt;fld44&gt;}" />
 <MESSAGE
 	id1="FileWrite:01"
 	id2="Continue"
@@ -3582,7 +3582,7 @@
 	id2="Continue"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@saddr:*HDR(hsaddr)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:File Delete Begin.&gt;&lt;@ec_subject:File&gt;&lt;@action:Delete&gt;"
-	content="&lt;info&gt; - Caller MD5=&lt;checksum&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+	content="&lt;info&gt; - Caller MD5=&lt;checksum&gt;,File Delete,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;fld3&gt;,&lt;process&gt;,&lt;fld4&gt;,No Module Name,{&quot;&lt;filename&gt;&quot;|&lt;filename&gt;},User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld44&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 <MESSAGE
 	id1="FileDelete:01"
 	id2="Continue"
