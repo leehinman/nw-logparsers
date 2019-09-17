@@ -4,9 +4,9 @@
 	displayname="EMC Data Domain"
 	group="Storage">
 <VERSION
-	xml="8"
-	checksum="f3ca5909f35abb1ceb9b999514908edf"
-	revision="106"
+	xml="9"
+	checksum="b331eb624c808fc09b292f6ecc7188db"
+	revision="134"
 	device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -357,5 +357,26 @@
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;service&gt;[&lt;process_id&gt;]:&lt;fld1&gt;" />
  
+<MESSAGE 
+	id1="AUDIT-SMS_ENCLOSURE-00013" 
+	id2="AUDIT-SMS_ENCLOSURE-00013" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld12)&gt;"
+	content="&lt;service&gt;: {{epoch=&lt;fld12&gt;;id=&apos;&lt;fld13&gt;&apos;;desc=&apos;&lt;event_description&gt;&apos;;level=&lt;fld15&gt;;user=&apos;&lt;username&gt;&apos;;role=&apos;&lt;user_role&gt;&apos;;app=&apos;&lt;application&gt;&apos;;host=&apos;&lt;hostname&gt;&apos;;detail=&apos;&lt;fld20&gt;&apos;;}" />
+
+<MESSAGE 
+	id1="AUDIT-SMS_LDAP-00001" 
+	id2="AUDIT-SMS_LDAP-00001" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld12)&gt;"
+	content="&lt;service&gt;: {{epoch=&lt;fld12&gt;;id=&apos;&lt;fld13&gt;&apos;;desc=&apos;&lt;event_description&gt;&apos;;level=&lt;fld15&gt;;user=&apos;&lt;username&gt;&apos;;role=&apos;&lt;user_role&gt;&apos;;app=&apos;&lt;application&gt;&apos;;host=&apos;&lt;hostname&gt;&apos;;}" />
+
+<MESSAGE 
+	id1="AUDIT-SMS_OST-00038" 
+	id2="AUDIT-SMS_OST-00038" 
+	eventcategory="1401000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',fld12)&gt;"
+	content="&lt;service&gt;: {{epoch=&lt;fld12&gt;;id=&apos;&lt;fld13&gt;&apos;;desc=&apos;&lt;event_description&gt;&apos;;level=&lt;fld15&gt;;user=&apos;&lt;username&gt;&apos;;role=&apos;&lt;user_role&gt;&apos;;app=&apos;&lt;application&gt;&apos;;host=&apos;&lt;hostname&gt;&apos;;detail=&apos;&lt;fld20&gt;&apos;;}" />
+
  
 </DEVICEMESSAGES>
