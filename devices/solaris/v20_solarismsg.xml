@@ -4,9 +4,9 @@
 	displayname="UNIX Solaris"
 	group="Unix">
 <VERSION
-	xml="154"
-	checksum="47e9ff7bfb31f259f1ae5bcc26e82499"
-	revision="118"
+	xml="156"
+	checksum="f70c5f0daeaf92f1a51ea2ff134d72b2"
+	revision="134"
 	device="2.0" />
 
 
@@ -5981,6 +5981,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_computer:*HDR(hhostip)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="  { &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } [ID &lt;id&gt; &lt;event_source&gt;.&lt;severity&gt;] Daemon is running." />
+<MESSAGE
+	id1="000280"
+	id2="sshd_auth"
+	eventcategory="1401070000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_computer:*HDR(hhostip)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Success&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',hmonth,hday,htime)&gt;&lt;@event_description:Logged off&gt;"
+	content="   { &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } [ID &lt;id&gt; &lt;event_source&gt;.&lt;severity&gt;] Logout by &lt;username&gt; (&lt;fld1&gt; &lt;terminal&gt; &lt;event_time_string&gt; (&lt;saddr&gt;))" />
+
 <MESSAGE
 	id1="000279"
 	id2="sshd_auth"
