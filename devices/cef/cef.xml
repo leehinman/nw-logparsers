@@ -3,7 +3,7 @@
 <VERSION
 	xml="27"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="133"
+	revision="134"
     device="2.0" />
 	
 
@@ -381,6 +381,13 @@
         functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%FT%H:%U:%O',param_event_time)&gt;"
         content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
+<MESSAGE
+        id1="forcepoint_email_security"
+        id2="forcepoint_email_security"
+        eventcategory="1901000000"
+        functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%X',param_event_time)&gt;"
+        content="&lt;param_event_time&gt;&lt;msghold&gt;" />
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -455,6 +462,8 @@
 	<Vendor2Device vendor="Citrix" product="NetScaler" device="citrixns" group="Application Firewall"/>
 	<Vendor2Device vendor="Qualys" product="VM Host Detection" device="qualysvmhosts" group="Cloud"/>
 	<Vendor2Device vendor="Elasticsearch" product="NGINX" device="nginx" group="Web Logs"/>
+	<Vendor2Device vendor="Forcepoint" product="Email Security" device="forcepoint_email_security" group="Anti Virus"/>
+
 
 </VendorProducts>
 
@@ -484,6 +493,7 @@
 		<ExtensionKey cefName="deviceFacility" metaName="cs_devfacility">
 			<device2meta device="websense" metaName="policyname"/>
 			<device2meta device="forcepoint_firewall" metaName="policyname"/>
+			<device2meta device="forcepoint_email_security" metaName="policyname"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="deviceInboundInterface" metaName="sinterface"/>
 		<ExtensionKey cefName="deviceMacAddress" metaName="macaddr"/>
@@ -491,7 +501,9 @@
 		<ExtensionKey cefName="deviceNtDomain" metaName="domain"/>
 		<ExtensionKey cefName="deviceOutboundInterface" metaName="dinterface"/>
 		<ExtensionKey cefName="devicePayloadId" metaName="cs_fld"/>
-		<ExtensionKey cefName="deviceProcessName" metaName="process"/>
+		<ExtensionKey cefName="deviceProcessName" metaName="process">
+			<device2meta device="forcepoint_email_security" metaName="rulename"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="deviceTranslatedAddress" metaName="hostip"/>
 		<ExtensionKey cefName="dhost" metaName="dhost"/>
 		<ExtensionKey cefName="dmac" metaName="dmacaddr"/>
@@ -534,6 +546,7 @@
 			<device2meta device="fsecure_client_security" metaName="info"/>	
 			<device2meta device="forcepoint_firewall" metaName="info"/>
 			<device2meta device="citrixns" metaName="info"/>
+			<device2meta device="forcepoint_email_security" metaName="subject"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
@@ -1265,6 +1278,7 @@
 			<device2meta device="guardium" metaName="severity"/>
 			<device2meta device="msata" metaName="url"/>
 			<device2meta device="citrixns" metaName="policyname"/>
+			<device2meta device="forcepoint_email_security" metaName="virusname" label="Virus Name"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs1Label" metaName="cs_fld" />
 	
@@ -1858,5 +1872,18 @@
 		<ExtensionKey cefName="DETECTION.SEVERITY" metaName="severity"/>
 		<ExtensionKey cefName="QID.BUGTRAQ_LIST.BUGTRAQ.URL" metaName="url"/>
 		<ExtensionKey cefName="QID.CVE_LIST.CVE.ID" metaName="cve"/>
+		
+		<ExtensionKey cefName="messageID" metaName="cs_fld"/>
+		<ExtensionKey cefName="to" metaName="to"/>
+		<ExtensionKey cefName="from" metaName="from"/>
+		<ExtensionKey cefName="cc" metaName="cc"/>
+		<ExtensionKey cefName="trueSrc" metaName="saddr"/>
+		<ExtensionKey cefName="x-mailer" metaName="cs_fld"/>
+		<ExtensionKey cefName="exceptionReason" metaName="info"/>
+		<ExtensionKey cefName="fnameAndfileHash" metaName="cs_fld"/>
+		<ExtensionKey cefName="hybridSpamScore" metaName="cs_fld"/>
+		<ExtensionKey cefName="localSpamScore" metaName="cs_fld"/>
+		<ExtensionKey cefName="replyTo" metaName="to"/>
+
 </ExtensionKeys>
 </DEVICEMESSAGES>
