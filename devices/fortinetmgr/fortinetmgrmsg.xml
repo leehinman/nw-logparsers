@@ -4,9 +4,9 @@
 	displayname="Fortinet Manager/Analyzer"
 	group="Firewall">
 <VERSION
-	xml="16"
-	checksum="ffd80ae1e09acba1216e50fa0b50fa8e"
-	revision="123"
+	xml="17"
+	checksum="ff28f25a4d55143ae134a5b5c5862824"
+	revision="134"
     device="2.0" />
     
 
@@ -95,6 +95,15 @@
 	 eventcategory="1801000000"
 	 functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hlog_type)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	 content="user=&quot;&lt;username&gt;&quot; userfrom=&quot;&lt;fld1&gt;&quot;{msg=&quot;dev=&lt;fld2&gt;,vdom=&lt;fld3&gt;,type=&lt;fld4&gt;,key=&lt;fld5&gt;,act=&lt;action&gt;,pkgname=&lt;fld7&gt;,allowaccess=&lt;fld8&gt;&quot; adom=&quot;&lt;domain&gt;&quot;|msg=&quot;&lt;event_description&gt;&quot; adom=&quot;&lt;domain&gt;&quot;}"/>
+
+<MESSAGE
+	id1="event_fortinetmgr_tvm"
+	id2="event_fortinetmgr"
+	eventcategory="1605000000"
+	tagval="true"
+    missField="true"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@event_source:*HDR(hdevice)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@event_type:*HDR(hfld2)&gt;&lt;@category:*HDR(hfld3)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content=" desc=&lt;event_description&gt; user=&lt;username&gt; userfrom=&lt;fld1&gt; msg=&lt;info&gt; action=&lt;action&gt; adom=&lt;domain&gt; session_id=&lt;sessionid&gt;"/>
 
 <MESSAGE
 	 id1="generic_fortinetmgr"
