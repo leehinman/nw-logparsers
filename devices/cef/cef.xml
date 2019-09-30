@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="28"
+	xml="34"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
 	revision="134"
     device="2.0" />
@@ -752,17 +752,47 @@
 		<ExtensionKey cefName="identitytype" metaName="user_role"/>
 		<ExtensionKey cefName="identityarn" metaName="cs_identityarn"/>
 		<ExtensionKey cefName="transactiontype" metaName="cs_transaction"/>	
-		<ExtensionKey cefName="req.instanceid" metaName="cs_req_inst_id"/>
+		<ExtensionKey cefName="req.instanceid" metaName="agent.id"/>
 		<ExtensionKey cefName="requestid" metaName="cs_reqid">
 			<device2meta device="salesforce" metaName="trans_id"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="errorcode" metaName="resultcode"/>
 		<ExtensionKey cefName="resource" metaName="directory"/>
-		<ExtensionKey cefName="nw.instanceid" metaName="agent.id"/>
+		<ExtensionKey cefName="requestParameters.instancesSet.items.instanceId" metaName="agent.id"/>
+		<ExtensionKey cefName="responseElements.instancesSet.items.instanceId" metaName="agent.id"/>
+		<ExtensionKey cefName="userIdentity.sessionContext.sessionIssuer.userName" metaName="username"/>
 		<ExtensionKey cefName="nw.dstip" metaName="daddr"/>
-		<ExtensionKey cefName="nw.computername" metaName="hostname"/>
+		<ExtensionKey cefName="requestParameters.computerName" metaName="hostname"/>
 		<ExtensionKey cefName="eventname" metaName="event_description"/>
-		
+		<ExtensionKey cefName="nw.computername" metaName="hostname"/>
+		<ExtensionKey cefName="nw.instanceid" metaName="agent.id"/>
+		<ExtensionKey cefName="responseElements.requestId" metaName="cs_fld"/>
+		<ExtensionKey cefName="responseElements.keyName" metaName="cs_fld"/>
+		<ExtensionKey cefName="responseElements.keyFingerPrint" metaName="cs_fld"/>
+		<ExtensionKey cefName="responseElements.keyMaterial" metaName="cs_fld"/>
+		<ExtensionKey cefName="responseElements._return" metaName="cs_fld"/>
+		<ExtensionKey cefName="responseElements.groupId" metaName="groupid"/>
+		<ExtensionKey cefName="requestParameters.networkAclId" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.ruleNumber" metaName="rule"/>
+		<ExtensionKey cefName="requestParameters.egress" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.ruleAction" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.icmpTypeCode" metaName="icmpcode"/>
+		<ExtensionKey cefName="requestParameters.portRange.from" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.portRange.to" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.aclProtocol" metaName="ip_proto"/>
+		<ExtensionKey cefName="requestParameters.cidrBlock" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.groupId" metaName="groupid"/>
+		<ExtensionKey cefName="requestParameters.ipPermissions.items.ipProtocol" metaName="ip_proto"/>
+		<ExtensionKey cefName="requestParameters.ipPermissions.items.groups.items.groupId" metaName="groupid"/>
+		<ExtensionKey cefName="requestParameters.ipPermissions.items.ipRanges.items.cidrIp" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.ipPermissions.items.groups.items.description" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.ipPermissions.items.fromPort" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.ipPermissions.items.toPort" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.groupName" metaName="group"/>
+		<ExtensionKey cefName="requestParameters.groupDescription" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.vpcId" metaName="cs_fld"/>
+		<ExtensionKey cefName="requestParameters.keyName" metaName="cs_fld"/>
+
 
 	
 		
@@ -1140,6 +1170,8 @@
 		<ExtensionKey cefName="targets.ServicePrincipal.modifiedProperties.name" metaName="change_attribute"/>
 		<ExtensionKey cefName="targets.ServicePrincipal.modifiedProperties.oldValue" metaName="change_old"/>
 		<ExtensionKey cefName="targets.ServicePrincipal.modifiedProperties.newValue" metaName="change_new"/>
+		<ExtensionKey cefName="nw.saddr" metaName="saddr"/>
+
 
 		<ExtensionKey cefName="organizationId" metaName="domain_id"/>
 		<ExtensionKey cefName="internalLogonType" metaName="cs_fld"/>
@@ -1148,7 +1180,7 @@
 		<ExtensionKey cefName="userKey" metaName="cs_fld"/>
 		<ExtensionKey cefName="objectId" metaName="obj_name"/>
 		<ExtensionKey cefName="externalAccess" metaName="cs_fld"/>
-		<ExtensionKey cefName="mailboxOwnerSid" metaName="cs_fld"/>
+		<ExtensionKey cefName="mailboxOwnerSid" metaName="sid"/>
 		<ExtensionKey cefName="mailboxOwnerUPN" metaName="mail_id"/>
 		<ExtensionKey cefName="mailboxGuid" metaName="cs_fld"/>
 		<ExtensionKey cefName="SourceFileName" metaName="filename"/>
@@ -1177,7 +1209,14 @@
 		<ExtensionKey cefName="Category" metaName="category"/>
 		<ExtensionKey cefName="nw.ad" metaName="threat_val"/>
 		<ExtensionKey cefName="nw.trc" metaName="to"/>
-
+		<ExtensionKey cefName="AffectedItems.Subject" metaName="subject"/>
+        <ExtensionKey cefName="SendAsUserSmtp" metaName="email"/>
+        <ExtensionKey cefName="LogonUserSid" metaName="c_sid"/>
+        <ExtensionKey cefName="LogonUserDisplayName" metaName="c_username"/>
+		<ExtensionKey cefName="nw.groupname" metaName="group"/>
+		<ExtensionKey cefName="nw.user" metaName="c_username"/>
+		<ExtensionKey cefName="nw.device" metaName="device"/>
+		
 		
 		<ExtensionKey cefName="method_name" metaName="context"/>
 		<ExtensionKey cefName="Query" metaName="query"/>
@@ -1886,6 +1925,6 @@
 		<ExtensionKey cefName="replyTo" metaName="to"/>
 		<ExtensionKey cefName="encryptedDelivery" metaName="cs_fld"/>
 		<ExtensionKey cefName="deliveryCode" metaName="resultcode"/>
-		<ExtensionKey cefName="deliveryCodeInfo" metaName="result"/>
+		<ExtensionKey cefName="deliveryCodeInfo" metaName="cs_fld"/>
 </ExtensionKeys>
 </DEVICEMESSAGES>
