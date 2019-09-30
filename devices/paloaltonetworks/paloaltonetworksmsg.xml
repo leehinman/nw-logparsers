@@ -4,9 +4,9 @@
 	displayname="Palo Alto Networks Firewall"
 	group="Firewall">
 <VERSION
-	xml="90"
-	checksum="94723cd5c02e6e6bd047c95ac63cd2ee"
-	revision="132"
+	xml="92"
+	checksum="b85d0920174736f2db4ebe0732afef31"
+	revision="134"
 	device="2.0" />
 <VALUEMAP
 	name="getEventLegacyCategory"
@@ -592,6 +592,13 @@
 	eventcategory="1801000000" 
 	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@info:finished&gt;&lt;@action:dhcp&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:dhcp&gt;"
 	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,dhcp,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;vsys&gt;,&lt;service&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;severity&gt;,{&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;},&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;vsys&gt;,&lt;sensor&gt;" />
+
+<MESSAGE 
+	id1="SYSTEM:globalprotect:04" 
+	id2="SYSTEM" 
+	eventcategory="1301000000" 
+	functions="&lt;@devicehostname:*PARMVAL(domain)&gt;&lt;@ec_subject:Service&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:globalprotect&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W/%G/%F %H:%U:%O',fld2,fld3)&gt;&lt;@category:globalprotect&gt;"
+	content="{PA-&lt;fld22&gt; &lt;domain&gt;|&lt;domain&gt;}{1,&lt;fld1&gt;,|,&lt;fld1&gt;,}&lt;serial_number&gt;,SYSTEM,globalprotect,&lt;version&gt;,&lt;fld2&gt; &lt;fld3&gt;,&lt;vsys&gt;,&lt;service&gt;,&lt;fld4&gt;,&lt;fld5&gt;,&lt;fld6&gt;,&lt;fld7&gt;,&lt;severity&gt;,&quot;&lt;event_description&gt;  Login from:&lt;saddr&gt;, Source region: &lt;location_src&gt;, User name: &lt;username&gt;, Client OS version: &lt;os&gt;, Reason: &lt;result&gt;, Auth type: &lt;logon_type&gt;.&quot;,&lt;fld9&gt;,&lt;fld10&gt;,&lt;fld11&gt;,&lt;fld12&gt;,&lt;fld13&gt;,&lt;fld14&gt;,&lt;vsys&gt;,&lt;sensor&gt;" />
 
 <MESSAGE
 	id1="SYSTEM:globalprotect:03" 
