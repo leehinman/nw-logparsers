@@ -4,9 +4,9 @@
 	displayname="EMC VPLEX"
 	group="Storage">
 <VERSION
-	xml="6"
-	checksum="a66173178afffc9e61b36bcc7848ceff"
-	revision="0"
+	xml="7"
+	checksum="35a226893dbbb5bbb999d11a6734f0a5"
+	revision="134"
 	device="2.0" />
 
 
@@ -83,7 +83,83 @@
 	eventcategory="1701020000"
 	functions="&lt;@action:director&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: director &lt;param&gt;" />
-	
+<MESSAGE
+	id1="version"
+	id2="SESSIONLOG"
+	eventcategory="1702000000"
+	functions="&lt;@action:version&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; {version &lt;param&gt;|version}"/>
+
+<MESSAGE
+	id1="nsfw"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:nsfw&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; nsfw &lt;param&gt;"/>
+
+<MESSAGE
+	id1="array_re-discover"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:array re-discover&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; array re-discover &lt;param&gt;"/>
+
+<MESSAGE
+	id1="Cluster"
+	id2="SESSIONLOG"
+	eventcategory="1701000000"
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; Cluster &lt;hostname&gt; has active meta-volume &apos;&lt;disk_volume&gt;&apos;, which uses storage-volumes (or slices) with these internal IDs:&lt;id1&gt;"/>
+
+<MESSAGE
+	id1="ds"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:ds summary&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; ds summary"/>
+
+<MESSAGE
+	id1="export"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:export storage-view summary&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; export storage-view summary &lt;param&gt;"/>
+
+<MESSAGE
+	id1="rebulid"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:rebuild status&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; rebuild status"/>
+
+<MESSAGE
+	id1="health-check"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:health-check&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; health-check"/>
+
+<MESSAGE
+	id1="emc-internal"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:emc-internal&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; emc-internal &lt;param&gt;"/>
+
+<MESSAGE
+	id1="license"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:license&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; license &lt;param&gt;"/>
+
+<MESSAGE
+	id1="syrcollect"
+	id2="SESSIONLOG"
+	eventcategory="1401040000"
+	functions="&lt;@action:syrcollect&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; syrcollect"/>
+
 <MESSAGE
 	id1="META_VOLUME:01"
 	id2="SESSIONLOG"
@@ -95,13 +171,13 @@
 	id2="SESSIONLOG"
 	eventcategory="1701050000"
 	functions="&lt;@action:meta-volume backup&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: meta-volume backup &lt;param&gt;" />
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; {[&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: meta-volume backup &lt;param&gt;|meta-volume backup &lt;param&gt;}" />
 <MESSAGE
 	id1="META_VOLUME:03"
 	id2="SESSIONLOG"
 	eventcategory="1701030000"
 	functions="&lt;@action:meta-volume destroy&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: meta-volume destroy &lt;param&gt;" />
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; {[&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: meta-volume destroy &lt;param&gt;|meta-volume destroy &lt;param&gt;}" />
 <MESSAGE
 	id1="META_VOLUME"
 	id2="SESSIONLOG"
@@ -115,11 +191,18 @@
 	functions="&lt;@action:schedule add&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: schedule add &lt;param&gt;" />
 <MESSAGE
+	id1="metadatabackup"
+	id2="SESSIONLOG"
+	eventcategory="1701000000"
+	functions="&lt;@action:metadatabackup local&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; metadatabackup local"/>
+
+<MESSAGE
 	id1="SCHEDULE"
 	id2="SESSIONLOG"
 	eventcategory="1401040000"
 	functions="&lt;@action:schedule&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: schedule &lt;param&gt;" />
+	content="&lt;fld1&gt;&lt;fld2&gt;,&lt;fld3&gt;{[&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: schedule&lt;param&gt;|schedule&lt;param&gt;}" />
 	
 <MESSAGE
 	id1="SET"
@@ -174,7 +257,7 @@
 	id2="SESSIONLOG"
 	eventcategory="1701020000"
 	functions="&lt;@action:storage-volume&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld1,fld2)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; [&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: storage-volume &lt;param&gt;" />
+	content="&lt;fld1&gt; &lt;fld2&gt;,&lt;fld3&gt; {[&lt;username&gt;@&lt;hostname&gt;:&lt;sessionid&gt;[&lt;network_service&gt;]]: storage-volume &lt;param&gt;|storage-volume &lt;param&gt;}" />
 <MESSAGE
 	id1="VPN:01"
 	id2="SESSIONLOG"
