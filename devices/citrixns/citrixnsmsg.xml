@@ -4,9 +4,9 @@
 	displayname="Citrix NetScaler"
 	group="Application Firewall">
 <VERSION
-	xml="77"
-	checksum="aaa8277fa7867354be9b19a5d5627aae"
-	revision="133"
+	xml="78"
+	checksum="658293411f9459396d313f63446c0e96"
+	revision="134"
 	device="2.0" />
 
  
@@ -623,6 +623,22 @@
 	eventcategory="1605000000" 
 	functions="&lt;@event_description:SNMP TRAP SENT&gt;&lt;@severity:Notice&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
 	content="&lt;obj_type&gt;(haNicMonitorSucceeded = &quot;&lt;fld1&gt;&quot;, sysIpAddress =&lt;hostip&gt;)"/>
+<MESSAGE
+	id1="SNMP_TRAP_SENT:04"
+	id2="SNMP_TRAP_SENT"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@event_description:Device State changed&gt;"
+	content="&lt;fld1&gt;:StatusPoll:&lt;fld2&gt; - Device State changed to &lt;disposition&gt; for &lt;saddr&gt;" />
+	
+
+<MESSAGE
+	id1="SNMP_TRAP_SENT:05"
+	id2="SNMP_TRAP_SENT"
+	eventcategory="1401030000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&lt;fld1&gt;:UserLogin:&lt;username&gt; - &lt;event_description&gt; from client IP Address &lt;saddr&gt;" />
+
+
 <MESSAGE 
 	id1="SSLVPN_CLISEC_CHECK" 
 	id2="SSLVPN_CLISEC_CHECK" 
@@ -1115,6 +1131,13 @@
 	content="  User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;&lt;action&gt;&quot; - Status &quot;&lt;disposition&gt;&quot;" />
 
 <MESSAGE 
+	id1="GUI_CMD_EXECUTED:03" 
+	id2="GUI_CMD_EXECUTED" 
+	eventcategory="1401040000" 
+	functions="&lt;@event_description:CLI or GUI command executed in NetScaler&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content=" User &lt;username&gt; - Remote_ip &lt;saddr&gt; - Command &quot;&lt;action&gt; - Status &quot;&lt;disposition&gt;&quot; - Message &quot;&lt;info&gt;&quot;" />
+
+<MESSAGE 
 	id1="CLI_CMD_EXECUTED" 
 	id2="CLI_CMD_EXECUTED" 
 	eventcategory="1401040000" 
@@ -1304,5 +1327,12 @@
 	eventcategory="1401070000" 
 	functions="&lt;@ec_activity:Logoff&gt;&lt;@ec_theme:Authentication&gt;&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;&lt;@dclass_ratio1_string: Compression_ratio_send&gt;&lt;@dclass_ratio2_string: Compression_ratio_recv&gt;&lt;@endtime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld11)&gt;&lt;@starttime:*EVNTTIME($MSG,'%G/%F/%W:%H:%U:%O',fld10)&gt;"
 	content=" { Context &lt;fld1&gt; - SessionId: &lt;sessionid&gt;- User &lt;username&gt; | Context &lt;fld1&gt; - User &lt;username&gt; | User &lt;username&gt; } - Client_ip &lt;saddr&gt; - Nat_ip {&quot;&lt;stransaddr&gt;&quot;|&lt;stransaddr&gt;} - Vserver &lt;daddr&gt;:&lt;dport&gt; - Start_time {&quot; &lt;fld10&gt; GMT&quot;|&quot; &lt;fld10&gt;&quot;| &lt;fld10&gt;} - End_time {&quot; &lt;fld11&gt; GMT&quot;|&quot; &lt;fld11&gt;&quot;| &lt;fld11&gt;} - Duration &lt;duration_string&gt;  - Http_resources_accessed &lt;fld3&gt; - Total_TCP_connections &lt;fld5&gt; - Total_policies_allowed &lt;fld7&gt; - Total_policies_denied &lt;fld8&gt; - Total_bytes_send &lt;sbytes&gt; - Total_bytes_recv &lt;rbytes&gt; - Total_compressedbytes_send &lt;fld12&gt; - Total_compressedbytes_recv &lt;fld13&gt; - Compression_ratio_send &lt;dclass_ratio1&gt; - Compression_ratio_recv &lt;dclass_ratio2&gt; - LogoutMethod &quot;&lt;result&gt;&quot; - Group(s) &quot;&lt;group&gt;&quot;" />
+
+<MESSAGE
+	id1="EVENT_LOGINFAILURE"
+	id2="EVENT_LOGINFAILURE"
+	eventcategory="1401030000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%G/%F/%W:%H:%U:%O',hdatetime)&gt;"
+	content="&lt;fld1&gt;:UserLogin:&lt;username&gt; - &lt;event_description&gt; from client IP Address &lt;saddr&gt;" />
 
 </DEVICEMESSAGES>
