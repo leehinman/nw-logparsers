@@ -4,8 +4,8 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="170"
-	checksum="db1d2d9b0297915d8829b3db115fae52"
+	xml="171"
+	checksum="42ef2dc5eda58b09a2eb35867397dbb3"
 	revision="134"
     device="2.0" />
 
@@ -866,6 +866,13 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client does not have a paid license&gt;"
 	content="The client does not have a paid license.  The current license cannot be used to obtain a client authentication token.,Event time: &lt;event_time_string&gt;" />
+<MESSAGE 
+	id1="client:09" 
+	id2="client" 
+	eventcategory="1605020000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H:%U:%O',event_time_string)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has successfully downloaded and applied a license from the server&gt;"
+	content="The client has successfully downloaded and applied a license from the server.,Event time: &lt;event_time_string&gt;" />
+
 <MESSAGE 
 	id1="Commercial" 
 	id2="Commercial" 
@@ -1820,6 +1827,27 @@
 	eventcategory="1603000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Active Response&gt;&lt;@direction:Outbound&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
 	content="Local: &lt;saddr&gt;,Local: &lt;sport&gt;,Remote: &lt;daddr&gt;,Remote: &lt;fld13&gt;,Remote: &lt;dport&gt;,Outbound,Application: &lt;application&gt;,Action: &lt;action&gt;" />
+
+<MESSAGE 
+	id1="Local::24" 
+	id2="Local:" 
+	eventcategory="1801000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@direction:Inbound&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
+	content="Event Description: &lt;event_description&gt;,Local: &lt;daddr&gt;,Local Host MAC: &lt;dmacaddr&gt;,Remote Host Name: &lt;fld3&gt;,Remote Host IP: &lt;saddr&gt;,Remote Host MAC: &lt;smacaddr&gt;,Inbound,&lt;protocol&gt;,Intrusion ID: 0,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;dport&gt;,Remote Port: &lt;sport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;fld24&gt;,Intrusion Payload URL: &lt;fld12&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;" />
+
+<MESSAGE 
+	id1="Local::25" 
+	id2="Local:" 
+	eventcategory="1607000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@direction:Outbound&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
+	content="Event Description: &lt;event_description&gt;,Local: &lt;saddr&gt;,Local Host MAC: &lt;smacaddr&gt;,Remote Host Name: &lt;fld3&gt;,Remote Host IP: &lt;daddr&gt;,Remote Host MAC: &lt;dmacaddr&gt;,Outbound,&lt;protocol&gt;,Intrusion ID: 0,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;sport&gt;,Remote Port: &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;fld24&gt;,Intrusion Payload URL: &lt;fld12&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;" />
+
+<MESSAGE 
+	id1="Local::26" 
+	id2="Local:" 
+	eventcategory="1605000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
+	content="Event Description: &lt;event_description&gt; [Volume]: &lt;disk_volume&gt; [Model]: &lt;product&gt; [Access]: &lt;accesses&gt;,Local: &lt;saddr&gt;,Local Host MAC: &lt;smacaddr&gt;,Remote Host Name: &lt;fld3&gt;,Remote Host IP: &lt;daddr&gt;,Remote Host MAC: &lt;dmacaddr&gt;,&lt;direction&gt;,&lt;fld2&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;fld8&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;sport&gt;,Remote Port: &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;fld24&gt;,Intrusion Payload URL: &lt;fld12&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;" />
 
 <MESSAGE 
 	id1="Local:01" 
