@@ -4,9 +4,9 @@
 	displayname="Infoblox NIOS"
 	group="System">
 <VERSION
-		xml="81"
-		checksum="1e9de3eedf04de4c2a365ee91ea9161e"
-		revision="132"
+		xml="82"
+		checksum="fdd7783d2191ffb3184298531e4151f5"
+		revision="134"
 		device="2.0" />
 	
 <HEADER
@@ -1816,5 +1816,12 @@
 	eventcategory="1605000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;"
 	content="&lt;event_description&gt;"/>
+
+<MESSAGE
+	id1="cloud_api"
+	id2="cloud_api"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_source:*HDR(hhostname)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %Z',month,day,time)&gt;&lt;@event_description:proxying request&gt;"
+	content="proxying request to &lt;hostname&gt;(&lt;hostip&gt;) &lt;web_method&gt; &lt;url&gt; &lt;protocol&gt; &lt;info&gt;"/>
 
 </DEVICEMESSAGES>
