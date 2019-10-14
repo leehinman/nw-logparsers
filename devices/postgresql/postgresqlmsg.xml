@@ -4,9 +4,9 @@
 	displayname="PostgreSQL"
 	group="Database">
 <VERSION
-		xml="28"
-		checksum="30308319f55ca7ff9e5cd25f83fd5123"
-		revision="116"
+		xml="29"
+		checksum="0df2e10151dbc7b76fb2f188fd05b683"
+		revision="135"
 		device="2.0"/>
 
 <HEADER
@@ -36,13 +36,20 @@
 	eventcategory="1609000000"
 	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Unknown&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
 	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^&lt;severity&gt;:  statement: &lt;action&gt;" />
-		
+
 <MESSAGE
 	id1="idle:01"
 	id2="idle"
 	eventcategory="1609000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
-	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;severity&gt;:  disconnection: session time:&lt;fld10&gt; user=&lt;fld11&gt; database=&lt;fld12&gt; host=[&lt;shost&gt;]" />
+	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; {&lt;fld10&gt;^^&lt;severity&gt;:|&lt;severity&gt;:}  disconnection: session time:&lt;fld13&gt; user=&lt;fld11&gt; database=&lt;fld12&gt; {host=[&lt;shost&gt;]|host=&lt;shost&gt; port=&lt;sport&gt;}" />
+
+<MESSAGE
+	id1="idle:02"
+	id2="idle"
+	eventcategory="1609000000"
+	functions="&lt;@ec_subject:Database&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Unknown&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
+	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^&lt;severity&gt;: &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="authentication"
@@ -59,7 +66,15 @@
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@event_description:no pg_hba.conf entry&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;"
 	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld3&gt;-&lt;fld4&gt;] #PostGreSQL:&lt;fld7&gt;^^&lt;fld5&gt;&lt;fld6&gt;&lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{&lt;saddr&gt;(&lt;sport&gt;)|&lt;saddr&gt;}^^&lt;sessionid&gt;^^&lt;fld8&gt;&lt;fld9&gt;CETFATAL:  no pg_hba.conf entry for host &quot;&lt;shost&gt;&quot;, user &quot;&lt;fld11&gt;&quot;, database &quot;&lt;fld12&gt;&quot;, SSL&lt;disposition&gt;"/>
 
-		
+	
+<MESSAGE
+	id1="authentication:02"
+	id2="authentication"
+	eventcategory="1801020000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@event_description:connection authorized&gt;"
+	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^&lt;severity&gt;:  connection authorized: {user=&lt;fld11&gt; database=&lt;fld12&gt; SSL enabled (protocol=&lt;protocol&gt;, cipher=&lt;checksum&gt;, compression=&lt;fld13&gt;)| user=&lt;fld11&gt; database=&lt;fld12&gt;}" />
+
+ 
 <MESSAGE
 	id1="SELECT:01"
 	id2="SELECT"
@@ -74,14 +89,6 @@
 	functions="&lt;@ec_subject:Database&gt;&lt;@ec_activity:Read&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
 	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^HINT:  &lt;event_description&gt;" />
 		
-																																																			
-<MESSAGE
-	id1="SELECT:03"
-	id2="SELECT"
-	eventcategory="1603000000"
-	functions="&lt;@ec_subject:Database&gt;&lt;@ec_activity:Read&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;&lt;@severity: Error&gt;"
-	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^ERROR:  &lt;event_description&gt;" />
-		
 <MESSAGE
 	id1="SELECT"
 	id2="SELECT"
@@ -89,7 +96,13 @@
 	functions="&lt;@ec_subject:Database&gt;&lt;@ec_activity:Read&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Unknown&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
 	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^&lt;severity&gt;:  duration: &lt;processing_time&gt; ms" />
 		
-																																																	
+<MESSAGE
+	id1="SELECT:03"
+	id2="SELECT"
+	eventcategory="1603000000"
+	functions="&lt;@ec_subject:Database&gt;&lt;@ec_activity:Read&gt;&lt;@ec_theme:ALM&gt;&lt;@ec_outcome:Failure&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld8)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld6,fld9)&gt;"
+	content="&lt;fld1&gt;[&lt;process_id&gt;]: [&lt;fld2&gt;-&lt;fld3&gt;] #PostGreSQL: &lt;fld4&gt;^^&lt;fld5&gt; &lt;fld8&gt; &lt;timezone&gt;^^&lt;username&gt;^^&lt;db_name&gt;^^{ [&lt;saddr&gt;]^^ | &lt;saddr&gt;(&lt;sport&gt;)^^ }&lt;sessionid&gt;^^&lt;fld6&gt; &lt;fld9&gt; &lt;fld10&gt;^^&lt;severity&gt;: &lt;event_description&gt;" />
+		
 <MESSAGE
 	id1="UPDATE"
 	id2="UPDATE"
