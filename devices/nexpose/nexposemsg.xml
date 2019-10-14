@@ -4,9 +4,9 @@
 	displayname="Rapid7 NeXpose"
 	group="Vulnerability">
 <VERSION
-	xml="30"
-	checksum="5419e53c97d0c2cdaf207284226128b9"
-	revision="134"
+	xml="32"
+	checksum="aab992e8335e817a72beb5046d10b48a"
+	revision="135"
 	device="2.0" />
 
  
@@ -46,6 +46,13 @@
 	id1="0020" 
 	id2="0020"  
 	content="%NEXPOSE-&lt;hfld49&gt;: &lt;hdate&gt;T&lt;htime&gt; [&lt;hpriority&gt;] [Thread: &lt;hfld17&gt;] [Site: &lt;hsite&gt;] [&lt;hshost&gt;:&lt;hsport&gt;/&lt;hprotocol&gt;] [&lt;hinfo&gt;] &lt;messageid&gt; &lt;!payload:messageid&gt;" /> 
+<HEADER 
+	id1="00041"
+	id2="00041"
+	content="%NEXPOSE-4: &lt;hdate&gt;T&lt;htime&gt; [&lt;hseverity&gt;] [Thread: &lt;fld11&gt;] [Site: &lt;hsite&gt;] [Engine ID: &lt;fld1&gt;(&lt;fld12&gt;)] [Engine ID: &lt;fld2&gt;(&lt;fld13&gt;)] &lt;messageid&gt; &lt;!payload:messageid&gt;"
+
+/>
+
 <HEADER 
 	id1="0021" 
 	id2="0021"  
@@ -3461,5 +3468,12 @@
 	eventcategory="1901000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;fld1&gt;" />
+
+<MESSAGE
+	id1="Engine"
+	id2="Engine"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@group_object:*HDR(hsite)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="&lt;event_description&gt;" />
 
 </DEVICEMESSAGES>
