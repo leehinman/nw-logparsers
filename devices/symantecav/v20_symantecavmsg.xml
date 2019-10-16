@@ -4,8 +4,8 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="172"
-	checksum="45e61db4891b614c5cc050c8c6652e49"
+	xml="174"
+	checksum="ccf37b081846c5c8dc7cbf2cfc3a544d"
 	revision="135"
     device="2.0" />
 
@@ -1862,6 +1862,13 @@
 	eventcategory="1605000000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
 	content="Domain: &lt;domain&gt;,Local Port &lt;sport&gt;,Remote Port &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL:&lt;fld25&gt;" />
+
+<MESSAGE 
+	id1="Local:26" 
+	id2="Local" 
+	eventcategory="1001000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@dclass_counter1_string:Occurences&gt;"
+	content="Event Description: [SID: &lt;fld44&gt;] &lt;category&gt;: &lt;event_description&gt;. Application path:&lt;fld34&gt; ,Local Host IP: &lt;saddr&gt;,Local Host MAC: &lt;smacaddr&gt;,Remote Host Name: &lt;dhost&gt;,Remote Host IP: &lt;daddr&gt;,Remote Host MAC: &lt;dmacaddr&gt;,&lt;direction&gt;,&lt;protocol&gt;,Intrusion ID:&lt;fld2&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;location_desc&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;sport&gt;,Remote Port: &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL: &lt;fld12&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;" />
 
 <MESSAGE 
 	id1="Location" 
