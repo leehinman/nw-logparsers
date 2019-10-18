@@ -4,9 +4,9 @@
 	displayname="Sonicwall-FW"
 	group="Firewall">
 <VERSION
-	xml="51"
-	checksum="5fa617e98c04b1a5c8afff8dcf09c09f"
-	revision="124"
+	xml="53"
+	checksum="68a84e4b02459edc6407536913816269"
+	revision="135"
     device="2.0" />
 <HEADER 
 	id1="0001" 
@@ -354,6 +354,13 @@
 	eventcategory="1603000000"
 	 functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;"
 	content="msg=&quot;&lt;msg&gt;&quot; sess=&quot;&lt;fld1&gt;&quot; n=&lt;fld2&gt; usr=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;:&lt;shost&gt; dst=&lt;daddr&gt;:&lt;dport&gt; srcMac=&lt;smacaddr&gt; dstMac=&lt;dmacaddr&gt; proto=&lt;protocol&gt; fw_action=&quot;&lt;action&gt;&quot;"/>
+
+<MESSAGE
+	id1="37:05"
+	id2="37"
+	eventcategory="1805010000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; n=&lt;fld1&gt; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt;:&lt;shost&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt;:&lt;dhost&gt; proto=&lt;protocol&gt;/&lt;fld11&gt;"  />
 
 <MESSAGE 
 	id1="38" 
