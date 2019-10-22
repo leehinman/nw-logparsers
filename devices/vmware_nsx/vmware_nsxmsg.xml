@@ -4,10 +4,28 @@
 	displayname="VMware NSX"
 	group="Virtualization">
 <VERSION
-	xml="9"
-	checksum="493810aa3ae07dffa99562b799a036f1"
-	revision="123"
+	xml="10"
+	checksum="a8e67aba3ccf41acb7adf9cf3cc0f10c"
+	revision="135"
 	device="2.0" />
+<VARTYPE name="month" regex="Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" ignorecase="true" />
+<VARTYPE name="day" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
+<VARTYPE name="time" regex="\d{2}:\d{2}:\d{2}" />
+<HEADER 
+	id1="0006" 
+	id2="0006"
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; &lt;hdate&gt; &lt;htime&gt; &lt;timezone&gt; &lt;severity&gt; &lt;hfld1&gt; &lt;messageid&gt;:&lt;hfld2&gt;{[AuditLog]|[SystemEvent]} &lt;!payload&gt;" />
+
+<HEADER 
+	id1="0005" 
+	id2="0005"
+	content="&lt;data&gt; &lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hostname&gt; &lt;hdate&gt; &lt;htime&gt; &lt;timezone&gt; &lt;severity&gt; &lt;hfld1&gt; &lt;messageid&gt;:&lt;hfld2&gt;{[AuditLog]|[SystemEvent]} &lt;!payload&gt;" />
+
+<HEADER 
+	id1="0007" 
+	id2="0007"
+	content="&lt;hfld1&gt; &lt;hfld2&gt;T&lt;hfld3&gt;Z &lt;hostname&gt; &lt;hdate&gt; &lt;htime&gt; &lt;timezone&gt; &lt;severity&gt; &lt;hfld5&gt; &lt;messageid&gt;:&lt;hfld4&gt;{[AuditLog]|[SystemEvent]} &lt;!payload&gt;" />
+
 <HEADER 
 	id1="0002" 
 	id2="0002"  
@@ -135,5 +153,19 @@
 	eventcategory="1801000000"
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;agent&gt;: &lt;severity&gt; :: &lt;fld1&gt;" />
+
+<MESSAGE
+	id1="AuditingServiceImpl"
+	id2="AuditingServiceImpl"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+	content=" UserName:&apos;&lt;username&gt;&apos;, ModuleName:&apos;&lt;event_source&gt;&apos;, Operation:&apos;&lt;action&gt;&apos;, Resource:&lt;fld2&gt;, Time:&lt;fld3&gt;, Status:&apos;&lt;disposition&gt;&apos;, Universal Object:&apos;&lt;fld4&gt;&apos;" />
+
+<MESSAGE
+	id1="SystemEventDaoImpl"
+	id2="SystemEventDaoImpl"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+	content=" Time:&apos;&lt;fld2&gt;&apos;, Severity:&apos;&lt;severity&gt;&apos;, Event Source:&apos;&lt;event_source&gt;&apos;, Code:&apos;&lt;id&gt;&apos;, Event Message:&apos;&lt;info&gt;&apos;, Module:&apos;&lt;fld3&gt;&apos;, Universal Object:&apos;&lt;fld4&gt;&apos;" />
 
 </DEVICEMESSAGES>
