@@ -4,9 +4,9 @@
 	displayname="Netapp"
 	group="Storage">
 <VERSION
-		xml="38"
-		checksum="7f558e4553e28f2cf3fc28e8fb72e420"
-		revision="129"
+		xml="39"
+		checksum="9e912ca7ee3463e20d56295a45d42e68"
+		revision="135"
 		device="2.0"/>
 
 
@@ -344,6 +344,21 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Disk exceeded threshold of medium errors on same block&gt;"
 	content=" Disk &lt;id&gt; (&lt;interface&gt;): exceeded threshold of medium errors on same block" />
+<MESSAGE
+	id1="disk.ddr.scan.start:debug"
+	id2="disk.ddr.scan.start:debug"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DDR Scan has started scanning&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@dclass_counter1_string:Number of disk_Cbs&gt;&lt;@severity:debug&gt;"
+	content="DDR Scan has started scanning &lt;dclass_counter1&gt; disk_Cbs."/>
+
+<MESSAGE
+	id1="disk.ddr.scan.summary:debug"
+	id2="disk.ddr.scan.summary:debug"
+	eventcategory="1605000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:DDR Scan has completed&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@severity:debug&gt;"
+	content="DDR Scan has completed. (&lt;fld1&gt; label reads, &lt;fld2&gt; label writes, &lt;fld3&gt; unreadable, &lt;fld4&gt; unqual, &lt;fld5&gt; cb qual, &lt;fld6&gt; label qual, &lt;fld7&gt; dqp update, &lt;fld8&gt; label match, &lt;fld9&gt; reset match, &lt;fld10&gt; mis-sized, &lt;fld11&gt; reset, &lt;fld12&gt; skipped - &lt;fld13&gt; preempts )"/>
+
+	
 <MESSAGE
 	id1="040655"
 	id2="disk.failmsg:error"
@@ -2619,6 +2634,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:threshold of entries reached&gt;"
 	content=" The threshold (&lt;fld1&gt;) on the number of entries in the &lt;id&gt; file was reached." />
 <MESSAGE
+	id1="export.path.deleted:notice"
+	id2="export.path.deleted:notice"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:The exported path no longer exists.&gt;&lt;@severity:Notice&gt;"
+	content="The exported path &lt;fld1&gt;:&lt;fld2&gt; no longer exists."/>
+
+<MESSAGE
 	id1="030116"
 	id2="ExportPool00:debug"
 	eventcategory="1603000000"
@@ -3465,6 +3487,13 @@
 	eventcategory="1602020000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:dropping new connection&gt;"
 	content=" ISCSI: dropping new connection, cannot determine network interface for new socket" />
+<MESSAGE
+	 id1="iscsi.warning:warning:01"
+	 id2="iscsi.warning:warning"
+	 eventcategory="1605000000"
+	 functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@action:new session request&gt;&lt;@severity:Warning&gt;"
+	 content="ISCSI: New session request from initiator &lt;fld1&gt;:&lt;fld2&gt;, a session from this initiator already exists."/>
+
 <MESSAGE
 	id1="006050"
 	id2="ispfc_init_0:error"
@@ -4397,6 +4426,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:node takeover&gt;"
 	content=" sensor &lt;fld1&gt; AC status Disk shelf fault. " />
 <MESSAGE
+	id1="030038:08"
+	id2="monitor.globalStatus.critical:CRITICAL"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:Power Supply Status Critical&gt;&lt;@severity:Critical&gt;"
+	content="Power Supply Status Critical."/>
+
+<MESSAGE
 	id1="011020"
 	id2="monitor.globalStatus.nonCritical:warning"
 	eventcategory="1603000000"
@@ -4700,6 +4736,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:ipspace discovery is complete&gt;"
 	content=" ipspace discovery is complete. &lt;info&gt;." />
 	
+<MESSAGE
+	id1="netinet.ethr.duplct.ipAdrr:error"
+	id2="netinet.ethr.duplct.ipAdrr:error"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:Error&gt;&lt;@event_description:Duplicate IP address sent from Ethernet address.&gt;"
+	content="Duplicate IP address &lt;hostip&gt;!! sent from Ethernet address:&lt;macaddr&gt;."/>
+
 <MESSAGE
 	id1="012505"
 	id2="nfsadmin:warning"
@@ -6731,6 +6774,13 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:temperature warning&gt;"
 	content=" &lt;id&gt; on channel &lt;fld1&gt; temperature warning for Temperature sensor &lt;fld2&gt;: &lt;fld3&gt;. Current temperature: &lt;fld4&gt;" />
 <MESSAGE
+	id1="ses.multipath.ReqError:CRITICAL"
+	id2="ses.multipath.ReqError:CRITICAL"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@result:SAS disk shelf detected without a multipath configuration.&gt;&lt;@severity:Critical&gt;"
+    content=" SAS disk shelf detected without a multipath configuration."/>
+
+<MESSAGE
 	id1="016530"
 	id2="ses_admin:error"
 	eventcategory="1603000000"
@@ -7315,6 +7365,13 @@
 	eventcategory="1801010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" Error reading/writing to network, &lt;info&gt;." />
+<MESSAGE
+	id1="snapmirror.src.cannotFind:error"
+	id2="snapmirror.src.cannotFind:error"
+	eventcategory="1801010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@severity:Error&gt;&lt;@event_description:Source is offline, is restricted, or doesn't exist&gt;"
+	content="SnapMirror : source {volume|aggregate} &lt;event_source&gt; is offline, is restricted, or does not exist."/>
+
 <MESSAGE
 	id1="030033"
 	id2="snapmirror.src.err:error"
@@ -11505,6 +11562,20 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="SP communication error, &lt;result&gt;. " />
 <MESSAGE
+	id1="sp.network.link.down:warning"
+	id2="sp.network.link.down:warning"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Service Processor (SP) network port link down due to cable or network errors&gt;&lt;@severity:Warning&gt;"
+	content="Service Processor (SP) network port link down due to cable or network errors."/>
+
+<MESSAGE
+	id1="sp.notConfigured:warning"
+	id2="sp.notConfigured:warning"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The system's Service Processor (SP) is not configured.&gt;&lt;@severity:Warning&gt;"
+	content="The system's Service Processor (SP) is not configured. Use the &apos;&lt;action&gt;&apos; command to configure it."/>
+
+<MESSAGE
 	id1="031334"
 	id2="spmgmt.driver.hourly.stats:warning"
 	eventcategory="1605000000"
@@ -11523,6 +11594,27 @@
 	eventcategory="1603000000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content=" hwtype=&quot;&lt;fld1&gt;&quot;" />
+
+<MESSAGE
+	id1="cf.hwassist.localMonitor:warning"
+	id2="cf.hwassist.localMonitor:warning"
+	eventcategory="1603000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:hw_assist functionality is inactive.&gt;&lt;@severity:Warning&gt;"
+	content="hw_assist: hw_assist functionality is inactive."/>
+
+<MESSAGE
+	id1="cf.hwassist.socBindFailed:error"
+	id2="cf.hwassist.socBindFailed:error"
+	eventcategory="1801010000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:hw_assist bind failed to port&gt;&lt;@severity:Error&gt;"
+	content="hw_assist: bind failed to port &lt;network_port&gt; on IP address &lt;hostip&gt;. Error &lt;resultcode&gt;"/>
+
+<MESSAGE
+	id1="cf.hwassist.Default.NodemgmtAddr:notice"
+	id2="cf.hwassist.Default.NodemgmtAddr:notice"
+	eventcategory="1801000000"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:hardware-assist module automatically picked a local IP address &gt;&lt;@severity:Notice&gt;"
+	content="The system automatically chose &lt;saddr&gt; as the local hardware-assist IP address."/>
 
 <MESSAGE
 	id1="031337"
@@ -11638,8 +11730,8 @@
 	id1="vifmgr.lifs.noredundancy:ALERT"
 	id2="vifmgr.lifs.noredundancy:ALERT"
 	eventcategory="1605000000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="No redundancy in the failover configuration for 1 LIFs assigned to node &quot;&lt;node&gt;&quot;. LIFs: &lt;fld1&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Number of LIFs&gt;&lt;@severity:Alert&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="No redundancy in the failover configuration for &lt;dclass_counter1&gt; LIFs assigned to node &quot;&lt;node&gt;&quot;. LIFs: &lt;fld1&gt;" />
 
 <MESSAGE
 	id1="vsdr.net.LifNotReachable:error"
