@@ -4,9 +4,9 @@
 	displayname="F5 Big-IP Application Security Manager"
 	group="Application Firewall">
 <VERSION
-	xml="65"
-	checksum="b26045e2e0d8a6defa5a45217716fb7a"
-	revision="134"
+	xml="67"
+	checksum="3b7cc0c8f8a6c5ed99608a315fe63569"
+	revision="135"
 	device="2.0" />
 
  
@@ -51,14 +51,13 @@
 <VALUEMAP
 		name="getEventLegacyCategoryName"
 		default="Other.Default"
-		keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1607000000=&apos;System.Unusual Activity&apos;" />
+		keyvaluepairs="1801020000=&apos;Network.Connections.Successful&apos;|1803000000=&apos;Network.Denied Connections&apos;|1801000000=&apos;Network.Connections&apos;" />
    		
 <VALUEMAP
 		name="getEventLegacyCategory"
 		default="1901000000"
-		keyvaluepairs="blocked=&apos;1607000000&apos;|passed=&apos;1801020000&apos;" />	
- 
-			
+		keyvaluepairs="blocked=&apos;1803000000&apos;|passed=&apos;1801020000&apos;|Blocked=&apos;1803000000&apos;|alerted=&apos;1801000000&apos;|Alerted=&apos;1801000000&apos;" />	
+		
 
 <MESSAGE 
 	id1="GET:21" 
@@ -407,8 +406,8 @@
 <MESSAGE 
 	id1="POST:27" 
 	id2="POST" 
-	eventcategory="1803000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	eventcategory="1801000000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_cat:*getEventLegacyCategory(action)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="&lt;fld33&gt; &lt;event_source&gt;:&lt;fld1&gt;:&lt;fld2&gt;|&lt;fld3&gt;|&lt;fld4&gt;|&lt;version&gt;|&lt;info&gt;|&lt;event_description&gt;|&lt;severity&gt;|dvchost=&lt;hostname&gt; dvc=&lt;hostip&gt; cs1=&lt;policyname&gt; cs1Label=policy_name cs2=&lt;obj_name&gt; cs2Label=&lt;obj_type&gt; deviceCustomDate1=&lt;fld6&gt; deviceCustomDate1Label=policy_apply_date externalId=&lt;operation_id&gt; act=&lt;action&gt; cn1=&lt;resultcode&gt; cn1Label=response_code src=&lt;saddr&gt; spt=&lt;sport&gt; dst=&lt;daddr&gt; dpt=&lt;dport&gt; requestMethod=&lt;web_method&gt; app=&lt;network_service&gt; cs5=&lt;stransaddr&gt; cs5Label=x_forwarded_for_header_value rt=&lt;event_time_string&gt; deviceExternalId=&lt;fld22&gt; cs4=&lt;event_type&gt; cs4Label=attack_type cs6=&lt;location_country&gt; cs6Label=geo_location c6a1=&lt;fld24&gt; c6a1Label=device_address c6a2=&lt;fld25&gt; c6a2Label=source_address c6a3=&lt;fld26&gt; c6a3Label=destination_address c6a4=&lt;fld27&gt; c6a4Label=&lt;fld28&gt; msg=&lt;msg&gt; suid=&lt;uid&gt; suser=&lt;username&gt; cn2=&lt;dclass_counter2&gt; cn2Label=&lt;dclass_counter2_string&gt; cn3=&lt;fld29&gt; cn3Label=&lt;fld30&gt; request=&lt;webpage&gt; cs3Label=full_request cs3=&lt;context&gt;" />
 
 <MESSAGE
