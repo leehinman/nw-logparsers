@@ -4,8 +4,8 @@
 	displayname="Sonicwall-FW"
 	group="Firewall">
 <VERSION
-	xml="53"
-	checksum="68a84e4b02459edc6407536913816269"
+	xml="54"
+	checksum="2b5ea8f05760dff5a11112e284a9a45e"
 	revision="135"
     device="2.0" />
 <HEADER 
@@ -2280,6 +2280,14 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*RMQ(msg)&gt;"
 	content="msg=&quot;&lt;msg&gt;&quot; n=&lt;fld1&gt; src=&lt;stransaddr&gt;:&lt;stransport&gt; dst=&lt;dtransaddr&gt; proto=&lt;protocol&gt;" />	
+<MESSAGE 
+	id1="263:01"
+	id2="263"
+	eventcategory="1401070000"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %N:%U:%O',hdate,htime)&gt;&lt;@hostip:*HDR(hhostip)&gt;&lt;@id:*HDR(hfld1)&gt;&lt;@serial_number:*HDR(hserial_number)&gt;&lt;@category:*HDR(hcategory)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot; sess=&quot;&lt;fld1&gt;&quot; dur=&lt;duration&gt; n=&lt;fld2&gt; usr=&quot;&lt;username&gt;&quot; src=&lt;saddr&gt;:&lt;sport&gt;:&lt;sinterface&gt; dst=&lt;daddr&gt;:&lt;dport&gt;:&lt;dinterface&gt; proto=&lt;protocol&gt;"
+	/>
+
 <MESSAGE
 	id1="264"
 	id2="264"
