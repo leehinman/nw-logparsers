@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="381"
-	checksum="95d9ad77de1b012953a9fee92c443320"
-	revision="134"
+	xml="386"
+	checksum="c454df108db45cf394320611da823bb6"
+	revision="135"
 	device="2.0" />
 
 
@@ -229,7 +229,7 @@
 <HEADER
 	id1="2010"
 	id2="2010"
-	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; &lt;messageid&gt;: &lt;space&gt;node=&lt;hfld6&gt; type=&lt;hfld4&gt; msg=&lt;hfld8&gt;(&lt;hfld5&gt;): &lt;!payload:messageid&gt;" /> 
+	content="&lt;month&gt; &lt;day&gt; &lt;time&gt; &lt;hhost&gt; { &lt;messageid&gt;[&lt;process_id&gt;]: | &lt;messageid&gt;: } &lt;space&gt;node=&lt;hfld6&gt; type=&lt;hfld4&gt; msg=&lt;hfld8&gt;(&lt;hfld5&gt;): &lt;!payload:messageid&gt;" /> 
 
 <HEADER
 	id1="2012"
@@ -2124,210 +2124,217 @@
 	id2="audispd"
 	eventcategory="1301000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER AUTH&gt;&lt;@result:failed&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_AUTH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=failed)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_AUTH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=failed)&apos;" />
 
 <MESSAGE
 	id1="002056"
 	id2="audispd"
 	eventcategory="1302000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER AUTH&gt;&lt;@result:success&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_AUTH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_AUTH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
 
 <MESSAGE
 	id1="002057"
 	id2="audispd"
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER ACCT&gt;&lt;@result:success&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_ACCT msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_ACCT msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
 
 <MESSAGE
 	id1="002058"
 	id2="audispd"
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER START&gt;&lt;@result:success&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_START msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_START msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
 
 <MESSAGE
 	id1="002059"
 	id2="audispd"
 	eventcategory="1401070000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER END&gt;&lt;@result:success&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_END msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_END msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;PAM: &lt;disposition&gt; acct=&quot;&lt;username&gt;&quot; &lt;space&gt; exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
 
 <MESSAGE
 	id1="002060"
 	id2="audispd"
 	eventcategory="1401030000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER LOGIN&gt;&lt;@result:failure&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_LOGIN msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;{ acct=&quot;&lt;username&gt;&quot;: | uid=&lt;child_pid&gt;: } &lt;space&gt;exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=failed)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_LOGIN msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;{ acct=&quot;&lt;username&gt;&quot;: | uid=&lt;child_pid&gt;: } &lt;space&gt;exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=failed)&apos;" />
 
 <MESSAGE
 	id1="002061"
 	id2="audispd"
 	eventcategory="1401060000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:USER LOGIN&gt;&lt;@result:success&gt;&lt;@event_description:successful user login&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=USER_LOGIN msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; subj=&lt;subject&gt; msg=&apos;{ acct=&quot;&lt;username&gt;&quot;: | uid=&lt;child_pid&gt;: } &lt;space&gt;exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=USER_LOGIN msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; subj=&lt;subject&gt; msg=&apos;{ acct=&quot;&lt;username&gt;&quot;: | uid=&lt;child_pid&gt;: } &lt;space&gt;exe=&quot;&lt;action&gt;&quot; (hostname=&lt;shost&gt;, addr=&lt;saddr&gt;, terminal=&lt;terminal&gt; res=success)&apos;" />
 
 <MESSAGE
 	id1="03809"
 	id2="audispd"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld9&gt; msg=&lt;space&gt;PAM: &lt;disposition&gt; acct={ &quot;&lt;username&gt;&quot;: | &lt;username&gt; } exe={ &quot;&lt;action&gt;&quot; | &lt;action&gt; } (hostname=&lt;shost&gt; addr=&lt;saddr&gt; {, terminal= | terminal= } &lt;terminal&gt; res=&lt;result&gt; )" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; user pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; msg=&lt;space&gt;PAM: &lt;disposition&gt; acct={ &quot;&lt;username&gt;&quot;: | &lt;username&gt; } exe={ &quot;&lt;action&gt;&quot; | &lt;action&gt; } (hostname=&lt;shost&gt; addr=&lt;saddr&gt; {, terminal= | terminal= } &lt;terminal&gt; res=&lt;result&gt; )" />
 
 <MESSAGE
 	id1="audispd:05"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): arch=&lt;fld1&gt; syscall=&lt;id2&gt; success=&lt;disposition&gt; exit=&lt;fld6&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld28&gt; items=&lt;fld29&gt;{ ppid=&lt;parent_pid&gt; pid=&lt;process_id&gt; | pid=&lt;process_id&gt; }auid=&lt;fld9&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; euid=&lt;fld11&gt; suid=&lt;fld12&gt; fsuid=&lt;fld13&gt; egid=&lt;fld14&gt; sgid=&lt;fld15&gt; fsgid=&lt;fld16&gt; tty=&lt;terminal&gt; ses=&lt;sessionid&gt; comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;filename&gt;&quot; subj=&lt;s_context&gt; key=&lt;info&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): arch=&lt;fld1&gt; syscall=&lt;id2&gt; success=&lt;disposition&gt; exit=&lt;fld6&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld28&gt; items=&lt;fld29&gt;{ ppid=&lt;parent_pid&gt; pid=&lt;process_id&gt; | pid=&lt;process_id&gt; }auid=&lt;user.id&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; euid=&lt;fld11&gt; suid=&lt;fld12&gt; fsuid=&lt;fld13&gt; egid=&lt;fld14&gt; sgid=&lt;fld15&gt; fsgid=&lt;fld16&gt; tty=&lt;terminal&gt; ses=&lt;sessionid&gt; comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;filename&gt;&quot; subj=&lt;s_context&gt; key=&lt;rulename&gt;" />
 
 <MESSAGE
 	id1="03850"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): arch=&lt;fld1&gt; syscall=&lt;id2&gt; success=&lt;disposition&gt; exit=&lt;fld6&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld28&gt; items=&lt;fld29&gt;{ ppid=&lt;parent_pid&gt; pid=&lt;process_id&gt; | pid=&lt;process_id&gt; }auid=&lt;fld9&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; euid=&lt;fld11&gt; suid=&lt;fld12&gt; fsuid=&lt;fld13&gt; egid=&lt;fld14&gt; sgid=&lt;fld15&gt; fsgid=&lt;fld16&gt; comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;filename&gt;&quot;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): arch=&lt;fld1&gt; syscall=&lt;id2&gt; success=&lt;disposition&gt; exit=&lt;fld6&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld28&gt; items=&lt;fld29&gt;{ ppid=&lt;parent_pid&gt; pid=&lt;process_id&gt; | pid=&lt;process_id&gt; }auid=&lt;user.id&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; euid=&lt;fld11&gt; suid=&lt;fld12&gt; fsuid=&lt;fld13&gt; egid=&lt;fld14&gt; sgid=&lt;fld15&gt; fsgid=&lt;fld16&gt; comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;filename&gt;&quot;" />
 
 <MESSAGE
 	id1="audispd"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:AVC&gt;&lt;@context.dst:*PARMVAL(t_context)&gt;"
-	content="&lt;agent&gt;: &lt;space&gt;node=&lt;node&gt; type=AVC msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; avc:&lt;result&gt; {{&lt;privilege&gt;} for pid=&lt;process_id&gt; comm=&quot;&lt;process&gt;&quot; {name=&quot;&lt;obj_name&gt;&quot; dev=&quot;&lt;device&gt;&quot; ino=&lt;inode&gt;|dest=&lt;fld1&gt;} scontext=&lt;s_context&gt; tcontext=&lt;t_context&gt; tclass=&lt;obj_type&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space&gt;node=&lt;node&gt; type=AVC msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; avc:&lt;result&gt; {{&lt;privilege&gt;} for pid=&lt;process_id&gt; comm=&quot;&lt;process&gt;&quot; {name=&quot;&lt;obj_name&gt;&quot; dev=&quot;&lt;device&gt;&quot; ino=&lt;inode&gt;|dest=&lt;fld1&gt;} scontext=&lt;s_context&gt; tcontext=&lt;t_context&gt; tclass=&lt;obj_type&gt;" />
+
+<MESSAGE
+	id1="001267"
+	id2="audispd"
+	eventcategory="1612000000"
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:AVC&gt;"
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=AVC msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; avc:&lt;disposition&gt;{{&lt;fld1&gt;} for  pid=&lt;process_id&gt;comm=&quot;&lt;process&gt;&quot; path=&quot;&lt;filename&gt;&quot; dev=&quot;&lt;device&gt;&quot; ino=&lt;inode&gt; scontext=&lt;s_context&gt; tcontext=&lt;t_context&gt; tclass=&lt;obj_type&gt; permissive=&lt;fld2&gt;" />
 
 <MESSAGE
 	id1="001268"
 	id2="audispd"
 	eventcategory="1502010000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:AVC&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=AVC msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; avc: &lt;space&gt; denied &lt;event_description&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=AVC msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; avc: &lt;space&gt; denied &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="03801"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CWD&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=CWD msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; cwd=&lt;directory&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=CWD msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; cwd=&lt;directory&gt;" />
 
 <MESSAGE
 	id1="03806"
 	id2="audispd"
 	eventcategory="1401060000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:LOGIN&gt;&lt;@event_description:successful user login&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=LOGIN msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; login pid=&lt;process_id&gt; uid=&lt;uid&gt; old auid=&lt;fld1&gt; new auid=&lt;fld2&gt; old ses=&lt;fld3&gt; new ses=&lt;sessionid&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=LOGIN msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; login pid=&lt;process_id&gt; uid=&lt;uid&gt; old auid=&lt;fld1&gt; new auid=&lt;user.id&gt; old ses=&lt;fld3&gt; new ses=&lt;sessionid&gt;" />
 
 <MESSAGE
 	id1="audispd:06"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:PATH&gt;"
-	content="&lt;agent&gt;: &lt;space&gt;node=&lt;node&gt; type=PATH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; item=&lt;fld7&gt; name={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} inode=&lt;inode&gt; dev=&lt;device&gt; mode=&lt;fld8&gt; ouid=&lt;uid&gt; ogid=&lt;groupid&gt; rdev=&lt;fld11&gt;obj=&lt;obj_name&gt;objtype=&lt;obj_type&gt; cap_fp=&lt;fld9&gt; cap_fi=&lt;fld10&gt; cap_fe=&lt;fld13&gt; cap_fver=&lt;fld12&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space&gt;node=&lt;node&gt; type=PATH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; item=&lt;fld7&gt; name={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} inode=&lt;inode&gt; dev=&lt;device&gt; mode=&lt;fld8&gt; ouid=&lt;uid&gt; ogid=&lt;groupid&gt; rdev=&lt;fld11&gt;obj=&lt;obj_name&gt;objtype=&lt;obj_type&gt; cap_fp=&lt;fld9&gt; cap_fi=&lt;fld10&gt; cap_fe=&lt;fld13&gt; cap_fver=&lt;fld12&gt;" />
 
 <MESSAGE
 	id1="03802"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:PATH&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=PATH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; item=&lt;fld7&gt; name={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} inode=&lt;inode&gt; dev=&lt;device&gt; mode=&lt;fld8&gt; ouid=&lt;uid&gt; ogid=&lt;groupid&gt; rdev=&lt;fld11&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=PATH msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; item=&lt;fld7&gt; name={&quot;&lt;filename&gt;&quot;|&lt;filename&gt;} inode=&lt;inode&gt; dev=&lt;device&gt; mode=&lt;fld8&gt; ouid=&lt;uid&gt; ogid=&lt;groupid&gt; rdev=&lt;fld11&gt;" />
 
 <MESSAGE
 	id1="03804"
 	id2="audispd"
 	eventcategory="1801000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:SOCKETCALL&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=SOCKETCALL msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; nargs=&lt;fld1&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld5&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=SOCKETCALL msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; nargs=&lt;fld1&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld5&gt;" />
 
 <MESSAGE
 	id1="03805"
 	id2="audispd"
 	eventcategory="1801000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:SOCKADDR&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=SOCKADDR msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): saddr=&lt;saddr&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=SOCKADDR msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): saddr=&lt;saddr&gt;" />
 
 <MESSAGE
 	id1="03807"
 	id2="audispd"
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:DAEMON START&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=DAEMON_START msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; auditd start, ver=&lt;version&gt; format=&lt;fld36&gt; auid=&lt;fld9&gt; pid=&lt;process_id&gt; res=&lt;disposition&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=DAEMON_START msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; auditd start, ver=&lt;version&gt; format=&lt;fld36&gt; auid=&lt;user.id&gt; pid=&lt;process_id&gt; res=&lt;disposition&gt;" />
 
 <MESSAGE
 	id1="03808"
 	id2="audispd"
 	eventcategory="1701000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CONFIG CHANGE&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; audit_enabled=&lt;fld23&gt; old=&lt;fld24&gt; by auid=&lt;fld9&gt; res=&lt;disposition&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; audit_enabled=&lt;fld23&gt; old=&lt;fld24&gt; by auid=&lt;user.id&gt; res=&lt;disposition&gt;" />
 
 <MESSAGE
 	id1="03808:01"
 	id2="audispd"
 	eventcategory="1701000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CONFIG CHANGE&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; audit_backlog_limit=&lt;fld33&gt; old=&lt;fld24&gt; by auid=&lt;fld9&gt; res=&lt;disposition&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; audit_backlog_limit=&lt;fld33&gt; old=&lt;fld24&gt; by auid=&lt;user.id&gt; res=&lt;disposition&gt;" />
 
 <MESSAGE
 	id1="03808:03"
 	id2="audispd"
 	eventcategory="1701000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CONFIG CHANGE&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; auid=&lt;fld9&gt; {ses=&lt;sessionid&gt; op=&lt;action&gt; path=&quot;&lt;directory&gt;&quot; key=&lt;info&gt;|op=&lt;fld38&gt; key=&lt;info&gt;} list=&lt;rule_uid&gt; res=&lt;disposition&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; op=&lt;action&gt; path=&quot;&lt;directory&gt;&quot; key=&lt;rulename&gt;|op=&lt;fld38&gt; key=&lt;rulename&gt;} list=&lt;rule_uid&gt; res=&lt;disposition&gt;" />
 
 <MESSAGE
 	id1="03803"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:EOE&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type=EOE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=EOE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):" />
 
 <MESSAGE
 	id1="03811"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:UNKNOWN&gt;"
-	content="&lt;agent&gt;: &lt;space1&gt;node=&lt;node&gt; type={UNKNOWN[&lt;fld1&gt;]|UNKNOWN} msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;fld27&gt;): &lt;space&gt; proctitle=&lt;fld2&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type={UNKNOWN[&lt;fld1&gt;]|UNKNOWN} msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; proctitle=&lt;fld2&gt;" />
 
 <MESSAGE
 	 id1="03812"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld9&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='{op=&lt;action&gt; grantors=&lt;privilege&gt;|op=&lt;action&gt;}acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='{op=&lt;action&gt; grantors=&lt;privilege&gt;|op=&lt;action&gt;}acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
 
 <MESSAGE
 	 id1="audispd:01"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld9&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='op=&lt;action&gt;direction=&lt;direction&gt;cipher=&lt;d_cipher&gt;ksize=&lt;d_ciphersize&gt;mac=&lt;fld3&gt;pfs=&lt;fld4&gt;spid=&lt;fld5&gt;suid=&lt;fld6&gt;rport=&lt;sport&gt;laddr=&lt;daddr&gt;lport=&lt;dport&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='op=&lt;action&gt;direction=&lt;direction&gt;cipher=&lt;d_cipher&gt;ksize=&lt;d_ciphersize&gt;mac=&lt;fld3&gt;pfs=&lt;fld4&gt;spid=&lt;fld5&gt;suid=&lt;fld6&gt;rport=&lt;sport&gt;laddr=&lt;daddr&gt;lport=&lt;dport&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
 
 <MESSAGE
 	 id1="audispd:02"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld9&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='op=&lt;action&gt;kind=&lt;fld5&gt;fp=&lt;checksum&gt;direction=&lt;direction&gt;spid=&lt;fld6&gt;suid=&lt;fld7&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='op=&lt;action&gt;kind=&lt;fld5&gt;fp=&lt;checksum&gt;direction=&lt;direction&gt;spid=&lt;fld6&gt;suid=&lt;fld7&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
 
 <MESSAGE
 	 id1="audispd:03"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld9&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='op=&lt;action&gt;id=&lt;id&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='op=&lt;action&gt;id=&lt;id&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
 
 <MESSAGE
 	 id1="audispd:04"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld9&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='pam: default-context=&lt;fld5&gt; selected-context=&lt;context&gt; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt;subj=&lt;subject&gt;|ses=&lt;sessionid&gt;}msg='pam: default-context=&lt;fld5&gt; selected-context=&lt;context&gt; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
 
 <MESSAGE
 	 id1="audispd:09"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld9&gt;{ses=&lt;sessionid&gt;subj=&lt;s_context&gt;|ses=&lt;sessionid&gt;}msg='unit=&lt;service&gt; comm=&lt;fld6&gt; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;):{user pid|pid}=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt;subj=&lt;s_context&gt;|ses=&lt;sessionid&gt;}msg='unit=&lt;service&gt; comm=&lt;fld6&gt; exe=&quot;&lt;action&gt;&quot; hostname=&lt;shost&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
 
 
 <MESSAGE
@@ -2335,105 +2342,112 @@
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@dclass_counter1_string:No.of Syscall arguments&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): argc=&lt;dclass_counter1&gt; &lt;param&gt;"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): argc=&lt;dclass_counter1&gt; &lt;param&gt;"/>
 
 <MESSAGE
 	 id1="audispd:07"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): proctitle=&lt;fld27&gt;"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): proctitle=&lt;fld27&gt;"/>
 
 <MESSAGE
 	 id1="audispd:10"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt; subj=&lt;s_context&gt; old-auid=&lt;fld1&gt; auid=&lt;fld9&gt; tty=&lt;terminal&gt; old-ses=&lt;fld3&gt; ses=&lt;sessionid&gt; res=&lt;result&gt;"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt; subj=&lt;s_context&gt; old-auid=&lt;fld1&gt; auid=&lt;user.id&gt; tty=&lt;terminal&gt; old-ses=&lt;fld3&gt; ses=&lt;sessionid&gt; res=&lt;result&gt;"/>
 
 <MESSAGE
 	 id1="audispd:11"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): dev=&lt;device&gt; prom=&lt;fld1&gt; old_prom=&lt;fld2&gt; auid=&lt;fld3&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; ses=&lt;sessionid&gt;"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): dev=&lt;device&gt; prom=&lt;fld1&gt; old_prom=&lt;fld2&gt; auid=&lt;user.id&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; ses=&lt;sessionid&gt;"/>
 
 <MESSAGE
 	 id1="audispd:12"
 	 id2="audispd"
 	 eventcategory="1612000000"
 	 functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
-	 content="&lt;agent&gt;: node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;fld3&gt; ses=&lt;sessionid&gt; subj=&lt;s_context&gt; msg='cwd=&quot;&lt;directory&gt;&quot; cmd=&quot;&lt;action&gt;&quot; terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+	 content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} node=&lt;node&gt;type=&lt;event_type&gt;msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt; auid=&lt;user.id&gt; ses=&lt;sessionid&gt; subj=&lt;s_context&gt; msg='cwd=&quot;&lt;directory&gt;&quot; cmd=&quot;&lt;action&gt;&quot; terminal=&lt;terminal&gt;res=&lt;result&gt;'"/>
+
+<MESSAGE
+	id1="00495"
+	id2="audispd"
+	eventcategory="1612000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;cwd=&quot;&lt;directory&gt;&quot; cmd=&lt;action&gt;terminal=&lt;terminal&gt;res=&lt;result&gt;&apos;"/>
 
 <MESSAGE
 	id1="03810"
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;agent&gt;: &lt;event_description&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="002331"
 	id2="Audit"
 	eventcategory="1401030000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Failure&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Remote login failure&gt;"
-	content="&lt;agent&gt; I (&lt;hostname&gt;) Remote login failed for user &apos;&lt;username&gt;&apos; from Web at IP &lt;saddr&gt; &lt;info&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;} I (&lt;hostname&gt;) Remote login failed for user &apos;&lt;username&gt;&apos; from Web at IP &lt;saddr&gt; &lt;info&gt;" />
 
 <MESSAGE
 	id1="002310"
 	id2="Audit"
 	eventcategory="1401060000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Remote login successful&gt;"
-	content="&lt;agent&gt; I (&lt;hostname&gt;) Remote login successful for user &apos;&lt;username&gt;&apos; from Web at IP &lt;saddr&gt; &lt;info&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;} I (&lt;hostname&gt;) Remote login successful for user &apos;&lt;username&gt;&apos; from Web at IP &lt;saddr&gt; &lt;info&gt;" />
 
 <MESSAGE
 	id1="002311"
 	id2="Audit"
 	eventcategory="1401070000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logoff&gt;&lt;@ec_outcome:Success&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:Successful remote logout&gt;"
-	content="&lt;agent&gt; Remote logoff successful for user &apos;&lt;username&gt;&apos; from Web at IP &lt;saddr&gt; &lt;info&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;} Remote logoff successful for user &apos;&lt;username&gt;&apos; from Web at IP &lt;saddr&gt; &lt;info&gt;" />
 
 <MESSAGE
 	id1="002312"
 	id2="Audit"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_description:User restarted or powered off blade&gt;"
-	content="&lt;agent&gt; I (&lt;hostname&gt;) User &apos;&lt;username&gt;&apos; { powered off | restarted } blade &lt;device&gt;. &lt;info&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]|&lt;agent&gt;} I (&lt;hostname&gt;) User &apos;&lt;username&gt;&apos; { powered off | restarted } blade &lt;device&gt;. &lt;info&gt;" />
 
 <MESSAGE
 	id1="audit:01"
 	id2="audit"
 	eventcategory="1402020200"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:ADD_USER&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-    content="ADD_USER msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;id=&lt;id&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+    content="ADD_USER msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;id=&lt;id&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 <MESSAGE
 	id1="audit:02"
 	id2="audit"
 	eventcategory="1402010200"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:ADD_GROUP&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="ADD_GROUP msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="ADD_GROUP msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 <MESSAGE
 	id1="audit:03"
 	id2="audit"
 	eventcategory="1402000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_MGMT&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="USER_MGMT msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg='op=&lt;fld38&gt;{grp=&quot;&lt;group&gt;&quot; acct=&quot;&lt;username&gt;&quot;|id=&lt;id&gt;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;'"/>
+	content="USER_MGMT msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg='op=&lt;fld38&gt;{grp=&quot;&lt;group&gt;&quot; acct=&quot;&lt;username&gt;&quot;|id=&lt;id&gt;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;'"/>
 
 <MESSAGE
 	id1="audit:04"
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:CRED_ACQ&gt;&lt;@:*SYSVAL($ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="CRED_ACQ msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg='op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;'"/>
+	content="CRED_ACQ msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg='op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;'"/>
 
 <MESSAGE
 	id1="audit:05"
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_CMD&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_CMD msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;cwd=&quot;&lt;directory&gt;&quot; cmd=&lt;action&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_CMD msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;cwd=&quot;&lt;directory&gt;&quot; cmd=&lt;action&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2441,14 +2455,14 @@
 	id2="audit"
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_START&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_START msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt; } exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_START msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt; } exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 <MESSAGE
 	id1="audit:07"
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:SERVICE_STOP&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="SERVICE_STOP msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;unit=&lt;service&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="SERVICE_STOP msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;unit=&lt;service&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2456,7 +2470,7 @@
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:SERVICE_START&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="SERVICE_START msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;unit=&lt;service&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="SERVICE_START msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;unit=&lt;service&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2464,7 +2478,7 @@
 	id2="audit"
 	eventcategory="1401070000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_END&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_END msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_END msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2472,14 +2486,14 @@
 	id2="audit"
 	eventcategory="1302000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_AUTH&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"	 
-	content="USER_AUTH msg=&lt;agent&gt;(&lt;info&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt;auid=&lt;fld1&gt; ses=&lt;sessionid&gt; msg=&apos;op=&lt;fld38&gt; algo=&lt;fld50&gt; size=&lt;bytes&gt; fp=&lt;fld2&gt; rport=&lt;dport&gt; acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_AUTH msg=&lt;agent&gt;(&lt;info&gt;): user pid=&lt;process_id&gt; uid=&lt;uid&gt;auid=&lt;user.id&gt; ses=&lt;sessionid&gt; msg=&apos;op=&lt;fld38&gt; algo=&lt;fld50&gt; size=&lt;bytes&gt; fp=&lt;fld2&gt; rport=&lt;dport&gt; acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 <MESSAGE
 	id1="audit:10"
 	id2="audit"
 	eventcategory="1302000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_AUTH&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_AUTH msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt;{grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | rport=&lt;dport&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_AUTH msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt;{grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | rport=&lt;dport&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2487,7 +2501,7 @@
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:CRED_DISP&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="CRED_DISP msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="CRED_DISP msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2495,7 +2509,7 @@
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_CHAUTHTOK&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_CHAUTHTOK msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;{grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot;|id=&lt;id&gt;}exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_CHAUTHTOK msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;{grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot;|id=&lt;id&gt;}exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2503,7 +2517,7 @@
 	id2="audit"
 	eventcategory="1613010000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:CRYPTO_SESSION&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="CRYPTO_SESSION msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt;{ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt;direction=&lt;direction&gt;cipher=&lt;s_cipher&gt;ksize=&lt;s_ciphersize&gt; { mac=&lt;fld10&gt;pfs=&lt;fld3&gt;spid=&lt;parent_pid&gt; | spid=&lt;parent_pid&gt;} suid=&lt;fld4&gt;rport=&lt;dport&gt;laddr=&lt;saddr&gt;lport=&lt;sport&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="CRYPTO_SESSION msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt;direction=&lt;direction&gt;cipher=&lt;s_cipher&gt;ksize=&lt;s_ciphersize&gt; { mac=&lt;fld10&gt;pfs=&lt;fld3&gt;spid=&lt;parent_pid&gt; | spid=&lt;parent_pid&gt;} suid=&lt;fld4&gt;rport=&lt;dport&gt;laddr=&lt;saddr&gt;lport=&lt;sport&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2511,7 +2525,7 @@
 	id2="audit"
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_ACCT&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_ACCT msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;}uid=&lt;uid&gt;auid=&lt;fld1&gt;{ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_ACCT msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;}uid=&lt;uid&gt;auid=&lt;user.id&gt;{ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt; acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot;} exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2519,7 +2533,7 @@
 	id2="audit"
 	eventcategory="1613040100"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:CRYPTO_KEY_USER&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="CRYPTO_KEY_USER msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;}uid=&lt;uid&gt; auid=&lt;fld1&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt;kind=&lt;event_type&gt;fp=&lt;fld2&gt;direction=&lt;direction&gt;spid=&lt;parent_pid&gt;{suid=&lt;fld3&gt;rport=&lt;dport&gt;laddr=&lt;saddr&gt;lport=&lt;sport&gt; | suid=&lt;fld3&gt;}exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="CRYPTO_KEY_USER msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;}uid=&lt;uid&gt; auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt;kind=&lt;event_type&gt;fp=&lt;fld2&gt;direction=&lt;direction&gt;spid=&lt;parent_pid&gt;{suid=&lt;fld3&gt;rport=&lt;dport&gt;laddr=&lt;saddr&gt;lport=&lt;sport&gt; | suid=&lt;fld3&gt;}exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2527,7 +2541,7 @@
 	id2="audit"
 	eventcategory="1402020100"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:DEL_USER&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="DEL_USER msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;id=&lt;id&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="DEL_USER msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;id=&lt;id&gt;exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2535,7 +2549,7 @@
 	id2="audit"
 	eventcategory="1402010100"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:DEL_GROUP&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="DEL_GROUP msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;grp=&quot;&lt;group&gt;&quot; acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="DEL_GROUP msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;grp=&quot;&lt;group&gt;&quot; acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2543,7 +2557,7 @@
 	id2="audit"
 	eventcategory="1402010300"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:GRP_MGMT&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="GRP_MGMT msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;{op=&lt;fld38&gt; grp=&quot;&lt;group&gt;&quot;|op=&lt;fld38&gt;} acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="GRP_MGMT msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;{op=&lt;fld38&gt; grp=&quot;&lt;group&gt;&quot;|op=&lt;fld38&gt;} acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2551,7 +2565,7 @@
 	id2="audit"
 	eventcategory="1401060000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:LOGIN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="LOGIN msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;subj=&lt;subject&gt;old-auid=&lt;fld1&gt;auid=&lt;fld2&gt;old-ses=&lt;sessionid&gt;ses=&lt;sessionid1&gt;res=&lt;disposition&gt;"/>
+	content="LOGIN msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;subj=&lt;subject&gt;old-auid=&lt;fld1&gt;auid=&lt;user.id&gt;old-ses=&lt;sessionid&gt;ses=&lt;sessionid1&gt;res=&lt;disposition&gt;"/>
 
 	
 <MESSAGE
@@ -2559,14 +2573,14 @@
 	id2="audit"
 	eventcategory="1401060000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:LOGIN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="LOGIN msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt; old auid=&lt;fld1&gt; new auid=&lt;fld2&gt; old ses=&lt;sessionid&gt; new ses=&lt;sessionid1&gt;"/>
+	content="LOGIN msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt; uid=&lt;uid&gt; old auid=&lt;fld1&gt; new auid=&lt;user.id&gt; old ses=&lt;sessionid&gt; new ses=&lt;sessionid1&gt;"/>
 
 <MESSAGE
 	id1="audit:20"
 	id2="audit"
 	eventcategory="1401000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:CRED_REFR&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="CRED_REFR msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;fld1&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="CRED_REFR msg=&lt;agent&gt;(&lt;info&gt;): pid=&lt;process_id&gt;uid=&lt;uid&gt;auid=&lt;user.id&gt;ses=&lt;sessionid&gt;subj=&lt;subject&gt;msg=&apos;op=&lt;fld38&gt;grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;daddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 	
 <MESSAGE
@@ -2582,7 +2596,7 @@
 	id2="audit"
 	eventcategory="1603000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:SYSCALL&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="SYSCALL msg=&lt;agent&gt;(&lt;info&gt;): arch=&lt;fld1&gt;syscall=&lt;id2&gt;success=&lt;disposition&gt;exit=&lt;fld6&gt;a0=&lt;fld7&gt;a1=&lt;fld8&gt;a2=&lt;fld9&gt;a3=&lt;fld10&gt;items=&lt;fld11&gt;ppid=&lt;parent_pid&gt;pid=&lt;process_id&gt;auid=&lt;fld12&gt;uid=&lt;uid&gt;gid=&lt;groupid&gt;euid=&lt;fld13&gt;suid=&lt;fld14&gt;fsuid=&lt;fld15&gt;egid=&lt;fld16&gt;sgid=&lt;fld17&gt;fsgid=&lt;fld18&gt;tty=&lt;terminal&gt;ses=&lt;sessionid&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; {subj=&lt;subject&gt; key=&lt;fld19&gt; | key=&quot;&lt;fld19&gt;&quot;}"/>
+	content="SYSCALL msg=&lt;agent&gt;(&lt;info&gt;): arch=&lt;fld1&gt;syscall=&lt;id2&gt;success=&lt;disposition&gt;exit=&lt;fld6&gt;a0=&lt;fld7&gt;a1=&lt;fld8&gt;a2=&lt;fld9&gt;a3=&lt;fld10&gt;items=&lt;fld11&gt;ppid=&lt;parent_pid&gt;pid=&lt;process_id&gt;auid=&lt;user.id&gt;uid=&lt;uid&gt;gid=&lt;groupid&gt;euid=&lt;fld13&gt;suid=&lt;fld14&gt;fsuid=&lt;fld15&gt;egid=&lt;fld16&gt;sgid=&lt;fld17&gt;fsgid=&lt;fld18&gt;tty=&lt;terminal&gt;ses=&lt;sessionid&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; {subj=&lt;subject&gt; key=&lt;rulename&gt; | key=&quot;&lt;rulename&gt;&quot;}"/>
 
 	
 
@@ -2608,14 +2622,14 @@
 	id2="audit"
 	eventcategory="1401060000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_LOGIN&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_LOGIN msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt; } exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_LOGIN msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt; } exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 <MESSAGE
 	id1="audit:27"
 	id2="audit"
 	eventcategory="1401070000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:USER_LOGOUT&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"	 
-	content="USER_LOGOUT msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;fld1&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt; } exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
+	content="USER_LOGOUT msg=&lt;agent&gt;(&lt;info&gt;): {user pid=&lt;process_id&gt; | pid=&lt;process_id&gt;} uid=&lt;uid&gt;auid=&lt;user.id&gt; {ses=&lt;sessionid&gt;subj=&lt;subject&gt; | ses=&lt;sessionid&gt;} msg=&apos;op=&lt;fld38&gt; {grantors=&lt;c_username&gt;acct=&quot;&lt;username&gt;&quot; | acct=&quot;&lt;username&gt;&quot; | id=&lt;id&gt; } exe=&quot;&lt;action&gt;&quot; hostname=&lt;hostname&gt;addr=&lt;saddr&gt;terminal=&lt;terminal&gt;res=&lt;disposition&gt;&apos;"/>
 
 <MESSAGE
 	id1="audit:29"
@@ -2642,39 +2656,39 @@
 	id2="auditd"
 	eventcategory="1603110000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Shutdown failed&gt;"
-	content="&lt;agent&gt;: auditd shutdown failed" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} auditd shutdown failed" />
 <MESSAGE
 	id1="00321:01"
 	id2="auditd"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:startup/shutdown succeeded&gt;"
-	content="&lt;agent&gt;: auditd { startup | shutdown } succeeded" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} auditd { startup | shutdown } succeeded" />
 <MESSAGE
 	id1="00321:02"
 	id2="auditd"
 	eventcategory="1603000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Failed to lock file&gt;"
-	content="&lt;agent&gt;: Failed to lock &lt;filename&gt;: &lt;result&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} Failed to lock &lt;filename&gt;: &lt;result&gt;" />
 <MESSAGE
 	id1="00321:03"
 	id2="auditd"
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } { Warning - &lt;event_description&gt; | &lt;event_description&gt;: &lt;action&gt; | &lt;event_description&gt; }" />
+	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } { Warning - &lt;event_description&gt; | &lt;event_description&gt;: &lt;action&gt; | &lt;event_description&gt; }" />	
 
 <MESSAGE
 	id1="001309"
 	id2="auditmanager"
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Received wakeup signal before sleep finished&gt;"
-	content="&lt;agent&gt;: Received wakeup signal before sleep finished" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} Received wakeup signal before sleep finished" />
 
 <MESSAGE
 	id1="01055"
 	id2="AUDLOG"
 	eventcategory="1605010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Audit log file not processed&gt;"
-	content="&lt;agent&gt;: Audit logfile (&lt;filename&gt;) not processed (&lt;result&gt;)." />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} Audit logfile (&lt;filename&gt;) not processed (&lt;result&gt;)." />
 <MESSAGE
 	id1="00965"
 	id2="AuPatch"
@@ -10319,7 +10333,7 @@
 	id1="00009"
 	id2="kernel"
 	eventcategory="1605010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;: &lt;event_description&gt;" />
 
 <MESSAGE
@@ -10682,6 +10696,13 @@
 	eventcategory="1605000000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]:  &lt;event_description&gt;" />
+
+<MESSAGE
+	id1="telegraf"
+	id2="telegraf"
+	eventcategory="1801010000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;: &lt;fld1&gt; E! [inputs.&lt;service&gt;]: &lt;event_description&gt;" />
 
 <MESSAGE
 	id1="00658"
@@ -18895,14 +18916,14 @@
 	id1="002068"
 	id2="snmpd"
 	eventcategory="1801020000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connection&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Connection&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: Connection from &lt;protocol&gt;: { [&lt;saddr&gt;]:&lt;sport&gt;-&gt;[&lt;daddr&gt;] | [&lt;saddr&gt;]:&lt;sport&gt; }" />
 
 <MESSAGE
 	id1="002103"
 	id2="snmpd"
 	eventcategory="1605000000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:truncating integer value greater than 32 bits&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:truncating integer value greater than 32 bits&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: truncating integer value &gt; 32 bits" />
 
 <MESSAGE
@@ -19478,7 +19499,7 @@
 	id1="00020:08"
 	id2="sshd"
 	eventcategory="1801020000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Session opened&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Session opened&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="{ &lt;agent&gt;(pam_unix)[&lt;process_id&gt;]: | &lt;agent&gt;[&lt;process_id&gt;]: } { pam_unix(&lt;service&gt;): session | session } opened for user &lt;username&gt; by &lt;c_username&gt;(uid=&lt;uid&gt;)" />
 
 <MESSAGE
@@ -19602,7 +19623,7 @@
 	id1="00020:14"
 	id2="sshd"
 	eventcategory="1401060000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Accepted publickey&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_theme:Authentication&gt;&lt;@ec_subject:User&gt;&lt;@ec_activity:Logon&gt;&lt;@ec_outcome:Success&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Accepted publickey&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: Accepted publickey for &lt;username&gt; { from ::ffff: | from } &lt;saddr&gt; port &lt;sport&gt; {&lt;protocol&gt;: RSA SHA256:&lt;checksum&gt;|&lt;protocol&gt;}" />
 <MESSAGE
 	id1="00020:16"
@@ -19614,7 +19635,7 @@
 	id1="00020:38"
 	id2="sshd"
 	eventcategory="1401070000"
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session closed for user&gt;"
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:session closed for user&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: &lt;fld1&gt;(&lt;info&gt;): session closed for user &lt;username&gt;" />
 
 <MESSAGE
@@ -19708,7 +19729,7 @@
 	id1="00020:12"
 	id2="sshd"
 	eventcategory="1401070000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="{&lt;agent&gt;[&lt;process_id&gt;]:&lt;fld1&gt; |&lt;agent&gt;[&lt;process_id&gt;]&lt;fld1&gt;:|&lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } {invalid user &lt;username&gt; &lt;fld2&gt;|&lt;event_description&gt; deny &lt;dclass_counter1&gt; | &lt;event_description&gt;}" />
 <MESSAGE
 	id1="00040"
@@ -20405,7 +20426,7 @@
 	id1="00034:03"
 	id2="sudo"
 	eventcategory="1401050100"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@administrator:*PARMVAL(c_username)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:successful sudo&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@administrator:*PARMVAL(c_username)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:successful sudo&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;: &lt;username&gt;: &lt;space&gt; TTY=&lt;terminal&gt; { ; | &lt;space&gt; } PWD= &lt;directory&gt; { ; | &lt;space&gt; }  { USER= | RUNAS= }&lt;c_username&gt; { ; |  &lt;space&gt; } COMMAND=&lt;action&gt;" />
 <MESSAGE
 	id1="00034:01"
@@ -20584,7 +20605,7 @@
 	id1="00034:99"
 	id2="sudo"
 	eventcategory="1603000000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="{ &lt;agent&gt;[&lt;process_id&gt;]: | &lt;agent&gt;: } &lt;event_description&gt;" />
 <MESSAGE
 	id1="00283"
@@ -23312,13 +23333,13 @@
 	id1="00026"
 	id2="xinetd"
 	eventcategory="1605010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;agent&gt;[&lt;process_id&gt;]: START: &lt;protocol&gt; pid=&lt;child_pid&gt; { from=::ffff: | from=}&lt;saddr&gt;" />
 <MESSAGE
 	id1="00026:01"
 	id2="xinetd"
 	eventcategory="1605010000"
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
 	content="&lt;event_description&gt;" />
 <MESSAGE
 	id1="00807"
