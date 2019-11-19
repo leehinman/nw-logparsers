@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DEVICEMESSAGES>
 <VERSION
-	xml="39"
+	xml="41"
 	checksum="3b5201ea5d3517e275d5d356eac552a2"
-	revision="134"
+	revision="136"
     device="2.0" />
 	
 
@@ -401,6 +401,13 @@
 	functions="&lt;@event_name:*HDR(hevent_description)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %H:%U:%O',param_event_time)&gt;"
 	content="&lt;param_event_time&gt;&lt;msghold&gt;" />
 
+<MESSAGE
+      id1="indegy_security_platform"
+      id2="indegy_security_platform"
+      eventcategory="1804000000"
+      functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %W %Z',param_event_time)&gt;"
+      content="&lt;param_event_time&gt;&lt;msghold&gt;"/>
+
 <VendorProducts>
 	<Vendor2Device vendor="RSA" product="Security Analytics NetFlow Collector" device="rsaflow" group="Switch"/>
 	<Vendor2Device vendor="RSA" product="NetWitness NetFlow Collector" device="rsaflow" group="Switch"/>
@@ -476,8 +483,9 @@
 	<Vendor2Device vendor="Qualys" product="VM Host Detection" device="qualysvmhosts" group="Cloud"/>
 	<Vendor2Device vendor="Elasticsearch" product="NGINX" device="nginx" group="Web Logs"/>
 	<Vendor2Device vendor="Forcepoint" product="Email Security" device="forcepoint_email_security" group="Anti Virus"/>
-	<Vendor2Device vendor="F5" product="ASM" device="f5_asm" group="Application Firewall"/>																				
-
+	<Vendor2Device vendor="F5" product="ASM" device="f5_asm" group="Application Firewall"/>
+	<Vendor2Device vendor="Indegy" product="Indegy Security Platform" device="indegy_security_platform" group="Analysis"/>
+																				
 
 </VendorProducts>
 
@@ -529,7 +537,9 @@
 		<ExtensionKey cefName="dpid" metaName="cs_fld"/>
 		<ExtensionKey cefName="dpriv" metaName="privilege"/>
 		<ExtensionKey cefName="dproc" metaName="process"/>
-		<ExtensionKey cefName="dpt" metaName="dport"/>
+		<ExtensionKey cefName="dpt" metaName="dport">
+			<device2meta device="indegy_security_platform" metaName="port.dst"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="dst" metaName="daddr"/>
 		<ExtensionKey cefName="duid" metaName="uid"/>
 		<ExtensionKey cefName="duser" metaName="username"/>
@@ -541,6 +551,7 @@
 		<ExtensionKey cefName="externalId" metaName="hardware_id">
 			<device2meta device="msata" metaName="id"/>
 			<device2meta device="f5_asm" metaName="operation_id"/>
+			<device2meta device="indegy_security_platform" metaName="cs_fld"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="fileCreateTime" metaName="cs_filectime"/>
 		<ExtensionKey cefName="fileHash" metaName="checksum"/>
@@ -567,6 +578,7 @@
 			<device2meta device="citrixns" metaName="info"/>
 			<device2meta device="forcepoint_email_security" metaName="subject"/>
 			<device2meta device="f5_asm" metaName="cs_fld"/>
+			<device2meta device="indegy_security_platform" metaName="info"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="oldFileCreateTime" metaName="cs_oldfilectime"/>
 		<ExtensionKey cefName="oldFileHash" metaName="cs_oldfilehash"/>
@@ -606,7 +618,9 @@
 		<ExtensionKey cefName="spid" metaName="process_id_src"/>
 		<ExtensionKey cefName="sproc" metaName="process_src"/>
 		<ExtensionKey cefName="spriv" metaName="privilege"/>
-		<ExtensionKey cefName="spt" metaName="sport"/>
+		<ExtensionKey cefName="spt" metaName="sport">
+			<device2meta device="indegy_security_platform" metaName="port.src"/>
+		</ExtensionKey>
 		<ExtensionKey cefName="src" metaName="saddr"/>
 		<ExtensionKey cefName="start" metaName="param_starttime"/>
 		<ExtensionKey cefName="suid" metaName="uid"/>
@@ -769,7 +783,7 @@
 		<ExtensionKey cefName="eventid" metaName="id"/>
 		<ExtensionKey cefName="eventversion" metaName="cn_eventver"/>
 		<ExtensionKey cefName="awsregion" metaName="group"/>
-		<ExtensionKey cefName="principalid" metaName="uid"/>
+		<ExtensionKey cefName="principalid" metaName="user.id"/>
 		<ExtensionKey cefName="accesskeyid" metaName="cs_accesskeyid"/>
 		<ExtensionKey cefName="accountid" metaName="id1"/>
 		<ExtensionKey cefName="identitytype" metaName="user_role"/>
@@ -1083,6 +1097,7 @@
 			<device2meta device="msoffice365" metaName="id"/>
 			<device2meta device="NetskopeCloudSecurityPlatform" metaName="id"/>
 			<device2meta device="msazuregraph_security" metaName="id"/>
+			<device2meta device="amazonguardduty" metaName="operation_id"/>
 			
 		</ExtensionKey>
 		<ExtensionKey cefName="signinDateTimeInMillis" metaName="event_time_string"/>
@@ -1384,6 +1399,7 @@
 			<device2meta device="mcafeewg" metaName="risk" label="Reputation"/>	
 			<device2meta device="checkpointfw1" metaName="application" label="Application Name"/>
 			<device2meta device="f5_asm" metaName="location_country"/>
+			<device2meta device="indegy_security_platform" metaName="policyname" label="policy_name"/>
 		</ExtensionKey>
 		<ExtensionKey cefName="cs6Label" metaName="cs_fld"/>
 		
@@ -1525,6 +1541,7 @@
 		<ExtensionKey cefName="publicIp" metaName="alias.ip"/>
 		<ExtensionKey cefName="Service.Action.NetworkConnectionAction.RemoteIpDetails.Organization.Org" metaName="cs_fld"/>
 		<ExtensionKey cefName="Service.Action.AwsApiCallAction.RemoteIpDetails.Organization.Org" metaName="cs_fld"/>
+		<ExtensionKey cefName="Resource.AccessKeyDetails.PrincipalId" metaName="user.id"/>
 
 		 
 		<ExtensionKey cefName="resource.type" metaName="obj_type"/>
@@ -1983,5 +2000,7 @@
 		<ExtensionKey cefName="encryptedDelivery" metaName="cs_fld"/>
 		<ExtensionKey cefName="deliveryCode" metaName="resultcode"/>
 		<ExtensionKey cefName="deliveryCodeInfo" metaName="cs_fld"/>
+		
+
 </ExtensionKeys>
 </DEVICEMESSAGES>
