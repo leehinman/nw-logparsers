@@ -4,9 +4,9 @@
 	displayname="Symantec Brightmail"
 	group="Application Firewall">
 <VERSION
-	xml="9"
-	checksum="be98875bc9a12f53f798b11d8590bd34"
-	revision="99"
+	xml="12"
+	checksum="59989209a85bc65a1c5fbf52e1ef0fd8"
+	revision="136"
 	device="2.0" />
  
 <HEADER 
@@ -56,8 +56,11 @@
 	id2="0010"
 	messageid="STRCAT(msgIDPart1,&apos;_&apos;,msgIDPart2)"
 	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hhostname&gt; &lt;hfld2&gt;[&lt;hfld3&gt;]: &lt;msgIDPart1&gt; &lt;msgIDPart2&gt;.&lt;!payload:hmonth&gt;"/>
-			
-		
+<HEADER
+	id1="0012"
+	id2="0012"
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hhostname&gt; &lt;hfld1&gt;: &lt;hfld3&gt;|&lt;fld4&gt;|&lt;messageid&gt;|&lt;!payload:$START&gt;"/>
+
 <MESSAGE 
 	id1="27219" 
 	id2="27219" 
@@ -95,6 +98,7 @@
 	eventcategory="1605000000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;&lt;@event_description:The lock file is currently locked by another process.&gt;"
 	content="  &lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;fld4&gt; &lt;fld5&gt;: [&lt;fld6&gt;] (&lt;fld7&gt;): [&lt;fld8&gt;] The lock file &lt;filename&gt; is currently locked by another process." />
+
 <MESSAGE 
 	id1="ML-DELIVERY_ATTEMPT" 
 	id2="ML-DELIVERY_ATTEMPT" 
@@ -232,92 +236,92 @@
 	id1="ACCEPT"
 	id2="ACCEPT"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|ACCEPT|&lt;shost&gt;:&lt;sport&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|ACCEPT|&lt;shost&gt;:&lt;sport&gt;" />
 <MESSAGE
 	id1="SENDER"
 	id2="SENDER"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|SENDER|&lt;from&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|SENDER|&lt;from&gt;" />
 <MESSAGE
 	id1="FIRED"
 	id2="FIRED"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|FIRED|&lt;from&gt;|&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|FIRED|&lt;from&gt;|&lt;info&gt;" />
 <MESSAGE
 	id1="SOURCE"
 	id2="SOURCE"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|SOURCE|&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|SOURCE|&lt;info&gt;" />
 <MESSAGE
 	id1="EHLO"
 	id2="EHLO"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|EHLO|&lt;from&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|EHLO|&lt;from&gt;" />
 <MESSAGE
 	id1="ORCPTS"
 	id2="ORCPTS"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|ORCPTS|&lt;from&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|ORCPTS|&lt;from&gt;" />
 <MESSAGE
 	id1="SUBJECT"
 	id2="SUBJECT"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|SUBJECT|&lt;subject&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|SUBJECT|&lt;subject&gt;" />
 <MESSAGE
 	id1="IRCPTACTION"
 	id2="IRCPTACTION"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|IRCPTACTION|&lt;from&gt;|&lt;action&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|IRCPTACTION|&lt;from&gt;|&lt;action&gt;" />
 <MESSAGE
 	id1="LOGICAL_IP"
 	id2="LOGICAL_IP"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|LOGICAL_IP|&lt;saddr&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|LOGICAL_IP|&lt;saddr&gt;" />
 <MESSAGE
 	id1="MSGID"
 	id2="MSGID"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|MSGID|&lt;info&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|MSGID|&lt;info&gt;" />
 <MESSAGE
 	id1="MSG_SIZE"
 	id2="MSG_SIZE"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|MSG_SIZE|&lt;filename_size&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|MSG_SIZE|&lt;filename_size&gt;" />
 <MESSAGE
 	id1="UNTESTED"
 	id2="UNTESTED"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|UNTESTED|&lt;from&gt;|&lt;info&gt;|&lt;fld7&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|UNTESTED|&lt;from&gt;|&lt;info&gt;|&lt;fld7&gt;" />
 <MESSAGE
 	id1="VERDICT"
 	id2="VERDICT"
 	eventcategory="1605020000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|VERDICT|&lt;from&gt;|&lt;info&gt;|&lt;fld7&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|VERDICT|&lt;from&gt;|&lt;info&gt;|&lt;fld7&gt;" />
 <MESSAGE
 	id1="DELIVER"
 	id2="DELIVER"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|DELIVER|&lt;daddr&gt;:&lt;dport&gt;|&lt;to&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|DELIVER|&lt;daddr&gt;:&lt;dport&gt;|&lt;to&gt;" />
 <MESSAGE
 	id1="TRACKERID"
 	id2="TRACKERID"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|TRACKERID|&lt;from&gt;|&lt;fld7&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|TRACKERID|&lt;from&gt;|&lt;fld7&gt;" />
 <MESSAGE
 	id1="TLS_RECEIVED"
 	id2="TLS_RECEIVED"
@@ -328,8 +332,8 @@
 	id1="ATTACH"
 	id2="ATTACH"
 	eventcategory="1801000000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; &lt;fld4&gt;[&lt;fld5&gt;]: &lt;sessionid&gt;|&lt;fld6&gt;|ATTACH|&lt;filename&gt;" />
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,'%B %F %H:%U:%O',fld1,fld2,fld3)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;fld3&gt; &lt;hostname&gt; {&lt;fld4&gt;[&lt;fld5&gt;]:|&lt;fld4&gt;:} &lt;sessionid&gt;|&lt;fld6&gt;|ATTACH|&lt;filename&gt;" />
 <MESSAGE
 	id1="ATTACHFILTER"
 	id2="ATTACHFILTER"
