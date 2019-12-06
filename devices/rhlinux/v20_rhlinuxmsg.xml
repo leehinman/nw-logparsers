@@ -11,9 +11,9 @@
 <VARTYPE name="hday" regex="3[01]|2[0-9]|1[0-9]|0[1-9]|[1-9]" />
 
 <VERSION
-	xml="386"
-	checksum="c454df108db45cf394320611da823bb6"
-	revision="135"
+	xml="389"
+	checksum="fd37ee9d8f6d927fe57a12ede65eee68"
+	revision="137"
 	device="2.0" />
 
 
@@ -2180,7 +2180,7 @@
 	id2="audispd"
 	eventcategory="1612000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): arch=&lt;fld1&gt; syscall=&lt;id2&gt; success=&lt;disposition&gt; exit=&lt;fld6&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld28&gt; items=&lt;fld29&gt;{ ppid=&lt;parent_pid&gt; pid=&lt;process_id&gt; | pid=&lt;process_id&gt; }auid=&lt;user.id&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; euid=&lt;fld11&gt; suid=&lt;fld12&gt; fsuid=&lt;fld13&gt; egid=&lt;fld14&gt; sgid=&lt;fld15&gt; fsgid=&lt;fld16&gt; tty=&lt;terminal&gt; ses=&lt;sessionid&gt; comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;filename&gt;&quot; subj=&lt;s_context&gt; key=&lt;rulename&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=&lt;event_type&gt; msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): arch=&lt;fld1&gt; syscall=&lt;id2&gt; success=&lt;disposition&gt; exit=&lt;fld6&gt; a0=&lt;fld2&gt; a1=&lt;fld3&gt; a2=&lt;fld4&gt; a3=&lt;fld28&gt; items=&lt;fld29&gt;{ ppid=&lt;parent_pid&gt; pid=&lt;process_id&gt; | pid=&lt;process_id&gt; }auid=&lt;user.id&gt; uid=&lt;uid&gt; gid=&lt;groupid&gt; euid=&lt;fld11&gt; suid=&lt;fld12&gt; fsuid=&lt;fld13&gt; egid=&lt;fld14&gt; sgid=&lt;fld15&gt; fsgid=&lt;fld16&gt; tty=&lt;terminal&gt; ses=&lt;sessionid&gt; comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;filename&gt;&quot; subj=&lt;s_context&gt; {key=&quot;&lt;rulename&gt;&quot;|key=&lt;rulename&gt;}" />
 
 <MESSAGE
 	id1="03850"
@@ -2278,7 +2278,7 @@
 	id2="audispd"
 	eventcategory="1701000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%X',fld25)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_type:CONFIG CHANGE&gt;"
-	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; op=&lt;action&gt; path=&quot;&lt;directory&gt;&quot; key=&lt;rulename&gt;|op=&lt;fld38&gt; key=&lt;rulename&gt;} list=&lt;rule_uid&gt; res=&lt;disposition&gt;" />
+	content="{&lt;agent&gt;[&lt;process_id&gt;]:|&lt;agent&gt;:} &lt;space1&gt;node=&lt;node&gt; type=CONFIG_CHANGE msg=audit(&lt;fld25&gt;.&lt;fld26&gt;:&lt;id&gt;): &lt;space&gt; auid=&lt;user.id&gt; {ses=&lt;sessionid&gt; op=&lt;action&gt; path=&quot;&lt;directory&gt;&quot; key=&quot;&lt;rulename&gt;&quot;|ses=&lt;sessionid&gt; op=&lt;action&gt; path=&quot;&lt;directory&gt;&quot; key=&lt;rulename&gt;|op=&lt;fld38&gt; key=&quot;&lt;rulename&gt;&quot;|op=&lt;fld38&gt; key=&lt;rulename&gt;} list=&lt;rule_uid&gt; res=&lt;disposition&gt;" />
 
 <MESSAGE
 	id1="03803"
@@ -2596,7 +2596,7 @@
 	id2="audit"
 	eventcategory="1603000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%FT%N:%U:%O',hfld1)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_type:SYSCALL&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@s_context:*PARMVAL(subject)&gt;"
-	content="SYSCALL msg=&lt;agent&gt;(&lt;info&gt;): arch=&lt;fld1&gt;syscall=&lt;id2&gt;success=&lt;disposition&gt;exit=&lt;fld6&gt;a0=&lt;fld7&gt;a1=&lt;fld8&gt;a2=&lt;fld9&gt;a3=&lt;fld10&gt;items=&lt;fld11&gt;ppid=&lt;parent_pid&gt;pid=&lt;process_id&gt;auid=&lt;user.id&gt;uid=&lt;uid&gt;gid=&lt;groupid&gt;euid=&lt;fld13&gt;suid=&lt;fld14&gt;fsuid=&lt;fld15&gt;egid=&lt;fld16&gt;sgid=&lt;fld17&gt;fsgid=&lt;fld18&gt;tty=&lt;terminal&gt;ses=&lt;sessionid&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; {subj=&lt;subject&gt; key=&lt;rulename&gt; | key=&quot;&lt;rulename&gt;&quot;}"/>
+	content="SYSCALL msg=&lt;agent&gt;(&lt;info&gt;): arch=&lt;fld1&gt;syscall=&lt;id2&gt;success=&lt;disposition&gt;exit=&lt;fld6&gt;a0=&lt;fld7&gt;a1=&lt;fld8&gt;a2=&lt;fld9&gt;a3=&lt;fld10&gt;items=&lt;fld11&gt;ppid=&lt;parent_pid&gt;pid=&lt;process_id&gt;auid=&lt;user.id&gt;uid=&lt;uid&gt;gid=&lt;groupid&gt;euid=&lt;fld13&gt;suid=&lt;fld14&gt;fsuid=&lt;fld15&gt;egid=&lt;fld16&gt;sgid=&lt;fld17&gt;fsgid=&lt;fld18&gt;tty=&lt;terminal&gt;ses=&lt;sessionid&gt;comm=&quot;&lt;process&gt;&quot; exe=&quot;&lt;action&gt;&quot; {subj=&lt;subject&gt; key=&quot;&lt;rulename&gt;&quot; | subj=&lt;subject&gt; key=&lt;rulename&gt; | key=&quot;&lt;rulename&gt;&quot;}"/>
 
 	
 
@@ -12244,6 +12244,13 @@
 	eventcategory="1605010000"
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($MSG,&apos;%F-%B-%W %N:%U:%O&apos;,fld1)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;"
 	content="&lt;process&gt;[&lt;process_id&gt;]: &lt;fld1&gt;.&lt;fld2&gt; {client &lt;obj_id&gt; &lt;saddr&gt;#&lt;sport&gt; &lt;fld3&gt;:|client &lt;saddr&gt;#&lt;sport&gt; (&lt;fld3&gt;):|client &lt;saddr&gt;#&lt;sport&gt;:} query: &lt;hostname&gt; IN &lt;terminal&gt; +&lt;fld5&gt; (&lt;fld4&gt;)" />
+<MESSAGE
+	id1="named:01"
+	id2="named"
+	eventcategory="1605000000"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:NetworkComm&gt;&lt;@ec_theme:Communication&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;"
+	content="&lt;agent&gt;[&lt;process_id&gt;]: client &lt;saddr&gt;#&lt;sport&gt;: query: &lt;domain&gt; &lt;fld2&gt; &lt;dns_querytype&gt; &lt;context&gt; (&lt;hostip&gt;)" />
+	
 <MESSAGE
 	id1="00103"
 	id2="named"
