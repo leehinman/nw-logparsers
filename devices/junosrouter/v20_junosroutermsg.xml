@@ -4,9 +4,9 @@
 	displayname="Juniper JUNOS"
 	group="Router">
 <VERSION
-	xml="60"
-	checksum="2d84a536fbf8bf21f6184c859d876a81"
-	revision="134"
+	xml="61"
+	checksum="851a0659844e5fb0741cb96fdbd271f7"
+	revision="137"
     device="2.0" />
 
 
@@ -5716,6 +5716,27 @@ functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:telnetd exit status
 	eventcategory="1901000000"
 	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:Interface Monitor failure recovered&gt;&lt;@hostname:*HDR(hhost)&gt;"
 	content="&lt;event_type&gt; Interface Monitor failure recovered &lt;fld1&gt;"/>
+
+<MESSAGE
+	id1="JUNOSROUTER_GENERIC:10"
+	id2="JUNOSROUTER_GENERIC"
+	eventcategory="1901000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;severity&gt; [&lt;agent&gt;] Remove extension handler directory: &lt;directory&gt;"/>
+
+<MESSAGE
+	id1="JUNOSROUTER_GENERIC:11"
+	id2="JUNOSROUTER_GENERIC"
+	eventcategory="1901000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:ExtHandler Stopped tracking cgroup&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;severity&gt; ExtHandler Stopped tracking cgroup: &lt;group&gt;, path: &lt;directory&gt;"/>
+
+<MESSAGE
+	id1="JUNOSROUTER_GENERIC:12"
+	id2="JUNOSROUTER_GENERIC"
+	eventcategory="1901000000"
+	functions="&lt;@event_time:*EVNTTIME($HDR,'%B %F %H:%U:%O',month,day,time)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@hostname:*HDR(hhost)&gt;&lt;@event_description:ExtHandler Started tracking new cgroup&gt;"
+	content="&lt;fld1&gt; &lt;fld2&gt; &lt;severity&gt; ExtHandler Started tracking new cgroup: &lt;group&gt;, path: &lt;directory&gt;"/>
 
 <MESSAGE
 	id1="JUNOSROUTER_GENERIC"
