@@ -4,9 +4,9 @@
 	displayname="Symantec DLP (Vontu)"
 	group="DLP">
 <VERSION
-	xml="15"
-	checksum="c2b2e4c32580149af9b8137e0e4bf258"
-	revision="117"
+	xml="16"
+	checksum="a82bf3b5cd9fc013aee86332fb41b293"
+	revision="137"
 	device="2.0" />
 
  
@@ -38,7 +38,7 @@
 <HEADER 
 	id1="0006" 
 	id2="0006"  
-	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; Vontu &lt;messageid&gt;: &lt;!payload&gt;" /> 
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;hostname&gt; {Vontu|Symantec DLP} &lt;messageid&gt;: &lt;!payload&gt;" /> 
 
 <HEADER 
 	id1="0001" 
@@ -57,6 +57,7 @@
 	eventcategory="1502000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@dclass_counter1_string:Incidents&gt;"
 	content="&lt;action&gt;^^&lt;id&gt;^^&lt;url&gt;^^&lt;policyname&gt;^^&lt;to&gt;^^&lt;from&gt;^^&lt;severity&gt;:&lt;fld21&gt;^^&lt;context&gt;^^&lt;filename&gt;^^&lt;fld22&gt;^^&lt;dclass_counter1&gt;^^&lt;directory&gt;^^&lt;fld23&gt;^^&lt;fld24&gt;^^&lt;fld25&gt;^^&lt;fld26&gt;^^&lt;fld27&gt;^^&lt;fld28&gt;^^&lt;protocol&gt;" />
+
 <MESSAGE 
 	id1="Incident:01" 
 	id2="Incident" 
@@ -81,6 +82,7 @@
 	eventcategory="1502000000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_source:*PARMVAL(hostname)&gt;&lt;@dclass_counter1_string:Incidents&gt;&lt;@fld2:*HDR(hmonth)&gt;&lt;@fld3:*HDR(hday)&gt;&lt;@fld4:*HDR(htime)&gt;&lt;@event_time_string:*STRCAT(fld2,fld3,fld4)&gt;&lt;@event_time:*EVNTTIME($MSG,'%R %F, %W %N:%U:%O %P',fld1)&gt;"
 	content="&lt;policyname&gt;^^&lt;id&gt;^^&lt;context&gt;^^&lt;fld21&gt;:&lt;severity&gt;^^&lt;dclass_counter1&gt;^^&lt;rulename&gt;^^&lt;from&gt;^^&lt;to&gt;^^&lt;action&gt;^^&lt;filename&gt;^^&lt;directory&gt;^^{N/A|&lt;fld1&gt;}^^&lt;hostname&gt;^^&lt;network_service&gt;^^&lt;url&gt;" />
+
 <MESSAGE 
 	id1="INCIDENT_GENERIC" 
 	id2="INCIDENT_GENERIC" 
@@ -112,4 +114,5 @@
 	eventcategory="1801010000" 
 	functions="&lt;@action:No Traffic Captured&gt;"
 	content=" &lt;event_time_string&gt; Vontu System { Event: [ | Event [ } &lt;hostname&gt;] No &lt;network_service&gt; Traffic Captured - &lt;event_description&gt;" />
+
 </DEVICEMESSAGES>
