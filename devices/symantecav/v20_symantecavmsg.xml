@@ -4,9 +4,9 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="177"
-	checksum="886cdcda372aa242b4d9c746b95427c2"
-	revision="136"
+	xml="179"
+	checksum="22ba625312c49dc564c11ee0f03a5775"
+	revision="137"
     device="2.0" />
 
 
@@ -1905,6 +1905,19 @@
 	eventcategory="1605020000" 
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld54)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld16,fld19)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences&gt;"
 	content="Event Description: &lt;event_description&gt; (from &lt;fld57&gt; &lt;fld58&gt; PM to &lt;fld59&gt; &lt;fld60&gt; PM).  ,Local: &lt;daddr&gt;,Local Host MAC: &lt;dmacaddr&gt;,Remote Host Name: &lt;shost&gt;,Remote Host IP: &lt;saddr&gt;,Remote Host MAC: &lt;smacaddr&gt;,Inbound,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld54&gt;,End: &lt;fld16&gt; &lt;fld19&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;location_desc&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;dport&gt;,Remote Port: &lt;sport&gt;,CIDS Signature ID: &lt;sigid_string&gt;,CIDS Signature string: &lt;fld23&gt;,CIDS Signature SubID: &lt;fld23&gt;,Intrusion URL: &lt;url&gt;,Intrusion Payload URL: &lt;fld25&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;"/>
+
+<MESSAGE 
+	id1="Local::103" 
+	id2="Local:" 
+	eventcategory="1001000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@dclass_counter1_string:Occurrences&gt;&lt;@direction:Outbound&gt;"
+	content="Event Description: [SID: &lt;fld44&gt;] &lt;category&gt;: &lt;event_description&gt;. Traffic has been blocked for this application: &lt;fld34&gt;,Local: &lt;saddr&gt;,Local Host MAC: &lt;smacaddr&gt;,Remote Host Name: &lt;dhost&gt;,Remote Host IP: &lt;daddr&gt;,Remote Host MAC: &lt;dmacaddr&gt;,Outbound,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;location_desc&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;sport&gt;,Remote Port: &lt;dport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{&quot;Intrusion URL: &lt;url&gt;&quot;|Intrusion URL: &lt;url&gt;},Intrusion Payload URL: &lt;fld12&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;" />
+<MESSAGE 
+	id1="Local::104" 
+	id2="Local:" 
+	eventcategory="1607000000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@dclass_counter1_string:Occurrences&gt;&lt;@direction:Inbound&gt;"
+	content="Event Description: [SID: &lt;fld44&gt;] &lt;category&gt;: &lt;event_description&gt;. Traffic has been blocked for this application: &lt;fld34&gt;,Local: &lt;daddr&gt;,Local Host MAC: &lt;dmacaddr&gt;,Remote Host Name: &lt;shost&gt;,Remote Host IP: &lt;saddr&gt;,Remote Host MAC: &lt;smacaddr&gt;,Inbound,&lt;protocol&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Occurrences: &lt;dclass_counter1&gt;,Application: &lt;application&gt;,Location: &lt;location_desc&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Local Port: &lt;dport&gt;,Remote Port: &lt;sport&gt;,CIDS Signature ID: &lt;sigid&gt;,CIDS Signature string: &lt;sigid_string&gt;,CIDS Signature SubID: &lt;fld23&gt;,{&quot;Intrusion URL: &lt;url&gt;&quot;|Intrusion URL: &lt;url&gt;},Intrusion Payload URL: &lt;fld12&gt;,SHA-256: &lt;checksum&gt;,MD-5: &lt;checksum&gt;" />
 
 <MESSAGE 
 	id1="Local:02" 
