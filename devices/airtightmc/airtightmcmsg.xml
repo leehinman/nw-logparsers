@@ -4,9 +4,9 @@
 	displayname="Airtight Management Console"
 	group="Intrusion">
 <VERSION
-	xml="10"
-	checksum="9994542a987a7e7e260213f61db4b668"
-	revision="114"
+	xml="12"
+	checksum="341b7c037bb865115ccec4309b5824da"
+	revision="138"
 	device="2.0" />
 
 <TAGVALMAP
@@ -20,19 +20,19 @@
 	id1="0004" 
 	id2="0004" 
 	content="&lt;&lt;&lt;hfld1&gt;&gt;&lt;&lt;&lt;hfld2&gt;&gt;&lt;hmonth&gt; &lt;hday&gt; &lt;htime&gt; &lt;messageid&gt;: &lt;!payload&gt;" /> 
-
-<HEADER 
-	id1="0001" 
-	id2="0001" 
-	content="&lt;hfld1&gt;AirTight Management Console &lt;hversion&gt; : &lt;hfld4&gt;: &lt;messageid&gt; &lt;!payload:hversion&gt;" /> 
-<HEADER 
-	id1="0002" 
-	id2="0002" 
-	content="&lt;hfld1&gt;AirTight Management Console &lt;hversion&gt; : &lt;messageid&gt; &lt;!payload:hversion&gt;" />
 <HEADER 
 	id1="0003" 
 	id2="0003" 
 	content="&lt;fld1&gt; &lt;event_time_string&gt; wifi-security-server - - EVT - &lt;messageid&gt;:&lt;fld2&gt;|AirTight|&lt;product&gt;|&lt;version&gt;|&lt;fld4&gt;|&lt;event_description&gt;|&lt;severity&gt;|&lt;!payload&gt;" />
+
+<HEADER 
+	id1="0001" 
+	id2="0001" 
+	content="&lt;hfld1&gt;{AirTight Management Console|Mojo Wireless Manager} &lt;hversion&gt; : &lt;hfld4&gt;: &lt;messageid&gt; &lt;!payload:hversion&gt;" /> 
+<HEADER 
+	id1="0002" 
+	id2="0002" 
+	content="&lt;hfld1&gt;{AirTight Management Console|Mojo Wireless Manager} &lt;hversion&gt; : &lt;messageid&gt; &lt;!payload:hversion&gt;" />
 
 <MESSAGE
 	id1="High"
@@ -82,6 +82,18 @@
 	eventcategory="1605000000"
 	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
 	content="&lt;version&gt; : Authorized AP [&lt;access_point&gt;] is using excessive RTS/CTS [&lt;fld27&gt;]. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;info&gt;. The AP's details are: MAC address [&lt;macaddr&gt;], protocol [&lt;protocol&gt;], channel [&lt;fld23&gt;], SSID [&lt;ssid&gt;], security setting [&lt;fld24&gt;], vendor [&lt;fld25&gt;], RSSI [&lt;fld26&gt;] dBm." />
+<MESSAGE
+	id1="Authorized:05"
+	id2="Authorized"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;version&gt; : &lt;action&gt;: Authorized Client [&lt;access_point&gt;] is connected to a non-authorized AP. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;:&lt;fld27&gt;: &lt;info&gt;. The Client's details are: MAC address [&lt;dmacaddr&gt;], user name [&lt;username&gt;], vendor [&lt;fld28&gt;], RSSI [&lt;fld29&gt;] dBm. The AP's details are: MAC address [&lt;smacaddr&gt;], protocol [&lt;protocol&gt;], channel [&lt;wifi_channel&gt;], SSID [&lt;ssid&gt;], security setting [&lt;fld24&gt;], vendor [&lt;fld25&gt;], RSSI [&lt;fld26&gt;] dBm." />
+<MESSAGE
+	id1="Client"
+	id2="Client"
+	eventcategory="1605000000"
+	functions="&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %H%U%O',fld12,fld13,fld14,fld15)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;"
+	content="&lt;version&gt; : &lt;action&gt;: Client [&lt;access_point&gt;] needs to be quarantined. : &lt;hostip&gt;:&lt;location_desc&gt; : &lt;fld12&gt;T&lt;fld13&gt;:&lt;fld14&gt;:&lt;fld15&gt;+&lt;fld7&gt;:&lt;fld8&gt; : &lt;severity&gt; :&lt;fld2&gt;:&lt;fld3&gt;:&lt;fld4&gt;:&lt;fld5&gt;: &lt;info&gt;. The Client's details are: MAC address [&lt;dmacaddr&gt;], user name [&lt;username&gt;], vendor [&lt;fld25&gt;], RSSI [&lt;fld26&gt;] dBm." />
 <MESSAGE
 	id1="Large"
 	id2="Large"
