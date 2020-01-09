@@ -4,9 +4,9 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="179"
-	checksum="22ba625312c49dc564c11ee0f03a5775"
-	revision="137"
+	xml="183"
+	checksum="5d86176fbea69524512c173d85049d1d"
+	revision="138"
     device="2.0" />
 
 
@@ -2815,6 +2815,13 @@
 	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;username&gt;,User2: &lt;fld3&gt;{,&quot;|,}&lt;info&gt;{&quot;,&quot;|,}&lt;context&gt;{&quot;,|,}Command: &lt;fld10&gt;,Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;,Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;" />
 
 <MESSAGE 
+	id1="Scan:15" 
+	id2="Scan" 
+	eventcategory="1605020000" 
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_description:Scan Start&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Infected Count.&gt;&lt;@dclass_counter2_string:Total File Count.&gt;&lt;@dclass_counter3_string:Threat Count.&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
+	content="Scan ID: &lt;fld11&gt;,Begin: &lt;fld50&gt; &lt;fld52&gt;,{End Time|End}: &lt;fld51&gt;,&lt;disposition&gt;,Duration (seconds): &lt;duration_string&gt;,User1: &lt;username&gt;,User2: &lt;fld3&gt;,{&quot;&lt;info&gt;&quot;|&lt;info&gt;},{&quot;&lt;context&gt;&quot;|&lt;context&gt;},Command: Not a command scan {()|(&lt;fld34&gt;)},Threats: &lt;dclass_counter3&gt;,Infected: &lt;dclass_counter1&gt;,Total files: &lt;dclass_counter2&gt;,Omitted: &lt;fld4&gt;,Computer: &lt;shost&gt;,IP Address: &lt;saddr&gt;,{Domain Name|Domain}: &lt;domain&gt;,{&quot;Group Name: &lt;group&gt;&quot;|Group Name: &lt;group&gt;|Group: &lt;group&gt;},{Server Name|Server}: &lt;hostid&gt;" />
+
+<MESSAGE 
 	id1="Security:03" 
 	id2="Security" 
 	eventcategory="1003010000"
@@ -2845,7 +2852,7 @@
 	id2="Security" 
 	eventcategory="1003010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@ec_subject:Virus&gt;&lt;@ec_activity:Detect&gt;&lt;@ec_theme:TEV&gt;&lt;@threat_name:*PARMVAL(virusname)&gt;&lt;@process:*PARMVAL(filename)&gt;&lt;@event_description:Security risk found&gt;&lt;@event_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld5,fld6)&gt;&lt;@recorded_time:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld12)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@dclass_counter1_string:Occurences.&gt;"
-	content="Security risk found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,&lt;filename&gt;,&lt;fld22&gt;,Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,Inserted:&lt;fld12&gt;,End:&lt;fld51&gt;,Last update time: &lt;fld57&gt;,Domain: &lt;domain&gt;,Group: &lt;group&gt;,Server: &lt;hostid&gt;,User: &lt;username&gt;,Source computer: &lt;fld29&gt;,Source IP: &lt;fld31&gt;,Disposition: &lt;result&gt;,Download site: &lt;fld44&gt;,Web domain: &lt;fld45&gt;,Downloaded by: &lt;fld46&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld49&gt;First Seen: &lt;fld50&gt;,Sensitivity: &lt;fld52&gt;,&lt;fld56&gt;,Application hash: &lt;checksum&gt;,Hash type: &lt;encryption_type&gt;,Company name: &lt;fld54&gt;,Application name: &lt;application&gt;,Application version: &lt;version&gt;,Application type: &lt;obj_type&gt;,File size (bytes): &lt;filename_size&gt;,Category set: &lt;category&gt;,Category type: &lt;vendor_event_cat&gt;,Location: &lt;fld11&gt;,Intensive Protection Level: &lt;fld61&gt;,Certificate issuer: &lt;fld60&gt;,Certificate signer: &lt;fld62&gt;,Certificate thumbprint: &lt;fld63&gt;,Signing timestamp: &lt;fld64&gt;,Certificate serial number: &lt;fld65&gt;"/>
+	content="Security risk found,IP Address: &lt;saddr&gt;,Computer name: &lt;shost&gt;,Source: &lt;event_source&gt;,Risk name: &lt;virusname&gt;,Occurrences: &lt;dclass_counter1&gt;,{File path: &lt;filename&gt;|&lt;filename&gt;},{Description: &lt;fld22&gt;|&lt;fld22&gt;},Actual action: &lt;action&gt;,Requested action: &lt;disposition&gt;,Secondary action: &lt;event_state&gt;,Event time: &lt;fld5&gt; &lt;fld6&gt;,{Event Insert Time: &lt;fld12&gt;|Inserted:&lt;fld12&gt;},{End Time: &lt;fld51&gt;|End:&lt;fld51&gt;},Last update time: &lt;fld57&gt;,{Domain Name: &lt;domain&gt;|Domain: &lt;domain&gt;},{Group Name: &lt;group&gt;|Group: &lt;group&gt;},{Server Name: &lt;hostid&gt;|Server: &lt;hostid&gt;},{User Name: &lt;username&gt;|User: &lt;username&gt;},{Source Computer Name: &lt;fld29&gt;|Source computer: &lt;fld29&gt;},{Source Computer IP: &lt;fld31&gt;|Source IP: &lt;fld31&gt;},Disposition: &lt;result&gt;,Download site: &lt;fld44&gt;,Web domain: &lt;fld45&gt;,Downloaded by: &lt;fld46&gt;,Prevalence: &lt;info&gt;,Confidence: &lt;context&gt;,URL Tracking Status: &lt;fld49&gt;First Seen: &lt;fld50&gt;,Sensitivity: &lt;fld52&gt;,{Permitted application reason: &lt;fld56&gt;|&lt;fld56&gt;},Application hash: &lt;checksum&gt;,Hash type: &lt;encryption_type&gt;,Company name: &lt;fld54&gt;,Application name: &lt;application&gt;,Application version: &lt;version&gt;,Application type: &lt;obj_type&gt;,File size (bytes): &lt;filename_size&gt;,Category set: &lt;category&gt;,Category type: &lt;vendor_event_cat&gt;,Location: &lt;fld11&gt;,Intensive Protection Level: &lt;fld61&gt;,Certificate issuer: &lt;fld60&gt;,Certificate signer: &lt;fld62&gt;,Certificate thumbprint: &lt;fld63&gt;,Signing timestamp: &lt;fld64&gt;,Certificate serial number: &lt;fld65&gt;"/>
 
 <MESSAGE 
 	id1="Security:07" 
@@ -3827,7 +3834,7 @@
 	id2="Blocked"
 	eventcategory="1401010000"
 	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@starttime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld50,fld52)&gt;&lt;@endtime:*EVNTTIME($MSG,'%W-%G-%F %N:%U:%O',fld51,fld53)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content="&lt;fld23&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,End: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld4&gt;,,&lt;filename&gt;,User: &lt;username&gt;,Domain: &lt;domain&gt;,Action Type:&lt;fld6&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
+	content="&lt;fld23&gt;,,Begin: &lt;fld50&gt; &lt;fld52&gt;,{End Time|End}: &lt;fld51&gt; &lt;fld53&gt;,Rule: &lt;rulename&gt;,&lt;process_id&gt;,&lt;process&gt;,&lt;fld4&gt;,,&lt;filename&gt;,{User Name|User}: &lt;username&gt;,{Domain Name|Domain}: &lt;domain&gt;,Action Type:&lt;fld6&gt;,File size (bytes): &lt;filename_size&gt;,Device ID: &lt;device&gt;" />
 
 <MESSAGE
 	id1="File:08"
