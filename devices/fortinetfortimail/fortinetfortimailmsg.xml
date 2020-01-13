@@ -4,9 +4,9 @@
 	displayname="Fortinet FortiMail"
 	group="Application Firewall">
 <VERSION
-	xml="14"
-	checksum="5ba4a63d8d9f965f2ede2cc7d0cafb49"
-	revision="131"
+	xml="15"
+	checksum="7a940db905f3f6f8c6f713f60076af19"
+	revision="138"
 	device="2.0" />
 
  
@@ -244,8 +244,8 @@
 	eventcategory="1207000000"
 	tagval="true"
 	missField="true"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;"
-	content="session_id=&lt;sessionid&gt; client_name=&lt;fqdn&gt; client_ip=&lt;saddr&gt; dst_ip=&lt;daddr&gt; from=&lt;from&gt; hfrom=&lt;fld3&gt; to=&lt;to&gt; polid=&lt;fld5&gt; domain=&lt;domain&gt; mailer=&lt;agent&gt; resolved=&lt;context&gt; src_type=&lt;fld7&gt; direction=&lt;direction&gt; virus=&lt;virusname&gt; disposition=&lt;disposition&gt; classifier=&lt;filter&gt; message_length=&lt;fld6&gt; subject=&lt;subject&gt;"/>
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;&lt;@info:*RMQ(fld12)&gt;"
+	content="session_id=&lt;sessionid&gt; client_name=&lt;fqdn&gt; client_ip=&lt;saddr&gt; dst_ip=&lt;daddr&gt; from=&lt;from&gt; hfrom=&lt;fld3&gt; to=&lt;to&gt; polid=&lt;fld5&gt; domain=&lt;domain&gt; mailer=&lt;agent&gt; resolved=&lt;context&gt; src_type=&lt;fld7&gt; direction=&lt;direction&gt; virus=&lt;virusname&gt; disposition=&lt;disposition&gt; classifier=&lt;filter&gt; message_length=&lt;fld6&gt; subject=&lt;subject&gt; client_cc=&lt;fld11&gt; detail=&lt;fld12&gt;"/>
 
 <MESSAGE 
 	id1="spam" 
@@ -281,5 +281,12 @@
 	eventcategory="1207040000" 
 	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;} from={&quot;&lt;from&gt;&quot;|&lt;from&gt;} to={&quot;&lt;to&gt;&quot;|&lt;to&gt;} msg={&quot;&lt;event_description&gt;&quot;|&lt;event_description&gt;}" />
+
+<MESSAGE 
+	id1="spam_default" 
+	id2="spam_default" 
+	eventcategory="1207040000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="session_id=&quot;&lt;sessionid&gt;&quot; client_name={&quot;&lt;fqdn&gt; [&lt;saddr&gt;]&quot; | &quot;&lt;fqdn&gt;&quot; client_ip=&quot;&lt;saddr&gt;&quot;} dst_ip=&quot;&lt;daddr&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; subject=&quot;&lt;subject&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
 
 </DEVICEMESSAGES>
