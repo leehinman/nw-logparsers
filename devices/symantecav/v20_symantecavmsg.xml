@@ -4,8 +4,8 @@
 	displayname="Symantec AntiVirus/Endpoint Protection"
 	group="Anti Virus">
 <VERSION
-	xml="183"
-	checksum="5d86176fbea69524512c173d85049d1d"
+	xml="184"
+	checksum="6937ccda9aa3dba407f722c7d0de1ac2"
 	revision="138"
     device="2.0" />
 
@@ -52,7 +52,7 @@
 <HEADER
 	id1="00091"
 	id2="00091"
-	content="&lt;hmonth&gt; &lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hhost&gt; SymantecServer: Site: &lt;hurl&gt;,Server: &lt;hhostid&gt;,Domain: &lt;hdomain&gt;,The &lt;messageid&gt; &lt;!payload:messageid&gt;" />
+	content="&lt;hmonth&gt; &lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hhost&gt; SymantecServer: Site: &lt;hurl&gt;,{Server Name|Server}: &lt;hhostid&gt;,{Domain Name|Domain}: &lt;hdomain&gt;,The &lt;messageid&gt; &lt;!payload:messageid&gt;" />
 <HEADER
 	id1="0009"
 	id2="0009"
@@ -816,7 +816,7 @@
 	id1="client" 
 	id2="client" 
 	eventcategory="1605020000" 
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has downloaded the policy successfully.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The client has downloaded the policy successfully.&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
 	content="client has downloaded the {content package|policy|Intrusion Prevention policy} successfully,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
 
 <MESSAGE 
@@ -2021,7 +2021,7 @@
 	id1="management" 
 	id2="management" 
 	eventcategory="1605000000" 
-	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The management server received the client log successfully.&gt;"
+	functions="&lt;@hostname:*HDR(hhost)&gt;&lt;@shost:*HDR(hshost)&gt;&lt;@event_time_string:*HDR(htime)&gt;&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_description:The management server received the client log successfully.&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;"
 	content="management server received the client log successfully,&lt;shost&gt;,&lt;username&gt;,&lt;group&gt;" />
 
 <MESSAGE 
