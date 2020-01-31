@@ -4,9 +4,9 @@
 	displayname="Barracuda Spam Firewall"
 	group="Anti Virus">
 <VERSION 
-	xml="13"
-	checksum="011c6507260645244ece991b3575ef2f"
-	revision="125"
+	xml="16"
+	checksum="6dc808414aeb766ecd9e4836bfd73afe"
+	revision="138"
 	device="2.0" />
 
  
@@ -72,11 +72,18 @@
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
 	content="outbound/smtp[&lt;fld14&gt;]: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; {&lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;info&gt;|&lt;info&gt;}" />
 <MESSAGE 
+	id1="outbound/smtp:03"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld5&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;}  [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;bytes&gt; bytes in &lt;fld11&gt;, &lt;fld22&gt; KB/sec {&lt;event_description&gt; -> &lt;fld12&gt; &lt;fld13&gt;|&lt;event_description&gt;} #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+
+<MESSAGE 
 	id1="outbound/smtp"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;fld5&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;}  {[InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;event_description&gt; #to#&lt;ddomain&gt; | [InternalId=&lt;id&gt;] &lt;event_description&gt; #to#&lt;daddr&gt; | [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;info&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;}" />
+	content="outbound/smtp: &lt;saddr&gt; &lt;fld5&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; {&lt;fld8&gt; &lt;&lt;&lt;from&gt;&gt; |&lt;&lt;&lt;from&gt;&gt;} {[InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;event_description&gt; #to#&lt;ddomain&gt; | [InternalId=&lt;id&gt;] &lt;event_description&gt; #to#&lt;daddr&gt; | [InternalId=&lt;id&gt;, Hostname=&lt;hostname&gt;] &lt;info&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; | &lt;event_description&gt; #to#&lt;ddomain&gt;}" />
 	
 <MESSAGE 
 	id1="000009"
@@ -88,29 +95,67 @@
 	id1="outbound/smtp:01"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@result: Message accepted for delivery&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; Message accepted for delivery #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@result: Message accepted for delivery&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:Message accepted for delivery&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; { &lt;resultcode&gt; &lt;fld&gt; Message accepted for delivery|&lt;resultcode&gt; Message accepted for delivery} #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
 
 <MESSAGE 
 	id1="outbound/smtp:02"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:Connection with domain timed out&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; conversation with &lt;fld5&gt;[&lt;fld6&gt;] timed out while {sending|receiving} &lt;fld7&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; " />
+
+<MESSAGE 
+	id1="outbound/smtp:04"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; conversation with &lt;fld5&gt;[&lt;fld6&gt;] timed out while sending &lt;fld7&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; " />
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; host &lt;fld5&gt;[&lt;fld6&gt;] said: &lt;fld7&gt; {SenderFilterAgent; &lt;event_description&gt; |RESOLVER.ADR.RecipientNotFound; &lt;event_description&gt;|delivery error: &lt;event_description&gt;|Error: &lt;event_description&gt;|&lt;event_description&gt;} #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt; " />
+
+
+<MESSAGE 
+	id1="outbound/smtp:05"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;event_description&gt; id=&lt;fld8&gt; #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+
+<MESSAGE 
+	id1="outbound/smtp:06"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:Lost connection with domain while sending end of data.&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; lost connection with &lt;fld5&gt;[&lt;fld6&gt;] while sending end of data -- message may be sent more than once #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+
+<MESSAGE 
+	id1="outbound/smtp:07"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:Host or domain name not found.&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; Host or domain name not found. &lt;info&gt;" />
+
+
+<MESSAGE 
+	id1="outbound/smtp:08"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;&lt;@event_description:Message accepted for delivery&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;fld&gt; &lt;rbytes&gt; bytes received in &lt;fld6&gt; Message id &lt;fld7&gt; accepted for delivery #to#&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;" />
+
+<MESSAGE 
+	id1="000011"
+	id2="outbound/smtp" 
+	eventcategory="1207010000" 
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; connect to {&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;:|&lt;ddomain&gt;[&lt;daddr&gt;]:} {Connection timed out #to#&lt;fld6&gt; | Connection timed out}" />
+	
 
 <MESSAGE 
 	id1="000010"
 	id2="outbound/smtp" 
 	eventcategory="1207010000" 
 	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;fld7&gt; {Ok &lt;fld9&gt; &lt;fld10&gt; - gsmtp| Ok: queued as &lt;fld9&gt; |ok &lt;fld9&gt;| Ok (&lt;fld9&gt;)| OK &lt;fld9&gt; | &lt;fld9&gt; } #to#&lt;daddr&gt;" />
-	
-<MESSAGE 
-	id1="000011"
-	id2="outbound/smtp" 
-	eventcategory="1207010000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@msg:*PARMVAL($MSG)&gt;&lt;@direction:outbound&gt;&lt;@disposition:*getActionNameForSend(fld3)&gt;&lt;@event_cat:*getEventLegacyCategory(disposition)&gt;&lt;@event_cat_name:*getEventLegacyCategoryName(event_cat)&gt;"
-	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt;  connect to &lt;ddomain&gt;[&lt;daddr&gt;]: &lt;event_description&gt; " />
+	content="outbound/smtp: &lt;saddr&gt; &lt;id&gt; &lt;fld1&gt; &lt;fld2&gt; &lt;action&gt; &lt;fld4&gt; &lt;fld3&gt; &lt;sessionid&gt; &lt;resultcode&gt; &lt;fld7&gt; {Ok &lt;fld9&gt; &lt;fld10&gt; - gsmtp| Ok: queued as &lt;fld9&gt; |ok &lt;fld9&gt;| Ok (&lt;fld9&gt;)| OK &lt;fld9&gt; | &lt;fld9&gt; } #to#{&lt;ddomain&gt;[&lt;daddr&gt;]:&lt;dport&gt;|&lt;daddr&gt;}" />
 	
 
 	
