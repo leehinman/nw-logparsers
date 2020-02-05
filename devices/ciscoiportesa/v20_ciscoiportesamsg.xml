@@ -4,9 +4,9 @@
 	displayname="Cisco Ironport ESA"
 	group="Application Firewall">
 <VERSION
-	xml="48"
-	checksum="f1dd23f10991611d45bec417ae887fb4"
-	revision="121"
+	xml="50"
+	checksum="ead5283517d6ac3394ae316c2d1ae9b8"
+	revision="138"
 	device="2.0" />
  
 <HEADER 
@@ -18,6 +18,11 @@
 	id1="0003"
 	id2="0003"
 	content="&lt;hfld6&gt; &lt;hfld7&gt; &lt;hfld8&gt;:&lt;hfld9&gt;:&lt;hfld10&gt; &lt;hhost&gt; &lt;process&gt;[&lt;process_id&gt;]: &lt;messageid&gt;: &lt;!payload:messageid&gt;" />
+
+<HEADER
+	id1="0004"
+	id2="0004"
+	content="&lt;hfld1&gt; &lt;ip.orig&gt; &lt;hmonth&gt; &lt;hday&gt; &lt;hhour&gt;:&lt;hmin&gt;:&lt;hsec&gt; &lt;hfld11&gt;: &lt;messageid&gt;: New SMTP &lt;!payload:messageid&gt;" />
 
 <HEADER
 	id1="0002"
@@ -42,8 +47,8 @@
 	id1="Info_Reverse_dns" 
 	id2="Info" 
 	eventcategory="1805000000" 
-	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
-	content=" Info: New SMTP ICID &lt;id1&gt; interface &lt;interface&gt; (&lt;hostip&gt;) address &lt;daddr&gt; reverse dns host &lt;dhost&gt; verified { yes | no }" />
+	functions="&lt;@:*SYSVAL($MSGID,$ID1)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N:%U:%O %W',hfld2,hfld3,hfld4,hfld5)&gt;&lt;@event_time:*EVNTTIME($HDR,'%B %F %N %U %O',hmonth,hday,hhour,hmin,hsec)&gt;&lt;@msg:*PARMVAL($MSG)&gt;"
+	content=" Info: New &lt;protocol&gt; ICID &lt;id1&gt; interface &lt;interface&gt; (&lt;hostip&gt;) address &lt;saddr&gt; reverse dns host &lt;dhost&gt; verified { yes | no }" />
 
 <MESSAGE 
 	id1="Info_SBRS" 
