@@ -4,8 +4,8 @@
 	displayname="Fortinet FortiMail"
 	group="Application Firewall">
 <VERSION
-	xml="15"
-	checksum="7a940db905f3f6f8c6f713f60076af19"
+	xml="16"
+	checksum="fdfc054645dada648070ab5879e1ca3c"
 	revision="138"
 	device="2.0" />
 
@@ -200,7 +200,7 @@
 	id1="virus_file-signature"
 	id2="virus_file-signature"
 	eventcategory="1003010000"
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="{from=&quot;&lt;from&gt;&quot;|&lt;from&gt;} to={&quot;&lt;to&gt;&quot;|&lt;to&gt;} src={&quot;&lt;sdomain&gt; [&lt;saddr&gt;]&quot;|&lt;sdomain&gt; [&lt;saddr&gt;]|&quot;[&lt;saddr&gt;]&quot;|[&lt;saddr&gt;]|&quot;&lt;saddr&gt;&quot;|&lt;saddr&gt;} session_id={&quot;&lt;sessionid&gt;&quot;|&lt;sessionid&gt;} {msg=&quot;Attachment file (&lt;filename&gt;) has sha1 hash value: &lt;checksum&gt;&quot;|msg=&quot;&lt;event_description&gt;&quot;|msg=&lt;event_description&gt;}"/>
 
 <MESSAGE 
@@ -286,7 +286,21 @@
 	id1="spam_default" 
 	id2="spam_default" 
 	eventcategory="1207040000" 
-	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(messageid)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@severity:*HDR(hseverity)&gt;"
 	content="session_id=&quot;&lt;sessionid&gt;&quot; client_name={&quot;&lt;fqdn&gt; [&lt;saddr&gt;]&quot; | &quot;&lt;fqdn&gt;&quot; client_ip=&quot;&lt;saddr&gt;&quot;} dst_ip=&quot;&lt;daddr&gt;&quot; from=&quot;&lt;from&gt;&quot; to=&quot;&lt;to&gt;&quot; subject=&quot;&lt;subject&gt;&quot; msg=&quot;&lt;event_description&gt;&quot;" />
+
+<MESSAGE 
+	id1="kevent_update" 
+	id2="kevent_update" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="msg=&quot;&lt;event_description&gt;&quot;" />
+
+<MESSAGE 
+	id1="kevent_config" 
+	id2="kevent_config" 
+	eventcategory="1612000000" 
+	functions="&lt;@msg:*PARMVAL($MSG)&gt;&lt;@event_time:*EVNTTIME($HDR,'%W-%G-%F %H:%U:%O',hdate,htime)&gt;&lt;@hardware_id:*HDR(hfld1)&gt;&lt;@id:*HDR(hfld2)&gt;&lt;@id1:*HDR(hfld3)&gt;&lt;@event_type:*HDR(msgIdPart1)&gt;&lt;@severity:*HDR(hseverity)&gt;"
+	content="user=&lt;username&gt; ui=&lt;network_service&gt; module=&lt;fld1&gt; submodule=&lt;fld2&gt; msg=&quot;&lt;event_description&gt;&quot;" />
 
 </DEVICEMESSAGES>
